@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础模版</title>
+    <style>
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index: 100;
+            box-sizing: border-box;
+            height: 75px;
+            min-height: 75px;
+            padding: 0 60px;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+        header .logo{
+            height:20px;
+        }
+        * {
+                padding: 0;
+                margin: 0;
+                color: #898989;
+        }
+        ul{
+            position: absolute;
+            right: 60px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        li {
+
+            display:inline-block;
+            padding:0 20px
+        }
+
+        li a {
+            text-decoration: none;
+        }
+        .active {color: #10c9c3;font-weight: bold;}
+        {% block style %}
+        {% endblock %}
+    </style>
+</head>
+<body>
+<header>
+    {% block header %}
+    <img src="https://img1.wxzxzj.com/vued02092c5e3b7309243760cee9fa4817c5.png" alt="logo">
+    <ul class="wrap">
+        <li><a href="{% url 'show' %}" class="active">首页</a></li>
+        <li><a id="monitor" class="" href="{% url 'showDevices' %}">设备列表</a></li>
+        <li><a id="news" href="{% url 'inputinfo' %}">设备录入</a></li>
+        <li><a id="connect" href="{% url 'testmodeledit' %}">编辑测试模块</a></li>
+        <li><a id="speack" href="{% url 'showalldevices' %}">查看所有设备信息</a></li>
+        <li><a href="{% url 'do_logout' %}">退出登陆</a></li>
+    </ul>
+    {% endblock %}
+</header>
+
+{% block context %}
+{% endblock %}
+
+<!--<script src="https://apps.bdimg.com/libs/jquery/1.4.2/jquery.min.js">-->
+{% block js %}
+<script type="text/javascript">
+</script>
+{% endblock %}
+
+</body>
+</html>

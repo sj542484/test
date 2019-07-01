@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>添加测试项</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<center>
+	<form action="{% url 'addtest' %}" method="post">
+		{% csrf_token %}
+		<select name="pro" id="" style="height:30px;width:180px;font-size:14px">
+			<option value="stu">学生</option>
+            <option value="tea">教师</option>
+		</select>
+		<div id="app">
+			<input v-model="newAddText" placeholder="请输入要添加的内容" required>
+			<span @click='addNewList'>添加</span>
+			<uo>
+				<li is='list-item' v-for='(list,index) in lists' v-bind:key='list.id'
+					v-bind:title='list.title' v-on:remove='lists.splice(index,1)'>
+				</li>
+			</uo>
+		</div>
+		<button>submit</button>
+	</form>
+</center>
+<script>
+	Vue.component('list-item', {
+  template: '\
+    <li>\
+      {{ title }}\
+      <button v-on:click="$emit(\'remove\')">删除</button>\
+    </li>\
+  ',
+  props: ['title']
+})
+
+var vm = new Vue({
+  el: '#app',
+  data: {
+  newAddText:'',
+	  lists:[
+	  ],
+	  nextTodoId: 4
+  },
+  methods:{
+	  addNewList:function(){
+		  this.lists.push({
+			  id:this.nextTodoId++,
+			  title:this.newAddText
+		  })
+		  this.newAddText=''
+	  }
+  }
+})
+
+</script>
+</body>
+</html>

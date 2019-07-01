@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>选择</title>
+</head>
+<body id="body">
+  <div class="wrap">
+    <select name="" id="item1" class="item" onChange="change('item1', 1)">
+      <option value="0">请选择</option>
+      <option value="1">student</option>
+      <option value="2">teacher</option>
+    </select>
+    <select name="" id="childrenItem1" class="child">
+    </select>
+  </div>
+  <div class="wrap">
+    <select name="" id="item2" class="item" onChange="change('item2', 2)">
+      <option value="0">请选择</option>
+      <option value="1">student</option>
+      <option value="2">teacher</option>
+    </select>
+    <select name="" id="childrenItem2" class="child">
+    </select>
+  </div>
+  <div class="wrap">
+    <select name="" id="item3" class="item" onChange="change('item3', 3)">
+      <option value="0">请选择</option>
+      <option value="1">student</option>
+      <option value="2">teacher</option>
+    </select>
+    <select name="" id="childrenItem3" class="child">
+    </select>
+  </div>
+  <div>
+    <button onclick="finish()">结束</button>
+  </div>
+</body>
+<script>
+  var child1 = [
+    {
+      id: 0,
+      name: '张三',
+    },
+    {
+      id: 2,
+      name: '李四',
+    },
+    {
+      id: 3,
+      name: '小傻子',
+    },
+    {
+      id: 4,
+      name: '大筛子',
+    },
+  ];
+  var child2 = [
+    {
+      id: 0,
+      name: 'toy',
+    },
+    {
+      id: 2,
+      name: 'sandra',
+    },
+    {
+      id: 3,
+      name: 'lily',
+    },
+    {
+      id: 4,
+      name: 'lucy',
+    },
+  ]
+  function addDataToChildren(itemId, childId) {
+    var child = document.getElementById(childId);
+    var parent = document.getElementById(itemId);
+    
+    var index = parent.selectedIndex; // 选中索引
+    var parentValue = parent.options[index].value; // 选中值
+    var childData = [];
+    if(parentValue === '1') {
+      childData = child1
+    } else {
+      childData = child2;
+    }
+    
+    //清楚之前的额option
+    var l = child.options.length;
+    for (var i = l-1; i >= 0; i--) {
+      child.options.remove(i); 
+    }
+
+    childData.forEach((item, index) => {
+      child.options.add(new Option(item.name, item.id));
+    });
+  }
+  
+  function change(itemId, index) {
+    var child = 'childrenItem' + index;
+    // addDataToChildren(itemId, child);
+    addDataToChildren2(itemId, child);
+  }
+
+  function finish() {
+    console.log(document.querySelectorAll('.wrap'));
+    var result = [];
+    document.querySelectorAll('.wrap').forEach(item => {
+      console.log(item,'-=-=-=')
+      var parent = item.querySelector('.item');
+      var parentIndex = parent.selectedIndex; // 选中索引
+      var parentValue = parent.options[parentIndex].value; // 选中值
+      console.log(parentValue,'父级')
+      var child = item.querySelector('.child');
+      var childIndex = child.selectedIndex; // 选中索引
+      var childValue = child.options[childIndex].value; // 选中值
+      result.push({
+        parent: parentValue,
+        child: childValue,
+      });
+    })
+    console.log(result);
+  }
+
+  function addDataToChildren2(itemId, childId) {
+      var child = document.getElementById(childId);
+      var parent = document.getElementById(itemId);
+      var index = parent.selectedIndex; // 选中索引
+      var parentValue = parent.options[index].value; // 选中值
+      var childData = [];
+      if (parentValue === '1') {
+        childData = child1
+      } else {
+        childData = child2;
+      }
+      
+      //直接重新赋值，不用清除了
+      var htmlStr = ''
+      childData.forEach((item, index) => {
+        htmlStr += `<option value="${item.id}" >${item.name}</option>`;
+      });
+
+      child.innerHTML = htmlStr;
+    }
+
+</script>
+</html>

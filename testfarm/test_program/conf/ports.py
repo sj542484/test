@@ -1,0 +1,30 @@
+import os,re
+
+class Ports:
+    @staticmethod
+    def is_using(port):
+        """判断端口号是否被占用"""
+        # Mac OS
+        cmd = "netstat -an | grep %s" % port
+        if os.popen(cmd).readlines():
+            return True
+        else:
+            return False
+
+    def get_ports(self, count):
+        """获得4723端口后一系列free port"""
+        port = 4723
+        port_list = []
+        while True:
+            if len(port_list) == count:
+                break
+            if not self.is_using(port) and (port not in port_list):
+                port_list.append(port)
+            else:
+                port += 2
+        return port_list
+
+    def get_pid(self,port):
+        res = os.popen('lsof -i:%s'%port).read()
+        pid = re.findall('.*?node.*?(\d+)', res)
+        return set(pid)
