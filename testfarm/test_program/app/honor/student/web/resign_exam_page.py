@@ -9,10 +9,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from app.student.web.base import BaseDriverPage
-from app.student.web.driver import Driver
-from app.student.web.login_page import LoginWebPage
-from conf.decorator import teststep, teststeps
+from testfarm.test_program.app.honor.student.web.base import BaseDriverPage
+from testfarm.test_program.app.honor.student.web.driver import Driver
+from testfarm.test_program.app.honor.student.web.login_page import LoginWebPage
+from testfarm.test_program.conf.decorator import teststep, teststeps
 
 
 class ResignExamPage(BaseDriverPage):

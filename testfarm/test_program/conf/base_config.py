@@ -13,6 +13,7 @@ class GetVariable(object):
     REPORT_ROOT = r'./testfarm/templates/test_report'  # 测试报告存放路径
 
     ID_TYPE = 'com.vanthink.student.debug:id/'
+    PACKAGE_ID = 'com.vanthink.vanthinkteacher.debug:id/'
 
     # case统计 配置信息
     SUIT_PATH = 'testfarm'

@@ -60,7 +60,7 @@ class Utils:
                 port += 2
         return port_list
 
-    def appium_node_info(self,hubHost,port,device_name,udid,platversion,systemPort):
+    def appium_node_info(self,hubHost,port,device_name,udid,platversion,systemPort,side):
         self._con['configuration']['url'] = 'http://127.0.0.1:%s/wd/hub/'%port
         self._con['configuration']['port'] = '%s'%port
         self._con['configuration']['hubHost'] = hubHost
@@ -68,6 +68,10 @@ class Utils:
         self._con['capabilities'][0]['deviceName'] = device_name
         self._con['capabilities'][0]['udid'] = udid
         self._con['capabilities'][0]['systemPort'] = systemPort
+        if side == 'student': # 学生
+            self._con['capabilities'][0]['app'] = "/Users/vanthink_test_ios/Woker/student_env_devDebug_1.3.4(2).apk"
+        elif side == 'teacher':
+            self._con['capabilities'][0]['app'] = "/Users/vanthink_test_ios/Woker/teacher_env_devDebug_1.2.2.apk"
         node_path = './test_program/nodeconfig/%s/%s/'%(device_name,platversion)
         if not os.path.exists(node_path):
             os.makedirs(node_path)
@@ -75,9 +79,9 @@ class Utils:
         fp.write(json.dumps(self._con))
         fp.close()
 
-    def start_appium(self,dn, udid, plv,file_name,port,bp,systemPort):
-        hubHost = '192.168.8.186'
-        self.appium_node_info(hubHost=hubHost,port=port,device_name=dn,udid=udid,platversion=plv,systemPort=systemPort)
+    def start_appium(self,dn, udid, plv,file_name,port,bp,systemPort,side):
+        hubHost = '192.168.8.124'
+        self.appium_node_info(hubHost=hubHost,port=port,device_name=dn,udid=udid,platversion=plv,systemPort=systemPort,side=side)
         CMD = 'appium -p {port} -bp {bp} -U {udid} --nodeconfig /Users/vanthink_test_ios/aa/testone/test_program/nodeconfig/{devicename}/{platformversion}/mobile.json > {portPath}appium_server.log'.format(port=port,bp=bp,udid=udid,devicename=dn,platformversion=plv,portPath=file_name)
         subprocess.Popen(CMD, shell=True)
         print('\ncmd:',CMD)
@@ -86,6 +90,7 @@ class Utils:
     def clear_port(self,*port):
         for i in port:
             self._port.remove(i)
+        return self._port
 
 if __name__ == '__main__':
     a = Utils()

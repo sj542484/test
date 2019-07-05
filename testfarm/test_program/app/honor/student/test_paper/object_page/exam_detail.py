@@ -3,20 +3,20 @@ import re
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.student.login.object_page.home_page import HomePage
-from app.student.test_paper.object_page.banked_cloze import BankCloze
-from app.student.test_paper.object_page.complete_text import CompleteText
-from app.student.test_paper.object_page.conjunctions import Conjunctions
-from app.student.test_paper.object_page.data_action import DataPage
-from app.student.test_paper.object_page.listen_select import ListenSelect
-from app.student.test_paper.object_page.listen_to_sentence import ListenSentence
-from app.student.test_paper.object_page.read_understand import ReadUnderstand
-from app.student.test_paper.object_page.sentence_enhance import SentenceEnhance
-from app.student.test_paper.object_page.sentence_exchange import SentenceExchange
-from app.student.test_paper.object_page.vocab_select import VocabSelect
-from app.student.word_book.object_page.ranking_page import RankingPage
-from conf.base_page import BasePage
-from conf.decorator import teststep, teststeps
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.test_paper.object_page.banked_cloze import BankCloze
+from testfarm.test_program.app.honor.student.test_paper.object_page.complete_text import CompleteText
+from testfarm.test_program.app.honor.student.test_paper.object_page.conjunctions import Conjunctions
+from testfarm.test_program.app.honor.student.test_paper.object_page.data_action import DataPage
+from testfarm.test_program.app.honor.student.test_paper.object_page.listen_select import ListenSelect
+from testfarm.test_program.app.honor.student.test_paper.object_page.listen_to_sentence import ListenSentence
+from testfarm.test_program.app.honor.student.test_paper.object_page.read_understand import ReadUnderstand
+from testfarm.test_program.app.honor.student.test_paper.object_page.sentence_enhance import SentenceEnhance
+from testfarm.test_program.app.honor.student.test_paper.object_page.sentence_exchange import SentenceExchange
+from testfarm.test_program.app.honor.student.test_paper.object_page.vocab_select import VocabSelect
+from testfarm.test_program.app.honor.student.word_book.object_page.ranking_page import RankingPage
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststep, teststeps
 
 
 class DetailPage(BasePage):

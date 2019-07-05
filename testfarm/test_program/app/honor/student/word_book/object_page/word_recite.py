@@ -1,10 +1,10 @@
-from app.student.login.object_page.home_page import HomePage
-from app.student.word_book.object_page.clear_user_data import CleanDataPage
-from app.student.word_book.object_page.word_book import WordBook
-from conf.base_page import BasePage
-from conf.base_config import GetVariable as gv
-from app.student.word_book.object_page.sql_data.data_action import DataActionPage
-from conf.decorator import teststeps
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.word_book.object_page.clear_user_data import CleanDataPage
+from testfarm.test_program.app.honor.student.word_book.object_page.word_book import WordBook
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.base_config import GetVariable as gv
+from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
+from testfarm.test_program.conf.decorator import teststeps
 
 
 class ReciteProgress(BasePage):

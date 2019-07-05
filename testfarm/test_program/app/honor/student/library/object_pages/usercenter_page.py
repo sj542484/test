@@ -8,7 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from testfarm.test_program.app.honor.student.library.object_pages.data_action import DataAction
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.conf.basepage import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep
 
 

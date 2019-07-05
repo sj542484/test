@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 
 from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
 from testfarm.test_program.app.honor.student.homework.test_data.guess_word_data import guess_word_operate
-from testfarm.test_program.conf.basepage import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststeps, teststep
 
 

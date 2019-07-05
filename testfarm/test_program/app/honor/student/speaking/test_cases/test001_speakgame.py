@@ -6,10 +6,10 @@ import datetime
 import time
 import unittest
 
-from app.student.login.object_page.home_page import HomePage
-from app.student.login.object_page.login_page import LoginPage
-from app.student.speaking.object_page.enter_into_speaking import SpeakingPage
-from conf.decorator import teardown, setup, testcase
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
+from testfarm.test_program.app.honor.student.speaking.object_page.enter_into_speaking import SpeakingPage
+from testfarm.test_program.conf.decorator import teardown, setup, testcase
 
 
 class SpeakGame(unittest.TestCase):

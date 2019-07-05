@@ -1,10 +1,10 @@
 import unittest
 
-from app.student.login.object_page.home_page import HomePage
-from app.student.word_book_rebuild.object_page.clear_user_data import CleanDataPage
-from app.student.word_book_rebuild.object_page.my_word_page import MyWordPage
-from app.student.word_book_rebuild.object_page.word_book import WordBook
-from conf.decorator import setup, teardown, teststeps
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.clear_user_data import CleanDataPage
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.my_word_page import MyWordPage
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_book import WordBook
+from testfarm.test_program.conf.decorator import setup, teardown, teststeps
 
 
 class MineWord(unittest.TestCase):

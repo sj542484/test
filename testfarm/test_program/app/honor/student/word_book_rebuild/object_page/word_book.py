@@ -1,20 +1,20 @@
 import json
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from app.student.login.object_page.home_page import HomePage
-from app.student.login.object_page.buy_tips_page import BuyTipsPage
-from app.student.login.object_page.login_page import LoginPage
-from app.student.word_book_rebuild.object_page.data_action import DataActionPage
-from app.student.word_book_rebuild.object_page.flash_card_page import FlashCard
-from app.student.word_book_rebuild.object_page.restore_word_page import WordRestore
-from app.student.word_book_rebuild.object_page.spelling_word_page import SpellingWord
-from app.student.word_book_rebuild.object_page.vocabulary_choose_page import VocabularyChoose
-from app.student.word_book_rebuild.object_page.word_dictation_page import WordDictation
-from app.student.word_book_rebuild.object_page.word_match_page import MatchingWord
-from app.student.word_book_rebuild.object_page.word_result_page import ResultPage
-from conf.base_page import BasePage
-from conf.decorator import teststeps, teststep
-from conf.base_config import GetVariable as gv
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.login.object_page.buy_tips_page import BuyTipsPage
+from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_action import DataActionPage
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.flash_card_page import FlashCard
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.restore_word_page import WordRestore
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.spelling_word_page import SpellingWord
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.vocabulary_choose_page import VocabularyChoose
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_dictation_page import WordDictation
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_match_page import MatchingWord
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_result_page import ResultPage
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststeps, teststep
+from testfarm.test_program.conf.base_config import GetVariable as gv
 
 
 class WordBook(BasePage):

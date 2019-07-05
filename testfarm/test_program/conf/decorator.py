@@ -1,7 +1,7 @@
 import time
 from functools import wraps
 from selenium.common.exceptions import WebDriverException
-from testfarm.test_program.conf.basepage import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.report_path import ReportPath
 
 def _screenshot(name):

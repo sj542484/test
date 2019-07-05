@@ -1,7 +1,7 @@
 {% extends 'base_page.html' %}
 {% block style %}
-        td {border:1px solid green;border-radius:3px;height:30px;width:200px;align:center}
-        input {height:30px;width:200px}
+        td {border:1px solid green;border-radius:3px;height:40px;width:200px;text-align:center;text-valign:middle;font-size:16px;}
+        input {width:200px;height:40px;text-align:center;font-size:16px;}
 {% endblock %}
 {% block header %}
     <img src="https://img1.wxzxzj.com/vued02092c5e3b7309243760cee9fa4817c5.png" alt="logo">
@@ -39,51 +39,11 @@
                         <td><input type="text" name="platformVersion" id="platformVersion" required></td>
                     </tr>
                 </table>
-                <button type="submit" name="submit">提交</button>
-                <a href="{% url 'show' %}">go back</a>
+                <button type="submit" name="submit" style="width:80px;hegiht:30px;font-size:16px;background:fff;">提交</button>
+                <a href="{% url 'show' %}" style="font-size:16px;">go back</a>
             {% endif %}
         </body>
         </form>
     </center>
 </div>
 {% endblock %}
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-    <!--<meta charset="UTF-8">-->
-    <!--<title>信息录入</title>-->
-    <!--<style>-->
-        <!--td {border:1px solid green;border-radius:3px;height:30px;width:200px;align:center}-->
-        <!--input {height:30px;width:200px}-->
-    <!--</style>-->
-<!--</head>-->
-<!--<center>-->
-    <!--<form action="{% url 'saveinfo' %}" method="post">-->
-        <!--{% csrf_token %}-->
-        <!--<body>-->
-        <!--{% if devices_model == None %}-->
-            <!--<span style="color:red">没有检测到设备</span>-->
-            <!--<a href="javascript:location.reload();">点击刷新页面</a>-->
-        <!--{% elif devices_model != None %}-->
-            <!--<table>-->
-                <!--<tr>-->
-                    <!--<td>设备型号</td>-->
-                    <!--<td>设备🆔</td>-->
-                    <!--<td>设备名称</td>-->
-                    <!--<td>系统版本</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td><input type="text" readonly name="devices_model"  value="{{ devices_model }}"></td>-->
-                    <!--<td><input type="text" readonly name="devices_uuid"  value="{{ devices_uuid }}"></td>-->
-                    <!--<td><input type="text" name="devices_name" id="" required></td>-->
-                    <!--<td><input type="text" name="platformVersion" id="platformVersion" required></td>-->
-                <!--</tr>-->
-            <!--</table>-->
-            <!--<button type="submit" name="submit">提交</button>-->
-            <!--<a href="{% url 'index' %}">go back</a>-->
-        <!--{% endif %}-->
-    <!--</body>-->
-    <!--</form>-->
-<!--</center>-->
-<!--</html>-->

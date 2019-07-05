@@ -10,7 +10,7 @@ from testfarm.test_program.app.honor.student.homework.object_page.result_page im
 from testfarm.test_program.app.honor.student.homework.test_data.word_spelling_data import word_spelling_operate
 from testfarm.test_program.utils.get_attribute import GetAttribute
 from testfarm.test_program.utils.games_keyboard import Keyboard
-from testfarm.test_program.conf.basepage import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
 
 

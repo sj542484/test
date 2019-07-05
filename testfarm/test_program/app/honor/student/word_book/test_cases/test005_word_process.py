@@ -1,12 +1,12 @@
 import unittest
 
-from app.student.login.object_page.home_page import HomePage
-from app.student.login.object_page.login_page import LoginPage
-from app.student.word_book.object_page.sql_data.data_action import DataActionPage
-from app.student.word_book.object_page.sql_data.mysql_data import MysqlData
-from app.student.word_book.object_page.word_book import WordBook
-from app.student.word_book.object_page.word_progress import ProgressPage
-from conf.decorator import setup, teardown
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
+from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
+from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.mysql_data import MysqlData
+from testfarm.test_program.app.honor.student.word_book.object_page.word_book import WordBook
+from testfarm.test_program.app.honor.student.word_book.object_page.word_progress import ProgressPage
+from testfarm.test_program.conf.decorator import setup, teardown
 
 
 class WordProcess(unittest.TestCase):

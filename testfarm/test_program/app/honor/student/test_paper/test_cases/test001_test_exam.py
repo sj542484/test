@@ -1,14 +1,14 @@
 # coding=utf-8
 import unittest
-from app.student.login.object_page.home_page import HomePage
-from app.student.login.object_page.login_page import LoginPage
-from app.student.test_paper.object_page.data_action import DataPage
-from app.student.test_paper.object_page.exam_page import ExamPage
-from app.student.web.driver import Driver
-from app.student.web.resign_exam_page import ResignExamPage
-from app.student.word_book.object_page.clear_user_data import CleanDataPage
-from app.student.word_book.object_page.sql_data.data_action import DataActionPage
-from conf.decorator import setup, teardown, testcase, teststep
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
+from testfarm.test_program.app.honor.student.test_paper.object_page.data_action import DataPage
+from testfarm.test_program.app.honor.student.test_paper.object_page.exam_page import ExamPage
+from testfarm.test_program.app.honor.student.web.driver import Driver
+from testfarm.test_program.app.honor.student.web.resign_exam_page import ResignExamPage
+from testfarm.test_program.app.honor.student.word_book.object_page.clear_user_data import CleanDataPage
+from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
+from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststep
 
 
 class Exam(unittest.TestCase):

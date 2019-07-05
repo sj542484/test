@@ -1,14 +1,14 @@
 import datetime
 from functools import reduce
 
-from app.student.login.object_page.home_page import HomePage
-from app.student.user_center.object_page.buy_card_page import PurchasePage
-from app.student.user_center.object_page.user_Info_page import UserInfoPage
-from app.student.user_center.object_page.user_center_page import UserCenterPage
-from app.student.word_book.object_page.sql_data.mysql_data import MysqlData
-from conf.base_page import BasePage
-from conf.decorator import teststep
-from conf.base_config import GetVariable as gv
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.user_center.object_page.buy_card_page import PurchasePage
+from testfarm.test_program.app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
+from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import UserCenterPage
+from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.mysql_data import MysqlData
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststep
+from testfarm.test_program.conf.base_config import GetVariable as gv
 
 
 class DataActionPage(BasePage):

@@ -6,12 +6,12 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-from app.student.login.object_page.home_page import HomePage
-from app.student.user_center.object_page.user_center_page import UserCenterPage
-from app.student.user_center.test_data.image import VALID_IMAGE
-from utils.click_bounds import ClickBounds
-from conf.decorator import teststep, teststeps
-from conf.base_page import BasePage
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import UserCenterPage
+from testfarm.test_program.app.honor.student.user_center.test_data.image import VALID_IMAGE
+from testfarm.test_program.utils.click_bounds import ClickBounds
+from testfarm.test_program.conf.decorator import teststep, teststeps
+from testfarm.test_program.conf.base_page import BasePage
 
 
 class UserInfoPage(BasePage):

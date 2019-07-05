@@ -4,9 +4,9 @@
 import time
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
-from conf.decorator import teststep, teststeps
-from conf.base_page import BasePage
-from utils.click_bounds import ClickBounds
+from testfarm.test_program.conf.decorator import teststep, teststeps
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.utils.click_bounds import ClickBounds
 
 
 class MeizuPage(BasePage):

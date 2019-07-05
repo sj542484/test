@@ -2,12 +2,12 @@
 import unittest
 import time
 
-from app.student.login.object_page.home_page import HomePage
-from app.student.login.object_page.login_page import LoginPage
-from app.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
-from app.student.user_center.object_page.user_center_page import UserCenterPage, Setting, Privacy
-from conf.decorator import setup, teardown, testcase
-from utils.toast_find import Toast
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
+from testfarm.test_program.app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
+from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import UserCenterPage, Setting, Privacy
+from testfarm.test_program.conf.decorator import setup, teardown, testcase
+from testfarm.test_program.utils.toast_find import Toast
 
 
 class PrivacyClause(unittest.TestCase):

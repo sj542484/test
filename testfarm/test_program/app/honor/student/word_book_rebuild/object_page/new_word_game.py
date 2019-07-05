@@ -7,14 +7,14 @@ import json
 import time
 from operator import eq
 
-from app.student.word_book_rebuild.object_page.flash_card_page import FlashCard
-from app.student.word_book_rebuild.object_page.restore_word_page import WordRestore
-from app.student.word_book_rebuild.object_page.spelling_word_page import SpellingWord
-from app.student.word_book_rebuild.object_page.vocabulary_choose_page import VocabularyChoose
-from app.student.word_book_rebuild.object_page.word_book import WordBook
-from app.student.word_book_rebuild.object_page.word_dictation_page import WordDictation
-from app.student.word_book_rebuild.object_page.word_match_page import MatchingWord
-from conf.decorator import teststeps
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.flash_card_page import FlashCard
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.restore_word_page import WordRestore
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.spelling_word_page import SpellingWord
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.vocabulary_choose_page import VocabularyChoose
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_book import WordBook
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_dictation_page import WordDictation
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_match_page import MatchingWord
+from testfarm.test_program.conf.decorator import teststeps
 
 
 class NewWordGame:

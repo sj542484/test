@@ -1,6 +1,6 @@
-from conf.base_page import BasePage
-from conf.decorator import teststeps
-from utils.games_keyboard import Keyboard
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststeps
+from testfarm.test_program.utils.games_keyboard import Keyboard
 
 
 class WordSpell(BasePage):

@@ -2,13 +2,13 @@ import time
 
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
-from app.student.homework.object_page.homework_page import Homework
-from app.student.word_book_rebuild.object_page.data_action import DataActionPage
-from app.student.word_book_rebuild.object_page.flash_card_page import FlashCard
-from conf.base_page import BasePage
-from conf.decorator import teststeps, teststep
-from utils.games_keyboard import Keyboard
-from utils.get_attribute import GetAttribute
+from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_action import DataActionPage
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.flash_card_page import FlashCard
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststeps, teststep
+from testfarm.test_program.utils.games_keyboard import Keyboard
+from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
 class SpellingWord(BasePage):

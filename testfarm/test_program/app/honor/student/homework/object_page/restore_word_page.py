@@ -9,7 +9,7 @@ from testfarm.test_program.app.honor.student.homework.object_page.homework_page 
 from testfarm.test_program.app.honor.student.homework.object_page.result_page import ResultPage
 from testfarm.test_program.app.honor.student.homework.test_data.restore_word_data import restore_word_operate
 from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.basepage import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.utils.get_attribute import GetAttribute
 
 

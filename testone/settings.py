@@ -80,6 +80,7 @@ DATABASES = {
         'PASSWORD': '123456',
         'PORT': '3307',
         'HOST': 'localhost',
+        'CONN_MAX_AGE': 10,
     }
 }
 

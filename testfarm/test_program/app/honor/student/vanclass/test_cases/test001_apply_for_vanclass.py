@@ -3,15 +3,15 @@
 import time
 import unittest
 
-from app.student.login.object_page.home_page import HomePage
-from app.student.login.object_page.login_page import LoginPage
-from app.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
-from app.student.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
-from app.student.vanclass.object_page.vanclass_page import VanclassPage
-from app.student.vanclass.test_data.remark_name_data import name_data, class_data
-from conf.decorator import setup, teardown, testcase, teststeps
-from utils.get_attribute import GetAttribute
-from utils.toast_find import Toast
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
+from testfarm.test_program.app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
+from testfarm.test_program.app.honor.student.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
+from testfarm.test_program.app.honor.student.vanclass.object_page.vanclass_page import VanclassPage
+from testfarm.test_program.app.honor.student.vanclass.test_data.remark_name_data import name_data, class_data
+from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
+from testfarm.test_program.utils.get_attribute import GetAttribute
+from testfarm.test_program.utils.toast_find import Toast
 
 
 class ApplyVanclass(unittest.TestCase):

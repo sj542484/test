@@ -1,4 +1,4 @@
-import time
+import time,yaml,os
 from testfarm.test_program.app.honor.student.login.test_data.account import VALID_ACCOUNT
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.login.test_data.mine_account import phone_data
@@ -6,7 +6,7 @@ from testfarm.test_program.app.honor.student.user_center.object_page.user_center
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.basepage import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.utils.reset_phone_find_toast import verify_find
 from testfarm.test_program.utils.toast_find import Toast
 
@@ -254,6 +254,11 @@ class LoginPage(BasePage):
     def login_operate(self):
         """登录"""
         print('在登录界面：')
+        print(os.getcwd())
+        a = open('./testfarm/test_program/conf/user_info.yaml')
+        res = yaml.full_load(a)
+        print(res,'手机信息及人员列表')
+
         time.sleep(2)
         phone = self.input_username()
         pwd = self.input_password()

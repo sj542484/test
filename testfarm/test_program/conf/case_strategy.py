@@ -8,7 +8,7 @@ class CaseStrategy:
         self.test_side = tsst_side
         self.test_items = test_items
         self.phone_code = phone_code
-        self.start_dir = gv.CASE_PATH + self.phone_code + '/' + self.test_side + '/' + self.test_items + '/test_cases'
+        self.start_dir = gv.CASE_PATH + self.phone_code + '/' + self.test_side + '/' + self.test_items
 
 
     """测试用例搜集"""

@@ -5,10 +5,10 @@ import random
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.student.homework.object_page.homework_page import Homework
-from conf.base_page import BasePage
-from conf.decorator import teststeps, teststep
-from utils.games_keyboard import Keyboard
+from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststeps, teststep
+from testfarm.test_program.utils.games_keyboard import Keyboard
 
 
 class WordDictation(BasePage):

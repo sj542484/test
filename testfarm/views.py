@@ -11,6 +11,9 @@ from testfarm.test_program.run import Driver
 from multiprocessing import Process
 from testfarm.test_program.utils.st_appium_server import Utils
 from django.contrib.auth.decorators import login_required
+from testfarm.test_program.utils.kill_pid import killPid
+from django.db import close_old_connections
+
 
 _port = []
 
@@ -27,7 +30,7 @@ def do_login(request):
     pwd = request.POST.get('pwd')
     pwd = encryption(pwd=pwd)
     print(pwd,'login','user:',user)
-    # res = UserInfo.objects.filter(username=user,pwd=pwd)
+
     user = authenticate(username=user, password=pwd)
     print(user)
     # if user:
@@ -52,6 +55,7 @@ def do_register(request):
     print('zhuce:',pwd)
     try:
         # 使用django提供的认证系统
+        close_old_connections()
         db = User.objects.create_user(username=user,password=pwd)
         db.save()
         print('数据保存成功')
@@ -104,54 +108,62 @@ def saveInfo(request):
 def startservice(request):
     '''开始测试'''
     e_uuid = request.POST.get('e_uuid')
-    test_side = request.POST.get('pardent')
+    test_side = request.POST.get('parent')
     test_items = request.POST.get('child')
-    print(e_uuid,test_items,test_side,'-=-==-==-=-=-=00i93594u543ht jjsgbrsgwjg rkwl')
+    print('设备uuid:',e_uuid,'测试端:',test_side,type(test_side),'测试项:',test_items)
+    if test_side == '0' or test_items == '0':
+        return HttpResponse('<script>alert("没有选择测试项/测试端，请先进行勾选！！！");location.href="/devices"</script>')
+    close_old_connections()
+    test_sides = SideType.objects.filter(id=int(test_side))[0].side_eng
+    print(test_sides)
+    test_item = ItemType.objects.filter(side=str(int(test_side)))[int(test_items)-1].item_eng
+    print(test_item)
+    print('设备uuid:',e_uuid,'测试端:',test_sides,'测试项:',test_item)
+
+
     p = Utils(port=_port)
     appium_port = p.get_ports(port=4723,count=1)[0]
     _port.append(appium_port)
     sysport = p.get_ports(port=8200,count=1)[0]
     _port.append(sysport)
     # device = EquipmentList.objects.get(equipment_uuid=e_uuid)
-    t = Process(target=st,args=(e_uuid,appium_port,sysport,_port,test_side,test_items))
+    t = Process(target=st,args=(e_uuid,appium_port,sysport,_port,test_sides,test_item))
     t.start()
     time.sleep(0.3)
     content = get_show_phone()
-    return render(request, 'testproject/show_devices.html', content)
+    return render(request, 'testproject/show_devices.html',content)
 
 # @login_required
 def st(e_uuid,appium_port,sysport,ports,test_side,test_items):
-    print('there is in the process')
+    # 获取进程 id
     gid = os.getpid()
     print('gid:',gid)
-    try:
-        device = EquipmentList.objects.get(equipment_uuid=e_uuid)
-        e_name = device.equipment_name
-        plat_verion = device.platform_verion
-        print('数据库连接正常。。。')
-    except Exception as e:
-        print('连接数据库异常：',e)
+    # 根据设别uuid 获取设备的详情
+    close_old_connections()
+    device = EquipmentList.objects.get(equipment_uuid=e_uuid)
+    e_name = device.equipment_name
+    plat_verion = device.platform_verion
 
-    try:
-        EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=1, statue_statue=1, gid=gid)
-        print('数据更新正常')
-    except Exception as e:
-        print(e,'\n')
+    # 变更该设备的 运行状态
+    EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=1, statue_statue=1, gid=gid)
 
+    # 实例化 driver类，开始进行测试
     dr = Driver(udid=e_uuid, platformVersion=plat_verion, deviceName=e_name,ports=ports,test_side=test_side,test_items=test_items)
     file_name,sta = dr.run_cases(appium_port,sysport)  # 测试程序入口
+
+    # 返回报告路径
     file_name = file_name.split('/templates/')[1]
     print('存储报告路径：',file_name)
-    try:
-        res = EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=0,statue_statue=0,gid=None,report=file_name)
-        print(res,'resresres')
-    except Exception as e:
-        print('数据更新异常：\n')
-        print('\t',e)
-    try:
-        Utils(_port).clear_port(appium_port,sysport)
-    except:
-        pass
+
+    # 跟新设备运行状态
+    close_old_connections()
+    EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=0,statue_statue=0,gid=None,report=file_name)
+    # 清除端口占用
+    pp = Utils(_port).clear_port(appium_port,sysport)
+    print(_port,pp,'端口占用情况')
+
+    # kill掉 node
+    killPid().kill_pid(appium_port)
 
 @login_required
 def stopservice(request,gid,e_uuid):
@@ -159,6 +171,7 @@ def stopservice(request,gid,e_uuid):
     CMD = 'kill -9 {}'.format(gid)
     os.popen(CMD)
     print('kill进程:',CMD)
+    close_old_connections()
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=0,statue_statue=0,gid=None,report=None)
     content = get_show_phone()
     return render(request, 'testproject/show_devices.html', content)
@@ -198,18 +211,20 @@ def showreport(request,file_name):
 @login_required
 def testmodeledit(request):
     try:
-        db = SideType(side='学生端')
-        db.save()
+        db = SideType.objects.all()
+        print([i.id for i in db])
+        content = {'sides':db}
         print('success')
     except Exception as e:
         print(e)
-        print('=======')
-    return render(request,'testproject/test_model.html')
+        print('=======数据库异常-------')
+    return render(request,'testproject/test_model.html',content)
 
 @login_required
 def showalldevices(request):
+    # 分页
     devices = EquipmentList.objects.all()
-    paginator = Paginator(devices, 10)
+    paginator = Paginator(devices, 5)
     content = {'content':devices}
     page = request.GET.get('page')
     contacts = paginator.get_page(page)

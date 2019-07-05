@@ -10,7 +10,7 @@ from testfarm.test_program.app.honor.student.homework.object_page.result_page im
 from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
 from testfarm.test_program.app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
 from testfarm.test_program.app.honor.student.homework.test_data.homework_title_type_yb import GetVariable as gv
-from testfarm.test_program.conf.basepage import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
 from testfarm.test_program.utils.toast_find import Toast
 from testfarm.test_program.utils.yb_dict import yb_operate_word, yb_operate_yb

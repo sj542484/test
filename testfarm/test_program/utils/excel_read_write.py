@@ -3,7 +3,7 @@
 # @Author  : SUN FEIFEI
 from xlrd import open_workbook
 from xlutils.copy import copy
-from testfarm.test_program.conf.basepage import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststeps
 from testfarm.test_program.conf.base_config import GetVariable as ge
 

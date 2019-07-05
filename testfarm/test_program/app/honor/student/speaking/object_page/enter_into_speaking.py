@@ -2,12 +2,12 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/5/22 10:12
 # -----------------------------------------
-from app.student.login.object_page.home_page import HomePage
-from conf.base_page import BasePage
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.conf.base_page import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from conf.decorator import teststep
+from testfarm.test_program.conf.decorator import teststep
 
 
 class SpeakingPage(BasePage):

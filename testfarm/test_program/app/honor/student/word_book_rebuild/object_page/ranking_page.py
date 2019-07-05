@@ -3,10 +3,10 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.student.login.object_page.home_page import HomePage
-from app.student.word_book_rebuild.object_page.word_book import WordBook
-from conf.base_page import BasePage
-from conf.decorator import teststeps, teststep
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_book import WordBook
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststeps, teststep
 
 
 class RankingPage(BasePage):

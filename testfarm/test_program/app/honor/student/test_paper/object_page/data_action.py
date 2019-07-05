@@ -1,10 +1,10 @@
 import json
 
-from app.student.login.object_page.home_page import HomePage
-from app.student.word_book.object_page.sql_data.mysql_data import MysqlData
-from conf.base_page import BasePage
-from conf.decorator import teststep
-from conf.base_config import GetVariable as gv
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.mysql_data import MysqlData
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststep
+from testfarm.test_program.conf.base_config import GetVariable as gv
 
 
 class DataPage(BasePage):

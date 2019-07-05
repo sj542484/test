@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding:UTF-8  
 # @Author  : SUN FEIFEI
-from testfarm.test_program.conf.basepage import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep
 
 

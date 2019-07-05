@@ -1,10 +1,10 @@
 import unittest
 
-from app.student.login.object_page.home_page import HomePage
-from app.student.login.object_page.login_page import LoginPage
-from app.student.word_book.object_page.ranking_page import RankingPage
-from app.student.word_book.object_page.word_book import WordBook
-from conf.decorator import teardown, teststeps,setup
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
+from testfarm.test_program.app.honor.student.word_book.object_page.ranking_page import RankingPage
+from testfarm.test_program.app.honor.student.word_book.object_page.word_book import WordBook
+from testfarm.test_program.conf.decorator import teardown, teststeps,setup
 
 
 class Ranking (unittest.TestCase):

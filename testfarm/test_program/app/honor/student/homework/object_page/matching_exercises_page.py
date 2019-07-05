@@ -8,7 +8,7 @@ from testfarm.test_program.app.honor.student.homework.object_page.result_page im
 from testfarm.test_program.app.honor.student.homework.test_data.matching_exercise_data import match_operate
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
-from testfarm.test_program.conf.basepage import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
 from testfarm.test_program.utils.get_attribute import GetAttribute
 

@@ -1,10 +1,10 @@
 import re
 import time
 
-from app.student.word_book.object_page.sql_data.data_action import DataActionPage
-from conf.base_page import BasePage
-from conf.decorator import teststeps
-from app.student.homework.object_page.homework_page import Homework
+from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststeps
+from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
 
 
 class MatchingWord(BasePage):

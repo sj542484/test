@@ -3,17 +3,17 @@ import json
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.student.login.object_page.home_page import HomePage
-from app.student.user_center.object_page.buy_card_page import PurchasePage
-from app.student.user_center.object_page.user_Info_page import UserInfoPage
-from app.student.user_center.object_page.user_center_page import UserCenterPage
-from app.student.web.assign_word import AssignWord
-from app.student.web.driver import Driver
-from app.student.word_book_rebuild.object_page.data_action import DataActionPage
-from conf.base_page import BasePage
-from conf.decorator import teststep
-from utils.toast_find import Toast
-from conf.base_config import GetVariable as gv
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.user_center.object_page.buy_card_page import PurchasePage
+from testfarm.test_program.app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
+from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import UserCenterPage
+from testfarm.test_program.app.honor.student.web.assign_word import AssignWord
+from testfarm.test_program.app.honor.student.web.driver import Driver
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_action import DataActionPage
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststep
+from testfarm.test_program.utils.toast_find import Toast
+from testfarm.test_program.conf.base_config import GetVariable as gv
 
 
 class CleanDataPage(BasePage):

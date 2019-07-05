@@ -13,22 +13,24 @@ class EquipmentList(models.Model):
     def __str__(self):
         return self.equipment_name
 
-class UserInfo(models.Model):
-    username = models.CharField(max_length=50,unique=True)
-    pwd = models.CharField(max_length=64)
-
-    def __str__(self):
-        return self.username
+#
+# class UserInfo(models.Model):
+#     username = models.CharField(max_length=50,unique=True)
+#     pwd = models.CharField(max_length=64)
+#
+#     def __str__(self):
+#         return self.username
 
 class SideType(models.Model):
     side = models.CharField(max_length=50,unique=True)
-
+    side_eng = models.CharField(max_length=50,default=None)
     def __str__(self):
         return self.side
 
 class ItemType(models.Model):
     side = models.CharField(max_length=50)
     item = models.CharField(max_length=50)
+    item_eng = models.CharField(max_length=50,default=None)
 
     def __str__(self):
         return self.item

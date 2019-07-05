@@ -28,7 +28,7 @@ from testfarm.test_program.app.honor.student.library.object_pages.games.single_c
 from testfarm.test_program.app.honor.student.library.object_pages.games.word_chioce import WordChoice
 from testfarm.test_program.app.honor.student.library.object_pages.games.word_spell import WordSpell
 from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.conf.basepage import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
 
 

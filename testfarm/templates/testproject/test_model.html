@@ -1,32 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>添加测试项</title>
-<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
-</head>
-<body>
-<center>
+{% extends 'base_page.html' %}
+
+{% block style %}
+        td {border:1px solid green;border-radius:3px;height:40px;width:200px;text-align:center;text-valign:middle;}
+        input {height:30px;width:150px;text-align:center;text-vaalign:middle;}
+        button {width:60px;height:30px;margin-top:20px;}
+{% endblock %}
+
+{% block header %}
+    <img src="https://img1.wxzxzj.com/vued02092c5e3b7309243760cee9fa4817c5.png" alt="logo">
+    <ul class="wrap">
+        <li><a href="{% url 'show' %}">首页</a></li>
+        <li><a id="monitor" class="" href="{% url 'showDevices' %}">设备列表</a></li>
+        <li><a id="news" href="{% url 'inputinfo' %}">设备录入</a></li>
+        <li><a id="connect" class="active" href="{% url 'testmodeledit' %}">编辑测试模块</a></li>
+        <li><a id="speack" class="" href="{% url 'showalldevices' %}">查看所有设备信息</a></li>
+        <li><a href="{% url 'do_logout' %}">退出登陆</a></li>
+    </ul>
+{% endblock %}
+
+{% block context %}
+<center style="margin-top:80px;">
 	<form action="{% url 'addtest' %}" method="post">
 		{% csrf_token %}
 		<select name="pro" id="" style="height:30px;width:180px;font-size:14px">
-			<option value="stu">学生</option>
-            <option value="tea">教师</option>
+            {% for i in sides %}
+			<option value="{{ i.id }}">{{ i.side }}</option>
+            {% endfor  %}
 		</select>
 		<div id="app">
 			<input v-model="newAddText" placeholder="请输入要添加的内容" required>
 			<span @click='addNewList'>添加</span>
-			<uo>
+			<ul>
 				<li is='list-item' v-for='(list,index) in lists' v-bind:key='list.id'
 					v-bind:title='list.title' v-on:remove='lists.splice(index,1)'>
 				</li>
-			</uo>
+			</ul>
 		</div>
 		<button>submit</button>
 	</form>
 </center>
+{% endblock %}
+
+{% block js %}
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
 <script>
-	Vue.component('list-item', {
+Vue.component('list-item', {
   template: '\
     <li>\
       {{ title }}\
@@ -56,5 +74,4 @@ var vm = new Vue({
 })
 
 </script>
-</body>
-</html>
+{% endblock %}

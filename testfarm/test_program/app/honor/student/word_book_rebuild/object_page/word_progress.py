@@ -4,10 +4,10 @@ import re
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.student.word_book_rebuild.object_page.data_action import DataActionPage
-from conf.base_page import BasePage
-from conf.decorator import teststep
-from conf.base_config import GetVariable as gv
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_action import DataActionPage
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststep
+from testfarm.test_program.conf.base_config import GetVariable as gv
 
 
 class ProgressPage(BasePage):

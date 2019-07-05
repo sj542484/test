@@ -50,15 +50,15 @@
                 <td>{{ i.platform_verion }}</td>
                 <td>
                     <div class="wrap">
-                        <select id="pardent" name="pardent">
-                            <option value="0" selected>请选择</option>
+                        <select id="parent" name="parent" onchange="choose(this)">
+                            <option value="0">请选择</option>
                         </select>
                     </div>
                 </td>
                 <td>
                     <div>
                         <select id="child" name="child">
-                            <option value="0" selected>请选择</option>
+                            <option value="0">请选择</option>
                         </select>
                     </div>
                 </td>
@@ -80,9 +80,9 @@
                 </td>
                 <td>
                     {% if i.report != None %}
-                    <a target="_blank" href="{% url 'showreport' i.report  %}">查看报告</a>
+                    <a target="_blank" href="{% url 'showreport' i.report  %}" style="color:green;">查看报告</a>
                     {% elif i.report == None %}
-                    <span>暂无报告</span>
+                    <span style="color:red">暂无报告</span>
                     {% endif %}
                 </td>
             </tr>
@@ -99,23 +99,58 @@
 {% block js %}
 <script type="text/javascript" src="http://cdn.static.runoob.com/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
-        var pro=["学生端","教师端","校长端","家长端"];
-        var city=[["全部","试卷","习题","个人中心","图书馆"],["全部","班级","题库","题框","个人中心"],["全部","数据报告","功能介绍","我的账号","我的学校","老师管理"],["全部","学习报告","购买","账号管理"]];
-        $(function(){
-            //初始化省份下拉列表
-            for(var i=0;i<pro.length;i++){
-                $("#pardent").append($("<option></option>").val(i+1).html(pro[i]));
+    var pro=["学生端","教师端","校长端","家长端"];
+    var city=[["全部","图书馆","每日一听","登录","试卷","个人中心","单词本","习题"],["全部","班级","登陆","游戏","题库","个人中心"],["全部","数据报告","功能介绍","我的账号","我的学校","老师管理"],["全部","学习报告","购买","账号管理"]];
+
+    function readyLoad() {
+        var list = document.getElementsByName('parent');
+        <!--console.log(list);-->
+        for(var i=0;i<list.length;i++){
+            for(var j=0;j<pro.length;j++){
+                $(list[i]).append($("<option></option>").val(j+1).html(pro[j]));
             }
-            //为省份下拉列表绑定change事件
-            $("#pardent").change(function(){
-                var index=$(this).val()-1;//获取当前省的下标
-                $("#child").prop("length",1);//清空原有的数据
-                for(var i=0;i<city[index].length;i++){//重新为市赋值
-                    $("#child").append($("<option>").val(i+1).html(city[index][i]));
-                }
-            });
-        });
-  <!--setTimeout("location.href='/devices'",10000)-->
+        }
+    }
+    readyLoad();
+
+    <!--window.onload=function(){-->
+    <!--    //定时发送请求-->
+    <!--    setInterval(function() {-->
+    <!--        $.ajax({-->
+                <!--type:'GET',-->
+    <!--            url:'/devices', //请求路径-->
+                <!--success: function(msg){-->
+                    <!--document.open();-->
+                    <!--document.write(msg);-->
+                    <!--document.close();-->
+                <!--},-->
+    <!--        });-->
+    <!--    }, 20000);-->
+    <!--};-->
+
+    function choose(e){
+        var index=$(e).val()-1;//获取当前省的下标
+        <!--console.log(index)-->
+        $(e.parentNode.parentNode.parentNode.childNodes[11].firstChild.nextSibling.firstChild.nextSibling).prop("length",1);//清空原有的数据
+        for(var i=0;i<city[index].length;i++){//重新为市赋值
+            $(e.parentNode.parentNode.parentNode.childNodes[11].firstChild.nextSibling.firstChild.nextSibling).append($("<option>").val(i+1).html(city[index][i]));
+        }
+    }
+
+
+    <!--function choose(e){-->
+        <!--//为省份下拉列表绑定change事件-->
+        <!--console.log(e)-->
+        <!--$(e).change(function(){-->
+            <!--var index=$(this).val()-1;//获取当前省的下标-->
+            <!--console.log(index)-->
+            <!--$(e.parentNode.parentNode.parentNode.childNodes[11].firstChild.nextSibling.firstChild.nextSibling).prop("length",1);//清空原有的数据-->
+            <!--for(var i=0;i<city[index].length;i++){//重新为市赋值-->
+                <!--$(e.parentNode.parentNode.parentNode.childNodes[11].firstChild.nextSibling.firstChild.nextSibling).append($("<option>").val(i+1).html(city[index][i]));-->
+            <!--}-->
+        <!--});-->
+    <!--}-->
+  setTimeout("location.href='/devices'",10000)
 
 </script>
 {% endblock %}

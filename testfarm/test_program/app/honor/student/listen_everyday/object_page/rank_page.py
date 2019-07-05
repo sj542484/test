@@ -12,7 +12,7 @@ from testfarm.test_program.app.honor.student.listen_everyday.object_page.listen_
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
 from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import UserCenterPage
-from testfarm.test_program.conf.basepage import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep
 
 

@@ -11,7 +11,7 @@ from testfarm.test_program.app.honor.student.homework.object_page.result_page im
 from testfarm.test_program.app.honor.student.homework.test_data.strength_sentence_data import strength_sentence_operate
 from testfarm.test_program.utils.click_bounds import ClickBounds
 from testfarm.test_program.utils.games_keyboard import Keyboard
-from testfarm.test_program.conf.basepage import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
 from testfarm.test_program.utils.get_attribute import GetAttribute
 

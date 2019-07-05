@@ -1,0 +1,1314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试用例执行报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+    body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #ebebeb;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #6c6; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+
+
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+
+    #div_base {
+                position:absolute;
+                top:0%;
+                left:5%;
+                right:5%;
+                width: auto;
+                height: auto;
+                margin: -15px 0 0 0;
+    }
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.common.min.js"></script>
+    <!-- <script type="text/javascript" src="js/echarts.common.min.js"></script> -->
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level < 1) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level > 1) {
+                    tr.className = '';
+                }
+                else {
+                    tr.className = 'hiddenRow';
+                }
+            }
+        }
+    }
+
+
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+
+
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState != 'block' ) {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+        else {
+            details_div.style.display = 'none'
+        }
+    }
+
+
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>测试用例执行报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2019-07-04 16:19:49</p>
+<p class='attribute'><strong>运行时长:</strong> 0:05:26.946762</p>
+<p class='attribute'><strong>状态:</strong> 通过 8 错误 16</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>用例执行情况统计：</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+        <button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+        <button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+    </div>
+    <p></p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row'>
+            <td>测试套件/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='passClass'>
+        <td>test_cases.test001_history_search_word.BankSearch: 题库 -搜索 -历史搜索词</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
+    </tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_history_search_word</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <pre>
+        pt1.1: 在主界面
+------------------------------------------
+历史搜索词： 
+ ['autotest_', '听音', '文章', '听力', '完型', '阅读', '闪卡', '强化炼句', '词汇', '单项', '选择', '选词', '词汇选择', '选词填空', '人教PEP三起点四']
+------------------------------------------
+搜索内容： 口语
+------------------------------------------
+历史搜索词： 
+ ['口语', 'autotest_', '听音', '文章', '听力', '完型', '阅读', '闪卡', '强化炼句', '词汇', '单项', '选择', '选词', '词汇选择', '选词填空']
+历史搜索最多15条,目前15条
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='passClass'>
+        <td>test_cases.test002_search_resource.BankSearch: 题库 -- 搜索 -资源</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c2',1)">详情</a></td>
+    </tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search_resource</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        通过</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <pre>
+        pt2.1: 在主界面
+搜索内容： 听音
+  可以用的听音选图@LK
+  语音—元音组合1
+  语音—辅音组合
+  3-短元音i与音标练习
+--------------------------------------
+搜索内容： 听音
+  可以用的听音选图@LK
+  语音—元音组合1
+  语音—辅音组合
+  3-短元音i与音标练习
+--------------------------------------
+--------------------- 
+ 点击历史搜索词: 听音
+  可以用的听音选图@LK
+  语音—元音组合1
+  语音—辅音组合
+  3-短元音i与音标练习
+--------------------------------------
+--------------------验证结果------------------
+两次的搜索条件一致
+三次搜索到的内容一致
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='passClass'>
+        <td>test_cases.test003_search_uploader.BankSearch: 题库 -- 搜索 - 上传者</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c3',1)">详情</a></td>
+    </tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search_uploader</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        通过</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <pre>
+        pt3.1: 在主界面
+搜索内容： 小玉
+  阿达
+  我的题单
+  题单1
+  题单 1
+--------------------------------------
+--------------------- 
+ 点击历史搜索词: 小玉
+  阿达
+  我的题单
+  题单1
+  题单 1
+--------------------------------------
+--------------------验证结果------------------
+两次的搜索条件一致
+两次搜索到的内容一致
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>test_cases.test004_question_basket_add.QuestionBasket: 题库 -- 加题进题筐</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c4',1)">详情</a></td>
+    </tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_question_basket_add</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        错误</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <pre>
+        ft4.1: 在主界面
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test004_question_basket_add.py", line 59, in test_question_basket_add
+    Toast().find_toast('布置作业一次不能超过10道题')  # 获取toast
+AttributeError: 'Toast' object has no attribute 'find_toast'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: 'Toast' object has no attribute 'find_toast'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>test_cases.test005_question_basket_max_count.QuestionBasket: 题库 -- 题筺 最多50题</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c5',1)">详情</a></td>
+    </tr>
+
+<tr id='ft5.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_question_max_num</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        错误</a>
+
+    <div id='div_ft5.1' class="popup_window">
+        <pre>
+        ft5.1: 在其他页面,重启app
+在主界面
+题筺还差22题
+该题单已加入题筐     ['题单', '精', '共23题', 'Jmeter测试1533', '老师账号']
+-------------------------
+题筺还差22题
+该套题有2道小题     Jmeter测试770
+-------------------------
+题筺还差20题
+该套题有3道小题     Jmeter测试8375
+-------------------------
+题筺还差17题
+该套题有1道小题     Jmeter测试5075
+-------------------------
+题筺还差16题
+该套题有2道小题     我自己的题单
+-------------------------
+题筺还差14题
+该套题有8道小题     各个地方的 lesson121 22
+-------------------------
+题筺还差6题
+该套题有8道小题     各个地方的 lesson121 22
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test005_question_basket_max_count.py", line 64, in test_question_max_num
+    Toast().find_toast('题筐最多还能加入%s题' % result)
+AttributeError: 'Toast' object has no attribute 'find_toast'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: 'Toast' object has no attribute 'find_toast'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>test_cases.test006_question_basket_remove.QuestionBasket: 题库 -- 移出题筐</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c6',1)">详情</a></td>
+    </tr>
+
+<tr id='ft6.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_question_basket_remove</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
+        错误</a>
+
+    <div id='div_ft6.1' class="popup_window">
+        <pre>
+        ft6.1: 在其他页面,重启app
+在主界面
+-----------------题筐-------------------
+不选择任何题目，直接点击 &lt;移出题筐&gt; 按钮
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 35, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test006_question_basket_remove.py", line 93, in basket_operation
+    if Toast().find_toast('请选择要移除的题目'):
+AttributeError: 'Toast' object has no attribute 'find_toast'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test006_question_basket_remove.py", line 48, in test_question_basket_remove
+    self.basket_operation()  # 题筐具体操作
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 42, in wrapper
+    raise Exception(e)
+Exception: 'Toast' object has no attribute 'find_toast'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: 'Toast' object has no attribute 'find_toast'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>test_cases.test007_question_detail_add_button.QuestionBasket: 题库 -- 题单详情页 加题进题筐按钮</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c7',1)">详情</a></td>
+    </tr>
+
+<tr id='ft7.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_question_add_button</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
+        错误</a>
+
+    <div id='div_ft7.1' class="popup_window">
+        <pre>
+        ft7.1: 在其他页面,重启app
+在主界面
+Jmeter测试8375
+-----------------题单详情页-------------------
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test007_question_detail_add_button.py", line 54, in test_question_add_button
+    if Toast().find_toast('添加题筐成功'):
+AttributeError: 'Toast' object has no attribute 'find_toast'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: 'Toast' object has no attribute 'find_toast'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>unittest.loader._FailedTest</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c8',1)">详情</a></td>
+    </tr>
+
+<tr id='ft8.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test008_question_detail</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.1')" >
+        错误</a>
+
+    <div id='div_ft8.1' class="popup_window">
+        <pre>
+        ft8.1: ImportError: Failed to import test module: test_cases.test008_question_detail
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test008_question_detail.py", line 17, in &lt;module&gt;
+    from testfarm.test_program.utils.swipe_find_element import SwipeFindElement
+ModuleNotFoundError: No module named 'testfarm.test_program.utils.swipe_find_element'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>test_cases.test009_question_detail_click_again.QuestionDetail: 题单详情 - 再次点击推荐和收藏按钮</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c9',1)">详情</a></td>
+    </tr>
+
+<tr id='ft9.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_question_detail_again</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
+        错误</a>
+
+    <div id='div_ft9.1' class="popup_window">
+        <pre>
+        ft9.1: 在其他页面,重启app
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 20, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/login/object_page/login_page.py", line 204, in close_app
+    self.driver.close_app()
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/extensions/applications.py", line 102, in close_app
+    self.execute(Command.CLOSE_APP)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s d5ebcf5 shell am force-stop com.vanthink.vanthinkteacher.debug' exited with code 1'; Stderr: 'error: device 'd5ebcf5' not found'; Code: '1'
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 35, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/login/object_page/login_page.py", line 96, in app_status
+    self.close_app()  # 关闭APP
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 23, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s d5ebcf5 shell am force-stop com.vanthink.vanthinkteacher.debug' exited with code 1'; Stderr: 'error: device 'd5ebcf5' not found'; Code: '1'
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test009_question_detail_click_again.py", line 42, in test_question_detail_again
+    self.login.app_status()  # 判断APP当前状态
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 38, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s d5ebcf5 shell am force-stop com.vanthink.vanthinkteacher.debug' exited with code 1'; Stderr: 'error: device 'd5ebcf5' not found'; Code: '1'
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 53, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s d5ebcf5 shell am force-stop com.vanthink.vanthinkteacher.debug' exited with code 1'; Stderr: 'error: device 'd5ebcf5' not found'; Code: '1'
+
+
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>test_cases.test010_games_detail.GameDetail: 游戏详情</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c10',1)">详情</a></td>
+    </tr>
+
+<tr id='ft10.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_game_detail</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft10.1')" >
+        错误</a>
+
+    <div id='div_ft10.1' class="popup_window">
+        <pre>
+        ft10.1: 在其他页面,重启app
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test010_games_detail.py", line 66, in test_game_detail
+    Toast().get_toast()  # 获取toast
+AttributeError: 'Toast' object has no attribute 'get_toast'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: 'Toast' object has no attribute 'get_toast'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>test_cases.test011_test_paper_detail_assign.AssignPaper: 布置试卷</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c11',1)">详情</a></td>
+    </tr>
+
+<tr id='ft11.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_assign_paper</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft11.1')" >
+        错误</a>
+
+    <div id='div_ft11.1' class="popup_window">
+        <pre>
+        ft11.1: 在其他页面,重启app
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test011_test_paper_detail_assign.py", line 102, in test_assign_paper
+    Toast().get_toast()  # 获取toast
+AttributeError: 'Toast' object has no attribute 'get_toast'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: 'Toast' object has no attribute 'get_toast'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>test_cases.test012_test_paper_share_school_photo.PaperShare: 试卷分享 -拍照上传</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c12',1)">详情</a></td>
+    </tr>
+
+<tr id='ft12.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_paper_share_school_photo</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft12.1')" >
+        错误</a>
+
+    <div id='div_ft12.1' class="popup_window">
+        <pre>
+        ft12.1: Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test012_test_paper_share_school_photo.py", line 32, in setUp
+    cls.screen_shot = ScreenShot()
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/utils/screen_shot.py", line 23, in __init__
+    self.screen_path = gv.SCREENSHOT_ROOT
+AttributeError: type object 'GetVariable' has no attribute 'SCREENSHOT_ROOT'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: type object 'GetVariable' has no attribute 'SCREENSHOT_ROOT'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>test_cases.test013_test_paper_share_school_photo_cancel_retake.PaperShare: 试卷分享 -拍照上传</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td><a href="javascript:showClassDetail('c13',2)">详情</a></td>
+    </tr>
+
+<tr id='ft13.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_001_paper_share_school_photo_cancel</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft13.1')" >
+        错误</a>
+
+    <div id='div_ft13.1' class="popup_window">
+        <pre>
+        ft13.1: Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test013_test_paper_share_school_photo_cancel_retake.py", line 33, in setUp
+    cls.screen_shot = ScreenShot()
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/utils/screen_shot.py", line 23, in __init__
+    self.screen_path = gv.SCREENSHOT_ROOT
+AttributeError: type object 'GetVariable' has no attribute 'SCREENSHOT_ROOT'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: type object 'GetVariable' has no attribute 'SCREENSHOT_ROOT'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='ft13.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_002_paper_share_school_photo_retake</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft13.2')" >
+        错误</a>
+
+    <div id='div_ft13.2' class="popup_window">
+        <pre>
+        ft13.2: Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test013_test_paper_share_school_photo_cancel_retake.py", line 33, in setUp
+    cls.screen_shot = ScreenShot()
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/utils/screen_shot.py", line 23, in __init__
+    self.screen_path = gv.SCREENSHOT_ROOT
+AttributeError: type object 'GetVariable' has no attribute 'SCREENSHOT_ROOT'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: type object 'GetVariable' has no attribute 'SCREENSHOT_ROOT'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='passClass'>
+        <td>test_cases.test014_test_paper_share_school_album.PaperShare: 试卷分享- 相册上传</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c14',2)">详情</a></td>
+    </tr>
+
+<tr id='pt14.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_001_paper_share_school_album</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt14.1')" >
+        通过</a>
+
+    <div id='div_pt14.1' class="popup_window">
+        <pre>
+        pt14.1: 在其他页面,重启app
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='pt14.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_002_paper_share_school_album_cancel</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt14.2')" >
+        通过</a>
+
+    <div id='div_pt14.2' class="popup_window">
+        <pre>
+        pt14.2: 在其他页面,重启app
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>test_cases.test016_test_paper_share_qr_photo.PaperShare: 试卷分享 -拍照上传</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c15',1)">详情</a></td>
+    </tr>
+
+<tr id='ft15.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_paper_share_school_photo</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft15.1')" >
+        错误</a>
+
+    <div id='div_ft15.1' class="popup_window">
+        <pre>
+        ft15.1: Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test016_test_paper_share_qr_photo.py", line 33, in setUp
+    cls.screen_shot = ScreenShot()
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/utils/screen_shot.py", line 23, in __init__
+    self.screen_path = gv.SCREENSHOT_ROOT
+AttributeError: type object 'GetVariable' has no attribute 'SCREENSHOT_ROOT'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: type object 'GetVariable' has no attribute 'SCREENSHOT_ROOT'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>test_cases.test017_test_paper_share_qr_photo_cancel_retake.PaperShare: 试卷分享 -拍照上传</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td><a href="javascript:showClassDetail('c16',2)">详情</a></td>
+    </tr>
+
+<tr id='ft16.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_001_paper_share_school_photo_cancel</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.1')" >
+        错误</a>
+
+    <div id='div_ft16.1' class="popup_window">
+        <pre>
+        ft16.1: Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test017_test_paper_share_qr_photo_cancel_retake.py", line 33, in setUp
+    cls.screen_shot = ScreenShot()
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/utils/screen_shot.py", line 23, in __init__
+    self.screen_path = gv.SCREENSHOT_ROOT
+AttributeError: type object 'GetVariable' has no attribute 'SCREENSHOT_ROOT'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: type object 'GetVariable' has no attribute 'SCREENSHOT_ROOT'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='ft16.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_002_paper_share_school_photo_retake</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.2')" >
+        错误</a>
+
+    <div id='div_ft16.2' class="popup_window">
+        <pre>
+        ft16.2: Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test017_test_paper_share_qr_photo_cancel_retake.py", line 33, in setUp
+    cls.screen_shot = ScreenShot()
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/utils/screen_shot.py", line 23, in __init__
+    self.screen_path = gv.SCREENSHOT_ROOT
+AttributeError: type object 'GetVariable' has no attribute 'SCREENSHOT_ROOT'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: type object 'GetVariable' has no attribute 'SCREENSHOT_ROOT'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='passClass'>
+        <td>test_cases.test018_test_paper_share_qr_album.PaperShare: 试卷分享- 相册上传</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c17',2)">详情</a></td>
+    </tr>
+
+<tr id='pt17.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_001_paper_share_qr_album</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt17.1')" >
+        通过</a>
+
+    <div id='div_pt17.1' class="popup_window">
+        <pre>
+        pt17.1: 在其他页面,重启app
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='pt17.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_002_paper_share_qr_album_cancel</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt17.2')" >
+        通过</a>
+
+    <div id='div_pt17.2' class="popup_window">
+        <pre>
+        pt17.2: 在其他页面,重启app
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='passClass'>
+        <td>test_cases.test021_test_paper_share_edittext.PaperShare: 试卷分享 -修改</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c18',1)">详情</a></td>
+    </tr>
+
+<tr id='pt18.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_paper_share_edittext</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt18.1')" >
+        通过</a>
+
+    <div id='div_pt18.1' class="popup_window">
+        <pre>
+        pt18.1: 在其他页面,重启app
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>test_cases.test022_filter.QuestionFilter: 筛选 -- 题单/试卷</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c19',1)">详情</a></td>
+    </tr>
+
+<tr id='ft19.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_filter</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft19.1')" >
+        错误</a>
+
+    <div id='div_ft19.1' class="popup_window">
+        <pre>
+        ft19.1: 在其他页面,重启app
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test022_filter.py", line 46, in test_filter
+    Toast().get_toast()  # 获取toast
+AttributeError: 'Toast' object has no attribute 'get_toast'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: 'Toast' object has no attribute 'get_toast'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+    <tr class='errorClass'>
+        <td>test_cases.test023_filter_choose.QuestionFilter: 筛选 -- 大题</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c20',1)">详情</a></td>
+    </tr>
+
+<tr id='ft20.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_filter_choose</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft20.1')" >
+        错误</a>
+
+    <div id='div_ft20.1' class="popup_window">
+        <pre>
+        ft20.1: 在其他页面,重启app
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 50, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test023_filter_choose.py", line 78, in test_filter_choose
+    Toast().get_toast()  # 获取toast
+AttributeError: 'Toast' object has no attribute 'get_toast'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 57, in wrapper
+    raise Exception(e)
+Exception: 'Toast' object has no attribute 'get_toast'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+        <tr id='total_row'>
+            <td>总计</td>
+            <td>24</td>
+            <td>8</td>
+            <td>0</td>
+            <td>16</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            color: ['#95b75d', 'grey', '#b64645'],
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:8, name:'通过'},
+                        {value:0, name:'失败'},
+                        {value:16, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>

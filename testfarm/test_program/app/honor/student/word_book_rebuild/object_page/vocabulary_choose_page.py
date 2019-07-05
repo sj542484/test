@@ -4,12 +4,12 @@ import time
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from app.student.homework.object_page.homework_page import Homework
-from app.student.word_book_rebuild.object_page.data_action import DataActionPage
-from app.student.word_book.object_page.sql_data.mysql_data import MysqlData
-from conf.base_page import BasePage
-from conf.decorator import teststeps, teststep
-from utils.get_attribute import GetAttribute
+from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_action import DataActionPage
+from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.mysql_data import MysqlData
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststeps, teststep
+from testfarm.test_program.utils.get_attribute import GetAttribute
 
 PATH = os.path.dirname(os.path.dirname(__file__))
 
@@ -244,7 +244,7 @@ class VocabularyChoose(BasePage):
                     print('选择选项：', x.text)
                     x.click()
                     break
-            vocab_app.clear()
+            vocab_testfarm.test_program.app.honor.clear()
         else:
             options = self.option_button()  # 四个选项
             random_index = random.randint(0, len(options) - 1)
@@ -257,7 +257,7 @@ class VocabularyChoose(BasePage):
                 print('选择正确')
             else:
                 print('选择错误, 正确答案为', right_answer)
-                vocab_app.append(right_answer[0])
+                vocab_testfarm.test_program.app.honor.append(right_answer[0])
 
         # self.click_voice()
         self.homework.next_button_operate('true')
