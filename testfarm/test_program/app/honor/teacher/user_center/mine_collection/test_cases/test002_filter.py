@@ -2,14 +2,15 @@
 # encoding:UTF-8
 import unittest
 
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.test_bank.object_page.filter_page import FilterPage
-from testfarm.test_program.app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from testfarm.test_program.app.honor.teacher.user_center.mine_collection.object_page.mine_collect_page import CollectionPage
-from testfarm.test_program.app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
-from testfarm.test_program.conf.decorator import setup, teardown, testcase
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
+from app.honor.teacher.user_center import CollectionPage
+from app.honor.teacher.user_center import TuserCenterPage
+from conf.decorator import setup, teardown, testcase
+from utils.get_attribute import GetAttribute
+from utils.toast_find import Toast
 
 
 class Collection(unittest.TestCase):
@@ -41,12 +42,12 @@ class Collection(unittest.TestCase):
             if self.user.wait_check_page():  # 页面检查点
                 self.user.click_mine_collection()  # 点击 我的收藏
                 if self.collect.wait_check_page():  # 页面检查点
-                    self.collect.filter_button()  # 筛选按钮
+                    self.user.filter_button()  # 筛选按钮
 
                     if self.filter.wait_check_page():
-                        self.collect.source_type_selected()  # 具体操作
+                        self.user.source_type_selected()  # 具体操作
 
-                        name = self.collect.label_name()  # 所有标签
+                        name = self.user.label_title()  # 所有标签
                         label = name[6].text  # 标签名
                         name[6].click()  # 选择一个标签
                         self.filter.commit_button()  # 确定按钮
@@ -57,7 +58,10 @@ class Collection(unittest.TestCase):
 
                             if self.filter.wait_check_page():  # 页面检查点
                                 self.filter.reset_button()  # 重置按钮
-                                print('点击重置按钮')
+                                if GetAttribute().selected(self.user.question_menu()) == 'false':  # 题单
+                                    print('★★★ Error-点击重置按钮 重置失败')
+                                    self.filter.reset_button()  # 重置按钮
+
                                 self.filter.commit_button()  # 确定按钮
 
                                 if self.collect.wait_check_page():

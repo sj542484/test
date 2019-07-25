@@ -1,16 +1,16 @@
 # coding=utf-8
 import unittest
 
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import  ThomePage
-from testfarm.test_program.app.honor.teacher.play_games.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.teacher.play_games.object_page.flash_card_page import FlashCard
-from testfarm.test_program.app.honor.teacher.play_games.test_data.homework_title_type import GetVariable as gv
-from testfarm.test_program.app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
-from testfarm.test_program.app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from testfarm.test_program.app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.home.object_page.home_page import  ThomePage
+from app.honor.teacher.play_games.object_page import Homework
+from app.honor.teacher.play_games.object_page import FlashCard
+from app.honor.teacher.play_games import GetVariable as gv
+from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
+from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
+from app.honor.teacher.test_bank.object_page import QuestionDetailPage
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.toast_find import Toast
 
 
 class Games(unittest.TestCase):
@@ -39,7 +39,7 @@ class Games(unittest.TestCase):
         self.login.app_status()  # 判断APP当前状态
 
         if self.home.wait_check_page():  # 页面检查点
-            self.question.search_operation()  # 进入首页后 进入题库tab，并搜索题单
+            self.question.search_operation(gv.FLA_CARD)  # 进入首页后 进入题库tab，并搜索题单
 
             if self.question.wait_check_page('题单'):  # 页面检查点
                 name = self.question.question_name()

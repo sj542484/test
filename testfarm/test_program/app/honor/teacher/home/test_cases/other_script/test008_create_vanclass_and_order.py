@@ -4,15 +4,15 @@ import re
 import time
 import unittest
 
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.home.object_page.adjust_vanclass_page import AdjustVanOrderPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_page import VanclassPage
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.home.test_data.create_vanclass_data import class_data
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.object_page.adjust_vanclass_page import AdjustVanOrderPage
+from app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
+from app.honor.teacher.home.object_page import VanclassPage
+from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.home.test_data import class_data
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.get_attribute import GetAttribute
+from utils.toast_find import Toast
 
 
 class CreateVanclass(unittest.TestCase):
@@ -45,12 +45,6 @@ class CreateVanclass(unittest.TestCase):
                     if self.home.wait_check_van_page():
                         self.home.add_class_button()  # 创建班级 按钮
                         self.create_vanclass_operation(i)  # 创建班级 具体操作
-
-                if self.home.wait_check_page():  # 页面检查点
-                    self.home.class_sort_button()  # 班级排序 按钮
-                    self.adjust.adjust_vanclass_order()  # 调整班级顺序 具体操作
-
-                    self.home.back_up_button()  # 返回主界面
             else:
                 print('页面未加载完成')
         else:

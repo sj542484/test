@@ -5,15 +5,15 @@ import time
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.utils.get_element_bounds import Element
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.toast_find import Toast
-from testfarm.test_program.utils.wait_element import WaitElement
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from utils.get_attribute import GetAttribute
+from conf.base_config import GetVariable as gv
+from utils.get_element_bounds import Element
+from utils.swipe_screen import SwipeFun
+from utils.toast_find import Toast
+from utils.wait_element import WaitElement
 
 
 class ReleasePage(BasePage):
@@ -203,8 +203,8 @@ class ReleasePage(BasePage):
             .find_element_by_id(gv.PACKAGE_ID + "action_first") \
             .click()
 
-    def swipe_operation(self, content):
-        """获取整个班级列表"""
+    # def swipe_operation(self, content):
+    #     """获取整个班级列表"""
 
     # 班级页面 学生list
     @teststeps
@@ -318,7 +318,7 @@ class ReleasePage(BasePage):
         self.publish_hw()  # 打印元素 发布作业到
 
         button = self.choose_button()  # 班级单选框
-        loc = Element().get_element_location(button[-1])  # 获取当前页面中最后一个单选框坐标
+        loc = Element().get_element_location( button[-1])  # 获取当前页面中最后一个单选框坐标
         self.driver.swipe(loc[0], loc[1], loc[0], 100, 1000)
 
         van = self.van_name()  # 班级 元素
@@ -354,6 +354,7 @@ class ReleasePage(BasePage):
                     count = i
                     print('取消选择班级:', cancel)
                     button[i].click()  # 取消选择 一个班
+                    print('-----------')
                     break
 
             choose = 0

@@ -93,7 +93,17 @@ class MeizuPage(BasePage):
         """最新tab 的单个内容 的resource-id为依据"""
         locator = (By.ID, "com.meizu.media.gallery:id/thumbnail")
         try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_elements(*locator))
+            return True
+        except:
+            return False
+
+    @teststeps
+    def wait_check_album_list_page(self):
+        """相册列表页面检查点"""
+        locator = (By.ID, "com.meizu.media.gallery:id/album_cover")
+        try:
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_elements(*locator))
             return True
         except:
             return False
@@ -130,13 +140,13 @@ class MeizuPage(BasePage):
     def choose_image(self):
         """选择相册图片"""
         print('选择照片')
-        ClickBounds().click_bounds(float(VALID_IMAGE.location_x()), float(VALID_IMAGE.location_y()))
+        self.driver.find_elements_by_id('com.meizu.media.gallery:id/thumbnail')[0].click()
 
     # 第三页面
     @teststep
     def wait_check_photo_page(self):
         """ 确定 按钮 的resource-id为依据"""
-        locator = (By.ID, "com.meizu.media.gallery:id/action_get_multi_confirm")
+        locator = (By.ID, "com.meizu.media.gallery:id/fragment_container")
         try:
             WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
             return True
@@ -405,15 +415,16 @@ class ChangeImage(BasePage):
                 if self.meizu.wait_check_save_page():
                     self.meizu.click_save_button()  # 完成按钮
         elif self.meizu.wait_check_album_page():  # 真机 魅族5.1
-                self.meizu.click_album()  # 进入相册列表页
-                if self.meizu.wait_check_all_picture_page():
-                    self.meizu.open_album()  # 选择某相册
-                    if self.meizu.wait_check_album_page():
-                        self.meizu.choose_image()  # 选择照片
-                        if self.meizu.wait_check_photo_page():
-                            self.meizu.commit_button()  # 确定按钮
-                            if self.meizu.wait_check_save_page():
-                                self.meizu.click_save_button()  # 完成按钮
+            self.meizu.click_album()  # 进入相册列表页
+            if self.meizu.wait_check_album_list_page():
+                self.meizu.open_album()  # 选择某相册
+                if self.meizu.wait_check_album_page():
+                    self.meizu.choose_image()  # 选择照片
+                    if self.meizu.wait_check_photo_page():
+                        self.meizu.commit_button()  # 确定按钮
+                        if self.meizu.wait_check_save_page():
+                            self.meizu.click_save_button()  # 完成按钮
+
         elif self.pixel.wait_check_album_page():  # 真机 Pixel
             self.pixel.open_album()  # 进入某相册
             if self.pixel.wait_check_picture_page():
@@ -438,15 +449,15 @@ class ChangeImage(BasePage):
                 if self.meizu.wait_check_save_page():
                     self.meizu.click_cancel_button()  # 取消按钮
         elif self.meizu.wait_check_album_page():  # 真机 魅族5.1
-                self.meizu.click_album()   # 进入相册列表页
-                if self.meizu.wait_check_all_picture_page():
-                    self.meizu.open_album()  # 选择某相册
-                    if self.meizu.wait_check_album_page():
-                        self.meizu.choose_image()  # 选择照片
-                        if self.meizu.wait_check_photo_page():
-                            self.meizu.commit_button()  # 确定按钮
-                            if self.meizu.wait_check_save_page():
-                                self.meizu.click_cancel_button()  # 取消按钮
+            self.meizu.click_album()   # 进入相册列表页
+            if self.meizu.wait_check_album_list_page():
+                self.meizu.open_album()  # 选择某相册
+                if self.meizu.wait_check_album_page():
+                    self.meizu.choose_image()  # 选择照片
+                    if self.meizu.wait_check_photo_page():
+                        self.meizu.commit_button()  # 确定按钮
+                        if self.meizu.wait_check_save_page():
+                            self.meizu.click_cancel_button()  # 取消按钮
         elif self.pixel.wait_check_album_page():  # 真机 Pixel
             self.pixel.open_album()  # 进入某相册
             if self.pixel.wait_check_picture_page():

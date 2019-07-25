@@ -6,12 +6,12 @@ from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.utils.click_bounds import ClickBounds
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.wait_element import WaitElement
+from conf.decorator import teststep, teststeps
+from conf.base_config import GetVariable as gv
+from conf.base_page import BasePage
+from utils.click_bounds import ClickBounds
+from utils.swipe_screen import SwipeFun
+from utils.wait_element import WaitElement
 
 
 class ThomePage(BasePage):
@@ -318,9 +318,9 @@ class ThomePage(BasePage):
             .click()
 
     @teststeps
-    def tips_content_commit(self):
+    def tips_content_commit(self, var=10):
         """温馨提示 页面信息  -- 确定"""
-        if self.wait_check_tips_page():  # 温馨提示 页面
+        if self.wait_check_tips_page(var):  # 温馨提示 页面
             print('--------------------------')
             self.tips_title()
             self.tips_content()

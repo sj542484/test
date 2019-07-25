@@ -56,7 +56,7 @@ class ListenSpell(BasePage):
         return ele.text
 
     @teststeps
-    def listen_spell_operate(self, fq, sec_answer, half_exit):
+    def listen_spell_operate(self, fq, sec_answer):
         """单词听写具体操作"""
         timer = []
         mine_answer = {}
@@ -91,10 +91,6 @@ class ListenSpell(BasePage):
                 timer.append(self.common.bank_time())
                 print('-'*20, '\n')
 
-                if i == 2:
-                    if half_exit:
-                        self.click_back_up_button()
-                        break
                 self.common.next_btn().click()
         self.common.judge_timer(timer)
         bank_answer = mine_answer if fq == 1 else sec_answer

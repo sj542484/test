@@ -177,11 +177,10 @@ class ListenSelect(BasePage):
                         self.print_options(options)
                         self.check_answer(options, mine_answer)
                     else:
-                        self.home.screen_swipe_up(0.5, 0.8, 0.6, 1000)
+                        self.home.screen_swipe_up(0.5, 0.8, 0.42, 1000)
                         options = self.option_button(ques)
                         self.print_options(options)
                         self.check_answer(options, mine_answer)
-                        self.home.screen_swipe_down(0.5, 0.6, 0.75, 1000)
             if len(tips) < len(bank_info):
                 if quote_type == 1:
                     self.screen_swipe_up(0.5, 0.8, 0.25, 1500)

@@ -61,6 +61,7 @@ class BankCloze(BasePage):
         ele = self.driver.find_element_by_id('{}prompt'.format(self.id_type()))
         return ele
 
+
     @teststeps
     def play_bank_cloze_game(self, num, exam_json):
         """选词填空 答卷过程 """
@@ -79,7 +80,9 @@ class BankCloze(BasePage):
         position_info = re.findall(r'\[(.*?)\]', desc)  # 从属性中获取每个填空的位置
         x_position = position_info[1].split(',')
         y_position = position_info[2].split(',')
-        ClickBounds().click_bounds(float(x_position[0])+30.0, float(y_position[0])+196.0)  # 点击第一个填空
+        container_position = article.location
+        ClickBounds().click_bounds(int(float(x_position[0])) + container_position['x'] + 55,
+                                   int(float(y_position[0])) + container_position['y'])  # 点击第一个填空
         answers = []
         for i in range(num):   # 其他点击回车键顺序填空，填空的文本为26个字母随机填写3-6个
             alphas = random.sample(string.ascii_letters, 52)

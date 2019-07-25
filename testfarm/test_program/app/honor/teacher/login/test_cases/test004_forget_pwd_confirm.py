@@ -1,13 +1,13 @@
 # coding=utf-8
 import unittest
 
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.login.test_data.forget_pwd_data import phone_data, pwd_data
-from testfarm.test_program.app.honor.teacher.user_center.setting_center.object_page.setting_page import SettingPage
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.reset_phone_toast import get_verify
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.login.test_data.forget_pwd_data import phone_data, pwd_data
+from app.honor.teacher.user_center.setting_center.object_page.setting_page import SettingPage
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.reset_phone_toast import get_verify
+from utils.toast_find import Toast
 
 
 class Login(unittest.TestCase):

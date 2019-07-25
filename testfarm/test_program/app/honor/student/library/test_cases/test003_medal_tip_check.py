@@ -4,7 +4,7 @@
 # -----------------------------------------
 import unittest
 
-from testfarm.test_program.app.honor.student.library.object_pages.game_page import GamePage
+from testfarm.test_program.app.honor.student.library.object_pages.game_page import LibraryGamePage
 from testfarm.test_program.app.honor.student.library.object_pages.library_page import LibraryPage
 from testfarm.test_program.app.honor.student.library.object_pages.medal_page import MedalPage
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
@@ -40,25 +40,26 @@ class Medal(unittest.TestCase):
                 if self.medal.wait_check_medal_page():
                     medals = self.medal.medals()
                     for x in medals:
-                        if GetAttribute().selected(x) == 'false':
-                            x.click()
-                            if not self.medal.wait_check_medal_img_page():
-                                print('★★★ 点击置灰勋章未发现弹框')
+                        if self.medal.wait_check_medal_page():
+                            if GetAttribute().selected(x) == 'false':
+                                x.click()
+                                if not self.medal.wait_check_medal_img_page():
+                                    print('★★★ 点击置灰勋章未发现弹框')
+                                else:
+                                    print(self.medal.medal_content(), '\n')
+                                    self.home.click_blank()
                             else:
-                                print(self.medal.medal_content(), '\n')
-                                self.home.click_blank()
-                        else:
-                            x.click()
-                            if not GamePage().wait_check_punch_share_page():
-                                print('★★★ 点亮勋章点击后未进入分享页面')
-                            else:
-                                GamePage().share_page_operate()
-                                if self.medal.wait_check_medal_page():
-                                    self.medal.click_back_up_button()
-                                if LibraryPage().wait_check_mine_reading_page():
-                                    self.medal.click_back_up_button()
-                                if self.home.wait_check_home_page():
-                                    print('返回主页面')
+                                x.click()
+                                if not LibraryGamePage().wait_check_punch_share_page():
+                                    print('★★★ 点亮勋章点击后未进入分享页面')
+                                else:
+                                    LibraryGamePage().share_page_operate()
+                    if self.medal.wait_check_medal_page():
+                        self.medal.click_back_up_button()
+                    if LibraryPage().wait_check_mine_reading_page():
+                        self.medal.click_back_up_button()
+                    if self.home.wait_check_home_page():
+                        print('返回主页面')
 
 
 

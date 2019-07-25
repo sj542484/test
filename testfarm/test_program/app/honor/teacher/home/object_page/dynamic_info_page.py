@@ -1,18 +1,17 @@
 #!/usr/bin/env python
 # encoding:UTF-8  
 # @Author  : SUN FEIFEI
-import re
-
+import random
 from selenium.webdriver.common.by import By
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.home.object_page.homework_detail_page import HwDetailPage
 
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.wait_element import WaitElement
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.object_page.vanclass_hw_detail_page import HwDetailPage
+from conf.decorator import teststep, teststeps
+from conf.base_config import GetVariable as gv
+from conf.base_page import BasePage
+from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
+from utils.wait_element import WaitElement
 
 
 class DynamicPage(BasePage):
@@ -99,7 +98,6 @@ class DynamicPage(BasePage):
                 content.append(item)
                 element.append(var)
 
-        print(content)
         return element, content, remind
 
     @teststep
@@ -145,51 +143,43 @@ class DynamicPage(BasePage):
         ThomePage().tips_content_commit()
 
     @teststeps
-    def into_hw(self, title, finish=0):
-        """进入作业/卷子/口语列表中的该作业/卷子/口语"""
+    def into_hw(self, title):
+        """进入作业/卷子/口语列表中的该作业/卷子/口语
+        :param title:  近期卷子/口语/习题作业
+        """
         if self.wait_check_page(title):
             item = self.hw_item()  # 作业条目
-            length = len(item[0])
-            if len(item[0]) > 7:
-                length = len(item[0]) - 1
 
-            count = 0
-            if finish != 0:
-                for i in range(length):
-                    var = re.findall(r'\d+(?#\D)', item[1][i][3])[0]
-                    if var != 0:
-                        count += i
-                        break
-            else:
-                for i in range(length):
-                    var = re.findall(r'\d+(?#\D)', item[1][i][3])[0]
-                    if var == 0:
-                        count += i
-                        break
+            length = len(item[1])  # 循环max
+            if len(item[1]) > 7:
+                length = len(item[1]) - 1
 
-            if count != 0:
-                item[0][count][0].click()  # 进入作业
-                print(title, item[1][count][0])
-                return item[1][count][0]
-            else:
-                if self.wait_check_page(title):
-                    SwipeFun().swipe_vertical(0.5, 0.75, 0.25)
-                    self.into_hw(title, finish)  # 进入
+            # count = 0
+            # for i in range(length):
+            #     var = re.sub("\D", "",  item[1][i][2])[0]  # 已完成x/x
+            #     if int(var) == 0:  # 有学生未完成的作业包
+            #         count += i
+            #         break
+            count = random.randint(0, length)-1
+            item[0][count][0].click()  # 进入作业
+            print(item[1][count][0])
+            return item[1][count][0]
 
     @teststeps
     def hw_list_operation(self, index=0):
-        """获取作业/试卷/口语列表 及 页面内最后一个name"""
+        """获取作业/试卷/口语列表 及 页面内最后一个name
+        :return 最后一个作业
+        """
         item = self.hw_item()  # 作业条目
         for i in range(index, len(item[1])):
             print(item[1][i][0], '\n',
                   item[1][i][1], '  ', item[1][i][2], '  ', item[1][i][3])
             print('----------------------')
-        last = item[1][-1]  # 最后一个作业
 
-        return last
+        return item[1][-1]  # 最后一个作业
 
     @teststeps
-    def swipe_operation(self, k):
+    def swipe_operation(self, k=0):
         """滑屏 操作"""
         print('----------------------近期作业列表----------------------')
         var = self.hw_list_operation(k)  # 获取列表信息

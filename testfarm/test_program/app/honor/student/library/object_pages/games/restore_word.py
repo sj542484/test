@@ -75,7 +75,7 @@ class RestoreWord(BasePage):
         time.sleep(1)
 
     @teststep
-    def restore_word_operate(self, fq, sec_answer, half_exit):
+    def restore_word_operate(self, fq, sec_answer):
         """还原单词错误操作"""
         timer = []
         mine_answer = {}
@@ -108,11 +108,6 @@ class RestoreWord(BasePage):
 
                 if i != total_num - 1:
                     timer.append(self.common.bank_time())
-
-                if i == 2:
-                    if half_exit:
-                        self.click_back_up_button()
-                        break
                 time.sleep(2)
                 print('-' * 20, '\n')
         self.common.judge_timer(timer)

@@ -4,19 +4,19 @@ import unittest
 import time
 import re
 
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.home.object_page.homework_detail_page import HwDetailPage
-from testfarm.test_program.app.honor.teacher.home.object_page.result_detail_page import ResultDetailPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_member_page import VanMemberPage
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_page import VanclassPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_student_info_page import StDetailPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
-from testfarm.test_program.app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.object_page.vanclass_hw_detail_page import HwDetailPage
+from app.honor.teacher.home.object_page.result_detail_page import ResultDetailPage
+from app.honor.teacher.home.object_page.vanclass_member_page import VanMemberPage
+from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.home.object_page import VanclassPage
+from app.honor.teacher.home.object_page.vanclass_student_info_page import StDetailPage
+from app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
+from app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
+from utils.toast_find import Toast
 
 
 class VanclassMember(unittest.TestCase):
@@ -148,7 +148,7 @@ class VanclassMember(unittest.TestCase):
         else:
             print('-------------------------未完成tab-------------------------')
             if self.st.wait_check_hw_list_page():
-                self.answer_analysis_detail(['', ''], name)  # 未完成页
+                self.answer_analysis_detail(name)  # 未完成页
 
             elif self.home.wait_check_empty_tips_page():
                 print('暂无数据')
@@ -167,31 +167,34 @@ class VanclassMember(unittest.TestCase):
                 else:
                     print('-------------------------已完成tab-------------------------')
                     if self.st.wait_check_hw_list_page():
-                        self.answer_analysis_detail(['', ''], name)    # 已完成 列表
+                        self.answer_analysis_detail(name)    # 已完成 列表
                     elif self.home.wait_check_empty_tips_page():
                         print('暂无数据')
 
     @teststeps
-    def answer_analysis_detail(self, content, remark):
+    def answer_analysis_detail(self, remark, content=None):
         """未完成/已完成tab 详情页"""
+        if content is None:
+            content = []
+
         name = self.st.hw_name()  # 作业包 名
         finish = self.st.st_finish_status()  # 学生 完成与否
 
-        if len(finish) > 5 and content[0] == '':
+        if len(finish) > 5 and not content:
             content = [name[len(finish)-2].text, finish[-2].text]
             for i in range(0, len(finish) - 1):
                 print(name[i].text, finish[i].text)
 
             SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
-            self.answer_analysis_detail(content, remark)
-
-            return content
+            self.answer_analysis_detail(remark, content)
         else:
             var = 0
-            for k in range(len(finish)):
-                if content[0] == name[k].text and content[1] == finish[k].text:
-                    var += k
-                    break
+            if content:
+                for k in range(len(finish)):
+                    if content[0] == name[k].text and content[1] == finish[k].text:
+                        var += k
+                        break
+
             for i in range(var, len(finish)):
                 print(name[i].text, finish[i].text)
 
@@ -233,6 +236,8 @@ class VanclassMember(unittest.TestCase):
 
                 if self.detail.wait_check_per_detail_page():
                     self.home.back_up_button()  # 返回tab页
+            else:
+                print("!!!未进入答题情况 详情页")
 
     @teststeps
     def judge_first_achieve(self, achieve, report):
@@ -242,4 +247,6 @@ class VanclassMember(unittest.TestCase):
         value = int(re.sub("\D", "", var[0]))
 
         if num != int(value/int(var[1])*100):
-            print('★★★ Error- 首次成绩 与首次正答 不匹配:', achieve, report)
+            print('★★★ Error- 首次成绩 与 首次正答 不匹配:', achieve, report)
+        else:
+            print('首次成绩 与 首次正答 匹配')

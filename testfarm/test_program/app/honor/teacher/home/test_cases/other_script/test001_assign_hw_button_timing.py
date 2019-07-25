@@ -2,18 +2,20 @@
 # code:UTF-8  
 # @Author  : SUN FEIFEI
 import unittest
-
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.home.object_page.release_hw_page import ReleasePage
-from testfarm.test_program.app.honor.teacher.home.object_page.draft_page import DraftPage
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from testfarm.test_program.app.honor.teacher.test_bank.object_page.question_basket_page import QuestionBasketPage
-from testfarm.test_program.app.honor.teacher.home.test_data.draft_data import GetVariable as gv
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.toast_find import Toast
+import os,sys
+print('当前路径：',os.getcwd())
+sys.path.append('./testfarm/test_program/')
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.object_page.release_hw_page import ReleasePage
+from app.honor.teacher.home.object_page.draft_page import DraftPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
+from app.honor.teacher.test_bank.object_page.question_basket_page import QuestionBasketPage
+from app.honor.teacher.home.test_data.draft_data import GetVariable as gv
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
+from utils.toast_find import Toast
 
 
 class AssignHw(unittest.TestCase):

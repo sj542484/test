@@ -3,31 +3,31 @@ from testfarm.test_program.app.honor.student.word_book.object_page.clear_user_da
 from testfarm.test_program.app.honor.student.word_book.object_page.word_book import WordBook
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
+from testfarm.test_program.app.honor.student.word_book.object_page.data_action import WordBookDataHandle
 from testfarm.test_program.conf.decorator import teststeps
 
 
 class ReciteProgress(BasePage):
 
     def __init__(self):
-        self.common = DataActionPage()
+        self.common = WordBookDataHandle()
         self.clean = CleanDataPage()
         self.word = WordBook()
         self.home = HomePage()
 
     @teststeps
-    def recite_progress(self, i,level):
+    def recite_progress(self, stu_id, i, level):
         """复习单词过程"""
-        self.get_every_recite_count()
-        recite_b = self.common.get_different_level_words(1)
-        recite_a = self.common.get_different_level_words(0)
+        self.get_every_recite_count(stu_id)
+        recite_b = self.common.get_different_level_words(stu_id, 1)
+        recite_a = self.common.get_different_level_words(stu_id, 0)
 
         if recite_a == 0:  # 若没有新词出现，则会复习F<=4 的所有单词 提前复习
-            recite_count = self.common.get_need_recite_count(4)
+            recite_count = self.common.get_need_recite_count(stu_id, 4)
         else:              # 若新词存在，则只复习到F<= level 的单词
-            recite_count = self.common.get_need_recite_count(level)
+            recite_count = self.common.get_need_recite_count(stu_id, level)
 
-        word_result = self.word.play_word_book()  # 单词本 具体过程
+        word_result = self.word.play_word_book(stu_id)  # 单词本 具体过程
 
         vocab_recite = word_result[2]  # 词汇选择组
         vocab_apply = word_result[3]
@@ -100,11 +100,11 @@ class ReciteProgress(BasePage):
                     print('本组需复习词数为%d，词汇运用及单词拼写已分为%d组' %(recite_count, vocab_apply))
 
     @teststeps
-    def get_every_recite_count(self):
+    def get_every_recite_count(self, stu_id):
         """打印每个"""
         print('\n目前数据库数据如下：')
         for i in range(0, 6):
-            count = self.common.get_different_level_words(i)
+            count = self.common.get_different_level_words(stu_id, i)
             if i == 0:
                 print('熟练度为0的个数(新词)：', count)
             elif i == 1:
@@ -129,26 +129,26 @@ class ReciteProgress(BasePage):
             self.word.word_start_button()  # 点击 Go按钮
 
     @teststeps
-    def set_recite_date(self, level):
-        gv.LEVEL = level
-        if level == 1:
-            gv.TIME_COUNT = 1
-            print('\n#### 本轮为B轮复习 ####\n')
-        elif level == 2:
-            gv.TIME_COUNT = 10
-            print('\n#### 本轮为C轮复习 ####\n')
-        elif level == 3:
-            gv.TIME_COUNT = 30
-            print('\n#### 本轮为D轮复习 ####\n')
-        elif level == 4:
-            gv.TIME_COUNT = 60
-            print('\n#### 本轮为E轮复习 ####\n')
+    def set_recite_date(self, stu_id,  level):
+        if self.home.wait_check_home_page():
+            if level == 1:
+                time_interval = 1
+                print('\n#### 本轮为B轮复习 ####\n')
+            elif level == 2:
+                time_interval = 10
+                print('\n#### 本轮为C轮复习 ####\n')
+            elif level == 3:
+                time_interval = 30
+                print('\n#### 本轮为D轮复习 ####\n')
+            else:
+                time_interval = 60
+                print('\n#### 本轮为E轮复习 ####\n')
 
-        self.common.change_word_date()
-        self.home.click_back_up_button()
-        self.clean.clean_cache()
-        total = self.common.get_need_recite_count(level)  # 需要复习的个数
-        print('本轮不加提前复习的词数为：', total)
+            self.common.change_word_date(stu_id, level, time_interval)
+            self.home.click_tab_profile()
+            self.clean.clean_cache()
+            total = self.common.get_need_recite_count(stu_id, level)  # 需要复习的个数
+            print('本轮不加提前复习的词数为：', total)
 
 
 

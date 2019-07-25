@@ -7,7 +7,7 @@ from testfarm.test_program.app.honor.student.login.object_page.home_page import 
 from testfarm.test_program.app.honor.student.test_paper.object_page.banked_cloze import BankCloze
 from testfarm.test_program.app.honor.student.test_paper.object_page.complete_text import CompleteText
 from testfarm.test_program.app.honor.student.test_paper.object_page.conjunctions import Conjunctions
-from testfarm.test_program.app.honor.student.test_paper.object_page.data_action import DataPage
+from testfarm.test_program.app.honor.student.test_paper.object_page.exam_data_handle import DataPage
 from testfarm.test_program.app.honor.student.test_paper.object_page.listen_select import ListenSelect
 from testfarm.test_program.app.honor.student.test_paper.object_page.listen_to_sentence import ListenSentence
 from testfarm.test_program.app.honor.student.test_paper.object_page.read_understand import ReadUnderstand

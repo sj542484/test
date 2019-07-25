@@ -2,13 +2,14 @@
 # encoding:UTF-8
 import unittest
 
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.test_bank.test_data.search_content import search_data
-from testfarm.test_program.app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.test_bank.object_page import SearchPage
+from app.honor.teacher.test_bank.test_data.search_content import search_data
+from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.swipe_screen import SwipeFun
+from utils.toast_find import Toast
 
 
 class BankSearch(unittest.TestCase):
@@ -21,6 +22,7 @@ class BankSearch(unittest.TestCase):
         cls.login = TloginPage()
         cls.home = ThomePage()
         cls.question = TestBankPage()
+        cls.search = SearchPage()
 
     @classmethod
     @teardown
@@ -38,16 +40,16 @@ class BankSearch(unittest.TestCase):
                 self.question.search_input().click()  # 搜索框
 
                 if self.question.wait_check_page('资源'):
-                    self.question.drop_down_button().click()  # 下拉按钮
+                    self.search.drop_down_button().click()  # 下拉按钮
 
-                    if self.question.judge_search_menu():
-                        var = self.question.search_criteria_menu()  # 搜索条件菜单
-                        self.question.choose_condition(var)
-                        condition = var[1].text
+                    if self.search.judge_search_menu():
+                        var = self.search.search_criteria_menu()  # 搜索条件菜单
+                        self.search.choose_condition(var)
+                        condition = var[1].text  # 上传者
                         var[1].click()  # 选择 上传者
 
-                        if self.question.wait_check_search_page():
-                            ele = self.question.drop_down_button()  # 下拉按钮
+                        if self.search.wait_check_search_page():
+                            ele = self.search.drop_down_button()  # 下拉按钮
                             if condition != ele.text:
                                 print('★★★ Error-选定的搜索条件与展示内容不一致', var[0].text, ele.text)
 
@@ -56,7 +58,7 @@ class BankSearch(unittest.TestCase):
                             if self.question.wait_check_page('题单'):  # 页面检查点
                                 self.question.search_input().click()  # 点击 搜索框
                                 if self.question.wait_check_page('上传者'):
-                                    condition1 = self.question.drop_down_button().text  # 下拉按钮
+                                    condition1 = self.search.drop_down_button().text  # 下拉按钮
 
                                     result = self.history_search_operation()  # 点击历史搜索词 搜索
 
@@ -74,16 +76,16 @@ class BankSearch(unittest.TestCase):
                                     if self.question.wait_check_page('题单'):  # 恢复测试数据
                                         self.question.search_input().click()  # 搜索框
                                         if self.question.wait_check_page('上传者'):
-                                            self.question.input_clear_button()  # 清空 按钮
-                                            self.question.drop_down_button().click()  # 下拉按钮
+                                            self.search.input_clear_button()  # 清空 按钮
+                                            self.search.drop_down_button().click()  # 下拉按钮
 
-                                            if self.question.judge_search_menu():
-                                                var = self.question.search_criteria_menu()  # 搜索条件菜单
-                                                self.question.choose_condition(var)
+                                            if self.search.judge_search_menu():
+                                                var = self.search.search_criteria_menu()  # 搜索条件菜单
+                                                self.search.choose_condition(var)
                                                 var[0].click()  # 选择
 
                                                 if self.question.wait_check_page("资源"):
-                                                    self.question.search_button()  # 搜索按钮
+                                                    self.search.search_button()  # 搜索按钮
             else:
                 print('未进入题库页面')
 
@@ -99,7 +101,7 @@ class BankSearch(unittest.TestCase):
         item = self.question.search_input()  # 搜索框
         item.send_keys(r'' + search_data[-1]['uploader'])  # 输入搜索内容
         print('搜索内容：', item.text)
-        self.question.search_button()  # 搜索按钮
+        self.search.search_button()  # 搜索按钮
 
         if self.question.wait_check_game_type_page():  # 题库页面
             name = self.question.question_name()
@@ -119,7 +121,7 @@ class BankSearch(unittest.TestCase):
     @teststeps
     def history_search_operation(self):
         """点击历史搜索词 搜索"""
-        self.get_word([''])  # 历史搜索词
+        self.get_word()  # 历史搜索词
 
         if self.question.wait_check_game_type_page():  # 题库 页面
             name = self.question.question_name()
@@ -132,11 +134,14 @@ class BankSearch(unittest.TestCase):
             return name
 
     @teststeps
-    def get_word(self, content):
+    def get_word(self, content=None):
         """获取历史搜索词"""
-        name = self.question.history_word()  # 历史搜索词
+        if content is None:
+            content = []
 
-        if len(name) > 10 and len(content) == 1:
+        name = self.search.history_word()  # 历史搜索词
+
+        if len(name) > 10 and not content:
             for i in range(len(name) - 1):  #
                 if name[i].text == search_data[-1]['uploader']:
                     print('---------------------', '\n',
@@ -150,10 +155,11 @@ class BankSearch(unittest.TestCase):
                     self.get_word(content)
         else:  # <11 & 翻页
             var = 0
-            for k in range(len(name)):
-                if content[0] == name[k].text:
-                    var += k + 1
-                    break
+            if content:
+                for k in range(len(name)):
+                    if content[0] == name[k].text:
+                        var += k + 1
+                        break
 
             for j in range(var, len(name)):
                 if name[j].text == search_data[-1]['uploader']:
@@ -161,4 +167,3 @@ class BankSearch(unittest.TestCase):
                           '点击历史搜索词:', search_data[-1]['uploader'])
                     name[j].click()  # 点击该历史搜索词
                     break
-

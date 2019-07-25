@@ -14,7 +14,7 @@ class PhoneReset(BasePage):
     @teststep
     def wait_check_page(self):
         """以“title:手机号码”的xpath @text为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'手机号码')]")
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'手机号')]")
         try:
             WebDriverWait(self.driver, 20, 0.5).until(lambda x: x.find_element(*locator))
             return True

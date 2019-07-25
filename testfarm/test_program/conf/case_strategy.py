@@ -10,7 +10,6 @@ class CaseStrategy:
         self.phone_code = phone_code
         self.start_dir = gv.CASE_PATH + self.phone_code + '/' + self.test_side + '/' + self.test_items
 
-
     """测试用例搜集"""
     def _collect_cases(self, cases, top_dir=None):
         # 构造测试集  defaultTestLoader（）即TestLoader（）测试用例加载器，包括多个加载测试用例的方法，返回一个测试套件

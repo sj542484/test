@@ -4,16 +4,16 @@
 import time
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.teacher.play_games.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.teacher.play_games.object_page.result_page import ResultPage
-from testfarm.test_program.app.honor.teacher.play_games.test_data.word_spelling_data import word_spelling_operation
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.games_keyboard import Keyboard
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.judge_character_type import JudgeType
-from testfarm.test_program.utils.wait_element import WaitElement
+from app.honor.teacher.play_games.object_page import Homework
+from app.honor.teacher.play_games.object_page import ResultPage
+from app.honor.teacher.play_games import word_spelling_operation
+from utils.get_attribute import GetAttribute
+from utils.games_keyboard import Keyboard
+from conf.base_page import BasePage
+from conf.base_config import GetVariable as gv
+from conf.decorator import teststep, teststeps
+from utils.judge_character_type import JudgeType
+from utils.wait_element import WaitElement
 
 
 class WordSpelling(BasePage):
@@ -333,7 +333,7 @@ class WordSpelling(BasePage):
                           correct + result[len(correct):].lower())
 
             for k in range(len(correct)):  # 测试 答案判断是否正确
-                if result[k] not in correct:
+                if result == correct:
                     print('★★★ Error - 答案判断错误', result, correct)
                     break
         else:  # 回答正确

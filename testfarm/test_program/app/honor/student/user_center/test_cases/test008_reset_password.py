@@ -62,7 +62,7 @@ class ExchangePhone(unittest.TestCase):
                                 again_pwd.send_keys(r'' + reset_pwd[i]['commit'])
 
                                 self.pwd.confirm_button()  # 点击完成按钮
-                                if self.user_info.wait_check_page(10):  # 页面检查点
+                                if self.user_info.wait_check_page(5):  # 页面检查点
                                     print('changed successfully')
                                     if i != len(reset_pwd)-1:
                                         self.user_info.click_password()  # 点击修改密码

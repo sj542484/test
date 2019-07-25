@@ -38,7 +38,7 @@ class Games(unittest.TestCase):
         if self.home_page.wait_check_home_page():
             self.home_page.click_hk_tab(2)
 
-            if self.homework.wait_check_page():  # 页面检查点
+            if self.homework.wait_check_hw_page():  # 页面检查点
                 var = self.home_page.homework_count()
 
                 if gv.FORM_SENT in var[0]:

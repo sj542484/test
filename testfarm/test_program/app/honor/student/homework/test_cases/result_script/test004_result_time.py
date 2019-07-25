@@ -11,6 +11,7 @@ from testfarm.test_program.app.honor.student.homework.object_page.homework_page 
 from testfarm.test_program.app.honor.student.homework.test_data.homework_title_type import GetVariable as gv
 from testfarm.test_program.app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
 from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
+from testfarm.test_program.utils.excel_read_write import ExcelUtil
 from testfarm.test_program.utils.toast_find import Toast
 
 
@@ -39,7 +40,7 @@ class Games(unittest.TestCase):
         if self.home_page.wait_check_home_page():
             self.home_page.click_hk_tab(2)
 
-            if self.homework.wait_check_page():  # 页面检查点
+            if self.homework.wait_check_hw_page():  # 页面检查点
                 var = self.home_page.homework_count()
                 if gv.TIME in var[0]:  # 该作业存在
                     for i in range(0, len(var[0])):

@@ -234,7 +234,7 @@ class PurchasePage(BasePage):
     def check_agreement(self):
         agreement = self.agreement()
         location = agreement.location
-        self.driver.tap([(location['x']+250, location['y']+20), ])
+        self.driver.tap([(location['x']+520, location['y']+50), ])
         if self.wait_check_agreement_page():
             print('在线助教【提分版】购买协议 .....')
             self.home.screen_swipe_down(0.5, 0.5, 0.9, 1500)
@@ -261,10 +261,10 @@ class PurchasePage(BasePage):
     def magics_page_ele_operate(self):
         """法宝页面元素信息"""
         text = self.get_all_text_view()
-        if len(text) != 22:
+        if len(text) != 16:
             print('★★★ Error-- 页面元素缺失', text)
         else:
-            magic_types = numpy.reshape(text[6:-1], (5, 3))
+            magic_types = numpy.reshape(text[6:-1], (3, 3))
             print("<" + text[0] + '页面>', '\n',
                   '学生:', text[1], '\n',
                   '手机:', text[2], '\n',
@@ -275,7 +275,8 @@ class PurchasePage(BasePage):
     def buy_page_ele_operate(self):
         """购买页面（优惠卡类型） 页面"""
         text = self.get_all_text_view()
-        if len(text) not in [18, 20]:
+        print(len(text))
+        if len(text) not in range(18, 21):
             print('★★★ Error-- 页面元素缺失', text)
         else:
             print('<选择优惠卡页面>\n'

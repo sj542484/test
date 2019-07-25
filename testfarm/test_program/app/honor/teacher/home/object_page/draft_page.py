@@ -2,16 +2,15 @@
 # encoding:UTF-8  
 # @Author  : SUN FEIFEI
 from selenium.webdriver.common.by import By
-
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.home.object_page.release_hw_page import ReleasePage
-from testfarm.test_program.app.honor.teacher.test_bank.object_page.question_bank_page import QuestionBankPage
-from testfarm.test_program.app.honor.teacher.test_bank.object_page.question_basket_page import QuestionBasketPage
-from testfarm.test_program.app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.utils.wait_element import WaitElement
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.object_page.release_hw_page import ReleasePage
+from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
+from app.honor.teacher.test_bank.object_page.question_basket_page import QuestionBasketPage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
+from conf.decorator import teststep, teststeps
+from conf.base_config import GetVariable as gv
+from conf.base_page import BasePage
+from utils.wait_element import WaitElement
 
 
 class DraftPage(BasePage):
@@ -20,7 +19,7 @@ class DraftPage(BasePage):
         self.home = ThomePage()
         self.release = ReleasePage()
         self.detail = QuestionDetailPage()
-        self.question = QuestionBankPage()
+        self.question = TestBankPage()
         self.basket = QuestionBasketPage()
         self.wait = WaitElement()
 
@@ -70,7 +69,7 @@ class DraftPage(BasePage):
 
     # 草稿箱
     @teststeps
-    def wait_check_drat_page(self, var=10):
+    def wait_check_draft_page(self, var=10):
         """以“title:草稿”为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'长按草稿,可删除草稿')]")
         return self.wait.wait_check_element(locator, var)

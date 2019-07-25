@@ -6,7 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.test_paper.object_page.answer_page import AnswerPage
-from testfarm.test_program.app.honor.student.test_paper.object_page.data_action import DataPage
+from testfarm.test_program.app.honor.student.test_paper.object_page.exam_data_handle import DataPage
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
 

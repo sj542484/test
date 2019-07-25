@@ -21,8 +21,19 @@ class VanclassPage(BasePage):
         except:
             return False
 
+    @teststep
+    def wait_check_van_list_page(self):
+        """班级列表页面检查点"""
+        locator = (By.ID, "{}class_name".format(self.id_type()))
+        try:
+            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            return True
+        except:
+            return False
+
     @teststeps
     def wait_check_quit_vanclass(self, class_name):
+        """退出班级页面检查点"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'{}')]".format(class_name))
         try:
             WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
@@ -74,7 +85,7 @@ class VanclassPage(BasePage):
 
     # 申请入班
     @teststeps
-    def wait_check_apply_page(self, var=20):
+    def wait_check_apply_page(self, var=10):
         """以“title: 添加班级”为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'添加班级')]")
         try:
@@ -164,8 +175,7 @@ class VanclassPage(BasePage):
     def class_name(self):
         """班级名称 title"""
         item = self.driver \
-            .find_element_by_id(self.id_type() + "tv_class_name_title") \
-            .text
+            .find_elements_by_id(self.id_type() + "class_name")
         return item
 
     @teststep
@@ -224,7 +234,7 @@ class VanclassPage(BasePage):
         """以“title: 退出班级”为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'退出班级')]")
         try:
-            WebDriverWait(self.driver, 20, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False

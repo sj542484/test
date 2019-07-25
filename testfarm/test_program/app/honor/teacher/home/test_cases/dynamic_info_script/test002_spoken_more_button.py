@@ -2,15 +2,15 @@
 # encoding:UTF-8
 import unittest
 
-from testfarm.test_program.app.honor.teacher.home.object_page.dynamic_info_page import DynamicPage
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.home.object_page.homework_detail_page import HwDetailPage
-from testfarm.test_program.app.honor.teacher.home.object_page.release_hw_page import ReleasePage
-from testfarm.test_program.app.honor.teacher.home.object_page.spoken_detail_page import SpokenDetailPage
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.home.test_data.dynamic_data import GetVariable as gv
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.home.object_page.dynamic_info_page import DynamicPage
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.object_page.vanclass_hw_detail_page import HwDetailPage
+from app.honor.teacher import ReleasePage
+from app.honor.teacher.home.object_page.spoken_detail_page import SpokenDetailPage
+from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.home.test_data import GetVariable as gv
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.toast_find import Toast
 
 
 class Spoken(unittest.TestCase):

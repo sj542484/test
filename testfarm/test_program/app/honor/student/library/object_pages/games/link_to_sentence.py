@@ -52,33 +52,40 @@ class LinkToSentence(BasePage):
         return ele.text
 
     @teststep
+    def result_explain(self):
+        """正确答案"""
+        ele = self.driver.find_elements_by_id(self.id_type() + 'tv_hint')
+        return ele
+
+    @teststep
     def word_alpha(self):
         """每个字母"""
         ele = self.driver.find_elements_by_id(self.id_type() + 'tv_word')
         return ele
 
     @teststep
-    def result_explain(self):
-        """结果页解释"""
-        ele = self.driver.find_elements_by_id(self.id_type() + 'tv_hint')
-        return ele
-
-    @teststep
-    def result_answer(self, explain):
-        """结果页答案"""
-        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/preceding-sibling::android.widget.TextView'
-                                                .format(explain))
+    def result_answer_by_explain(self, explain):
+        """结果页句子"""
+        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/preceding-sibling::android.widget.TextView'.format(explain))
         return ele.text
 
     @teststep
-    def mine_icon(self, explain):
+    def mine_icon_by_sentence(self, explain):
         """对错图标"""
         ele = self.driver.find_element_by_xpath('//*[@text="{}"]/../following-sibling::android.widget.ImageView'
                                                 .format(explain))
         return ele
 
+    @teststep
+    def get_sentence_size(self, explain):
+        """获取句子的大小"""
+        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/../..'.format(explain))
+        return ele.size
+
+
     @teststeps
-    def link_sentence_operate(self, fq, sec_answer, half_exit):
+    def link_sentence_operate(self, fq, sec_answer):
+        """连词成句操作"""
         timer = []
         mine_answer = {}
         total_num = self.common.rest_bank_num()
@@ -104,10 +111,6 @@ class LinkToSentence(BasePage):
                 mine_answer[explain] = mine
                 print('我的答案：', mine)
                 print('-' * 20, '\n')
-                if i == 2:
-                    if half_exit:
-                        self.click_back_up_button()
-                        break
                 timer.append(self.common.bank_time())
                 self.common.next_btn().click()
 
@@ -117,24 +120,32 @@ class LinkToSentence(BasePage):
 
     @teststeps
     def link_sentence_result_operate(self, mine_answer):
-        right_answer = {}
-        right, wrong = [], []
-        index = 0
-        while True:
-            if ResultPage().wait_check_answer_page():
-                explains = self.result_explain()
-                for i, exp in enumerate(explains):
-                    if ResultPage().wait_check_answer_page():
-                        if i == len(explains) - 1:
-                            self.screen_swipe_up(0.5, 0.9, 0.6, 1000)
-                        result_answer = self.result_answer(exp.text)
+        """连词成句结果页处理"""
+        if ResultPage().wait_check_answer_page():
+            right_answer = {}
+            right, wrong = [], []
+            answer_info = []
+            sentence_size = self.get_sentence_size(self.result_explain()[0].text)
+            sentence_scale = sentence_size['height'] / self.get_window_size()[1]
+            print('===== 查看结果页 =====\n')
+            while len(answer_info) < len(mine_answer):
+                result_explains = self.result_explain()
+                for i, exp in enumerate(result_explains):
+                    if exp.text in answer_info:
+                        continue
+                    else:                                           # 倒数第一道题，向上滑出一道题的距离
+                        if i == len(result_explains) - 1:
+                            self.screen_swipe_up(0.5, 0.9, 0.9 - sentence_scale, 1000)
+
                         result_explain = exp.text.strip()
                         print('解释：', result_explain)
+                        answer_info.append(exp.text)
+                        result_answer = self.result_answer_by_explain(exp.text)
                         print('答案：', result_answer)
 
-                        mine_icon = self.mine_icon(result_explain)
+                        mine_icon = self.mine_icon_by_sentence(exp.text)
                         if mine_answer[result_explain] != result_answer:
-                            if GetAttribute().selected(mine_icon) == 'true':
+                            if GetAttribute().selected(mine_icon) == 'true':       # 校验图标是否正确
                                 print('★★★ 我的答案与正确答案不一致，但是图标显示正确！')
                             else:
                                 print('图标验证正确')
@@ -145,22 +156,19 @@ class LinkToSentence(BasePage):
                                 print('★★★ 我的答案与正确答案一致，但是图标显示不正确！')
                             else:
                                 print('图标验证正确')
-
                             right.append(result_explain)
                         right_answer[result_explain] = result_answer
 
-                    index += 1
-                    print('-' * 20, '\n')
-                if index != len(mine_answer):
-                    self.screen_swipe_up(0.5, 0.9, 0.2, 1000)
-                else:
-                    break
+                    print('-'*30, '\n ')
 
-        self.click_back_up_button()
-        return wrong, right, right_answer
+            print('正确题：', right)
+            print('错误题：', wrong)
+            self.click_back_up_button()
+            return wrong, right, right_answer
 
     @teststep
     def do_right_operate(self, right_answer):
+        """连词成绩做对操作"""
         right_word_list = right_answer.split(' ')
         index = 0
         print('初始句子：', ' '.join([x.text for x in self.word_alpha()]).strip())
@@ -168,7 +176,6 @@ class LinkToSentence(BasePage):
             alpha_list = self.word_alpha()
             for j in range(len(alpha_list)):
                 if alpha_list[j].text == right_word_list[i]:
-                    print(alpha_list[j].text, alpha_list[index].text)
                     if alpha_list[j].text != alpha_list[index].text:
                         RestoreWord().drag_operate(alpha_list[j], alpha_list[index])
                     index += 1

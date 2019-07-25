@@ -4,6 +4,7 @@
 import time
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
+
 from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
 from testfarm.test_program.utils.games_keyboard import Keyboard
 from testfarm.test_program.utils.click_bounds import ClickBounds
@@ -12,7 +13,7 @@ from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
-class FlashCard(BasePage):
+class FlashCardPage(BasePage):
     """闪卡练习"""
 
     def __init__(self):
@@ -159,7 +160,7 @@ class FlashCard(BasePage):
 
     # 以下为闪卡练习 结果页
     @teststeps
-    def wait_check_result_page(self, var=20):
+    def wait_check_result_page(self, var=10):
         """以“title:答题报告”的ID为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'完成学习')]")
         try:

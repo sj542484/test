@@ -29,12 +29,12 @@ class Ranking (unittest.TestCase):
     @teststeps
     def test_rank_word(self):
         """排行榜"""
-        if self.home.wait_check_home_page ():  # 页面检查点
-            print ('进入主界面')
-            self.home.click_hk_tab (1)  # 点击 背单词
+        if self.home.wait_check_home_page():  # 页面检查点
+            print('进入主界面')
+            self.home.click_hk_tab(1)            # 点击 背单词
             if self.home.wait_check_word_title():
                 total_words = self.rank.total()
-                self.rank.click_rank_icon()  #点击排行榜图标
+                self.rank.click_rank_icon()     # 点击排行榜图标
                 if self.rank.wait_check_rank_page():
                     self.rank.play_rank_word(total_words)
 

@@ -39,21 +39,21 @@ class VanclassHw(unittest.TestCase):
 
                 van = self.van.vanclass_name()  # 班级名称
                 for i in range(len(van)):
-                    if van[i].text == gv.VAN_ANALY:
+                    if van[i].text == gv.CLASS_NAME:
                         van[i].click()  # 进入班级详情页
                         break
 
-                if self.van.wait_check_vanclass_page(gv.VAN_ANALY):  # 页面检查点
+                if self.van.wait_check_vanclass_page(gv.CLASS_NAME):  # 页面检查点
 
                     self.van.vanclass_hw()  # 进入 本班作业
-                    if self.detail.wait_check_page(gv.VAN_ANALY):  # 页面检查点
-                        print('%s 本班作业:' % gv.VAN_ANALY)
+                    if self.detail.wait_check_page(gv.CLASS_NAME):  # 页面检查点
+                        print('%s 本班作业:' % gv.CLASS_NAME)
                         self.all_hw_operate()  # 全部 tab
                         self.incomplete_operate()  # 未完成 tab
                         self.complete_operate()  # 已完成 tab
 
                         self.home.click_back_up_button()
-                        if self.van.wait_check_vanclass_page(gv.VAN_ANALY):  # 班级详情 页面检查点
+                        if self.van.wait_check_vanclass_page(gv.CLASS_NAME):  # 班级详情 页面检查点
                             self.home.click_back_up_button()
                             if self.van.wait_check_page():  # 班级 页面检查点
                                 self.home.click_tab_hw()  # 返回主界面
@@ -119,40 +119,20 @@ class VanclassHw(unittest.TestCase):
     @teststeps
     def hw_list_operate(self):
         """作业列表 具体操作"""
-        ele = self.hw_operate('')  # 作业列表
-        while not self.detail.end_tips():  # 如果list多于一页
-            self.home.screen_swipe_up(0.5, 0.75, 0.1, 1000)
-            self.hw_operate(ele)  # 作业列表
+        homework_name = []
+        while True:  # 如果list多于一页
+            finish = self.detail.finish_status()  # 已经有x人完成
+            hw_name = self.detail.hw_name()
+            for i, x in enumerate(finish):
+                if hw_name[i].text in homework_name:
+                    continue
+                else:
+                    print(hw_name[i].text)
+                    print(x.text)
+                    homework_name.append(hw_name[i].text)
+                print('-'*30, '\n')
 
-    @teststeps
-    def hw_operate(self, item):
-        """作业列表"""
-        name = self.detail.hw_name()  # 作业name
-        # progress = self.detail.progress()  # 完成进度
-        finish = self.detail.finish_status()  # 已经有x人完成
-
-        if len(name) > 4 or self.detail.end_tips() is False:  # 作业 多于一页
-            for i in range(len(name)):
-                print('------------------')
-                print(name[i].text, '\n',
-                      finish[i].text)
-
-            return name[-1].text
-        elif self.detail.end_tips():  # 作业一页 and 翻页以后
-            if len(item) != 0:
-                if name[-1].text != item:  # 翻页成功
-                    var = 0
-                    for j in range(len(name)):
-                        if item == name[j].text:
-                            var = j + 1
-                    for i in range(var, len(name)):
-                        print('------------------')
-                        print(name[i].text, '\n',
-                              finish[i].text)
+            if self.detail.wait_check_end_tips_page():
+                break
             else:
-                for i in range(len(name)):
-                    print('------------------')
-                    print(name[i].text, '\n',
-                          finish[i].text)
-
-            return name[-1].text
+                self.home.screen_swipe_up(0.5, 0.8, 0.2, 1000)

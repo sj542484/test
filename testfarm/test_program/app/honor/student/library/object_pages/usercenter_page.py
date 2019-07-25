@@ -3,11 +3,14 @@
 # Author:   Vector
 # Date:     2019/4/2 8:28
 # -------------------------------------------
+import time
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.library.object_pages.data_action import DataAction
+from testfarm.test_program.app.honor.student.library.object_pages.library_sql import LibrarySql
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.word_book.object_page.mysql_data import WordBookSql
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep
 
@@ -33,6 +36,15 @@ class UserCenterPage(BasePage):
         except:
             return False
 
+    @teststep
+    def wait_check_logout_page(self):
+        """退出登录页面检查点"""
+        locator = (By.ID, self.id_type() + "logout")
+        try:
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
+            return True
+        except:
+            return False
 
     @teststep
     def nickname(self):
@@ -59,18 +71,46 @@ class UserCenterPage(BasePage):
         return ele.text
 
     @teststep
+    def setting_up(self):
+        """设置"""
+        ele = self.driver.find_element_by_id(self.id_type() + 'setting')
+        return ele
+
+    @teststep
+    def clear_cache(self):
+        """清除缓存"""
+        ele = self.driver.find_element_by_id(self.id_type() + 'clear_cache')
+        return ele
+
+    @teststep
     def get_user_info(self):
         """:return 学生id、学校名称、学校id、昵称"""
-        HomePage().click_tab_profile()
-        if self.wait_check_user_center_page():
-            self.purchase().click()
-            if self.wait_check_buy_page():
-                phone = self.phone()
-                stu_id = DataAction().find_student_id(phone)[0][0]
-                HomePage().click_back_up_button()
+        HomePage().click_tab_profile()                         # 点击个人中心
+        if self.wait_check_user_center_page():                 # 个人中心页面检查点
+            self.purchase().click()                            # 点击购买
+            if self.wait_check_buy_page():                     # 购买页面检查点
+                phone = self.phone()                           # 手机号
+                stu_id = WordBookSql().find_student_id(phone)[0][0]    # 根据手机号获取学生ID
+                self.click_back_up_button()
                 if self.wait_check_user_center_page():
-                    school_name = self.school_name()
-                    school_id = self.mysql.find_school_id(school_name)[0][0]
-                    nickname = self.nickname()
-                    HomePage().click_tab_hw()
+                    school_name = self.school_name()           # 学习名称
+                    if school_name != '':
+                        school_id = LibrarySql().find_school_id(school_name)[0][0]     # 根据学校名称获取学校id
+                    else:
+                        school_id = 0
+                    nickname = self.nickname()                 # 昵称
+                    self.setting_up().click()
+                    if self.wait_check_logout_page():          # 清除缓存
+                        self.clear_cache().click()
+                        time.sleep(2)
+
+                    self.click_back_up_button()                # 返回个人中心
+                    if self.wait_check_user_center_page():
+                        HomePage().click_tab_hw()             # 点击学习返回主页面
+
+                    print('学生昵称：', nickname, '\n',
+                          '学校名称：', school_name, '\n',
+                          '学校id：', school_id, '\n',
+                          '学生id：', stu_id
+                          )
                     return stu_id, school_name, school_id, nickname

@@ -5,43 +5,89 @@
         input {width:200px;height:40px;text-align:center;font-size:16px;}
         button {width:60px;height:30px;margin-top:20px;}
 {% endblock %}
-
+{% block head %}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="../../../static/table_body/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/css/main.css">
+<!--===============================================================================================-->
+{% endblock %}
 {% block header %}
     <img src="https://img1.wxzxzj.com/vued02092c5e3b7309243760cee9fa4817c5.png" alt="logo">
     <ul class="wrap">
         <li><a href="{% url 'show' %}">首页</a></li>
         <li><a id="monitor" class="" href="{% url 'showDevices' %}">设备列表</a></li>
         <li><a id="news" href="{% url 'inputinfo' %}">设备录入</a></li>
-        <li><a id="connect" href="{% url 'testmodeledit' %}">编辑测试模块</a></li>
+        <!--<li><a id="connect" href="{% url 'testmodeledit' %}">编辑测试模块</a></li>-->
         <li><a id="speack" class="active" href="{% url 'showalldevices' %}">查看所有设备信息</a></li>
         <li><a href="{% url 'do_logout' %}">退出登陆</a></li>
     </ul>
 {% endblock %}
 
 {% block context %}
-<center style="margin-top:80px;">
-    <form action="{% url 'update_data' %}" method="post">
-        {% csrf_token %}
-        <table>
-                <tr>
-                    <td>设备名称</td>
-                    <td>系统版本</td>
-                    <td>设备🆔</td>
-                    <td>设备型号</td>
-                </tr>
-                {% for i in content %}
-                <tr>
-                    <td><input type="text" name="devices_name" id="" value="{{ i.equipment_name }}" ></td>
-                    <td><input type="text" name="platformVersion" id="platformVersion" value="{{ i.platform_verion }}"></td>
-                    <td><input type="text" readonly name="devices_uuid"  value="{{ i.equipment_uuid }}"></td>
-                    <td><input type="text" readonly name="devices_model"  value="{{ i.equipment_model }}"></td>
-                </tr>
-                {% endfor %}
-        </table>
-        <tr>
-            <td> <button type="submit">确认提交</button></td>
-            <td><a onclick="javascript:history.back();">取消/返回</a></td>
-        </tr>
-    </form>
-</center>
+    <div class="limiter">
+		<div class="container-table100" style="background:#fff;">
+			<div class="wrap-table100">
+                <form action="{% url 'update_data' %}" method="post">
+                    {% csrf_token %}
+                    <div class="table100 ver5">
+                        <table data-vertable="ver5">
+                            <thead>
+                                <tr class="row100 head">
+                                    <th class="column100 column2" data-column="column2">设备名称</th>
+                                    <th class="column100 column3" data-column="column3">系统版本</th>
+                                    <th class="column100 column4" data-column="column4">设备UDID</th>
+                                    <th class="column100 column5" data-column="column5">设备型号</th>
+                                </tr>
+                            </thead>
+                            {% for i in content %}
+                            <tbody>
+                                <tr class="row100">
+                                    <td class="column100 column2" data-column="column2">
+                                        <input type="text" name="devices_name" id="" value="{{ i.equipment_name }}" >
+                                    </td>
+                                    <td class="column100 column3" data-column="column3">
+                                        <input type="text" name="platformVersion" id="platformVersion" value="{{ i.platform_verion }}">
+                                    </td>
+                                    <td class="column100 column4" data-column="column4">
+                                        <input type="text" readonly name="devices_uuid"  value="{{ i.equipment_uuid }}">
+                                    </td>
+                                    <td class="column100 column5" data-column="column5">
+                                        <input type="text" readonly name="devices_model"  value="{{ i.equipment_model }}">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            {% endfor %}
+                        </table>
+                        <button type="submit" name="submit" style="width:80px;height:30px;font-size:16px;background:#fff;float:right;">提交</button>
+                        <a onclick="javascript:history.back();" style="width:80px;height:30px;font-size:16px;background:#fff;float:right;text-align:center;padding-top:4px;">取消/返回</a>
+                    </div>
+                </form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+{% block js %}
+<!--===============================================================================================-->
+	<script src="../../../static/table_body/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../static/table_body/vendor/bootstrap/js/popper.js"></script>
+	<script src="../../../static/table_body/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../static/table_body/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../static/table_body/js/main.js"></script>
 {% endblock %}

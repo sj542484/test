@@ -4,8 +4,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.mysql_data import MysqlData
+from testfarm.test_program.app.honor.student.word_book.object_page.data_action import WordBookDataHandle
+from testfarm.test_program.app.honor.student.word_book.object_page.mysql_data import WordBookSql
 from testfarm.test_program.app.honor.student.word_book.object_page.word_book import WordBook
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststeps, teststep
@@ -15,9 +15,9 @@ class MyWordPage(BasePage):
     """单词本 - 我的单词"""
     def __init__(self):
         self.home = HomePage()
-        self.mysql = MysqlData()
+        self.mysql = WordBookSql()
         self.word = WordBook()
-        self.common = DataActionPage()
+        self.common = WordBookDataHandle()
 
     @teststeps
     def wait_check_mine_word_page(self):
@@ -119,39 +119,41 @@ class MyWordPage(BasePage):
             return False
 
     @teststep
-    def get_all_words(self, word):
+    def get_all_words(self):
         """将所有单词存储在一个数组中"""
-        word_list = {}
+        word_list = []
         while True:
             words = self.get_words()
-            if self.wait_check_end_page():
-                break
             for j in range(len(words)):
-                word_list[words[j].text] = j
-            self.screen_swipe_up(0.5, 0.9, 0.65, 2500)
-        self.screen_swipe_down(0.5, 0.2, 0.9, 1000)
-        return list(word_list.keys())
+                if words[j].text in word_list:
+                    continue
+                else:
+                    word_list.append(words[j].text)
+            if self.wait_check_end_page():
+                self.screen_swipe_down(0.5, 0.4, 0.7, 1000)
+                break
+            else:
+                self.screen_swipe_up(0.5, 0.9, 0.4, 1500)
+        return word_list
 
     @teststep
-    def play_mine_word(self, word):
+    def play_mine_word(self, stu_id,  total):
         """我的单词 主要过程"""
         total_text = self.total_word()
-        if total_text.split(":")[1] != word:
+        if total_text.split(":")[1] != total:
             print('★★★ Error--题目总数不正确！')
         else:
             print('\n----<我的单词页面>-----\n')
             print(total_text)
             self.word_detail_text()
 
-            words_list = self.get_all_words(word)  # 获取所有单词
-            all_words = list(set(words_list))     # 滑屏后添加至新数组，去重
-            all_words.sort(key=words_list.index)  # 保留原有顺序
+            all_words = self.get_all_words()  # 获取所有单词
             print(len(all_words))
             print('所有单词：', all_words)
 
             words = self.get_words()
-            words[random.randint(0, len(words))].click()  # 随机点击一个单词
-            self.word.play_word_book()  # 我的单词练习过程
+            words[random.randint(0, len(words)-4)].click()  # 随机点击一个单词
+            self.word.play_word_book(stu_id)  # 我的单词练习过程
 
             time.sleep(3)
             self.word.back_to_home()

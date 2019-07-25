@@ -4,6 +4,7 @@
 # Date:     2019/3/29 11:29
 # -------------------------------------------
 import random
+import re
 import string
 
 from selenium.webdriver.common.by import By
@@ -41,6 +42,26 @@ class WordSpell(BasePage):
             return False
 
     @teststep
+    def wait_check_hint_page(self):
+        """默写模式页面检查点"""
+        locator = (By.ID, self.id_type() + "hint")
+        try:
+            WebDriverWait(self.driver, 3, 0.5).until(lambda x: x.find_element(*locator))
+            return True
+        except:
+            return False
+
+    @teststep
+    def wait_check_answer_page(self):
+        """提示字母页面检查点"""
+        locator = (By.ID, self.id_type() + "tv_answer")
+        try:
+            WebDriverWait(self.driver, 3, 0.5).until(lambda x: x.find_element(*locator))
+            return True
+        except:
+            return False
+
+    @teststep
     def explain(self):
         """翻译"""
         ele = self.driver.find_element_by_id(self.id_type() + 'tv_explain')
@@ -65,7 +86,7 @@ class WordSpell(BasePage):
         return ele.text
 
     @teststeps
-    def spell_word_operate(self, fq, sec_answer, half_exit):
+    def spell_word_operate(self, fq, sec_answer):
         """单词拼写具体步骤"""
         timer = []
         mine_answer = {}
@@ -76,40 +97,56 @@ class WordSpell(BasePage):
                 self.common.rate_judge(total_num, i)                 # 校验剩余题数
                 explain = self.explain()
                 print('解释：', explain)
-                if self.wait_check_hint_word_page():                # 校验点击提示或输入前, 是否出现单词
-                    if self.spell_word() != '':
-                        print('★★★ 未点击提示或未输入字符出现默写单词')
-                self.hint_btn().click()
 
-                if not self.wait_check_hint_word_page():          # 校验是否有提示字母
-                    print('★★★ 未发现首字母提示！')
+                if self.wait_check_hint_word_page():
+                    wait_spell_word = self.spell_word()[1:-1]
+                    print('待填单词：', wait_spell_word)
+                    if fq == 1:
+                        print(len(re.findall(r'_', wait_spell_word)))
+                        for x in range(len(re.findall(r'_', wait_spell_word))):
+                            random_str = random.choice(string.ascii_lowercase)
+                            Keyboard().games_keyboard(random_str)
+                    else:
+                        right_answer = list(sec_answer[explain])
+                        for x in list(wait_spell_word.replace('_', '')):
+                            right_answer.remove(x)
+                        for y in right_answer:
+                            Keyboard().games_keyboard(y)
 
-                self.common.judge_next_is_true_false('true')      # 判断下一题按钮状态
-                if fq == 1:
-                    random_length = random.randint(3, 5)              # 创建随机字母
-                    random_string = ''.join(random.sample(string.ascii_letters, random_length))
-                    mine_answer[explain] = random_string
-                    for j in range(len(random_string)):              # 输入随机字母
-                        Keyboard().games_keyboard(random_string[j])
+                    self.common.next_btn().click()
+                    mine_answer[explain] = self.spell_word()[1::2]
+                    print('我的答案：', self.spell_word()[1::2])
                 else:
-                    Keyboard().games_keyboard('backspace')
-                    right_answer = sec_answer[explain]
-                    for j in range(len(right_answer)):
-                        Keyboard().games_keyboard(right_answer[j])
+                    if self.wait_check_hint_word_page():                # 校验点击提示或输入前, 是否出现单词
+                        if self.spell_word() != '':
+                            print('★★★ 未点击提示或未输入字符出现默写单词')
+                    self.hint_btn().click()
 
-                self.common.next_btn().click()
-                print('我的答案：', self.spell_word())
+                    if not self.wait_check_hint_word_page():          # 校验是否有提示字母
+                        print('★★★ 未发现首字母提示！')
+
+                    self.common.judge_next_is_true_false('true')      # 判断下一题按钮状态
+                    if fq == 1:
+                        random_length = random.randint(3, 5)              # 创建随机字母
+                        random_string = ''.join(random.sample(string.ascii_letters, random_length))
+                        mine_answer[explain] = random_string
+                        for j in range(len(random_string)):              # 输入随机字母
+                            Keyboard().games_keyboard(random_string[j])
+                    else:
+                        Keyboard().games_keyboard('backspace')
+                        right_answer = sec_answer[explain]
+                        for j in range(len(right_answer)):
+                            Keyboard().games_keyboard(right_answer[j])
+
+                    self.common.next_btn().click()
+                    print('我的答案：', self.spell_word())
 
                 if fq == 1:
-                    print('正确答案：', self.answer_word())          # 提交后 输出正确字母
+                    if self.wait_check_answer_page():
+                        print('正确答案：', self.answer_word())
                 else:
                     print('正确答案：', sec_answer[explain])
                 timer.append(self.common.bank_time())
-
-                if i == 2:
-                    if half_exit:
-                        self.click_back_up_button()
-                        break
 
                 self.common.next_btn().click()
                 print('-'*20, '\n')

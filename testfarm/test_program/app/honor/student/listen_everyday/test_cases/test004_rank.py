@@ -10,12 +10,13 @@
 # -------------------------------------------
 import unittest
 
+from testfarm.test_program.app.honor.student.library.object_pages.usercenter_page import UserCenterPage
 from testfarm.test_program.app.honor.student.listen_everyday.object_page.history_page import HistoryPage
 from testfarm.test_program.app.honor.student.listen_everyday.object_page.listen_home_page import ListenHomePage
 from testfarm.test_program.app.honor.student.listen_everyday.object_page.rank_page import RankPage
 from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
 from testfarm.test_program.conf.decorator import setup, teardown, teststeps
-
+import time
 
 class SelectLevel(unittest.TestCase):
 
@@ -35,7 +36,8 @@ class SelectLevel(unittest.TestCase):
     @teststeps
     def test_rank(self):
         if self.rank.home.wait_check_home_page():  # 页面检查点
-            name = self.rank.get_user_name()
+            time.sleep(3)
+            name = UserCenterPage().get_user_info()[3]
             if self.rank.home.wait_check_home_page():
                 print('进入主界面')
                 self.rank.home.click_hk_tab(4)   # 点击 每日一听

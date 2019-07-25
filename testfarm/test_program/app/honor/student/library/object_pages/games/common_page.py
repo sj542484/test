@@ -11,6 +11,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
+from testfarm.test_program.utils.games_keyboard import Keyboard
 from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
@@ -46,6 +47,17 @@ class CommonPage(BasePage):
             print('★★★ 待完成数不正确', current_rate, '应为：', total - i)
 
     @teststep
+    def star_icon(self):
+        """标星按钮"""
+        ele = self.driver.find_element_by_id(self.id_type() + 'iv_star')
+        return ele
+
+    @teststep
+    def star_status_judge(self):
+        if GetAttribute().selected(self.star_icon()) != 'false':
+            print('★★★ 标星按钮已被选中')
+
+    @teststep
     def font_middle(self):
         """第一个Aa"""
         ele = self.driver.find_element_by_id(self.id_type() + "font_middle")
@@ -65,7 +77,7 @@ class CommonPage(BasePage):
 
     @teststep
     def next_btn(self):
-        ele = self.driver.find_element_by_id(self.id_type() + 'fab_next')
+        ele = self.driver.find_element_by_id(self.id_type() + 'fab_commit')
         return ele
 
     @teststep
@@ -85,3 +97,13 @@ class CommonPage(BasePage):
         else:  # 只有一道题
             print('只有一道题，时间为:', timer[0], '\n')
             return True
+
+    @teststeps
+    def keyboard_operate(self, j, value):
+        """点击键盘 具体操作"""
+        if j == 3:
+            Keyboard().games_keyboard('capslock')  # 点击键盘 切换到 大写字母
+            Keyboard().games_keyboard(value.upper())  # 点击键盘对应 大写字母
+            Keyboard().games_keyboard('capslock')  # 点击键盘 切换到 小写字母
+        else:
+            Keyboard().games_keyboard(value)  # 点击键盘对应字

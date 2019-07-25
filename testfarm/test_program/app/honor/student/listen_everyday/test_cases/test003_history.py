@@ -9,7 +9,7 @@ from testfarm.test_program.app.honor.student.listen_everyday.object_page.history
 from testfarm.test_program.app.honor.student.listen_everyday.object_page.listen_home_page import ListenHomePage
 from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
 from testfarm.test_program.conf.decorator import setup, teardown, teststeps
-
+import time
 
 class SelectLevel(unittest.TestCase):
 
@@ -30,6 +30,7 @@ class SelectLevel(unittest.TestCase):
     def test_history_log(self):
         if self.history.home.wait_check_home_page():  # 页面检查点
             print('进入主界面')
+            time.sleep(3)
             self.history.home.click_hk_tab(4)   # 点击 每日一听
             if self.listen.wait_check_listen_everyday_home_page():
                 excise_time = self.listen.excise_time()
@@ -38,4 +39,6 @@ class SelectLevel(unittest.TestCase):
                 if self.history.wait_check_history_page():
                     print('进入历史记录')
                     self.history.history_page_operate()
+            if self.listen.wait_check_listen_everyday_home_page():
+                self.listen.click_back_up_button()
 

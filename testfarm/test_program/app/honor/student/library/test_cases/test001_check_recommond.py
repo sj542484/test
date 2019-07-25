@@ -6,7 +6,7 @@
 import time
 import unittest
 from testfarm.test_program.app.honor.student.library.object_pages.library_page import LibraryPage
-from testfarm.test_program.app.honor.student.library.object_pages.sql_data_page import DataHandlePage
+from testfarm.test_program.app.honor.student.library.object_pages.library_data_handle import DataHandlePage
 from testfarm.test_program.app.honor.student.library.object_pages.usercenter_page import UserCenterPage
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
@@ -60,29 +60,31 @@ class Recommend(unittest.TestCase):
                 print('第一种情况：除系统书单外，其他数据均为0， 此时页面需展示系统书单')
                 self.data.kind_one(all_kind_ids)
 
-                self.check_recommend_data(school_id)
-
-                print('第二种情况，学校书籍为0，书单<3, 系统书籍为0， 书单>0')
-                self.data.kind_two(all_kind_ids)
-                self.check_recommend_data(school_id)
-
-                if len(all_kind_ids[1]) >= 3:
-                    print('第三种情况， 学校书籍为0， 书单>=3, 系统书籍为0， 书单不为0')
-                    self.data.kind_three(all_kind_ids)
+                if school_id != 0:
+                    self.check_recommend_data(school_id)
+                    print('第二种情况，学校书籍为0，书单<3, 系统书籍为0， 书单>0')
+                    self.data.kind_two(all_kind_ids)
                     self.check_recommend_data(school_id)
 
-                print('第四种情况, 学校书籍为0， 书单不为0， 系统书籍不为0， 书单不为0')
-                self.data.kind_four(all_kind_ids)
-                self.check_recommend_data(school_id)
+                    if len(all_kind_ids[1]) >= 3:
+                        print('第三种情况， 学校书籍为0， 书单>=3, 系统书籍为0， 书单不为0')
+                        self.data.kind_three(all_kind_ids)
+                        self.check_recommend_data(school_id)
 
-                print('第五种情况, 学校书籍<3， 书单不为0， 系统书籍不为0， 书单不为0')
-                self.data.kind_five(all_kind_ids)
-                self.check_recommend_data(school_id)
-
-                if len(all_kind_ids[0]) >= 3:
-                    print('第六种情况， 学校书籍>=3, 其他均不为0')
-                    self.data.kind_six(all_kind_ids)
+                    print('第四种情况, 学校书籍为0， 书单不为0， 系统书籍不为0， 书单不为0')
+                    self.data.kind_four(all_kind_ids)
                     self.check_recommend_data(school_id)
+
+                    print('第五种情况, 学校书籍<3， 书单不为0， 系统书籍不为0， 书单不为0')
+                    self.data.kind_five(all_kind_ids)
+                    self.check_recommend_data(school_id)
+
+                    if len(all_kind_ids[0]) >= 3:
+                        print('第六种情况， 学校书籍>=3, 其他均不为0')
+                        self.data.kind_six(all_kind_ids)
+                        self.check_recommend_data(school_id)
+                else:
+                    print('该学生暂时没有学校')
 
 
     @teststep

@@ -47,7 +47,7 @@ class ListenSelectImg(BasePage):
     @teststep
     def images(self):
         """图片"""
-        ele = self.driver.find_elements_by_id(self.id_type() + 'img')
+        ele = self.driver.find_elements_by_id(self.id_type() + 'result')
         return ele
 
     @teststep
@@ -66,12 +66,12 @@ class ListenSelectImg(BasePage):
     def result_ques_images(self, ques_text):
         """结果页图片"""
         ques_index = int(ques_text.split('.')[0]) - 1
-        image_list = [x for x in self.images() if x.get_attribute('contentDescription').split('## ')[1].strip()
+        image_list = [x for x in self.images() if x.get_attribute('content-desc').split('## ')[1].strip()
                       == str(ques_index)]
         return image_list
 
     @teststeps
-    def listen_select_image_operate(self, fq, sec_answer, half_exit):
+    def listen_select_image_operate(self, fq, sec_answer):
         """听音选图"""
         timer = []
         mine_answer = {}
@@ -85,7 +85,7 @@ class ListenSelectImg(BasePage):
                 if fq == 1:
                     random_index = random.randint(0, len(self.images()) - 1)
                     random_choice = self.images()[random_index]
-                    choice_desc = random_choice.get_attribute('contentDescription')
+                    choice_desc = random_choice.get_attribute('content-desc')
                     print('选择答案：', choice_desc)
                     mine_answer[question] = choice_desc
                     random_choice.click()
@@ -93,7 +93,7 @@ class ListenSelectImg(BasePage):
                 else:
                     right_answer = sec_answer[question]
                     for x in self.images():
-                        if x.get_attribute('contentDescription') == right_answer:
+                        if x.get_attribute('content-desc') == right_answer:
                             x.click()
                             time.sleep(1)
                             break
@@ -101,11 +101,6 @@ class ListenSelectImg(BasePage):
 
                 timer.append(self.common.bank_time())
                 print('-'*20, '\n')
-
-                if i == 1:
-                    if half_exit:
-                        self.click_back_up_button()
-                        break
 
                 if i == total_num - 1:
                     if not self.common.wait_check_next_btn_page():
@@ -131,6 +126,7 @@ class ListenSelectImg(BasePage):
         right_answer = {}
         right, wrong = [], []
         if ResultPage().wait_check_answer_page():
+
             self.voice_play_btn().click()
             banks = []
             while True:
@@ -165,7 +161,7 @@ class ListenSelectImg(BasePage):
                                     right.append(ques.text)
                                     right_answer[ques.text] = desc.split('##')[0].strip()
 
-                            print('-'*20, '\n')
+                    print('-'*20, '\n')
 
                 if len(banks) != len(mine_answer):
                     self.screen_swipe_up(0.5, 0.9, 0.5, 1000)

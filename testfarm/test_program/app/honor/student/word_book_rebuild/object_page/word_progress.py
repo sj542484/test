@@ -4,7 +4,7 @@ import re
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_action import DataActionPage
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_handle import DataActionPage
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep
 from testfarm.test_program.conf.base_config import GetVariable as gv
@@ -79,14 +79,14 @@ class ProgressPage(BasePage):
             return False
 
     @teststep
-    def get_word_homework_names(self):
+    def get_word_homework_names(self, stu_id):
         """获取标签名称"""
-        word_homework_id = self.common.get_all_word_homework_ids()
+        word_homework_id = self.common.get_all_word_homework_ids(stu_id)
         word_homework_names = [self.common.get_word_homework_name(x) for x in word_homework_id]
         return word_homework_names
 
     @teststep
-    def progress_ele_check(self):
+    def progress_ele_check(self, stu_id):
         """页面元素打印"""
         print("\n----<词书进度页面>----\n")
 
@@ -94,7 +94,7 @@ class ProgressPage(BasePage):
         self.third_turn()  # 三轮
         self.total()  # 总数
 
-        label_name = self.get_word_homework_names()  # 数据库标签名称
+        label_name = self.get_word_homework_names(stu_id)  # 数据库标签名称
         label_info = collections.OrderedDict()
         while True:
             labels = self.label_name()  # 页面标签名
@@ -134,7 +134,7 @@ class ProgressPage(BasePage):
                     homework_name = label
 
                 homework_id = self.common.get_word_homework_id_by_name(homework_name)
-                label_id = self.common.get_student_label_id_by_homework_id(homework_id)
+                label_id = self.common.get_student_label_id_by_homework_id(stu_id, homework_id)
                 word_list = self.common.get_wordbank_by_label_id(label_id)
 
                 if int(count[2]) == len(word_list):
@@ -142,14 +142,14 @@ class ProgressPage(BasePage):
                 else:
                     print('★★★ Error-- 总数与数据库数据不匹配', count[2])
 
-                self.count_compare(homework_id, int(count[1]), int(count[0]))
+                self.count_compare(stu_id, homework_id, int(count[1]), int(count[0]))
         else:
             print('★★★ Error-- 词书标签与数据库不一致', word_book_list)
 
     @teststep
-    def count_compare(self, word_homework_id, first_count, third_count):
+    def count_compare(self, stu_id, word_homework_id, first_count, third_count):
         """获取对应熟练度的单词数，并与页面数字比较"""
-        count = self.common.get_words_count(word_homework_id)  # 返回单词id 与单词熟练度
+        count = self.common.get_words_count(stu_id, word_homework_id)  # 返回单词id 与单词熟练度
         if count[0] == first_count:
             print('一轮单词数验证正确')
         else:

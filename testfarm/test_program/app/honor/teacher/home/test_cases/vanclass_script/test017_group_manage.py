@@ -1,19 +1,20 @@
 #!/usr/bin/env python
 # encoding:UTF-8
+import time
 import unittest
 import re
 
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_member_page import VanMemberPage
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_page import VanclassPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
-from testfarm.test_program.app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
-from testfarm.test_program.app.honor.teacher.home.test_data.group_name_data import group_data
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.object_page.vanclass_member_page import VanMemberPage
+from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.home.object_page import VanclassPage
+from app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
+from app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
+from app.honor.teacher.home.test_data.group_name_data import group_data
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
+from utils.toast_find import Toast
 
 
 class GroupManage(unittest.TestCase):
@@ -55,9 +56,9 @@ class GroupManage(unittest.TestCase):
 
                             if self.member.wait_check_page(gv.GROUP):
                                 print('=================小组列表===================')
-                                self.group_manage_operation([''])  # 小组管理 具体操作
+                                self.group_manage_operation()  # 小组管理 具体操作
                                 print('===============修改/删除小组=================')
-                                self.group_menu_operation([''])  # 小组 右键菜单操作
+                                self.group_menu_operation()  # 小组 右键菜单操作
 
                                 if self.member.wait_check_page(gv.GROUP):  # 页面检查点
                                     self.home.back_up_button()
@@ -73,13 +74,15 @@ class GroupManage(unittest.TestCase):
             print("未进入主界面")
 
     @teststeps
-    def group_manage_operation(self, content):
+    def group_manage_operation(self, content=None):
         """小组管理 具体操作"""
+        if content is None:
+            content = []
         if self.member.group_judge():  # 存在小组
             name = self.member.group_name()  # 组名
             count = self.member.st_count()  # 学生人数
 
-            if len(name) > 5 and content[0] == '':
+            if len(name) > 5 and not content:
                 content = [name[-2].text]  # 最后一个game的name
                 for i in range(len(name)-1):
                     print(name[i].text, count[i].text)
@@ -88,7 +91,7 @@ class GroupManage(unittest.TestCase):
                 self.group_manage_operation(content)
             else:  # <4 &翻页
                 var = 0
-                if content[0] != name[-1].text:  # 翻页 成功
+                if content:  # 翻页
                     for k in range(len(name)):
                         if content[0] == name[k].text:
                             var += k + 1
@@ -100,7 +103,7 @@ class GroupManage(unittest.TestCase):
     @teststeps
     def group_menu_operation(self, content=None):
         """小组 右键操作"""
-        if content == None:
+        if content is None:
             content=[]
 
         if self.member.group_judge():  # 存在小组
@@ -117,11 +120,10 @@ class GroupManage(unittest.TestCase):
             else:  # >6 & 下拉翻页
                 var = 0
                 if content:
-                    if content[0] != name[-1].text:  # 下拉翻页 不成功
-                        for k in range(len(name)):
-                            if content[0] == name[k].text:
-                                var += k + 1
-                                break
+                    for k in range(len(name)):
+                        if content[0] == name[k].text:
+                            var += k + 1
+                            break
 
                 self.specific_operation(var, len(name))  # 具体操作
 
@@ -207,6 +209,7 @@ class GroupManage(unittest.TestCase):
                         print(group_data[i]['assert'])
                 elif self.detail.wait_check_page(gv.GROUP):  # 页面检查点
                     if self.member.wait_check_page(group_data[i]['name']):  # 页面检查点
+                        time.sleep(1)
                         group = self.member.group_name()  # todo
                         item = group[-1].text
                         if group_data[i]['name'] != item:

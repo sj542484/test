@@ -5,14 +5,14 @@ import time
 import random
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.teacher.play_games.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.teacher.play_games.object_page.result_page import ResultPage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.decorator import teststeps, teststep
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.wait_element import WaitElement
+from app.honor.teacher.play_games.object_page import Homework
+from app.honor.teacher.play_games.object_page import ResultPage
+from conf.base_page import BasePage
+from conf.base_config import GetVariable as gv
+from conf.decorator import teststeps, teststep
+from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
+from utils.wait_element import WaitElement
 
 
 class Listening(BasePage):

@@ -4,9 +4,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_action import DataActionPage
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststeps, teststep
+
 
 
 class WordRestore(BasePage):
@@ -21,12 +21,21 @@ class WordRestore(BasePage):
         except:
             return False
 
+    @teststep
+    def wait_check_right_answer_page(self):
+        """正确答案页面检查点"""
+        locator = (By.XPATH, '//android.widget.TextView[@resource-id="{}tv_word" and @index=1]'.format(self.id_type()))
+        try:
+            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            return True
+        except:
+            return False
 
     @teststep
-    def prompt(self):
-        """展示的提示词"""
+    def explain(self):
+        """解释"""
         ele = self.driver \
-            .find_element_by_id("{}tv_prompt".format(self.id_type())).text
+            .find_element_by_id("{}tv_prompt".format(self.id_type()))
         return ele
 
     @teststep
@@ -37,10 +46,11 @@ class WordRestore(BasePage):
             .click()
 
     @teststep
-    def word(self):
+    def word(self, index=0):
         """展示的 待还原的单词"""
         word = self.driver \
-            .find_elements_by_xpath('//android.widget.TextView[@resource-id="{}tv_word" and @index=0]'.format(self.id_type()))
+            .find_elements_by_xpath('//android.widget.TextView[@resource-id="{}tv_word" and @index={}]'
+                                    .format(self.id_type(), index))
         return word
 
     @teststep
@@ -64,27 +74,38 @@ class WordRestore(BasePage):
         time.sleep(1)
 
     @teststeps
-    def restore_word(self, i, new_word):
-        if i == 0:
-            print('\n还原单词模式(新词)\n')
+    def restore_word_operate(self, bank_count, new_explain_words):
+        print('===== 还原单词模式(新词) =====\n')
+        all_words, answer_word = [], []
+        while len(all_words) < bank_count:
+            self.click_voice()  # 听力按钮
+            Homework().next_button_judge('false')
 
-        self.click_voice()  # 听力按钮
-        Homework().next_button_operate('false')
+            explain = self.explain()  # 展示的提示词
+            explain_id = explain.get_attribute('contentDescription')
+            if explain_id in new_explain_words:
+                print('★★★ 此单词为新释义，不应出现还原游戏')
+            print("英文解释：%s" % explain.text)
+            print("还原前单词为：", ''.join([x.text for x in self.word()]))
 
-        explain = self.prompt()  # 展示的提示词
-        english = new_word[explain]
-        print("英文解释：%s" % explain)
-
-        before_word = ''
-        alphas = self.word()
-
-        for j in range(0, len(alphas)):
-            before_word = before_word + alphas[j].text
-        print("还原前单词为：", before_word)
-        self.restore_word_core(english)
-        print('还原后单词为：%s' % english)
-        time.sleep(4)
-        print('----------------------------------')
+            if not answer_word:
+                self.drag_operate(self.word()[0], self.word()[-1])
+                Homework().next_button_operate('true')
+                if self.wait_check_right_answer_page():
+                    right_answer = self.word(index=1)[0].text
+                    print('正确答案：', right_answer)
+                    answer_word.append(right_answer)
+                else:
+                    all_words.append(explain)
+                print('还原后单词为：%s' % ''.join([x.text for x in self.word()]))
+                Homework().next_button_operate('true')
+            else:
+                self.restore_word_core(answer_word[0])
+                answer_word.clear()
+                all_words.append(explain)
+                print('还原后单词为：%s' % ''.join([x.text for x in self.word()]))
+                time.sleep(3)
+            print('-'*30, '\n')
 
     @teststep
     def restore_word_core(self, english):

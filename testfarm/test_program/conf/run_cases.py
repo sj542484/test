@@ -10,7 +10,6 @@ from testfarm.test_program.conf.base_config import GetVariable as gv
 
 class RunCases:
     def __init__(self, device_info,test_side):
-
         self.device = device_info
         if not os.path.exists(gv.REPORT_ROOT):
             os.makedirs(gv.REPORT_ROOT)
@@ -31,7 +30,7 @@ class RunCases:
 
     def run(self, cases):
         desc = '用例执行情况统计：'
-        report_title = '测试用例执行报告'
+        report_title = self.device['deviceName'] + ':  ' + '测试用例执行报告'
         fp = open(self.file_name, 'wb')
         runner = HTMLTestRunner.HTMLTestRunner(
                 stream=fp,

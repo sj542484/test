@@ -80,9 +80,7 @@ class NickName(unittest.TestCase):
                                             else:
                                                 time.sleep(2)
                                                 name2 = self.user_info.nickname()  # 昵称条目
-                                                if name2 != name1:
-                                                    print('nickname is changed')
-                                                else:
+                                                if name2 == name1:
                                                     print('★★★ Error- failed change nickname', nickname_data[i]['nickname'],name2)
                                         else:
                                             print('未返回个人信息页面')

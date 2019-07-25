@@ -8,7 +8,6 @@ from testfarm.test_program.app.honor.student.login.object_page.home_page import 
 from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
 from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
 from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.clear_user_data import CleanDataPage
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_action import DataActionPage
 from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.new_word_game import NewWordGame
 from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_book import WordBook
 from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_result_page import ResultPage
@@ -28,7 +27,6 @@ class Word (unittest.TestCase):
         cls.result = ResultPage()
         cls.homework = Homework()
         cls.login.app_status()  # 判断APP当前状态
-        cls.common = DataActionPage()
         cls.clear = CleanDataPage()
         cls.newgame = NewWordGame()
 
@@ -73,7 +71,7 @@ class Word (unittest.TestCase):
                             after_review_words = self.newgame.read_data_from_json()['复习单词']
                             ResultPage().check_result_word_data(after_game_new_words, after_review_words)
                             self.common.remove_studied_word(after_game_new_words, student_all_words)
-                            self.result.clock_button()    # 打卡
+                            self.result.share_button()    # 打卡
                             self.result.show_page_ele()  # 炫耀一下页面
                             self.home.click_back_up_button()  # 返回
                             if self.result.wait_check_result_page():

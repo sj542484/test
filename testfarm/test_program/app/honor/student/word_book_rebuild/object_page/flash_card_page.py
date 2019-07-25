@@ -4,8 +4,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_action import DataActionPage
-# from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.sql_data.mysql_data import MysqlData
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_handle import DataActionPage
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.public_ele import PublicElementPage
 from testfarm.test_program.utils.games_keyboard import Keyboard
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststeps, teststep
@@ -17,7 +17,7 @@ class FlashCard(BasePage):
     def __init__(self):
         self.homework = Homework()
         self.home = HomePage()
-        self.common = DataActionPage()
+        self.public = PublicElementPage()
 
     @teststeps
     def wait_check_study_page(self):
@@ -58,7 +58,7 @@ class FlashCard(BasePage):
         except:
             return False
 
-    # 学习模式
+    # ================= 学习模式 ======================
     @teststep
     def pattern_switch(self):
         """点击右上角的全英/英汉，切换模式"""
@@ -77,29 +77,29 @@ class FlashCard(BasePage):
     @teststep
     def author(self):
         """例句推荐老师"""
-        english = self.driver \
-            .find_element_by_id(self.id_type() + "author").text
-        return english
+        ele = self.driver \
+            .find_element_by_id(self.id_type() + "author")
+        return ele.text
 
     @teststep
     def english_study(self):
         """全英模式 页面内展示的word"""
         english = self.driver\
-            .find_element_by_id(self.id_type() + "tv_english").text
-        return english
+            .find_element_by_id(self.id_type() + "tv_english")
+        return english.text
 
     @teststep
     def explain_study(self):
         """英汉模式 页面内展示的word解释"""
         explain = self.driver.find_element_by_id(self.id_type() + "tv_chinese")
-        return explain.text
+        return explain
 
     @teststep
     def sentence_study(self):
         """全英模式 页面内展示的句子"""
-        english = self.driver \
-            .find_element_by_id(self.id_type() + "sentence").text
-        return english
+        ele = self.driver \
+            .find_element_by_id(self.id_type() + "sentence")
+        return ele.text
 
 
     @teststep
@@ -143,53 +143,19 @@ class FlashCard(BasePage):
 
     # 抄写模式
     @teststep
-    def word_copy(self):
+    def copy_word(self):
         """闪卡练习- 抄写模式 内展示的Word"""
         ele = self.driver\
             .find_element_by_id(self.id_type() + "tv_word").text
         return ele
 
     @teststep
-    def english_copy(self):
+    def input_word(self):
         """单页面内 答题框填入的Word"""
         word = self.driver \
             .find_element_by_id(self.id_type() + "english").text
         return word[::2]
 
-    # 提示 页面
-    @teststeps
-    def wait_check_tips_page(self):
-        """以“icon”为依据"""
-        locator = (By.XPATH,
-                   "//android.widget.TextView[contains(@resource-id,'{}md_title')]".format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 3, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def tips_title(self):
-        """提示title"""
-        item = self.driver \
-            .find_element_by_id(self.id_type() + "md_title").text
-        print(item)
-        return item
-
-    @teststep
-    def tips_content(self):
-        """提示 具体内容"""
-        item = self.driver \
-            .find_element_by_id(self.id_type() + "md_content").text
-        print(item+"\n")
-        return item
-
-    @teststep
-    def commit_button(self):
-        """确定 按钮"""
-        self.driver \
-            .find_element_by_id(self.id_type() + "md_buttonDefaultPositive") \
-            .click()
 
     @teststep
     def skip_button(self):
@@ -205,81 +171,135 @@ class FlashCard(BasePage):
             find_element_by_id(self.id_type() + 'md_buttonDefaultNegative') \
             .click()
 
-    @teststeps
-    def tips_operate(self):
-        """温馨提示 页面信息"""
-        if self.wait_check_tips_page():  # 提示 页面
-            self.tips_title()
-            self.tips_content()
-            self.commit_button()  # 确定按钮
+    @teststep
+    def check_alert_tip_operate(self, index, group_count):
+        """看是否有弹框提示"""
+        if index == 0 and group_count == 0:
+            if self.public.wait_check_tips_page():
+                self.public.tips_operate()
+            else:
+                print('★★★第一次点击标星未显示提示')
             if self.wait_check_study_page():
                 pass
 
-    # 学习模式
+
+    # ====================== 学习模式 ===========================
     @teststeps
-    def study_new_word(self, i, familiar, star, group_new_word, group_review, group):
+    def flash_study_model(self, all_words, star_words, familiar_words, word_info,
+                          index, group_count, new_explain_words, repeat_words, stu_id):
+        """:param all_words 记录当前闪卡的所有单词
+           :param star_words 标星单词
+           :param familiar_words 标熟单词
+           :param word_info 记录今日所做的所有新词
+           :param index 循环次数
+           :param group_count 做的组数
+           :param new_explain_words 新释义单词
+           :param repeat_words 重复单词
+           :param stu_id 学生id
+        """
         """学习模式  新词操作"""
-        if i == 0:
-            print('\n闪卡练习-学习模式(新词)\n')
+        if index == 0:
+            print('\n===== 闪卡练习 学习模式 =====\n')
+        word = self.english_study()
 
-        result = self.study_word_core(group_new_word, group_review)
-        if i in (3, 4, 5):  # 点击star按钮
-            self.click_star()
-            if group == 0 and i == 3:
-                if self.wait_check_tips_page():
-                    self.tips_operate()
-                else:
-                    print('★★★第一次点击标星未显示提示')
-                self.tips_operate()
+        if word in all_words:                   # 判断单词是否去重
+            print('★★★ 本组已存在本单词，单词未去重！')
 
-            if i == 5:
-                self.click_star()  # 取消标星
-            else:
-                star[result[1]] = result[0]
-
-        if i in range(1, 9, 3):
-            self.click_familiar()
-            if group == 0 and i == 1:
-                if self.wait_check_tips_page():
-                    self.tips_operate()
-                else:
-                    print('★★★第一次点击设置熟词未显示提示')
-
-            if i == 4:
-                self.click_familiar()  # 取消标熟
-            else:
-                familiar[result[1]] = result[0]
-        self.next_word(i)
-
-
-    @teststeps
-    def study_word_core(self, new_word, group_review):
-        """闪卡练习学习模式 主要步骤"""
-        word = self.english_study()  # 单词
         if self.wait_check_explain_page():
-            explain = self.explain_study()  # 解释
-            print('单词：%s\n解释：%s' % (word, explain))
-            if word in list(new_word.values()):
-                print('★★★ 此单词已在本组中出现过！')
-                group_review[explain] = word
-            new_word[explain] = word
-            if self.wait_check_sentence_page():  # 判断句子是否存在
-                sentence = self.sentence_study()  # 句子
-                sen_explain = self.sentence_explain_study()  # 句子解释
-                auth = self.author()  # 推荐老师
-                print('句子：%s\n句子解释：%s\n推荐老师：%s' % (sentence, sen_explain, auth))
+            all_words.append(word)               # 加入单词列表
+            explain = self.explain_study()       # 解释
+            explain_id = explain.get_attribute('contentDescription').split(' ')[0]
+            if word not in list(word_info.keys()):
+                word_info[word] = []
+            else:
+                repeat_words.append(word)
+                explain_id_list = word_info[word]
+                if explain_id in explain_id_list:
+                    print('★★★ 该解释已作为新词出现过')
+                else:
+                    if DataActionPage().get_explain_level(word_info[word], stu_id, 1):
+                        new_explain_words.append(explain_id)
 
-            self.pattern_switch()  # 切换到 全英模式
-            self.pattern_switch()  # 切换到 英汉模式
-            self.click_voice()
-            return word, explain
+            if explain_id in word_info[word]:
+                print('★★★  该解释已作为新词出现过！')
+            else:
+                word_info[word].append(explain_id)
+
+            print('单词：', word, '\n',
+                  '解释：', explain.text, '\n',
+                  '句子：', self.sentence_study(), '\n',
+                  '句子解释：', self.sentence_explain_study(), '\n',
+                  '推荐老师：', self.author()
+                  )
+            self.pattern_switch()               # 切换到 全英模式
+            if self.wait_check_explain_page():  # 校验是否成功切换
+                print('★★★ 切换全英模式， 依然存在解释')
+            self.pattern_switch()               # 切换回 英汉模式
+            if index % 2 == 0:                      # 标熟
+                if index == 2:
+                    self.click_familiar()
+                    if self.familiar_button().text != '取消熟词':
+                        print('★★★ 点击熟词后内容未发生变化')
+                    self.click_familiar()
+                    if self.familiar_button().text != '设置熟词':
+                        print('★★★ 点击熟词后内容未发生变化')
+
+                self.click_familiar()
+                self.check_alert_tip_operate(index, group_count)    # 判断首次标熟是否有提示
+
+                familiar_words[explain.text] = word
+
+            if index in [0, 1]:
+                if index == 1:
+                    self.click_star()               # 标星
+                    if self.star_button().get_attribute('selected') != 'true':
+                        print('★★★ 点击标星按钮后，按钮未点亮')
+                    self.click_star()
+                    if self.star_button().get_attribute('selected') != 'false':
+                        print('★★★ 取消标星后，按钮未置灰')
+                self.click_star()  # 标星
+                self.check_alert_tip_operate(index, group_count)   # 判断首次标星是否有提示
+                star_words.append(word)
         else:
-            print('★★★ Error- 默认不为英汉模式')
+            print('★★★ 默认不是英汉模式')
 
+        self.next_word(index, word)
+        print('-'*30, '\n')
 
 
     @teststeps
-    def study_mine_word(self, i, star_list, familiar_list,star_add,familiar_add):
+    def flash_copy_model(self, star_words):
+        """闪卡抄写模式"""
+        for x in range(len(star_words)):
+            word = self.copy_word()
+            word_explain = self.explain_copy()
+            input_word = self.input_word()
+
+            if word not in star_words:
+                print('★★★ 单词未标星，但是有抄写模式', word)
+            print("单词：%s\n解释：%s" % (word, word_explain))
+
+            if len(input_word) != 0:
+                print('★★★ Error-- 抄写栏不为空', input_word)
+                for i in range(len(input_word)):
+                    Keyboard().games_keyboard('backspace')
+
+            for j in range(0, len(word)):
+                if j == 4:
+                    Keyboard().games_keyboard('capslock')  # 点击键盘 切换到 大写字母
+                    Keyboard().games_keyboard(word[j].upper())  # 点击键盘对应 大写字母
+                elif j == 5:
+                    Keyboard().games_keyboard('capslock')  # 点击键盘 切换到 小写字母
+                    Keyboard().games_keyboard(word[j].lower())  # 点击键盘对应字母
+                else:
+                    Keyboard().games_keyboard(word[j])
+
+            time.sleep(5)
+            print('-'*30, '\n')
+
+
+    @teststeps
+    def study_mine_word(self, i, star_list, familiar_list, star_add, familiar_add):
         """学习模式  单词详情操作"""
         if i == 0:
             print('\n闪卡练习-单词详情(我的单词)\n')
@@ -293,7 +313,7 @@ class FlashCard(BasePage):
             else:
                 if i == 1 or i == 3:
                     self.click_star()
-                    self.tips_operate()
+                    self.public.tips_operate()
                     star_add.append(word)
                 self.judge_word_is_familiar(familiar_list, word, i, familiar_add)     # 判断单词是否被标熟
 
@@ -305,19 +325,18 @@ class FlashCard(BasePage):
             self.home.click_back_up_button()
 
     @teststeps
-    def next_word(self, i):
+    def next_word(self, i, word):
         """进入下一单词的方式"""
         if i == 1:  # 向左滑屏
-            self.screen_swipe_left(0.8, 0.5, 0.1, 1000)
-            time.sleep(1)
+            self.screen_swipe_left(0.9, 0.5, 0.1, 1000)
+            if self.wait_check_study_page():
+                if self.english_study() == word:
+                    print('★★★ 左右滑屏未成功，仍处于已学单词页面')
         else:
             self.homework.next_button_operate('true')
-            time.sleep(1)
-
-        print('-------------------------------------')
 
     @teststep
-    def judge_word_is_star(self,i):
+    def judge_word_is_star(self, i):
         """判断单词是否被标星"""
         if GetAttribute().selected(self.star_button()) == 'true':  # 判断但是标星是否被标注
             print('单词已标星')
@@ -327,69 +346,40 @@ class FlashCard(BasePage):
             print("★★★ Error--此题未被标星")
 
     @teststep
-    def judge_word_is_familiar(self, familiar, word,i,familiar_add):
+    def judge_word_is_familiar(self, familiar, word, i, familiar_add):
         """判断单词是否被标熟"""
         if word in familiar:
             if GetAttribute().selected(self.familiar_button()) == 'true':
                 print("★★★ Error-- 此题未被标熟")
                 self.click_familiar()
-                self.tips_operate()
+                self.public.tips_operate()
                 familiar_add.append(word)
             else:
                 print('单词已标熟')
         else:
             if i == 2 or i == 4:
                 self.click_familiar()
-                self.tips_operate()
+                self.public.tips_operate()
                 familiar_add.append(word)
 
-    # 抄写模式
-    @teststeps
-    def copy_new_word(self, i, star_word):
-        """抄写模式  新词操作"""
-        if i == 0:
-            print('\n闪卡练习-抄写模式(新词)\n')
-        word = self.word_copy()
-        self.copy_word_core(word, star_word)
 
     @teststeps
-    def copy_mine_word(self, i, star_add):
-        """抄写模式  我的单词操作"""
-        if i == 0:
-            print('\n闪卡练习-抄写模式((单词详情)\n')
-        word = self.word_copy()
-        if i in(range(0, 5)):
-            star_words = self.common.get_star_words()
-            self.copy_word_core(word)
-            stars = star_words + star_add
-            if word not in stars:
-                print('★★★ Error-- 单词未被标星却出现抄写模式')
-        else:
-            self.home.click_back_up_button()    # 若没有点击放弃，且i>=4，则点击 确定按钮
-            if self.wait_check_tips_page():
-                self.tips_operate()
-                time.sleep(2)
+    def scan_game_operate(self):
+        """闪卡游戏过滤"""
+        word_info = {}
+        if self.wait_check_study_page():
+            game_count = self.public.bank_count()             # 获取闪卡个数
+            for x in range(game_count):
+                word = self.english_study()                   # 单词
+                explain = self.explain_study()                # 解释
+                print('单词：', word)
+                print('解释：', explain.text)
+                explain_id = explain.get_attribute('contentDescription').split(' ')[0]  # 解释id
+                word_info[explain_id] = explain.text          # 将解释id与解释存入字典中
+                self.next_button().click()   # 点击 下一题 按钮()
+                print('-' * 30, '\n')
 
-    @teststeps
-    def copy_word_core(self, word, star_word):
-        """闪卡练习 抄写模式 主要步骤"""
-        # self.homework.click_voice()  # 听力按钮
-        word_explain = self.explain_copy()
-        print("单词：%s\n解释：%s" % (word, word_explain))
-        copy_word = self.english_copy()
-        if len(copy_word) != 0:
-            print('★★★ Error-- 抄写栏不为空', copy_word)
-            for i in range(len(copy_word)):
-                Keyboard().games_keyboard('backspace')
-
-        for j in range(0, len(word)):
-            if j == 4:
-                Keyboard().games_keyboard('capslock')  # 点击键盘 切换到 大写字母
-                Keyboard().games_keyboard(word[j].upper())  # 点击键盘对应 大写字母
-            elif j == 5:
-                Keyboard().games_keyboard('capslock')  # 点击键盘 切换到 小写字母
-                Keyboard().games_keyboard(word[j].lower())  # 点击键盘对应字母
-            else:
-                Keyboard().games_keyboard(word[j])
-        time.sleep(3)
-        print('--------------------------')
+        self.click_back_up_button()         # 退出弹框处理
+        if self.public.wait_check_tips_page():
+            self.public.tips_operate()
+        return word_info

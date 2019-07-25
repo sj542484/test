@@ -1,4 +1,4 @@
-import json
+
 import re
 import time
 
@@ -7,6 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
+from testfarm.test_program.utils.toast_find import Toast
 
 
 class ResultPage(BasePage):
@@ -18,6 +19,36 @@ class ResultPage(BasePage):
     def wait_check_result_page(self):
         """结果页 以今日已练单词图片的Id为依据"""
         locator = (By.ID, self.id_type() + 'word_count')
+        try:
+            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            return True
+        except:
+            return False
+
+    @teststep
+    def wait_check_wx_login_page(self):
+        """微信登陆页面检查点"""
+        locator = (By.XPATH, '//android.widget.TextView[contains(@text,"登录微信")]')
+        try:
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
+            return True
+        except:
+            return False
+
+    @teststep
+    def wait_check_share_page(self):
+        """打卡页，以分享图片id为依据"""
+        locator = (By.ID, self.id_type() + "share_img")
+        try:
+            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            return True
+        except:
+            return False
+
+    @teststep
+    def wait_check_next_grade(self):
+        """再来一组 以继续挑战的图片的Id为依据"""
+        locator = (By.ID, self.id_type() + "img")
         try:
             WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
             return True
@@ -48,28 +79,9 @@ class ResultPage(BasePage):
         ele = self.driver.find_element_by_id(self.id_type() + "text")
         return ele.text
 
-    @teststep
-    def wait_check_show_page(self):
-        """打卡页，以分享图片id为依据"""
-        locator = (By.ID, self.id_type() + "share_img")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
 
     @teststep
-    def wait_check_next_grade(self):
-        """再来一组 以继续挑战的图片的Id为依据"""
-        locator = (By.ID, self.id_type() + "img")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def clock_button(self):
+    def share_button(self):
         """打卡"""
         self.driver.\
             find_element_by_id(self.id_type() + 'punch_clock')\
@@ -106,12 +118,29 @@ class ResultPage(BasePage):
             find_element_by_id(self.id_type() + "cancel")\
             .click()
 
+    @teststep
+    def wx_btn(self):
+        """微信按钮"""
+        ele = self.driver.find_element_by_id(self.id_type() + "weixin")
+        return ele
+
+    @teststep
+    def wx_friend(self):
+        """朋友圈"""
+        ele = self.driver.find_element_by_id(self.id_type() + 'weixin_friends')
+        return ele
+
+    @teststep
+    def save_img(self):
+        """保存图片"""
+        ele = self.driver.find_element_by_id(self.id_type() + 'save_img')
+        return ele
 
     @teststep
     def nex_level_text(self):
         ele = self.driver.find_element_by_xpath("//android.widget.TextView[@index,0]")
-        print('已选年级 :%s'%ele)
-        print('--------------------------------------')
+        print('已选年级 :%s'% ele)
+        print('-'*30, '\n')
 
 
     @teststep
@@ -121,71 +150,69 @@ class ResultPage(BasePage):
             find_element_by_id(self.id_type() + "confirm")\
             .click()
 
+    @teststep
+    def wx_back_up_btn(self):
+        """微信页面返回按钮"""
+        ele = self.driver.find_element_by_accessibility_id('返回')
+        return ele
+
+    @teststep
+    def share_page_operate(self):
+        """分享页面操作"""
+        if self.wait_check_share_page():
+            self.wx_btn().click()
+            if self.wait_check_wx_login_page():
+                self.wx_back_up_btn().click()
+            else:
+                print('★★★ 未进入微信登陆页面')
+
+        if self.wait_check_share_page():
+            self.wx_friend().click()
+            if self.wait_check_wx_login_page():
+                self.wx_back_up_btn().click()
+            else:
+                print('★★★ 未进入微信登陆页面')
+        if self.wait_check_share_page():
+            self.save_img().click()
+            if not Toast().find_toast('已保存到本地'):
+                print('★★★ 未发现保存图片提示')
+            self.click_back_up_button()
 
     @teststeps
-    def check_result_word_data(self, after_game_new_words, after_review_words):
+    def check_result_word_data(self, word_info, new_explain_words, recite_words, group_count):
         """结果页面"""
         print(' <结果页>：')
         print('今日已练单词：%s' % self.today_word())
         print('日期：%s' % self.date())
         print(self.already_remember_word())
         print(self.word_detail_info())
-
-        result_data = {}
         today_word_count = int(self.today_word())
-        already_word = int(re.findall(r'\d+', self.already_remember_word())[0])
+        already_count = int(re.findall(r'\d+', self.already_remember_word())[0])
         detail = re.findall(r'\d+', self.word_detail_info())
-        result_data['今日已练单词'] = today_word_count
-        result_data['已背单词'] = already_word
-        result_data['复习'] = int(detail[0])
-        result_data['新词'] = int(detail[1])
-        result_data['已练组数'] = int(detail[2])
+        study_group_count = int(detail[0])
+        recite_count = int(detail[1])
+        new_set_words = int(detail[2])
+        new_explain_count = int(detail[3])
+        all_word = sum([len(x) for x in list(word_info.values())])
 
-        all_record_word = {y: x[y] for x in list(after_game_new_words.values()) for y in x}
-        review_word = {y: x[y] for x in list(after_review_words.values()) for y in x}
-        no_set_count = len(all_record_word)
-        set_count = len(set(all_record_word.values()))
+        if already_count != len(word_info):
+            print('★★★ 已学单词数不正确，应为', len(word_info))
 
-        if result_data['今日已练单词'] != no_set_count:
-            print('★★★ 今日已练单词个数核对不正确, 页面显示为%d, 实该为%d' % (result_data['今日已练单词'], no_set_count))
-        if result_data['已背单词'] != set_count:
-            print("★★★ 已背单词核对不正确, 页面显示为%d, 实该为%d" % (result_data['已背单词'], set_count))
+        if today_word_count != all_word:
+            print('★★★ 今日单词总数不正确， 应为', all_word)
 
-        if result_data['复习'] != len(review_word):
-            print('★★★ 复习个数核对不正确，页面显示为%d, 实该为%d' % (result_data['复习'], len(review_word)))
+        if study_group_count != group_count+1:
+            print('★★★ 已练组数不正确， 应为', group_count+1)
 
-        if result_data['新词'] != set_count:
-            print('★★★ 新词个数核对不正确, 页面显示为%d, 实该为%d' % (result_data['新词'], set_count))
+        if new_set_words != len(word_info):
+            print('★★★ 新词学单词数不正确，应为', len(word_info))
 
-        print('----------------------------------------')
+        if new_explain_count != len(new_explain_words):
+            print('★★★ 新释义单词个数不正确， 应为', len(new_explain_words))
 
+        if recite_count != len(recite_words):
+            print('★★★ 复习单词个数不正确， 应为', len(recite_words))
 
-    @teststeps
-    def show_page_ele(self):
-        """炫耀一下页面"""
-        if self.wait_check_show_page():
-            print('<炫耀一下>：')
-            print('功能按钮：')
-            wx = self.driver.find_element_by_id(self.id_type() + "weixin").text
-            wx_friend = self.driver.find_element_by_id(self.id_type() + 'weixin_friends').text
-            img_save = self.driver.find_element_by_id(self.id_type() + 'save_img').text
-            print(wx, wx_friend, img_save)
-            print('-----------------------------------------')
-
-    @teststeps
-    def result_page_handle(self):
-        """结果页处理"""
-        if self.wait_check_result_page():
-            print('进入结果页面')
-            self.check_result_word_data()  # 结果页元素
-            self.clock_button()  # 打卡
-            self.show_page_ele()  # 炫耀一下页面
-            self.home.click_back_up_button()  # 返回
-            if self.wait_check_result_page():
-                self.more_again_button()  # 再练一次
-                if self.wait_check_next_grade():  # 继续挑战页面
-                    self.level_up_text()
-                self.back_to_home()
 
     @teststep
     def back_to_home(self):
@@ -197,3 +224,15 @@ class ResultPage(BasePage):
             if self.home.wait_check_home_page():  # 页面检查点
                 print('返回主界面')
 
+    @teststeps
+    def result_page_handle(self, word_info, new_explain_words, recite_words, x):
+        """结果页处理"""
+        if self.wait_check_result_page():
+            print('进入结果页面')
+            self.check_result_word_data(word_info, new_explain_words, recite_words, x)  # 结果页元素
+            self.share_button()  # 打卡
+            self.share_page_operate()  # 炫耀一下页面
+            if self.wait_check_result_page():
+                self.more_again_button()  # 再练一次
+                if self.wait_check_next_grade():  # 继续挑战页面
+                    self.level_up_text()

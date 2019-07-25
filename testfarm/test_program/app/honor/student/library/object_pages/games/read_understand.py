@@ -66,7 +66,7 @@ class ReadUnderstand(BasePage):
         time.sleep(2)
 
     @teststep
-    def read_understand_operate(self, fq, sec_answer, half_exit):
+    def read_understand_operate(self, fq, sec_answer):
         if self.wait_check_ss_content_page():
             total_num = self.common.bank_time()
             article = self.article()
@@ -78,21 +78,19 @@ class ReadUnderstand(BasePage):
             ques_info = []
             timer = []
             mine_answer = {}
-            flag = False
             while True:
-                if flag or self.common.rest_bank_num() == 0:
+                if self.common.rest_bank_num() == 0:
                     break
                 questions = self.cloze.result_question()
+                last_text_attr = self.cloze.get_last_textview_type()
                 for i, ques in enumerate(questions):
                     if ques.text in ques_info:
                         continue
                     else:
                         if i == len(questions) - 1:
-                            self.screen_swipe_up(0.5, 0.8, 0.5, 1000)
+                            self.cloze.swipe_operate(last_text_attr)
                         ques_text = ques.text
                         print('问题：', ques_text)
-
-                        self.common.rate_judge(total_num, len(ques_info))
                         ques_info.append(ques_text)
                         if fq == 1:
                             for x, opt in enumerate(self.cloze.result_opt_text(ques_text)):
@@ -110,16 +108,10 @@ class ReadUnderstand(BasePage):
                                     self.cloze.result_opt_char(ques_text)[x].click()
                             print('我的答案：', right_answer)
 
+                        self.common.rate_judge(total_num, len(ques_info))
                         print('-'*20, '\n')
 
                         timer.append(self.common.bank_time())
-                        if i == 2:
-                            if half_exit:
-                                self.click_back_up_button()
-                                flag = True
-                                break
-                self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
-
             self.common.judge_next_is_true_false('true')
             self.common.judge_timer(timer)
             self.common.next_btn().click()

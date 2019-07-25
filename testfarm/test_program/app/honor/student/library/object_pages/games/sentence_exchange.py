@@ -97,9 +97,14 @@ class ChangeSentence(BasePage):
         ele = self.driver.find_element_by_id(self.id_type() + 'tv_mine')
         return ele
 
+    @teststep
+    def get_ques_size(self, question):
+        """获取一个答案的大小"""
+        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/../..'.format(question))
+        return ele.size
 
     @teststep
-    def sentence_game_operate(self, fq, sec_answer, half_exit):
+    def sentence_game_operate(self, fq, sec_answer):
         """句型转换游戏过程"""
         timer = []
         mine_answers = {}
@@ -138,10 +143,6 @@ class ChangeSentence(BasePage):
                 time.sleep(1)
                 print(self.answer())
                 print('-'*20, '\n')
-                if i == 2:
-                    if half_exit:
-                        self.click_back_up_button()
-                        break
                 timer.append(self.common.bank_time())
                 self.common.next_btn().click()
         self.common.judge_timer(timer)
@@ -153,13 +154,15 @@ class ChangeSentence(BasePage):
         right_answer = {}
         right, wrong = [], []
         index = 0
-        while True:
-            if ResultPage().wait_check_answer_page():
+        if ResultPage().wait_check_answer_page():
+            ques_size = self.get_ques_size(self.result_ques()[0].text)
+            ques_scale = ques_size['height'] / self.get_window_size()[1]
+            while True:
                 questions = self.result_ques()
                 for i, ques in enumerate(questions):
                     if ResultPage().wait_check_answer_page():
                         if i == len(questions) - 1:
-                            self.screen_swipe_up(0.5, 0.9, 0.6, 1000)
+                            self.screen_swipe_up(0.5, 0.9, 0.9 - ques_scale, 1000)
                         result_answer = self.result_answer(ques.text)
                         print('问题：', ques.text)
                         print('答案：', result_answer[0])

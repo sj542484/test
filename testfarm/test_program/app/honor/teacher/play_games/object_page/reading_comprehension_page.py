@@ -5,19 +5,21 @@ import random
 import time
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.teacher.play_games.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.teacher.play_games.object_page.result_page import ResultPage
-from testfarm.test_program.conf.decorator import teststeps, teststep
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.get_element_bounds import Element
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.wait_element import WaitElement
+from app.honor.teacher.play_games.object_page import Homework
+from app.honor.teacher.play_games.object_page import ResultPage
+from conf.decorator import teststeps, teststep
+from conf.base_config import GetVariable as gv
+from conf.base_page import BasePage
+from utils.get_attribute import GetAttribute
+from utils.get_element_bounds import Element
+from utils.swipe_screen import SwipeFun
+from utils.wait_element import WaitElement
 
 
-class ReadCompre(BasePage):
+class ReadComprehension(BasePage):
     """阅读理解"""
+    content_value = gv.PACKAGE_ID + "ss_view"  # 文章
+
     def __init__(self):
         self.get = GetAttribute()
         self.swipe = SwipeFun()
@@ -72,9 +74,15 @@ class ReadCompre(BasePage):
         return item
 
     @teststeps
+    def verify_content_text(self):
+        """验证 阅读理解/完形填空的文章 是否存在"""
+        locator = (By.ID, self.content_value)
+        return self.wait.judge_is_exists(locator)
+
+    @teststeps
     def article_view(self):
         """文章 元素"""
-        ele = self.driver.find_element_by_id(gv.PACKAGE_ID + "ss_view")
+        ele = self.driver.find_element_by_id(self.content_value)
         return ele
 
     @teststeps

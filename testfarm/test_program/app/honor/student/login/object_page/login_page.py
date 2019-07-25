@@ -1,4 +1,7 @@
-import time,yaml,os
+import time
+
+import os
+
 from testfarm.test_program.app.honor.student.login.test_data.account import VALID_ACCOUNT
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.login.test_data.mine_account import phone_data
@@ -7,18 +10,18 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from testfarm.test_program.conf.decorator import teststep, teststeps
 from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.utils.click_bounds import ClickBounds
 from testfarm.test_program.utils.reset_phone_find_toast import verify_find
 from testfarm.test_program.utils.toast_find import Toast
 
 
 class LoginPage(BasePage):
-
     @teststeps
     def wait_check_page(self):
         """以“登录按钮”的xpath@text为依据"""
         locator = (By.ID, '{}btn_login'.format(self.id_type()))
         try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -251,62 +254,43 @@ class LoginPage(BasePage):
         self.driver.hide_keyboard()
 
     @teststeps
-    def login_operate(self):
+    def login_operate(self, stu_account, stu_password):
         """登录"""
         print('在登录界面：')
-        print(os.getcwd())
-        a = open('./testfarm/test_program/conf/user_info.yaml')
-        res = yaml.full_load(a)
-        print(res,'手机信息及人员列表')
-
         time.sleep(2)
         phone = self.input_username()
         pwd = self.input_password()
 
-        phone.send_keys(VALID_ACCOUNT.account())
-        pwd.send_keys(VALID_ACCOUNT.password())
+        phone.send_keys(stu_account)
+        pwd.send_keys(stu_password)
         self.login_button()
         time.sleep(2)
 
-    @teststep
-    def app_status(self):
+    @teststeps
+    def app_status(self, stu_account=VALID_ACCOUNT.account(), stu_password=VALID_ACCOUNT.password()):
         """判断应用当前状态"""
+        activity = self.driver.wait_activity
         if HomePage().wait_check_home_page():  # 在主界面
-            print('在主界面')
-        elif self.wait_check_page():  # 在登录界面
-            self.login_operate()  # 登录 操作
-        else:
-            print('在其他页面,重启app')
-            self.close_app()  # 关闭APP
+            print('主界面')
+        elif activity == '':  # 崩溃退出
             self.launch_app()  # 重启APP
             if HomePage().wait_check_home_page():  # 在主界面
-                print('在主界面')
+                print('主界面')
             elif self.wait_check_page():  # 在登录界面
-                print('在登陆界面')
-                self.login_operate()  # 登录 操作
-
-    # @teststeps
-    # def app_status(self):
-    #     """判断应用当前状态"""
-    #     activity = self.wait_activity()
-    #     if HomePage().wait_check_home_page():  # 在主界面
-    #         print('主界面')
-    #     elif activity == '':  # 崩溃退出
-    #         self.launch_app()  # 重启APP
-    #         if HomePage().wait_check_home_page():  # 在主界面
-    #             print('主界面')
-    #         elif self.wait_check_page():  # 在登录界面
-    #             self.login_operate()
-    #     elif self.wait_check_page():  # 在登录界面
-    #         self.login_operate()
-    #     else:
-    #         print('在其他页面')
-    #         self.close_app()  # 关闭APP
-    #         self.launch_app()  # 重启APP
-    #         if HomePage().wait_check_home_page():  # 在主界面
-    #             print('主界面')
-    #         elif self.wait_check_page():  # 在登录界面
-    #             self.login_operate()
+                self.login_operate(stu_account, stu_password)
+        elif self.wait_check_page():  # 在登录界面
+            self.login_operate(stu_account, stu_password)
+        else:
+            print('在其他页面')
+            self.close_app()  # 关闭APP
+            self.launch_app()  # 重启APP
+            res = HomePage().wait_check_home_page()
+            if res:  # 在主界面
+                print('主界面')
+            elif self.wait_check_page():  # 在登录界面
+                self.login_operate(stu_account, stu_password)
+            else:
+                print('页面走丢了')
 
     @teststeps
     def enter_user_info_page(self):
@@ -318,38 +302,41 @@ class LoginPage(BasePage):
 
     @teststep
     def launch_app(self):
-        """Start on the device the application specified in the desired capabilities.
+        """Start on the device the testfarm.test_program.app.honorlication specified in the desired capabilities.
         """
+        print('重启app')
         self.driver.launch_app()
-        time.sleep(5)
+        time.sleep(10)
 
     @teststep
     def close_app(self):
-        """Close on the device the application specified in the desired capabilities.
+        """Close on the device the testfarm.test_program.app.honorlication specified in the desired capabilities.
         """
+        print('关闭app')
         self.driver.close_app()
 
     @teststep
     def remove_app(self):
-        """Remove on the device the application
+        """Remove on the device the testfarm.test_program.app.honorlication
         """
         self.driver.remove_app("com.vanthink.student.debug")
 
     @teststep
     def is_app_installed(self):
-        """Check app was installed on the device the application
+        """Check testfarm.test_program.app.honor was installed on the device the testfarm.test_program.app.honorlication
         """
         self.driver.is_app_installed("com.vanthink.student.debug")
 
     @teststep
     def install_app(self):
-        """Remove on the device the application
+        """Remove on the device the testfarm.test_program.app.honorlication
         """
         self.driver.install_app('../student_debug_1.2.7.apk')
         print('安装APP')
 
     @teststep
     def verification_code_operate(self, phone, operate_type):
+        """验证码操作"""
         value = 0
         for j in range(2):
             self.get_code_button().click()  # 获取验证码 按钮

@@ -4,21 +4,22 @@
 import time
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.teacher.play_games.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.teacher.play_games.object_page.result_page import ResultPage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.utils.click_bounds import ClickBounds
-from testfarm.test_program.utils.games_keyboard import Keyboard
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.wait_element import WaitElement
+from app.honor.teacher.play_games.object_page import Homework
+from app.honor.teacher.play_games.object_page import ResultPage
+from conf.decorator import teststep, teststeps
+from conf.base_page import BasePage
+from conf.base_config import GetVariable as gv
+from utils.click_bounds import ClickBounds
+from utils.games_keyboard import Keyboard
+from utils.get_attribute import GetAttribute
+from utils.wait_element import WaitElement
 
 
 class BankedCloze(BasePage):
     """选词填空"""
     prompt_value = gv.PACKAGE_ID + "prompt"  # 提示词
     prompt_locator = (By.ID, prompt_value)  # 提示词locator
+    tb_content_value = gv.PACKAGE_ID + "tb_content"  # 文章
 
     def __init__(self):
         self.bounds = ClickBounds()
@@ -57,16 +58,20 @@ class BankedCloze(BasePage):
     @teststep
     def prompt(self):
         """提示词"""
-        ele = self.driver\
-            .find_element_by_id(self.prompt_value).text
+        self.driver \
+            .find_element_by_id(self.prompt_value).click()
+
+    @teststep
+    def prompt_content(self):
+        """提示词内容"""
+        ele = self.driver \
+            .find_elements_by_xpath("//android.widget.TextView[contains(@index,0)]")[1].text
         return ele
 
     @teststep
-    def bounds_prompt(self):
-        """提示词按钮"""
-        ele = self.driver\
-            .find_elements_by_xpath("//android.widget.TextView[contains(@index,0)]")[1]
-        return ele
+    def click_blank(self):
+        """点击页面 提示词弹框 以外空白处，弹框消失"""
+        self.bounds.click_bounds(530, 1500)
 
     # 查看答案 页面
     @teststeps
@@ -76,10 +81,16 @@ class BankedCloze(BasePage):
         return self.wait.wait_check_element(locator)
 
     @teststeps
+    def verify_content_text(self):
+        """验证 阅读理解/完形填空的文章 是否存在"""
+        locator = (By.ID, self.tb_content_value)
+        return self.wait.judge_is_exists(locator)
+
+    @teststeps
     def content_value(self):
         """获取整个 外框元素"""
         ele = self.driver\
-            .find_element_by_id(gv.PACKAGE_ID + "tb_content")
+            .find_element_by_id(self.tb_content_value)
         return ele
 
     @teststeps

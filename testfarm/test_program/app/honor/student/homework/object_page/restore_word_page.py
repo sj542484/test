@@ -153,7 +153,7 @@ class RestoreWord(BasePage):
                     timestr.append(self.time())  # 统计每小题的计时控件time信息
 
                     var = self.word()  # 元素 tv_word
-                    # if int(self.rate())+1 == int(rate) - i and len(var) == len(word)+1:  # todo 判断 是否进入答案页
+                    # if int(self.rate())+1 == int(rate) - i and len(var) == len(study_word)+1:  # todo 判断 是否进入答案页
                     text = []  # 元素 tv_word的text
                     for z in range(len(var)):
                         text.append(var[z].text)

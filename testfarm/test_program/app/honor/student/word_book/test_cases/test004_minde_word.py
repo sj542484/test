@@ -1,7 +1,8 @@
 import unittest
 
+from testfarm.test_program.app.honor.student.library.object_pages.usercenter_page import UserCenterPage
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
+from testfarm.test_program.app.honor.student.word_book.object_page.data_action import WordBookDataHandle
 from testfarm.test_program.app.honor.student.word_book.object_page.my_word_page import MyWordPage
 from testfarm.test_program.app.honor.student.word_book.object_page.word_book import WordBook
 from testfarm.test_program.conf.decorator import setup, teardown, teststeps
@@ -15,7 +16,7 @@ class MineWord(unittest.TestCase):
         cls.home = HomePage()
         cls.word = WordBook()
         cls.mine = MyWordPage()
-        cls.common = DataActionPage()
+        cls.common = WordBookDataHandle()
 
 
     @teardown
@@ -26,7 +27,8 @@ class MineWord(unittest.TestCase):
     def test_mine_word(self):
         """我的单词"""
         if self.home.wait_check_home_page():  # 页面检查点
-            self.common.get_id_nick_back_home()
+            stu_info = UserCenterPage().get_user_info()
+            stu_id = stu_info[0]
             if self.home.wait_check_home_page():  # 页面检查点
                 print('进入主界面')
                 self.home.click_hk_tab(1)  # 点击 背单词
@@ -37,5 +39,5 @@ class MineWord(unittest.TestCase):
                         if self.mine.no_word_tips():
                             self.mine.no_word_tip_text()
                         else:
-                            self.mine.play_mine_word(total)
+                            self.mine.play_mine_word(stu_id, total)
 

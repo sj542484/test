@@ -72,8 +72,10 @@ class Register(unittest.TestCase):
                     phone.send_keys(user_phone)  # 输入手机号
                     if i == 0:
                         value = self.login.verification_code_operate(user_phone, 'register')
+                        print('验证码：', value)
                     else:
-                        value = verify_find(user_phone, 'register')  # 获取验证码
+                        value = verify_find(user_phone, var='register')  # 获取验证码
+                        print('验证码：', value)
 
                     if Toast().find_toast('用户已经注册') or self.login.wait_check_page():
                         print('该账号已注册！')

@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # code:UTF-8  
 # @Author  : SUN FEIFEI
+from conf.decorator import teststeps
 
 game_dict = {"听后选择": "1",
              '单项选择': '2',
@@ -20,7 +21,7 @@ game_dict = {"听后选择": "1",
              "听音选图": "15",
              "连词成句": "16"}
 
-
+@teststeps
 def game_type_operation(key):
     """根据"""
     if key in game_dict.keys():

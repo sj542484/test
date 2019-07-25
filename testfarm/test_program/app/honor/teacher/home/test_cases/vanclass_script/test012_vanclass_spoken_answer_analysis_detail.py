@@ -2,17 +2,17 @@
 # encoding:UTF-8
 import unittest
 
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.home.object_page.homework_detail_page import HwDetailPage
-from testfarm.test_program.app.honor.teacher.home.object_page.spoken_detail_page import SpokenDetailPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_page import VanclassPage
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.object_page.vanclass_hw_detail_page import HwDetailPage
+from app.honor.teacher.home.object_page.spoken_detail_page import SpokenDetailPage
+from app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
+from app.honor.teacher.home.object_page import VanclassPage
+from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
+from utils.toast_find import Toast
 
 
 class Spoken(unittest.TestCase):
@@ -86,16 +86,16 @@ class Spoken(unittest.TestCase):
                 else:
                     print('=======================答题分析tab=======================')
                     if self.speak.wait_check_spoken_list_page():
-
                         name = self.homework.game_name()  # 游戏name
                         print(name[0].text)
                         name[0].click()  # 进入按学生看/按题查看 tab页
 
-                        if self.speak.wait_check_st_page():
+                        if self.speak.wait_check_analysis_tab_page():
                             self.check_st_operation()  # 按学生查看 tab
-                            self.check_question_operation()  # 按题查看 tab
-                        else:
-                            print('!!!未进入进入按学生看/按题查看 tab页')
+                        elif self.home.wait_check_empty_tips_page():
+                            print('暂无数据')
+
+                        self.check_question_operation()  # 按题查看 tab
                     elif self.home.wait_check_empty_tips_page():
                         print('暂无数据')
 
@@ -131,7 +131,7 @@ class Spoken(unittest.TestCase):
     @teststeps
     def check_question_operation(self):
         """按题查看tab 具体操作"""
-        if self.speak.wait_check_st_page():  # 页面检查点
+        if self.speak.wait_check_analysis_tab_page():  # 页面检查点
             analysis = self.speak.check_question_tab()  # 按题查看 tab
             if self.get.selected(analysis) is False:
                 print('★★★ Error- 默认在 按题查看 tab页')
@@ -170,7 +170,7 @@ class Spoken(unittest.TestCase):
         icon = self.speak.st_icon()  # 学生头像
         status = self.speak.st_unfinished_or_star()  # 学生已完成/星星数
 
-        if len(icon) > 4 and len(content) == 0:
+        if len(icon) > 4 and not content:
             content = []
             for i in range(len(icon) - 1):
                 print('学生:', name[i].text, ' ', status[i])  # 打印所有学生信息
@@ -214,7 +214,7 @@ class Spoken(unittest.TestCase):
             self.answer_list_detail(content)
         else:
             var = 0
-            if content:  # 翻页成功 或者是第一页
+            if content:  # 翻页成功
                 for k in range(len(finish)):
                     if content[0] == sentence[k].text and content[1] == finish[k].text:
                         var += k+1

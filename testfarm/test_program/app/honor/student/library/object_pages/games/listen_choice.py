@@ -90,8 +90,20 @@ class ListenChoice(BasePage):
         if GetAttribute().enabled(self.voice_button()) != var:
             print('★★★ 声音按钮状态错误', var)
 
+    @teststep
+    def get_ques_size(self, question):
+        """获取问题的大小"""
+        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/..'.format(question))
+        return ele.size
+
+    @teststep
+    def get_opt_size(self, question):
+        """获取问题的大小"""
+        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/following-sibling::android.widget.LinearLayout'.format(question))
+        return ele.size
+
     @teststeps
-    def listen_choice_operate(self, fq, sec_answer, half_exit):
+    def listen_choice_operate(self, fq, sec_answer):
         """听力选择游戏过程"""
         timer = []
         mine_answer = {}
@@ -107,20 +119,26 @@ class ListenChoice(BasePage):
             ques_info = []            # 用以存储题目,滑动过滤 中断循环
             timer = []
             flag = False
+
             while True:
                 if flag or self.common.rest_bank_num() == 0:
                     break
                 question = self.cloze.result_question()
+                last_text_attr = self.cloze.get_last_textview_type()
                 for i, ques in enumerate(question):
                     if ques.text in ques_info:
                         continue
                     else:
                         self.common.rate_judge(total_num, len(timer))
+                        if i == len(question) - 1:
+                            if last_text_attr == 'ques':
+                                self.screen_swipe_up(0.5, 0.9, 0.9 - self.get_ques_opt_scale()[0], 1000)
+                            else:
+                                self.screen_swipe_up(0.5, 0.9, 0.9 - self.get_ques_opt_scale()[1], 1000)
+
                         ques_text = ques.text
                         print('问题：', ques_text)
                         ques_info.append(ques_text)
-                        if i == len(question) - 1:
-                            self.screen_swipe_up(0.5, 0.8, 0.6, 1000)
                         for x, opt in enumerate(self.cloze.result_opt_text(ques_text)):   # 打印输出题目及选项
                             print(self.cloze.result_opt_char(ques_text)[x].text, opt.text)
 
@@ -139,12 +157,6 @@ class ListenChoice(BasePage):
 
                     print('-'*20, '\n')
                     timer.append(self.common.bank_time())  # 添加学生
-                    if i == 2:
-                        if half_exit:
-                            self.click_back_up_button()
-                            flag = True
-                            break
-                self.screen_swipe_up(0.5, 0.9, 0.3, 1000)    # 滑动
 
             self.common.judge_timer(timer)
             while True:
@@ -173,16 +185,18 @@ class ListenChoice(BasePage):
                     else:
                         self.screen_swipe_up(0.5, 0.8, 0.6, 1000)
             ques_info = []
-            while True:
+            while len(ques_info) < len(mine_answer):
                 questions = self.cloze.result_question()
+                last_text_attr = self.cloze.get_last_textview_type()
                 for x, ques in enumerate(questions):
                     if ques.text in ques_info:
                         continue
                     else:
+                        if x == len(questions) - 1:
+                            self.cloze.swipe_operate(last_text_attr)
+
                         print('问题：', ques.text)
                         ques_info.append(ques.text)
-                        if x == len(questions) - 1:
-                            self.screen_swipe_up(0.5, 0.8, 0.62, 1000)
                         for y, opt in enumerate(self.cloze.result_opt_text(ques.text)):
                             char = self.cloze.result_opt_char(ques.text)[y]
                             if opt.text == mine_answer[ques.text]:
@@ -199,10 +213,6 @@ class ListenChoice(BasePage):
                                     print('正确答案：', opt.text)
 
                         print('-'*20, '\n')
-                if len(ques_info) != len(mine_answer):
-                    self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
-                else:
-                    break
 
             print('结果页答案:', right_answer)
             self.click_back_up_button()

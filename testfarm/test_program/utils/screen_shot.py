@@ -8,6 +8,7 @@ import math
 import operator
 import time
 from PIL import Image
+from conf.report_path import ReportPath
 
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststeps
@@ -20,7 +21,8 @@ date_time = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
 
 class ScreenShot(BasePage):
     def __init__(self):
-        self.screen_path = gv.SCREENSHOT_ROOT
+        # self.screen_path = gv.SCREENSHOT_ROOT
+        self.screen_path = self.get_path()
 
     @teststeps
     def get_screenshot_by_element(self, element):

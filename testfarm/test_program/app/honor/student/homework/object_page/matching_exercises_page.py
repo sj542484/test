@@ -127,7 +127,7 @@ class MatchingExercises(BasePage):
                         else:  # 如果是汉字
                             explain.append(ele[i].text)
                             explain_index.append(i)
-                    # print(word_index, word, explain, explain_index)
+                    # print(word_index, study_word, explain, explain_index)
 
                     for k in range(len(word)):  # 具体操作
                         Homework().rate_judge(rate, k+j*4)  # 测试当前rate值显示是否正确

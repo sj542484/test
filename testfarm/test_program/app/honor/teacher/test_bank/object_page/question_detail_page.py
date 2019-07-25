@@ -1,17 +1,23 @@
 #!/usr/bin/env python
 # code:UTF-8  
 # @Author  : SUN FEIFEI
+import re
 import time
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.utils.wait_element import WaitElement
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from conf.base_config import GetVariable as gv
+from utils.get_attribute import GetAttribute
+from utils.wait_element import WaitElement
 
 
 class QuestionDetailPage(BasePage):
     """题单详情 页面"""
+    game_value = gv.PACKAGE_ID + "test_bank_name"  # 小游戏名
+    game_type_value = gv.PACKAGE_ID + "type"  # 小游戏类型
+    num_value = gv.PACKAGE_ID + "exercise_num"  # 共X题
+
     def __init__(self):
         self.wait = WaitElement()
 
@@ -63,3 +69,45 @@ class QuestionDetailPage(BasePage):
         ele = self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + "cb_add")
         return ele
+
+    @teststeps
+    def game_item(self):
+        """小游戏条目"""
+        ele = self.driver \
+            .find_elements_by_xpath("//android.widget.TextView[contains(@resource-id, %s)]"
+                                    "/parent::android.widget.LinearLayout/parent::android.widget.LinearLayout/parent::android.widget.LinearLayout"
+                                    "/descendant::android.widget.TextView" % self.game_value)
+        count = []  # 名称
+        game_type = []
+        for i in range(len(ele)):
+            if GetAttribute().resource_id(ele[i]) == self.game_type_value:  # 类型
+                count.append(i)
+                game_type.append(ele[i].text)
+
+        count.append(len(ele) - 1)
+
+        content = []  # 页面内所有条目 元素text
+        name = []  # 页面内所有条目元素
+        num = []  # 共X题
+        for j in range(len(count) - 1):
+            item = []  # 每一个条目的所有元素k
+            if count[j + 1] - count[j] in (4, 5):
+                for k in range(count[j], count[j + 1]):
+                    item.append(ele[k].text)
+                    if GetAttribute().resource_id(ele[k]) == self.num_value:  # 共X题
+                        num.append(ele[k])
+                    elif GetAttribute().resource_id(ele[k]) == self.game_value:  # 题目名称
+                        name.append(ele[k].text)
+
+                content.append(item)
+
+        return content, name, num, game_type
+
+    @teststeps
+    def game_mode(self, var):
+        """小游戏模式--匹配小括号内游戏模式
+        :param var: 名称
+        """
+        m = re.match(".*\（(.*)\）.*", var)  # title中有一个括号
+        return m.group(1)
+

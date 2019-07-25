@@ -2,15 +2,15 @@
 # encoding:UTF-8
 import unittest
 
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_page import VanclassPage
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
-from testfarm.test_program.app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.home.object_page import VanclassPage
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
+from app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
+from utils.toast_find import Toast
 
 
 class ScoreRanking(unittest.TestCase):
@@ -169,6 +169,8 @@ class ScoreRanking(unittest.TestCase):
             if order[0].text != "1":   # 第一名 只能与后面同学比较 ，且积分大于其他同学
                 if int(num[1].text) < int(num[0].text):
                     print('★★★ Error- 积分排行有误：', num[1].text, num[0].text)
+                else:
+                    print('积分排行无误')
             print('------------------')
 
         for i in range(var, length):
@@ -176,5 +178,7 @@ class ScoreRanking(unittest.TestCase):
             if i != 1:
                 if int(num[i].text) > int(num[i - 1].text):  # 除第一名以外的同学，积分只能比前一名少
                     print('★★★ Error- 积分排行有误：', num[i].text, num[i - 1].text)
+                else:
+                    print('积分排行无误')
             print('------------------')
 

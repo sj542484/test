@@ -39,7 +39,7 @@ class Games(unittest.TestCase):
             print("已进入主界面：")
             self.home_page.click_hk_tab(2)  # 进入 做作业
 
-            if self.homework.wait_check_page():  # 页面检查点
+            if self.homework.wait_check_hw_page():  # 页面检查点
                 var = self.home_page.homework_count()
                 if gv.GUE_WOR_YB in var[0]:  # 该作业存在
                     for i in range(0, len(var[0])):

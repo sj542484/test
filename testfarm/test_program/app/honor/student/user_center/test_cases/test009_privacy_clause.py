@@ -43,7 +43,8 @@ class PrivacyClause(unittest.TestCase):
                     for i in range(4):
                         if self.privacy.wait_check_page():
                             print('翻页%s次' % (i + 1))
-                            self.home.screen_swipe_up(0.5, 0.5, 0.25, 1000)
+                            self.home.screen_swipe_up(0.5, 0.6, 0.4, 1000)
+                            time.sleep(1)
 
                     if self.privacy.wait_check_page():
                         print('下拉一次')

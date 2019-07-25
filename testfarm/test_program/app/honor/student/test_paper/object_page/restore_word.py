@@ -4,7 +4,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
 from testfarm.test_program.app.honor.student.test_paper.object_page.answer_page import AnswerPage
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
+from testfarm.test_program.app.honor.student.word_book.object_page.data_action import WordBookDataHandle
 from testfarm.test_program.app.honor.student.word_book.object_page.restore_word_page import WordRestore
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
@@ -17,7 +17,7 @@ class RestoreWord(BasePage):
         self.homework = Homework()
         self.restore = WordRestore()
         self.answer = AnswerPage()
-        self.common = DataActionPage()
+        self.common = WordBookDataHandle()
 
     @teststep
     def wait_restore_word_explain_page(self):

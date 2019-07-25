@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # encoding:UTF-8
 # @Author  : SUN FEIFEI
+import random
 import re
 import time
 from selenium.webdriver.support.wait import WebDriverWait
@@ -17,12 +18,12 @@ class Homework(BasePage):
     """作业包内 作业列表页面 元素信息"""
 
     @teststeps
-    def wait_check_page(self):
+    def wait_check_hw_page(self):
         """以“作业”的class_name为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@resource-id,"
                              "'{}tv_homework_name')]".format(self.id_type()))
         try:
-            WebDriverWait(self.driver, 20, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -32,7 +33,7 @@ class Homework(BasePage):
         """以 小游戏的class_name为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text, %s)]" % var)
         try:
-            WebDriverWait(self.driver, 20, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -43,6 +44,13 @@ class Homework(BasePage):
         item = self.driver \
             .find_elements_by_class_name("android.widget.TextView")[index].text
         return item
+
+    @teststep
+    def homework_list(self):
+        """作业名称"""
+        ele = self.driver \
+            .find_elements_by_id(self.id_type() + "tv_homework_name")
+        return ele
 
     @teststep
     def games_type(self):
@@ -195,20 +203,9 @@ class Homework(BasePage):
     @teststep
     def next_button_judge(self, var):
         """‘下一题’按钮 状态判断"""
-        item = self.driver \
-            .find_element_by_id(self.id_type() + "fab_next")  # ‘下一题’按钮
-        value = GetAttribute().enabled(item)
-
+        value = GetAttribute().enabled(self.next_button())
         if value != var:  # 测试 下一步 按钮 状态
             print('★★★ 下一步按钮 状态Error', value)
-
-    @teststep
-    def next_button(self):
-        """点击‘下一题’按钮"""
-        time.sleep(1)
-        self.driver \
-            .find_element_by_id(self.id_type() + "fab_next")\
-            .click()
 
     @teststep
     def rate(self):
@@ -289,7 +286,7 @@ class Homework(BasePage):
 
             return own_info  # 返回值
         else:
-            print('未进入结果页')
+            print('作业暂无排行清空')
 
     @teststeps
     def list_item(self, class_name):
@@ -416,7 +413,7 @@ class Homework(BasePage):
     def next_button_operate(self, var):
         """下一步按钮 判断 加 点击操作"""
         self.next_button_judge(var)  # 下一题 按钮 状态判断
-        self.next_button()  # 点击 下一题 按钮
+        self.next_button().click()  # 点击 下一题 按钮
 
     @teststeps
     def now_time(self, ele):

@@ -1,103 +1,157 @@
 {% extends 'base_page.html' %}
 
 {% block style %}
-        td {border:1px solid green;border-radius:3px;height:40px;width:200px;text-align:center;text-valign:middle;font-size:16px;}
+        td {border:1px solid green;border-radius:3px;height:40px;width:200px;text-align:center;text-valign:middle;font-size:16px;color:#444;}
         button {border:none;font-size:16px;}
-        select {width:200px;height:40px;border:0;font-size:16px;}
-        input {width:200px;height:40px;text-align:center;font-size:16px;}
+        select {width:180px;height:40px;border:0;font-size:16px;color:#808080;background-color:#fff;}
+        input {width:180px;height:40px;text-align:center;font-size:16px;color:#808080;}
 {% endblock %}
-
+{% block head %}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="../../../static/table_body/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/css/main.css">
+<!--===============================================================================================-->
+{% endblock %}
 {% block header %}
     <img src="https://img1.wxzxzj.com/vued02092c5e3b7309243760cee9fa4817c5.png" alt="logo">
     <ul class="wrap">
         <li><a href="{% url 'show' %}">首页</a></li>
         <li><a id="monitor" class="active" href="{% url 'showDevices' %}">设备列表</a></li>
         <li><a id="news" href="{% url 'inputinfo' %}">设备录入</a></li>
-        <li><a id="connect" href="{% url 'testmodeledit' %}">编辑测试模块</a></li>
+        <!--<li><a id="connect" href="{% url 'testmodeledit' %}">编辑测试模块</a></li>-->
         <li><a id="speack" href="{% url 'showalldevices' %}">查看所有设备信息</a></li>
         <li><a href="{% url 'do_logout' %}">退出登陆</a></li>
     </ul>
 {% endblock %}
 
 {% block context %}
-<center style="margin-top:80px;padding:0 60px;" id="content">
+<center id="content" >
     {% if devices == 1 %}
-        <span style="color:red">还没有连接设备</span>
-        <a href="javascript:location.reload();">点击刷新页面</a>
+        <center class="container-table100" style="background:#fff">
+            <span style="color:red">还没有连接设备</span>
+            <a href="javascript:location.reload();">点击刷新页面</a>
+        </center>
     {% elif devices == 0 %}
-        <span style="color:red">设备信息还没有进行录入</span>
-        <a href="{% url 'inputinfo' %}">点击进入设备录入</a>
+        <center class="container-table100" style="background:#fff">
+            <span style="color:red">设备信息还没有进行录入</span>
+            <a href="{% url 'inputinfo' %}">点击进入设备录入</a>
+        </center>
     {% elif devices != None %}
-    <table id="links">
-        <tr>
-            <td>设备名称</td>
-            <td>设备型号</td>
-            <td>设备UUID</td>
-            <td>系统版本</td>
-            <td>选择测试端</td>
-            <td>选择测试项</td>
-            <td>运行状态</td>
-            <td>设备状态</td>
-            <td>报告文件</td>
-        </tr>
-        {% for i in devices %}
-        <form action="{% url 'startserver' %}" method="post">
-            {% csrf_token %}
-            <tr>
-                <td>{{ i.equipment_name }}</td>
-                <td>{{ i.equipment_model }}</td>
-                <td><input type="text" name="e_uuid" value="{{ i.equipment_uuid }}"></td>
-                <td>{{ i.platform_verion }}</td>
-                <td>
-                    <div class="wrap">
-                        <select id="parent" name="parent" onchange="choose(this)">
-                            <option value="0">请选择</option>
-                        </select>
-                    </div>
-                </td>
-                <td>
-                    <div>
-                        <select id="child" name="child">
-                            <option value="0">请选择</option>
-                        </select>
-                    </div>
-                </td>
-                <td>
-                    {% if i.start_but_statue == 0 %}
-                        <button type="submit">开始运行</button>
-                    {% else %}
-                        <a href="{% url 'stopserver' i.gid i.equipment_uuid %}" style="font-size:16px;">终止运行</a>
-                    {% endif %}
-                </td>
-                <td>
-                    {% if i.statue_statue == 0 %}
-                        <input type="text" readonly name="statue" style="font-size:15px"  value="等待运行">
-                    {% elif i.statue_statue == 2 %}
-                        <input type="text" readonly name="statue" style="font-size:15px"  value="异常退出">
-                    {% else %}
-                        <input type="text" readonly name="statue" style="font-size:15px"  value="运行中">
-                    {% endif %}
-                </td>
-                <td>
-                    {% if i.report != None %}
-                    <a target="_blank" href="{% url 'showreport' i.report  %}" style="color:green;">查看报告</a>
-                    {% elif i.report == None %}
-                    <span style="color:red">暂无报告</span>
-                    {% endif %}
-                </td>
-            </tr>
-        </form>
-        {% endfor %}
-    </table>
-    <a href="{% url 'show' %}">go back</a>
-    <span style="margin:200px">已经连接 {{ len }} 台设备</span>
-    <span>{{ file_name }}</span>
-    {% endif %}
+        <div class="limiter">
+		<div class="container-table100" style="background:#fff;">
+			<div class="wrap-table100">
+				<div class="table100 ver5">
+					<table data-vertable="ver5">
+						<thead>
+							<tr class="row100 head">
+								<th class="column100 column2" data-column="column2">设备名称</th>
+								<th class="column100 column3" data-column="column3">设备型号</th>
+								<th class="column100 column4" data-column="column4">设备UDID</th>
+								<th class="column100 column5" data-column="column5">系统版本</th>
+								<th class="column100 column6" data-column="column6">选择测试端</th>
+								<th class="column100 column7" data-column="column7">选择测试项</th>
+								<th class="column100 column8" data-column="column8">运行状态</th>
+								<th class="column100 column9" data-column="column9">设备状态</th>
+								<th class="column100 column10" data-column="column10">报告文件</th>
+							</tr>
+						</thead>
+						<tbody>
+                            {% for i in devices %}
+                            <form action="{% url 'startserver' %}" method="post">
+                                {% csrf_token %}
+                                <tr class="row100">
+                                    <td class="column100 column2" data-column="column2">
+                                        {{ i.equipment_name }}
+                                    </td>
+                                    <td class="column100 column3" data-column="column3">
+                                        {{ i.equipment_model }}
+                                    </td>
+                                    <td class="column100 column4" data-column="column4">
+                                        <input name="e_uuid" value="{{ i.equipment_uuid }}" required>
+                                    </td>
+                                    <td class="column100 column5" data-column="column5">
+                                        {{ i.platform_verion }}
+                                    </td>
+                                    <td class="column100 column6" data-column="column6">
+                                        <div class="wrap">
+                                            <select id="parent" name="parent" onchange="choose(this)">
+                                                <option value="0">请选择</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td class="column100 column6" data-column="column7">
+                                        <div>
+                                            <select id="child" name="child">
+                                                <option value="0">请选择</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td class="column100 column6" data-column="column8">
+                                        {% if i.start_but_statue == 0 %}
+                                            <button type="submit" style="color:#3b3">开始运行</button>
+                                        {% else %}
+                                            <a href="{% url 'stopserver' i.gid i.equipment_uuid %}" style="font-size:16px;color:red">终止运行</a>
+                                        {% endif %}
+                                    </td>
+                                    <td class="column100 column6" data-column="column9">
+                                        {% if i.statue_statue == 0 %}
+                                            <span name="statue" style="color:#39f">等待运行</span>
+                                        {% elif i.statue_statue == 2 %}
+                                        <span name="statue" style="color:red">异常退出</span>
+                                        {% else %}
+                                        <span name="statue" style="color:#3b3">运行中</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="column100 column6" data-column="column10">
+                                        {% if i.report != None %}
+                                        <a target="_blank" href="{% url 'showreport' i.report  %}" style="color:#3b3;">查看报告</a>
+                                        {% elif i.report == None %}
+                                        <span style="color:red">暂无报告</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            </form>
+                            {% endfor %}
+						</tbody>
+					</table>
+                    <center>
+                        <span class="step-links">
+                        <a href="{% url 'show' %}">go back</a>
+                        <span style="margin:200px">已经连接 {{ len }} 台设备</span>
+                        <span>{{ file_name }}</span>
+                        {% endif %}
+                        </span>
+                    </center>
+				</div>
+			</div>
+		</div>
+	</div>
 </center>
 {% endblock %}
 
 {% block js %}
-<script type="text/javascript" src="http://cdn.static.runoob.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../static/table_body/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../static/table_body/vendor/bootstrap/js/popper.js"></script>
+	<script src="../../../static/table_body/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../static/table_body/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../static/table_body/js/main.js"></script>
 <script>
     var pro=["学生端","教师端","校长端","家长端"];
     var city=[["全部","图书馆","每日一听","登录","试卷","个人中心","单词本","习题"],["全部","班级","登陆","游戏","题库","个人中心"],["全部","数据报告","功能介绍","我的账号","我的学校","老师管理"],["全部","学习报告","购买","账号管理"]];
@@ -113,21 +167,6 @@
     }
     readyLoad();
 
-    <!--window.onload=function(){-->
-    <!--    //定时发送请求-->
-    <!--    setInterval(function() {-->
-    <!--        $.ajax({-->
-                <!--type:'GET',-->
-    <!--            url:'/devices', //请求路径-->
-                <!--success: function(msg){-->
-                    <!--document.open();-->
-                    <!--document.write(msg);-->
-                    <!--document.close();-->
-                <!--},-->
-    <!--        });-->
-    <!--    }, 20000);-->
-    <!--};-->
-
     function choose(e){
         var index=$(e).val()-1;//获取当前省的下标
         <!--console.log(index)-->
@@ -135,22 +174,29 @@
         for(var i=0;i<city[index].length;i++){//重新为市赋值
             $(e.parentNode.parentNode.parentNode.childNodes[11].firstChild.nextSibling.firstChild.nextSibling).append($("<option>").val(i+1).html(city[index][i]));
         }
-    }
+    };
 
+    <!--setTimeout("location.href='/devices'",10000)-->
 
-    <!--function choose(e){-->
-        <!--//为省份下拉列表绑定change事件-->
-        <!--console.log(e)-->
-        <!--$(e).change(function(){-->
-            <!--var index=$(this).val()-1;//获取当前省的下标-->
-            <!--console.log(index)-->
-            <!--$(e.parentNode.parentNode.parentNode.childNodes[11].firstChild.nextSibling.firstChild.nextSibling).prop("length",1);//清空原有的数据-->
-            <!--for(var i=0;i<city[index].length;i++){//重新为市赋值-->
-                <!--$(e.parentNode.parentNode.parentNode.childNodes[11].firstChild.nextSibling.firstChild.nextSibling).append($("<option>").val(i+1).html(city[index][i]));-->
+    <!--function st(uuid){-->
+        <!--console.log(uuid,'uuid')-->
+        <!--$.ajax({-->
+            <!--type: "POST",-->
+            <!--url:'/startservices',-->
+            <!--contentType: "application/x-www-form-urlencoded",-->
+            <!--data:{uuid:uuid},-->
+            <!--async: false,-->
+            <!--success: function(msg){-->
+                <!--alert('ok!!!');-->
+            <!--},-->
+            <!--error: function(msg){-->
+                <!--console.log(JSON.stringify(msg));-->
             <!--}-->
-        <!--});-->
+    <!--});-->
     <!--}-->
-  setTimeout("location.href='/devices'",10000)
+
+
+
 
 </script>
 {% endblock %}

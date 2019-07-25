@@ -16,7 +16,7 @@ from testfarm.test_program.conf.decorator import teststep, teststeps
 from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
-class LinkLink(BasePage):
+class LibraryLinkLink(BasePage):
     def __init__(self):
         self.common = CommonPage()
 
@@ -52,7 +52,7 @@ class LinkLink(BasePage):
     @teststep
     def get_english_cards(self):
         """获取英文卡片"""
-        en_cards = [x for x in self.get_word_cards()  if self.is_word(x.text)]
+        en_cards = [x for x in self.get_word_cards() if self.is_word(x.text)]
         return en_cards
 
     @teststep
@@ -62,26 +62,16 @@ class LinkLink(BasePage):
         return ch_cards
 
     @teststeps
-    def word_match_operate(self, fq, sec_answer, half_exit):
+    def word_match_operate(self, fq, sec_answer):
         """连连看游戏过程"""
         timer = []
         index = 0
         total_num = self.common.rest_bank_num()
         mine_answer = {}
-        flag = False
         for i in range(ceil(total_num/5)):                          # 获取连连看页数 5个单词占一页
-            if flag:
-                break
-
             if self.wait_check_word_match_img():
                 english_card = self.get_english_cards()     # 英文序列
                 for en in english_card:
-                    if index == 2:
-                        if half_exit:
-                            flag = True
-                            self.click_back_up_button()
-                            break
-
                     en.click()
                     self.common.rate_judge(total_num, index)
                     rest_num = self.common.rest_bank_num()

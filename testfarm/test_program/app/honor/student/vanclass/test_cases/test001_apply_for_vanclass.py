@@ -62,7 +62,7 @@ class ApplyVanclass(unittest.TestCase):
     def list_swipe_operate(self):
         """班级列表 滑屏 操作"""
         var = self.vanclass_statistic_operate()  # 获取 班级列表信息
-        self.van.screen_swipe_up(0.5, 0.8, 0.2, 1000)
+        self.van.screen_swipe_up(0.5, 0.8, 0.3, 1000)
 
         title = [x.text for x in self.van.vanclass_name()]
         last = title[-1]  # 最后一个作业的title
@@ -157,6 +157,7 @@ class ApplyVanclass(unittest.TestCase):
 
     @teststeps
     def input_remark_name(self, class_datas):
+        """输入备注名"""
         for i in range(len(name_data)):
             if self.van.wait_check_page():
                 self.apply_vanclass_operate(class_datas)
@@ -172,7 +173,7 @@ class ApplyVanclass(unittest.TestCase):
                 remark.send_keys(name_data[i]['name'])
                 print('填入的备注名是:', name_data[i]['name'])
                 print('-'*30, '\n')
-                self.van.apply_class_button()  # 申请入班 按钮
+                self.van.apply_class_button()          # 申请入班 按钮
 
                 if self.van.wait_check_apply_page():
                     if Toast().find_toast(name_data[i]['assert']):
@@ -192,6 +193,7 @@ class ApplyVanclass(unittest.TestCase):
                         if self.home.wait_check_tips_page():  # tips弹框 检查点
                             self.home.tips_title()
                             self.home.commit_button()
+                            time.sleep(3)
                     else:
                         print('★★★ Error- 无申请信息')
 

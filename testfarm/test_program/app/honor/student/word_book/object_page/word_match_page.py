@@ -1,7 +1,7 @@
 import re
 import time
 
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
+from testfarm.test_program.app.honor.student.word_book.object_page.data_action import WordBookDataHandle
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststeps
 from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
@@ -12,11 +12,11 @@ class MatchingWord(BasePage):
 
     def __init__(self):
         self.homework = Homework()
-        self.common = DataActionPage()
+        self.common = WordBookDataHandle()
 
     @teststeps
     def get_word_list(self):
-        """获取页面内所有 word &解释"""
+        """获取页面内所有 study_word &解释"""
         ele = self.driver \
             .find_elements_by_class_name("android.widget.TextView")
         return ele

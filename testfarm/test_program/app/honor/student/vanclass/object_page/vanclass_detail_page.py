@@ -91,7 +91,7 @@ class VanclassDetailPage(BasePage):
     @teststep
     def exit_wechat_login_page(self):
         """退出微信登录页面"""
-        self.driver.find_element_by_id('com.tencent.mm:id/jc').click()
+        self.driver.find_element_by_id('com.tencent.mm:id/kx').click()
 
     @teststeps
     def all_tab(self):
@@ -115,7 +115,7 @@ class VanclassDetailPage(BasePage):
         return ele
 
     @teststep
-    def end_tips(self):
+    def wait_check_end_tips_page(self):
         """没有更多了"""
         try:
             self.driver.find_element_by_id(self.id_type() + "end")
@@ -150,7 +150,6 @@ class VanclassDetailPage(BasePage):
         ele = self.driver \
             .find_elements_by_id(self.id_type() + "roundProgressBar")
         return ele
-
     @teststep
     def finish_status(self):
         """已经有x人完成"""

@@ -4,7 +4,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
 from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import UserCenterPage
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
+from testfarm.test_program.app.honor.student.word_book.object_page.data_action import WordBookDataHandle
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep
 from testfarm.test_program.utils.toast_find import Toast
@@ -15,7 +15,7 @@ class CleanDataPage(BasePage):
 
     def __init__(self):
         self.home = HomePage()
-        self.common = DataActionPage()
+        self.common = WordBookDataHandle()
         self.user_center = UserCenterPage()
         self.user_info = UserInfoPage()
 
@@ -125,20 +125,15 @@ class CleanDataPage(BasePage):
             pass
 
     @teststep
-    def clear_user_all_data(self):
+    def clear_user_all_data(self, stu_id):
         """清除数据库所有相关数据"""
         if self.home.wait_check_home_page():  # 页面检查点
             print('进入主界面')
-            self.common.get_student_id()  # 获取用户id
-            self.common.delete_all_word()    # 删除所有单词
-            self.common.delete_all_record()  # 删除去重记录
-            self.common.delete_all_fluency_flag()  # 删除标星标熟记录
-            self.common.change_play_times(0)  # 更改练习组数
-            self.common.change_today_new_count(0)  # 更改今日新词个数
-            self.common.change_today_word_count(0)  # 更改今日已练词数
-            self.common.delete_all_star()   # 删除所有星星
-            self.common.delete_all_score()  # 删除所有分数
-            self.home.click_back_up_button()
+            self.common.delete_all_word_data(stu_id)
+            self.common.change_play_times(stu_id)  # 更改练习组数
+            self.common.change_today_new_count(stu_id)  # 更改今日新词个数
+            self.common.change_today_word_count(stu_id)  # 更改今日已练词数
+            self.home.click_tab_profile()
             if self.user_center.wait_check_page():
                 self.reset_grade()  # 重置年级
 

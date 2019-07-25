@@ -51,14 +51,14 @@ class VanclassHw(unittest.TestCase):
 
                             van = self.van.vanclass_name()  # 班级名称
                             for i in range(len(van)):
-                                if van[i].text == gv.VAN_LIST:
+                                if van[i].text == gv.CLASS_NAME:
                                     van[i].click()  # 进入班级详情页
                                     break
-                            if self.van.wait_check_vanclass_page(gv.VAN_LIST):  # 页面检查点
+                            if self.van.wait_check_vanclass_page(gv.CLASS_NAME):  # 页面检查点
 
                                 self.van.vanclass_hw()  # 点击 本班作业 tab
-                                if self.detail.wait_check_page(gv.VAN_LIST):  # 页面检查点
-                                    print('%s 本班作业:' % gv.VAN_LIST)
+                                if self.detail.wait_check_page(gv.CLASS_NAME):  # 页面检查点
+                                    print('%s 本班作业:' % gv.CLASS_NAME)
                                     if self.van.empty_tips():
                                         print('暂无数据')
                                     else:

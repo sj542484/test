@@ -2,7 +2,6 @@
 # code:UTF-8
 # @Author  : SUN FEIFEI
 
-import os
 class GetVariable(object):
     """参数化"""
     HOST = '172.17.0.200'
@@ -17,25 +16,33 @@ class GetVariable(object):
 
     # case统计 配置信息
     SUIT_PATH = 'testfarm'
-    print(os.getcwd(),'==============')
-    # CASE_PATH = 'app/student/homework/test_001_all_game'
-    # CASE_PATH = 'app/student/homework/test_002_paper/test_case'
-    # CASE_PATH = 'app/student/homework/test_class_cases'
-    # CASE_PATH = 'app/student/user_center/test_cases'
-    # CASE_PATH = 'app/student/login/test_cases'
-    # CASE_PATH = 'testfarm/test_program/app/honor/weixin/test_cases/test_000_account'
 
+    # case 目录
     CASE_PATH = 'testfarm/test_program/app/'
     CASE_PATTERN = 'test*.py'
-
-    # 以下为 appiumserver.py 配置信息
-    CMD = "appium -a 127.0.0.1 -p %s -bp 4728 --no-reset"
-    SERVER_URL = 'http://127.0.0.1:%s/wd/hub/status'
-    SERVER_LOG = 'appium_server_port_%s.log'
-    KILL = 'taskkill /PID %d /F'
 
     # 做题情况统计 Excel表格存放路径
     EXCEL_PATH = './storges/test_report/games_result_info.xlsx'
 
     # 教师web端
     TEA_URL = 'http://dev.vanthink.cn/accounts/#/login'
+
+    # 安装包
+    # 教师端
+    TEA_PACKAGE = "/Users/vanthink_test_ios/Woker/teacher_env_devDebug_1.2.2(9).apk"
+    # 学生端
+    STU_PACKAGE = "/Users/vanthink_test_ios/Woker/student_env_devDebug_1.3.7-9.apk"
+
+    # hub地址
+    HUBHOST = '192.168.8.149'
+
+    # 学生的ID
+    STU_ID = 0
+    # 需要测试的单词熟练度
+    LEVEL = 1
+    # 需改动的时间数
+    TIME_COUNT = 0
+    # 年级
+    GRADE = '四年级'
+    # 试卷的索引
+    EXAM_INDEX = -1

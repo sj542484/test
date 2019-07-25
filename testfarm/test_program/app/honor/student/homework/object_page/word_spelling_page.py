@@ -70,7 +70,7 @@ class WordSpelling(BasePage):
         ele = self.driver \
             .find_element_by_id(self.id_type() + "tv_word").text
         word = ele[1::2]
-        print('word：', word)
+        print('study_word：', word)
         return word
 
     @teststep

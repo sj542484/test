@@ -7,7 +7,7 @@ from testfarm.test_program.app.honor.student.login.object_page.login_page import
 from testfarm.test_program.app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.student.homework.object_page.flash_card_page import FlashCard
+from testfarm.test_program.app.honor.student.homework.object_page.flash_card_page import FlashCardPage
 from testfarm.test_program.app.honor.student.homework.test_data.homework_title_type_yb import GetVariable as gv
 from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
 from testfarm.test_program.utils.games_keyboard import games_keyboard
@@ -26,7 +26,7 @@ class Games(unittest.TestCase):
         cls.login_page = LoginPage()
         cls.home_page = HomePage()
         cls.homework = Homework()
-        cls.flash_card = FlashCard()
+        cls.flash_card = FlashCardPage()
 
     @classmethod
     @teardown
@@ -42,7 +42,7 @@ class Games(unittest.TestCase):
             print("已进入主界面：")
             self.home_page.click_hk_tab(2)  # 进入 做作业
 
-            if self.homework.wait_check_page():  # 页面检查点
+            if self.homework.wait_check_hw_page():  # 页面检查点
                 var = self.home_page.homework_count()
                 if gv.FLA_CARD_YB in var[0]:  # 该作业存在
                     for i in range(0, len(var[0]) - 1):

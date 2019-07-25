@@ -3,11 +3,15 @@
 # @Author  : SUN FEIFEI
 import time
 from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait
+
 from selenium.webdriver.common.by import By
 
 from testfarm.test_program.conf.decorator import teststep, teststeps
 from testfarm.test_program.conf.base_page import BasePage
+from selenium.webdriver.support import expected_conditions as EC
+from appium.webdriver.common.mobileby import MobileBy
+
 
 
 class HomePage(BasePage):
@@ -15,11 +19,17 @@ class HomePage(BasePage):
     @teststeps
     def wait_check_home_page(self):
         """以“做试卷”为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'做试卷')]")
+        res = self.driver.page_source
+        # locator = (By.XPATH, "//android.widget.TextView[contains(@text,'做试卷')]")
+        # common_back_locator = (MobileBy.XPATH, "//android.widget.TextView[contains(@text,'做试卷')]")
+        print('1:',time.time())
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 30, 0.5).until(lambda x: x.find_element_by_xpath("//android.widget.TextView[contains(@text,'做试卷')]"))
+            # WebDriverWait(self.driver, 10, 0.5).until(EC.visibility_of_element_located(common_back_locator))
+            print('2:',time.time())
             return True
         except:
+            print('3:',time.time())
             return False
 
     @teststeps
@@ -57,7 +67,6 @@ class HomePage(BasePage):
             return False
 
     # 关于图书馆的定位
-
     @teststep
     def wait_check_recommend_more_btn_page(self):
         """推荐栏的发现更多按钮"""
@@ -106,35 +115,35 @@ class HomePage(BasePage):
     def click_tab_library(self):
         """下方图书馆Tab"""
         self.driver.\
-            find_element_by_id(self.id_type() + 'tab_lib_icon')\
+            find_element_by_id(self.id_type() + 'tab_lib')\
             .click()
 
     @teststep
     def click_tab_hw(self):
         """以“学习tab”的id为依据"""
         self.driver\
-            .find_element_by_id(self.id_type() + 'tab_hw_icon')\
+            .find_element_by_id(self.id_type() + 'tab_home')\
             .click()
 
     @teststep
     def click_test_vanclass(self):
         """以“班级tab”的id为依据"""
         self.driver \
-            .find_element_by_id(self.id_type() + 'tab_class_icon')\
+            .find_element_by_id(self.id_type() + 'tab_class')\
             .click()
 
     @teststep
     def click_tab_profile(self):
         """以“个人中心tab”的id为依据"""
         self.driver \
-            .find_element_by_id(self.id_type() + 'tab_profile_icon')\
+            .find_element_by_id(self.id_type() + 'tab_profile')\
             .click()
 
     @teststep
     def click_back_up_button(self):
         """以“返回按钮”的class name为依据"""
         time.sleep(1)
-        ele = self.driver.find_elements_by_class_name("android.widget.ImageButton")[0]
+        ele = self.driver.find_element_by_accessibility_id("转到上一层级")
         ele.click()
 
     @teststeps
@@ -224,13 +233,13 @@ class HomePage(BasePage):
 
     @teststeps
     def click_blank(self):
-        self.driver.tap([(20, 1800), ])
+        self.driver.tap([(20, 180), ])
 
     @teststeps
     def homework_count(self):
         """获取作业title列表第一个页面的作业 """
         homework_list = self.homework()
-        homework_title = [x.text for x in homework_list] # 获取作业title列表
+        homework_title = [x.text for x in homework_list]  # 获取作业title列表
         return homework_title, homework_list
 
     @teststeps

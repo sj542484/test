@@ -2,17 +2,17 @@
 # encoding:UTF-8
 import unittest
 
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.home.object_page.homework_detail_page import HwDetailPage
-from testfarm.test_program.app.honor.teacher.home.object_page.spoken_detail_page import SpokenDetailPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_page import VanclassPage
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.object_page.vanclass_hw_detail_page import HwDetailPage
+from app.honor.teacher.home.object_page.spoken_detail_page import SpokenDetailPage
+from app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
+from app.honor.teacher.home.object_page import VanclassPage
+from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
+from utils.toast_find import Toast
 
 
 class Spoken(unittest.TestCase):
@@ -80,7 +80,7 @@ class Spoken(unittest.TestCase):
         else:
             print('====================完成情况tab====================')
             if self.speak.wait_check_st_list_page():
-                self.st_list_statistics(['', ''])  # 完成情况tab 列表信息
+                self.st_list_statistics()  # 完成情况tab 列表信息
                 print('=========================================')
 
                 status = self.speak.st_finish_status()  # 学生完成与否
@@ -100,13 +100,16 @@ class Spoken(unittest.TestCase):
                 print('暂无数据')
 
     @teststeps
-    def st_list_statistics(self, content):
+    def st_list_statistics(self, content=None):
         """完成情况 tab页信息"""
+        if content is None:
+            content = []
+
         name = self.homework.st_name()  # 学生name
         # icon = self.detail.st_icon()  # 学生头像
         status = self.homework.st_finish_status()  # 学生完成与否
 
-        if len(name) > 4 and content[0] == '':
+        if len(name) > 4 and not content:
             content = []
             for i in range(len(name)-1):
                 print('学生:', name[i].text, ' ', status[i].text)  # 打印所有学生信息
@@ -115,13 +118,13 @@ class Spoken(unittest.TestCase):
             content.append(status[len(name)-2].text)  # 最后一个game的type
             SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
             self.st_list_statistics(content)
-
         else:
             var = 0
-            for k in range(len(name)):
-                if content[0] == name[k].text and content[1] == status[k].text:
-                    var += k
-                    break
+            if content:
+                for k in range(len(name)):
+                    if content[0] == name[k].text and content[1] == status[k].text:
+                        var += k
+                        break
 
             for j in range(var, len(name)):
                 print('学生:', name[j].text, ' ', status[j].text)  # 打印所有学生信息
@@ -129,7 +132,7 @@ class Spoken(unittest.TestCase):
     @teststeps
     def per_game_detail_operation(self):
         """个人 game答题情况页"""
-        self.per_game_list([''])  # 列表信息
+        self.per_game_list()  # 列表信息
 
         if self.speak.wait_check_game_list_page():  # 页面检查点
             status = self.speak.game_finish_status()  # 游戏完成情况
@@ -141,65 +144,68 @@ class Spoken(unittest.TestCase):
                         print('--------------------------------')
                         print('答题情况详情:')
                         game[j].click()  # game答题情况详情页
-                        self.per_answer_detail([''])  # 答题情况详情
+                        self.per_answer_detail()  # 答题情况详情
 
                         if self.speak.wait_check_detail_page():  # 页面检查点
                             self.home.back_up_button()  # 返回game列表页
 
     @teststeps
-    def per_game_list(self, content):
+    def per_game_list(self, content=None):
         """个人 game答题情况页 列表"""
+        if content is None:
+            content = []
+
         if self.speak.wait_check_game_list_page():  # 页面检查点
             name = self.homework.game_name()  # 游戏name
             mode = self.homework.game_type()  # 类型
             num = self.homework.game_num()  # 小题数
             status = self.speak.game_finish_status()  # 游戏完成情况
 
-            if len(status) > 4 and content[0] == '':
+            if len(status) > 4 and not content:
                 content = [name[len(status)-2].text]
                 for i in range(len(status)-1):
                     print(mode[i].text, name[i].text, num[i].text, status[i])
 
                 SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
                 self.per_game_list(content)
-
-                return content
             else:
-                if content[0] != name[-1].text:  # 翻页成功 或者是第一页
-                    var = 0
+                var = 0
+                if content:  # 翻页成功 或者是第一页
                     for k in range(len(name)):
                         if content[0] == name[k].text:
                             var = k + 1
                             break
 
-                    for i in range(var, len(status)):
-                        print(mode[i].text, name[i].text, num[i].text, status[i])
+                for i in range(var, len(status)):
+                    print(mode[i].text, name[i].text, num[i].text, status[i])
 
     @teststeps
-    def per_answer_detail(self, content):
+    def per_answer_detail(self, content=None):
         """game 答题情况详情页"""
+        if content is None:
+            content = []
+
         if self.speak.wait_check_detail_page():  # 页面检查点
             if self.speak.wait_check_detail_list_page():
                 sentence = self.speak.sentence()  # 游戏题目
                 voice = self.speak.speak_button()  # 发音按钮
 
-                if len(voice) > 4 and content[0] == '':
+                if len(voice) > 4 and not content:
                     content = [sentence[len(voice)-2].text]
                     self.detail_operation(len(voice) - 1)  # 详情页 具体操作
 
                     if self.speak.wait_check_detail_list_page():
                         SwipeFun().swipe_vertical(0.5, 0.9, 0.1)
                         self.per_answer_detail(content)
-
-                    return content
                 else:
-                    if content[0] != sentence[-1].text:  # 翻页成功 或者是第一页
-                        var = 0
+                    var = 0
+                    if content:  # 翻页成功 或者是第一页
                         for k in range(len(voice)):
                             if content[0] == sentence[k].text:
                                 var = k + 1
                                 break
-                        self.detail_operation(len(voice), var)  # 详情页 具体操作
+
+                    self.detail_operation(len(voice), var)  # 详情页 具体操作
 
     @teststeps
     def detail_operation(self, length, var=0):

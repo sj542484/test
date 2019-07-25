@@ -4,8 +4,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.mysql_data import MysqlData
+from testfarm.test_program.app.honor.student.word_book.object_page.data_action import WordBookDataHandle
+from testfarm.test_program.app.honor.student.word_book.object_page.mysql_data import WordBookSql
 from testfarm.test_program.utils.games_keyboard import Keyboard
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststeps, teststep
@@ -17,8 +17,8 @@ class FlashCard(BasePage):
     def __init__(self):
         self.homework = Homework()
         self.home = HomePage()
-        self.mysql = MysqlData()
-        self.common = DataActionPage()
+        self.mysql = WordBookSql()
+        self.common = WordBookDataHandle()
 
     @teststeps
     def wait_check_study_page(self):
@@ -305,7 +305,7 @@ class FlashCard(BasePage):
         print('-------------------------------------')
 
     @teststep
-    def judge_word_is_star(self,i):
+    def judge_word_is_star(self, i):
         """判断单词是否被标星"""
         if GetAttribute().selected(self.star_button()) == 'true':  # 判断但是标星是否被标注
             print('单词已标星')
@@ -341,13 +341,13 @@ class FlashCard(BasePage):
         self.copy_word_core(word)
 
     @teststeps
-    def copy_mine_word(self, i,star_add):
+    def copy_mine_word(self, stu_id, i,star_add):
         """抄写模式  我的单词操作"""
         if i == 0:
             print('\n闪卡练习-抄写模式((单词详情)\n')
         word = self.word_copy()
-        if i in(range(0, 5)):
-            star_words = self.common.get_star_words()
+        if i in(range(3)):
+            star_words = self.common.get_star_words(stu_id)
             self.copy_word_core(word)
             stars = star_words + star_add
             if word not in stars:

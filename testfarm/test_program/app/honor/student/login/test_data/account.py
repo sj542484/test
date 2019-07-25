@@ -4,7 +4,8 @@ import random
 # data base of account
 # we can add a or multiple account in it, like this '{'account': 'xxxxxxxxxxx', 'password': 'yyyyyyyy'},'
 _VALID_ACCOUNT = (
-    {'username': '18311111111', 'password': '123123'},
+    # {'username': '16667896789', 'password': '123456'},
+    {'username': '17711110000', 'password': '123456'},
     # {'username': '18711111234', 'password': '456789'},
 )
 

@@ -43,8 +43,8 @@ class Word(unittest.TestCase):
 
                 if self.word.wait_check_start_page ():  # 页面检查点
                     self.word.word_start_button()  # 点击 Go按钮
-                    print ("开始单词本练习")
-                    if self.result.wait_check_next_grade ():
+                    print("开始单词本练习")
+                    if self.result.wait_check_next_grade():
                         self.result.confirm_button()
                         if self.word.wait_check_game_page():
                             self.word.play_word_book()

@@ -1,5 +1,7 @@
 import unittest
 
+from ddt import ddt,data
+
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
 from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_book import WordBook
@@ -7,7 +9,7 @@ from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_
 from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_result_page import ResultPage
 from testfarm.test_program.conf.decorator import teardown, teststeps, setup
 
-
+@ddt
 class Word(unittest.TestCase):
     """单词本"""
 
@@ -26,26 +28,7 @@ class Word(unittest.TestCase):
     def tearDown(cls):
         pass
 
-    # @teststeps
-    # def test_recite_b_turn(self):
-    #     """B轮复习"""
-    #     self.main_recite_word(1)
-
-    @teststeps
-    def test_recite_c_turn(self):
-        """C轮复习"""
-        self.main_recite_word(2)
-
-    # @teststeps
-    # def test_recite_d_turn(self):
-    #     """D轮复习"""
-    #     self.main_recite_word(3)
-
-    # @teststeps
-    # def test_recite_e_turn(self):
-    #     """E轮复习"""
-    #     self.main_recite_word(4)
-
+    @data(1, 2, 3, 4)
     @teststeps
     def main_recite_word(self, level):
         """复习单词"""

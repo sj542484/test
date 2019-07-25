@@ -23,7 +23,6 @@ from testfarm.test_program.app.honor.student.test_paper.object_page.word_match i
 from testfarm.test_program.app.honor.student.test_paper.object_page.word_spell import WordSpell
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_config import GetVariable as gv
 
 
 class ExamPage(BasePage):
@@ -250,68 +249,68 @@ class ExamPage(BasePage):
     @teststeps
     def exam_process(self, title, num, exam_json):
         print('\n-------%s-共%d题------\n' % (title, num))
-        if title == '听后选择':
+        if '听后选择' in title:
             ListenSelect().play_listening_select_game(num, exam_json)
             self.answer.wait_result_btn_enabled()
             # pass
 
-        elif title == '猜词游戏':
+        elif '猜词游戏' in title:
             GuessingWord().play_guessing_word_game(num, exam_json)
             # pass
 
-        elif title == '单项选择':
+        elif '单项选择' in title:
             SingleChoice().play_single_choice_game(num, exam_json)
             # pass
 
-        elif title == '连词成句':
+        elif '连词成句' in title:
             Conjunctions().play_conjunctions_game(num, exam_json)
              # pass
 
-        elif title == '连连看':
+        elif '连连看' in title:
             WordMatch().play_word_match_game(num, exam_json)
             # pass
 
-        elif title == '句型转换':
+        elif '句型转换' in title:
             SentenceExchange().play_sentence_exchange_game(num, exam_json)
             # pass
 
-        elif title == '完形填空':
+        elif '完形填空' in title:
             ClozeTest().play_cloze_test_game(num, exam_json)
             # pass
 
-        elif title == '还原单词':
+        elif '还原单词' in title:
             RestoreWord().play_restore_word_game(num, exam_json)
             # pass
 
-        elif title == '选词填空':
+        elif '选词填空' in title:
             BankCloze().play_bank_cloze_game(num, exam_json)
             # pass
 
-        elif title == '强化炼句':
+        elif '强化炼句' in title:
             SentenceEnhance().play_sentence_enhance_game(num, exam_json)
             # pass
 
-        elif title == '补全文章':
+        elif '补全文章' in title:
             CompleteText().play_complete_article_game(num, exam_json)
             # pass
 
-        elif title == '听音连句':
+        elif '听音连句' in title:
             ListenSentence().play_listen_sentence_game(num, exam_json)
             # pass
 
-        elif title == '词汇选择':
+        elif '词汇选择' in title:
             VocabSelect().play_vocab_select_game(num, exam_json)
             # pass
 
-        elif title == '阅读理解':
+        elif '阅读理解' in title:
             ReadUnderstand().play_read_understand_game(num, exam_json)
             # pass
 
-        elif title == '单词拼写':
+        elif '单词拼写' in title:
             WordSpell().play_word_spell_game(num, exam_json)
             # pass
 
-        elif title == '单词听写':
+        elif '单词听写' in title:
             ListenSpell().play_listen_spell_game(num, exam_json)
             # pass
 

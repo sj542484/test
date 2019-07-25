@@ -7,9 +7,9 @@ from testfarm.test_program.app.honor.student.login.object_page.home_page import 
 from testfarm.test_program.app.honor.student.user_center.object_page.buy_card_page import PurchasePage
 from testfarm.test_program.app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
 from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import UserCenterPage
-from testfarm.test_program.app.honor.student.web.assign_word import AssignWord
-from testfarm.test_program.app.honor.student.web.driver import Driver
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_action import DataActionPage
+from testfarm.test_program.app.honor.student.web.object_pages.assign_word import AssignWord
+from testfarm.test_program.app.honor.student.web.object_pages.driver import Driver
+from testfarm.test_program.app.honor.student.word_book.object_page.mysql_data import WordBookSql
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep
 from testfarm.test_program.utils.toast_find import Toast
@@ -20,7 +20,7 @@ class CleanDataPage(BasePage):
 
     def __init__(self):
         self.home = HomePage()
-        self.common = DataActionPage()
+        self.common = WordBookSql()
         self.user_center = UserCenterPage()
         self.user_info = UserInfoPage()
 
@@ -163,7 +163,6 @@ class CleanDataPage(BasePage):
                 web_driver.set_driver()
                 AssignWord().assign_wordbook_operate()
                 web_driver.quit_web()
-
         self.home.click_tab_hw()
 
 

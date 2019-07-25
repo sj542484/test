@@ -3,14 +3,15 @@
 # Author:   Vector
 # Date:     2019/3/27 11:59
 # -------------------------------------------
+import random
 import time
 import unittest
 from ddt import ddt,data
 
-from testfarm.test_program.app.honor.student.library.object_pages.game_page import GamePage
+from testfarm.test_program.app.honor.student.library.object_pages.game_page import LibraryGamePage
 from testfarm.test_program.app.honor.student.library.object_pages.library_page import LibraryPage
 from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.app.honor.student.library.object_pages.sql_data_page import DataHandlePage
+from testfarm.test_program.app.honor.student.library.object_pages.library_data_handle import DataHandlePage
 from testfarm.test_program.app.honor.student.library.object_pages.usercenter_page import UserCenterPage
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
@@ -29,7 +30,7 @@ class BookGame(unittest.TestCase):
         cls.home = HomePage()
         cls.library = LibraryPage()
         cls.result = ResultPage()
-        cls.game = GamePage()
+        cls.game = LibraryGamePage()
         cls.login.app_status()
 
     @classmethod
@@ -37,12 +38,7 @@ class BookGame(unittest.TestCase):
     def tearDown(cls):
         pass
 
-    @data(*[
-        # '单词',
-        # '句子',
-        '文章',
-        # '其他'
-    ])
+    @data('单词', '句子', '文章', '其他')
     @teststeps
     def test_book_game(self, book_name):
         """测试书籍游戏"""
@@ -74,17 +70,17 @@ class BookGame(unittest.TestCase):
                         continue
                     else:
                         books_list.append(x.text)
-                        if x.text == '全题型':
+                        if x.text == '全题型':                  # 打开全体型书籍
                             x.click()
                             time.sleep(3)
                             books = self.library.book_names()
+                            book_progress = self.library.book_progress(book_name)
                             for y in books:
                                 if y.text == book_name:
-                                    book_progress = self.library.book_progress(y.text)
                                     y.click()
-                                    self.game_operate(nickname, book_progress, school_name)
                                     break
 
+                            self.game_operate(nickname, book_progress, school_name)
                             flag = True
                             break
                 if flag:
@@ -94,6 +90,7 @@ class BookGame(unittest.TestCase):
 
     @teststeps
     def game_operate(self, nickname, book_progress, school_name):
+        """各种游戏过程"""
         if self.library.wait_check_book_punch_page():                  # 打卡页处理
             if self.library.wait_check_no_bank_page():
                 print('暂无排行数据')
@@ -105,17 +102,17 @@ class BookGame(unittest.TestCase):
             for i in range(len(bank_types)):
                 if self.game.wait_check_bank_list_page():
                     bank_ele = self.game.testbank_type()[i]
-                    bank_progress = self.game.bank_progress(bank_ele.text).text
+                    bank_name = self.game.testbank_name(bank_ele.text)[0].text
+                    bank_progress = self.game.bank_progress_by_name(bank_name)
                     print(bank_ele.text, bank_progress)
                     bank_ele.click()
 
                     if self.game.wait_check_game_page():       # 进入游戏页面
-                        first_result = self.game.play_book_games(fq=1, bank_progress=bank_progress)
+                        first_result = self.game.play_book_games(fq=1, bank_name=bank_name, bank_progress=bank_progress)
                         if self.result.wait_check_result_page():  # 进入结果页
                             self.result.again_btn().click()
                             if self.game.wait_check_game_page():
-                                self.game.play_book_games(fq=2, sec_answer=first_result[0],
-                                                          first_num=first_result[1])
+                                self.game.play_book_games(fq=2, bank_name=bank_name, first_result=first_result)
                             self.home.click_back_up_button()
         self.library.from_bank_back_to_home_operate(school_name)
 

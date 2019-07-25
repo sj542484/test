@@ -4,10 +4,10 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep
-from testfarm.test_program.utils.wait_element import WaitElement
+from conf.base_config import GetVariable as gv
+from conf.base_page import BasePage
+from conf.decorator import teststep
+from utils.wait_element import WaitElement
 
 
 class MessagePage(BasePage):

@@ -3,6 +3,8 @@
 # Author:   Vector
 # Date:     2018/12/25 10:14
 # -------------------------------------------
+import time
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -110,6 +112,7 @@ class AnswerPage(BasePage):
 
     @teststeps
     def check_skip_to_tip_status(self, t_name, index):
+        """查看题目跳转状态"""
         self.answer_check_button().click()     # 查看答案
         if self.wait_check_answers_page():
             while True:
@@ -126,6 +129,7 @@ class AnswerPage(BasePage):
     @teststep
     def skip_operator(self, i, num, game_type, page_func, status_func, *args, next_page=0):
         if i != num - 1 and i % 2 == 0:
+            time.sleep(1.5)
             self.check_skip_to_tip_status(game_type, i + 1)
             if page_func():
                 self.check_skip_to_tip_status(game_type, i)

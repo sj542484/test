@@ -2,15 +2,15 @@
 # encoding:UTF-8
 import unittest
 
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_member_page import VanMemberPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_page import VanclassPage
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_student_info_page import StDetailPage
-from testfarm.test_program.app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.home.object_page.vanclass_member_page import VanMemberPage
+from app.honor.teacher.home.object_page import VanclassPage
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
+from app.honor.teacher.home.object_page.vanclass_student_info_page import StDetailPage
+from app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.toast_find import Toast
 
 
 class VanclassApply(unittest.TestCase):
@@ -43,6 +43,7 @@ class VanclassApply(unittest.TestCase):
 
                     self.van.vanclass_application()  # 进入 入班申请
                     if self.detail.wait_check_page(gv.APPLY):  # 页面检查点
+                        print('-----------------------')
                         print('入班申请页面:')
 
                         if self.detail.wait_check_st_list_page():

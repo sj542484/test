@@ -205,7 +205,7 @@ class ListenResultPage(BasePage):
     @teststep
     def quit_login_wechat(self):
         """退出微信登录页面"""
-        ele = self.driver.find_element_by_id('com.tencent.mm:id/jc')
+        ele = self.driver.find_element_by_accessibility_id('返回')
         return ele
 
     @teststep
@@ -486,8 +486,6 @@ class ListenResultPage(BasePage):
             print('★★★ Error-- 答案中未出现正确与错误图标')
 
         sentence = mine_answer.text.split(': ')[1].strip()
-        print(list(sentence))
-        print(list(answer))
         if sentence != answer:
             print('★★★ Error-- 所填答案与结果不一致', mine_answer.text)
 

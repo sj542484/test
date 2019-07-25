@@ -232,12 +232,15 @@ class ListenGamePage(BasePage):
     def play_listen_game_process(self):
         result = 0
         if self.wait_check_image_page():
+            """听音选图"""
             result = self.play_listen_identity_image_game()
 
         elif self.wait_check_rich_page():
+            """听音连句"""
             result = self.play_listen_form_sentence()
 
         elif self.wait_check_red_hint_page():
+            """听后选择"""
             result = self.play_listen_choice()
 
         ListenResultPage().result_page_operate(result[0], result[1])
@@ -245,6 +248,7 @@ class ListenGamePage(BasePage):
         self.home.click_back_up_button()
         if ListenResultPage().wait_check_result_page():
             self.home.click_back_up_button()
+        
 
     @teststep
     def check_game_num_and_time(self, count_time, total, i):
@@ -347,10 +351,10 @@ class ListenGamePage(BasePage):
                     if self.wait_check_clear_button_page():
                         print('★★★ Error-- 提交后页面清除按钮依然存在')
                     finish_word = self.finish_word().get_attribute('contentDescription')
-                    mine_answer = re.findall(r'\[(.*?)\]', finish_word)[0].replace(",", '')
+                    mine_answer = finish_word.split('## ')[1].replace('  ', ' ')
                     print('我的答案:', mine_answer)
                     answer.append(mine_answer)
-                    print(self.correct_answer().text)
+                    print(self.correct_answer().text.replace('\n', ':'))
                     self.listen.next_button_operate('true')  # 进入下一题
                     print('-'*30, '\n')
         return total, answer

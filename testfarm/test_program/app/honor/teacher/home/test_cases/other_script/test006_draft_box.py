@@ -2,17 +2,17 @@
 # encoding:UTF-8
 import unittest
 
-from testfarm.test_program.app.honor.teacher.home.object_page.draft_page import DraftPage
-from testfarm.test_program.app.honor.teacher.home.object_page.homework_detail_page import HwDetailPage
-from testfarm.test_program.app.honor.teacher.home.object_page.release_hw_page import ReleasePage
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.home.object_page.vanclass_page import VanclassPage
-from testfarm.test_program.app.honor.teacher.home.test_data.draft_data import GetVariable as gv
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.home.object_page import DraftPage
+from app.honor.teacher.home.object_page.vanclass_hw_detail_page import HwDetailPage
+from app.honor.teacher.home.object_page import ReleasePage
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.object_page import VanclassPage
+from app.honor.teacher.home.test_data.draft_data import GetVariable as gv
+from app.honor.teacher.login.object_page import TloginPage
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
+from utils.toast_find import Toast
 
 
 class DraftBox(unittest.TestCase):
@@ -45,7 +45,7 @@ class DraftBox(unittest.TestCase):
             if self.draft.wait_check_page():  # 页面检查点
                 self.draft.draft_box_button()  # 草稿箱 按钮
 
-                if self.draft.wait_check_drat_page():  # 页面检查点
+                if self.draft.wait_check_draft_page():  # 页面检查点
                     if self.draft.wait_check_draft_list_page():
                         content = self.draft_box_operation()  # 草稿箱
                         self.draft_detail_operation(content)  # 草稿详情页具体操作
@@ -134,7 +134,7 @@ class DraftBox(unittest.TestCase):
 
             if self.draft.wait_check_page():  # 页面检查点
                 self.draft.draft_box_button()  # 草稿箱 按钮
-                if self.draft.wait_check_drat_page():  # 页面检查点
+                if self.draft.wait_check_draft_page():  # 页面检查点
                     if self.draft.wait_check_draft_list_page():
 
                         name1 = self.draft.draft_name()  # 草稿名

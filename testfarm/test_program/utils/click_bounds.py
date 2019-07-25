@@ -6,6 +6,16 @@ def get_size(self):
     y = self.driver.get_window_size()['height']
     return x, y
 
+def click_bounds(self, location_x, location_y):
+    # 获取当前手机屏幕大小X,Y
+    screen = get_size(self)
+    # 设定系数
+    a = location_x / screen[0]
+    b = location_y / screen[1]
+    # 屏幕坐标乘以系数即为用户要点击位置的具体坐标
+    self.driver.tap([(a * screen[0], b * screen[1])])
+
+
 def ClickBounds(self, location_x, location_y, screen_x = 375, screen_y = 667):
     # 获取当前手机屏幕大小X,Y
     screen = get_size(self)

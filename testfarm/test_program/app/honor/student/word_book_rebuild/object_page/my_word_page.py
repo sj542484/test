@@ -4,8 +4,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_action import DataActionPage
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.mysql_data import MysqlData
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_handle import DataActionPage
+from testfarm.test_program.app.honor.student.word_book.object_page.mysql_data import WordBookSql
 from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_book import WordBook
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststeps, teststep
@@ -15,7 +15,7 @@ class MyWordPage(BasePage):
     """单词本 - 我的单词"""
     def __init__(self):
         self.home = HomePage()
-        self.mysql = MysqlData()
+        self.mysql = WordBookSql()
         self.word = WordBook()
         self.common = DataActionPage()
 
@@ -78,7 +78,7 @@ class MyWordPage(BasePage):
     def get_words(self):
         """单词"""
         ele = self.driver\
-            .find_elements_by_id(self.id_type() + "word")
+            .find_elements_by_id(self.id_type() + "study_word")
         return ele
 
     @teststep

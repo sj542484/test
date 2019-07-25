@@ -5,14 +5,14 @@ import re
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.decorator import teststeps, teststep
-from testfarm.test_program.utils.click_bounds import ClickBounds
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.get_element_bounds import Element
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.wait_element import WaitElement
+from conf.base_page import BasePage
+from conf.base_config import GetVariable as gv
+from conf.decorator import teststeps, teststep
+from utils.click_bounds import ClickBounds
+from utils.get_attribute import GetAttribute
+from utils.get_element_bounds import Element
+from utils.swipe_screen import SwipeFun
+from utils.wait_element import WaitElement
 
 
 class PictureDictation(BasePage):

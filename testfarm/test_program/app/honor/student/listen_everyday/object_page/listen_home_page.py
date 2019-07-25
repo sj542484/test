@@ -6,8 +6,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
+from testfarm.test_program.app.honor.student.library.object_pages.game_page import LibraryGamePage
 from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep
+from testfarm.test_program.conf.decorator import teststep, teststeps
 
 
 class ListenHomePage(BasePage):
@@ -102,20 +103,25 @@ class ListenHomePage(BasePage):
 
     @teststep
     def next_button_operate(self, var):
+        """下一步处理"""
         self.next_button_status_judge(var)
         self.next_button().click()
 
     @teststep
     def show_button(self):
+        """炫耀一下"""
         ele = self.driver.find_element_by_id(self.id_type() + 'action_one')
         return ele
 
     @teststep
-    def star_excise_button(self):
+    def start_excise_button(self):
+        """开始练习"""
         ele = self.driver.find_element_by_id(self.id_type() + 'action_two')
         return ele
 
     @teststep
     def commit_button(self):
+        """确定"""
         ele = self.driver.find_element_by_id(self.id_type() + "confirm")
         return ele
+

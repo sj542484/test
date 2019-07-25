@@ -92,9 +92,42 @@ class Cloze(BasePage):
         texts = ele.find_elements_by_id('{}tv_item'.format(self.id_type()))
         return texts
 
+    @teststep
+    def get_ques_size(self, ques):
+        """获取包含题目的大小"""
+        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/..'.format(ques))
+        return ele.size
+
+    @teststep
+    def get_opt_size(self, ques):
+        """获取只有选项的大小"""
+        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/following-sibling::android.widget.LinearLayout'.format(ques))
+        return ele.size
+
+    @teststep
+    def get_last_textview_type(self):
+        """获取最后一个文本的属性"""
+        ele = self.driver.find_elements_by_class_name('android.widget.TextView')
+        if 'question' in ele[-1].get_attribute('resourceId'):
+            return 'ques'
+        else:
+            return 'opt'
+
+    @teststep
+    def swipe_operate(self, last_text_attr):
+        """获取问题、选项的屏幕占比"""
+        ques_size = self.get_ques_size(self.result_question()[0].text)
+        opt_size = self.get_opt_size(self.result_question()[0].text)
+        ques_scale = ques_size['height'] / self.get_window_size()[1]  # 获取一道题所占整个屏幕的大小
+        opt_scale = opt_size['height'] / self.get_window_size()[1]  # 获取一道题的选项所占整个屏幕的大小
+
+        if last_text_attr == 'ques':
+            self.screen_swipe_up(0.5, 0.9, 0.9 - ques_scale, 1000)
+        elif last_text_attr == 'opt':
+            self.screen_swipe_up(0.5, 0.9, 0.9 - opt_scale, 1000)
 
     @teststeps
-    def cloze_operate(self, fq, sec_answer, half_exit):
+    def cloze_operate(self, fq, sec_answer):
         """完形填空操作"""
         timer = []
         mine_answers = {}
@@ -104,7 +137,7 @@ class Cloze(BasePage):
             total_num = self.common.rest_bank_num()
             article = self.article()
             print(article.text)
-            SelectWordBlank().check_position_change(article)      # 校验字体大小是否发生变化
+            # SelectWordBlank().check_position_change(article)      # 校验字体大小是否发生变化
 
             for i in range(total_num):
                 question = self.question().strip()
@@ -131,11 +164,6 @@ class Cloze(BasePage):
                 timer.append(self.common.bank_time())
                 if i != total_num - 1:
                     self.screen_swipe_left(0.9, 0.7, 0.2, 1000)
-
-                if i == 2:
-                    if half_exit:
-                        self.click_back_up_button()
-                        break
                 print('-'*20, '\n')
 
             self.common.judge_next_is_true_false('true')
@@ -157,17 +185,18 @@ class Cloze(BasePage):
                 self.driver.swipe(loc[0] + 45, loc[1] + 45, loc[0] + 45, loc[1] - 450)  # 拖拽至最上方
             ques_info = []
             index = 0
-            while True:
+            while len(ques_info) < len(mine_answer):
                 questions = self.result_question()
-                for x, ques in enumerate(questions):
+                last_text_attr = self.get_last_textview_type()
+                for i, ques in enumerate(questions):
                     if ques.text in ques_info:
                         continue
                     else:
+                        if i == len(questions) - 1:
+                            self.swipe_operate(last_text_attr)
+
                         ques_info.append(ques.text)
                         print('问题：', ques.text, '\n')
-                        if x == len(questions) - 1:
-                            self.screen_swipe_up(0.5, 0.8, 0.6, 1000)
-
                         for y, opt in enumerate(self.result_opt_text(ques.text)):
                             char = self.result_opt_char(ques.text)[y]
                             mine_ans = mine_answer[ques.text] if store_key else mine_answer[len(ques_info)]
@@ -176,6 +205,8 @@ class Cloze(BasePage):
                                     right.append(opt.text)
                                     print('我的：', mine_ans)
                                     print('答案正确：', opt.text)
+                                    if store_key:
+                                        right_answer[ques.text] = opt.text
 
                                 elif char.get_attribute('contentDescription') == 'error':
                                     wrong.append(opt.text)
@@ -190,12 +221,42 @@ class Cloze(BasePage):
                                         index += 1
                                         right_answer[index] = opt.text
                                     print('正确答案：', opt.text)
-                        print('-' * 20, '\n')
+                        print('-'*30, '\n')
 
-                if len(ques_info) != len(mine_answer):
-                    self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
-                else:
-                    break
             print('结果页答案:', right_answer)
             self.click_back_up_button()
             return wrong, right, right_answer
+
+
+    # @teststeps
+    # def check_result_opt_answer_operate(self, ques_info, ques, mine_answer, store_key, right, wrong,
+    #                                     right_answer, index ):
+    #     """查看结果页选项答案操作"""
+    #     ques_info.append(ques.text)
+    #     print('问题：', ques.text, '\n')
+    #     for y, opt in enumerate(self.result_opt_text(ques.text)):
+    #         char = self.result_opt_char(ques.text)[y]
+    #         mine_ans = mine_answer[ques.text] if store_key else mine_answer[len(ques_info)]
+    #         if opt.text == mine_ans:
+    #             if char.get_attribute('contentDescription') == 'right':
+    #                 right.append(opt.text)
+    #                 print('我的：', mine_ans)
+    #                 print('答案正确：', opt.text)
+    #                 if store_key:  # 存储正确答案
+    #                     right_answer[ques.text] = opt.text
+    #                 else:  # 完形填空越位存储答案，保证个数与做题个数一致
+    #                     right_answer[index + len(mine_answer)] = opt.text
+    #
+    #             elif char.get_attribute('contentDescription') == 'error':
+    #                 wrong.append(opt.text)
+    #                 print('我的答案错误', opt.text)
+    #             else:
+    #                 print('★★★ 选择的选项未标识对错信息！')
+    #         else:
+    #             if char.get_attribute('contentDescription') == 'right':
+    #                 if store_key:
+    #                     right_answer[ques.text] = opt.text
+    #                 else:
+    #                     index += 1
+    #                     right_answer[index] = opt.text
+    #                 print('正确答案：', opt.text)

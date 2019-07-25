@@ -39,7 +39,7 @@ class Games(unittest.TestCase):
             print("已进入主界面：")
             self.home_page.click_hk_tab(2)  # 进入 做作业
 
-            if self.homework.wait_check_page():  # 页面检查点
+            if self.homework.wait_check_hw_page():  # 页面检查点
                 var = self.home_page.homework_count()
                 if gv.MAT_EXE_YB in var[0]:  # 该作业存在
                     for i in range(0, len(var[0])):
@@ -107,7 +107,7 @@ class Games(unittest.TestCase):
                 print(word_index, word, explain, explain_index)
 
                 for k in range(len(word)):    # 具体操作
-                    print('word:', word[k], len(word[k]))
+                    print('study_word:', word[k], len(word[k]))
                     if len(word[k]) <= 2:
                         value = yb_operate_yb(word[k])
                         ele[word_index[k]].click()

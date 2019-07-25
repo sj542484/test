@@ -40,6 +40,13 @@ class UserInfoPage(BasePage):
         """以“昵称”的id为依据
             用于判断昵称修改前后是否相同，默认修改后的昵称与修改前不同"""
         ele = self.driver\
+            .find_element_by_id('{}nick'.format(self.id_type()))
+        return ele.text
+
+    @teststep
+    def buy_page_nickname(self):
+        """购买页昵称"""
+        ele = self.driver \
             .find_element_by_id('{}name'.format(self.id_type()))
         return ele.text
 

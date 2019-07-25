@@ -52,9 +52,8 @@ class SingleChoice(BasePage):
         ele = self.driver.find_element_by_xpath('//*[@content-desc="right"]/following-sibling::android.widget.TextView')
         return ele.text
 
-
     @teststep
-    def single_choice_operate(self, fq, sec_answer, half_exit):
+    def single_choice_operate(self, fq, sec_answer):
         """单项选择做题操作"""
         timer = []
         mine_answer = {}
@@ -77,20 +76,15 @@ class SingleChoice(BasePage):
                     time.sleep(1)
                     print('选择选项：', select_choice)
                     print('正确选项：', self.right_choice())
-                    mine_answer[ques] = select_choice
+                    mine_answer[i+1] = select_choice
                 else:
                     for x, opt in enumerate(opt_text):
-                        if opt.text == sec_answer[ques]:
+                        if opt.text == sec_answer[i+1]:
                             self.opt_char()[x].click()
                             break
-                    print('选择正确选项：', sec_answer[ques])
+                    print('选择正确选项：', sec_answer[i+1])
 
                 print('-'*20, '\n')
-
-                if i == 1:
-                    if half_exit:
-                        self.click_back_up_button()
-                        break
 
                 self.common.judge_next_is_true_false('true')
                 timer.append(self.common.bank_time())

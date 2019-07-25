@@ -3,12 +3,12 @@
 # @Author  : SUN FEIFEI
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.wait_element import WaitElement
+from app.honor.teacher.home.object_page import ThomePage
+from conf.base_page import BasePage
+from conf.base_config import GetVariable as gv
+from conf.decorator import teststep, teststeps
+from utils.get_attribute import GetAttribute
+from utils.wait_element import WaitElement
 
 
 class SpokenDetailPage(BasePage):
@@ -102,6 +102,12 @@ class SpokenDetailPage(BasePage):
         return self.wait.wait_check_element(locator)
 
     # 答题分析tab 二级页面
+    @teststeps
+    def wait_check_analysis_tab_page(self):
+        """以“按学生看”为依据"""
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'按学生看')]")
+        return self.wait.wait_check_element(locator)
+
     @teststep
     def check_st_tab(self):
         """按学生看 tab"""

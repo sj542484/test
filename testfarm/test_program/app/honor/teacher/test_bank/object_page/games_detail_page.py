@@ -5,13 +5,13 @@ import time
 import re
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.judge_character_type import JudgeType
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.wait_element import WaitElement
+from conf.base_page import BasePage
+from conf.base_config import GetVariable as gv
+from conf.decorator import teststep, teststeps
+from utils.get_attribute import GetAttribute
+from utils.judge_character_type import JudgeType
+from utils.swipe_screen import SwipeFun
+from utils.wait_element import WaitElement
 
 
 class GamesPage(BasePage):
@@ -22,13 +22,16 @@ class GamesPage(BasePage):
     question_value = gv.PACKAGE_ID + "question"  # 题目
     hint_word_value = gv.PACKAGE_ID + "hint"  # 选词填空的提示词
     voice_button_value = gv.PACKAGE_ID + "iv_play"  # 听音选择 播音按钮
+    article_content_value = gv.PACKAGE_ID + "rich"  # 补全文章 文章元素
+    content_value = gv.PACKAGE_ID + "cl_content"  # 阅读理解 文章元素
+    char_value = gv.PACKAGE_ID + "tv_char"  # 选项 ABCD
 
     def __init__(self):
         self.swipe = SwipeFun()
         self.wait = WaitElement()
 
     @teststeps
-    def wait_check_page(self, var=20):
+    def wait_check_page(self, var=10):
         """以“title:详情”为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'详情')]")
         return self.wait.wait_check_element(locator, var)
@@ -105,18 +108,19 @@ class GamesPage(BasePage):
         print('--------------------')
         return item
 
+    # #
+    # @teststep
+    # def question_index(self):
+    #     """题号"""
+    #     item = self.driver \
+    #         .find_elements_by_id(self.question_index_value)
+    #     return item
     #
-    @teststep
-    def question_index(self):
-        """题号"""
-        item = self.driver \
-            .find_elements_by_id(self.question_index_value)
-        return item
-
-    @teststeps
-    def verify_question_index(self):
-        """验证  题号是否存在"""
-        return self.wait.judge_is_exists(self.question_index_value)
+    # @teststeps
+    # def verify_question_index(self):
+    #     """验证  题号是否存在"""
+    #     locator = (By.ID, self.question_index_value)
+    #     return self.wait.judge_is_exists(locator)
 
     @teststep
     def word(self):
@@ -126,8 +130,8 @@ class GamesPage(BasePage):
         return item
 
     @teststep
-    def remove(self):
-        """去除"""
+    def remove_type(self):
+        """去除 类型"""
         item = self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + "remove")
         return item
@@ -153,6 +157,12 @@ class GamesPage(BasePage):
             .find_elements_by_id(gv.PACKAGE_ID + "tv_hint")
         return item
 
+    @teststeps
+    def verify_speak_button(self):
+        """验证 听力按钮 是否存在"""
+        locator = (By.ID, self.speak_button_value)
+        return self.wait.judge_is_exists(locator)
+
     @teststep
     def speak_button(self, index):
         """听力按钮"""
@@ -160,24 +170,20 @@ class GamesPage(BasePage):
             .find_elements_by_id(self.speak_button_value)[index] \
             .click()
 
+    # 听音连句
     @teststep
-    def verify_speak_button(self):
-        """验证 听力按钮 是否存在"""
-        try:
-            self.driver.find_element_by_id(self.speak_button_value)
-            return True
-        except Exception:
-            return False
+    def obstruct(self):
+        """干扰内容"""
+        item = self.driver \
+            .find_elements_by_id(gv.PACKAGE_ID + "tv_obstruct")
+        return item
 
     # 单选
     @teststeps
     def verify_voice_button(self):
         """验证 听音选择的 播音按钮 是否存在"""
-        try:
-            self.driver.find_element_by_id(self.voice_button_value)
-            return True
-        except Exception:
-            return False
+        locator = (By.ID, self.voice_button_value)
+        return self.wait.judge_is_exists(locator)
 
     @teststep
     def play_button(self):
@@ -188,19 +194,30 @@ class GamesPage(BasePage):
 
     # 文章类题 补全文章/阅读理解
     @teststeps
-    def verify_content_text(self):
-        """验证 阅读理解/完形填空的文章 是否存在"""
-        try:
-            self.driver.find_element_by_id(gv.PACKAGE_ID + "content")
-            return True
-        except Exception:
-            return False
+    def verify_article_content_text(self):
+        """验证 补全文章的文章 是否存在"""
+        locator = (By.ID, self.article_content_value)
+        return self.wait.judge_is_exists(locator)
 
     @teststep
     def article_content(self):
-        """阅读理解/完形填空的文章"""
+        """补全文章的文章"""
         item = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "content").text
+            .find_element_by_id(self.article_content_value).text
+        print(item)
+        print('-----------------------------------')
+
+    @teststeps
+    def verify_content_text(self):
+        """验证 阅读理解的文章 是否存在"""
+        locator = (By.ID, self.content_value)
+        return self.wait.judge_is_exists(locator)
+
+    @teststep
+    def content(self):
+        """阅读理解的文章"""
+        item = self.driver \
+            .find_element_by_id(self.content_value).text
         print(item)
         print('-----------------------------------')
 
@@ -215,7 +232,7 @@ class GamesPage(BasePage):
     def option_char(self):
         """选项 ABCD"""
         item = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "tv_char")
+            .find_elements_by_id(self.char_value)
         return item
 
     @teststep
@@ -268,20 +285,14 @@ class GamesPage(BasePage):
     @teststep
     def verify_options(self):
         """验证 选项 ABCD 是否存在"""
-        try:
-            self.driver.find_element_by_id(gv.PACKAGE_ID + "tv_char")
-            return True
-        except Exception:
-            return False
+        locator = (By.ID, self.char_value)
+        return self.wait.judge_is_exists(locator)
 
     @teststeps
     def verify_hint_word(self):
-        """验证 选词填空的wording: 提示词 补全文章 是否存在"""
-        try:
-            self.driver.find_element_by_id(self.hint_word_value)
-            return True
-        except Exception:
-            return False
+        """验证 选词填空的wording: 提示词 是否存在"""
+        locator = (By.ID, self.hint_word_value)
+        return self.wait.judge_is_exists(locator)
 
     @teststep
     def hint_word(self):
@@ -312,6 +323,13 @@ class GamesPage(BasePage):
     def verify_img(self):
         """验证 img 是否存在"""
         locator = (By.ID, gv.PACKAGE_ID + "img")
+        return self.wait.judge_is_exists(locator)
+
+    # 磨耳朵
+    @teststep
+    def verify_sentence(self):
+        """验证 句子 是否存在"""
+        locator = (By.ID, gv.PACKAGE_ID + "sentence")
         return self.wait.judge_is_exists(locator)
 
     @teststeps
@@ -355,66 +373,3 @@ class GamesPage(BasePage):
         else:
             # print('★★★ Error -该题目没有题号:', item)
             return 0
-
-    @teststeps
-    def swipe_operation(self, swipe_num):
-        """滑屏 获取所有题目内容"""
-        """滑屏 获取所有题目内容"""
-        ques_last_index = 0
-
-        for i in range(swipe_num):
-            if ques_last_index < swipe_num:
-                ques_first_index = self.get_num()  # 当前页面中第一题 题号
-
-                if ques_first_index - ques_last_index > 1:  # 判断页面是否滑过，若当前题比上一页做的题不大于1，则下拉直至题目等于上一题的加1
-                    for step in range(0, 10):
-                        self.swipe.swipe_vertical(0.5, 0.5, 0.62)
-                        if self.get_num() == ques_last_index + 1:  # 正好
-                            break
-                        elif self.get_num() < ques_last_index + 1:  # 下拉拉过了
-                            self.swipe.swipe_vertical(0.5, 0.6, 0.27)  # 滑屏
-                            if self.get_num() == ques_last_index + 1:  # 正好
-                                break
-
-                last_one = self.get_last_element()  # 页面最后一个元素
-                ques_num = self.single_question()  # 题目
-
-                if self.question_judge(last_one):  # 判断最后一项是否为题目
-                    for j in range(len(ques_num) - 1):
-                        current_index = self.get_num(j)  # 当前页面中题号
-
-                        if current_index > ques_last_index:
-                            print('-----------------------------')
-                            print(ques_num[j].text)
-                            options = self.option_button()  # 选项
-                            print('选项:', options[0][j])
-                            ques_last_index = self.get_num(j)  # 当前页面中 做过的最后一题 题号
-                else:  # 判断最后一题是否为选项
-                    for k in range(len(ques_num)):
-                        if k < len(ques_num) - 1:  # 前面的题目照常点击
-                            current_index = self.get_num(k)  # 当前页面中题号
-
-                            if current_index > ques_last_index:
-                                print('-----------------------------')
-                                print(ques_num[k].text)
-                                options = self.option_button()  # 选项
-                                print('选项:', options[0][k])
-                                ques_last_index = self.get_num(k)  # 当前页面中 做过的最后一题 题号
-                        elif k == len(ques_num) - 1:  # 最后一个题目上滑一部分再进行选择
-                            self.swipe.swipe_vertical(0.5, 0.8, 0.55)
-                            ques_num = self.single_question()  # 题目
-                            for z in range(len(ques_num)):
-                                current_index = self.get_num(z)  # 当前页面中题号
-
-                                if current_index > ques_last_index:
-                                    print('-----------------------------')
-                                    print(ques_num[z].text)
-                                    options = self.option_button()  # 选项
-                                    print('选项:', options[0][z])
-                                    ques_last_index = self.get_num(z)  # 当前页面中 做过的最后一题 题号
-                                    break
-
-                if i != swipe_num - 1:
-                    self.swipe.swipe_vertical(0.5, 0.9, 0.27)  # 滑屏
-            else:
-                break

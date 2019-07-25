@@ -3,7 +3,7 @@ import time
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
+from testfarm.test_program.app.honor.student.word_book.object_page.data_action import WordBookDataHandle
 from testfarm.test_program.app.honor.student.word_book.object_page.flash_card_page import FlashCard
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststeps, teststep
@@ -16,7 +16,7 @@ class SpellingWord(BasePage):
     def __init__(self):
         self.get = GetAttribute()
         self.homework = Homework()
-        self.common = DataActionPage()
+        self.common = WordBookDataHandle()
         self.key = Keyboard()
 
     @teststeps
@@ -136,10 +136,10 @@ class SpellingWord(BasePage):
         self.dictation_pattern_core(spell_word, word_type=1)
 
     @teststeps
-    def dictation_pattern_recite(self, i, first_game, spell_word):
+    def dictation_pattern_recite(self, stu_id, i, first_game, spell_word):
         """单词默写 复习"""
         if i == 0:
-            level1_count = self.common.get_different_level_words(1)  # 获取需要B轮复习的单词
+            level1_count = self.common.get_different_level_words(stu_id, 1)  # 获取需要B轮复习的单词
             if level1_count != 0:
                 if first_game[0] != '词汇选择(复习)':
                     print('★★★ Error-第一个游戏不是B1的词汇选择游戏')
@@ -155,13 +155,13 @@ class SpellingWord(BasePage):
         self.dictation_pattern_core(spell_word, word_type=2)
 
     @teststeps
-    def dictation_pattern_mine(self, i, familiar_add, spell_word):
+    def dictation_pattern_mine(self, stu_id,  i, familiar_add, spell_word):
         """单词默写 我的单词"""
         if i == 0:
             print("\n单词拼写 - 默写模式(单词详情)\n")
         explain = self.explain()  # 题目
         value = self.common.get_word_by_explain(explain)
-        familiars = self.common.get_familiar_words() + familiar_add
+        familiars = self.common.get_familiar_words(stu_id) + familiar_add
         intersect_list = list(set(value).intersection(set(familiars)))  # 取获取单词数组与标星单词数组的交集
         if i in range(0, 5):
             self.dictation_pattern_core(spell_word, word_type=1)

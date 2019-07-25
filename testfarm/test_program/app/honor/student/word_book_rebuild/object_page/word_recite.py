@@ -1,10 +1,9 @@
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.clear_user_data import CleanDataPage
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_action import DataActionPage
 from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.word_book import WordBook
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_action import DataActionPage
+from testfarm.test_program.testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_handle import DataActionPage
 from testfarm.test_program.conf.decorator import teststeps, teststep
 
 

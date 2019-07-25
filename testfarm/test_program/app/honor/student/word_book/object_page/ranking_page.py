@@ -16,8 +16,7 @@ class RankingPage(BasePage):
 
     @teststeps
     def wait_check_rank_page(self):
-        """以“学生测试版”为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'学生测试版')]")
+        locator = (By.ID, self.id_type() + "cover_title_one")
         try:
             WebDriverWait(self.driver, 4, 0.5).until(lambda x: x.find_element(*locator))
             return True
@@ -98,10 +97,10 @@ class RankingPage(BasePage):
         return ele
 
     @teststep
-    def st_score(self):
+    def word_count(self):
         """提示title"""
         item = self.driver \
-            .find_elements_by_id("{}tv_score".format(self.id_type()))
+            .find_elements_by_id("{}cover_title_two".format(self.id_type()))
         return item
 
     @teststep
@@ -148,11 +147,10 @@ class RankingPage(BasePage):
 
     @teststep
     def ele_operate(self, stu_class, total_word):
-        word_type = self.word_type()
         class_rank = self.rank_num()
         print('当前所在班级：', stu_class)
-        score = self.st_score()[0].text
-        print ('已背：', score + word_type)
+        score = self.word_count().text
+        print('单词量：', score)
         if int(score) != int(total_word):
             print('★★★ Error - 次数与主页面单词数不一致！')
         else:

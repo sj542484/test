@@ -44,14 +44,12 @@ class ExchangePhone(unittest.TestCase):
 
                 for i in range(len(reset_phone_data)):
                     if self.user_info.wait_check_page():  # 页面检查点
-                        print('-----------------------------------')
                         phone1 = self.user_info.phone()  # 获取修改前手机号
                         self.user_info.click_phone_number()  # 点击手机号条目，进入设置页面
-
                         if self.home.wait_check_tips_page():
                             self.home.tips_title()
                             text = self.user_info.input()  # 验证之前密码
-                            text.send_keys(reset_phone_data[i]['password'])
+                            text.send_keys(reset_phone_data[0]['password'])
                             self.user_info.click_positive_button()  # 确定按钮
 
                             if self.phone.wait_check_page():  # 手机号 修改页面
@@ -66,7 +64,6 @@ class ExchangePhone(unittest.TestCase):
                                     self.home.click_back_up_button()  # 返回个人信息 页面
                                 else:
                                     value = verify_find(reset_phone_data[i]['reset'])  # 获取验证码
-
                                     if i == len(reset_phone_data)-1:
                                         self.phone.verify().send_keys('1234')
                                         self.phone.btn_certain()  # 确定按钮
@@ -94,6 +91,7 @@ class ExchangePhone(unittest.TestCase):
                             print('未进入 确认密码页面')
                     else:
                         print('未进入个人信息页面')
+                    print('-'*30, '\n')
                 self.user_info.back_up()
         else:
             Toast().find_toast(VALID_LOGIN_TOAST.login_failed())

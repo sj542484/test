@@ -29,9 +29,20 @@ class LevelPage(BasePage):
 
     @teststep
     def wait_last_level_page(self):
-        locator = (By.XPATH, '//android.widget.TextView[contains(@text,"10B")]')
+        """最后一个等级页面检查点"""
+        locator = (By.XPATH, '//android.widget.TextView[contains(@text,"27@chan")]')
         try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            return True
+        except:
+            return False
+
+    @teststep
+    def wait_first_level_page(self):
+        """第一个等级页面检查点"""
+        locator = (By.XPATH, '//android.widget.TextView[contains(@text,"2级A")]')
+        try:
+            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -69,6 +80,7 @@ class LevelPage(BasePage):
                                                 '::android.widget.TextView'.format(back_name))
         return ele
 
+
     @teststeps
     def level_page_ele_operate(self):
         level_info = {}
@@ -80,17 +92,28 @@ class LevelPage(BasePage):
                 level_info[back_name[i].text] = [y.text for y in self.level_name(back_name[i].text)]
 
             if self.wait_last_level_page():
+
                 break
             else:
-                self.home.screen_swipe_up(0.5, 0.9, 0.3, 1500)
+                self.home.screen_swipe_up(0.5, 0.9, 0.3, 1000)
                 index = index + 1
-        self.home.screen_swipe_up(0.5, 0.3, 0.9, 1500)
+
+        while True:
+            self.home.screen_swipe_up(0.5, 0.3, 0.9, 1000)
+            if self.wait_first_level_page():
+                break
 
         print('级别类型:')
         for level in level_info:
             print(level_info[level])
             if self.wait_start_button(level):
-                self.level_name_toast_judge(level)
+                if self.start_button(level).text != '练习中...':
+                    self.level_name_toast_judge(level)
+                else:
+                    if Toast().find_toast('该等级尚未开放哦'):
+                        print('该等级尚未开放哦，先选择其他等级练习吧！')
+                    else:
+                        print('★★★ 未发现Toast')
             else:
                 self.home.screen_swipe_up(0.5, 0.9, 0.3, 1500)
                 self.level_name_toast_judge(level)
@@ -100,18 +123,12 @@ class LevelPage(BasePage):
     def level_name_toast_judge(self, level):
         self.play_voice_button(level).click()
         self.start_button(level).click()
-        time.sleep(2)
-
         if Toast().find_toast('听力等级设置成功'):
             print('听力等级设置成功')
             if self.start_button(level).text != '练习中...':
                 print('★★★ Error-- 点击开始后文字未发生改变')
-
-        elif Toast().find_toast('该等级尚未开放哦'):
-            print('该等级尚未开放哦，先选择其他等级练习吧！')
-
         else:
-            print('★★★ Error-- 未发现Toast说明')
+            print('★★★ 未发现Toast')
 
         print('-' * 30, '\n')
 

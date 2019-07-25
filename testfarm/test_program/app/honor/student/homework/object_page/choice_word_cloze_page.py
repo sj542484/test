@@ -175,7 +175,7 @@ class ChoiceWordCloze(BasePage):
                         self.key.games_keyboard('enter')  # 点击回车键进入下一题
 
                     word = word_list[i]  # 单词
-                    print('word:', word)
+                    print('study_word:', word)
                     if len(word_list) >= int(rate):
                         for index in range(len(word)):
                             if index == 4:

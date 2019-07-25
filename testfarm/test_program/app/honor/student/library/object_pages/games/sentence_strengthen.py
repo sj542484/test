@@ -104,7 +104,7 @@ class SentenceStrengthen(BasePage):
 
                 for j in range(input_num):
                     if fq == 1:
-                        random_str = random.sample(string.ascii_letters, 2)   # 随机输入2个字母
+                        random_str = random.sample(string.ascii_letters, random.randint(2, 5))   # 随机输入2个字母
                         for x in random_str:
                             Keyboard().games_keyboard(x)
                     else:
@@ -117,8 +117,8 @@ class SentenceStrengthen(BasePage):
                 if not self.wait_check_correct_answer_page():
                     print('★★★ 点击下一步后未出现正确答案')
                 else:
-                    description = self.sentence_need_spell().get_attribute('contentDescription')
-                    mine_answers_desc = re.findall(r'\[(.*?)\]', description)[0].split(', ')  # 拆分desc,获取输入列表
+                    description = self.sentence_need_spell().get_attribute('contentDescription').strip()
+                    mine_answers_desc = description.split('## ')[1].split('  ')  # 拆分desc,获取输入列表
                     mine_ans = sentence.format(*mine_answers_desc)    # 格式化答案，获取完整的答案
                     print('我的答案：', mine_ans)
                     print('我输入的：', mine_answers_desc)
@@ -138,40 +138,44 @@ class SentenceStrengthen(BasePage):
     def sentence_strengthen_result_operate(self, mine_answer):
         right_answer = {}
         right, wrong = [], []
-        while True:
-            if ResultPage().wait_check_answer_page():                     # 结果页
+        explain_info = []
+        if ResultPage().wait_check_answer_page():                          # 结果页
+            while True:
                 explains = self.result_explain()                          # 获取页面所有解释
                 for i, exp in enumerate(explains):
                     exp_text = exp.text.strip()
-                    result_answer = self.result_answers(exp_text)   # 获取页面的句子
-                    print('解释：', exp_text)
-                    print('答案：', result_answer)
-                    reform_answer = self.get_right_and_mine_answer(result_answer)   # 对句子操作 获得我的和正确答案
-                    print('正确答案：', reform_answer[0])
-                    right_answer[exp_text] = reform_answer[0]
-                    mine_icon = self.mine_icon(exp_text)
-                    if '(' in result_answer:
-                        if mine_answer[exp_text] != reform_answer[1]:
-                            print('★★★ 输入的答案与页面展示的不一致')
-
-                        if GetAttribute().selected(mine_icon) == 'true':
-                            print('★★★ 我的答案与正确答案不一致，但是图标显示正确！')
-                        else:
-                            print('图标验证正确')
-                        wrong.append(exp_text)
-
+                    if exp_text in explain_info:
+                        continue
                     else:
-                        if GetAttribute().selected(mine_icon) == 'false':
-                            print('★★★ 我的答案与正确答案一致，但是图标显示不正确！')
-                        else:
-                            print('图标验证正确')
-                        right.append(exp_text)
-                    print('-' * 20, '\n')
+                        result_answer = self.result_answers(exp_text)   # 获取页面的句子
+                        print('解释：', exp_text)
+                        print('答案：', result_answer)
+                        reform_answer = self.get_right_and_mine_answer(result_answer)   # 对句子操作 获得我的和正确答案
+                        print('正确答案：', reform_answer[0])
+                        right_answer[exp_text] = reform_answer[0]
+                        mine_icon = self.mine_icon(exp_text)
+                        if '(' in result_answer:
+                            if mine_answer[exp_text] != reform_answer[1]:
+                                print('★★★ 输入的答案与页面展示的不一致')
 
-            if len(right_answer) != len(mine_answer):
-                self.screen_swipe_up(0.5, 0.9, 0.2, 1000)
-            else:
-                break
+                            if GetAttribute().selected(mine_icon) == 'true':
+                                print('★★★ 我的答案与正确答案不一致，但是图标显示正确！')
+                            else:
+                                print('图标验证正确')
+                            wrong.append(exp_text)
+
+                        else:
+                            if GetAttribute().selected(mine_icon) == 'false':
+                                print('★★★ 我的答案与正确答案一致，但是图标显示不正确！')
+                            else:
+                                print('图标验证正确')
+                            right.append(exp_text)
+                        print('-' * 20, '\n')
+
+                if len(right_answer) != len(mine_answer):
+                    self.screen_swipe_up(0.5, 0.9, 0.2, 1000)
+                else:
+                    break
 
         self.click_back_up_button()
         return wrong, right, right_answer

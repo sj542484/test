@@ -4,10 +4,10 @@
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.wait_element import WaitElement
+from conf.base_page import BasePage
+from conf.base_config import GetVariable as gv
+from conf.decorator import teststep, teststeps
+from utils.wait_element import WaitElement
 
 
 class AdjustVanOrderPage(BasePage):
@@ -78,7 +78,6 @@ class AdjustVanOrderPage(BasePage):
                 self.drag_ele_operation(icon[1], icon[len(num)-1])  # 向下拖拽
                 self.drag_ele_operation(icon[len(num)-2], icon[0])  # 向上拖拽
 
-
                 self.judge_hw_adjust(content)  # 验证
             else:
                 print('只有%s个班级' % len(num))
@@ -108,11 +107,12 @@ class AdjustVanOrderPage(BasePage):
                 if item[j] != content[j]:
                     count += 1
 
-            print('-----------------------------------------')
+            print('---------------------------')
             if count == 0:
-                print('★★★ Error- 班级顺序未调整')
+                print('★★★ Error- 调整页面展示, 班级顺序未调整')
             else:
-                print('调整班级顺序成功,不保存')
+                print('调整页面展示, 调整班级顺序成功')
+            print('-----------------------------------------')
 
     @teststeps
     def drag_ele_operation(self, origin, destination):

@@ -1,36 +1,40 @@
 import os,json,subprocess
+from testfarm.test_program.conf.base_config import GetVariable as gv
 
 class Utils:
     _con = {
         'capabilities':
             [
                 {
-                     "platformName": "Android",
-                     "platformVersion": "8.0",
-                     "deviceName": "honor2",
-                     "app": "/Users/vanthink_test_ios/Woker/student_env_devDebug_1.3.4(2).apk",
-                     # "appPackage": "com.vanthink.student.debug",
-                     "automationName": "uiautomator2",
-                     # "appActivity": "com.tencent.mm.ui.LauncherUI",
-                     "udid": "MKJNW18524003878",
-                     "systemPort": 5500
+                    "platformName": "Android",
+                    "platformVersion": "8.0",
+                    "deviceName": "honor2",
+                    "app": "/Users/vanthink_test_ios/Woker/student_env_devDebug_1.3.4(2).apk",
+                    # "appPackage": "com.vanthink.student.debug",
+                    "automationName": "uiautomator2",
+                    # "appActivity": "com.tencent.mm.ui.LauncherUI",
+                    "udid": "MKJNW18524003878",
+                    "systemPort": 5500,
+                    "resetKeyboard": True,
+                    "unicodeKeyboard": True,
+                    "noReset": True
                 }
             ],
-        'configuration':
-            {
-                'url': 'http://127.0.0.1:%s/wd/hub/',
-                'host': '127.0.0.1',
-                'port': '',
-                'cleanUpCycle': 2000,
-                'timeout': 30000,
-                'proxy': 'org.openqa.grid.selenium.proxy.DefaultRemoteProxy',
-                'maxSession': 1,
-                'register': True,
-                'registerCycle': 5000,
-                'hubPort': 4444,
-                'hubHost': '',
-                'hubProtocol': 'http'
-            }
+            'configuration':
+                {
+                    'url': 'http://127.0.0.1:%s/wd/hub/',
+                    'host': '127.0.0.1',
+                    'port': '',
+                    'cleanUpCycle': 2000,
+                    'timeout': 30000,
+                    'proxy': 'org.openqa.grid.selenium.proxy.DefaultRemoteProxy',
+                    'maxSession': 1,
+                    'register': True,
+                    'registerCycle': 5000,
+                    'hubPort': 4444,
+                    'hubHost': '',
+                    'hubProtocol': 'http'
+                }
     }
     def __init__(self,port):
         print('_ports',port)
@@ -69,18 +73,19 @@ class Utils:
         self._con['capabilities'][0]['udid'] = udid
         self._con['capabilities'][0]['systemPort'] = systemPort
         if side == 'student': # 学生
-            self._con['capabilities'][0]['app'] = "/Users/vanthink_test_ios/Woker/student_env_devDebug_1.3.4(2).apk"
-        elif side == 'teacher':
-            self._con['capabilities'][0]['app'] = "/Users/vanthink_test_ios/Woker/teacher_env_devDebug_1.2.2.apk"
+            self._con['capabilities'][0]['app'] = gv.STU_PACKAGE
+        elif side == 'teacher_01':
+            self._con['capabilities'][0]['app'] = gv.TEA_PACKAGE
         node_path = './test_program/nodeconfig/%s/%s/'%(device_name,platversion)
         if not os.path.exists(node_path):
             os.makedirs(node_path)
+        print('app路径：',self._con['capabilities'][0]['app'])
         fp = open('%smobile.json'%(node_path),'w')
         fp.write(json.dumps(self._con))
         fp.close()
 
     def start_appium(self,dn, udid, plv,file_name,port,bp,systemPort,side):
-        hubHost = '192.168.8.124'
+        hubHost = gv.HUBHOST
         self.appium_node_info(hubHost=hubHost,port=port,device_name=dn,udid=udid,platversion=plv,systemPort=systemPort,side=side)
         CMD = 'appium -p {port} -bp {bp} -U {udid} --nodeconfig /Users/vanthink_test_ios/aa/testone/test_program/nodeconfig/{devicename}/{platformversion}/mobile.json > {portPath}appium_server.log'.format(port=port,bp=bp,udid=udid,devicename=dn,platformversion=plv,portPath=file_name)
         subprocess.Popen(CMD, shell=True)

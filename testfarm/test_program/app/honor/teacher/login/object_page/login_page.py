@@ -1,14 +1,13 @@
 import time
 import os
 from selenium.webdriver.common.by import By
-
-from testfarm.test_program.app.honor.teacher.login.test_data.account import VALID_ACCOUNT
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.report_path import ReportPath
-from testfarm.test_program.utils.wait_element import WaitElement
+from app.honor.teacher.login.test_data.account import VALID_ACCOUNT
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from conf.base_config import GetVariable as gv
+from conf.decorator import teststep, teststeps
+from conf.base_page import BasePage
+from conf.report_path import ReportPath
+from utils.wait_element import WaitElement
 
 
 class TloginPage(BasePage):
@@ -77,7 +76,6 @@ class TloginPage(BasePage):
         """登录 操作"""
         print('在登录界面')
         account = self.input_username()  # 账号输入框
-
         account.send_keys(VALID_ACCOUNT.account())
 
         pwd = self.input_password()  # 密码输入框
@@ -223,7 +221,7 @@ class TloginPage(BasePage):
         """截屏"""
         date_time = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
         screenshot = name + '-' + date_time + '.png'
-        path = ReportPath().get_path() + '\\' + screenshot
+        path = ReportPath().get_path() + '/' + screenshot
 
         driver = self.get_driver()
         driver.save_screenshot(path)

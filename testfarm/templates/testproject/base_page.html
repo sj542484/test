@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>基础模版</title>
     <style>
-        header {
+        heade {
             position: fixed;
             top: 0;
             width: 100%;
@@ -18,13 +18,12 @@
             -webkit-box-align: center;
             align-items: center;
         }
-        header .logo{
+        heade .logo{
             height:20px;
         }
         * {
                 padding: 0;
                 margin: 0;
-                color: #898989;
         }
         ul{
             position: absolute;
@@ -41,28 +40,31 @@
             padding:0 20px
         }
 
-        li a {
+        ul li a {
             text-decoration: none;
+            color:#444;
         }
         .active {color: #10c9c3;font-weight: bold;}
         {% block style %}
         {% endblock %}
     </style>
+    {% block head %}
+    {% endblock %}
 </head>
 <body>
-<header>
+<heade style="z-index:9999">
     {% block header %}
-    <img src="https://img1.wxzxzj.com/vued02092c5e3b7309243760cee9fa4817c5.png" alt="logo">
-    <ul class="wrap">
-        <li><a href="{% url 'show' %}" class="active">首页</a></li>
-        <li><a id="monitor" class="" href="{% url 'showDevices' %}">设备列表</a></li>
-        <li><a id="news" href="{% url 'inputinfo' %}">设备录入</a></li>
-        <li><a id="connect" href="{% url 'testmodeledit' %}">编辑测试模块</a></li>
-        <li><a id="speack" href="{% url 'showalldevices' %}">查看所有设备信息</a></li>
-        <li><a href="{% url 'do_logout' %}">退出登陆</a></li>
-    </ul>
+        <img src="https://img1.wxzxzj.com/vued02092c5e3b7309243760cee9fa4817c5.png" alt="logo">
+        <ul class="wrap">
+            <li><a href="{% url 'show' %}" class="active">首页</a></li>
+            <li><a id="monitor" class="" href="{% url 'showDevices' %}">设备列表</a></li>
+            <li><a id="news" href="{% url 'inputinfo' %}">设备录入</a></li>
+            <!--<li><a id="connect" href="{% url 'testmodeledit' %}">编辑测试模块</a></li>-->
+            <li><a id="speack" href="{% url 'showalldevices' %}">查看所有设备信息</a></li>
+            <li><a href="{% url 'do_logout' %}">退出登陆</a></li>
+        </ul>
     {% endblock %}
-</header>
+</heade>
 
 {% block context %}
 {% endblock %}

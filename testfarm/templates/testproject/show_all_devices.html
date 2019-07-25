@@ -2,8 +2,27 @@
 
 {% block style %}
         td {border:1px solid green;border-radius:3px;height:40px;width:200px;text-align:center;text-valign:middle;font-size:16px;}
-        input {width:200px;height:40px;text-align:center;font-size:16px;}
+        input {width:200px;height:40px;text-align:center;font-size:16px;background-color: #e9faff}
+{% endblock %}
 
+{% block head %}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="../../../static/table_body/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../../../static/table_body/css/main.css">
+<!--===============================================================================================-->
 {% endblock %}
 
 {% block header %}
@@ -12,60 +31,87 @@
         <li><a href="{% url 'show' %}">首页</a></li>
         <li><a id="monitor" class="" href="{% url 'showDevices' %}">设备列表</a></li>
         <li><a id="news" href="{% url 'inputinfo' %}">设备录入</a></li>
-        <li><a id="connect" href="{% url 'testmodeledit' %}">编辑测试模块</a></li>
+        <!--<li><a id="connect" href="{% url 'testmodeledit' %}">编辑测试模块</a></li>-->
         <li><a id="speack" class="active" href="{% url 'showalldevices' %}">查看所有设备信息</a></li>
         <li><a href="{% url 'do_logout' %}">退出登陆</a></li>
     </ul>
 {% endblock %}
 
 {% block context %}
-{% for contact in contacts %}
-    {# Each "contact" is a Contact model object. #}
-    {{ contact.full_name|upper }}
-{% endfor %}
-<center style="margin-top:80px;">
-    <table>
-            <tr>
-                <td>设备名称</td>
-                <td>设备🆔</td>
-                <td>设备型号</td>
-                <td>系统版本</td>
-                <td>操作</td>
-            </tr>
-            {% for i in contacts.object_list %}
-            <tr>
-                <td><input type="text" readonly name="devices_name" id="" value="{{ i.equipment_name }}" ></td>
-                <td><input type="text" readonly name="devices_uuid"  value="{{ i.equipment_uuid }}"></td>
-                <td><input type="text" readonly name="devices_model"  value="{{ i.equipment_model }}"></td>
-                <td><input type="text" readonly name="platformVersion" id="platformVersion" value="{{ i.platform_verion }}"></td>
-                <td>
-                    <a href="{% url 'update_show' i.equipment_uuid %}">修改</a>
-                    <a href="{% url 'del_data' i.equipment_uuid %}" onclick="javascript:return del();">删除</a>
-                </td>
-            </tr>
-            {% endfor %}
-    </table>
-    <span class="step-links">
-        {% if contacts.has_previous %}
-        <a href="?page=1">&laquo; 首页</a>
-        <a href="?page={{ contacts.previous_page_number }}">上一页</a>
-        &nbsp
-        {% endif %}
-        <span class="current">
-        第{{ contacts.number }}页/共{{ contacts.paginator.num_pages }}页
-        </span>
-        {% if contacts.has_next %}
-        &nbsp
-        <a href="?page={{ contacts.next_page_number }}">下一页</a>
-        <a href="?page={{ contacts.paginator.num_pages }}">末页 &raquo;</a>
-        {% endif %}
-    </span>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <a href="{% url 'show' %}">go back</a>
-</center>
+    {% for contact in contacts %}
+        {# Each "contact" is a Contact model object. #}
+        {{ contact.full_name|upper }}
+    {% endfor %}
+	<div class="limiter">
+		<div class="container-table100" style="background:#fff;">
+			<div class="wrap-table100">
+				<div class="table100 ver5">
+					<table data-vertable="ver5">
+						<thead>
+							<tr class="row100 head">
+								<th class="column100 column2" data-column="column2">设备名称</th>
+								<th class="column100 column3" data-column="column3">设备UDID</th>
+								<th class="column100 column4" data-column="column4">设备型号</th>
+								<th class="column100 column5" data-column="column5">系统版本</th>
+								<th class="column100 column6" data-column="column6">操作</th>
+							</tr>
+						</thead>
+						<tbody>
+                        {% for i in contacts.object_list %}
+							<tr class="row100">
+								<td class="column100 column2" data-column="column2">
+                                    {{ i.equipment_name }}
+                                </td>
+								<td class="column100 column3" data-column="column3">
+                                    {{ i.equipment_uuid }}
+                                </td>
+								<td class="column100 column4" data-column="column4">
+                                    {{ i.equipment_model }}
+                                </td>
+								<td class="column100 column5" data-column="column5">
+                                    {{ i.platform_verion }}
+                                </td>
+								<td class="column100 column6" data-column="column6">
+                                    <a href="{% url 'update_show' i.equipment_uuid %}">修改</a>
+                                    <a href="{% url 'del_data' i.equipment_uuid %}" onclick="javascript:return del();">删除</a>
+                                </td>
+							</tr>
+                        {% endfor %}
+						</tbody>
+					</table>
+                    <center>
+                        <span class="step-links">
+                        {% if contacts.has_previous %}
+                        <a href="?page=1">&laquo; 首页</a>
+                        <a href="?page={{ contacts.previous_page_number }}">上一页</a>
+                        &nbsp
+                        {% endif %}
+                        <span class="current">
+                        第{{ contacts.number }}页/共{{ contacts.paginator.num_pages }}页
+                        </span>
+                        {% if contacts.has_next %}
+                        &nbsp
+                        <a href="?page={{ contacts.next_page_number }}">下一页</a>
+                        <a href="?page={{ contacts.paginator.num_pages }}">末页 &raquo;</a>
+                        {% endif %}
+                        </span>
+                    </center>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
 
 {% block js %}
+<!--===============================================================================================-->
+	<script src="../../../static/table_body/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../static/table_body/vendor/bootstrap/js/popper.js"></script>
+	<script src="../../../static/table_body/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../static/table_body/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../static/table_body/js/main.js"></script>
 <script>
     function del() {
     var msg = "您真的确定要删除吗？\n\n请确认！";

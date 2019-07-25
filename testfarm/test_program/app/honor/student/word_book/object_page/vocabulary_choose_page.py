@@ -5,8 +5,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
 from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.mysql_data import MysqlData
+from testfarm.test_program.app.honor.student.word_book.object_page.data_action import WordBookDataHandle
+from testfarm.test_program.app.honor.student.word_book.object_page.mysql_data import WordBookSql
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststeps,teststep
 from testfarm.test_program.utils.get_attribute import GetAttribute
@@ -19,8 +19,8 @@ class VocabularyChoose(BasePage):
     def __init__(self):
         self.attr = GetAttribute()
         self.homework = Homework()
-        self.mysql = MysqlData()
-        self.common = DataActionPage()
+        self.mysql = WordBookSql()
+        self.common = WordBookDataHandle()
 
     @teststeps
     def wait_check_head_page(self):
@@ -239,7 +239,7 @@ class VocabularyChoose(BasePage):
 
         explain = self.sentence_explain()
         word = self.common.get_word_by_sentence(explain)  # 根据中文获取缺少单词
-        print('word：', word)
+        print('study_word：', word)
 
         options = self.option_button()  # 四个选项
         if i == 1 or i == 2:

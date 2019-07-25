@@ -4,10 +4,10 @@
 import time
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.utils.wait_element import WaitElement
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from conf.base_config import GetVariable as gv
+from utils.wait_element import WaitElement
 
 
 class SpokenPage(BasePage):

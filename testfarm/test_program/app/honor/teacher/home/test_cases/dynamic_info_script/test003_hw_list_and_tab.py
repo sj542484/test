@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 import unittest
 
-from testfarm.test_program.app.honor.teacher.home.object_page.dynamic_info_page import DynamicPage
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.home.object_page.homework_detail_page import HwDetailPage
-from testfarm.test_program.app.honor.teacher.login.object_page.login_page import TloginPage
-from testfarm.test_program.app.honor.teacher.home.test_data.dynamic_data import GetVariable as gv
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.teacher.home.object_page.dynamic_info_page import DynamicPage
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.object_page.vanclass_hw_detail_page import HwDetailPage
+from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.home.test_data import GetVariable as gv
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
+from utils.toast_find import Toast
 
 
 class Homework(unittest.TestCase):
@@ -42,7 +42,7 @@ class Homework(unittest.TestCase):
                     if self.info.wait_check_list_page():
                         self.info.help_operation()  # 右上角 提示按钮
                         if self.info.wait_check_list_page():
-                            self.info.swipe_operation(0)  # 列表
+                            self.info.swipe_operation()  # 列表
                             self.info.into_hw(gv.HW_TITLE)  # 进入 作业包
 
                             if self.detail.wait_check_page():  # 页面检查点
@@ -89,16 +89,19 @@ class Homework(unittest.TestCase):
                 else:
                     print('-------------------答题分析tab-------------------')
                     if self.detail.wait_check_hw_list_page():
-                        self.answer_analysis_detail(['', ''])  # 答题分析 列表
+                        self.answer_analysis_detail()  # 答题分析 列表
                     elif self.home.wait_check_empty_tips_page():
                         print('暂无数据')
 
     @teststeps
-    def answer_analysis_detail(self, content):
+    def answer_analysis_detail(self, content=None):
         """答题分析 详情页"""
+        if content is None:
+            content = []
+
         item = self.detail.game_item()  # 游戏 条目
 
-        if len(item) > 4 and content[0] == '':
+        if len(item) > 4 and not content:
             content = []
             var = []  # 游戏name
             for i in range(len(item) - 1):
@@ -119,16 +122,17 @@ class Homework(unittest.TestCase):
             self.answer_analysis_detail(content)
         else:
             var = 0
-            for k in range(len(item)):
-                title = []
-                if len(item[k]) == 4:  # 无提分标志
-                    title.append(item[k][1])
-                else:
-                    title.append(item[k][2])
+            if content:
+                for k in range(len(item)):
+                    title = []
+                    if len(item[k]) == 4:  # 无提分标志
+                        title.append(item[k][1])
+                    else:
+                        title.append(item[k][2])
 
-                if content[0] == title[0] and content[1] == item[k][0]:
-                    var = k+1
-                    break
+                    if content[0] == title[0] and content[1] == item[k][0]:
+                        var = k+1
+                        break
 
             for i in range(var, len(item)):
                 if len(item[i]) == 4:  # 无提分标志

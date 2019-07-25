@@ -5,12 +5,15 @@
 # -------------------------------------------
 import unittest
 
+from testfarm.test_program.app.honor.student.library.object_pages.game_page import LibraryGamePage
+from testfarm.test_program.app.honor.student.library.object_pages.usercenter_page import UserCenterPage
 from testfarm.test_program.app.honor.student.listen_everyday.object_page.level_page import LevelPage
+from testfarm.test_program.app.honor.student.listen_everyday.object_page.listen_data_handle import ListenDataHandle
 from testfarm.test_program.app.honor.student.listen_everyday.object_page.listen_game_page import ListenGamePage
 from testfarm.test_program.app.honor.student.listen_everyday.object_page.listen_home_page import ListenHomePage
 from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
 from testfarm.test_program.conf.decorator import setup, teardown, teststeps
-
+import time
 
 class SelectLevel(unittest.TestCase):
 
@@ -31,6 +34,11 @@ class SelectLevel(unittest.TestCase):
     @teststeps
     def test_select_level(self):
         if self.game.home.wait_check_home_page():  # 页面检查点
+            time.sleep(4)
+            user_data = UserCenterPage().get_user_info()
+            stu_id = user_data[0]
+            ListenDataHandle().delete_student_all_listening_records(stu_id)
+        if self.game.home.wait_check_home_page():  # 页面检查点
             print('进入主界面', '\n')
             self.game.home.click_hk_tab(4)   # 点击每日一听
             if self.listen.wait_check_listen_everyday_home_page():
@@ -49,6 +57,13 @@ class SelectLevel(unittest.TestCase):
                         elif self.listen.wait_check_degrade_page():
                             print('是否感觉题太难了，需要切换到稍简单级别的练习吗？', '\n')
                             self.game.home.commit()
+
+                        elif self.listen.wait_check_certificate_page():
+                            print('该等级已学习完毕（没有题目）')
+                            LibraryGamePage().share_page_operate()
+                            if self.listen.wait_check_certificate_page():
+                                self.listen.start_excise_button().click()
+
 
                         if i == 3:
                             if self.listen.wait_today_limit_img_page():

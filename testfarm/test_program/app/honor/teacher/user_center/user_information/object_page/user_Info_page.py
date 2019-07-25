@@ -4,13 +4,13 @@
 import time
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.utils.click_bounds import ClickBounds
-from testfarm.test_program.utils.wait_element import WaitElement
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.user_center import TuserCenterPage
+from conf.decorator import teststep, teststeps
+from conf.base_config import GetVariable as gv
+from conf.base_page import BasePage
+from utils.click_bounds import ClickBounds
+from utils.wait_element import WaitElement
 
 
 class UserInfoPage(BasePage):

@@ -57,10 +57,17 @@ class CompleteArticle(BasePage):
     @teststep
     def result_opt_char(self, opt_text):
         """结果页的选项"""
-        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/preceding-sibling::android.widget.TextView'
+        ele = self.driver.find_element_by_xpath('//*[contains(@text,"{}")]/preceding-sibling::android.widget.TextView'
                                                 .format(opt_text))
 
         return ele
+
+    @teststep
+    def click_opt_by_text(self, opt_text):
+        """根据选项内容进行点击"""
+        ele = self.driver.find_element_by_xpath('//*[contains(@text,"{}")]'.format(opt_text))
+        ele.click()
+
 
     @teststeps
     def complete_article_operate(self, fq, sec_answer, half_exit):
@@ -71,13 +78,12 @@ class CompleteArticle(BasePage):
             total_num = self.common.rest_bank_num()
             article = self.article()
             print(article.text)
-            SelectWordBlank().check_position_change(article)
+            # SelectWordBlank().check_position_change(article)
 
             loc = self.get_element_location(self.drag_btn())  # 获取按钮坐标
             self.driver.swipe(loc[0] + 45, loc[1] + 45, loc[0] + 45, loc[1] - 450)  # 拖拽至最上方
             self.common.judge_next_is_true_false('false')  # 下一步按钮状态校验
 
-            index = 0
             if fq == 1:
                 for i in range(0, total_num):
                     self.common.rate_judge(total_num, i)
@@ -85,14 +91,9 @@ class CompleteArticle(BasePage):
                     mine_answers[i] = self.opt_text()[i].text
                     timer.append(self.common.bank_time())
             else:
-                while True:
-                    if self.common.rest_bank_num() == 0:
-                        break
-                    for i, opt in enumerate(self.opt_text()):
-                        if opt.text == sec_answer[index]:
-                            self.opt_char()[i].click()
-                            break
-                    index += 1
+                for i, ans in enumerate(list(sec_answer.values())):
+                    self.click_opt_by_text(ans)
+                    mine_answers[i] = ans
                     timer.append(self.common.bank_time())
 
             if half_exit:
@@ -116,13 +117,15 @@ class CompleteArticle(BasePage):
             loc = self.get_element_location(self.drag_btn())  # 获取按钮坐标
             self.driver.swipe(loc[0] + 45, loc[1] + 45, loc[0] + 45, loc[1] - 450)  # 拖拽至最上方
             desc = self.article().get_attribute('contentDescription')
-            right_ans = re.findall(r'\[(.*?)\]', desc)[0].split(', ')
+            reform_desc = re.compile(r'[.?!] ').sub('#', desc.split('## ')[1])
+            right_ans = reform_desc.split('# ')[:-1]
 
+            print(right_ans)
             for i, ans in enumerate(right_ans):
                 right_error_desc = self.result_opt_char(ans).get_attribute('contentDescription')
                 print('我的答案：', mine_answer[i])
                 print('正确答案', ans)
-                if mine_answer[i] != ans:
+                if mine_answer[i][:-1] != ans:
                     if right_error_desc == 'right':
                         print('★★★ 选择结果不正确，页面却显示正确')
                     elif right_error_desc == 'error':

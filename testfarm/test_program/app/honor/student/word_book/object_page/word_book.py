@@ -3,7 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.login.object_page.buy_tips_page import BuyTipsPage
 from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.app.honor.student.word_book.object_page.sql_data.data_action import DataActionPage
+from testfarm.test_program.app.honor.student.word_book.object_page.data_action import WordBookDataHandle
 from testfarm.test_program.app.honor.student.word_book.object_page.flash_card_page import FlashCard
 from testfarm.test_program.app.honor.student.word_book.object_page.restore_word_page import WordRestore
 from testfarm.test_program.app.honor.student.word_book.object_page.spelling_word_page import SpellingWord
@@ -26,7 +26,7 @@ class WordBook(BasePage):
         self.spell = SpellingWord()
         self.result = ResultPage()
         self.vchoose = VocabularyChoose()
-        self.common = DataActionPage()
+        self.common = WordBookDataHandle()
 
     @teststep
     def rank_button(self):
@@ -190,17 +190,17 @@ class WordBook(BasePage):
                 print('返回主界面')
 
     @teststep
-    def more_group(self):
+    def more_group(self, stu_id):
         """再来一组"""
         if self.wait_check_result_page():
             print('进入结果页面')
             self.result.get_result_all_ele()  # 结果页元素
             self.result.more_again_button()  # 再练一次
-            self.play_word_book()
+            self.play_word_book(stu_id)
             self.result.result_page_handle()
 
     @teststeps
-    def word_book_operate(self):
+    def word_book_operate(self, stu_id):
         """单词本 具体操作"""
         if self.wait_check_start_page():  # 页面检查点
             print("开始单词本练习")
@@ -222,7 +222,7 @@ class WordBook(BasePage):
                         break
                 if self.wait_check_start_page():  # 页面检查点
                     self.word_start_button()  # 点击 Go按钮
-                    self.play_word_book()  # 单词本 具体过程
+                    self.play_word_book(stu_id)  # 单词本 具体过程
 
             elif self.tips.wait_check_pay_page():  # 购买提示 页面检查点
                 self.tips.tips_goto_pay_operate()  # 去购买 提示页面
@@ -247,20 +247,20 @@ class WordBook(BasePage):
 
             else:
                 if self.wait_check_game_page():
-                    self.play_word_book()  # 单词本 具体过程
+                    self.play_word_book(stu_id)  # 单词本 具体过程
 
         elif self.wait_check_continue_page():  # 页面检查点
             print("继续单词本练习")
             self.word_continue_button()  # 点击 继续 按钮
             if self.wait_check_game_page():
-                self.play_word_book()
+                self.play_word_book(stu_id)
                 # 单词本 具体过程
                 #  elif self.result.wait_check_again_image():
                 #     self.result.more_again_button()
                 #     self.play_word_book()
 
     @teststeps
-    def play_word_book(self):
+    def play_word_book(self, stu_id):
         """单词本游戏过程"""
         fs = fc = ws = vc = ll = rw = ls = 0
         vc_wse = vc_esw = va = ws_r = 0
@@ -270,15 +270,15 @@ class WordBook(BasePage):
         以下变量均为各个游戏的计数变量
         fs：闪卡 学习模式(flash study)
         fc：闪卡 抄写模式(flash copy)
-        ws：单词默写模式(新词)(word spell)
+        ws：单词默写模式(新词)(study_word spell)
         vc：词汇选择新词模式(vocab choose)
         ll：连连看模式(link link)
-        rw：还原单词模式(restore word)
+        rw：还原单词模式(restore study_word)
         ls：单词听写模式(listen spell) 
-        vc_wse：词汇选择根据单词选解释模式(复习)(vocab choose - word select explain)
-        vc_esw：词汇选择根据解释选单词模式(复习)(vocab choose - explain select word)
+        vc_wse：词汇选择根据单词选解释模式(复习)(vocab choose - study_word select explain)
+        vc_esw：词汇选择根据解释选单词模式(复习)(vocab choose - explain select study_word)
         va：词汇运用模式(vocab apply)
-        ws_r：单词默写模式(复习)(word spell recite)
+        ws_r：单词默写模式(复习)(study_word spell recite)
         m_fs：我的单词——闪卡学习模式(mine flash study)
         m_fc: 我的单词--闪卡抄写模式(mine flash copy)
         wrong_ex :错题再练
@@ -378,23 +378,23 @@ class WordBook(BasePage):
                             wrong_ex = wrong_ex + 1
 
                         else:
-                            self.spell.dictation_pattern_recite(ws_r, first_game, spell_word)  # 单词拼写·默写模式 游戏过程
+                            self.spell.dictation_pattern_recite(stu_id, ws_r, first_game, spell_word)  # 单词拼写·默写模式 游戏过程
                             ws_r = ws_r + 1
 
                     # 单词详情
                     elif self.game_title().text == "单词详情":
-                        star_list = self.common.get_star_words()
-                        familiar_list = self.common.get_familiar_words()
+                        star_list = self.common.get_star_words(stu_id)
+                        familiar_list = self.common.get_familiar_words(stu_id)
 
                         FlashCard().study_mine_word(m_fs, star_list, familiar_list, star_add, familiar_add)
                         m_fs = m_fs + 1
 
                     elif self.game_title().text == "闪卡练习":
-                        FlashCard().copy_mine_word(m_fc, star_add)
+                        FlashCard().copy_mine_word(stu_id, m_fc, star_add)
                         m_fc = m_fc + 1
 
                     elif self.game_title().text == "单词拼写":
-                        SpellingWord().dictation_pattern_mine(m_ws, familiar_add, spell_word)  # 单词拼写·默写模式 游戏过程
+                        SpellingWord().dictation_pattern_mine(stu_id, m_ws, familiar_add, spell_word)  # 单词拼写·默写模式 游戏过程
                         m_ws = m_ws + 1
 
                     else:

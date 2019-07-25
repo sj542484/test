@@ -9,7 +9,7 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.library.object_pages.game_page import GamePage
+from testfarm.test_program.app.honor.student.library.object_pages.game_page import LibraryGamePage
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
@@ -21,7 +21,7 @@ class LibraryPage(BasePage):
 
     def __init__(self):
         self.home = HomePage()
-        self.game = GamePage()
+        self.game = LibraryGamePage()
 
     @teststep
     def wait_check_library_page(self, school_name):
@@ -383,11 +383,12 @@ class LibraryPage(BasePage):
                                         self.home.click_back_up_button()
 
                                     if self.wait_check_book_punch_page():
-                                        self.game.start_game_btn().click()        # 开始/继续/再来一遍
-                                        if self.game.wait_check_bank_list_page(): # 大题页面
-                                            self.game.testbank_type()[0].click()  # 点击第一道大题
-                                            if self.game.wait_check_game_page():  # 进入游戏页面
-                                                self.game.play_book_games(fq=1)   # 游戏过程
+                                        self.game.start_game_btn().click()         # 开始/继续/再来一遍
+                                        if self.game.wait_check_bank_list_page():  # 大题页面
+                                            bank_name = self.game.testbank_name(self.game.testbank_type()[0])
+                                            self.game.testbank_type()[0].click()   # 点击第一道大题
+                                            if self.game.wait_check_game_page():   # 进入游戏页面
+                                                self.game.play_book_games(fq=1, bank_name=bank_name[0].text)    # 游戏过程
                                                 self.home.click_back_up_button()        # 返回
                                                 if self.game.wait_check_bank_list_page():
                                                     self.home.click_back_up_button()
@@ -499,9 +500,12 @@ class LibraryPage(BasePage):
                     if self.wait_check_book_punch_page():
                         book_name = self.book_title()
                         set_books_name.append(book_name)
-                        self.click_back_up_button()
-                        time.sleep(1)
 
+                    elif self.wait_check_no_data_page():
+                        print('书籍已下架~~')
+
+                    self.click_back_up_button()
+                    time.sleep(1)
             if len(book_short_name) < int(re.findall(r'\d+', book_num)[0]):
                 self.home.screen_swipe_up(0.5, 0.8, 0.55, 1000)
             else:

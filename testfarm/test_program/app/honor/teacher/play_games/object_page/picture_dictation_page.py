@@ -6,15 +6,15 @@ import time
 import re
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.teacher.play_games.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.teacher.play_games.object_page.result_page import ResultPage
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststeps, teststep
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.swipe_screen import SwipeFun
-from testfarm.test_program.utils.toast_find import Toast
-from testfarm.test_program.utils.wait_element import WaitElement
+from app.honor.teacher.play_games.object_page import Homework
+from app.honor.teacher.play_games.object_page import ResultPage
+from conf.base_config import GetVariable as gv
+from conf.base_page import BasePage
+from conf.decorator import teststeps, teststep
+from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
+from utils.toast_find import Toast
+from utils.wait_element import WaitElement
 
 
 class PictureDictation(BasePage):
@@ -164,7 +164,7 @@ class PictureDictation(BasePage):
                     print('题数:', int(rate))
                     self.result_voice()  # 点击发音按钮
 
-                    self.error_sum(int(rate))  # 具体操作
+                    self.swipe_operation(int(rate))  # 具体操作
 
                     progress = re.sub("\D", "", self.result_progress())  # 时间进度
                     if int(progress) == 00000000:
@@ -173,7 +173,7 @@ class PictureDictation(BasePage):
             print('==============================================')
 
     @teststeps
-    def error_sum(self, rate):
+    def swipe_operation(self, rate):
         """查看答案 滑屏 获取所有题目内容"""
         ques_last_index = 0  # 每个页面最后操作过的题号
 

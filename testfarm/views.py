@@ -8,11 +8,11 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from testfarm.models import EquipmentList,SideType,ItemType
 from testfarm.test_program.run import Driver
-from multiprocessing import Process
 from testfarm.test_program.utils.st_appium_server import Utils
 from django.contrib.auth.decorators import login_required
 from testfarm.test_program.utils.kill_pid import killPid
 from django.db import close_old_connections
+from multiprocessing import Process
 
 
 _port = []
@@ -28,6 +28,7 @@ def index(request):
 def do_login(request):
     user = request.POST.get('username')
     pwd = request.POST.get('pwd')
+    print(pwd, 'login', 'user:', user)
     pwd = encryption(pwd=pwd)
     print(pwd,'login','user:',user)
 
@@ -41,9 +42,6 @@ def do_login(request):
     else:
         err_msg = '用户名或密码错误'
         return render(request,'testproject/login.html',{'err_msg':err_msg})
-    # else:
-    #     '''登陆失败'''
-    #     return HttpResponse('<script>alert("登陆失败，请重新登陆");location.href="/"</script>')
 
 def register(request):
     return render(request,'testproject/register.html')
@@ -120,13 +118,13 @@ def startservice(request):
     print(test_item)
     print('设备uuid:',e_uuid,'测试端:',test_sides,'测试项:',test_item)
 
-
     p = Utils(port=_port)
     appium_port = p.get_ports(port=4723,count=1)[0]
     _port.append(appium_port)
     sysport = p.get_ports(port=8200,count=1)[0]
     _port.append(sysport)
     # device = EquipmentList.objects.get(equipment_uuid=e_uuid)
+    # for i in range(1):
     t = Process(target=st,args=(e_uuid,appium_port,sysport,_port,test_sides,test_item))
     t.start()
     time.sleep(0.3)

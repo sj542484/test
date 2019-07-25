@@ -108,7 +108,7 @@ class ListenLinkSentence(BasePage):
         return icon
 
     @teststep
-    def listen_to_sentence_operate(self, fq, sec_answer, half_exit):
+    def listen_to_sentence_operate(self, fq, sec_answer):
         """听音连句游戏过程"""
         timer = []
         mine_answers = {}
@@ -145,7 +145,7 @@ class ListenLinkSentence(BasePage):
                     print('★★★ 点击下一步后，清除按钮依然存在')
 
                 rich_content = self.blank_text().get_attribute('contentDescription')  # 获取完成句子的desc
-                finish_answer = ' '.join(re.findall(r'\[(.*?)\]', rich_content)[0].split(', '))
+                finish_answer = rich_content.split('## ')[1].strip()
                 right_answer = self.right_answer().replace('\n', ': ')
                 explain = self.explain().replace('\n', ': ')
                 print('我的答案: ', finish_answer.strip())
@@ -154,11 +154,6 @@ class ListenLinkSentence(BasePage):
                 mine_answers[i] = finish_answer.strip()
                 timer.append(self.common.bank_time())
                 print('-'*20, '\n')
-
-                if i == 2:
-                    if half_exit:
-                        self.click_back_up_button()
-                        break
                 self.common.next_btn().click()
 
         self.common.judge_timer(timer)
@@ -170,8 +165,8 @@ class ListenLinkSentence(BasePage):
         right_answer = {}
         right, wrong = [], []
         index = 0
-        while True:
-            if ResultPage().wait_check_answer_page():
+        if ResultPage().wait_check_answer_page():
+            while True:
                 explains = self.result_explain()
                 for j, x in enumerate(explains):
                     result_answer = self.result_answer(x.text)
