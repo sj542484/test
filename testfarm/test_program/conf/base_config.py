@@ -7,7 +7,7 @@ class GetVariable(object):
     # ==== DEV ====
     HOST = '172.17.0.200'
     USER_NAME = 'director'
-    PASSWORD = 'AZ*vkTJj'
+    PASSWORD = 'r0#pX8^V'
     DB = "b_vanthink_core"
 
     # ==== Test =====
@@ -36,12 +36,12 @@ class GetVariable(object):
 
     # 安装包
     # 教师端
-    TEA_PACKAGE = "/Users/vanthink_test_ios/Woker/teacher_env_devDebug_1.2.2(9).apk"
+    TEA_PACKAGE = "./test_program/app_folder/teacher_env_devDebug_1.2.2(9).apk"
     # 学生端
-    STU_PACKAGE = "/Users/vanthink_test_ios/Woker/student_env_devDebug_1.3.7-18.apk"
+    STU_PACKAGE = "./test_program/app_folder/student_env_devDebug_1.3.7-18.apk"
 
     # hub地址
-    HUBHOST = '192.168.8.65'
+    HUBHOST = '192.168.8.141'
 
     # 学生的ID
     STU_ID = 0
