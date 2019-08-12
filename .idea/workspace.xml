@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="046d4bba-38b3-4962-b62f-77df2872793f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfarm/test_program/conf/base_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/conf/base_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +44,7 @@
           <entry key="appium_server_port_4727" value="2" />
           <entry key="css" value="17" />
           <entry key="gif" value="1" />
-          <entry key="gitignore" value="3" />
+          <entry key="gitignore" value="4" />
           <entry key="html" value="201" />
           <entry key="ico" value="1" />
           <entry key="jpg" value="1" />
@@ -67,7 +65,7 @@
           <entry key="JSON" value="22" />
           <entry key="JavaScript" value="16" />
           <entry key="Markdown" value="3" />
-          <entry key="PLAIN_TEXT" value="27" />
+          <entry key="PLAIN_TEXT" value="28" />
           <entry key="Python" value="2409" />
           <entry key="YAML" value="21" />
         </counts>
@@ -111,15 +109,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/report_path.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testfarm/test_program/run.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -140,13 +129,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="557">
               <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -249,7 +243,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/object_pages/homework_data_handle.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_pages/result_page.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_pages/usercenter_page.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/object_pages/homework_sql.py" />
@@ -300,6 +293,7 @@
         <option value="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/conf/base_config.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -322,62 +316,6 @@
             <path>
               <item name="testone" type="b2602c69:ProjectViewProjectNode" />
               <item name="testone" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testone" type="462c0819:PsiDirectoryNode" />
-              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testone" type="462c0819:PsiDirectoryNode" />
-              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
-              <item name="test_program" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testone" type="462c0819:PsiDirectoryNode" />
-              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
-              <item name="test_program" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testone" type="462c0819:PsiDirectoryNode" />
-              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
-              <item name="test_program" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="honor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testone" type="462c0819:PsiDirectoryNode" />
-              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
-              <item name="test_program" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="honor" type="462c0819:PsiDirectoryNode" />
-              <item name="student" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testone" type="462c0819:PsiDirectoryNode" />
-              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
-              <item name="test_program" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="honor" type="462c0819:PsiDirectoryNode" />
-              <item name="student" type="462c0819:PsiDirectoryNode" />
-              <item name="homework_rebuild" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testone" type="462c0819:PsiDirectoryNode" />
-              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
-              <item name="test_program" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="honor" type="462c0819:PsiDirectoryNode" />
-              <item name="student" type="462c0819:PsiDirectoryNode" />
-              <item name="homework_rebuild" type="462c0819:PsiDirectoryNode" />
-              <item name="test_cases" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -622,13 +560,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_pages/games/cloze.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="6" column="75" selection-start-line="6" selection-start-column="75" selection-end-line="6" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/login/object_page/login_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -931,6 +862,9 @@
           <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
