@@ -4,18 +4,17 @@
 # Date:     2018/12/17 10:59
 # -------------------------------------------
 import random
-import re
 import time
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.listen_everyday.object_page.listen_home_page import ListenHomePage
-from testfarm.test_program.app.honor.student.listen_everyday.object_page.listen_result_page import ListenResultPage
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.listen_everyday.object_page.listen_home_page import ListenHomePage
+from app.honor.student.listen_everyday.object_page.listen_result_page import ListenResultPage
+from app.honor.student.login.object_page.home_page import HomePage
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from utils.toast_find import Toast
 
 
 class ListenGamePage(BasePage):
@@ -56,7 +55,7 @@ class ListenGamePage(BasePage):
     @teststep
     def wait_check_next_button_page(self):
         """以下一步按钮的id作为根据"""
-        locator = (By.ID, self.id_type() + 'fab_next')
+        locator = (By.ID, self.id_type() + 'fab_commit')
         try:
             WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
             return True

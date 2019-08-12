@@ -2,15 +2,14 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/5/31 9:32
 # -----------------------------------------
-import random
 import unittest
 
-from testfarm.test_program.app.honor.student.library.object_pages.library_page import LibraryPage
-from testfarm.test_program.app.honor.student.library.object_pages.library_data_handle import DataHandlePage
-from testfarm.test_program.app.honor.student.library.object_pages.usercenter_page import UserCenterPage
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.conf.decorator import setup, teardown, testcase
+from app.honor.student.library.object_pages.library_page import LibraryPage
+from app.honor.student.library.object_pages.library_data_handle import DataHandlePage
+from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.login.object_page.login_page import LoginPage
+from conf.decorator import setup, teardown, testcase
 
 
 class Medal(unittest.TestCase):

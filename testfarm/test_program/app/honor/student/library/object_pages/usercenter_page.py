@@ -10,7 +10,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from testfarm.test_program.app.honor.student.library.object_pages.library_sql import LibrarySql
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.word_book.object_page.mysql_data import WordBookSql
+from testfarm.test_program.app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep
 
@@ -82,15 +82,20 @@ class UserCenterPage(BasePage):
         ele = self.driver.find_element_by_id(self.id_type() + 'clear_cache')
         return ele
 
+
+
     @teststep
     def get_user_info(self):
         """:return 学生id、学校名称、学校id、昵称"""
         HomePage().click_tab_profile()                         # 点击个人中心
         if self.wait_check_user_center_page():                 # 个人中心页面检查点
+            self.screen_swipe_up(0.5, 0.2, 0.8, 1000)
+            nickname = self.nickname()  # 昵称
+            self.screen_swipe_up(0.5, 0.8, 0.2, 1000)
             self.purchase().click()                            # 点击购买
             if self.wait_check_buy_page():                     # 购买页面检查点
                 phone = self.phone()                           # 手机号
-                stu_id = WordBookSql().find_student_id(phone)[0][0]    # 根据手机号获取学生ID
+                stu_id = WordBookSql().find_student_id(phone)[0][0]   # 根据手机号获取学生ID
                 self.click_back_up_button()
                 if self.wait_check_user_center_page():
                     school_name = self.school_name()           # 学习名称
@@ -98,7 +103,6 @@ class UserCenterPage(BasePage):
                         school_id = LibrarySql().find_school_id(school_name)[0][0]     # 根据学校名称获取学校id
                     else:
                         school_id = 0
-                    nickname = self.nickname()                 # 昵称
                     self.setting_up().click()
                     if self.wait_check_logout_page():          # 清除缓存
                         self.clear_cache().click()
@@ -111,6 +115,7 @@ class UserCenterPage(BasePage):
                     print('学生昵称：', nickname, '\n',
                           '学校名称：', school_name, '\n',
                           '学校id：', school_id, '\n',
-                          '学生id：', stu_id
+                          '学生id：', stu_id, '\n'
                           )
                     return stu_id, school_name, school_id, nickname
+

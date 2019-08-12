@@ -3,26 +3,26 @@ import re
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.test_paper.object_page.answer_page import AnswerPage
-from testfarm.test_program.app.honor.student.test_paper.object_page.banked_cloze import BankCloze
-from testfarm.test_program.app.honor.student.test_paper.object_page.cloze_test import ClozeTest
-from testfarm.test_program.app.honor.student.test_paper.object_page.complete_text import CompleteText
-from testfarm.test_program.app.honor.student.test_paper.object_page.conjunctions import Conjunctions
-from testfarm.test_program.app.honor.student.test_paper.object_page.guessing_word import GuessingWord
-from testfarm.test_program.app.honor.student.test_paper.object_page.listen_select import ListenSelect
-from testfarm.test_program.app.honor.student.test_paper.object_page.listen_spell import ListenSpell
-from testfarm.test_program.app.honor.student.test_paper.object_page.listen_to_sentence import ListenSentence
-from testfarm.test_program.app.honor.student.test_paper.object_page.read_understand import ReadUnderstand
-from testfarm.test_program.app.honor.student.test_paper.object_page.restore_word import RestoreWord
-from testfarm.test_program.app.honor.student.test_paper.object_page.sentence_enhance import SentenceEnhance
-from testfarm.test_program.app.honor.student.test_paper.object_page.sentence_exchange import SentenceExchange
-from testfarm.test_program.app.honor.student.test_paper.object_page.single_choice import SingleChoice
-from testfarm.test_program.app.honor.student.test_paper.object_page.vocab_select import VocabSelect
-from testfarm.test_program.app.honor.student.test_paper.object_page.word_match import WordMatch
-from testfarm.test_program.app.honor.student.test_paper.object_page.word_spell import WordSpell
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.test_paper.object_page.answer_page import AnswerPage
+from app.honor.student.test_paper.object_page.games.blank_cloze import BlankCloze
+from app.honor.student.test_paper.object_page.games.cloze_test import ClozeTest
+from app.honor.student.test_paper.object_page.games.complete_text import CompleteText
+from app.honor.student.test_paper.object_page.games.link_to_sentence import Conjunctions
+from app.honor.student.test_paper.object_page.games.word_guess import GuessingWord
+from app.honor.student.test_paper.object_page.games.listen_select import ListenSelect
+from app.honor.student.test_paper.object_page.games.listen_spell import ListenSpell
+from app.honor.student.test_paper.object_page.games.listen_to_sentence import ListenSentence
+from app.honor.student.test_paper.object_page.games.read_understand import ReadUnderstand
+from app.honor.student.test_paper.object_page.games.word_restore import RestoreWord
+from app.honor.student.test_paper.object_page.games.sentence_enhance import SentenceEnhance
+from app.honor.student.test_paper.object_page.games.sentence_exchange import SentenceExchange
+from app.honor.student.test_paper.object_page.games.single_choice import SingleChoice
+from app.honor.student.test_paper.object_page.games.vocab_select import VocabSelect
+from app.honor.student.test_paper.object_page.games.word_match import WordMatch
+from app.honor.student.test_paper.object_page.games.word_spell import WordSpell
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
 
 
 class ExamPage(BasePage):
@@ -187,20 +187,17 @@ class ExamPage(BasePage):
                 tips = []
                 while True:
                     titles = self.answer.question_titles()
-                    ele = self.get_all_text()
-                    last_text_attr = ele[-2].get_attribute('resourceId')
-
-                    for i in range(len(titles) - 1):
-                        if titles[i].text in tips:
+                    for i, x in enumerate(titles):
+                        if x.text in tips:
                             continue
                         else:
-                            self.print_ques_type(titles[i].text, tip_num, tips)
-
-                    if last_text_attr == self.id_type() + 'rtv_num'\
-                    or last_text_attr == self.id_type() + 'tv_sheet_num':
-                        self.home.screen_swipe_up(0.5, 0.878, 0.7, 1000)
-                        self.print_ques_type(titles[-1].text, tip_num, tips)
-
+                            if i == len(titles) - 1:
+                                self.home.screen_swipe_up(0.5, 0.878, 0.7, 1000)
+                            ques_num = self.answer.ques_num(x.text)
+                            num = int(re.findall(r'\d', ques_num)[0])
+                            tips.append(x.text)
+                            print(x.text, ' ', ques_num)
+                            tip_num.append(num)
                     if sum(tip_num) < total:
                         self.home.screen_swipe_up(0.5, 0.9, 0.3, 2000)
                     else:
@@ -209,15 +206,6 @@ class ExamPage(BasePage):
                 self.close_answer()
                 print('--------------------------------\n')
                 return tips
-
-    @teststep
-    def print_ques_type(self, title, tip_num, tips):
-        """打印题型 和题目个数"""
-        ques_num = self.answer.ques_num(title)
-        num = int(''.join(re.findall(r'\d', ques_num)))
-        tips.append(title)
-        print(title, ' ', ques_num)
-        tip_num.append(num)
 
     @teststeps
     def play_examination(self, tips, exam_json):
@@ -252,47 +240,41 @@ class ExamPage(BasePage):
         if '听后选择' in title:
             ListenSelect().play_listening_select_game(num, exam_json)
             self.answer.wait_result_btn_enabled()
-            # pass
+
 
         elif '猜词游戏' in title:
             GuessingWord().play_guessing_word_game(num, exam_json)
-            # pass
 
         elif '单项选择' in title:
             SingleChoice().play_single_choice_game(num, exam_json)
-            # pass
 
         elif '连词成句' in title:
             Conjunctions().play_conjunctions_game(num, exam_json)
-             # pass
 
         elif '连连看' in title:
             WordMatch().play_word_match_game(num, exam_json)
-            # pass
 
         elif '句型转换' in title:
             SentenceExchange().play_sentence_exchange_game(num, exam_json)
-            # pass
 
         elif '完形填空' in title:
             ClozeTest().play_cloze_test_game(num, exam_json)
-            # pass
 
         elif '还原单词' in title:
             RestoreWord().play_restore_word_game(num, exam_json)
-            # pass
+
 
         elif '选词填空' in title:
-            BankCloze().play_bank_cloze_game(num, exam_json)
-            # pass
+            BlankCloze().play_bank_cloze_game(num, exam_json)
+
 
         elif '强化炼句' in title:
             SentenceEnhance().play_sentence_enhance_game(num, exam_json)
-            # pass
+
 
         elif '补全文章' in title:
             CompleteText().play_complete_article_game(num, exam_json)
-            # pass
+
 
         elif '听音连句' in title:
             ListenSentence().play_listen_sentence_game(num, exam_json)
@@ -300,7 +282,7 @@ class ExamPage(BasePage):
 
         elif '词汇选择' in title:
             VocabSelect().play_vocab_select_game(num, exam_json)
-            # pass
+
 
         elif '阅读理解' in title:
             ReadUnderstand().play_read_understand_game(num, exam_json)
@@ -308,11 +290,10 @@ class ExamPage(BasePage):
 
         elif '单词拼写' in title:
             WordSpell().play_word_spell_game(num, exam_json)
-            # pass
+
 
         elif '单词听写' in title:
             ListenSpell().play_listen_spell_game(num, exam_json)
-            # pass
 
         else:
             pass

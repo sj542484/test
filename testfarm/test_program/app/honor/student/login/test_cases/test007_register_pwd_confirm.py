@@ -1,14 +1,13 @@
 # coding=utf-8
-import time
 import unittest
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.app.honor.student.login.test_data.register_data import phone_data, pwd_data
-from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import Setting
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.reset_phone_find_toast import verify_find
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.login.object_page.login_page import LoginPage
+from app.honor.student.login.test_data.register_data import phone_data, pwd_data
+from app.honor.student.user_center.object_page.user_center_page import Setting
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.reset_phone_find_toast import verify_find
+from utils.toast_find import Toast
 
 
 class Register(unittest.TestCase):

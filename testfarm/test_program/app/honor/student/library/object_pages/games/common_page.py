@@ -9,10 +9,10 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.games_keyboard import Keyboard
-from testfarm.test_program.utils.get_attribute import GetAttribute
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from utils.games_keyboard import Keyboard
+from utils.get_attribute import GetAttribute
 
 
 class CommonPage(BasePage):
@@ -77,7 +77,7 @@ class CommonPage(BasePage):
 
     @teststep
     def next_btn(self):
-        ele = self.driver.find_element_by_id(self.id_type() + 'fab_commit')
+        ele = self.driver.find_element_by_id(self.id_type() + 'fab_next')
         return ele
 
     @teststep

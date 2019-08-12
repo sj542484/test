@@ -9,40 +9,18 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.library.object_pages.games.cloze import Cloze
-from testfarm.test_program.app.honor.student.library.object_pages.games.common_page import CommonPage
+from testfarm.test_program.app.honor.student.games.choice_listen import ListenChoiceGame
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
 from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
-class ListenChoice(BasePage):
+class ListenChoice(ListenChoiceGame):
     """听力选择"""
 
     def __init__(self):
-        self.common = CommonPage()
-        self.cloze = Cloze()
-
-    @teststep
-    def wait_check_select_char_page(self):
-        """听力选择页面 以选项id作为依据"""
-        locator = (By.ID, self.id_type() + "tv_char")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def wait_check_red_hint_page(self):
-        """红色提示检查点"""
-        locator = (By.ID, self.id_type() + "tv_hint")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        self.common = LibraryPubicPage()
 
     @teststep
     def wait_check_listen_text_page(self):
@@ -53,18 +31,6 @@ class ListenChoice(BasePage):
             return True
         except:
             return False
-
-    @teststep
-    def voice_button(self):
-        """声音按钮"""
-        ele = self.driver.find_element_by_id('{}fab_audio'.format(self.id_type()))
-        return ele
-
-    @teststep
-    def hint(self):
-        """红色提示"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'tv_hint')
-        return ele.text
 
     @teststep
     def listen_text(self):
@@ -78,53 +44,28 @@ class ListenChoice(BasePage):
         ele = self.driver.find_element_by_id(self.id_type() + 'iv_play')
         return ele
 
-    @teststep
-    def submit_btn(self):
-        """下一步提交按钮"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'fab_submit')
-        return ele
-
-    @teststep
-    def judge_voice_btn_status(self, var):
-        """判断声音按钮状态"""
-        if GetAttribute().enabled(self.voice_button()) != var:
-            print('★★★ 声音按钮状态错误', var)
-
-    @teststep
-    def get_ques_size(self, question):
-        """获取问题的大小"""
-        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/..'.format(question))
-        return ele.size
-
-    @teststep
-    def get_opt_size(self, question):
-        """获取问题的大小"""
-        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/following-sibling::android.widget.LinearLayout'.format(question))
-        return ele.size
-
     @teststeps
     def listen_choice_operate(self, fq, sec_answer):
         """听力选择游戏过程"""
-        timer = []
         mine_answer = {}
-        if self.wait_check_select_char_page():   # 点击喇叭验证红色字体是否消失
-            print(self.hint())
-            self.judge_voice_btn_status('true')
+        if self.wait_check_listen_select_page():   # 点击喇叭验证红色字体是否消失
+            print(self.red_hint())
+            self.next_btn_judge('true', self.voice_button)
             self.voice_button().click()
             if self.wait_check_red_hint_page():
                 print('★★★ 点击喇叭后,红色提示未消失')
 
-            self.judge_voice_btn_status('false')
+            self.next_btn_judge('false', self.voice_button)
             total_num = self.common.rest_bank_num()   # 总题数
             ques_info = []            # 用以存储题目,滑动过滤 中断循环
             timer = []
             flag = False
-
+            scale_info = self.get_ques_opt_scale()
             while True:
                 if flag or self.common.rest_bank_num() == 0:
                     break
-                question = self.cloze.result_question()
-                last_text_attr = self.cloze.get_last_textview_type()
+                question = self.common.result_question()
+                last_text_attr = self.get_last_text_id()
                 for i, ques in enumerate(question):
                     if ques.text in ques_info:
                         continue
@@ -132,26 +73,26 @@ class ListenChoice(BasePage):
                         self.common.rate_judge(total_num, len(timer))
                         if i == len(question) - 1:
                             if last_text_attr == 'ques':
-                                self.screen_swipe_up(0.5, 0.9, 0.9 - self.get_ques_opt_scale()[0], 1000)
+                                self.screen_swipe_up(0.5, 0.9, 0.9 - scale_info[0], 1000)
                             else:
-                                self.screen_swipe_up(0.5, 0.9, 0.9 - self.get_ques_opt_scale()[1], 1000)
+                                self.screen_swipe_up(0.5, 0.9, 0.9 - scale_info[1], 1000)
 
                         ques_text = ques.text
                         print('问题：', ques_text)
                         ques_info.append(ques_text)
-                        for x, opt in enumerate(self.cloze.result_opt_text(ques_text)):   # 打印输出题目及选项
-                            print(self.cloze.result_opt_char(ques_text)[x].text, opt.text)
+                        for x, opt in enumerate(self.common.result_opt_text(ques_text)):   # 打印输出题目及选项
+                            print(self.common.result_opt_char(ques_text)[x].text, opt.text)
 
                         if fq == 1:    # 第一轮 随机选择选项
-                            random_index = random.randint(0, len(self.cloze.result_opt_char(ques_text)) - 1)
-                            random_opt = self.cloze.result_opt_text(ques_text)[random_index].text
+                            random_index = random.randint(0, len(self.common.result_opt_char(ques_text)) - 1)
+                            random_opt = self.common.result_opt_text(ques_text)[random_index].text
                             mine_answer[ques_text] = random_opt
                             print('我的答案：', random_opt)
-                            self.cloze.result_opt_char(ques_text)[random_index].click()
+                            self.common.result_opt_char(ques_text)[random_index].click()
                         else:       # 第二轮选择正确选项
-                            for x, opt in enumerate(self.cloze.result_opt_text(ques_text)):
+                            for x, opt in enumerate(self.common.result_opt_text(ques_text)):
                                 if opt.text == sec_answer[ques_text]:
-                                    self.cloze.result_opt_char(ques_text)[x].click()
+                                    self.common.result_opt_char(ques_text)[x].click()
                                     break
                             print('我的答案：', sec_answer[ques_text])
 
@@ -159,12 +100,9 @@ class ListenChoice(BasePage):
                     timer.append(self.common.bank_time())  # 添加学生
 
             self.common.judge_timer(timer)
-            while True:
-                if GetAttribute().enabled(self.submit_btn()) == 'true':
-                    self.submit_btn().click()
-                    break
-                else:
-                    time.sleep(3)
+            while self.wait_check_listen_select_page():
+                time.sleep(3)
+            self.next_btn_operate('true', self.fab_commit_btn)
             answer = mine_answer if fq == 1 else sec_answer
             print(answer)
             return answer, total_num
@@ -180,25 +118,29 @@ class ListenChoice(BasePage):
                 listen_text = self.listen_text()
                 print(listen_text)
                 while True:
-                    if len(self.cloze.result_question()) == 2:
+                    if len(self.common.result_question()) == 2:
                         break
                     else:
                         self.screen_swipe_up(0.5, 0.8, 0.6, 1000)
             ques_info = []
+            scale_info = self.get_ques_opt_scale()
             while len(ques_info) < len(mine_answer):
-                questions = self.cloze.result_question()
-                last_text_attr = self.cloze.get_last_textview_type()
+                questions = self.common.result_question()
+                last_text_attr = self.get_last_text_id()
                 for x, ques in enumerate(questions):
                     if ques.text in ques_info:
                         continue
                     else:
                         if x == len(questions) - 1:
-                            self.cloze.swipe_operate(last_text_attr)
+                            if last_text_attr == 'ques':
+                                self.screen_swipe_up(0.5, 0.9, 0.9 - scale_info[0], 1000)
+                            else:
+                                self.screen_swipe_up(0.5, 0.9, 0.9 - scale_info[1], 1000)
 
                         print('问题：', ques.text)
                         ques_info.append(ques.text)
-                        for y, opt in enumerate(self.cloze.result_opt_text(ques.text)):
-                            char = self.cloze.result_opt_char(ques.text)[y]
+                        for y, opt in enumerate(self.common.result_opt_text(ques.text)):
+                            char = self.common.result_opt_char(ques.text)[y]
                             if opt.text == mine_answer[ques.text]:
                                 if char.get_attribute('contentDescription') == 'right':
                                     right.append(opt.text)

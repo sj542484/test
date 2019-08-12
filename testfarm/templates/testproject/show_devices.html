@@ -33,6 +33,7 @@
         <li><a id="news" href="{% url 'inputinfo' %}">设备录入</a></li>
         <!--<li><a id="connect" href="{% url 'testmodeledit' %}">编辑测试模块</a></li>-->
         <li><a id="speack" href="{% url 'showalldevices' %}">查看所有设备信息</a></li>
+        <li><a id="tea" href="{% url 'tea' %}">教研上传数据</a></li>
         <li><a href="{% url 'do_logout' %}">退出登陆</a></li>
     </ul>
 {% endblock %}
@@ -155,6 +156,9 @@
 <script>
     var pro=["学生端","教师端","校长端","家长端"];
     var city=[["全部","图书馆","每日一听","登录","试卷","个人中心","单词本","习题"],["全部","班级","登陆","游戏","题库","个人中心"],["全部","数据报告","功能介绍","我的账号","我的学校","老师管理"],["全部","学习报告","购买","账号管理"]];
+
+    <!--var pro=["学生端"];-->
+    <!--var city=[["单词本"]];-->
 
     function readyLoad() {
         var list = document.getElementsByName('parent');

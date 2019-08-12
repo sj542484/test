@@ -3,11 +3,10 @@
 # Author:   Vector
 # Date:     2019/4/2 15:04
 # -------------------------------------------
-from testfarm.test_program.app.honor.student.library.object_pages.library_sql import LibrarySql
-from testfarm.test_program.app.honor.student.library.object_pages.usercenter_page import UserCenterPage
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.word_book.object_page.mysql_data import WordBookSql
-from testfarm.test_program.conf.base_page import BasePage
+from app.honor.student.library.object_pages.library_sql import LibrarySql
+from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.login.object_page.home_page import HomePage
+from conf.base_page import BasePage
 
 
 class DataHandlePage(BasePage):

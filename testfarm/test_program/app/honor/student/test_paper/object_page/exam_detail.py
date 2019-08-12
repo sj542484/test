@@ -1,22 +1,20 @@
-import re
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.test_paper.object_page.banked_cloze import BankCloze
-from testfarm.test_program.app.honor.student.test_paper.object_page.complete_text import CompleteText
-from testfarm.test_program.app.honor.student.test_paper.object_page.conjunctions import Conjunctions
-from testfarm.test_program.app.honor.student.test_paper.object_page.exam_data_handle import DataPage
-from testfarm.test_program.app.honor.student.test_paper.object_page.listen_select import ListenSelect
-from testfarm.test_program.app.honor.student.test_paper.object_page.listen_to_sentence import ListenSentence
-from testfarm.test_program.app.honor.student.test_paper.object_page.read_understand import ReadUnderstand
-from testfarm.test_program.app.honor.student.test_paper.object_page.sentence_enhance import SentenceEnhance
-from testfarm.test_program.app.honor.student.test_paper.object_page.sentence_exchange import SentenceExchange
-from testfarm.test_program.app.honor.student.test_paper.object_page.vocab_select import VocabSelect
-from testfarm.test_program.app.honor.student.word_book.object_page.ranking_page import RankingPage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.test_paper.object_page.games.blank_cloze import BlankCloze
+from app.honor.student.test_paper.object_page.games.complete_text import CompleteText
+from app.honor.student.test_paper.object_page.games.link_to_sentence import Conjunctions
+from app.honor.student.test_paper.object_page.exam_data_handle import DataPage
+from app.honor.student.test_paper.object_page.games.listen_select import ListenSelect
+from app.honor.student.test_paper.object_page.games.listen_to_sentence import ListenSentence
+from app.honor.student.test_paper.object_page.games.read_understand import ReadUnderstand
+from app.honor.student.test_paper.object_page.games.sentence_enhance import SentenceEnhance
+from app.honor.student.test_paper.object_page.games.sentence_exchange import SentenceExchange
+from app.honor.student.test_paper.object_page.games.vocab_select import VocabSelect
+from app.honor.student.word_book_rebuild.object_page.ranking_page import RankingPage
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
 
 
 class DetailPage(BasePage):
@@ -327,7 +325,7 @@ class DetailPage(BasePage):
             # pass
 
         elif ques_type == '选词填空':
-            BankCloze().bank_cloze_detail(bank_info)
+            BlankCloze().bank_cloze_detail(bank_info)
             # pass
 
         if ques_type == '听音连句':

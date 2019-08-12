@@ -3,7 +3,7 @@ import time
 
 import sys
 sys.path.append('./testfarm/test_program/')
-
+import os,json,subprocess
 from appium import webdriver
 from testfarm.test_program.conf.run_cases import RunCases
 from testfarm.test_program.conf.base_page import BasePage
@@ -30,11 +30,11 @@ class Driver:
              "platformName": "Android",
              "platformVersion": self.platformVersion,
              "deviceName": self.deviceName,
-             "app": "/Users/vanthink_test_ios/Desktop/student_env_devDebug_1.3.4(2).apk",
+             "app": "",
              "automationName": "uiautomator2",
              "udid": self.udid,
              "resetKeyboard": True,
-             "unicodeKeyboard":True,
+             # "unicodeKeyboard":True,
              "noReset": True,
              "systemPort": systemport
         }
@@ -60,6 +60,11 @@ class Driver:
         Utils(port=self.ports).start_appium(dn = self.deviceName, udid=self.udid, plv=self.platformVersion, file_name=file_path,port=appium_port,bp=int(appium_port)+1000,systemPort=sysport,side=self.test_side)
         # hub地址
         addr = 'http://%s:4444/wd/hub'%gv.HUBHOST
+
+        # 清楚应用缓存
+        cmd = 'adb -s {} shell pm clear com.vanthink.student.debug'.format(self.udid)
+        subprocess.Popen(cmd, shell=True)
+
         # 取保端口已经启动apiumm服务
         while True:
             res = Utils(port=self.ports).is_using(appium_port)
@@ -71,9 +76,12 @@ class Driver:
                     break
             time.sleep(0.3)
 
+
+        # 实例化log
         log = Log()
         log.set_logger(self.deviceName, file_path + '/' + 'client.log')
 
+        # 实例化base类
         base_page = BasePage()
         # 连接数据库
         mysql = SqlDb()
@@ -83,6 +91,7 @@ class Driver:
         base_page.set_db(mysql)
         base_page.set_user(deviceName=self.deviceName)
         base_page.set_path(path=file_path)
+        base_page.set_window_size(uuid=self.udid)
         try:
             print('start cases')
             run_case.run(cases)

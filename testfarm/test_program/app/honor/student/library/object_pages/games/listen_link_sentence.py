@@ -3,85 +3,24 @@
 # Author:   Vector
 # Date:     2019/4/8 13:18
 # -------------------------------------------
-import re
+import time
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
-from testfarm.test_program.app.honor.student.library.object_pages.games.common_page import CommonPage
+from testfarm.test_program.app.honor.student.games.sentence_listen_link import ListenLinkSentenceGame
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep
 from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
-class ListenLinkSentence(BasePage):
+class ListenLinkSentence(ListenLinkSentenceGame):
     def __init__(self):
-        self.common = CommonPage()
-
-    @teststep
-    def wait_check_listen_sentence_page(self):
-        """听音连句页面检查点"""
-        locator = (By.ID, '{}rich'.format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def wait_check_clear_btn_page(self):
-        """检查是否存在清除按钮"""
-        locator = (By.ID, '{}clear'.format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 2, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def blank_text(self):
-        """待填补的"""
-        ele = self.driver.find_element_by_id(self.id_type() + "rich")
-        return ele
-
-    @teststep
-    def text_for_select(self):
-        """下方可点击的文本"""
-        ele = self.driver.find_elements_by_id(self.id_type() + "text")
-        return [x for x in ele if x.text != '']
-
-    @teststep
-    def click_voice(self):
-        """声音按钮"""
-        self.driver.find_element_by_id(self.id_type() + "play_voice") \
-            .click()
-
-    @teststep
-    def right_answer(self):
-        """正确答案"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'tv_right')
-        return ele.text
-
-    @teststep
-    def explain(self):
-        """解释"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'tv_explain')
-        return ele.text
+        self.common = LibraryPubicPage()
 
     @teststep
     def result_explain(self):
         """结果页答案"""
         ele = self.driver.find_elements_by_id(self.id_type() + 'tv_explain')
         return ele
-
-    @teststep
-    def clear_btn_judge(self, var):
-        """清除按钮状态判断"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'clear')
-        attr = ele.get_attribute('enabled')
-        if attr != var:
-            print('★★★ 清除按钮 状态Error', attr)
 
     @teststep
     def result_answer(self, explain):
@@ -115,46 +54,51 @@ class ListenLinkSentence(BasePage):
         total_num = self.common.rest_bank_num()
         for i in range(0, total_num):
             if self.wait_check_listen_sentence_page():
-                self.common.judge_next_is_true_false('false')     # 下一步按钮状态校验
-                self.clear_btn_judge('false')                     # 清除按钮状态校验
-                self.click_voice()
+                self.next_btn_judge('false', self.fab_commit_btn)     # 下一步按钮状态校验
+                self.next_btn_operate('false', self.listen_link_clear_btn)                     # 清除按钮状态校验
                 self.common.rate_judge(total_num, i)              # 剩余题数校验
+                input_num = self.get_rich_text_input_count()
+                print(input_num)
                 if fq == 1:                                       # 第一轮，按下方单词或词组顺序依次点击
-                    while True:
-                        if GetAttribute().enabled(self.common.next_btn()) == 'true':
-                            break
-                        self.text_for_select()[0].click()
+                    index = 0
+                    # print([x.text for x in self.text_for_select() if x.text])
+                    # self.text_for_select()[0].click()
+                    # time.sleep(2)
+                    # print([x.text for x in self.text_for_select() if x.text])
+                    # self.text_for_select()[0].click()
+                    while index < input_num:
+                        select_text = self.text_for_select()
+                        for x in select_text:
+                            if x.text:
+                                x.click()
+                                index += 1
                 else:                                            # 第二轮，依次点击正确答案拆分后的顺序
                     right_answer = sec_answer[i].split(' ')
                     print('正确答案：', right_answer)
                     index = 0
-                    while True:
-                        if GetAttribute().enabled(self.common.next_btn()) == 'true':
-                            break
+                    while ' '.join(self.rich_text().split()) != sec_answer[i]:
                         for x in self.text_for_select():       # 每次只点击一个（与答案相同的词组）
                             if x.text == right_answer[index]:
                                 index += 1
                                 x.click()
                                 break
-
-                self.common.judge_next_is_true_false('true')
-                self.clear_btn_judge('true')
-                self.common.next_btn().click()
+                self.next_btn_judge('true', self.listen_link_clear_btn)
+                self.next_btn_operate('true', self.fab_commit_btn)
 
                 if self.wait_check_clear_btn_page():
                     print('★★★ 点击下一步后，清除按钮依然存在')
 
-                rich_content = self.blank_text().get_attribute('contentDescription')  # 获取完成句子的desc
-                finish_answer = rich_content.split('## ')[1].strip()
-                right_answer = self.right_answer().replace('\n', ': ')
-                explain = self.explain().replace('\n', ': ')
+                rich_content = self.rich_text().get_attribute('contentDescription')  # 获取完成句子的desc
+                finish_answer = rich_content.split('## ')[1].strip().replace('  ', '')
+                right_answer = self.right_sentence_answer().replace('\n', ': ')
+                explain = self.sentence_explain().replace('\n', ': ')
                 print('我的答案: ', finish_answer.strip())
                 print(right_answer)
                 print(explain)
                 mine_answers[i] = finish_answer.strip()
                 timer.append(self.common.bank_time())
                 print('-'*20, '\n')
-                self.common.next_btn().click()
+                self.fab_next_btn().click()
 
         self.common.judge_timer(timer)
         answer = mine_answers if fq == 1 else sec_answer

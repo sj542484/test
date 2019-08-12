@@ -8,7 +8,7 @@ import math
 import operator
 import time
 from PIL import Image
-from conf.report_path import ReportPath
+from testfarm.test_program.conf.report_path import ReportPath
 
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststeps
@@ -58,7 +58,6 @@ class ScreenShot(BasePage):
         # 将截屏文件复制到指定目录下
         if not os.path.isdir(dirPath):
             os.makedirs(dirPath)
-
         shutil.copyfile(TEMP_FILE, PATH(dirPath + "/" + imageName + "." + form))
 
     @teststeps
@@ -95,10 +94,8 @@ class ScreenShot(BasePage):
         img_name = 'img_' + date_time
         if not os.path.exists(self.screen_path):
             os.mkdir(self.screen_path)
-
         self.get_screenshot_by_element(element).write_to_file(self.screen_path, img_name)
         os.path.isfile(self.screen_path + img_name)
-
         return self.screen_path + img_name
 
     @teststeps
@@ -115,5 +112,4 @@ class ScreenShot(BasePage):
             print('两截图相同')
         else:
             print('两截图不同')
-
         return result

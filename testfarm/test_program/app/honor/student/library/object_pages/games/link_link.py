@@ -10,10 +10,10 @@ from math import ceil
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.library.object_pages.games.common_page import CommonPage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
+from app.honor.student.library.object_pages.games.common_page import CommonPage
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from utils.get_attribute import GetAttribute
 
 
 class LibraryLinkLink(BasePage):

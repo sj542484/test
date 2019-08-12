@@ -1,13 +1,13 @@
 # coding=utf-8
 import unittest
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
-from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import UserCenterPage, Setting, ProtocolPage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import setupclass, teardownclass, testcase
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.login.object_page.login_page import LoginPage
+from app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage, Setting, ProtocolPage
+from conf.base_page import BasePage
+from conf.decorator import setupclass, teardownclass, testcase
+from utils.toast_find import Toast
 
 
 class RegisterProtocol(unittest.TestCase):
@@ -36,6 +36,7 @@ class RegisterProtocol(unittest.TestCase):
             self.home.click_tab_profile()  # 进入首页后点击‘个人中心’按钮
 
             if self.user_center.wait_check_page():  # 页面检查点
+                self.home.screen_swipe_up(0.5, 0.9, 0.3, 1000)
                 self.user_center.click_setting()  # 进入设置页面
                 if self.setting.wait_check_page():
 

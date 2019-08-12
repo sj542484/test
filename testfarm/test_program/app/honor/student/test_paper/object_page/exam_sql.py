@@ -2,10 +2,10 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/6/27 15:41
 # -----------------------------------------
-from testfarm.test_program.app.honor.student.word_book.object_page.mysql_data import WordBookSql
+from utils.sql import SqlDb
 
 
-class ExamSql(WordBookSql):
+class ExamSql(SqlDb):
 
     # ========================= 删除试卷记录操作 ======================================
     def delete_all_exam_wrong(self, stu_id):

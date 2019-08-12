@@ -5,61 +5,25 @@
 # -------------------------------------------
 import re
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
-from testfarm.test_program.app.honor.student.library.object_pages.games.common_page import CommonPage
+from testfarm.test_program.app.honor.student.games.article_complete import CompleteArticleGame
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 from testfarm.test_program.app.honor.student.library.object_pages.games.select_word_blank import SelectWordBlank
 from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
 
 
-class CompleteArticle(BasePage):
+class CompleteArticle(CompleteArticleGame):
 
     def __init__(self):
-        self.common = CommonPage()
-
-    @teststep
-    def wait_check_complete_article_page(self):
-        """补全文章页面检查点"""
-        locator = (By.ID, '{}ss_view'.format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def drag_btn(self):
-        """拖拽按钮"""
-        ele = self.driver.find_element_by_id('{}dragger'.format(self.id_type()))
-        return ele
-
-    @teststep
-    def article(self):
-        """文章"""
-        ele = self.driver.find_element_by_id('{}ss_view'.format(self.id_type()))
-        return ele
-
-    @teststep
-    def opt_char(self):
-        """选项 字母 ABCD"""
-        ele = self.driver.find_elements_by_id('{}tv_char'.format(self.id_type()))
-        return ele
-
-    @teststep
-    def opt_text(self):
-        """选项 文本"""
-        ele = self.driver.find_elements_by_id('{}tv_item'.format(self.id_type()))
-        return ele
+        self.common = LibraryPubicPage()
+        self.home = HomePage()
 
     @teststep
     def result_opt_char(self, opt_text):
         """结果页的选项"""
-        ele = self.driver.find_element_by_xpath('//*[contains(@text,"{}")]/preceding-sibling::android.widget.TextView'
-                                                .format(opt_text))
-
+        ele = self.driver.find_element_by_xpath('//android.widget.TextView[contains(@text,"{}")]/preceding-sibling::'
+                                                'android.widget.TextView'.format(opt_text))
         return ele
 
     @teststep
@@ -68,7 +32,6 @@ class CompleteArticle(BasePage):
         ele = self.driver.find_element_by_xpath('//*[contains(@text,"{}")]'.format(opt_text))
         ele.click()
 
-
     @teststeps
     def complete_article_operate(self, fq, sec_answer, half_exit):
         """补全文章游戏过程"""
@@ -76,13 +39,11 @@ class CompleteArticle(BasePage):
         mine_answers = {}
         if self.wait_check_complete_article_page():
             total_num = self.common.rest_bank_num()
-            article = self.article()
+            article = self.rich_text()
             print(article.text)
-            # SelectWordBlank().check_position_change(article)
-
             loc = self.get_element_location(self.drag_btn())  # 获取按钮坐标
             self.driver.swipe(loc[0] + 45, loc[1] + 45, loc[0] + 45, loc[1] - 450)  # 拖拽至最上方
-            self.common.judge_next_is_true_false('false')  # 下一步按钮状态校验
+            self.next_btn_judge('false', self.fab_next_btn)  # 下一步按钮状态校验
 
             if fq == 1:
                 for i in range(0, total_num):
@@ -100,28 +61,29 @@ class CompleteArticle(BasePage):
                 self.click_back_up_button()
                 return
 
-            self.common.judge_next_is_true_false('true')  # 下一步按钮状态校验
             self.common.judge_timer(timer)
-            self.common.next_btn().click()
 
+            loc = self.get_element_location(self.drag_btn())  # 获取按钮坐标
+            self.driver.swipe(loc[0] + 45, loc[1] + 45, loc[0] + 45, self.get_window_size()[1] - 20)  # 拖拽至最上方
+            SelectWordBlank().check_position_change()
+            self.next_btn_operate('true', self.fab_next_btn)  # 下一步按钮状态校验
             answer = mine_answers if fq == 1 else sec_answer
             print('我的答案：', answer)
             return answer, total_num
 
     @teststeps
     def complete_article_result_operate(self, mine_answer):
+        """补全文章查看答案页处理"""
         right_answer = {}
         right, wrong = [], []
         index = 0
         if ResultPage().wait_check_answer_page():
-            loc = self.get_element_location(self.drag_btn())  # 获取按钮坐标
-            self.driver.swipe(loc[0] + 45, loc[1] + 45, loc[0] + 45, loc[1] - 450)  # 拖拽至最上方
-            desc = self.article().get_attribute('contentDescription')
-            reform_desc = re.compile(r'[.?!] ').sub('#', desc.split('## ')[1])
-            right_ans = reform_desc.split('# ')[:-1]
+            self.home.screen_swipe_up(0.5, 0.9, 0.4, 1000)
+            desc = self.rich_text().get_attribute('contentDescription')
+            desc_right_answer = re.findall(r' (.*?) \(.*?\) .*?', desc.split('##')[1])
+            result_right_answer = [x.strip() for x in desc_right_answer]
 
-            print(right_ans)
-            for i, ans in enumerate(right_ans):
+            for i, ans in enumerate(result_right_answer):
                 right_error_desc = self.result_opt_char(ans).get_attribute('contentDescription')
                 print('我的答案：', mine_answer[i])
                 print('正确答案', ans)

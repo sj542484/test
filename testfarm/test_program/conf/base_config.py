@@ -4,10 +4,17 @@
 
 class GetVariable(object):
     """参数化"""
+    # ==== DEV ====
     HOST = '172.17.0.200'
     USER_NAME = 'director'
     PASSWORD = 'AZ*vkTJj'
     DB = "b_vanthink_core"
+
+    # ==== Test =====
+    # HOST = '172.17.0.16'
+    # USER_NAME = 'tmp'
+    # PASSWORD = 'mysql#0056'
+    # DB = "b_vanthink_online"
 
     REPORT_ROOT = r'./testfarm/templates/test_report'  # 测试报告存放路径
 
@@ -31,10 +38,10 @@ class GetVariable(object):
     # 教师端
     TEA_PACKAGE = "/Users/vanthink_test_ios/Woker/teacher_env_devDebug_1.2.2(9).apk"
     # 学生端
-    STU_PACKAGE = "/Users/vanthink_test_ios/Woker/student_env_devDebug_1.3.7-9.apk"
+    STU_PACKAGE = "/Users/vanthink_test_ios/Woker/student_env_devDebug_1.3.7-18.apk"
 
     # hub地址
-    HUBHOST = '192.168.8.149'
+    HUBHOST = '192.168.8.65'
 
     # 学生的ID
     STU_ID = 0

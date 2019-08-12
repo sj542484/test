@@ -6,61 +6,25 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.library.object_pages.games.common_page import CommonPage
+from testfarm.test_program.app.honor.student.games.sentence_link_word import LinkWordToSentenceGame
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 from testfarm.test_program.app.honor.student.library.object_pages.games.restore_word import RestoreWord
 from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
 from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
-class LinkToSentence(BasePage):
+class LinkToSentence(LinkWordToSentenceGame):
 
     def __init__(self):
-        self.common = CommonPage()
-
-    @teststep
-    def wait_check_link_sentence_page(self):
-        """连词成句页面检查点"""
-        locator = (By.ID, '{}tv_prompt'.format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def wait_check_right_answer_page(self):
-        """检查是否出现正确答案"""
-        locator = (By.ID, '{}tv_prompt'.format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def explain(self):
-        """解释"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'tv_prompt')
-        return ele.text
-
-    @teststep
-    def right_answer(self):
-        """正确答案"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'tv_sentence')
-        return ele.text
+        self.common = LibraryPubicPage()
 
     @teststep
     def result_explain(self):
         """正确答案"""
         ele = self.driver.find_elements_by_id(self.id_type() + 'tv_hint')
-        return ele
-
-    @teststep
-    def word_alpha(self):
-        """每个字母"""
-        ele = self.driver.find_elements_by_id(self.id_type() + 'tv_word')
         return ele
 
     @teststep
@@ -91,13 +55,13 @@ class LinkToSentence(BasePage):
         total_num = self.common.rest_bank_num()
         for i in range(0, total_num):
             if self.wait_check_link_sentence_page():
-                self.common.judge_next_is_true_false('false')              # 判断下一步状态
+                self.next_btn_judge('false', self.fab_commit_btn)             # 判断下一步状态
                 self.common.rate_judge(total_num, i)
-                explain = self.explain().strip()
+                explain = self.sentence_explain().strip()
                 print('解释：', explain)
                 if fq == 1:
                     RestoreWord().drag_operate(self.word_alpha()[-1], self.word_alpha()[0])
-                    self.common.next_btn().click()
+                    self.next_btn_operate('true', self.fab_commit_btn)
                 else:
                     right_answer = sec_answer[explain]
                     self.do_right_operate(right_answer)
@@ -112,7 +76,7 @@ class LinkToSentence(BasePage):
                 print('我的答案：', mine)
                 print('-' * 20, '\n')
                 timer.append(self.common.bank_time())
-                self.common.next_btn().click()
+                self.fab_next_btn().click()
 
         self.common.judge_timer(timer)
         done_answer = mine_answer if fq == 1 else sec_answer

@@ -5,9 +5,9 @@
 # -------------------------------------------
 import unittest
 
-from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.app.honor.student.user_center.object_page.buy_card_page import PurchasePage
-from testfarm.test_program.conf.decorator import setupclass, teardownclass, teststeps
+from app.honor.student.login.object_page.login_page import LoginPage
+from app.honor.student.user_center.object_page.buy_card_page import PurchasePage
+from conf.decorator import setupclass, teardownclass, teststeps
 
 
 class PurchaseCard(unittest.TestCase):

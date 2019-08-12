@@ -4,117 +4,72 @@
 # Date:     2019/4/10 15:53
 # -------------------------------------------
 import random
-import time
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
-from testfarm.test_program.app.honor.student.library.object_pages.games.cloze import Cloze
-from testfarm.test_program.app.honor.student.library.object_pages.games.common_page import CommonPage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
+from testfarm.test_program.app.honor.student.games.article_read_understand import ReadUnderstandGame
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from testfarm.test_program.conf.decorator import teststep
 
 
-class ReadUnderstand(BasePage):
+class ReadUnderstand(ReadUnderstandGame):
 
     def __init__(self):
-        self.common = CommonPage()
-        self.cloze = Cloze()
-
-    @teststep
-    def wait_check_ss_content_page(self):
-        locator = (By.ID, self.id_type() + "ss_view")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def article(self):
-        """文章"""
-        ele = self.driver.find_element_by_id(self.id_type() +'ss_view')
-        return ele
-
-    @teststep
-    def check_position_change(self, content):
-        if GetAttribute().checked(self.common.font_large()) == 'false':  # 查看页面是否默认选择第二个Aa
-            print('★★★ 页面未默认选择中等字体')
-
-        large_hg = self.article().size['height']
-        print('large',self.article().size)
-
-        self.common.font_middle().click()
-        time.sleep(1)
-        middle_hg = self.article().size['height']
-        print('middle', self.article().size)
-
-        self.common.font_great().click()
-        time.sleep(1)
-        great_hg = self.article().size['height']
-        print('great', self.article().size)
-
-        print(middle_hg, large_hg, great_hg)
-        if not large_hg > middle_hg:
-            print('★★★ 大字体变中等字体未发生变化')
-
-        if not great_hg > large_hg:
-            print('★★★ 超大字变大字体未发生变化')
-
-        self.common.font_large().click()
-        time.sleep(2)
+        self.common = LibraryPubicPage()
 
     @teststep
     def read_understand_operate(self, fq, sec_answer):
-        if self.wait_check_ss_content_page():
-            total_num = self.common.bank_time()
-            article = self.article()
+        """阅读理解做题过程"""
+        if self.wait_check_read_understand_page():
+            total_num = self.common.rest_bank_num()
+            article = self.rich_text()
             print(article.text)
-            # self.check_position_change(article)  # 校验字体大小是否发生变化
-            self.common.judge_next_is_true_false('false')
-            loc = self.get_element_location(self.cloze.drag_btn())  # 获取按钮坐标
+            # SelectWordBlank().check_position_change()  # 校验字体大小是否发生变化
+            self.next_btn_judge('false', self.fab_commit_btn)
+            loc = self.get_element_location(self.drag_btn())  # 获取按钮坐标
             self.driver.swipe(loc[0] + 45, loc[1] + 45, loc[0] + 45, loc[1] - 450)     # 拖拽至最上方
             ques_info = []
             timer = []
             mine_answer = {}
+            scale_info = self.get_ques_opt_scale()
             while True:
                 if self.common.rest_bank_num() == 0:
                     break
-                questions = self.cloze.result_question()
-                last_text_attr = self.cloze.get_last_textview_type()
+                questions = self.common.result_question()
+                last_text_attr = self.get_last_text_id()
                 for i, ques in enumerate(questions):
                     if ques.text in ques_info:
                         continue
                     else:
                         if i == len(questions) - 1:
-                            self.cloze.swipe_operate(last_text_attr)
+                            if last_text_attr == 'ques':
+                                self.screen_swipe_up(0.5, 0.9, 0.9 - scale_info[0], 1000)
+                            elif last_text_attr == 'opt':
+                                self.screen_swipe_up(0.5, 0.9, 0.9 - scale_info[1], 1000)
+
                         ques_text = ques.text
                         print('问题：', ques_text)
+                        self.common.rate_judge(total_num, len(timer))
                         ques_info.append(ques_text)
                         if fq == 1:
-                            for x, opt in enumerate(self.cloze.result_opt_text(ques_text)):
-                                print(self.cloze.result_opt_char(ques_text)[x].text, opt.text)
-                            random_index = random.randint(0, len(self.cloze.result_opt_char(ques_text)) -1)
-                            random_text = self.cloze.result_opt_text(ques_text)[random_index].text
+                            for x, opt in enumerate(self.common.result_opt_text(ques_text)):
+                                print(self.common.result_opt_char(ques_text)[x].text, opt.text)
+                            random_index = random.randint(0, len(self.common.result_opt_char(ques_text)) -1)
+                            random_text = self.common.result_opt_text(ques_text)[random_index].text
                             mine_answer[ques_text] = random_text
                             print('我的答案：', random_text)
-                            self.cloze.result_opt_char(ques_text)[random_index].click()
+                            self.common.result_opt_char(ques_text)[random_index].click()
                         else:
                             right_answer = sec_answer[ques_text]
-                            for x, opt in enumerate(self.cloze.result_opt_text(ques_text)):
-                                print(self.cloze.result_opt_char(ques_text)[x].text, opt.text)
+                            for x, opt in enumerate(self.common.result_opt_text(ques_text)):
+                                print(self.common.result_opt_char(ques_text)[x].text, opt.text)
                                 if opt.text == right_answer:
-                                    self.cloze.result_opt_char(ques_text)[x].click()
+                                    self.common.result_opt_char(ques_text)[x].click()
                             print('我的答案：', right_answer)
 
-                        self.common.rate_judge(total_num, len(ques_info))
                         print('-'*20, '\n')
 
                         timer.append(self.common.bank_time())
-            self.common.judge_next_is_true_false('true')
             self.common.judge_timer(timer)
-            self.common.next_btn().click()
+            self.next_btn_operate('true', self.fab_commit_btn)
             answer = mine_answer if fq == 1 else sec_answer
             print(answer)
             return answer, total_num

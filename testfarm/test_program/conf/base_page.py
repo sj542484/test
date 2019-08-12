@@ -1,4 +1,4 @@
-import time
+import time,os,subprocess,re
 from testfarm.test_program.conf.base_config import GetVariable as gv
 import yaml
 
@@ -14,7 +14,8 @@ class BasePage(object):
 
     def get_user_info(self):
         '''获取改用户信息'''
-        fp = open('./user_info.yammml','r', encoding='utf-8')
+        print(os.getcwd())
+        fp = open('./testfarm/test_program/conf/user_info.yaml','r', encoding='utf-8')
         res = fp.read()
         res = yaml.full_load(res)
         return res['userinfo'][self.deviceName]
@@ -41,12 +42,22 @@ class BasePage(object):
     def get_db(self):
         return self.mysql
 
-    def get_window_size(self):
+    @classmethod
+    def set_window_size(cls,uuid):
         """获取当前窗口大小"""
-        window = self.driver.get_window_size()
-        y = window['height']
-        x = window['width']
-        return x, y
+        res = subprocess.Popen('adb -s %s shell dumpsys window displays'%(uuid), shell=True, stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE, close_fds=True)
+        result, err = res.communicate()
+        a = str(result, 'utf-8')
+        # cap = re.compile('modes.*?width=(\d+), height=(\d+), fps=.*?')
+        cap_one = re.compile('app=(\d+)x(\d+) ')
+        res = cap_one.findall(a)
+        cls.window_size = [int(i) for i in res[0]]
+
+    def get_window_size(self):
+        print('尺寸：',self.driver.get_window_size())
+        print(self.window_size)
+        return self.window_size
 
     def click_back_up_button(self):
         """以“返回按钮”的class name为依据"""
@@ -61,34 +72,34 @@ class BasePage(object):
     def screen_swipe_left(self, a, b, c, steps=0.5):
         """向左侧滑动"""
         screen = self.get_window_size()
-        x1 = int(screen[0] * a)
-        y1 = int(screen[1] * b)
-        x2 = int(screen[0] * c)
+        x1 = int(int(screen[0]) * a)
+        y1 = int(int(screen[1]) * b)
+        x2 = int(int(screen[0]) * c)
         self.driver.swipe(x1, y1, x2, y1, steps)
 
     def screen_swipe_right(self, a, b, c, steps=0.5):
         """向右侧滑动"""
         screen = self.get_window_size()
-        x1 = int(screen[0] * a)
-        y1 = int(screen[1] * b)
-        x2 = int(screen[0] * c)
+        x1 = int(int(screen[0]) * a)
+        y1 = int(int(screen[1]) * b)
+        x2 = int(int(screen[0]) * c)
         self.driver.swipe(x1, y1, x2, y1, steps)
 
     def screen_swipe_up(self, a, b, c, steps=0.5):
         """向上/向下滑动"""
         screen = self.get_window_size()
-        x1 = int(screen[0] * a)
-        y1 = int(screen[1] * b)
-        y2 = int(screen[1] * c)
+        x1 = int(int(screen[0]) * a)
+        y1 = int(int(screen[1]) * b)
+        y2 = int(int(screen[1]) * c)
         self.driver.swipe(x1, y1, x1, y2, steps)
         time.sleep(1)
 
     def screen_swipe_down(self, a, b, c, steps=0.5):
         """向下滑动"""
         screen = self.get_window_size()
-        x1 = int(screen[0] * a)
-        y1 = int(screen[1] * b)
-        y2 = int(screen[1] * c)
+        x1 = int(int(screen[0]) * a)
+        y1 = int(int(screen[1]) * b)
+        y2 = int(int(screen[1]) * c)
         self.driver.swipe(x1, y1, x1, y2, steps)
 
     def get_element_location(self, ele):

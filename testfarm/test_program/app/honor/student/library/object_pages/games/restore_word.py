@@ -4,77 +4,16 @@
 # Date:     2019/3/28 16:05
 # -------------------------------------------
 import time
-
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
-from testfarm.test_program.app.honor.student.library.object_pages.games.common_page import CommonPage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from testfarm.test_program.app.honor.student.games.word_restore import RestoreWordGame
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from testfarm.test_program.conf.decorator import teststeps
 
 
-class RestoreWord(BasePage):
+class RestoreWord(RestoreWordGame):
     def __init__(self):
-        self.common = CommonPage()
-
-    @teststep
-    def wait_restore_word_explain_page(self):
-        """还原单词页面检查点"""
-        locator = (By.ID, self.id_type() + "tv_prompt")
-        try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-
-    @teststep
-    def explain(self):
-        """解释"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'tv_prompt')
-        return ele.text
-
-    @teststep
-    def word_alpha(self):
-        """每个字母"""
-        ele = self.driver.find_elements_by_id(self.id_type() + 'tv_word')
-        return ele
-
-    @teststep
-    def word(self):
-        """展示的 待还原的单词"""
-        word = self.driver.find_elements_by_xpath('//android.widget.TextView['
-                                                  '@resource-id="com.vanthink.student.debug:id/tv_word" and @index=0]')
-        return word
-
-
-    @teststep
-    def voice(self):
-        """声音按钮"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'fab_sound')
-        return ele
-
-    @teststep
-    def button_swipe(self, from_x, from_y, to_x, to_y, steps=1000):
-        """拖动单词button"""
-        self.driver.swipe(from_x, from_y, to_x, to_y, steps)
-
-    @teststep
-    def get_element_location(self, ele):
-        """获取元素坐标"""
-        x = ele.location['x']
-        y = ele.location['y']
-        return x, y
+        self.common = LibraryPubicPage()
 
     @teststeps
-    def drag_operate(self, word2, word):
-        """拖拽 操作"""
-        loc = self.get_element_location(word2)
-        y2 = self.get_element_location(word)[1] - 40
-        self.button_swipe(loc[0], loc[1], loc[0], y2, 1000)
-        time.sleep(1)
-
-    @teststep
     def restore_word_operate(self, fq, sec_answer):
         """还原单词错误操作"""
         timer = []
@@ -83,9 +22,9 @@ class RestoreWord(BasePage):
         for i in range(total_num):
             if self.wait_restore_word_explain_page():
                 self.common.rate_judge(total_num, i)
-                explain = self.explain()
+                explain = self.word_explain()
                 print('解释：', explain)
-                self.common.judge_next_is_true_false('false')
+                self.next_btn_judge('false', self.fab_commit_btn)
                 word_alpha = self.word_alpha()
                 word = []
                 for char in word_alpha:
@@ -96,15 +35,13 @@ class RestoreWord(BasePage):
                     finish_word = [x.text for x in self.word_alpha()]
                     print('还原后单词：', ''.join(finish_word))
                     mine_answer[explain] = ''.join(finish_word)
-                    self.common.judge_next_is_true_false('true')
-                    self.common.next_btn().click()
+                    self.next_btn_operate('true', self.fab_commit_btn)
                     if i != total_num - 1:
                         print('正确答案：', self.word_alpha()[0].text)
-                    self.common.next_btn().click()
+                    self.fab_next_btn().click()
                 else:
                     self.right_restore_word_core(sec_answer[explain])
-                    self.common.judge_next_is_true_false('true')
-                    print('正确答案：', self.word_alpha()[0].text)
+                    self.next_btn_operate('true', self.fab_next_btn)
 
                 if i != total_num - 1:
                     timer.append(self.common.bank_time())
@@ -115,7 +52,7 @@ class RestoreWord(BasePage):
         return done_answer, total_num
 
 
-    @teststep
+    @teststeps
     def right_restore_word_core(self, english):
         """还原单词主要步骤"""
         index = 0

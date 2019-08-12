@@ -4,9 +4,9 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from utils.get_attribute import GetAttribute
 
 
 class VanclassDetailPage(BasePage):

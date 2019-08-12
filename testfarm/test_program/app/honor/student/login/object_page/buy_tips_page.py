@@ -4,11 +4,11 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.login.object_page.home_page import HomePage
+from conf.decorator import teststep, teststeps
+from conf.base_page import BasePage
+from utils.get_attribute import GetAttribute
+from utils.toast_find import Toast
 
 
 class BuyTipsPage(BasePage):

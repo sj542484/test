@@ -9,8 +9,8 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.library.object_pages.games.common_page import CommonPage
-from testfarm.test_program.app.honor.student.library.object_pages.games.link_link import LibraryLinkLink
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from testfarm.test_program.app.honor.student.library.object_pages.games.word_match import LibraryWordMatch
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
 from testfarm.test_program.utils.get_attribute import GetAttribute
@@ -18,7 +18,7 @@ from testfarm.test_program.utils.get_attribute import GetAttribute
 
 class ResultPage(BasePage):
     def __init__(self):
-        self.common = CommonPage()
+        self.common = LibraryPubicPage()
 
     @teststep
     def wait_check_result_page(self):
@@ -89,7 +89,7 @@ class ResultPage(BasePage):
     @teststep
     def answers(self):
         """单词"""
-        ele = self.driver.find_elements_by_id('{}tv_answer'.format(self.id_type()))
+        ele = self.driver.find_elements_by_id(self.id_type() + 'tv_answer')
         return ele
 
     @teststep
@@ -145,7 +145,7 @@ class ResultPage(BasePage):
     def word_game_answer_detail_operate(self, mine_answer):
         """单词类游戏查看答案页面处理过程"""
         right, wrong, right_answer = {}, {}, {}
-        if any([LibraryLinkLink().is_word(x) for x in list(mine_answer.keys())]):
+        if any([LibraryWordMatch().is_word(x) for x in list(mine_answer.keys())]):
             word_is_key = True
         else:
             word_is_key = False
@@ -153,6 +153,7 @@ class ResultPage(BasePage):
         if self.wait_check_answer_page():
             print('===== 查看结果页 =====\n')
             words = self.answers()
+
             for i in range(len(words)):
                 self.voices(words[i].text).click()
                 time.sleep(0.5)

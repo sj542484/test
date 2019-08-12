@@ -9,9 +9,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from testfarm.test_program.app.honor.student.web.object_pages.base import BaseDriverPage
-from testfarm.test_program.app.honor.student.web.object_pages.login_page import LoginWebPage
-from testfarm.test_program.conf.decorator import teststep
+from app.honor.student.web.object_pages.driver import BaseDriverPage
+from app.honor.student.web.object_pages.login_page import LoginWebPage
+from conf.decorator import teststep
 
 
 class AssignWord(BaseDriverPage):
@@ -173,6 +173,12 @@ class AssignWord(BaseDriverPage):
         return ele[1]
 
     @teststep
+    def get_all_assigned_word_book(self):
+        """获取所有已布置的单词记录"""
+        ele = self.driver.find_elements_by_css_selector('.table-list tr')
+        return ele
+
+    @teststep
     def assigned_word_book_name(self):
         """已布置单词的名称"""
         ele = self.driver.find_elements_by_css_selector('.name-wrapper p')
@@ -248,14 +254,22 @@ class AssignWord(BaseDriverPage):
                     time.sleep(2)
 
     @teststep
+    def revoke_word_book_operate(self):
+        """撤销所有单词"""
+        self.wordbook_tab().click()
+        time.sleep(2)
+        all_wordbook = self.get_all_assigned_word_book()
+        index = 0
+        while index < len(all_wordbook):  # 有已布置单词
+            print(self.assigned_word_book_name()[0].text)
+            self.revoke_btn()[0].click()  # 点击撤销
+            time.sleep(2)
+            index += 1
+
+    @teststep
     def assign_word_to_students_operate(self, class_name, index):
         """布置单词给学生"""
-        self.wordbook_tab().click()
-        while self.wait_check_assigned_word_page():              # 有已布置单词
-            print(self.assigned_word_book_name()[0].text)
-            self.revoke_btn()[0].click()                         # 点击撤销
-            time.sleep(2)
-
+        self.revoke_word_book_operate()
         self.assign_word_btn().click()
         time.sleep(2)
         self.select_vanclass_operate(class_name)                     # 选择班级
@@ -290,6 +304,16 @@ class AssignWord(BaseDriverPage):
                     word_index = 19 if index == 0 else 21
                     self.assign_word_to_students_operate(x.text, word_index)
                     index += 1
+
+    @teststep
+    def revoke_van_class_wordbook_operate(self, teacher_account, teacher_pass):
+        LoginWebPage().login_operate(teacher_account, teacher_pass)
+        if self.wait_check_home_page():
+            for x in self.class_list():
+                x.click()
+                self.driver.implicitly_wait(2)
+                if self.wait_check_class_page():
+                    self.revoke_word_book_operate()
 
 
 

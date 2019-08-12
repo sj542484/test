@@ -1,227 +1,136 @@
 import time
 
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.by import By
-from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_handle import DataActionPage
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.flash_card_page import FlashCard
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststeps, teststep
-from testfarm.test_program.utils.games_keyboard import Keyboard
-from testfarm.test_program.utils.get_attribute import GetAttribute
+from app.honor.student.games.word_spell import SpellWordGame
+from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
+from conf.decorator import teststeps, teststep
+from utils.games_keyboard import Keyboard
+from utils.get_attribute import GetAttribute
 
 
-class SpellingWord(BasePage):
+class SpellingWord(SpellWordGame):
     """单词拼写"""
     def __init__(self):
-        self.get = GetAttribute()
-        self.homework = Homework()
-        self.common = DataActionPage()
+        self.data = WordDataHandlePage()
         self.key = Keyboard()
+        self.word_public = WorldBookPublicPage()
+
+
+    @teststep
+    def spell_right_word_operate(self, word):
+        """单词拼写做对操作"""
+        self.hint_ele_operate(word)
+        self.key.games_keyboard('backspace')
+        print('单词:', word)
+        for j in range(0, len(word)):
+            self.keyboard_operate(j, word[j])  # 点击键盘 具体操作
+
 
     @teststeps
-    def wait_check_spell_page(self):
-        """以“词汇选择 -句子选单词模式”的 提示按钮 为依据"""
-        locator = (By.ID, "{}hint".format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststeps
-    def wait_check_explain_page(self):
-        """以“结束”的 为依据"""
-        locator = (By.ID, self.id_type() + 'tv_explain')
-        try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststeps
-    def wait_check_word_random_page(self):
-        """以随机拼写的 提示按钮 为依据"""
-        locator = (By.ID, self.id_type() + 'tv_word')
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def explain(self):
-        """展示的翻译"""
-        explain = self.driver \
-            .find_element_by_id(self.id_type() + "tv_explain").text
-        return explain
-
-    @teststep
-    def word(self):
-        """展示的Word"""
-        ele = self.driver \
-            .find_element_by_id(self.id_type() + "tv_word").text
-        word = ele[1::2]
-        return word
-
-    @teststep
-    def click_voice(self):
-        """播放按钮"""
-        self.driver. \
-            find_element_by_id(self.id_type() + "play_voice") \
-            .click()
-
-    @teststep
-    def mine_answer(self):
-        """展示的Word  前后含额外字符:aa"""
-        word = self.driver \
-            .find_element_by_id(self.id_type() + "tv_word").text
-        return word[::2]
-
-    @teststep
-    def finish_word(self):
-        """完成答题 之后 展示的Word 每个字母之间有空格"""
-        word = self.driver \
-            .find_element_by_id(self.id_type() + "tv_word").text
-        return word[::2]
-
-    @teststep
-    def correct_judge(self):
-        """判断 答案是否展示"""
-        try:
-            self.driver.find_element_by_id(self.id_type() + "tv_answer")
-            return True
-        except:
-            return False
-
-    @teststep
-    def correct(self):
-        """展示的答案"""
-        word = self.driver \
-            .find_element_by_id(self.id_type() + "tv_answer")
-        return word.text
-
-    # 默写模式
-    @teststep
-    def hint_button(self):
-        """提示按钮"""
-        ele = self.driver \
-            .find_element_by_id(self.id_type() + "hint")
-        return ele
-
-    @teststeps
-    def dictation_word_judge(self):
-        """判断是否展示Word"""
-        try:
-            self.driver \
-                .find_element_by_id(self.id_type() + "tv_word")
-            return True
-        except:
-            return False
-
-    @teststeps
-    def dictation_word(self):
-        """展示的Word"""
-        ele = self.driver \
-            .find_element_by_id(self.id_type() + "tv_word").text
-        value = ele[::2]
-        return value
-
-    @teststeps
-    def new_word_spell_operate(self, familiar_word):
+    def new_word_spell_operate(self, familiar_word, new_explain_words):
         """单词拼写 - 《默写模式》游戏过程"""
-        print('===== 单词拼写 新词 ======\n')
+        print('===== 🌟🌟 单词拼写 新词 🌟🌟 ======\n')
+        print('标熟单词：', familiar_word, '\n')
         all_words = []
+        value = 0
         for x in range(len(familiar_word)):
-            explain = self.explain()          # 解释
-            self.homework.next_button_judge('false')  # 下一题 按钮 状态判断
-            if explain in all_words:
-                print('★★★ 该单词在拼写单词中已经出现过！')
+            if self.wait_check_normal_spell_page():
+                explain_ele = self.word_explain()        # 解释
+                explain = explain_ele.text
+                explain_id = self.word_public.get_explain_id(explain_ele)
+                self.next_btn_judge('false', self.fab_commit_btn)  # 下一题 按钮 状态判断
 
-            if explain not in list(familiar_word.keys()):
-                print('★★★ 单词未标熟，但是出现拼写', explain)
-            else:
-                all_words.append(explain)
-                value = familiar_word[explain]
-                self.hint_ele_operate(value)
+                if explain_id in new_explain_words:
+                    if '新释义' not in self.game_title().text:
+                        print('★★★ 该单词为新释义，但是标题没有显示新释义字样')
+
                 print('解释：', explain)
-                self.key.games_keyboard('backspace')
-                print('单词:', value)
-                for j in range(0, len(value)):
-                    self.keyboard_operate(j, value[j])      # 点击键盘 具体操作
+                if explain in all_words:
+                    print('★★★ 该单词在拼写单词中已经出现过！')
+                else:
+                    all_words.append(explain)
 
-                self.homework.next_button_operate('true')         # 下一题 按钮 状态判断 加点击
-                answer = self.finish_word()  # 最终答案
+                if explain_id not in list(familiar_word.keys()):
+                    print('★★★ 单词未标熟，但是出现拼写', explain)
+                else:
+                    value = familiar_word[explain_id]
+                    self.spell_right_word_operate(value)
+
+                self.next_btn_operate('true', self.fab_commit_btn)         # 下一题 按钮 状态判断 加点击
+                answer = self.spell_word()[::2]  # 最终答案
                 if answer != value.lower():
                     print('★★★ 大写字母未自动变为小写字母')
-                self.result_operate(answer, self.mine_answer())   # 下一步按钮后的答案页面 测试
+                # self.result_operate(answer, self.mine_answer())   # 下一步按钮后的答案页面 测试
                 self.click_voice()
-                self.next_button().click()
+                self.next_btn_operate('true', self.fab_next_btn)
+                time.sleep(2)
+                print('-'*30, '\n')
 
 
     @teststeps
-    def dictation_pattern_recite(self, i, first_game, spell_word):
-        """单词默写 复习"""
-        if i == 0:
-            level1_count = self.common.get_different_level_words(1)  # 获取需要B轮复习的单词
-            new_word = self.common.get_different_level_words(0)   # 获取新词个数
-            if new_word != 0:
-                if level1_count != 0:
-                    if first_game[0] != '词汇选择(复习)':
-                        print('★★★ Error-第一个游戏不是B1的词汇选择游戏')
-                    else:
-                        print("B轮单词存在,首个游戏为 '词汇选择(复习)' 名称正确！")
-                else:
-                    if first_game[0] != '词汇运用(复习)':
-                        print("★★★ Error-第一个游戏不是B2/C1/D1/E1的词汇运用游戏'")
-                    else:
-                        print("B轮单词已结束，首个游戏为 '词汇运用(复习)' 名称正确！\n")
-                print('----------------------------------')
-                print('\n单词拼写 - 默写模式(新词)\n')
-        self.dictation_pattern_core(spell_word, word_type=2)
+    def recite_word_spell_operate(self, stu_id, bank_count, recite_new_explain_words, only_apply_explains):
+        """单词拼写 复习"""
+        print('===== 🌟🌟 单词默写 复习 🌟🌟 ===== \n')
+        for x in range(bank_count):
+            explain = self.word_explain()  # 解释
+            print('解释：', explain.text)
+            explain_id = explain.get_attribute('contentDescription')
+            if explain_id in recite_new_explain_words:
+                print('★★★ 此单词为新释义单词，不应出现单词拼写游戏')
 
-    @teststeps
-    def dictation_pattern_mine(self, i, familiar_add, spell_word):
-        """单词默写 我的单词"""
-        if i == 0:
-            print("\n单词拼写 - 默写模式(单词详情)\n")
-        explain = self.explain()  # 题目
-        value = self.common.get_word_by_explain(explain)
-        familiars = self.common.get_familiar_words() + familiar_add
-        intersect_list = list(set(value).intersection(set(familiars)))  # 取获取单词数组与标星单词数组的交集
-        if i in range(0, 5):
-            self.dictation_pattern_core(spell_word, word_type=1)
-            if len(intersect_list) == 0:
-                print('★★★ Error-- 单词未被标熟却出现默写模式')
-        else:
-            FlashCard().tips_operate()
-            for i in familiar_add:
-                level = self.common.get_word_level(i)
-                if level < 3:
-                    print("★★★ Error--提交未成功，单词熟练度未更改")
+            if explain_id in only_apply_explains:
+                print('★★★ 此单词为只有词汇运用单词， 不应出现在单词拼写中')
+
+            self.next_btn_judge('false', self.fab_commit_btn)  # 下一题 按钮 状态判断
+            right_word = self.data.get_word_by_explain_id(stu_id, explain_id)
+            self.spell_right_word_operate(right_word)
+            self.next_btn_operate('true', self.fab_commit_btn)
+            print('我输入的：', right_word)
+
+            if not self.wait_check_play_voice_page():
+                print('★★★ 点击提交按钮后未发现喇叭按钮')
+            self.next_btn_operate('true', self.fab_next_btn)
+            print('-'*30, '\n')
+
+
+    # @teststeps
+    # def dictation_pattern_mine(self, i, familiar_add, spell_word):
+    #     """单词默写 我的单词"""
+    #     if i == 0:
+    #         print("\n单词拼写 - 默写模式(单词详情)\n")
+    #     explain = self.word_explain()  # 题目
+    #     value = self.data.get_word_by_explain(explain)
+    #     familiars = self.data.get_familiar_words() + familiar_add
+    #     intersect_list = list(set(value).intersection(set(familiars)))  # 取获取单词数组与标星单词数组的交集
+    #     if i in range(0, 5):
+    #         self.dictation_pattern_core(spell_word, word_type=1)
+    #         if len(intersect_list) == 0:
+    #             print('★★★ Error-- 单词未被标熟却出现默写模式')
+    #     else:
+    #         FlashCard().tips_operate()
+    #         for i in familiar_add:
+    #             level = self.data.get_word_level(i)
+    #             if level < 3:
+    #                 print("★★★ Error--提交未成功，单词熟练度未更改")
 
     @teststeps
     def hint_ele_operate(self, value):
-        self.homework.next_button_operate('false')  # 下一题 按钮 判断加 点击操作
-        if self.dictation_word_judge():  # 默写模式 - 字母未全部消除
+        self.next_btn_judge('false', self.fab_commit_btn)  # 下一题 按钮 判断加 点击操作
+        if self.wait_check_tv_word_or_random_page():  # 默写模式 - 字母未全部消除
             print('★★★ Error - 单词拼写 默写模式 - 字母未全部消除')
 
-        hint = self.hint_button()  # 提示按钮
-        if self.get.enabled(hint) == 'true':
+        hint = self.hint_btn()  # 提示按钮
+        if GetAttribute().enabled(hint) == 'true':
             hint.click()  # 点击 提示按钮
-            if self.get.enabled(self.hint_button()) != 'false':
+            if GetAttribute().enabled(self.hint_btn()) != 'false':
                 print('★★★ Error - 点击后提示按钮enabled属性错误')
 
-            if self.dictation_word_judge():  # 出现首字母提示
-                first_word = self.dictation_word()
-                if len(first_word) == 1:
-                    if first_word == value[0]:
-                        print('点击提示出现首字母提示', first_word)
-                    else:
-                        print('点击提示出现首字母提示', first_word)
-                        print("★★★ Error - 首字母提示错误")
+            if self.wait_check_tv_word_or_random_page():  # 出现首字母提示
+                first_word = self.spell_word()
+                if first_word == value[0]:
+                    print('点击提示出现首字母提示', first_word)
                 else:
-                    print('★★★ Error - 提示字母不为一个')
+                    print('点击提示出现首字母提示', first_word)
             else:
                 print("★★★ Error - 首字母提示未出现")
         else:
@@ -232,8 +141,8 @@ class SpellingWord(BasePage):
         """下一步按钮后的答案页面"""
         print('我的答案:', answer)
         print('去除大小写结果:', mine)
-        if self.correct_judge():
-            correct = self.correct()  # 正确答案
+        if self.wait_check_right_answer_page():
+            correct = self.right_answer_word()  # 正确答案
             print('填写错误，正确答案:', correct)
             if len(mine) <= len(correct):  # 输入少于或等于单词字母数的字符
                 if mine.lower() != answer.lower():  # 展示的 我的答题结果 是否与我填入的一致
@@ -261,30 +170,31 @@ class SpellingWord(BasePage):
             self.key.games_keyboard(value)  # 点击键盘对应字母
 
     @teststeps
-    def dictation_random_pattern_recite(self, i):
+    def dictation_random_pattern_recite(self, stu_id, wrong_words):
         """错题再练 单词拼写 随机模式"""
-        if i == 0:
-            print('\n错题再练--单词拼写 随机模式\n')
+        for x in range(len(wrong_words)):
+            self.next_btn_judge('false', self.fab_commit_btn)
+            explain = self.word_explain()
+            print('解释：', explain.text)
+            explain_id = explain.get_attribute('contentDescription')
+            word = self.data.get_word_by_explain_id(stu_id, explain_id)
+            print("正确单词：", word)
+            tip_word = self.spell_word()[1::2]
+            print('提示词：', tip_word)
 
-        self.homework.next_button_operate('false')
-        explain = self.explain()
-        print('解释：', explain)
-        word = self.common.get_word_by_explain(explain)
-        print("正确单词：", word)
-        tip_word = self.word()
-        print('提示词：', tip_word)
-
-        right_word = [x for x in word if len(x) == len(tip_word)]
-        alphas = [right_word[0][x] for x in range(len(right_word[0])) if tip_word[x] == '_']
-        print(alphas)
-        for k in range(len(alphas)):
-            self.keyboard_operate(k, alphas[k])  # 点击键盘 具体操作
-        print('填充后单词为：', self.word())
-        print('----------------------------------')
-        self.homework.next_button_operate('true')  # 提交
-        self.click_voice()
-        self.homework.next_button_operate('true')  # 下一题 按钮 判断加 点击操作
-        time.sleep(2)
+            right_word = [x for x in word if len(x) == len(tip_word)]
+            alphas = [right_word[0][x] for x in range(len(right_word[0])) if tip_word[x] == '_']
+            print(alphas)
+            for k in range(len(alphas)):
+                self.keyboard_operate(k, alphas[k])  # 点击键盘 具体操作
+            print('填充后单词为：', self.spell_word()[1::2])
+            self.next_btn_operate('true', self.fab_commit_btn)
+            if self.wait_check_play_voice_page():
+                self.sound_icon().click()
+            else:
+                print('★★★ 未发现声音按钮')
+            self.next_btn_operate('true', self.fab_next_btn)  # 下一题 按钮 判断加 点击操作
+            time.sleep(2)
 
 
 

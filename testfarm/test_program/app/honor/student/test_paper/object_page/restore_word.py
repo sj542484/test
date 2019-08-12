@@ -1,13 +1,13 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.student.test_paper.object_page.answer_page import AnswerPage
-from testfarm.test_program.app.honor.student.word_book.object_page.data_action import WordBookDataHandle
-from testfarm.test_program.app.honor.student.word_book.object_page.restore_word_page import WordRestore
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.homework.object_page.homework_page import Homework
+from app.honor.student.test_paper.object_page.answer_page import AnswerPage
+from app.honor.student.word_book.object_page.data_action import WordBookDataHandle
+from app.honor.student.word_book_rebuild.object_page.restore_word_page import WordRestore
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
 
 
 class RestoreWord(BasePage):

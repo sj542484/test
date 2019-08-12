@@ -1,17 +1,16 @@
 #!/usr/bin/env python
 # encoding:UTF-8
 # @Author  : SUN FEIFEI
-import random
 import re
 import time
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.student.homework.object_page.result_page import ResultPage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.raise_exception import MyError
+from app.honor.student.homework.object_page.result_page import ResultPage
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from utils.get_attribute import GetAttribute
+from utils.raise_exception import MyError
 
 
 class Homework(BasePage):

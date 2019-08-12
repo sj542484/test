@@ -11,8 +11,9 @@ from testfarm.test_program.app.honor.student.library.object_pages.result_page im
 from testfarm.test_program.app.honor.student.library.object_pages.usercenter_page import UserCenterPage
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.app.honor.student.homework.test_data.homework_title_type import GetVariable as gv
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
+from testfarm.test_program.app.honor.student.homework_rebuild.test_data.homework_type_page import HomeworkTypePage as ht
+from testfarm.test_program.conf.decorator import setup, teardown, testcase
+
 
 @ddt
 class FlashCard(unittest.TestCase):
@@ -34,23 +35,24 @@ class FlashCard(unittest.TestCase):
         pass
 
     @data(
-        [gv.HW1, '闪卡练习'],
-        [gv.HW1, '猜词游戏'],
-        [gv.HW1, '还原单词'],
-        [gv.HW1, '连连看'],
-        [gv.HW2, '单项选择'],
-        [gv.HW2, '单词听写'],
-        [gv.HW2, '连词成句'],
-        [gv.HW2, '单词拼写'],
-        [gv.HW2, '选词填空'],
-        [gv.HW3, '词汇选择'],
-        [gv.HW3, '听音选图'],
-        [gv.HW3, '句型转换'],
-        [gv.HW3, '听后选择'],
-        [gv.HW4, '完形填空'],
-        [gv.HW4, '阅读理解'],
-        [gv.HW4, '补全文章'],
-        [gv.HW4, '强化炼句'],
+        [ht.HW1, '闪卡练习'],
+        [ht.HW1, '猜词游戏'],
+        [ht.HW1, '还原单词'],
+        [ht.HW1, '连连看'],
+        [ht.HW2, '单项选择'],
+        [ht.HW2, '单词听写'],
+        [ht.HW2, '连词成句'],
+        [ht.HW2, '单词拼写'],
+        [ht.HW2, '选词填空'],
+        [ht.HW3, '词汇选择'],
+        [ht.HW3, '听音选图'],
+        [ht.HW3, '句型转换'],
+        [ht.HW3, '听后选择'],
+        [ht.HW4, '强化炼句'],
+        [ht.HW4, '听音连句'],
+        [ht.HW4, '完形填空'],
+        [ht.HW4, '阅读理解'],
+        [ht.HW4, '补全文章'],
     )
     @unpack
     @testcase
@@ -62,12 +64,12 @@ class FlashCard(unittest.TestCase):
             if self.home.wait_check_home_page():
                 self.home.click_hk_tab(2)  # 进入习题
                 bank_info = self.library.enter_into_game(hw_name, bank_type)   # 获取大题元素与名称
-                for i, ele in enumerate(bank_info[0]):                         # 遍历点击所有该题型的小题
+                for i, ele in enumerate(bank_info[0]):                      # 遍历点击所有该题型的小题
                     if self.library.wait_check_bank_list_page():               # 题目列表页面检查点
-                        bank_name = bank_info[1][i].text                       # 小题名称
+                        bank_name = bank_info[1][i].text                            # 小题名称
                         print('大题名称：', bank_name)
                         bank_progress = self.library.bank_progress_by_name(bank_name)  # 大题进度
-                        ele.click()                                            # 点击进入游戏
+                        self.library.click_bank_by_name(bank_name)                                       # 点击进入游戏
                         if self.library.wait_check_game_page():                # 游戏页面检查点
                             # 首次做题(除闪卡外) 随机做题
                             first_result = self.library.play_book_games(fq=1, bank_name=bank_name,

@@ -3,6 +3,7 @@
 # @Author  : SUN FEIFEI
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep
+import time
 
 
 class GetAttribute(BasePage):
@@ -35,6 +36,7 @@ class GetAttribute(BasePage):
     @teststep
     def enabled(self, var):
         """元素 enabled属性值"""
+        time.sleep(1.5)
         value = var.get_attribute('enabled')
         return value
 

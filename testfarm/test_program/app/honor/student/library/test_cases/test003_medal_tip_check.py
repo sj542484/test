@@ -4,13 +4,13 @@
 # -----------------------------------------
 import unittest
 
-from testfarm.test_program.app.honor.student.library.object_pages.game_page import LibraryGamePage
-from testfarm.test_program.app.honor.student.library.object_pages.library_page import LibraryPage
-from testfarm.test_program.app.honor.student.library.object_pages.medal_page import MedalPage
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.conf.decorator import setup, teardown, testcase
-from testfarm.test_program.utils.get_attribute import GetAttribute
+from app.honor.student.library.object_pages.game_page import LibraryGamePage
+from app.honor.student.library.object_pages.library_page import LibraryPage
+from app.honor.student.library.object_pages.medal_page import MedalPage
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.login.object_page.login_page import LoginPage
+from conf.decorator import setup, teardown, testcase
+from utils.get_attribute import GetAttribute
 
 
 class Medal(unittest.TestCase):

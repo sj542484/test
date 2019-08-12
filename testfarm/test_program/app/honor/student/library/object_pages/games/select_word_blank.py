@@ -4,124 +4,35 @@
 # Date:     2019/4/9 15:01
 # -------------------------------------------
 import random
-import re
 import string
 import time
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.library.object_pages.games.common_page import CommonPage
+from testfarm.test_program.app.honor.student.games.article_select_blank import SelectBlankGame
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
 from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.click_bounds import ClickBounds
 from testfarm.test_program.utils.games_keyboard import Keyboard
 from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
-class SelectWordBlank(BasePage):
+class SelectWordBlank(SelectBlankGame):
     """选词填空"""
 
     def __init__(self):
-        self.common = CommonPage()
-
-    @teststep
-    def wait_check_select_blank_page(self):
-        """选词填空页面检查点"""
-        locator = (By.ID, '{}tb_content'.format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    def wait_check_hint_btn_page(self):
-        """检测是否存在提示按钮"""
-        locator = (By.ID, '{}prompt'.format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 2, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def wait_check_hint_content_page(self):
-        """提示词页面检查点"""
-        locator = (By.ID, '{}md_titleFrame'.format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-
-    @teststep
-    def hint_answer(self):
-        """提示答案"""
-        ele = self.driver.find_element_by_xpath('//*[@resource-id="{}md_customViewFrame"]/'
-                                                'android.widget.ScrollView/android.widget.TextView'
-                                                .format(self.id_type()))
-
-        return ele.text
-
-    @teststep
-    def hint_btn(self):
-        """提示词"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'prompt')
-        return ele
-
-    @teststep
-    def content(self):
-        """文章内容"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'tb_content')
-        return ele
-
-    @teststep
-    def hide_keyboard_btn(self):
-        """键盘隐藏按钮"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'keyboard_hide')
-        return ele
-
-
-    @teststep
-    def check_position_change(self):
-        self.hide_keyboard_btn().click()
-
-        """校验字体变化"""
-        if GetAttribute().checked(self.common.font_large()) == 'false':      # 查看页面是否默认选择第二个Aa
-            print('★★★ 页面未默认选择中等字体')
-
-        # 依次点击Aa，并获取第一个填空的X轴位置，比较大小
-        large_size = self.content().size
-        print(large_size)
-
-        self.common.font_middle().click()
-        time.sleep(1)
-        middle_size = self.content().size
-        print(middle_size)
-
-        self.common.font_great().click()
-        time.sleep(1)
-        great_size = self.content().size
-        print(great_size)
-
-               # if not large_pt_y > middle_pt_y:
-        #     print('★★★ 大字体变中等字体未发生变化')
-        #
-        # if not great_pt_y > large_pt_y:
-        #     print('★★★ 超大字变大字体未发生变化')
-
-        self.common.font_large().click()
-        time.sleep(2)
-
+        self.common = LibraryPubicPage()
 
     @teststeps
     def select_word_blank_operate(self, fq, sec_answer):
         """选词填空游戏过程"""
         timer = []
         mine_answer = {}
+        print(self.wait_check_select_blank_page())
         if self.wait_check_select_blank_page():
             total_num = self.common.rest_bank_num()
             if self.wait_check_hint_btn_page():
@@ -132,11 +43,11 @@ class SelectWordBlank(BasePage):
                     print('提示词：', self.hint_answer())
                 HomePage().click_blank()
             if self.wait_check_select_blank_page():
-                content = self.content()
+                content = self.rich_text()
                 print(content.text)
                 for i in range(total_num):
                     if self.wait_check_select_blank_page():
-                        self.common.judge_next_is_true_false('false')              # 判断下一步状态
+                        self.next_btn_judge('false', self.fab_commit_btn)          # 判断下一步状态
                         self.common.rate_judge(total_num, i)
 
                         if fq == 1:
@@ -156,9 +67,10 @@ class SelectWordBlank(BasePage):
                     timer.append(self.common.bank_time())
 
                 print('我的答案：', mine_answer)
-            self.common.judge_next_is_true_false('true')
+
             self.common.judge_timer(timer)
-            self.common.next_btn().click()
+            self.check_position_change()
+            self.next_btn_operate('true', self.fab_commit_btn)  # 判断下一步状态
             answer = mine_answer if fq == 1 else sec_answer
             return answer, total_num
 
@@ -176,9 +88,10 @@ class SelectWordBlank(BasePage):
                 else:
                     print('提示词：', self.hint_answer())
                 HomePage().click_blank()
-            cont_desc = self.content().get_attribute('contentDescription')             # 从desc中获取正确答案
-            answers = cont_desc.split('## ')[1].strip().split('  ')
-            print(answers)
+            content = self.rich_text()          # 从desc中获取正确答案
+            content_desc = content.get_attribute('contentDescription')
+            answers = [x for x in content_desc.split('## ')[1].strip().split('  ') if '(' not in x]
+            print("正确答案：", answers)
             for i in range(len(answers)):                  # 将正确答案与输入的答案依次对比，并根据对错存入数组中
                 if answers[i] != mine_answer[i]:
                     wrong.append(answers[i])

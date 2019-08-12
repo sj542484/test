@@ -1,16 +1,15 @@
 # coding=utf-8
-import time
 import unittest
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.student.homework.object_page.result_page import ResultPage
-from testfarm.test_program.app.honor.student.homework.object_page.sentence_transform_page import SentenceTrans
-from testfarm.test_program.app.honor.student.homework.test_data.homework_title_type import GetVariable as gv
-from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.homework.object_page.homework_page import Homework
+from app.honor.student.homework.object_page.result_page import ResultPage
+from app.honor.student.homework.object_page.sentence_transform_page import SentenceTrans
+from conf.base_config import GetVariable as gv
+from app.honor.student.login.object_page.login_page import LoginPage
+from app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.toast_find import Toast
 
 
 class Games(unittest.TestCase):

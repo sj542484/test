@@ -8,10 +8,10 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.login.object_page.home_page import HomePage
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from utils.toast_find import Toast
 
 
 class ListenResultPage(BasePage):
@@ -205,7 +205,7 @@ class ListenResultPage(BasePage):
     @teststep
     def quit_login_wechat(self):
         """退出微信登录页面"""
-        ele = self.driver.find_element_by_accessibility_id('返回')
+        ele = self.driver.find_element_by_id('com.tencent.mm:id/kx')
         return ele
 
     @teststep
@@ -290,6 +290,11 @@ class ListenResultPage(BasePage):
     def listen_text(self):
         ele = self.driver.find_element_by_id('{}fs_content'.format(self.id_type()))
         return ele
+
+    @teststep
+    def last_text_id(self):
+        last_text_attr = self.driver.find_elements_by_class_name('')
+
 
     @teststeps
     def result_page_operate(self, total, question_info):

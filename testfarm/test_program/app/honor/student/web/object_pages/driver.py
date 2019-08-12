@@ -5,7 +5,7 @@
 # -------------------------------------------
 from selenium import webdriver
 
-from testfarm.test_program.app.honor.student.web.object_pages.base import BaseDriverPage
+from app.honor.student.web.object_pages.base import BaseDriverPage
 
 
 class Driver:

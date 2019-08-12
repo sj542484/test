@@ -1,21 +1,20 @@
 import time
 
-import os
-
 from testfarm.test_program.app.honor.student.login.test_data.account import VALID_ACCOUNT
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.login.test_data.mine_account import phone_data
 from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
 from testfarm.test_program.conf.decorator import teststep, teststeps
 from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.utils.click_bounds import ClickBounds
 from testfarm.test_program.utils.reset_phone_find_toast import verify_find
 from testfarm.test_program.utils.toast_find import Toast
 
 
 class LoginPage(BasePage):
+
     @teststeps
     def wait_check_page(self):
         """以“登录按钮”的xpath@text为依据"""
@@ -270,27 +269,29 @@ class LoginPage(BasePage):
     def app_status(self, stu_account=VALID_ACCOUNT.account(), stu_password=VALID_ACCOUNT.password()):
         """判断应用当前状态"""
         activity = self.driver.wait_activity
-        if HomePage().wait_check_home_page():  # 在主界面
+        if self.wait_check_page():  # 在登录界面
+            self.login_operate(stu_account, stu_password)
+
+        elif HomePage().wait_check_home_page():  # 在主界面
             print('主界面')
+
+        elif WorldBookPublicPage().wait_check_game_title_page():
+            print('做题页面')
+
         elif activity == '':  # 崩溃退出
             self.launch_app()  # 重启APP
             if HomePage().wait_check_home_page():  # 在主界面
                 print('主界面')
             elif self.wait_check_page():  # 在登录界面
                 self.login_operate(stu_account, stu_password)
-        elif self.wait_check_page():  # 在登录界面
-            self.login_operate(stu_account, stu_password)
         else:
             print('在其他页面')
             self.close_app()  # 关闭APP
             self.launch_app()  # 重启APP
-            res = HomePage().wait_check_home_page()
-            if res:  # 在主界面
+            if HomePage().wait_check_home_page():  # 在主界面
                 print('主界面')
             elif self.wait_check_page():  # 在登录界面
                 self.login_operate(stu_account, stu_password)
-            else:
-                print('页面走丢了')
 
     @teststeps
     def enter_user_info_page(self):
@@ -302,34 +303,32 @@ class LoginPage(BasePage):
 
     @teststep
     def launch_app(self):
-        """Start on the device the testfarm.test_program.app.honorlication specified in the desired capabilities.
+        """Start on the device the application specified in the desired capabilities.
         """
-        print('重启app')
         self.driver.launch_app()
-        time.sleep(10)
+        time.sleep(5)
 
     @teststep
     def close_app(self):
-        """Close on the device the testfarm.test_program.app.honorlication specified in the desired capabilities.
+        """Close on the device the application specified in the desired capabilities.
         """
-        print('关闭app')
         self.driver.close_app()
 
     @teststep
     def remove_app(self):
-        """Remove on the device the testfarm.test_program.app.honorlication
+        """Remove on the device the application
         """
         self.driver.remove_app("com.vanthink.student.debug")
 
     @teststep
     def is_app_installed(self):
-        """Check testfarm.test_program.app.honor was installed on the device the testfarm.test_program.app.honorlication
+        """Check app was installed on the device the application
         """
         self.driver.is_app_installed("com.vanthink.student.debug")
 
     @teststep
     def install_app(self):
-        """Remove on the device the testfarm.test_program.app.honorlication
+        """Remove on the device the application
         """
         self.driver.install_app('../student_debug_1.2.7.apk')
         print('安装APP')

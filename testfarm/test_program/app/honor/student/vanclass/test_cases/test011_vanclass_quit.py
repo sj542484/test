@@ -2,16 +2,16 @@
 # encoding:UTF-8
 import unittest
 
-from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
-from testfarm.test_program.app.honor.student.vanclass.object_page.vanclass_page import VanclassPage
-from testfarm.test_program.app.honor.student.vanclass.test_data.vanclass_data import GetVariable as gv
-from testfarm.test_program.app.honor.student.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.reset_phone_find_toast import verify_find
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.homework.object_page.homework_page import Homework
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.login.object_page.login_page import LoginPage
+from app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
+from app.honor.student.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.student.vanclass.test_data.vanclass_data import GetVariable as gv
+from app.honor.student.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.reset_phone_find_toast import verify_find
+from utils.toast_find import Toast
 
 
 class Vanclass(unittest.TestCase):

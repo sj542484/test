@@ -5,52 +5,14 @@
 # -------------------------------------------
 import random
 import time
-
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
-from testfarm.test_program.app.honor.student.library.object_pages.games.common_page import CommonPage
-from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.app.honor.student.games.choice_single import SingleChoiceGame
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 from testfarm.test_program.conf.decorator import teststep
 
 
-class SingleChoice(BasePage):
+class SingleChoice(SingleChoiceGame):
     def __init__(self):
-        self.common = CommonPage()
-
-    @teststep
-    def wait_check_single_choice_page(self):
-        """单项选择页面检查点"""
-        locator = (By.ID, "{}tv_char".format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def question(self):
-        """题目 """
-        ele = self.driver.find_element_by_id("{}question".format(self.id_type()))
-        return ele.text
-
-    @teststep
-    def opt_char(self):
-        """选项字母"""
-        ele = self.driver.find_elements_by_id('{}tv_char'.format(self.id_type()))
-        return ele
-
-    @teststep
-    def opt_text(self):
-        """选项文本"""
-        ele = self.driver.find_elements_by_id('{}tv_item'.format(self.id_type()))
-        return ele
-
-    @teststep
-    def right_choice(self):
-        """正确选项内容"""
-        ele = self.driver.find_element_by_xpath('//*[@content-desc="right"]/following-sibling::android.widget.TextView')
-        return ele.text
+        self.common = LibraryPubicPage()
 
     @teststep
     def single_choice_operate(self, fq, sec_answer):
@@ -60,9 +22,9 @@ class SingleChoice(BasePage):
         total_num = self.common.rest_bank_num()
         for i in range(total_num):
             if self.wait_check_single_choice_page():
-                self.common.judge_next_is_true_false('false')
+                self.next_btn_judge('false', self.fab_next_btn)
                 self.common.rate_judge(total_num, i)
-                ques = self.question()
+                ques = self.question()[0].text
                 print('问题：', ques)
 
                 opt_char = self.opt_char()
@@ -85,10 +47,8 @@ class SingleChoice(BasePage):
                     print('选择正确选项：', sec_answer[i+1])
 
                 print('-'*20, '\n')
-
-                self.common.judge_next_is_true_false('true')
                 timer.append(self.common.bank_time())
-                self.common.next_btn().click()
+                self.next_btn_operate('true', self.fab_next_btn)
         self.common.judge_timer(timer)
         answer = mine_answer if fq == 1 else sec_answer
         return answer, total_num

@@ -9,8 +9,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from testfarm.test_program.app.honor.student.web.object_pages.base import BaseDriverPage
-from testfarm.test_program.conf.decorator import teststeps, teststep
+from app.honor.student.web.object_pages.driver import BaseDriverPage
+from conf.decorator import teststeps, teststep
 
 
 class LoginWebPage(BaseDriverPage):

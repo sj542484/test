@@ -1,151 +1,46 @@
-import os
 import random
 import time
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_handle import DataActionPage
-from testfarm.test_program.app.honor.student.word_book.object_page.mysql_data import WordBookSql
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststeps, teststep
-from testfarm.test_program.utils.get_attribute import GetAttribute
-
-PATH = os.path.dirname(os.path.dirname(__file__))
+from app.honor.student.games.choice_vocab import VocabChoiceGame
+from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from conf.decorator import teststeps
 
 
-class VocabularyChoose(BasePage):
+class VocabularyChoose(VocabChoiceGame):
     """词汇选择"""
     def __init__(self):
-        self.attr = GetAttribute()
-        self.homework = Homework()
-        self.mysql = WordBookSql()
-        self.common = DataActionPage()
+        self.data = WordDataHandlePage()
 
     @teststeps
-    def wait_check_head_page(self):
-        """以“词汇选择 -选单词模式”的 发音按钮 为依据"""
-        locator = (By.ID, self.id_type() + "tv_head")
-        try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststeps
-    def wait_check_sentence_page(self):
-        """以“词汇选择 -句子选单词模式”的 提示按钮 为依据"""
-        locator = (By.XPATH,
-                   "//android.widget.TextView[contains(@resource-id,'{}hint')]".format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststeps
-    def wait_check_explain_page(self):
-        """以“词汇选择 -句子选单词模式”的 提示按钮 为依据"""
-        locator = (By.ID, self.id_type() + "explain")
-        try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststeps
-    def wait_check_voice_page(self):
-        """以“词汇选择 -句子选单词模式”的 提示按钮 为依据"""
-        locator = (By.ID, self.id_type() + "fab_sound")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def click_voice(self):
-        """页面内音量按钮"""
-        self.driver \
-            .find_element_by_id(self.id_type() + "fab_sound") \
-            .click()
-
-    @teststep
-    def question_content(self):
-        """获取题目内容"""
-        ele = self.driver \
-            .find_element_by_id(self.id_type() + "tv_head").text
-        return ele
-
-    @teststep
-    def option_button(self):
-        """获取四个选项"""
-        ele = self.driver.find_elements_by_id(self.id_type() + "option")
-        return ele
-
-    # 听音选词
-    @teststep
-    def explain(self):
-        """选择答案后，出现中文解释"""
-        word = self.driver \
-            .find_element_by_id(self.id_type() + "explain")
-        return word
-
-    # 句子选单词
-    @teststep
-    def click_hint_button(self):
-        """提示按钮"""
-        self.driver \
-            .find_element_by_id(self.id_type() + "hint").click()
-        time.sleep(2)
-
-    @teststep
-    def sentence_explain(self):
-        """点击 提示按钮后，出现中文解释"""
-        explain = self.driver \
-            .find_element_by_id(self.id_type() + "tv_explain").text
-        print('explain：', explain)
-        return explain
-
-    @teststep
-    def hint_button_judge(self, var):
-        """‘提示’按钮 状态判断"""
-        item = self.driver.find_element_by_id(self.id_type() + "hint").get_attribute("enabled")  # ‘下一题’按钮
-        if item != var:  # 测试 提示 按钮 状态
-            print('★★★ 提示按钮 状态Error', item)
-
-    @teststeps
-    def get_right_answer(self):
-        """获取正确选项"""
-        ele = self.driver.find_element_by_accessibility_id('true')
-        return ele.text
-
-    @teststeps
-    def new_word_listen_select_operate(self, bank_count, new_explain_words):
+    def normal_listen_select_operate(self, bank_count, new_explain_words):
         """《词汇选择》 - 听音选词模式 具体操作"""
-        print('===== 词汇选择(新词) 听音选词模式 =====\n')
+        print('===== 🌟🌟 词汇选择(新词) 听音选词模式(第一遍选错，第二遍选择正确) 🌟🌟=====\n')
+        print('题目个数：', bank_count)
         answer_word, all_words = [], []
+
         while len(all_words) < bank_count:
-            self.homework.next_button_judge('false')
-            self.click_voice()  # 点击发音按钮
-            options = self.option_button()  # 获取当前页面所有选项
+            print()
+            self.next_btn_judge('false', self.fab_next_btn)
+            self.listen_choice_speak_icon().click()  # 点击发音按钮
+            options = self.vocab_options()  # 获取当前页面所有选项
             if not answer_word:  # 正确答案列表为空
                 opt_index = random.randint(0, len(options) - 1)  # 随机选择一个选项
                 opt_text = options[opt_index].text
                 options[opt_index].click()
-                self.homework.next_button_judge('true')  # 检查下一步按钮的状态
+                self.next_btn_judge('true', self.fab_next_btn)  # 检查下一步按钮的状态
 
                 print('选择答案为：', opt_text)
                 if self.wait_check_explain_page():  # 检验是否出现解释页面
-                    explain = self.explain()
+                    explain = self.vocab_word_explain()
                     explain_id = explain.get_attribute('contentDescription')
+
                     if explain_id in new_explain_words:
                         print('★★★ 此单词为新释义，不应出现词汇选择游戏')
                     print('解释:', explain.text)
                 else:
                     print('★★★ Error-- 解释文本未出现')
 
-                right_answer = self.get_right_answer()  # 正确答案
+                right_answer = self.vocab_right_answer()  # 正确答案
                 if right_answer == opt_text:
                     print('选择正确')
                     all_words.append(right_answer)
@@ -156,9 +51,9 @@ class VocabularyChoose(BasePage):
                 for y in options:
                     if y.text == answer_word[0]:  # 点击正确答案
                         y.click()
-                        self.homework.next_button_judge('true')  # 检查下一步按钮的状态
+                        self.next_btn_judge('true', self.fab_next_btn)  # 检查下一步按钮的状态
                         if self.wait_check_explain_page():
-                            explain = self.explain()
+                            explain = self.vocab_word_explain()
                             explain_id = explain.get_attribute('contentDescription')
                             if explain_id in new_explain_words:
                                 print('★★★ 此单词为新释义，不应出现词汇选择游戏')
@@ -169,97 +64,148 @@ class VocabularyChoose(BasePage):
                             print('★★★ Error-- 解释文本未出现')
                         break
                 answer_word.clear()
+            self.sound_icon().click()
+            self.next_btn_operate("true", self.fab_next_btn)  # 下一题 按钮 状态判断 加点击
+            time.sleep(2)
             print('-' * 30, '\n')
-            self.homework.next_button_operate("true")  # 下一题 按钮 状态判断 加点击
-            self.driver.implicitly_wait(2)
-
 
     @teststeps
-    def vocab_select_choice_explain(self, i):
-        """《词汇选择》 - 选解释模式"""
-        if i == 0:
-            print('\n词汇选择 - 根据单词选解释模式（复习）\n')
-        self.homework.next_button_operate('false')  # 下一题 按钮 判断加 点击操作
-
-        self.click_voice()  # 点击发音按钮
-        word = self.question_content()  # 题目
-        print('题目:', word)
-
-        options = self.option_button()  # 遍历选项，点击和word一样的单词
-        for j in range(0, len(options)):
-            find_word = self.common.get_word_by_explain(options[j].text)
-            if word in find_word:
-                print('选项解释：', options[j].text)
-                options[j].click()
-                break
-        self.homework.next_button_operate('true')  # 下一题 按钮 状态判断 加点击
-        print('----------------------------------')
-
-    @teststeps
-    def vocab_select_choice_word(self, i):
-        """《词汇选择》 - 根据解释选单词"""
-        if i == 0:
-            print('\n词汇选择-选单词模式（复习）\n')
-
-        self.homework.next_button_operate('false')  # 下一题 按钮 判断加 点击操作
-
-        item = self.question_content()  # 题目
-        print('题目:', item)
-        word = self.common.get_word_by_explain(item)  # 根据解释获取单词
-
-        options = self.option_button()  # 遍历选项，点击和word一样的单词
-        for j in range(0, len(options)):
-            if options[j].text in word:
-                options[j].click()
-                break
-        if self.wait_check_voice_page():
-            self.click_voice()
-            self.homework.next_button_operate('true')  # 下一题 按钮 状态判断 加点击
-        else:
-            print('★★★ Error-- 声音按钮未出现')
-        print('----------------------------------')
-
-    @teststeps
-    def vocab_apply(self, i, vocab_app):
-        """词汇应用"""
-        if i == 0:
-            # 词汇选择分组
-
-            # 单词拼写分组
-            print('\n 词汇运用 --句子选单词模式(复习)\n')
-        self.homework.next_button_operate('false')
-        item = self.question_content()  # 题目
-        print('题目：%s' % item)
-
-        self.click_hint_button()  # 点击提示按钮
-        self.hint_button_judge('false')  # 提示按钮 状态判断
-
-        explain = self.sentence_explain()
-        # study_word = self.common.get_word_by_sentence(explain)  # 根据中文获取缺少单词
-        # print('study_word：', study_word)
-        if len(vocab_app) == 1:
-            for x in self.option_button():
-                if x.text == vocab_app[0]:
-                    print('选择选项：', x.text)
-                    x.click()
+    def right_listen_select_operate(self, stu_id, bank_count, new_explain_words):
+        print('===== 🌟🌟 词汇选择(新词) 听音选词模式(一次做对模式) 🌟🌟 =====\n')
+        for x in range(bank_count):
+            self.next_btn_judge("false", self.fab_next_btn)  # 下一题 按钮 状态判断 加点击
+            voice_btn = self.listen_choice_speak_icon()
+            explain_id = voice_btn.get_attribute('contentDescription')
+            if explain_id in new_explain_words:
+                print('★★★ 此单词为新释义，不应出现词汇选择游戏')
+            right_word = self.data.get_word_by_explain_id(stu_id, explain_id)
+            for y in self.vocab_options():
+                if y.text == right_word:
+                    print('选择选项：', y.text)
+                    y.click()
+                    if not self.wait_check_explain_page():
+                        print('★★★ 点击选项未出现解释文本！')
+                    else:
+                        print("解释：", self.vocab_word_explain().text)
                     break
-            vocab_app.clear()
-        else:
-            options = self.option_button()  # 四个选项
-            random_index = random.randint(0, len(options) - 1)
-            select_answer = options[random_index].text
-            print('选择选项:', select_answer)
-            options[random_index].click()
-            time.sleep(1)
-            right_answer = [x.text for x in self.option_button() if x.get_attribute('contentDescription') == 'true']
-            if right_answer[0] == select_answer:
-                print('选择正确')
-            else:
-                print('选择错误, 正确答案为', right_answer)
-                vocab_app.append(right_answer[0])
+            self.sound_icon().click()
+            self.next_btn_operate("true", self.fab_next_btn)  # 下一题 按钮 状态判断 加点击
+            self.driver.implicitly_wait(2)
+            print('-' * 30, '\n')
 
-        # self.click_voice()
-        self.homework.next_button_operate('true')
-        print('----------------------------------')
+
+    @teststeps
+    def vocab_select_choice_explain(self, bank_count, wrong_again_words):
+        """《词汇选择》 - 选解释模式"""
+        print('====== 🌟🌟 词汇选择 - 根据单词选解释模式（复习）🌟🌟 =====\n')
+        recite_words = []
+        for x in range(bank_count + 2):
+            self.next_btn_operate('false', self.fab_next_btn)  # 下一题 按钮 判断加 点击操作
+            self.sound_icon().click()  # 点击发音按钮
+            word = self.vocab_question()  # 题目
+            print('题目:', word.text)
+
+            explain_id = word.get_attribute('contentDescription')     # 获取正确解释id
+
+            if explain_id in recite_words:
+                print('★★★ 单词已选过， 再次出现')
+
+            right_explain = self.data.get_explain_by_id(explain_id)      # 根据id获取正确解释文本
+            options = self.vocab_options()      # 遍历选项，点击和正确答案一样的解释
+            for y in options:
+                if x in [2, 3]:                 # 次序为【2,3】连续选择错误
+                    if right_explain not in y.text:
+                        if x == 2:
+                            wrong_again_words.append(explain_id)
+                        print('选择错误答案：', y.text)
+                        print('正确答案为:', right_explain)
+                        y.click()
+                        break
+                elif right_explain in y.text:
+                    print('选择答案：', y.text)
+                    recite_words.append(explain_id)
+                    y.click()
+                    break
+
+            print('正确答案：', right_explain)
+            self.next_btn_operate('true', self.fab_next_btn)  # 下一题 按钮 状态判断 加点击
+            print('-'*30, '\n')
+
+    @teststeps
+    def vocab_select_choice_word(self, stu_id, bank_count, wrong_again_words):
+        """《词汇选择》 - 根据解释选单词"""
+        recite_words = []
+        print('===== 🌟🌟 词汇选择-选单词模式（复习）🌟🌟 =====\n')
+        for x in range(bank_count + 2):
+            self.next_btn_judge('false', self.fab_next_btn)  # 下一题 按钮 判断加 点击操作
+            item = self.vocab_question()  # 题目
+            print('题目:', item.text)
+            explain_id = item.get_attribute('contentDescription')
+
+            if explain_id in recite_words:
+                print('★★★ 单词已选过， 再次出现')
+
+            right_word = self.data.get_word_by_explain_id(stu_id, explain_id)   # 根据解释id获取正确单词
+            options = self.vocab_question()  # 遍历选项，点击和word一样的单词
+            for y in options:
+                if x in [2, 3]:                 # 次序为【2,3】连续选择错误
+                    if y.text != right_word:
+                        if x == 2:
+                            wrong_again_words.append(explain_id)
+                        print('选择错误答案：', y.text)
+                        print('正确答案为:', right_word)
+                        y.click()
+                        break
+                elif y.text == right_word:
+                    print('选择答案：', y.text)
+                    recite_words.append(explain_id)
+                    y.click()
+                    break
+            if self.wait_check_voice_page():
+                self.sound_icon().click()
+            else:
+                print('★★★ Error-- 声音按钮未出现')
+            self.next_btn_operate('true', self.fab_next_btn)  # 下一题 按钮 状态判断 加点击
+            print('-'*30, '\n')
+
+    @teststeps
+    def vocab_apply(self, stu_id,  bank_count, right_words, recite_new_explain_words):
+        """词汇运用"""
+        print('===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====\n')
+        recite_words = []
+        for x in range(bank_count):
+            self.next_btn_judge('false', self.fab_next_btn)
+            item = self.vocab_question()  # 题目
+            print('题目：%s' % item.text)
+            explain_id = item.get_attribute('contentDescription')           # 根据题目获取explain——id
+            if explain_id in recite_words:
+                print('★★★ 单词已复习过， 单词未去重!')
+
+            if explain_id in right_words and explain_id not in recite_new_explain_words:
+                print('★★★ 单词新词时做全对， 复习时不为新释义单词， 不应出现词汇运用游戏')
+
+            right_answer = self.data.get_word_by_explain_id(stu_id, explain_id)     # 根据解释id获取正确单词
+            self.apply_hint_button().click()  # 点击提示按钮
+            self.next_btn_judge('false', self.apply_hint_button)  # 提示按钮 状态判断
+            if not self.wait_vocab_apply_explain_page():
+                print('★★★ 点击提示后未发现句子解释文本')
+            else:
+                sentence_explain = self.apply_sentence_explain()
+                print('句子解释：', sentence_explain)
+
+            for y in self.vocab_options():
+                if y.text == right_answer:
+                    recite_words.append(explain_id)
+                    print('选择答案：', y.text)
+                    y.click()
+                    break
+
+            if self.wait_check_voice_page():
+                self.sound_icon().click()
+            else:
+                print('★★★ Error-- 声音按钮未出现')
+            self.next_btn_operate('true', self.fab_next_btn)  # 下一题 按钮 状态判断 加点击
+            print('-'*30, '\n')
+
 
 

@@ -4,10 +4,10 @@ import time
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.login.object_page.home_page import HomePage
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from utils.toast_find import Toast
 
 
 class ResultPage(BasePage):
@@ -48,7 +48,7 @@ class ResultPage(BasePage):
     @teststep
     def wait_check_next_grade(self):
         """再来一组 以继续挑战的图片的Id为依据"""
-        locator = (By.ID, self.id_type() + "img")
+        locator = (By.ID, self.id_type() + "level_up_hint")
         try:
             WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
             return True
@@ -179,39 +179,56 @@ class ResultPage(BasePage):
             self.click_back_up_button()
 
     @teststeps
-    def check_result_word_data(self, word_info, new_explain_words, recite_words, group_count):
+    def check_result_word_data(self, new_word_count, new_explain_words_count, already_recite_count, group_count):
         """结果页面"""
         print(' <结果页>：')
         print('今日已练单词：%s' % self.today_word())
         print('日期：%s' % self.date())
         print(self.already_remember_word())
         print(self.word_detail_info())
-        today_word_count = int(self.today_word())
-        already_count = int(re.findall(r'\d+', self.already_remember_word())[0])
-        detail = re.findall(r'\d+', self.word_detail_info())
-        study_group_count = int(detail[0])
-        recite_count = int(detail[1])
-        new_set_words = int(detail[2])
-        new_explain_count = int(detail[3])
-        all_word = sum([len(x) for x in list(word_info.values())])
+        today_word_count = int(self.today_word())               # 今日已练单词 （复习+ 新词）
+        already_count = int(re.findall(r'\d+', self.already_remember_word())[0])    # 已背单词
+        detail = re.findall(r'\d+', self.word_detail_info())    # 最后一句统计文本
+        study_group_count = int(detail[0])                      # 已练组数
+        recite_count = int(detail[1])                           # 复习个数
+        new_set_words = int(detail[2])                          # 新词个数
+        new_explain_count = int(detail[3])                      # 新释义个数
 
-        if already_count != len(word_info):
-            print('★★★ 已学单词数不正确，应为', len(word_info))
 
-        if today_word_count != all_word:
-            print('★★★ 今日单词总数不正确， 应为', all_word)
+        if already_count != new_word_count:
+            print('★★★ 已学单词数不正确，应为', new_word_count)
+
+        if today_word_count != recite_count + new_set_words + new_explain_count:
+            print('★★★ 今日已练单词不等于复习+新词+新释义, 应为', recite_count + new_set_words + new_explain_count)
 
         if study_group_count != group_count+1:
             print('★★★ 已练组数不正确， 应为', group_count+1)
 
-        if new_set_words != len(word_info):
-            print('★★★ 新词学单词数不正确，应为', len(word_info))
+        if new_set_words != new_word_count:
+            print('★★★ 新词学单词数不正确，应为', new_word_count)
 
-        if new_explain_count != len(new_explain_words):
-            print('★★★ 新释义单词个数不正确， 应为', len(new_explain_words))
+        if new_explain_count != new_explain_words_count:
+            print('★★★ 新释义单词个数不正确， 应为', new_explain_words_count)
 
-        if recite_count != len(recite_words):
-            print('★★★ 复习单词个数不正确， 应为', len(recite_words))
+        if recite_count != already_recite_count:
+            print('★★★ 复习单词个数不正确， 应为', already_recite_count)
+
+        if recite_count > 27:
+            if group_count == 0:
+                if new_word_count != 0:
+                    print('★★★ 复习个数大于等于28个, 不应存在新词个数')
+            else:
+                print('★★★ 复习组数非第一组, 但是复习个数大于27')
+        else:
+            if new_word_count == 0:
+                print('★★★ 复习单词个数小于28, 新词个数为0')
+            else:
+                if group_count == 0:
+                    if new_word_count not in range(3, 11):
+                        print('★★★ 复习单词个数小于28， 第一组新词个数不在3-10之间')
+                else:
+                    if new_word_count < 3:
+                        print('★★★ 复习单词个数小于28，非第一组新词个数小于3个')
 
 
     @teststep
@@ -225,14 +242,15 @@ class ResultPage(BasePage):
                 print('返回主界面')
 
     @teststeps
-    def result_page_handle(self, word_info, new_explain_words, recite_words, x):
+    def result_page_handle(self, new_word_count, new_explain_words_count, already_recite_count, group_count):
         """结果页处理"""
         if self.wait_check_result_page():
             print('进入结果页面')
-            self.check_result_word_data(word_info, new_explain_words, recite_words, x)  # 结果页元素
+            self.check_result_word_data(new_word_count, new_explain_words_count, already_recite_count, group_count)   # 结果页元素
             self.share_button()  # 打卡
             self.share_page_operate()  # 炫耀一下页面
             if self.wait_check_result_page():
                 self.more_again_button()  # 再练一次
                 if self.wait_check_next_grade():  # 继续挑战页面
                     self.level_up_text()
+                    self.confirm_button().click()

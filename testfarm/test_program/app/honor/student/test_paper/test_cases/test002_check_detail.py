@@ -1,15 +1,14 @@
 # coding=utf-8
 import unittest
 
-from ddt import ddt,data
+from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.login.object_page.login_page import LoginPage
+from app.honor.student.test_paper.object_page.exam_data_handle import DataPage
+from app.honor.student.test_paper.object_page.exam_detail import DetailPage
+from app.honor.student.test_paper.object_page.exam_page import ExamPage
+from conf.decorator import setup, teststeps
 
-from testfarm.test_program.app.honor.student.library.object_pages.usercenter_page import UserCenterPage
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.app.honor.student.test_paper.object_page.exam_data_handle import DataPage
-from testfarm.test_program.app.honor.student.test_paper.object_page.exam_detail import DetailPage
-from testfarm.test_program.app.honor.student.test_paper.object_page.exam_page import ExamPage
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
 
 class Exam(unittest.TestCase):
     """试卷"""

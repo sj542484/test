@@ -10,7 +10,7 @@ class Utils:
                     "platformVersion": "8.0",
                     "deviceName": "honor2",
                     "app": "/Users/vanthink_test_ios/Woker/student_env_devDebug_1.3.4(2).apk",
-                    # "appPackage": "com.vanthink.student.debug",
+                    # "appPackage": "com.vanthink.student0.debug",
                     "automationName": "uiautomator2",
                     # "appActivity": "com.tencent.mm.ui.LauncherUI",
                     "udid": "MKJNW18524003878",
@@ -36,6 +36,7 @@ class Utils:
                     'hubProtocol': 'http'
                 }
     }
+
     def __init__(self,port):
         print('_ports',port)
         '''存放已用端口 防止启动多次'''

@@ -6,10 +6,10 @@ import random
 
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
-from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststeps, teststep
-from testfarm.test_program.utils.get_attribute import GetAttribute
+from app.honor.student.homework.object_page.homework_page import Homework
+from conf.base_page import BasePage
+from conf.decorator import teststeps, teststep
+from utils.get_attribute import GetAttribute
 
 
 class Listening(BasePage):

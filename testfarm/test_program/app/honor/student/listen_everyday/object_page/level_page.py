@@ -8,10 +8,10 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.login.object_page.home_page import HomePage
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from utils.toast_find import Toast
 
 
 class LevelPage(BasePage):
@@ -30,7 +30,7 @@ class LevelPage(BasePage):
     @teststep
     def wait_last_level_page(self):
         """最后一个等级页面检查点"""
-        locator = (By.XPATH, '//android.widget.TextView[contains(@text,"27@chan")]')
+        locator = (By.XPATH, '//android.widget.TextView[contains(@text,"10级B")]')
         try:
             WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
             return True
@@ -92,7 +92,6 @@ class LevelPage(BasePage):
                 level_info[back_name[i].text] = [y.text for y in self.level_name(back_name[i].text)]
 
             if self.wait_last_level_page():
-
                 break
             else:
                 self.home.screen_swipe_up(0.5, 0.9, 0.3, 1000)
@@ -106,6 +105,7 @@ class LevelPage(BasePage):
         print('级别类型:')
         for level in level_info:
             print(level_info[level])
+            time.sleep(2)
             if self.wait_start_button(level):
                 if self.start_button(level).text != '练习中...':
                     self.level_name_toast_judge(level)

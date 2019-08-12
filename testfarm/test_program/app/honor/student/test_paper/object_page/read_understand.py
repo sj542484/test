@@ -1,13 +1,12 @@
-import random
 import time
 
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.student.test_paper.object_page.listen_select import ListenSelect
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.homework.object_page.homework_page import Homework
+from app.honor.student.test_paper.object_page.listen_select import ListenSelect
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
 
 
 class ReadUnderstand(BasePage):

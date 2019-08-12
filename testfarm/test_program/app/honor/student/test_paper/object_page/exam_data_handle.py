@@ -1,9 +1,9 @@
 import json
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.test_paper.object_page.exam_sql import ExamSql
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.test_paper.object_page.exam_sql import ExamSql
+from conf.base_page import BasePage
+from conf.decorator import teststep
 
 
 class DataPage(BasePage):
@@ -21,17 +21,17 @@ class DataPage(BasePage):
 
     @teststep
     def write_json_to_file(self, json_data):
-        with open('app/honor/student/test_paper/test_data/%s/data'%self.deviceName, 'w') as f:
+        with open('app/honor/student/test_paper/test_data/data', 'w') as f:
             json.dump(json_data, f, ensure_ascii=False)
 
     @teststep
     def get_data_json_from_file(self):
-        try:
-            with open('app/honor/student/test_paper/test_data/%s/data' % self.deviceName, 'r') as f:
+        with open('app/honor/student/test_paper/test_data/data', 'r') as f:
+            try:
                 data_json = json.load(f)
                 return data_json
-        except:
-            return {}
+            except:
+                return {}
 
 
 

@@ -13,6 +13,7 @@ from django.contrib.auth.decorators import login_required
 from testfarm.test_program.utils.kill_pid import killPid
 from django.db import close_old_connections
 from multiprocessing import Process
+import threading
 
 
 _port = []
@@ -123,8 +124,6 @@ def startservice(request):
     _port.append(appium_port)
     sysport = p.get_ports(port=8200,count=1)[0]
     _port.append(sysport)
-    # device = EquipmentList.objects.get(equipment_uuid=e_uuid)
-    # for i in range(1):
     t = Process(target=st,args=(e_uuid,appium_port,sysport,_port,test_sides,test_item))
     t.start()
     time.sleep(0.3)
@@ -264,3 +263,17 @@ def addtest(request):
     SideType(side='学生端')
     # test_side = request.POST.get('pro')
     # test_model = request.POST.get('')
+
+def tea(request):
+    return render(request,'testproject/tea_data.html')
+
+def tea_do_data(request):
+    start_dir = request.POST.get('folder_path')
+    start_num = request.POST.get('number')
+    start_tea_account = request.POST.get('tea_account')
+    print(start_dir)
+    print(start_num)
+    print(start_tea_account)
+
+
+    return HttpResponse('<script>alert("开始上传！！！");location.href="/"</script>')

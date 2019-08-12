@@ -2,8 +2,8 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/6/27 15:48
 # -----------------------------------------
-from testfarm.test_program.app.honor.student.listen_everyday.object_page.listen_sql import ListenSql
-from testfarm.test_program.conf.decorator import teststep
+from app.honor.student.listen_everyday.object_page.listen_sql import ListenSql
+from conf.decorator import teststep
 
 
 class ListenDataHandle:

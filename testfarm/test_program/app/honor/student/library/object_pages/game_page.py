@@ -3,15 +3,16 @@
 # Author:   Vector
 # Date:     2019/3/27 13:12
 # -------------------------------------------
+import time
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.library.object_pages.games.cloze import Cloze
+from testfarm.test_program.app.honor.student.library.object_pages.games.cloze import ClozePage
 from testfarm.test_program.app.honor.student.library.object_pages.games.complete_article import CompleteArticle
 from testfarm.test_program.app.honor.student.library.object_pages.games.flash_card import FlashCard
 from testfarm.test_program.app.honor.student.library.object_pages.games.guess_word import GuessWord
-from testfarm.test_program.app.honor.student.library.object_pages.games.link_link import LibraryLinkLink
+from testfarm.test_program.app.honor.student.library.object_pages.games.word_match import LibraryWordMatch
 from testfarm.test_program.app.honor.student.library.object_pages.games.link_to_sentence import LinkToSentence
 from testfarm.test_program.app.honor.student.library.object_pages.games.listen_choice import ListenChoice
 from testfarm.test_program.app.honor.student.library.object_pages.games.listen_link_sentence import ListenLinkSentence
@@ -191,7 +192,7 @@ class LibraryGamePage(BasePage):
         ele = self.driver.find_elements_by_xpath('//*[@text="{}"]/../preceding-sibling::android.widget.RelativeLayout/'
                                                  'android.widget.TextView[@resource-id="{}tv_testbank_name"]'
                                                  .format(bank_type, self.id_type()))
-        return ele
+        return [x for x in ele]
 
     @teststep
     def bank_progress_by_name(self, bank_name):
@@ -299,7 +300,7 @@ class LibraryGamePage(BasePage):
             game_result = RestoreWord().restore_word_operate(fq, second_ans)
 
         elif game_name == '连连看':
-            game_result = LibraryLinkLink().word_match_operate(fq, second_ans)
+            game_result = LibraryWordMatch().word_match_operate(fq, second_ans)
 
         elif game_name == '单词拼写':
             game_result = WordSpell().spell_word_operate(fq, second_ans)
@@ -308,9 +309,6 @@ class LibraryGamePage(BasePage):
             game_result = ListenSpell().listen_spell_operate(fq, second_ans)
 
         elif game_name == '词汇选择':
-            if fq == 1:
-                WordChoice().word_choice_operate(fq, first_result, half_exit=True)
-                self.check_process_change(bank_name, bank_progress)
             game_result = WordChoice().word_choice_operate(fq, first_result, half_exit)
 
         elif game_name == '句型转换':
@@ -320,9 +318,9 @@ class LibraryGamePage(BasePage):
             game_result = ListenLinkSentence().listen_to_sentence_operate(fq, second_ans)
 
         elif game_name == '强化炼句':
-            if fq == 1:
-                SentenceStrengthen().sentence_strengthen_operate(fq, second_ans, half_exit=True)
-                self.check_process_change(bank_name, bank_progress)
+            # if fq == 1:
+            #     SentenceStrengthen().sentence_strengthen_operate(fq, second_ans, half_exit=True)
+            #     self.check_process_change(bank_name, bank_progress)
             game_result = SentenceStrengthen().sentence_strengthen_operate(fq, second_ans, half_exit)
 
         elif game_name == '连词成句':
@@ -338,7 +336,7 @@ class LibraryGamePage(BasePage):
             game_result = CompleteArticle().complete_article_operate(fq, second_ans, half_exit)
 
         elif game_name == '完形填空':
-            game_result = Cloze().cloze_operate(fq, second_ans)
+            game_result = ClozePage().cloze_operate(fq, second_ans)
 
         elif game_name == '阅读理解':
             game_result = ReadUnderstand().read_understand_operate(fq, second_ans)
@@ -375,44 +373,36 @@ class LibraryGamePage(BasePage):
         result = 0
         if self.result.wait_check_result_page():  # 进入结果页
             self.result.check_result_btn().click()  # 查看结果
+            time.sleep(2)
             print('----- 查看答案页面 ------\n')
             mine_done_answer = mine_answer[0]
 
             if game_name in ['猜词游戏', '还原单词', '连连看', '单词拼写', '单词听写', '词汇选择']:
                 result = self.result.word_game_answer_detail_operate(mine_done_answer)
-                pass
 
             elif game_name in ['句型转换']:
                 result = ChangeSentence().sentence_game_result_operate(mine_done_answer)
-                pass
 
             elif game_name in ['听音连句']:
                 result = ListenLinkSentence().listen_to_sentence_result_operate(mine_done_answer)
-                pass
 
             elif game_name in ['强化炼句']:
                 result = SentenceStrengthen().sentence_strengthen_result_operate(mine_done_answer)
-                pass
 
             elif game_name in ['连词成句']:
                 result = LinkToSentence().link_sentence_result_operate(mine_done_answer)
-                pass
 
             elif game_name in ['选词填空']:
                 result = SelectWordBlank().select_word_blank_result_operate(mine_done_answer)
-                pass
 
             elif game_name in ['补全文章']:
                 result = CompleteArticle().complete_article_result_operate(mine_done_answer)
-                pass
 
             elif game_name in ['完形填空', '单项选择']:
-                result = Cloze().cloze_result_operate(mine_done_answer, store_key=False)
-                pass
+                result = ClozePage().cloze_result_operate(mine_done_answer, store_key=False)
 
             elif game_name in ['阅读理解']:
-                result = Cloze().cloze_result_operate(mine_done_answer, store_key=True)
-                pass
+                result = ClozePage().cloze_result_operate(mine_done_answer, store_key=True)
 
             elif game_name in ['听后选择']:
                 result = ListenChoice().listen_choice_result_operate(mine_done_answer)

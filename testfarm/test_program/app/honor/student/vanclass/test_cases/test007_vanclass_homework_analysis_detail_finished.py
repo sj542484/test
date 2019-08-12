@@ -2,16 +2,16 @@
 # encoding:UTF-8
 import unittest
 
-from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from testfarm.test_program.app.honor.student.homework.object_page.vocabulary_choice_page import VocabularyChoice
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
-from testfarm.test_program.app.honor.student.vanclass.object_page.vanclass_page import VanclassPage
-from testfarm.test_program.app.honor.student.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
-from testfarm.test_program.app.honor.student.vanclass.test_data.vanclass_data import GetVariable as gv
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststeps
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.homework.object_page.homework_page import Homework
+from app.honor.student.homework.object_page.vocabulary_choice_page import VocabularyChoice
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.login.object_page.login_page import LoginPage
+from app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
+from app.honor.student.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.student.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
+from app.honor.student.vanclass.test_data.vanclass_data import GetVariable as gv
+from conf.decorator import setup, teardown, testcase, teststeps
+from utils.toast_find import Toast
 
 
 class HwAnalysis(unittest.TestCase):
@@ -70,12 +70,12 @@ class HwAnalysis(unittest.TestCase):
                                         self.home.click_back_up_button()  # 返回 本班作业页面
 
                             if self.detail.wait_check_page(gv.CLASS_NAME):  # 页面检查点
-                                self.home.click_back_up_button()  # 返回
+                                self.home.click_tab_hw()  # 返回主界面
                     else:
                         print('未进入班级 -本班作业tab')
                         self.home.click_back_up_button()
-                    if self.van.wait_check_page():  # 班级 页面检查点
-                        self.home.click_tab_hw()  # 返回主界面
+                        if self.van.wait_check_page():  # 班级 页面检查点
+                            self.home.click_tab_hw()  # 返回主界面
         else:
             Toast().find_toast(VALID_LOGIN_TOAST.login_failed())
             print("未进入主界面")

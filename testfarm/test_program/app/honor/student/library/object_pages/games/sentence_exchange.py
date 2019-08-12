@@ -5,74 +5,19 @@
 # -------------------------------------------
 import time
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
-from testfarm.test_program.app.honor.student.library.object_pages.games.common_page import CommonPage
+from testfarm.test_program.app.honor.student.games.sentence_exchange import SentenceExchangeGame
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
 from testfarm.test_program.conf.decorator import teststep
 from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
-class ChangeSentence(BasePage):
+class ChangeSentence(SentenceExchangeGame):
 
     def __init__(self):
-        self.common = CommonPage()
-
-    @teststep
-    def wait_check_exchange_sentence_page(self):
-        """句型转换页面检查点，以输入答案的id作为依据"""
-        locator = (By.ID, self.id_type() + "rv_answer")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-
-    @teststep
-    def text_bottom(self):
-        """下方后补选择文本"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'rv_hint')
-        return ele.find_elements_by_xpath('.//android.widget.TextView')
-
-    @teststep
-    def input_text(self):
-        """下方后补选择文本"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'rv_answer')
-        return ele.find_elements_by_xpath('.//android.widget.TextView')
-
-    @teststep
-    def question(self):
-        """问题"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'tv_question')
-        return ele.text
-
-    @teststep
-    def answer(self):
-        """提交后的答案"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'tv_answer')
-        return ele.text
-
-    @teststep
-    def click_clear_btn(self):
-        """点击清除按钮"""
-        self.driver.find_element_by_id(self.id_type() + 'bt_clear').click()
-
-    @teststep
-    def clear_btn_judge(self, var):
-        """清除按钮状态判断"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'bt_clear')
-        attr = ele.get_attribute('enabled')
-        if attr != var:
-            print('★★★ 清除按钮 状态Error', attr)
-
-    @teststep
-    def result_ques(self):
-        """结果页问题"""
-        ele = self.driver.find_elements_by_id(self.id_type() + 'tv_question')
-        return ele
+        self.common = LibraryPubicPage()
+        self.public = WorldBookPublicPage()
 
     @teststep
     def result_answer(self, question):
@@ -111,20 +56,20 @@ class ChangeSentence(BasePage):
         total_num = self.common.rest_bank_num()
         for i in range(0, total_num):
             if self.wait_check_exchange_sentence_page():
-                question = self.question()
+                question = self.sentence_question()[0].text
                 print('问题:', question)
-                self.common.judge_next_is_true_false('false')
-                self.clear_btn_judge('false')
+                self.next_btn_judge('false', self.fab_commit_btn)
+                self.next_btn_judge('false', self.clear_btn)
                 if fq == 1:
                     while True:
-                        if GetAttribute().enabled(self.common.next_btn()) == 'true':
+                        if GetAttribute().enabled(self.fab_commit_btn()) == 'true':
                             break
                         self.text_bottom()[0].click()
                 else:
                     right_answer = sec_answer[question].split(' ')
                     index = 0
                     while True:
-                        if GetAttribute().enabled(self.common.next_btn()) == 'true':
+                        if GetAttribute().enabled(self.fab_commit_btn()) == 'true':
                             break
                         wait_click_text = self.text_bottom()
                         for x in wait_click_text:
@@ -137,14 +82,13 @@ class ChangeSentence(BasePage):
                 print('我的答案：', finish_answer)
                 mine_answers[question] = finish_answer
 
-                self.clear_btn_judge('true')
-                self.common.judge_next_is_true_false('true')
-                self.common.next_btn().click()
-                time.sleep(1)
-                print(self.answer())
-                print('-'*20, '\n')
+                self.next_btn_judge('true', self.clear_btn)
+                self.next_btn_operate('true', self.fab_commit_btn)
+                print(self.sentence_answer())
                 timer.append(self.common.bank_time())
-                self.common.next_btn().click()
+                self.next_btn_operate('true', self.fab_next_btn)
+                time.sleep(1)
+                print('-'*20, '\n')
         self.common.judge_timer(timer)
         answer = mine_answers if fq == 1 else sec_answer
         return answer, total_num
@@ -155,10 +99,10 @@ class ChangeSentence(BasePage):
         right, wrong = [], []
         index = 0
         if ResultPage().wait_check_answer_page():
-            ques_size = self.get_ques_size(self.result_ques()[0].text)
+            ques_size = self.get_ques_size(self.sentence_question()[0].text)
             ques_scale = ques_size['height'] / self.get_window_size()[1]
             while True:
-                questions = self.result_ques()
+                questions = self.sentence_question()
                 for i, ques in enumerate(questions):
                     if ResultPage().wait_check_answer_page():
                         if i == len(questions) - 1:

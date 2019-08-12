@@ -5,15 +5,15 @@
 # -------------------------------------------
 import unittest
 
-from testfarm.test_program.app.honor.student.library.object_pages.game_page import LibraryGamePage
-from testfarm.test_program.app.honor.student.library.object_pages.usercenter_page import UserCenterPage
-from testfarm.test_program.app.honor.student.listen_everyday.object_page.level_page import LevelPage
-from testfarm.test_program.app.honor.student.listen_everyday.object_page.listen_data_handle import ListenDataHandle
-from testfarm.test_program.app.honor.student.listen_everyday.object_page.listen_game_page import ListenGamePage
-from testfarm.test_program.app.honor.student.listen_everyday.object_page.listen_home_page import ListenHomePage
-from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.conf.decorator import setup, teardown, teststeps
-import time
+from app.honor.student.library.object_pages.library_page import LibraryGamePage
+from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.listen_everyday.object_page.level_page import LevelPage
+from app.honor.student.listen_everyday.object_page.listen_data_handle import ListenDataHandle
+from app.honor.student.listen_everyday.object_page.listen_game_page import ListenGamePage
+from app.honor.student.listen_everyday.object_page.listen_home_page import ListenHomePage
+from app.honor.student.login.object_page.login_page import LoginPage
+from conf.decorator import setup, teardown, teststeps
+
 
 class SelectLevel(unittest.TestCase):
 
@@ -34,7 +34,6 @@ class SelectLevel(unittest.TestCase):
     @teststeps
     def test_select_level(self):
         if self.game.home.wait_check_home_page():  # 页面检查点
-            time.sleep(4)
             user_data = UserCenterPage().get_user_info()
             stu_id = user_data[0]
             ListenDataHandle().delete_student_all_listening_records(stu_id)

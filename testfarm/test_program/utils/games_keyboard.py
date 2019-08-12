@@ -11,8 +11,7 @@ class Keyboard(BasePage):
     @teststep
     def keyboard_view(self):
         """小键盘 整体view元素"""
-        ele = self.driver \
-            .find_element_by_id(self.id_type() + "keyboard")
+        ele = self.driver.find_element_by_xpath('//android.view.View[contains(@resource-id,"keyboard")]')
         return ele
 
     @teststeps
@@ -24,10 +23,11 @@ class Keyboard(BasePage):
                     ',', '.', '-', 'blank', "'", 'enter']
 
         if key.lower() in keyboard:
-            screen = self.get_window_size()  # 获取当前手机屏幕大小X,Y
+            screen = list(self.get_window_size())  # 获取当前手机屏幕大小X,Y
+            screen[0] = int(screen[0])
+            screen[1] = int(screen[1])
             loc = self.get_element_location(self.keyboard_view())  # 键盘view左上角 顶点坐标
             height = int(screen[1]) - int(loc[1])  # 键盘view高度
-
             i = keyboard.index(key.lower())
             if i < 10:
                 x = 0.08888 * screen[0] * (i+0.5) + 0.00925 * screen[0]*(i+1)
@@ -45,7 +45,7 @@ class Keyboard(BasePage):
                 else:
                     x = 0.08888 * screen[0] * (i - 28 + 0.5) + 0.00925 * screen[0] * (i - 27)  # i-28
                     y = loc[1] + (height/8)*(1+3*2)
-
+            print(key,x,y)
             self.driver.tap([(x, y)])
 
     """小键盘

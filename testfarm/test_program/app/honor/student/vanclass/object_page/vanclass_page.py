@@ -4,8 +4,8 @@
 import time
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
 
 
 class VanclassPage(BasePage):

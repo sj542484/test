@@ -1,11 +1,11 @@
 import datetime
 from functools import reduce
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
-from testfarm.test_program.app.honor.student.word_book.object_page.mysql_data import WordBookSql
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
+from app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
+from conf.base_page import BasePage
+from conf.decorator import teststep
 
 
 class WordBookDataHandle(BasePage):

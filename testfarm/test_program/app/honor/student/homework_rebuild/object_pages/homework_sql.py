@@ -25,6 +25,6 @@ class HomeworkSql(SqlDb):
     def update_homework_complete_data(self, stu_id):
         """更改班级作业数据，更改作业完成进度"""
         sql = 'UPDATE `vanclass_student_homework` SET `is_finish` = 0, `completion_rate` = 0, ' \
-              '`is_finish_for_teacher` = 0, `completion_rate_for_teacher` = 0, `finished_at` = NULL, ' \
+              '`is_finish_for_teacher` = 0, `completion_rate_for_teacher` = 0, `finished_at` = NULL ' \
               'WHERE `student_id` = {}'.format(stu_id)
         return self.execute_sql_only(sql)

@@ -9,12 +9,12 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.library.object_pages.game_page import LibraryGamePage
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.library.object_pages.game_page import LibraryGamePage
+from app.honor.student.login.object_page.home_page import HomePage
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from utils.get_attribute import GetAttribute
+from utils.toast_find import Toast
 
 
 class LibraryPage(BasePage):

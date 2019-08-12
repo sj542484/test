@@ -7,12 +7,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.vanclass.object_page.vanclass_page import VanclassPage
-from testfarm.test_program.app.honor.student.word_book_rebuild.test_data.account import STU_ACCOUNT
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep
-from testfarm.test_program.utils.reset_phone_find_toast import verify_find
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.student.word_book_rebuild.test_data.account import STU_ACCOUNT
+from conf.base_page import BasePage
+from conf.decorator import teststep
+from utils.reset_phone_find_toast import verify_find
 
 
 class QuitAddClass(BasePage):

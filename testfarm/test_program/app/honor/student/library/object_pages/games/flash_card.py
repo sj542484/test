@@ -7,111 +7,18 @@ import random
 import re
 import string
 import time
-
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
-from testfarm.test_program.app.honor.student.library.object_pages.games.common_page import CommonPage
-from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.app.honor.student.games.word_flash_card import FlashCardGame
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 from testfarm.test_program.conf.decorator import teststeps, teststep
 from testfarm.test_program.utils.games_keyboard import Keyboard
 from testfarm.test_program.utils.get_attribute import GetAttribute
 from testfarm.test_program.utils.toast_find import Toast
 
 
-class FlashCard(BasePage):
+class FlashCard(FlashCardGame):
 
     def __init__(self):
-        self.common = CommonPage()
-
-    # =========================== 学习模式 =========================
-
-    @teststep
-    def wait_check_study_page(self):
-        """以“闪卡练习 -学习模式”的xpath-text为依据"""
-        locator = (By.ID, self.id_type() + "iv_rotate")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststeps
-    def wait_check_explain_page(self):
-        """判断解释是否存在"""
-        try:
-            self.driver.find_element_by_id(self.id_type() + "tv_chinese")
-            return True
-        except:
-            return False
-
-    @teststep
-    def wait_check_flash_result_page(self):
-        """结果页页面检查点"""
-        locator = (By.XPATH, "//*[@text='完成学习']")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def study_word(self):
-        """页面单词"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'tv_english')
-        return ele.text
-
-    @teststep
-    def click_voice(self):
-        """播放按钮"""
-        self.driver.find_element_by_id(self.id_type() + "play_voice") \
-            .click()
-
-    @teststep
-    def author(self):
-        """例句推荐老师"""
-        english = self.driver \
-            .find_element_by_id(self.id_type() + "author").text
-        return english
-
-    @teststep
-    def english_study(self):
-        """全英模式 页面内展示的word"""
-        english = self.driver \
-            .find_element_by_id(self.id_type() + "tv_english").text
-        return english
-
-    @teststep
-    def explain(self):
-        """英汉模式 页面内展示的word解释"""
-        explain = self.driver.find_element_by_id(self.id_type() + "tv_chinese")
-        return explain.text
-
-    @teststep
-    def sentence(self):
-        """全英模式 页面内展示的句子"""
-        english = self.driver \
-            .find_element_by_id(self.id_type() + "sentence").text
-        return english
-
-    @teststep
-    def sentence_explain(self):
-        """英汉模式 页面内展示的句子解释"""
-        explain = self.driver \
-            .find_element_by_id(self.id_type() + "sentence_explain").text
-        return explain
-
-    @teststep
-    def star_button(self):
-        """星标按钮"""
-        ele = self.driver.find_element_by_id(self.id_type() + "iv_star")
-        return ele
-
-    @teststep
-    def change_model_btn(self):
-        """英汉切换按钮"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'iv_rotate')
-        return ele
+        self.common = LibraryPubicPage()
 
     # =====  结果页定位元素  ======
     @teststep
@@ -164,41 +71,6 @@ class FlashCard(BasePage):
                                                 .format(word))
         return ele
 
-    # ================================== 抄写模式 ====================================
-    @teststep
-    def wait_check_copy_page(self):
-        """抄写模式页面检查点 以键盘id作为索引"""
-        locator = (By.ID, self.id_type() + "keyboard")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def copy_word(self):
-        """抄写页面单词"""
-        ele = self.driver.find_element_by_id('{}tv_word'.format(self.id_type()))
-        return ele.text
-
-    @teststep
-    def copy_explain(self):
-        """抄写模式单词解释"""
-        ele = self.driver.find_element_by_id('{}chinese'.format(self.id_type()))
-        return ele.text
-
-    @teststep
-    def copy_input(self):
-        """抄写模式输入答案"""
-        ele = self.driver.find_element_by_id('{}english'.format(self.id_type()))
-        return ele
-
-    @teststep
-    def keyboard_view(self):
-        """小键盘 整体view元素"""
-        ele = self.driver \
-            .find_element_by_id(self.id_type() + "keyboard")
-        return ele
 
     @teststep
     def play_flash_game(self):
@@ -225,16 +97,16 @@ class FlashCard(BasePage):
             for i in range(total_num):
                 if self.wait_check_study_page():
                     self.common.rate_judge(total_num, i)  # 待完成数校验
-                    self.common.judge_next_is_true_false('true')  # 下一步按钮状态检验
+                    self.next_btn_judge('true', self.fab_next_btn)  # 下一步按钮状态检验
                     self.click_voice()
                     word = self.study_word()
                     print('单词：', word)
                     if not self.wait_check_explain_page():  # 验证页面是否默认选择英汉模式
                         print('★★★ 未发现单词解释，页面没有默认选择英汉模式')
-                    print('解释：', self.explain())  # 单词解释
-                    print(self.sentence())  # 句子
-                    print(self.sentence_explain())  # 句子解释
-                    print(self.author())  # 推荐老师
+                    print('解释：', self.study_word_explain())  # 单词解释
+                    print("句子：", self.study_sentence())  # 句子
+                    print("句子解释：", self.study_sentence_explain())  # 句子解释
+                    print("推荐老师：", self.author())  # 推荐老师
 
                     self.change_model_btn().click()  # 切换全英模式
                     if self.wait_check_explain_page():  # 校验翻译是否出现
@@ -253,7 +125,7 @@ class FlashCard(BasePage):
                                 print('★★★ 单词已标星但标星按钮未被选中')
 
                     print('-' * 20, '\n')
-                    self.common.next_btn().click()
+                    self.fab_next_btn().click()
             return total_num, star_words
 
     @teststeps
@@ -286,7 +158,7 @@ class FlashCard(BasePage):
 
                 random_str = random.sample(string.ascii_lowercase, 4)       # 随机输入错误单词，
                 for j, s in enumerate(random_str):
-                    self.common.keyboard_operate(j, s)
+                    self.keyboard_operate(j, s)
                 print('输入单词：', ''.join(random_str))
                 time.sleep(2)
 
@@ -298,7 +170,7 @@ class FlashCard(BasePage):
                 time.sleep(1)
 
             for j, s in enumerate(list(copy_word)):                               # 输入抄写单词
-                self.common.keyboard_operate(j, s)
+                self.keyboard_operate(j, s)
             time.sleep(2)
             print('-'*30, '\n')
         return total_num, star_words
@@ -309,7 +181,7 @@ class FlashCard(BasePage):
         if self.wait_check_flash_result_page():
             print('完成学习！')
             summary = self.study_sum()
-            print(summary)
+            print(summary, '\n')
             full_count = int(re.findall(r'\d+', summary)[0])  # 页面统计总个数
             star_count = self.get_start_sum()
 
@@ -320,7 +192,7 @@ class FlashCard(BasePage):
                 print('★★★ 标星个数与页面统计个数不一致')
 
             self.cancel_or_add_star(total, star_words, cancel=True)
-            if self.get_start_sum() != len(star_words):
+            if self.get_start_sum() != 0:
                 print('★★★ 单词标星取消，页面标星统计数未发生变化，与实际标星数不一致')
 
             self.study_star_again().click()

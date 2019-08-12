@@ -3,57 +3,17 @@
 # Author:   Vector
 # Date:     2019/3/28 9:58
 # -------------------------------------------
-import random
 import time
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
-from testfarm.test_program.app.honor.student.library.object_pages.games.common_page import CommonPage
-from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.app.honor.student.games.word_guess import GuessWordGame
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
-class GuessWord(BasePage):
+class GuessWord(GuessWordGame):
 
     def __init__(self):
-        self.common = CommonPage()
-
-    @teststep
-    def wait_check_guess_word_page(self):
-        """"""
-        locator = (By.ID, 'level')
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x:x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    """猜词游戏"""
-    @teststep
-    def keyboard(self):
-        """键盘"""
-        ele = self.driver.find_element_by_id(self.id_type() + "hm_keyboard")
-        return ele
-
-    @teststep
-    def key(self):
-        ele = self.driver.find_elements_by_xpath('//*[@resource-id="{}hm_keyboard"]/'
-                                                 'android.widget.TextView'.format(self.id_type()))
-        return ele
-
-    @teststep
-    def chinese(self):
-        """翻译"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'chinese')
-        return ele.text
-
-    @teststep
-    def english(self):
-        """单词"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'english')
-        return ele
+        self.common = LibraryPubicPage()
 
     @teststeps
     def play_guess_game_operate(self, fq, sec_answer):
@@ -64,20 +24,20 @@ class GuessWord(BasePage):
         total_num = self.common.rest_bank_num()
         for i in range(0, total_num):
             self.common.rate_judge(total_num, i)
-            explain = self.chinese()
+            explain = self.word_explain()
             print('解释：', explain)
             count = self.common.rest_bank_num()
             if fq == 1:
                 mine_input = []
                 if i != total_num - 1:
-                    for x in self.key():
+                    for x in self.keyboard_key():
                         mine_input.append(x.text)
                         x.click()
                         if self.common.rest_bank_num() != count:
                             mine_answers[explain] = ''.join(mine_input)
                             break
                 else:
-                    for x in self.key():
+                    for x in self.keyboard_key():
                         mine_input.append(x.text)
                         x.click()
                         if not self.wait_check_guess_word_page():
@@ -101,7 +61,7 @@ class GuessWord(BasePage):
     def right_operate(self, right_answer):
         print('正确答案：', right_answer, '\n')
         for x in right_answer:
-            for k in self.key():
+            for k in self.keyboard_key():
                 if x == k.text:
                     k.click()
                     break

@@ -3,17 +3,17 @@ import json
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.user_center.object_page.buy_card_page import PurchasePage
-from testfarm.test_program.app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
-from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import UserCenterPage
-from testfarm.test_program.app.honor.student.web.object_pages.assign_word import AssignWord
-from testfarm.test_program.app.honor.student.web.object_pages.driver import Driver
-from testfarm.test_program.app.honor.student.word_book.object_page.mysql_data import WordBookSql
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep
-from testfarm.test_program.utils.toast_find import Toast
-from testfarm.test_program.conf.base_config import GetVariable as gv
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.user_center.object_page.buy_card_page import PurchasePage
+from app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
+from app.honor.student.web.object_pages.assign_word import AssignWord
+from app.honor.student.web.object_pages.driver import Driver
+from app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
+from conf.base_page import BasePage
+from conf.decorator import teststep
+from utils.toast_find import Toast
+from conf.base_config import GetVariable as gv
 
 
 class CleanDataPage(BasePage):
@@ -123,7 +123,9 @@ class CleanDataPage(BasePage):
 
     @teststep
     def clean_cache_back_to_home(self):
+        """清除缓存"""
         self.home.click_tab_profile()
+        self.home.screen_swipe_up(0.5, 0.9, 0.3, 1000)
         self.clean_cache()
         self.home.click_tab_hw()
         if self.home.wait_check_home_page():

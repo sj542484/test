@@ -4,9 +4,9 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from app.honor.student.login.object_page.home_page import HomePage
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
 
 
 class UserCenterPage(BasePage):
@@ -193,6 +193,7 @@ class Setting(BasePage):
         """退出登录"""
         HomePage().click_tab_profile()  # 进入首页后点击‘个人中心’按钮
         if UserCenterPage().wait_check_page():  # 页面检查点
+            self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
             UserCenterPage().click_setting()  # 进入设置页面
 
             if self.wait_check_page():  # 页面检查点

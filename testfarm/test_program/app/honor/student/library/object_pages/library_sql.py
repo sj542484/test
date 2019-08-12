@@ -11,7 +11,6 @@ class LibrarySql(SqlDb):
     def find_school_id(self, school_name):
         """查询学校id"""
         sql = 'SELECT id FROM school WHERE `name`= "%s"' % school_name
-        print(sql)
         return self.execute_sql_return_result(sql)
 
     def find_latest_school_books(self, school_id):

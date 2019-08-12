@@ -3,15 +3,11 @@
 # @Author  : SUN FEIFEI
 import time
 from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
-from selenium.webdriver.support.ui import WebDriverWait
-
+from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
 from testfarm.test_program.conf.decorator import teststep, teststeps
 from testfarm.test_program.conf.base_page import BasePage
-from selenium.webdriver.support import expected_conditions as EC
-from appium.webdriver.common.mobileby import MobileBy
-
 
 
 class HomePage(BasePage):
@@ -19,17 +15,11 @@ class HomePage(BasePage):
     @teststeps
     def wait_check_home_page(self):
         """以“做试卷”为依据"""
-        res = self.driver.page_source
-        # locator = (By.XPATH, "//android.widget.TextView[contains(@text,'做试卷')]")
-        # common_back_locator = (MobileBy.XPATH, "//android.widget.TextView[contains(@text,'做试卷')]")
-        print('1:',time.time())
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'做试卷')]")
         try:
-            WebDriverWait(self.driver, 30, 0.5).until(lambda x: x.find_element_by_xpath("//android.widget.TextView[contains(@text,'做试卷')]"))
-            # WebDriverWait(self.driver, 10, 0.5).until(EC.visibility_of_element_located(common_back_locator))
-            print('2:',time.time())
+            WebDriverWait(self.driver, 20, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
-            print('3:',time.time())
             return False
 
     @teststeps
@@ -233,7 +223,7 @@ class HomePage(BasePage):
 
     @teststeps
     def click_blank(self):
-        self.driver.tap([(20, 180), ])
+        self.driver.tap([(20, 1800), ])
 
     @teststeps
     def homework_count(self):

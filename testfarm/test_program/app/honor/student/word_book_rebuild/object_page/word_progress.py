@@ -4,15 +4,15 @@ import re
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_handle import DataActionPage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep
-from testfarm.test_program.conf.base_config import GetVariable as gv
+from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from conf.base_page import BasePage
+from conf.decorator import teststep
+from conf.base_config import GetVariable as gv
 
 
 class ProgressPage(BasePage):
     def __init__(self):
-        self.common = DataActionPage()
+        self.common = WordDataHandlePage()
 
     @teststep
     def wait_check_progress_page(self):

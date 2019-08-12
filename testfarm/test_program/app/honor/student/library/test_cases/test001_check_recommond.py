@@ -5,12 +5,12 @@
 # -------------------------------------------
 import time
 import unittest
-from testfarm.test_program.app.honor.student.library.object_pages.library_page import LibraryPage
-from testfarm.test_program.app.honor.student.library.object_pages.library_data_handle import DataHandlePage
-from testfarm.test_program.app.honor.student.library.object_pages.usercenter_page import UserCenterPage
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.conf.decorator import setup, teardown, testcase, teststep
+from app.honor.student.library.object_pages.library_page import LibraryPage
+from app.honor.student.library.object_pages.library_data_handle import DataHandlePage
+from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.login.object_page.login_page import LoginPage
+from conf.decorator import setup, teardown, testcase, teststep
 
 
 class Recommend(unittest.TestCase):
