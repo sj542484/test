@@ -88,7 +88,7 @@ class Utils:
     def start_appium(self,dn, udid, plv,file_name,port,bp,systemPort,side):
         hubHost = gv.HUBHOST
         self.appium_node_info(hubHost=hubHost,port=port,device_name=dn,udid=udid,platversion=plv,systemPort=systemPort,side=side)
-        CMD = 'appium -p {port} -bp {bp} -U {udid} --nodeconfig ./test_program/nodeconfig/{devicename}/{platformversion}/mobile.json > {portPath}appium_server.log'.format(port=port,bp=bp,udid=udid,devicename=dn,platformversion=plv,portPath=file_name)
+        CMD = 'appium -p {port} -bp {bp} -U {udid} --nodeconfig ./test_program,/nodeconfig/{devicename}/{platformversion}/mobile.json > {portPath}appium_server.log'.format(port=port,bp=bp,udid=udid,devicename=dn,platformversion=plv,portPath=file_name)
         subprocess.Popen(CMD, shell=True)
         print('\ncmd:',CMD)
         return int(port),systemPort

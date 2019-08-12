@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="046d4bba-38b3-4962-b62f-77df2872793f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirement/base.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirement/dev.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirement/production.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,11 +53,12 @@
           <entry key="ico" value="1" />
           <entry key="jpg" value="1" />
           <entry key="js" value="16" />
-          <entry key="json" value="22" />
+          <entry key="json" value="23" />
           <entry key="log" value="19" />
           <entry key="md" value="3" />
           <entry key="png" value="13" />
-          <entry key="py" value="2409" />
+          <entry key="py" value="2410" />
+          <entry key="txt" value="1" />
           <entry key="yaml" value="21" />
         </counts>
       </usages-collector>
@@ -62,11 +67,11 @@
           <entry key="CSS" value="17" />
           <entry key="HTML" value="201" />
           <entry key="Image" value="16" />
-          <entry key="JSON" value="22" />
+          <entry key="JSON" value="23" />
           <entry key="JavaScript" value="16" />
           <entry key="Markdown" value="3" />
-          <entry key="PLAIN_TEXT" value="28" />
-          <entry key="Python" value="2409" />
+          <entry key="PLAIN_TEXT" value="29" />
+          <entry key="Python" value="2410" />
           <entry key="YAML" value="21" />
         </counts>
       </usages-collector>
@@ -75,12 +80,13 @@
           <entry key="appium_server_port_4725" value="17" />
           <entry key="css" value="198" />
           <entry key="dummy" value="36" />
-          <entry key="gitignore" value="60" />
+          <entry key="gitignore" value="83" />
           <entry key="html" value="12562" />
           <entry key="json" value="27" />
           <entry key="log" value="10" />
           <entry key="md" value="840" />
-          <entry key="py" value="29920" />
+          <entry key="py" value="29921" />
+          <entry key="txt" value="39" />
           <entry key="yaml" value="859" />
         </counts>
       </usages-collector>
@@ -90,8 +96,8 @@
           <entry key="HTML" value="12562" />
           <entry key="JSON" value="27" />
           <entry key="Markdown" value="840" />
-          <entry key="PLAIN_TEXT" value="123" />
-          <entry key="Python" value="29920" />
+          <entry key="PLAIN_TEXT" value="185" />
+          <entry key="Python" value="29921" />
           <entry key="YAML" value="859" />
         </counts>
       </usages-collector>
@@ -130,6 +136,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testone/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="81" column="19" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="557">
@@ -138,16 +153,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1294">
-              <caret line="90" column="78" selection-start-line="90" selection-start-column="78" selection-end-line="90" selection-end-column="78" />
+            <state relative-caret-position="255">
+              <caret line="90" column="79" selection-start-line="90" selection-start-column="79" selection-end-line="90" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirement/dev.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -155,22 +183,6 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testfarm/urls.py">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/log.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/decorator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -243,7 +255,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_pages/result_page.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_pages/usercenter_page.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/object_pages/homework_sql.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_pages/games/cloze.py" />
@@ -290,10 +301,11 @@
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/word_restore.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/utils/games_keyboard.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/conf/base_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/conf/base_config.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" />
+        <option value="$PROJECT_DIR$/requirement/dev.txt" />
       </list>
     </option>
   </component>
@@ -317,6 +329,11 @@
               <item name="testone" type="b2602c69:ProjectViewProjectNode" />
               <item name="testone" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testone" type="462c0819:PsiDirectoryNode" />
+              <item name="requirement" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -330,16 +347,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/testfarm/test_program/utils" />
-      <recent name="$PROJECT_DIR$/testfarm/test_program/app/honor" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/testfarm/test_program/app/honor" />
       <recent name="$PROJECT_DIR$/static/table_body" />
       <recent name="$PROJECT_DIR$/static/login" />
       <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/testfarm/test_program/conf" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/testfarm/test_program/utils" />
+      <recent name="$PROJECT_DIR$/testfarm/test_program/app/honor" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -446,7 +463,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2706131" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -560,27 +576,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/login/object_page/login_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="255" column="8" selection-start-line="255" selection-start-column="8" selection-end-line="255" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book/object_page/wordbook_sql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_pages/library_sql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/article_cloze.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -829,13 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1294">
-          <caret line="90" column="78" selection-start-line="90" selection-start-column="78" selection-end-line="90" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testfarm/urls.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -849,13 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/base_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
@@ -864,7 +845,46 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/base_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testone/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="81" column="19" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_program/nodeconfig/RedMi_7/9.0/mobile.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="90" column="79" selection-start-line="90" selection-start-column="79" selection-end-line="90" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirement/dev.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
