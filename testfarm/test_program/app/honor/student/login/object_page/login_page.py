@@ -260,6 +260,10 @@ class LoginPage(BasePage):
         phone = self.input_username()
         pwd = self.input_password()
 
+        res = self.get_user_info()
+        stu_account = res['student']['student']
+        stu_password = res['pwd']
+
         phone.send_keys(stu_account)
         pwd.send_keys(stu_password)
         self.login_button()

@@ -78,7 +78,7 @@
   function addDataToChildren(itemId, childId) {
     var child = document.getElementById(childId);
     var parent = document.getElementById(itemId);
-    
+
     var index = parent.selectedIndex; // 选中索引
     var parentValue = parent.options[index].value; // 选中值
     var childData = [];
@@ -87,18 +87,18 @@
     } else {
       childData = child2;
     }
-    
+
     //清楚之前的额option
     var l = child.options.length;
     for (var i = l-1; i >= 0; i--) {
-      child.options.remove(i); 
+      child.options.remove(i);
     }
 
     childData.forEach((item, index) => {
       child.options.add(new Option(item.name, item.id));
     });
   }
-  
+
   function change(itemId, index) {
     var child = 'childrenItem' + index;
     // addDataToChildren(itemId, child);
@@ -136,7 +136,7 @@
       } else {
         childData = child2;
       }
-      
+
       //直接重新赋值，不用清除了
       var htmlStr = ''
       childData.forEach((item, index) => {

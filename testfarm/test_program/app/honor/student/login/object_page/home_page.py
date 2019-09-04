@@ -36,7 +36,7 @@ class HomePage(BasePage):
     def click_hk_tab(self, index):
         """以“口语练习、做单词、做习题、做试卷” 的id"""
         self.driver\
-            .find_elements_by_id(self.id_type() + "notice")[index] \
+            .find_elements_by_id(self.id_type() + "notice")[index - 1] \
             .click()
 
     @teststep

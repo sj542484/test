@@ -50,7 +50,7 @@ class BasePage(object):
         result, err = res.communicate()
         a = str(result, 'utf-8')
         # cap = re.compile('modes.*?width=(\d+), height=(\d+), fps=.*?')
-        cap_one = re.compile('app=(\d+)x(\d+) ')
+        cap_one = re.compile('cur=(\d+)x(\d+) ')
         res = cap_one.findall(a)
         cls.window_size = [int(i) for i in res[0]]
 
@@ -92,6 +92,7 @@ class BasePage(object):
         y1 = int(int(screen[1]) * b)
         y2 = int(int(screen[1]) * c)
         self.driver.swipe(x1, y1, x1, y2, steps)
+        print('页面滑动:',x1,y1,x1,y2)
         time.sleep(1)
 
     def screen_swipe_down(self, a, b, c, steps=0.5):

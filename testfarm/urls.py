@@ -52,7 +52,6 @@ urlpatterns = [
     path(r'updatedata',views.update_data,name='update_data'),
     # 增加测试模块
     path(r'addtest',views.addtest,name='addtest'),
-
     # 教师端传数据
     path(r'tea',views.tea,name='tea'),
     path(r'exectea', views.tea_do_data, name='tea_do_data')
