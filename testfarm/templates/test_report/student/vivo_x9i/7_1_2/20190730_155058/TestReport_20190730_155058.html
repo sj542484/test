@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>vivo_x9i:  测试用例执行报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+    body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #ebebeb;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #6c6; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+
+
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+
+    #div_base {
+                position:absolute;
+                top:0%;
+                left:5%;
+                right:5%;
+                width: auto;
+                height: auto;
+                margin: -15px 0 0 0;
+    }
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.common.min.js"></script>
+    <!-- <script type="text/javascript" src="js/echarts.common.min.js"></script> -->
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level < 1) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level > 1) {
+                    tr.className = '';
+                }
+                else {
+                    tr.className = 'hiddenRow';
+                }
+            }
+        }
+    }
+
+
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+
+
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState != 'block' ) {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+        else {
+            details_div.style.display = 'none'
+        }
+    }
+
+
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>vivo_x9i:  测试用例执行报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2019-07-30 15:51:16</p>
+<p class='attribute'><strong>运行时长:</strong> 0:05:28.251987</p>
+<p class='attribute'><strong>状态:</strong> 通过 2 错误 1</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>用例执行情况统计：</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+        <button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+        <button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+    </div>
+    <p></p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row'>
+            <td>测试套件/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='errorClass'>
+        <td>test_cases.test001_study_word.Word: 单词本</td>
+        <td>3</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c1',3)">详情</a></td>
+    </tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_study_word_1_1: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        错误</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <pre>
+        ft1.1: 在登录界面：
+/Users/vanthink_test_ios/aa/testone
+用户信息，即将登陆： {'student': {'student': 13641319701, 'teacher': 1882345238}, 'pwd': '1N14VXUCJTHoA'}
+/Users/vanthink_test_ios/aa/testone
+===== 第1组练习 =====
+13641319701
+学生昵称： Spring 
+ 学校名称： 北京欧叶教育科技有限公司 
+ 学校id： 5041 
+ 学生id： 501549 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：You have an ____.
+句子解释： 你带了眼罩。
+选择答案： eye-patch
+------------------------------ 
+
+题目：What is a ____?
+句子解释： 什么是单轨火车？
+选择答案： monorail
+------------------------------ 
+
+题目：The film was taken by a camera mounted on a ____.
+句子解释： 这部影片是用摄影机系在悬挂式滑翔机上拍摄的。
+选择答案： hang-glider
+------------------------------ 
+
+题目：We set off to see the Pyramids and ____.
+句子解释： 我们出发去看金字塔和狮身人面像。
+选择答案： Sphinx
+------------------------------ 
+
+题目：The bronze ____ proved to be a valuable find.
+句子解释： 那辆青铜战车证明是有价值的发现。
+选择答案： chariot
+------------------------------ 
+
+题目：____ is a kind of writing made up of pictures.
+句子解释： 象形文字是一种由图画构成的文字。
+选择答案： hieroglyphics
+------------------------------ 
+
+题目：My father taught me ____ as a child.
+句子解释： 我父亲从小就在训练我射箭了。
+选择答案： archery
+------------------------------ 
+
+题目：He is an old hand at ____.
+句子解释： 击剑他是老手。
+选择答案： fencing
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  n. 欲望;n. 食欲，胃口
+点击提示出现首字母提示 a
+单词: appetite
+我输入的： appetite
+------------------------------ 
+
+解释：  adj. 狂热的
+点击提示出现首字母提示 f
+单词: fanatical
+我输入的： fanatical
+------------------------------ 
+
+解释：  adj. 怀疑的
+点击提示出现首字母提示 s
+单词: suspicious
+我输入的： suspicious
+------------------------------ 
+
+解释：  v. 投稿;v. 捐款;v. 贡献;v. 捐献
+点击提示出现首字母提示 c
+单词: contribute
+我输入的： contribute
+------------------------------ 
+
+解释：  n. 固体结晶
+点击提示出现首字母提示 c
+单词: crystaline
+我输入的： crystaline
+------------------------------ 
+
+解释：  n. 眼罩
+点击提示出现首字母提示 e
+单词: eye-patch
+我输入的： eye-patch
+------------------------------ 
+
+解释：  n. 单轨列车
+点击提示出现首字母提示 m
+单词: monorail
+我输入的： monorail
+------------------------------ 
+
+解释：  n. 悬挂式滑翔机
+点击提示出现首字母提示 h
+单词: hang-glider
+我输入的： hang-glider
+------------------------------ 
+
+解释：  n. 狮身人面像
+点击提示出现首字母提示 S
+单词: Sphinx
+我输入的： Sphinx
+------------------------------ 
+
+解释：  n. 战车
+点击提示出现首字母提示 c
+单词: chariot
+我输入的： chariot
+------------------------------ 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：She went into a ____ and bought some aspirin.
+句子解释： 她进了一家药店，买了些阿司匹林。
+选择答案： chemist's
+------------------------------ 
+
+题目：I am going to the ____ to fit on my new coat.
+句子解释： 我要去裁缝店试穿新外衣。
+选择答案： tailor's
+------------------------------ 
+
+题目：I must go to the ____ to get some eggs.
+句子解释： 我得去趟杂货店去买些鸡蛋。
+选择答案： grocer's
+------------------------------ 
+
+题目：There is no meat left. I must go to the ____.
+句子解释： 没有肉了。我得去趟肉店。
+选择答案： butcher's
+------------------------------ 
+
+题目：They are sleeping in the ____ directly above.
+句子解释： 他们正在正上方的木匠铺子里睡觉。
+选择答案： carpenter's
+------------------------------ 
+
+题目：This ____ is very handy.
+句子解释： 这把扳子使起来挺顺手儿。
+选择答案： spanner
+------------------------------ 
+
+题目：The taps have a ____ to control the mix of hot and cold water.
+★★★ 点击提示后未发现句子解释文本
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 29, in wrapper
+    ret = func(*args, **kwargs)
+  File "./testfarm/test_program/app/honor/student/word_book_rebuild/object_page/vocabulary_choose_page.py", line 75, in option_button
+    ele = self.driver.find_elements_by_id(self.id_type() + "option")
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 379, in find_elements_by_id
+    return self.find_elements(by=By.ID, value=id_)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/webdriver.py", line 303, in find_elements
+    'value': value})['value'] or []
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./testfarm/test_program/conf/decorator.py", line 29, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book/object_page/vocab_game.py", line 93, in vocab_apply_game_operate
+    for y in self.option_button():
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 38, in wrapper
+    raise WebDriverException(flag + _screenshot(func.__qualname__))
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 19, in _screenshot
+    driver.save_screenshot(path)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1097, in save_screenshot
+    return self.get_screenshot_as_file(filename)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1072, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1108, in get_screenshot_as_png
+    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1120, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)['value']
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 29, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book/object_page/recite_word_operate.py", line 30, in word_book_recite_operate
+    vocab_apply_index = VocabGamePage().vocab_apply_game_operate(stu_id, vocab_apply_index, game_type)  # 词汇运用游戏过程
+  File "./testfarm/test_program/conf/decorator.py", line 38, in wrapper
+    raise WebDriverException(flag + _screenshot(func.__qualname__))
+  File "./testfarm/test_program/conf/decorator.py", line 19, in _screenshot
+    driver.save_screenshot(path)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1097, in save_screenshot
+    return self.get_screenshot_as_file(filename)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1072, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1108, in get_screenshot_as_png
+    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1120, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)['value']
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 100, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book/test_cases/test001_study_word.py", line 68, in test_study_word
+    recite_words_count = ReciteWordPage().word_book_recite_operate(self.stu_id, wrong_again_words)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 38, in wrapper
+    raise WebDriverException(flag + _screenshot(func.__qualname__))
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 19, in _screenshot
+    driver.save_screenshot(path)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1097, in save_screenshot
+    return self.get_screenshot_as_file(filename)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1072, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1108, in get_screenshot_as_png
+    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1120, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)['value']
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 110, in wrapper
+    raise WebDriverException(flag + _screenshot(func.__qualname__))
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 19, in _screenshot
+    driver.save_screenshot(path)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1097, in save_screenshot
+    return self.get_screenshot_as_file(filename)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1072, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1108, in get_screenshot_as_png
+    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 1120, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)['value']
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_study_word_2_2: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        通过</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <pre>
+        pt1.2: 在其他页面
+/Users/vanthink_test_ios/aa/testone
+===== 第2组练习 =====
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_study_word_3_3: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        通过</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <pre>
+        pt1.3: 在其他页面
+/Users/vanthink_test_ios/aa/testone
+===== 第3组练习 =====
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+        <tr id='total_row'>
+            <td>总计</td>
+            <td>3</td>
+            <td>2</td>
+            <td>0</td>
+            <td>1</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            color: ['#95b75d', 'grey', '#b64645'],
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:2, name:'通过'},
+                        {value:0, name:'失败'},
+                        {value:1, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+2019-08-01 14:56:11,672 - oppo_R11t - INFO - --> Word.setUp
+2019-08-01 14:56:11,673 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-01 14:56:11,673 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-01 14:56:14,776 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-01 14:56:14,776 - oppo_R11t - INFO -   --> LoginPage.login_operate
+2019-08-01 14:56:16,778 - oppo_R11t - INFO - 	--> LoginPage.input_username
+2019-08-01 14:56:16,818 - oppo_R11t - INFO - 	--> LoginPage.input_password
+2019-08-01 14:56:19,431 - oppo_R11t - INFO - 	--> LoginPage.login_button
+2019-08-01 14:56:22,039 - oppo_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-08-01 14:56:22,040 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-01 14:56:22,148 - oppo_R11t - INFO - <-- Word.setUp, Success
+
+2019-08-01 14:56:22,149 - oppo_R11t - INFO - --> Word.test_study_word
+2019-08-01 14:56:22,149 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 14:56:25,557 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 14:56:25,557 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-01 14:56:25,558 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-01 14:56:25,752 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 14:56:28,674 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-01 14:56:31,115 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-01 14:56:31,254 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-01 14:56:34,059 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-01 14:56:35,384 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 14:56:37,092 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-01 14:56:37,235 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-01 14:56:37,887 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-01 14:56:40,166 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-01 14:56:43,402 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 14:56:44,361 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-01 14:56:44,476 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 14:56:46,185 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 14:56:46,185 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-08-01 14:56:46,380 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_start_page
+2019-08-01 14:56:47,450 - oppo_R11t - INFO - 	--> WordBookRebuildPage.word_start_button
+2019-08-01 14:56:53,545 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 14:56:53,599 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 14:56:53,683 - oppo_R11t - INFO - 	--> ReciteWordPage.word_book_recite_operate
+2019-08-01 14:56:53,683 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 14:56:53,733 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 14:56:53,842 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 14:56:53,842 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 14:56:53,843 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 14:56:53,899 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 14:56:55,320 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 14:56:56,504 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 14:56:58,628 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 14:56:58,807 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 14:56:58,859 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 14:56:58,942 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 14:57:00,215 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 14:57:00,216 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 14:57:00,217 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 14:57:01,412 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 14:57:02,454 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 14:57:04,071 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 14:57:04,450 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 14:57:04,566 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 14:57:04,567 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 14:57:04,567 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 14:57:04,626 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 14:57:05,669 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 14:57:07,484 - oppo_R11t - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-08-01 14:57:07,485 - oppo_R11t - ERROR - 	<-- VocabularyChoose.question_content, WebDriverException, Error
+2019-08-01 14:57:08,093 - oppo_R11t - ERROR - WebDriverException, Message: IMAGE:VocabularyChoose.question_content-20190801145707.png
+
+2019-08-01 14:57:08,094 - oppo_R11t - ERROR - 	<-- VocabGamePage.vocab_apply_game_operate, WebDriverException, Error
+2019-08-01 14:57:08,094 - oppo_R11t - ERROR - WebDriverException, Message: Message: IMAGE:VocabularyChoose.question_content-20190801145707.png
+
+
+2019-08-01 14:57:08,095 - oppo_R11t - ERROR - 	<-- ReciteWordPage.word_book_recite_operate, WebDriverException, Error
+2019-08-01 14:57:08,095 - oppo_R11t - ERROR - WebDriverException, Message: Message: Message: IMAGE:VocabularyChoose.question_content-20190801145707.png
+
+
+
+2019-08-01 14:57:08,096 - oppo_R11t - ERROR - <-- Word.test_study_word, WebDriverException, Error
+
+2019-08-01 14:57:08,096 - oppo_R11t - INFO - --> Word.tearDown
+2019-08-01 14:57:08,097 - oppo_R11t - INFO - <-- Word.tearDown, Success
+

@@ -1,0 +1,957 @@
+2019-08-06 13:14:11,260 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:14:11,262 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:14:11,262 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:14:14,172 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:14:14,172 - MI_5 - INFO -   --> LoginPage.login_operate
+2019-08-06 13:14:16,173 - MI_5 - INFO - 	--> LoginPage.input_username
+2019-08-06 13:14:16,234 - MI_5 - INFO - 	--> LoginPage.input_password
+2019-08-06 13:14:18,554 - MI_5 - INFO - 	--> LoginPage.login_button
+2019-08-06 13:14:21,177 - MI_5 - INFO -   <-- LoginPage.login_operate, Success
+2019-08-06 13:14:21,178 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:14:21,178 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:14:21,179 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:14:21,179 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:14:22,415 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:14:22,416 - MI_5 - INFO - 	--> UserCenterPage.get_user_info
+2019-08-06 13:14:22,416 - MI_5 - INFO - 	--> HomePage.click_tab_profile
+2019-08-06 13:14:22,725 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-06 13:14:25,809 - MI_5 - INFO - 	--> UserCenterPage.nickname
+2019-08-06 13:14:28,356 - MI_5 - INFO - 	--> UserCenterPage.purchase
+2019-08-06 13:14:28,547 - MI_5 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-06 13:14:30,308 - MI_5 - INFO - 	--> UserCenterPage.phone
+2019-08-06 13:14:31,737 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-06 13:14:33,339 - MI_5 - INFO - 	--> UserCenterPage.school_name
+2019-08-06 13:14:33,508 - MI_5 - INFO - 	--> UserCenterPage.setting_up
+2019-08-06 13:14:33,724 - MI_5 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-06 13:14:35,370 - MI_5 - INFO - 	--> UserCenterPage.clear_cache
+2019-08-06 13:14:38,678 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-06 13:14:40,845 - MI_5 - INFO - 	--> HomePage.click_tab_hw
+2019-08-06 13:14:41,051 - MI_5 - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-06 13:14:41,091 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:14:42,885 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:14:42,886 - MI_5 - INFO - 	--> HomePage.click_hk_tab
+2019-08-06 13:14:43,139 - MI_5 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-06 13:14:43,139 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-06 13:14:44,576 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-08-06 13:14:45,568 - MI_5 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-06 13:14:46,732 - MI_5 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-06 13:14:46,732 - MI_5 - INFO - 	--> LibraryGamePage.testbank_type
+2019-08-06 13:14:47,215 - MI_5 - INFO - 	--> LibraryGamePage.testbank_name
+2019-08-06 13:14:47,627 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-06 13:14:47,732 - MI_5 - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-08-06 13:14:48,183 - MI_5 - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-08-06 13:14:48,618 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-08-06 13:14:51,155 - MI_5 - INFO - 	--> LibraryGamePage.play_book_games
+2019-08-06 13:14:51,156 - MI_5 - INFO - 	--> LibraryGamePage.game_name
+2019-08-06 13:14:51,484 - MI_5 - INFO - 	--> FlashCard.play_flash_game
+2019-08-06 13:14:51,485 - MI_5 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-06 13:14:57,030 - MI_5 - INFO - 	--> FlashCardGame.wait_check_copy_page
+2019-08-06 13:14:57,535 - MI_5 - INFO -   --> FlashCard.flash_copy_operate
+2019-08-06 13:14:57,535 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:14:57,637 - MI_5 - INFO - 	--> FlashCardGame.click_voice
+2019-08-06 13:14:57,757 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-06 13:14:57,758 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:14:58,358 - MI_5 - INFO - 	--> FlashCardGame.copy_word
+2019-08-06 13:14:58,458 - MI_5 - INFO - 	--> FlashCardGame.star_button
+2019-08-06 13:14:58,564 - MI_5 - INFO - 	--> FlashCardGame.copy_input
+2019-08-06 13:14:59,159 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:14:59,160 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:14:59,186 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:14:59,699 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:14:59,700 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:14:59,700 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:14:59,720 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:01,118 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:01,118 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:01,119 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:01,141 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:02,090 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:02,091 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:02,091 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:02,118 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:03,231 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:03,231 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:03,248 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:04,251 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:04,252 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:04,276 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:05,312 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:05,312 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:05,313 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:05,341 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:06,304 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:06,304 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:06,305 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:06,340 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:07,385 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:09,386 - MI_5 - INFO - 	--> FlashCardGame.click_voice
+2019-08-06 13:15:10,314 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-06 13:15:10,315 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:15:10,423 - MI_5 - INFO - 	--> FlashCardGame.copy_word
+2019-08-06 13:15:10,564 - MI_5 - INFO - 	--> FlashCardGame.copy_input
+2019-08-06 13:15:10,740 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:10,741 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:10,769 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:11,358 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:11,359 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:11,359 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:11,379 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:12,452 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:12,453 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:12,454 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:12,474 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:13,491 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:13,492 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:13,492 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:13,516 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:14,569 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:14,569 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:14,604 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:15,518 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:15,519 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:15,538 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:16,670 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:18,672 - MI_5 - INFO - 	--> FlashCardGame.copy_word
+2019-08-06 13:15:18,829 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:18,855 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:19,410 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:19,411 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:19,436 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:20,445 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:20,446 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:20,469 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:21,524 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:21,524 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:21,559 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:22,596 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:23,598 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:23,598 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:23,643 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:24,158 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:24,159 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:24,159 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:24,180 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:25,222 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:25,223 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:25,223 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:25,246 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:26,256 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:26,257 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:26,257 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:26,276 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:27,335 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:27,336 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:27,363 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:28,348 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:28,348 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:28,385 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:29,392 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:31,393 - MI_5 - INFO - 	--> FlashCardGame.click_voice
+2019-08-06 13:15:31,522 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-06 13:15:31,522 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:15:32,132 - MI_5 - INFO - 	--> FlashCardGame.copy_word
+2019-08-06 13:15:32,260 - MI_5 - INFO - 	--> FlashCardGame.star_button
+2019-08-06 13:15:32,378 - MI_5 - INFO - 	--> FlashCardGame.copy_input
+2019-08-06 13:15:33,031 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:33,031 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:33,058 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:33,590 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:33,590 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:33,591 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:33,610 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:34,633 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:34,634 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:34,634 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:34,656 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:35,644 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:35,645 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:35,645 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:35,676 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:36,694 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:36,694 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:36,718 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:37,712 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:37,712 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:37,736 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:38,746 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:38,747 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:38,747 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:38,772 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:39,760 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:41,762 - MI_5 - INFO - 	--> FlashCardGame.click_voice
+2019-08-06 13:15:42,422 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-06 13:15:42,422 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:15:42,984 - MI_5 - INFO - 	--> FlashCardGame.copy_word
+2019-08-06 13:15:43,054 - MI_5 - INFO - 	--> FlashCardGame.copy_input
+2019-08-06 13:15:43,166 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:43,167 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:43,187 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:43,623 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:43,624 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:43,624 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:43,645 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:44,537 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:44,538 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:44,538 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:44,563 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:45,663 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:45,664 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:45,664 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:45,683 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:46,788 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:46,788 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:46,805 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:47,775 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:47,776 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:47,798 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:48,778 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:48,778 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:48,779 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:48,800 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:49,725 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:49,725 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:49,726 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:49,744 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:50,724 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:50,724 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:50,725 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:50,742 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:51,765 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:51,766 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:15:51,766 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:15:51,802 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:15:52,793 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:15:54,795 - MI_5 - INFO -   <-- FlashCard.flash_copy_operate, Success
+2019-08-06 13:15:54,799 - MI_5 - INFO -   --> FlashCard.flash_card_result_operate
+2019-08-06 13:15:54,800 - MI_5 - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-08-06 13:15:56,342 - MI_5 - INFO - 	--> FlashCard.study_sum
+2019-08-06 13:15:56,455 - MI_5 - INFO - 	--> FlashCard.get_start_sum
+2019-08-06 13:15:56,455 - MI_5 - INFO - 	--> FlashCard.study_sum
+2019-08-06 13:15:56,549 - MI_5 - INFO - 	--> FlashCard.cancel_or_add_star
+2019-08-06 13:15:56,550 - MI_5 - INFO - 	--> FlashCard.result_words
+2019-08-06 13:15:56,763 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:15:57,314 - MI_5 - INFO - 	--> FlashCard.word_explain
+2019-08-06 13:15:58,045 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:15:59,032 - MI_5 - INFO - 	--> GetAttribute.selected
+2019-08-06 13:15:59,089 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:16:00,016 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:16:00,644 - MI_5 - INFO - 	--> FlashCard.word_explain
+2019-08-06 13:16:02,240 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:16:02,613 - MI_5 - INFO - 	--> GetAttribute.selected
+2019-08-06 13:16:02,698 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:16:03,253 - MI_5 - INFO - 	--> FlashCard.word_explain
+2019-08-06 13:16:03,977 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:16:04,666 - MI_5 - INFO - 	--> GetAttribute.selected
+2019-08-06 13:16:04,714 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:16:07,656 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:16:08,244 - MI_5 - INFO - 	--> FlashCard.word_explain
+2019-08-06 13:16:08,962 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:16:09,802 - MI_5 - INFO - 	--> GetAttribute.selected
+2019-08-06 13:16:09,859 - MI_5 - INFO - 	--> FlashCard.get_start_sum
+2019-08-06 13:16:09,859 - MI_5 - INFO - 	--> FlashCard.study_sum
+2019-08-06 13:16:10,004 - MI_5 - INFO - 	--> FlashCard.study_star_again
+2019-08-06 13:16:10,120 - MI_5 - INFO -   --> Toast.find_toast
+2019-08-06 13:16:10,702 - MI_5 - INFO -   <-- Toast.find_toast, Success
+2019-08-06 13:16:10,703 - MI_5 - INFO - 	--> FlashCard.cancel_or_add_star
+2019-08-06 13:16:10,703 - MI_5 - INFO - 	--> FlashCard.result_words
+2019-08-06 13:16:10,896 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:16:12,202 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:16:13,910 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:16:14,843 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:16:18,747 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:16:19,206 - MI_5 - INFO - 	--> FlashCard.study_star_again
+2019-08-06 13:16:19,990 - MI_5 - INFO -   <-- FlashCard.flash_card_result_operate, Success
+2019-08-06 13:16:19,991 - MI_5 - INFO -   --> FlashCard.flash_copy_operate
+2019-08-06 13:16:19,992 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:16:20,913 - MI_5 - INFO - 	--> FlashCardGame.click_voice
+2019-08-06 13:16:21,028 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-06 13:16:21,029 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:16:21,615 - MI_5 - INFO - 	--> FlashCardGame.copy_word
+2019-08-06 13:16:21,694 - MI_5 - INFO - 	--> FlashCardGame.star_button
+2019-08-06 13:16:21,763 - MI_5 - INFO - 	--> GetAttribute.selected
+2019-08-06 13:16:21,854 - MI_5 - INFO - 	--> FlashCardGame.copy_input
+2019-08-06 13:16:21,993 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:16:21,993 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:16:22,020 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:16:22,536 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:16:22,537 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:16:22,537 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:16:22,558 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:16:23,606 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:16:23,607 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:16:23,607 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:16:23,681 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:16:24,570 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:16:24,570 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:16:24,571 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:16:24,593 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:16:25,677 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:16:25,677 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:16:25,699 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:16:26,627 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:16:26,628 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:16:26,659 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:16:27,613 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:16:27,614 - MI_5 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-06 13:16:27,614 - MI_5 - INFO -   --> Keyboard.games_keyboard
+2019-08-06 13:16:27,651 - MI_5 - INFO - 	--> Keyboard.keyboard_view
+2019-08-06 13:16:28,550 - MI_5 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-06 13:16:30,551 - MI_5 - INFO -   <-- FlashCard.flash_copy_operate, Success
+2019-08-06 13:16:30,554 - MI_5 - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-08-06 13:16:32,615 - MI_5 - INFO - 	--> FlashCard.study_sum
+2019-08-06 13:16:33,924 - MI_5 - INFO - 	--> ResultPage.wait_check_medal_page
+2019-08-06 13:16:44,329 - MI_5 - INFO - 	--> ResultPage.wait_check_result_page
+2019-08-06 13:16:54,694 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-06 13:16:54,823 - MI_5 - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-08-06 13:16:55,388 - MI_5 - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-08-06 13:16:55,831 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-08-06 13:16:57,792 - MI_5 - INFO - 	--> LibraryGamePage.play_book_games
+2019-08-06 13:16:57,795 - MI_5 - INFO - 	--> LibraryGamePage.game_name
+2019-08-06 13:16:58,131 - MI_5 - INFO - 	--> FlashCard.play_flash_game
+2019-08-06 13:16:58,131 - MI_5 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-06 13:16:58,208 - MI_5 - INFO -   --> FlashCard.flash_study_operate
+2019-08-06 13:16:58,209 - MI_5 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-06 13:16:58,296 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:16:58,489 - MI_5 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-06 13:16:58,600 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-06 13:16:58,600 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:16:58,686 - MI_5 - INFO -   --> PublicPage.next_btn_judge
+2019-08-06 13:16:58,687 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:16:58,757 - MI_5 - INFO - 	--> GetAttribute.enabled
+2019-08-06 13:17:00,621 - MI_5 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-06 13:17:00,621 - MI_5 - INFO - 	--> FlashCardGame.click_voice
+2019-08-06 13:17:00,763 - MI_5 - INFO - 	--> FlashCardGame.study_word
+2019-08-06 13:17:01,352 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:17:01,424 - MI_5 - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-06 13:17:01,509 - MI_5 - INFO - 	--> FlashCardGame.study_sentence
+2019-08-06 13:17:01,606 - MI_5 - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-06 13:17:01,723 - MI_5 - INFO - 	--> FlashCardGame.author
+2019-08-06 13:17:01,866 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:17:02,005 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:17:02,638 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:17:02,733 - MI_5 - INFO - 	--> FlashCardGame.star_button
+2019-08-06 13:17:03,482 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:17:04,103 - MI_5 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-06 13:17:04,966 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-06 13:17:04,967 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:17:05,095 - MI_5 - INFO -   --> PublicPage.next_btn_judge
+2019-08-06 13:17:05,095 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:17:05,192 - MI_5 - INFO - 	--> GetAttribute.enabled
+2019-08-06 13:17:06,741 - MI_5 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-06 13:17:06,741 - MI_5 - INFO - 	--> FlashCardGame.click_voice
+2019-08-06 13:17:06,888 - MI_5 - INFO - 	--> FlashCardGame.study_word
+2019-08-06 13:17:07,495 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:17:07,617 - MI_5 - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-06 13:17:07,744 - MI_5 - INFO - 	--> FlashCardGame.study_sentence
+2019-08-06 13:17:07,829 - MI_5 - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-06 13:17:07,994 - MI_5 - INFO - 	--> FlashCardGame.author
+2019-08-06 13:17:08,118 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:17:08,291 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:17:09,014 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:17:09,141 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:17:09,947 - MI_5 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-06 13:17:10,786 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-06 13:17:10,787 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:17:10,930 - MI_5 - INFO -   --> PublicPage.next_btn_judge
+2019-08-06 13:17:10,933 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:17:11,120 - MI_5 - INFO - 	--> GetAttribute.enabled
+2019-08-06 13:17:12,678 - MI_5 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-06 13:17:12,678 - MI_5 - INFO - 	--> FlashCardGame.click_voice
+2019-08-06 13:17:13,360 - MI_5 - INFO - 	--> FlashCardGame.study_word
+2019-08-06 13:17:14,008 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:17:14,094 - MI_5 - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-06 13:17:14,197 - MI_5 - INFO - 	--> FlashCardGame.study_sentence
+2019-08-06 13:17:14,321 - MI_5 - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-06 13:17:14,448 - MI_5 - INFO - 	--> FlashCardGame.author
+2019-08-06 13:17:14,549 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:17:14,664 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:17:15,400 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:17:15,542 - MI_5 - INFO - 	--> FlashCardGame.star_button
+2019-08-06 13:17:16,354 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:17:17,060 - MI_5 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-06 13:17:17,891 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-06 13:17:17,891 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:17:17,997 - MI_5 - INFO -   --> PublicPage.next_btn_judge
+2019-08-06 13:17:18,000 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:17:18,137 - MI_5 - INFO - 	--> GetAttribute.enabled
+2019-08-06 13:17:19,689 - MI_5 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-06 13:17:19,689 - MI_5 - INFO - 	--> FlashCardGame.click_voice
+2019-08-06 13:17:19,839 - MI_5 - INFO - 	--> FlashCardGame.study_word
+2019-08-06 13:17:20,456 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:17:20,521 - MI_5 - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-06 13:17:20,591 - MI_5 - INFO - 	--> FlashCardGame.study_sentence
+2019-08-06 13:17:20,672 - MI_5 - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-06 13:17:20,800 - MI_5 - INFO - 	--> FlashCardGame.author
+2019-08-06 13:17:20,938 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:17:21,141 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:17:21,848 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:17:22,029 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:17:22,820 - MI_5 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-06 13:17:23,603 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-06 13:17:23,603 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:17:23,672 - MI_5 - INFO -   --> PublicPage.next_btn_judge
+2019-08-06 13:17:23,672 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:17:23,720 - MI_5 - INFO - 	--> GetAttribute.enabled
+2019-08-06 13:17:25,279 - MI_5 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-06 13:17:25,279 - MI_5 - INFO - 	--> FlashCardGame.click_voice
+2019-08-06 13:17:25,440 - MI_5 - INFO - 	--> FlashCardGame.study_word
+2019-08-06 13:17:26,020 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:17:26,120 - MI_5 - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-06 13:17:26,189 - MI_5 - INFO - 	--> FlashCardGame.study_sentence
+2019-08-06 13:17:26,294 - MI_5 - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-06 13:17:26,400 - MI_5 - INFO - 	--> FlashCardGame.author
+2019-08-06 13:17:26,502 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:17:26,610 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:17:27,271 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:17:27,378 - MI_5 - INFO - 	--> FlashCardGame.star_button
+2019-08-06 13:17:28,163 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:17:28,881 - MI_5 - INFO -   <-- FlashCard.flash_study_operate, Success
+2019-08-06 13:17:28,882 - MI_5 - INFO -   --> FlashCard.flash_card_result_operate
+2019-08-06 13:17:28,882 - MI_5 - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-08-06 13:17:30,330 - MI_5 - INFO - 	--> FlashCard.study_sum
+2019-08-06 13:17:30,402 - MI_5 - INFO - 	--> FlashCard.get_start_sum
+2019-08-06 13:17:30,403 - MI_5 - INFO - 	--> FlashCard.study_sum
+2019-08-06 13:17:30,531 - MI_5 - INFO - 	--> FlashCard.cancel_or_add_star
+2019-08-06 13:17:30,532 - MI_5 - INFO - 	--> FlashCard.result_words
+2019-08-06 13:17:30,720 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:17:31,257 - MI_5 - INFO - 	--> FlashCard.word_explain
+2019-08-06 13:17:31,945 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:17:33,100 - MI_5 - INFO - 	--> GetAttribute.selected
+2019-08-06 13:17:33,133 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:17:34,319 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:17:34,955 - MI_5 - INFO - 	--> FlashCard.word_explain
+2019-08-06 13:17:36,471 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:17:37,047 - MI_5 - INFO - 	--> GetAttribute.selected
+2019-08-06 13:17:37,145 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:17:37,751 - MI_5 - INFO - 	--> FlashCard.word_explain
+2019-08-06 13:17:38,466 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:17:39,185 - MI_5 - INFO - 	--> GetAttribute.selected
+2019-08-06 13:17:39,234 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:17:40,493 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:17:41,112 - MI_5 - INFO - 	--> FlashCard.word_explain
+2019-08-06 13:17:41,806 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:17:42,598 - MI_5 - INFO - 	--> GetAttribute.selected
+2019-08-06 13:17:44,515 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:17:45,002 - MI_5 - INFO - 	--> FlashCard.word_explain
+2019-08-06 13:17:46,546 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:17:47,081 - MI_5 - INFO - 	--> GetAttribute.selected
+2019-08-06 13:17:47,109 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:17:47,690 - MI_5 - INFO - 	--> FlashCard.get_start_sum
+2019-08-06 13:17:47,691 - MI_5 - INFO - 	--> FlashCard.study_sum
+2019-08-06 13:17:48,346 - MI_5 - INFO - 	--> FlashCard.study_star_again
+2019-08-06 13:17:48,470 - MI_5 - INFO -   --> Toast.find_toast
+2019-08-06 13:17:49,034 - MI_5 - INFO -   <-- Toast.find_toast, Success
+2019-08-06 13:17:49,034 - MI_5 - INFO - 	--> FlashCard.cancel_or_add_star
+2019-08-06 13:17:49,034 - MI_5 - INFO - 	--> FlashCard.result_words
+2019-08-06 13:17:49,252 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:17:50,536 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:17:51,571 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:17:52,411 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:17:54,495 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:17:57,739 - MI_5 - INFO - 	--> FlashCard.word_voice
+2019-08-06 13:17:58,407 - MI_5 - INFO - 	--> FlashCard.word_star
+2019-08-06 13:17:59,141 - MI_5 - INFO - 	--> FlashCard.study_star_again
+2019-08-06 13:17:59,989 - MI_5 - INFO -   <-- FlashCard.flash_card_result_operate, Success
+2019-08-06 13:17:59,990 - MI_5 - INFO -   --> FlashCard.flash_study_operate
+2019-08-06 13:17:59,990 - MI_5 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-06 13:18:00,793 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:18:00,929 - MI_5 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-06 13:18:00,985 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-06 13:18:00,986 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:18:01,078 - MI_5 - INFO -   --> PublicPage.next_btn_judge
+2019-08-06 13:18:01,079 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:18:01,161 - MI_5 - INFO - 	--> GetAttribute.enabled
+2019-08-06 13:18:02,692 - MI_5 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-06 13:18:02,692 - MI_5 - INFO - 	--> FlashCardGame.click_voice
+2019-08-06 13:18:02,773 - MI_5 - INFO - 	--> FlashCardGame.study_word
+2019-08-06 13:18:03,354 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:18:03,427 - MI_5 - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-06 13:18:03,503 - MI_5 - INFO - 	--> FlashCardGame.study_sentence
+2019-08-06 13:18:03,597 - MI_5 - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-06 13:18:03,678 - MI_5 - INFO - 	--> FlashCardGame.author
+2019-08-06 13:18:03,766 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:18:03,927 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:18:04,609 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:18:04,713 - MI_5 - INFO - 	--> FlashCardGame.star_button
+2019-08-06 13:18:05,384 - MI_5 - INFO - 	--> GetAttribute.selected
+2019-08-06 13:18:05,416 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:18:05,548 - MI_5 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-06 13:18:06,359 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-06 13:18:06,360 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-06 13:18:06,463 - MI_5 - INFO -   --> PublicPage.next_btn_judge
+2019-08-06 13:18:06,463 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:18:06,510 - MI_5 - INFO - 	--> GetAttribute.enabled
+2019-08-06 13:18:08,058 - MI_5 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-06 13:18:08,059 - MI_5 - INFO - 	--> FlashCardGame.click_voice
+2019-08-06 13:18:08,159 - MI_5 - INFO - 	--> FlashCardGame.study_word
+2019-08-06 13:18:08,754 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:18:08,804 - MI_5 - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-06 13:18:08,883 - MI_5 - INFO - 	--> FlashCardGame.study_sentence
+2019-08-06 13:18:08,950 - MI_5 - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-06 13:18:09,032 - MI_5 - INFO - 	--> FlashCardGame.author
+2019-08-06 13:18:09,118 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:18:09,254 - MI_5 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-06 13:18:09,934 - MI_5 - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-06 13:18:10,017 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-08-06 13:18:10,768 - MI_5 - INFO -   <-- FlashCard.flash_study_operate, Success
+2019-08-06 13:18:10,768 - MI_5 - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-08-06 13:18:12,349 - MI_5 - INFO - 	--> FlashCard.study_sum
+2019-08-06 13:18:13,639 - MI_5 - INFO - 	--> ResultPage.wait_check_medal_page
+2019-08-06 13:18:24,021 - MI_5 - INFO - 	--> ResultPage.wait_check_result_page
+2019-08-06 13:18:34,102 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-06 13:18:35,405 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-06 13:18:37,964 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:18:37,965 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:18:37,966 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:18:37,966 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:18:37,968 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:18:37,969 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:18:43,116 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:18:43,118 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:18:44,167 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:18:44,167 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:18:44,168 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:18:44,168 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:18:44,169 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:18:45,058 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:18:45,059 - MI_5 - INFO - 	--> UserCenterPage.get_user_info
+2019-08-06 13:18:45,059 - MI_5 - INFO - 	--> HomePage.click_tab_profile
+2019-08-06 13:18:45,326 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-06 13:18:48,438 - MI_5 - INFO - 	--> UserCenterPage.nickname
+2019-08-06 13:18:50,937 - MI_5 - INFO - 	--> UserCenterPage.purchase
+2019-08-06 13:18:51,115 - MI_5 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-06 13:18:52,771 - MI_5 - INFO - 	--> UserCenterPage.phone
+2019-08-06 13:18:54,107 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-06 13:18:55,713 - MI_5 - INFO - 	--> UserCenterPage.school_name
+2019-08-06 13:18:55,908 - MI_5 - INFO - 	--> UserCenterPage.setting_up
+2019-08-06 13:18:56,133 - MI_5 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-06 13:18:57,733 - MI_5 - INFO - 	--> UserCenterPage.clear_cache
+2019-08-06 13:19:00,945 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-06 13:19:02,614 - MI_5 - INFO - 	--> HomePage.click_tab_hw
+2019-08-06 13:19:03,226 - MI_5 - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-06 13:19:03,417 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:05,377 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:05,378 - MI_5 - INFO - 	--> HomePage.click_hk_tab
+2019-08-06 13:19:05,661 - MI_5 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-06 13:19:05,661 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-06 13:19:07,053 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-08-06 13:19:07,923 - MI_5 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-06 13:19:09,283 - MI_5 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-06 13:19:09,284 - MI_5 - INFO - 	--> LibraryGamePage.testbank_type
+2019-08-06 13:19:09,752 - MI_5 - INFO - 	--> LibraryGamePage.testbank_name
+2019-08-06 13:19:10,067 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-06 13:19:10,164 - MI_5 - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-08-06 13:19:10,675 - MI_5 - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-08-06 13:19:11,080 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-08-06 13:19:12,004 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-06 13:19:12,017 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:19:12,017 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:19:12,018 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:19:12,018 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:19:12,018 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:19:12,018 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:19:12,027 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:19:12,027 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:12,035 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:12,036 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:19:12,036 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:19:13,071 - MI_5 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s 2fb1d8b9 shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: 'error: device '2fb1d8b9' not found'; Code: '1'
+
+2019-08-06 13:19:13,072 - MI_5 - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-06 13:19:13,081 - MI_5 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8200
+
+2019-08-06 13:19:13,082 - MI_5 - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 13:19:13,087 - MI_5 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8200
+
+2019-08-06 13:19:13,087 - MI_5 - ERROR - <-- FlashCard.setUp, WebDriverException, Error
+
+2019-08-06 13:19:13,107 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:19:13,107 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:19:13,107 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:19:13,116 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:19:13,116 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:13,124 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:13,125 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:19:13,125 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:19:13,854 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:19:21,530 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:21,541 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:21,541 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:19:21,551 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:19:21,552 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:19:21,552 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:19:21,552 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:19:21,553 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:21,560 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:21,561 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:19:21,561 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:19:21,562 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:19:21,562 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:19:21,562 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:19:21,562 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:19:21,571 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:19:21,572 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:21,579 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:21,579 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:19:21,580 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:19:22,201 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:19:30,954 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:30,976 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:30,976 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:19:30,985 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:19:30,985 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:19:30,985 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:19:30,986 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:19:30,986 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:31,000 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:31,001 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:19:31,001 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:19:31,001 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:19:31,002 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:19:31,004 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:19:31,004 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:19:31,017 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:19:31,017 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:31,027 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:31,027 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:19:31,027 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:19:31,679 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:19:39,406 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:39,421 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:39,421 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:19:39,431 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:19:39,431 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:19:39,432 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:19:39,432 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:19:39,432 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:39,441 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:39,441 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:19:39,441 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:19:39,442 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:19:39,442 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:19:39,442 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:19:39,442 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:19:39,452 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:19:39,453 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:39,461 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:39,461 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:19:39,462 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:19:40,114 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:19:47,746 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:47,757 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:47,757 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:19:47,765 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:19:47,765 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:19:47,765 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:19:47,766 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:19:47,766 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:47,775 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:47,775 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:19:47,776 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:19:47,776 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:19:47,776 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:19:47,777 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:19:47,777 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:19:47,785 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:19:47,785 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:47,793 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:47,794 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:19:47,794 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:19:48,433 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:19:56,040 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:56,070 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:56,071 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:19:56,083 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:19:56,083 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:19:56,084 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:19:56,084 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:19:56,084 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:56,136 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:56,136 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:19:56,137 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:19:56,137 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:19:56,137 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:19:56,137 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:19:56,138 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:19:56,146 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:19:56,146 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:19:56,154 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:19:56,155 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:19:56,155 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:19:56,786 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:20:04,476 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:04,493 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:04,493 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:04,504 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:04,505 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:20:04,505 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:20:04,505 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:20:04,505 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:04,514 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:04,514 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:20:04,514 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:20:04,515 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:20:04,515 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:20:04,515 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:20:04,515 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:04,526 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:04,526 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:04,536 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:04,536 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:20:04,537 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:20:05,127 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:20:12,772 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:12,788 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:12,788 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:12,800 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:12,800 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:20:12,801 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:20:12,801 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:20:12,802 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:12,813 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:12,814 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:20:12,814 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:20:12,814 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:20:12,815 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:20:12,815 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:20:12,816 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:12,826 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:12,826 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:12,838 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:12,839 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:20:12,839 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:20:13,503 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:20:21,183 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:21,197 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:21,197 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:21,206 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:21,207 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:20:21,207 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:20:21,207 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:20:21,207 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:21,216 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:21,216 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:20:21,216 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:20:21,217 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:20:21,217 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:20:21,217 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:20:21,218 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:21,227 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:21,227 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:21,236 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:21,236 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:20:21,237 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:20:21,922 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:20:29,535 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:29,548 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:29,548 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:29,558 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:29,558 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:20:29,558 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:20:29,559 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:20:29,559 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:29,569 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:29,569 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:20:29,570 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:20:29,570 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:20:29,570 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:20:29,571 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:20:29,571 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:29,579 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:29,579 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:29,588 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:29,589 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:20:29,589 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:20:30,233 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:20:37,903 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:37,918 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:37,918 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:37,927 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:37,928 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:20:37,928 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:20:37,929 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:20:37,929 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:37,938 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:37,939 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:20:37,939 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:20:37,939 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:20:37,940 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:20:37,940 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:20:37,940 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:37,950 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:37,951 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:37,961 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:37,961 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:20:37,961 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:20:38,601 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:20:46,209 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:46,224 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:46,225 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:46,234 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:46,235 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:20:46,235 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:20:46,235 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:20:46,235 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:46,245 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:46,245 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:20:46,246 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:20:46,246 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:20:46,246 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:20:46,247 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:20:46,247 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:46,254 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:46,255 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:46,263 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:46,264 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:20:46,264 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:20:46,912 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:20:54,586 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:54,599 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:54,599 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:54,610 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:54,611 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:20:54,611 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:20:54,612 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:20:54,612 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:54,621 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:54,622 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:20:54,622 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:20:54,622 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:20:54,623 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:20:54,623 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:20:54,624 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:20:54,638 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:20:54,641 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:20:54,667 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:20:54,668 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:20:54,668 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:20:55,290 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:21:02,803 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:21:02,814 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:21:02,815 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:21:02,824 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:21:02,824 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:21:02,825 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:21:02,825 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:21:02,825 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:21:02,834 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:21:02,835 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:21:02,835 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:21:02,835 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:21:02,836 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:21:02,836 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:21:02,836 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:21:02,845 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:21:02,846 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:21:02,856 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:21:02,856 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:21:02,857 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:21:03,538 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:21:11,125 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:21:11,139 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:21:11,139 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:21:11,151 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:21:11,151 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:21:11,151 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:21:11,152 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:21:11,152 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:21:11,166 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:21:11,167 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:21:11,167 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:21:11,168 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:21:11,168 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 13:21:11,169 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:21:11,169 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:21:11,182 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:21:11,182 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:21:11,190 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:21:11,191 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:21:11,191 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:21:11,822 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:21:19,385 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:21:19,412 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:21:19,414 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:21:19,647 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:21:19,647 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:21:19,648 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 13:21:19,648 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 13:21:19,648 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:21:19,660 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:21:19,661 - MI_5 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 13:21:19,661 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 13:21:19,662 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 13:21:19,662 - MI_5 - INFO - --> WKGame.setUp
+2019-08-06 13:21:19,662 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 13:21:19,663 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:21:19,672 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:21:19,672 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:21:19,683 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:21:19,683 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 13:21:19,684 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 13:21:20,345 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 13:21:28,239 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:21:28,252 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:21:28,253 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 13:21:28,262 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 13:21:28,262 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 13:21:28,263 - MI_5 - INFO - <-- WKGame.setUp, Success
+
+2019-08-06 13:21:28,263 - MI_5 - INFO - --> WKGame.test_wk_game
+2019-08-06 13:21:28,263 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 13:21:28,271 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 13:21:28,272 - MI_5 - INFO - <-- WKGame.test_wk_game, Success
+
+2019-08-06 13:21:28,272 - MI_5 - INFO - --> WKGame.tearDown
+2019-08-06 13:21:28,273 - MI_5 - INFO - <-- WKGame.tearDown, Success
+

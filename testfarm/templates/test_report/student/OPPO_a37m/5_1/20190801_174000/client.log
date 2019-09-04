@@ -1,0 +1,86 @@
+2019-08-01 17:40:20,857 - OPPO_a37m - INFO - --> Word.setUp
+2019-08-01 17:40:20,858 - OPPO_a37m - INFO -   --> LoginPage.app_status
+2019-08-01 17:40:20,858 - OPPO_a37m - INFO -   --> LoginPage.wait_check_page
+2019-08-01 17:40:24,333 - OPPO_a37m - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-01 17:40:24,334 - OPPO_a37m - INFO -   --> LoginPage.login_operate
+2019-08-01 17:40:26,335 - OPPO_a37m - INFO - 	--> LoginPage.input_username
+2019-08-01 17:40:28,016 - OPPO_a37m - INFO - 	--> LoginPage.input_password
+2019-08-01 17:40:40,119 - OPPO_a37m - INFO - 	--> LoginPage.login_button
+2019-08-01 17:40:48,576 - OPPO_a37m - INFO -   <-- LoginPage.login_operate, Success
+2019-08-01 17:40:48,577 - OPPO_a37m - INFO -   <-- LoginPage.app_status, Success
+2019-08-01 17:40:48,651 - OPPO_a37m - INFO - <-- Word.setUp, Success
+
+2019-08-01 17:40:48,651 - OPPO_a37m - INFO - --> Word.test_study_word
+2019-08-01 17:40:48,652 - OPPO_a37m - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 17:40:50,593 - OPPO_a37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 17:40:50,593 - OPPO_a37m - INFO - 	--> UserCenterPage.get_user_info
+2019-08-01 17:40:50,594 - OPPO_a37m - INFO - 	--> HomePage.click_tab_profile
+2019-08-01 17:40:56,415 - OPPO_a37m - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 17:41:01,072 - OPPO_a37m - INFO - 	--> UserCenterPage.nickname
+2019-08-01 17:41:07,807 - OPPO_a37m - INFO - 	--> UserCenterPage.purchase
+2019-08-01 17:41:11,903 - OPPO_a37m - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-01 17:41:13,485 - OPPO_a37m - INFO - 	--> UserCenterPage.phone
+2019-08-01 17:41:22,907 - OPPO_a37m - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 17:41:25,388 - OPPO_a37m - INFO - 	--> UserCenterPage.school_name
+2019-08-01 17:41:29,192 - OPPO_a37m - INFO - 	--> UserCenterPage.setting_up
+2019-08-01 17:41:35,086 - OPPO_a37m - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-01 17:41:37,218 - OPPO_a37m - INFO - 	--> UserCenterPage.clear_cache
+2019-08-01 17:41:50,083 - OPPO_a37m - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 17:41:53,209 - OPPO_a37m - INFO - 	--> HomePage.click_tab_hw
+2019-08-01 17:41:58,005 - OPPO_a37m - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 17:42:01,562 - OPPO_a37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 17:42:01,563 - OPPO_a37m - INFO - 	--> HomePage.click_hk_tab
+2019-08-01 17:42:06,104 - OPPO_a37m - INFO - 	--> WordBookRebuildPage.wait_check_start_page
+2019-08-01 17:42:09,197 - OPPO_a37m - INFO - 	--> WordBookRebuildPage.word_start_button
+2019-08-01 17:42:20,407 - OPPO_a37m - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 17:42:21,742 - OPPO_a37m - INFO - 	--> PublicElementPage.game_title
+2019-08-01 17:42:25,704 - OPPO_a37m - INFO - 	--> ReciteWordPage.word_book_recite_operate
+2019-08-01 17:42:25,704 - OPPO_a37m - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 17:42:28,698 - OPPO_a37m - INFO - 	--> PublicElementPage.game_title
+2019-08-01 17:42:33,755 - OPPO_a37m - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 17:42:33,755 - OPPO_a37m - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 17:42:33,756 - OPPO_a37m - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 17:42:36,781 - OPPO_a37m - INFO - 	--> GetAttribute.enabled
+2019-08-01 17:42:40,801 - OPPO_a37m - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 17:42:47,837 - OPPO_a37m - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 17:42:54,951 - OPPO_a37m - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 17:42:58,501 - OPPO_a37m - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 17:43:02,114 - OPPO_a37m - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 17:43:06,133 - OPPO_a37m - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 17:43:18,196 - OPPO_a37m - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 17:43:18,198 - OPPO_a37m - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 17:43:18,199 - OPPO_a37m - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 17:43:21,280 - OPPO_a37m - INFO - 	--> GetAttribute.enabled
+2019-08-01 17:43:25,575 - OPPO_a37m - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 17:43:31,390 - OPPO_a37m - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 17:43:33,927 - OPPO_a37m - INFO - 	--> PublicElementPage.game_title
+2019-08-01 17:43:38,955 - OPPO_a37m - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 17:43:38,956 - OPPO_a37m - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 17:43:38,956 - OPPO_a37m - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 17:43:42,012 - OPPO_a37m - INFO - 	--> GetAttribute.enabled
+2019-08-01 17:43:45,481 - OPPO_a37m - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 17:43:51,105 - OPPO_a37m - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 17:43:58,532 - OPPO_a37m - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 17:44:02,177 - OPPO_a37m - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 17:44:04,614 - OPPO_a37m - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 17:44:08,648 - OPPO_a37m - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 17:44:17,787 - OPPO_a37m - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 17:44:17,787 - OPPO_a37m - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 17:44:17,788 - OPPO_a37m - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 17:44:18,908 - OPPO_a37m - INFO - 	--> GetAttribute.enabled
+2019-08-01 17:44:21,918 - OPPO_a37m - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 17:44:28,457 - OPPO_a37m - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 17:44:30,511 - OPPO_a37m - INFO - 	--> PublicElementPage.game_title
+2019-08-01 17:44:31,091 - OPPO_a37m - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-08-01 17:44:31,092 - OPPO_a37m - ERROR - 	<-- PublicElementPage.game_title, WebDriverException, Error
+2019-08-01 17:44:31,107 - OPPO_a37m - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-08-01 17:44:31,107 - OPPO_a37m - ERROR - 	<-- ReciteWordPage.word_book_recite_operate, WebDriverException, Error
+2019-08-01 17:44:31,116 - OPPO_a37m - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-08-01 17:44:31,116 - OPPO_a37m - ERROR - <-- Word.test_study_word, WebDriverException, Error
+
+2019-08-01 17:44:31,125 - OPPO_a37m - INFO - --> Word.tearDown
+2019-08-01 17:44:31,126 - OPPO_a37m - INFO - <-- Word.tearDown, Success
+

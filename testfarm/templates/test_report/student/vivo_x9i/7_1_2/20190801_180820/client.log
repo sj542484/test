@@ -1,0 +1,793 @@
+2019-08-01 18:08:38,492 - vivo_x9i - INFO - --> Word.setUp
+2019-08-01 18:08:38,493 - vivo_x9i - INFO -   --> LoginPage.app_status
+2019-08-01 18:08:38,494 - vivo_x9i - INFO -   --> LoginPage.wait_check_page
+2019-08-01 18:08:41,145 - vivo_x9i - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-01 18:08:41,145 - vivo_x9i - INFO -   --> LoginPage.login_operate
+2019-08-01 18:08:43,147 - vivo_x9i - INFO - 	--> LoginPage.input_username
+2019-08-01 18:08:43,200 - vivo_x9i - INFO - 	--> LoginPage.input_password
+2019-08-01 18:08:45,775 - vivo_x9i - INFO - 	--> LoginPage.login_button
+2019-08-01 18:08:48,368 - vivo_x9i - INFO -   <-- LoginPage.login_operate, Success
+2019-08-01 18:08:48,369 - vivo_x9i - INFO -   <-- LoginPage.app_status, Success
+2019-08-01 18:08:48,434 - vivo_x9i - INFO - <-- Word.setUp, Success
+
+2019-08-01 18:08:48,434 - vivo_x9i - INFO - --> Word.test_study_word
+2019-08-01 18:08:48,435 - vivo_x9i - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 18:08:49,042 - vivo_x9i - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 18:08:49,043 - vivo_x9i - INFO - 	--> UserCenterPage.get_user_info
+2019-08-01 18:08:49,045 - vivo_x9i - INFO - 	--> HomePage.click_tab_profile
+2019-08-01 18:08:49,205 - vivo_x9i - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 18:08:52,090 - vivo_x9i - INFO - 	--> UserCenterPage.nickname
+2019-08-01 18:08:54,431 - vivo_x9i - INFO - 	--> UserCenterPage.purchase
+2019-08-01 18:08:54,532 - vivo_x9i - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-01 18:08:57,406 - vivo_x9i - INFO - 	--> UserCenterPage.phone
+2019-08-01 18:08:58,668 - vivo_x9i - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 18:09:00,818 - vivo_x9i - INFO - 	--> UserCenterPage.school_name
+2019-08-01 18:09:00,954 - vivo_x9i - INFO - 	--> UserCenterPage.setting_up
+2019-08-01 18:09:01,090 - vivo_x9i - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-01 18:09:02,714 - vivo_x9i - INFO - 	--> UserCenterPage.clear_cache
+2019-08-01 18:09:06,539 - vivo_x9i - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 18:09:07,938 - vivo_x9i - INFO - 	--> HomePage.click_tab_hw
+2019-08-01 18:09:09,414 - vivo_x9i - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 18:09:09,981 - vivo_x9i - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 18:09:09,981 - vivo_x9i - INFO - 	--> HomePage.click_hk_tab
+2019-08-01 18:09:10,119 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_start_page
+2019-08-01 18:09:11,329 - vivo_x9i - INFO - 	--> WordBookRebuildPage.word_start_button
+2019-08-01 18:09:17,392 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:09:17,442 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:09:17,513 - vivo_x9i - INFO - 	--> ReciteWordPage.word_book_recite_operate
+2019-08-01 18:09:17,514 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:09:17,557 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:09:17,634 - vivo_x9i - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 18:09:17,635 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:09:17,635 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:09:17,677 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:09:19,206 - vivo_x9i - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 18:09:20,332 - vivo_x9i - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 18:09:22,427 - vivo_x9i - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 18:09:22,874 - vivo_x9i - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 18:09:22,924 - vivo_x9i - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 18:09:22,997 - vivo_x9i - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 18:09:24,245 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:09:24,246 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:09:24,247 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:09:24,849 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:09:27,827 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:09:29,418 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:09:29,465 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:09:29,563 - vivo_x9i - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 18:09:29,564 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:09:29,564 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:09:29,614 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:09:31,142 - vivo_x9i - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 18:09:32,295 - vivo_x9i - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 18:09:34,371 - vivo_x9i - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 18:09:34,454 - vivo_x9i - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 18:09:34,499 - vivo_x9i - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 18:09:34,550 - vivo_x9i - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 18:09:35,714 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:09:35,714 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:09:35,715 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:09:35,765 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:09:37,293 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:09:39,663 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:09:39,719 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:09:39,821 - vivo_x9i - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 18:09:39,822 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:09:39,822 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:09:39,871 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:09:41,402 - vivo_x9i - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 18:09:42,566 - vivo_x9i - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 18:09:44,674 - vivo_x9i - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 18:09:45,491 - vivo_x9i - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 18:09:45,540 - vivo_x9i - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 18:09:45,630 - vivo_x9i - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 18:09:46,884 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:09:46,885 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:09:46,886 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:09:46,934 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:09:48,462 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:09:50,057 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:09:50,108 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:09:50,211 - vivo_x9i - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 18:09:50,211 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:09:50,212 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:09:50,256 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:09:51,783 - vivo_x9i - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 18:09:53,043 - vivo_x9i - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 18:09:55,135 - vivo_x9i - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 18:09:55,199 - vivo_x9i - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 18:09:55,247 - vivo_x9i - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 18:09:55,325 - vivo_x9i - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 18:09:56,447 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:09:56,447 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:09:56,448 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:09:56,500 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:09:58,028 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:09:59,618 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:09:59,668 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:09:59,752 - vivo_x9i - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 18:09:59,752 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:09:59,753 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:09:59,789 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:10:01,319 - vivo_x9i - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 18:10:02,434 - vivo_x9i - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 18:10:04,521 - vivo_x9i - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 18:10:04,595 - vivo_x9i - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 18:10:04,639 - vivo_x9i - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 18:10:04,689 - vivo_x9i - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 18:10:05,900 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:10:05,901 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:10:05,902 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:06,933 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:10:08,463 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:10,053 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:10:10,099 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:10:10,175 - vivo_x9i - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 18:10:10,175 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:10:10,175 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:10,211 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:10:11,742 - vivo_x9i - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 18:10:12,878 - vivo_x9i - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 18:10:14,938 - vivo_x9i - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 18:10:15,973 - vivo_x9i - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 18:10:16,020 - vivo_x9i - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 18:10:16,093 - vivo_x9i - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 18:10:17,220 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:10:17,221 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:10:17,221 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:17,273 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:10:18,804 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:20,396 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:10:20,438 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:10:20,506 - vivo_x9i - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 18:10:20,506 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:10:20,507 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:20,542 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:10:22,069 - vivo_x9i - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 18:10:23,200 - vivo_x9i - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 18:10:25,288 - vivo_x9i - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 18:10:25,365 - vivo_x9i - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 18:10:25,415 - vivo_x9i - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 18:10:25,967 - vivo_x9i - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 18:10:27,204 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:10:27,205 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:10:27,206 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:27,980 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:10:30,506 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:32,113 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:10:32,159 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:10:32,227 - vivo_x9i - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 18:10:32,227 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:10:32,227 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:32,261 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:10:33,789 - vivo_x9i - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 18:10:34,895 - vivo_x9i - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 18:10:36,957 - vivo_x9i - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 18:10:37,033 - vivo_x9i - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 18:10:37,068 - vivo_x9i - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 18:10:37,123 - vivo_x9i - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 18:10:38,262 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:10:38,263 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:10:38,263 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:38,310 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:10:39,837 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:41,429 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:10:41,480 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:10:41,572 - vivo_x9i - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 18:10:41,573 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:10:41,573 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:41,618 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:10:43,143 - vivo_x9i - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 18:10:44,253 - vivo_x9i - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 18:10:46,340 - vivo_x9i - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 18:10:46,417 - vivo_x9i - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 18:10:46,466 - vivo_x9i - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 18:10:46,539 - vivo_x9i - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 18:10:47,739 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:10:47,740 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:10:47,740 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:47,788 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:10:49,315 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:50,886 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:10:51,536 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:10:51,610 - vivo_x9i - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 18:10:51,610 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:10:51,610 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:51,665 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:10:53,196 - vivo_x9i - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 18:10:54,618 - vivo_x9i - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 18:10:56,692 - vivo_x9i - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 18:10:56,770 - vivo_x9i - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 18:10:56,816 - vivo_x9i - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 18:10:56,888 - vivo_x9i - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 18:10:58,657 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:10:58,658 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:10:58,659 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:10:58,711 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:11:00,606 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:11:02,216 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:11:02,266 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:11:02,358 - vivo_x9i - INFO - 	--> SpellingWord.explain
+2019-08-01 18:11:02,423 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:11:02,423 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:11:03,551 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:11:05,158 - vivo_x9i - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 18:11:05,159 - vivo_x9i - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 18:11:05,160 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:11:05,161 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:11:06,543 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:11:08,072 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:11:08,104 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:11:08,104 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:11:11,154 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:11:12,733 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:11:16,098 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:11:17,623 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:11:17,665 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:11:17,665 - vivo_x9i - INFO -   --> SpellingWord.dictation_word
+2019-08-01 18:11:17,738 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 18:11:17,739 - vivo_x9i - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 18:11:18,739 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:11:18,764 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:11:19,116 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:11:19,116 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:11:19,136 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:11:19,924 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:11:19,925 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:11:19,944 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:11:20,741 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:11:20,742 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:11:20,763 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:11:21,865 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:11:21,865 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:11:21,887 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:11:22,697 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:11:22,697 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:11:22,718 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:11:23,514 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:11:23,514 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:11:23,534 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:11:25,308 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:11:25,309 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:11:25,329 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:11:26,417 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:11:26,418 - vivo_x9i - INFO - 	--> SpellingWord.finish_word
+2019-08-01 18:11:27,618 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:11:27,618 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:11:27,619 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:11:28,670 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:11:30,557 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:11:33,129 - vivo_x9i - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 18:11:33,589 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:11:33,589 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:11:33,590 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:11:33,638 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:11:35,175 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:11:36,763 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:11:36,813 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:11:36,916 - vivo_x9i - INFO - 	--> SpellingWord.explain
+2019-08-01 18:11:37,014 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:11:37,015 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:11:38,058 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:11:39,628 - vivo_x9i - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 18:11:39,629 - vivo_x9i - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 18:11:39,629 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:11:39,630 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:11:40,676 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:11:42,576 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:11:42,630 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:11:42,631 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:11:45,690 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:11:47,262 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:11:50,310 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:11:52,149 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:11:52,194 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:11:52,194 - vivo_x9i - INFO -   --> SpellingWord.dictation_word
+2019-08-01 18:11:52,267 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 18:11:52,267 - vivo_x9i - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 18:11:53,268 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:11:53,290 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:11:53,631 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:11:53,632 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:11:53,653 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:11:55,383 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:11:55,383 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:11:55,403 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:11:56,225 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:11:56,226 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:11:56,252 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:11:57,039 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:11:57,039 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:11:57,060 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:11:58,380 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:11:58,380 - vivo_x9i - INFO - 	--> SpellingWord.finish_word
+2019-08-01 18:11:59,221 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:11:59,222 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:11:59,222 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:12:00,648 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:12:02,181 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:12:05,167 - vivo_x9i - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 18:12:05,222 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:12:05,223 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:12:05,223 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:12:05,270 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:12:06,798 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:12:08,382 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:12:08,427 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:12:08,509 - vivo_x9i - INFO - 	--> SpellingWord.explain
+2019-08-01 18:12:08,605 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:12:08,606 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:12:09,659 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:12:11,211 - vivo_x9i - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 18:12:11,212 - vivo_x9i - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 18:12:11,213 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:12:11,213 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:12:12,629 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:12:14,163 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:12:14,197 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:12:14,197 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:12:17,244 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:12:18,811 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:12:21,860 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:12:23,388 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:12:23,433 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:12:23,433 - vivo_x9i - INFO -   --> SpellingWord.dictation_word
+2019-08-01 18:12:23,498 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 18:12:23,499 - vivo_x9i - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 18:12:24,500 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:12:24,523 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:12:24,950 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:12:24,951 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:12:24,969 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:12:25,756 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:12:25,757 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:12:25,779 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:12:26,586 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:12:26,586 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:12:26,610 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:12:27,936 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:12:27,937 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:12:27,957 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:12:28,762 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:12:28,763 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:12:28,785 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:12:29,535 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:12:29,536 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:12:29,554 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:12:31,437 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:12:31,437 - vivo_x9i - INFO - 	--> SpellingWord.finish_word
+2019-08-01 18:12:31,994 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:12:31,994 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:12:31,995 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:12:33,649 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:12:35,181 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:12:38,200 - vivo_x9i - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 18:12:38,243 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:12:38,243 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:12:38,243 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:12:38,271 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:12:39,798 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:12:41,367 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:12:41,413 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:12:41,507 - vivo_x9i - INFO - 	--> SpellingWord.explain
+2019-08-01 18:12:41,587 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:12:41,587 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:12:42,665 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:12:44,300 - vivo_x9i - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 18:12:44,302 - vivo_x9i - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 18:12:44,302 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:12:44,302 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:12:45,665 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:12:47,197 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:12:47,245 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:12:47,245 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:12:50,291 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:12:52,323 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:12:55,370 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:12:56,899 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:12:56,946 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:12:56,947 - vivo_x9i - INFO -   --> SpellingWord.dictation_word
+2019-08-01 18:12:57,018 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 18:12:57,019 - vivo_x9i - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 18:12:58,021 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:12:58,042 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:12:58,350 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:12:58,351 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:12:58,368 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:12:59,165 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:12:59,166 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:12:59,186 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:12:59,981 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:12:59,981 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:12:59,997 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:13:00,958 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:13:00,958 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:13:00,979 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:13:01,778 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:13:01,778 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:13:01,795 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:13:02,579 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:13:02,580 - vivo_x9i - INFO - 	--> SpellingWord.finish_word
+2019-08-01 18:13:03,715 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:13:03,716 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:13:03,716 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:13:04,762 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:13:06,666 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:13:09,254 - vivo_x9i - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 18:13:09,681 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:13:09,682 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:13:09,682 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:13:09,733 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:13:11,320 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:13:12,905 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:13:12,949 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:13:13,042 - vivo_x9i - INFO - 	--> SpellingWord.explain
+2019-08-01 18:13:13,135 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:13:13,137 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:13:14,192 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:13:15,739 - vivo_x9i - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 18:13:15,739 - vivo_x9i - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 18:13:15,740 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:13:15,740 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:13:16,787 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:13:18,671 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:13:18,723 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:13:18,724 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:13:21,774 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:13:23,340 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:13:26,384 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:13:27,910 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:13:27,953 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:13:27,954 - vivo_x9i - INFO -   --> SpellingWord.dictation_word
+2019-08-01 18:13:28,026 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 18:13:28,026 - vivo_x9i - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 18:13:29,028 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:13:29,049 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:13:29,381 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:13:29,381 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:13:29,399 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:13:30,201 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:13:30,202 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:13:30,224 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:13:31,021 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:13:31,021 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:13:31,038 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:13:31,846 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:13:31,846 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:13:31,865 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:13:32,666 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:13:32,666 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:13:32,688 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:13:34,020 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:13:34,021 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:13:34,036 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:13:34,821 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:13:34,821 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:13:34,845 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:13:35,644 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:13:35,644 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:13:35,662 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:13:37,005 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:13:37,005 - vivo_x9i - INFO - 	--> SpellingWord.finish_word
+2019-08-01 18:13:37,561 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:13:37,562 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:13:37,562 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:13:38,610 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:13:40,137 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:13:42,720 - vivo_x9i - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 18:13:42,780 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:13:42,780 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:13:42,781 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:13:42,808 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:13:44,335 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:13:45,909 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:13:45,954 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:13:46,044 - vivo_x9i - INFO - 	--> SpellingWord.explain
+2019-08-01 18:13:46,137 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:13:46,138 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:13:47,190 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:13:48,733 - vivo_x9i - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 18:13:48,734 - vivo_x9i - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 18:13:48,734 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:13:48,734 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:13:49,781 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:13:51,709 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:13:51,755 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:13:51,756 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:13:54,800 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:13:56,367 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:13:59,419 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:14:01,418 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:14:01,463 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:14:01,463 - vivo_x9i - INFO -   --> SpellingWord.dictation_word
+2019-08-01 18:14:01,532 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 18:14:01,533 - vivo_x9i - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 18:14:02,534 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:02,555 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:02,879 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:02,879 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:02,895 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:04,024 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:04,024 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:04,041 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:04,862 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:04,863 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:04,880 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:05,707 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:05,707 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:05,727 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:07,004 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:07,004 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:07,026 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:07,822 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:07,823 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:07,840 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:08,639 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:08,639 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:08,656 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:09,746 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:09,747 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:09,767 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:10,744 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:10,745 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:10,766 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:11,539 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:11,540 - vivo_x9i - INFO - 	--> SpellingWord.finish_word
+2019-08-01 18:14:12,093 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:14:12,093 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:14:12,094 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:14:13,137 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:14:14,665 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:14:17,281 - vivo_x9i - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 18:14:17,476 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:14:17,476 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:14:17,476 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:14:17,519 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:14:19,049 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:14:20,632 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:14:20,678 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:14:20,769 - vivo_x9i - INFO - 	--> SpellingWord.explain
+2019-08-01 18:14:20,859 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:14:20,860 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:14:21,904 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:14:23,521 - vivo_x9i - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 18:14:23,522 - vivo_x9i - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 18:14:23,522 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:14:23,522 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:14:24,753 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:14:26,476 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:14:26,521 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:14:26,522 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:14:29,569 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:14:31,130 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:14:34,179 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:14:35,707 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:14:35,753 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:14:35,753 - vivo_x9i - INFO -   --> SpellingWord.dictation_word
+2019-08-01 18:14:35,825 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 18:14:35,825 - vivo_x9i - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 18:14:36,826 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:36,845 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:37,188 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:37,189 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:37,208 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:38,002 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:38,002 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:38,020 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:38,826 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:38,826 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:38,845 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:40,064 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:40,065 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:14:40,084 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:14:40,868 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:14:40,869 - vivo_x9i - INFO - 	--> SpellingWord.finish_word
+2019-08-01 18:14:41,537 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:14:41,537 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:14:41,538 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:14:42,773 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:14:44,498 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:14:47,315 - vivo_x9i - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 18:14:47,535 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:14:47,535 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:14:47,535 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:14:47,577 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:14:49,106 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:14:50,692 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:14:50,735 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:14:50,808 - vivo_x9i - INFO - 	--> SpellingWord.explain
+2019-08-01 18:14:50,939 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:14:50,940 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:14:51,983 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:14:53,536 - vivo_x9i - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 18:14:53,537 - vivo_x9i - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 18:14:53,537 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:14:53,537 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:14:54,789 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:14:56,313 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:14:56,359 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:14:56,360 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:14:59,553 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:15:01,125 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:15:04,566 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:15:06,776 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:15:06,820 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:15:06,820 - vivo_x9i - INFO -   --> SpellingWord.dictation_word
+2019-08-01 18:15:06,892 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 18:15:06,892 - vivo_x9i - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 18:15:07,894 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:15:07,915 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:15:08,268 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:15:08,269 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:15:08,286 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:15:09,080 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:15:09,080 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:15:09,097 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:15:10,082 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:15:10,083 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:15:10,097 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:15:10,905 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:15:10,906 - vivo_x9i - INFO - 	--> SpellingWord.finish_word
+2019-08-01 18:15:11,457 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:15:11,458 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:15:11,458 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:15:12,812 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:15:14,561 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:15:17,317 - vivo_x9i - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 18:15:17,367 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:15:17,370 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:15:17,370 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:15:17,415 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:15:18,942 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:15:20,530 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:15:20,579 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:15:20,668 - vivo_x9i - INFO - 	--> SpellingWord.explain
+2019-08-01 18:15:20,759 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:15:20,759 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:15:21,812 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:15:23,354 - vivo_x9i - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 18:15:23,355 - vivo_x9i - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 18:15:23,356 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:15:23,356 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:15:24,814 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:15:26,589 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:15:26,636 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:15:26,637 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:15:29,687 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:15:31,644 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:15:34,692 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:15:36,723 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:15:36,770 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:15:36,771 - vivo_x9i - INFO -   --> SpellingWord.dictation_word
+2019-08-01 18:15:36,838 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 18:15:36,839 - vivo_x9i - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 18:15:37,839 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:15:37,860 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:15:38,211 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:15:38,212 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:15:38,230 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:15:39,024 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:15:39,025 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:15:39,043 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:15:39,978 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:15:39,978 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:15:39,993 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:15:40,800 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:15:40,800 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:15:40,817 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:15:41,940 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:15:41,941 - vivo_x9i - INFO - 	--> SpellingWord.finish_word
+2019-08-01 18:15:42,858 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:15:42,858 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:15:42,859 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:15:43,907 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:15:45,819 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:15:48,391 - vivo_x9i - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 18:15:48,850 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:15:48,850 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:15:48,851 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:15:48,896 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:15:50,644 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:15:52,232 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:15:52,679 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:15:52,812 - vivo_x9i - INFO - 	--> SpellingWord.explain
+2019-08-01 18:15:52,902 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:15:52,903 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:15:53,949 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:15:55,688 - vivo_x9i - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 18:15:55,689 - vivo_x9i - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 18:15:55,689 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:15:55,690 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:15:56,737 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:15:58,265 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:15:58,313 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:15:58,313 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:16:01,359 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:16:02,926 - vivo_x9i - INFO - 	--> SpellingWord.hint_button
+2019-08-01 18:16:05,970 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:16:07,688 - vivo_x9i - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 18:16:07,732 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 18:16:07,732 - vivo_x9i - INFO -   --> SpellingWord.dictation_word
+2019-08-01 18:16:07,802 - vivo_x9i - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 18:16:07,802 - vivo_x9i - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 18:16:08,804 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:16:08,825 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:16:09,137 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:16:09,138 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:16:09,156 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:16:10,157 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:16:10,158 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:16:10,181 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:16:10,952 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:16:10,952 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:16:10,974 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:16:11,803 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:16:11,804 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:16:11,822 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:16:13,165 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:16:13,167 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:16:13,187 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:16:14,004 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:16:14,004 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:16:14,020 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:16:15,005 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:16:15,006 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:16:15,019 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:16:16,156 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:16:16,157 - vivo_x9i - INFO -   --> Keyboard.games_keyboard
+2019-08-01 18:16:16,175 - vivo_x9i - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 18:16:17,021 - vivo_x9i - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 18:16:17,021 - vivo_x9i - INFO - 	--> SpellingWord.finish_word
+2019-08-01 18:16:17,758 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:16:17,758 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:16:17,759 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:16:18,869 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:16:20,396 - vivo_x9i - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 18:16:23,373 - vivo_x9i - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 18:16:23,419 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:16:23,419 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:16:23,420 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:16:23,459 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:16:24,987 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:16:26,572 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:16:26,620 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:16:26,712 - vivo_x9i - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 18:16:26,713 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:16:26,713 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:16:26,757 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:16:28,724 - vivo_x9i - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 18:16:29,841 - vivo_x9i - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 18:16:31,925 - vivo_x9i - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 18:16:31,994 - vivo_x9i - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 18:16:32,042 - vivo_x9i - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 18:16:32,123 - vivo_x9i - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 18:16:33,838 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 18:16:33,838 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:16:33,839 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:16:33,880 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:16:35,406 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:16:36,993 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 18:16:37,036 - vivo_x9i - INFO - 	--> PublicElementPage.game_title
+2019-08-01 18:16:37,106 - vivo_x9i - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 18:16:37,107 - vivo_x9i - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 18:16:37,108 - vivo_x9i - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 18:16:37,141 - vivo_x9i - INFO - 	--> GetAttribute.enabled
+2019-08-01 18:16:38,750 - vivo_x9i - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 18:16:39,940 - vivo_x9i - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 18:16:42,025 - vivo_x9i - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 18:16:42,044 - vivo_x9i - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-08-01 18:16:42,044 - vivo_x9i - ERROR - 	<-- VocabularyChoose.hint_button_judge, WebDriverException, Error
+2019-08-01 18:16:42,055 - vivo_x9i - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-08-01 18:16:42,056 - vivo_x9i - ERROR - 	<-- VocabGamePage.vocab_apply_game_operate, WebDriverException, Error
+2019-08-01 18:16:42,064 - vivo_x9i - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-08-01 18:16:42,065 - vivo_x9i - ERROR - 	<-- ReciteWordPage.word_book_recite_operate, WebDriverException, Error
+2019-08-01 18:16:42,073 - vivo_x9i - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-08-01 18:16:42,074 - vivo_x9i - ERROR - <-- Word.test_study_word, WebDriverException, Error
+
+2019-08-01 18:16:42,082 - vivo_x9i - INFO - --> Word.tearDown
+2019-08-01 18:16:42,082 - vivo_x9i - INFO - <-- Word.tearDown, Success
+

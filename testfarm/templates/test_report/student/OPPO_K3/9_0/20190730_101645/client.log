@@ -1,0 +1,32 @@
+2019-07-30 10:17:03,425 - OPPO_K3 - INFO - --> Word.setUp
+2019-07-30 10:17:03,426 - OPPO_K3 - INFO -   --> LoginPage.app_status
+2019-07-30 10:17:03,427 - OPPO_K3 - INFO -   --> LoginPage.wait_check_page
+2019-07-30 10:17:09,030 - OPPO_K3 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 10:17:09,031 - OPPO_K3 - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 10:17:29,532 - OPPO_K3 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 10:17:29,534 - OPPO_K3 - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-07-30 10:17:44,812 - OPPO_K3 - INFO - 	--> LoginPage.close_app
+2019-07-30 10:17:45,060 - OPPO_K3 - INFO - 	--> LoginPage.launch_app
+2019-07-30 10:17:53,817 - OPPO_K3 - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 10:18:14,238 - OPPO_K3 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 10:18:14,239 - OPPO_K3 - INFO -   --> LoginPage.wait_check_page
+2019-07-30 10:18:19,631 - OPPO_K3 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 10:18:19,631 - OPPO_K3 - INFO -   <-- LoginPage.app_status, Success
+2019-07-30 10:18:19,675 - OPPO_K3 - INFO - <-- Word.setUp, Success
+
+2019-07-30 10:18:19,676 - OPPO_K3 - INFO - --> Word.test_study_word
+2019-07-30 10:18:19,676 - OPPO_K3 - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 10:18:39,719 - OPPO_K3 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 10:18:39,720 - OPPO_K3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 10:18:54,986 - OPPO_K3 - INFO - 	--> WordBookRebuildPage.wait_check_start_wrong_again_page
+2019-07-30 10:19:00,006 - OPPO_K3 - INFO - 	--> ResultPage.wait_check_result_page
+2019-07-30 10:19:05,286 - OPPO_K3 - INFO - <-- Word.test_study_word, Success
+
+2019-07-30 10:19:05,287 - OPPO_K3 - INFO - --> Word.tearDown
+2019-07-30 10:19:05,288 - OPPO_K3 - INFO - <-- Word.tearDown, Success
+
+2019-07-30 10:19:05,289 - OPPO_K3 - INFO - --> Word.setUp
+2019-07-30 10:19:05,289 - OPPO_K3 - INFO -   --> LoginPage.app_status
+2019-07-30 10:19:05,290 - OPPO_K3 - INFO -   --> LoginPage.wait_check_page
+2019-07-30 10:19:10,468 - OPPO_K3 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 10:19:10,469 - OPPO_K3 - INFO -   --> HomePage.wait_check_home_page

@@ -1,0 +1,45 @@
+2019-08-01 08:36:32,174 - google - INFO - --> Word.setUp
+2019-08-01 08:36:32,175 - google - INFO -   --> LoginPage.app_status
+2019-08-01 08:36:32,175 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-01 08:36:34,660 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-01 08:36:34,661 - google - INFO -   --> LoginPage.login_operate
+2019-08-01 08:36:36,663 - google - INFO - 	--> LoginPage.input_username
+2019-08-01 08:36:36,862 - google - INFO - 	--> LoginPage.input_password
+2019-08-01 08:36:38,638 - google - INFO - 	--> LoginPage.login_button
+2019-08-01 08:36:41,243 - google - INFO -   <-- LoginPage.login_operate, Success
+2019-08-01 08:36:41,244 - google - INFO -   <-- LoginPage.app_status, Success
+2019-08-01 08:36:41,275 - google - INFO - <-- Word.setUp, Success
+
+2019-08-01 08:36:41,276 - google - INFO - --> Word.test_study_word
+2019-08-01 08:36:41,276 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 08:36:43,451 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 08:36:43,452 - google - INFO - 	--> UserCenterPage.get_user_info
+2019-08-01 08:36:43,453 - google - INFO - 	--> HomePage.click_tab_profile
+2019-08-01 08:36:43,554 - google - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-08-01 08:36:43,555 - google - ERROR - 	<-- HomePage.click_tab_profile, WebDriverException, Error
+2019-08-01 08:36:44,166 - google - ERROR - WebDriverException, Message: IMAGE:HomePage.click_tab_profile-20190801083643.png
+
+2019-08-01 08:36:44,167 - google - ERROR - 	<-- UserCenterPage.get_user_info, WebDriverException, Error
+2019-08-01 08:36:44,167 - google - ERROR - WebDriverException, Message: Message: IMAGE:HomePage.click_tab_profile-20190801083643.png
+
+
+2019-08-01 08:36:44,167 - google - ERROR - <-- Word.test_study_word, WebDriverException, Error
+
+2019-08-01 08:36:44,167 - google - INFO - --> Word.tearDown
+2019-08-01 08:36:44,168 - google - INFO - <-- Word.tearDown, Success
+
+2019-08-01 08:36:44,179 - google - INFO - --> Word.setUp
+2019-08-01 08:36:44,180 - google - INFO -   --> LoginPage.app_status
+2019-08-01 08:36:44,180 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-01 08:36:49,766 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-01 08:36:49,767 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 08:36:51,197 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 08:36:51,197 - google - INFO -   <-- LoginPage.app_status, Success
+2019-08-01 08:36:51,250 - google - INFO - <-- Word.setUp, Success
+
+2019-08-01 08:36:51,251 - google - INFO - --> Word.test_study_word
+2019-08-01 08:36:51,252 - google - INFO - 	--> WordDataHandlePage.get_student_today_word_data
+2019-08-01 08:36:51,290 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 08:37:06,582 - google - INFO - 	--> WordBookRebuildPage.wait_check_start_wrong_again_page
+2019-08-01 08:37:21,631 - google - INFO - 	--> ResultPage.wait_check_result_page

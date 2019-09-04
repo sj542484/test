@@ -1,0 +1,475 @@
+2019-07-31 16:52:09,683 - google - INFO - --> Word.setUp
+2019-07-31 16:52:09,684 - google - INFO -   --> LoginPage.app_status
+2019-07-31 16:52:09,684 - google - INFO -   --> LoginPage.wait_check_page
+2019-07-31 16:52:12,217 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-31 16:52:12,217 - google - INFO -   --> LoginPage.login_operate
+2019-07-31 16:52:14,218 - google - INFO - 	--> LoginPage.input_username
+2019-07-31 16:52:14,421 - google - INFO - 	--> LoginPage.input_password
+2019-07-31 16:52:16,230 - google - INFO - 	--> LoginPage.login_button
+2019-07-31 16:52:18,835 - google - INFO -   <-- LoginPage.login_operate, Success
+2019-07-31 16:52:18,835 - google - INFO -   <-- LoginPage.app_status, Success
+2019-07-31 16:52:18,993 - google - INFO - <-- Word.setUp, Success
+
+2019-07-31 16:52:18,994 - google - INFO - --> Word.test_study_word
+2019-07-31 16:52:18,995 - google - INFO -   --> HomePage.wait_check_home_page
+2019-07-31 16:52:24,258 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-31 16:52:24,258 - google - INFO - 	--> UserCenterPage.get_user_info
+2019-07-31 16:52:24,259 - google - INFO - 	--> HomePage.click_tab_profile
+2019-07-31 16:52:24,638 - google - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-07-31 16:52:28,047 - google - INFO - 	--> UserCenterPage.nickname
+2019-07-31 16:52:30,661 - google - INFO - 	--> UserCenterPage.purchase
+2019-07-31 16:52:31,127 - google - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-07-31 16:52:32,378 - google - INFO - 	--> UserCenterPage.phone
+2019-07-31 16:52:33,931 - google - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-07-31 16:52:35,913 - google - INFO - 	--> UserCenterPage.school_name
+2019-07-31 16:52:36,181 - google - INFO - 	--> UserCenterPage.setting_up
+2019-07-31 16:52:36,434 - google - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-07-31 16:52:37,202 - google - INFO - 	--> UserCenterPage.clear_cache
+2019-07-31 16:52:40,399 - google - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-07-31 16:52:41,531 - google - INFO - 	--> HomePage.click_tab_hw
+2019-07-31 16:52:41,650 - google - INFO -   --> HomePage.wait_check_home_page
+2019-07-31 16:52:43,192 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-31 16:52:43,192 - google - INFO - 	--> HomePage.click_hk_tab
+2019-07-31 16:52:43,487 - google - INFO - 	--> WordBookRebuildPage.wait_check_start_page
+2019-07-31 16:52:44,382 - google - INFO - 	--> WordBookRebuildPage.word_start_button
+2019-07-31 16:52:50,474 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:52:50,752 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:52:50,906 - google - INFO - 	--> ReciteWordPage.word_book_recite_operate
+2019-07-31 16:52:50,906 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:52:50,990 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:52:51,270 - google - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-31 16:52:51,271 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:52:51,271 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:52:51,333 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:52:51,391 - google - INFO - 	--> VocabularyChoose.question_content
+2019-07-31 16:52:51,650 - google - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-31 16:52:53,858 - google - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-31 16:52:54,034 - google - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-31 16:52:54,112 - google - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-31 16:52:54,236 - google - INFO - 	--> VocabularyChoose.option_button
+2019-07-31 16:52:55,477 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:52:55,478 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:52:55,478 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:52:55,535 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:52:55,564 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:52:57,158 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:52:57,262 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:52:57,392 - google - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-31 16:52:57,393 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:52:57,393 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:52:57,433 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:52:57,461 - google - INFO - 	--> VocabularyChoose.question_content
+2019-07-31 16:52:57,759 - google - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-31 16:52:59,964 - google - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-31 16:53:00,137 - google - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-31 16:53:00,221 - google - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-31 16:53:00,310 - google - INFO - 	--> VocabularyChoose.option_button
+2019-07-31 16:53:01,599 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:53:01,600 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:01,600 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:01,646 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:01,674 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:03,271 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:53:03,364 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:53:03,543 - google - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-31 16:53:03,543 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:03,543 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:03,602 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:03,647 - google - INFO - 	--> VocabularyChoose.question_content
+2019-07-31 16:53:03,980 - google - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-31 16:53:06,177 - google - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-31 16:53:06,333 - google - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-31 16:53:06,408 - google - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-31 16:53:06,542 - google - INFO - 	--> VocabularyChoose.option_button
+2019-07-31 16:53:07,795 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:53:07,795 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:07,795 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:07,837 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:07,859 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:09,460 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:53:09,599 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:53:09,806 - google - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-31 16:53:09,807 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:09,807 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:09,871 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:09,916 - google - INFO - 	--> VocabularyChoose.question_content
+2019-07-31 16:53:10,404 - google - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-31 16:53:12,598 - google - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-31 16:53:12,780 - google - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-31 16:53:12,852 - google - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-31 16:53:12,967 - google - INFO - 	--> VocabularyChoose.option_button
+2019-07-31 16:53:14,297 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:53:14,298 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:14,298 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:14,342 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:14,365 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:15,944 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:53:16,008 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:53:16,130 - google - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-31 16:53:16,131 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:16,131 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:16,173 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:16,212 - google - INFO - 	--> VocabularyChoose.question_content
+2019-07-31 16:53:16,485 - google - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-31 16:53:18,675 - google - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-31 16:53:18,831 - google - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-31 16:53:18,889 - google - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-31 16:53:19,050 - google - INFO - 	--> VocabularyChoose.option_button
+2019-07-31 16:53:20,515 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:53:20,515 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:20,515 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:20,554 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:20,584 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:22,171 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:53:22,242 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:53:22,339 - google - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-31 16:53:22,339 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:22,340 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:22,386 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:22,420 - google - INFO - 	--> VocabularyChoose.question_content
+2019-07-31 16:53:22,670 - google - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-31 16:53:24,857 - google - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-31 16:53:24,997 - google - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-31 16:53:25,069 - google - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-31 16:53:25,201 - google - INFO - 	--> VocabularyChoose.option_button
+2019-07-31 16:53:26,555 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:53:26,556 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:26,556 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:26,606 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:26,660 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:28,279 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:53:28,401 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:53:28,639 - google - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-31 16:53:28,640 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:28,640 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:28,735 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:28,790 - google - INFO - 	--> VocabularyChoose.question_content
+2019-07-31 16:53:29,034 - google - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-31 16:53:31,222 - google - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-31 16:53:31,416 - google - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-31 16:53:31,472 - google - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-31 16:53:31,574 - google - INFO - 	--> VocabularyChoose.option_button
+2019-07-31 16:53:32,841 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:53:32,841 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:32,841 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:32,889 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:32,921 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:34,513 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:53:34,580 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:53:34,733 - google - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-31 16:53:34,734 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:34,734 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:34,804 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:34,845 - google - INFO - 	--> VocabularyChoose.question_content
+2019-07-31 16:53:35,419 - google - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-31 16:53:37,630 - google - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-31 16:53:37,794 - google - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-31 16:53:37,852 - google - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-31 16:53:37,935 - google - INFO - 	--> VocabularyChoose.option_button
+2019-07-31 16:53:39,211 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:53:39,212 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:39,212 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:39,255 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:39,284 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:40,875 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:53:40,976 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:53:41,198 - google - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-31 16:53:41,202 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:41,203 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:41,284 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:41,337 - google - INFO - 	--> VocabularyChoose.question_content
+2019-07-31 16:53:41,623 - google - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-31 16:53:43,778 - google - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-31 16:53:44,271 - google - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-31 16:53:44,327 - google - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-31 16:53:44,488 - google - INFO - 	--> VocabularyChoose.option_button
+2019-07-31 16:53:45,749 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:53:45,750 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:45,750 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:45,793 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:45,825 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:47,415 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:53:47,502 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:53:47,719 - google - INFO - 	--> SpellingWord.explain
+2019-07-31 16:53:47,931 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:47,932 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:53:48,029 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:48,220 - google - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-07-31 16:53:48,221 - google - INFO -   --> SpellingWord.hint_ele_operate
+2019-07-31 16:53:48,221 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:48,221 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:53:48,319 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:48,358 - google - INFO -   --> SpellingWord.dictation_word_judge
+2019-07-31 16:53:48,417 - google - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-07-31 16:53:48,417 - google - INFO - 	--> SpellingWord.hint_button
+2019-07-31 16:53:48,463 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:48,568 - google - INFO - 	--> SpellingWord.hint_button
+2019-07-31 16:53:49,186 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:49,216 - google - INFO -   --> SpellingWord.dictation_word_judge
+2019-07-31 16:53:49,252 - google - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-07-31 16:53:49,252 - google - INFO -   --> SpellingWord.dictation_word
+2019-07-31 16:53:49,320 - google - INFO -   <-- SpellingWord.dictation_word, Success
+2019-07-31 16:53:49,320 - google - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-07-31 16:53:49,320 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:53:49,350 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:53:49,619 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:53:49,619 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:53:49,619 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:53:49,639 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:53:50,337 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:53:50,338 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:53:50,339 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:53:50,339 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:53:50,362 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:53:51,178 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:53:51,180 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:53:51,181 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:53:51,182 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:53:51,206 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:53:52,016 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:53:52,018 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:53:52,019 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:53:52,019 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:53:52,047 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:53:52,893 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:53:52,893 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:53:52,893 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:53:52,894 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:53:52,918 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:53:53,781 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:53:53,781 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:53:53,804 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:53:54,477 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:53:54,478 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:53:54,503 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:53:55,340 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:53:55,340 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:53:55,341 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:53:55,342 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:55,343 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:53:55,831 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:55,880 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:53:57,472 - google - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-07-31 16:53:57,591 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:53:57,591 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:57,591 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:57,656 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:53:57,768 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:53:59,464 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:53:59,557 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:53:59,796 - google - INFO - 	--> SpellingWord.explain
+2019-07-31 16:53:59,986 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:53:59,987 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:00,065 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:00,220 - google - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-07-31 16:54:00,220 - google - INFO -   --> SpellingWord.hint_ele_operate
+2019-07-31 16:54:00,221 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:54:00,221 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:00,331 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:00,399 - google - INFO -   --> SpellingWord.dictation_word_judge
+2019-07-31 16:54:00,478 - google - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-07-31 16:54:00,479 - google - INFO - 	--> SpellingWord.hint_button
+2019-07-31 16:54:00,551 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:00,673 - google - INFO - 	--> SpellingWord.hint_button
+2019-07-31 16:54:01,307 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:01,337 - google - INFO -   --> SpellingWord.dictation_word_judge
+2019-07-31 16:54:01,383 - google - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-07-31 16:54:01,384 - google - INFO -   --> SpellingWord.dictation_word
+2019-07-31 16:54:01,457 - google - INFO -   <-- SpellingWord.dictation_word, Success
+2019-07-31 16:54:01,458 - google - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-07-31 16:54:01,458 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:01,510 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:01,786 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:01,787 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:01,787 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:01,817 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:02,560 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:02,561 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:02,563 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:02,563 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:02,598 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:03,400 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:03,400 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:03,401 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:03,401 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:03,425 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:04,233 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:04,233 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:04,234 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:04,234 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:04,257 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:05,084 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:05,084 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:05,085 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:05,085 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:05,109 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:05,951 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:05,951 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:05,974 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:06,661 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:06,662 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:06,685 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:07,515 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:07,516 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:07,516 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:54:07,517 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:54:07,517 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:08,013 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:08,041 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:09,621 - google - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-07-31 16:54:09,710 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:54:09,711 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:54:09,711 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:54:09,775 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:09,813 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:54:11,466 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:54:11,539 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:54:11,737 - google - INFO - 	--> SpellingWord.explain
+2019-07-31 16:54:11,948 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:54:11,949 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:12,053 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:12,179 - google - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-07-31 16:54:12,180 - google - INFO -   --> SpellingWord.hint_ele_operate
+2019-07-31 16:54:12,180 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:54:12,181 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:12,287 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:12,349 - google - INFO -   --> SpellingWord.dictation_word_judge
+2019-07-31 16:54:12,454 - google - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-07-31 16:54:12,455 - google - INFO - 	--> SpellingWord.hint_button
+2019-07-31 16:54:12,530 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:12,704 - google - INFO - 	--> SpellingWord.hint_button
+2019-07-31 16:54:13,320 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:13,346 - google - INFO -   --> SpellingWord.dictation_word_judge
+2019-07-31 16:54:13,376 - google - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-07-31 16:54:13,377 - google - INFO -   --> SpellingWord.dictation_word
+2019-07-31 16:54:13,439 - google - INFO -   <-- SpellingWord.dictation_word, Success
+2019-07-31 16:54:13,439 - google - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-07-31 16:54:13,440 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:13,466 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:13,778 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:13,779 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:13,780 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:13,816 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:14,514 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:14,514 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:14,514 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:14,515 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:14,534 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:15,349 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:15,349 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:15,350 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:15,350 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:15,382 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:16,188 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:16,189 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:16,189 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:54:16,190 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:54:16,190 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:16,811 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:16,854 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:18,457 - google - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-07-31 16:54:18,556 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:54:18,557 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:54:18,557 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:54:18,650 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:18,710 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:54:20,363 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:54:20,444 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:54:20,625 - google - INFO - 	--> SpellingWord.explain
+2019-07-31 16:54:20,814 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:54:20,814 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:20,876 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:20,970 - google - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-07-31 16:54:20,971 - google - INFO -   --> SpellingWord.hint_ele_operate
+2019-07-31 16:54:20,971 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:54:20,971 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:21,052 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:21,097 - google - INFO -   --> SpellingWord.dictation_word_judge
+2019-07-31 16:54:21,163 - google - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-07-31 16:54:21,164 - google - INFO - 	--> SpellingWord.hint_button
+2019-07-31 16:54:21,221 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:21,315 - google - INFO - 	--> SpellingWord.hint_button
+2019-07-31 16:54:21,936 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:21,967 - google - INFO -   --> SpellingWord.dictation_word_judge
+2019-07-31 16:54:22,019 - google - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-07-31 16:54:22,019 - google - INFO -   --> SpellingWord.dictation_word
+2019-07-31 16:54:22,109 - google - INFO -   <-- SpellingWord.dictation_word, Success
+2019-07-31 16:54:22,110 - google - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-07-31 16:54:22,110 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:22,134 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:22,391 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:22,391 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:22,392 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:22,419 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:23,100 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:23,101 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:23,101 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:23,102 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:23,125 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:23,958 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:23,959 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:23,961 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:54:23,962 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:54:23,962 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:24,590 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:24,624 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:26,241 - google - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-07-31 16:54:26,305 - google - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-31 16:54:26,306 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:54:26,306 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:54:26,410 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:26,527 - google - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-31 16:54:28,286 - google - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-31 16:54:28,337 - google - INFO - 	--> PublicElementPage.game_title
+2019-07-31 16:54:28,478 - google - INFO - 	--> SpellingWord.explain
+2019-07-31 16:54:28,722 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:54:28,722 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:28,798 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:28,892 - google - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-07-31 16:54:28,894 - google - INFO -   --> SpellingWord.hint_ele_operate
+2019-07-31 16:54:28,895 - google - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-31 16:54:28,895 - google - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-07-31 16:54:28,999 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:29,052 - google - INFO -   --> SpellingWord.dictation_word_judge
+2019-07-31 16:54:29,133 - google - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-07-31 16:54:29,133 - google - INFO - 	--> SpellingWord.hint_button
+2019-07-31 16:54:29,196 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:29,311 - google - INFO - 	--> SpellingWord.hint_button
+2019-07-31 16:54:29,930 - google - INFO - 	--> GetAttribute.enabled
+2019-07-31 16:54:29,958 - google - INFO -   --> SpellingWord.dictation_word_judge
+2019-07-31 16:54:29,993 - google - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-07-31 16:54:29,993 - google - INFO -   --> SpellingWord.dictation_word
+2019-07-31 16:54:30,061 - google - INFO -   <-- SpellingWord.dictation_word, Success
+2019-07-31 16:54:30,061 - google - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-07-31 16:54:30,061 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:30,082 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:30,328 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:30,329 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:30,329 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:30,357 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:31,059 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:31,060 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:31,060 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:31,061 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:31,084 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:31,894 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:31,894 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:31,895 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:31,895 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:31,916 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:32,718 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:32,719 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:32,720 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:32,721 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:32,744 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:33,554 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:33,555 - google - INFO -   <-- SpellingWord.keyboard_operate, Success
+2019-07-31 16:54:33,555 - google - INFO -   --> SpellingWord.keyboard_operate
+2019-07-31 16:54:33,556 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:33,581 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:34,456 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:34,456 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:34,478 - google - INFO - 	--> Keyboard.keyboard_view
+2019-07-31 16:54:35,150 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-07-31 16:54:35,150 - google - INFO -   --> Keyboard.games_keyboard
+2019-07-31 16:54:35,173 - google - INFO - 	--> Keyboard.keyboard_view

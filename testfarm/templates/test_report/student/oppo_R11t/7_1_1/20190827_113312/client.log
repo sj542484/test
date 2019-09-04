@@ -1,0 +1,91 @@
+2019-08-27 11:33:29,800 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:33:29,802 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:33:29,802 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:33:33,733 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:33:33,733 - oppo_R11t - INFO -   --> LoginPage.login_operate
+2019-08-27 11:33:35,734 - oppo_R11t - INFO - 	--> LoginPage.input_username
+2019-08-27 11:33:37,142 - oppo_R11t - INFO - 	--> LoginPage.input_password
+2019-08-27 11:33:38,431 - oppo_R11t - INFO - 	--> LoginPage.login_button
+2019-08-27 11:33:41,983 - oppo_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-08-27 11:33:41,984 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:33:41,985 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:33:41,985 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:33:41,985 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:33:43,430 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:33:43,430 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:33:43,431 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:33:43,659 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:33:46,578 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:33:49,007 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:33:49,144 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-27 11:33:52,402 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-27 11:33:53,713 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:33:56,383 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-27 11:33:56,493 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-27 11:33:56,640 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-27 11:33:58,626 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-27 11:34:01,841 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:34:04,150 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-27 11:34:04,299 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-27 11:34:04,446 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:34:05,516 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:34:05,516 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-08-27 11:34:05,683 - oppo_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-27 11:34:05,683 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-27 11:34:17,350 - oppo_R11t - ERROR - Exception, 'int' object is not iterable
+2019-08-27 11:34:17,353 - oppo_R11t - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-08-27 11:34:20,891 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 11:34:20,891 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 11:34:20,898 - oppo_R11t - INFO - --> WKGame.setUp
+2019-08-27 11:34:20,898 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:34:20,898 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:34:26,045 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:34:26,046 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:34:46,189 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:34:46,191 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 11:34:46,192 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 11:34:47,180 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 11:34:55,073 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:34:56,430 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:34:56,430 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:34:56,431 - oppo_R11t - INFO - <-- WKGame.setUp, Success
+
+2019-08-27 11:34:56,431 - oppo_R11t - INFO - --> WKGame.test_wk_game
+2019-08-27 11:34:56,431 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:34:56,849 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:34:56,850 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-08-27 11:34:57,052 - oppo_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-27 11:34:57,053 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-27 11:35:07,430 - oppo_R11t - ERROR - Exception, 'int' object is not subscriptable
+2019-08-27 11:35:07,431 - oppo_R11t - ERROR - <-- WKGame.test_wk_game, Exception, Error
+
+2019-08-27 11:35:07,999 - oppo_R11t - INFO - --> WKGame.tearDown
+2019-08-27 11:35:07,999 - oppo_R11t - INFO - <-- WKGame.tearDown, Success
+
+2019-08-27 11:35:08,001 - oppo_R11t - INFO - --> FlashCard.setUp
+2019-08-27 11:35:08,002 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:35:08,002 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:35:13,124 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:35:13,125 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:35:32,642 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:35:32,643 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:35:32,643 - oppo_R11t - INFO - <-- FlashCard.setUp, Success
+
+2019-08-27 11:35:32,644 - oppo_R11t - INFO - --> FlashCard.test_check_speak_game_is_unit
+2019-08-27 11:35:32,644 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:35:33,061 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:35:36,486 - oppo_R11t - INFO -   --> AssignHomeworkPage.assign_homework_operate
+2019-08-27 11:35:36,487 - oppo_R11t - INFO - 	--> LoginWebPage.login_operate
+2019-08-27 11:35:36,488 - oppo_R11t - ERROR - Exception, login_operate() missing 2 required positional arguments: 'teacher_account' and 'teacher_pass'
+2019-08-27 11:35:36,488 - oppo_R11t - ERROR - 	<-- LoginWebPage.login_operate, Exception, Error
+2019-08-27 11:35:37,596 - oppo_R11t - ERROR - Exception, IMAGE:LoginWebPage.login_operate-20190827113536.png
+2019-08-27 11:35:37,597 - oppo_R11t - ERROR -   <-- AssignHomeworkPage.assign_homework_operate, Exception, Error
+2019-08-27 11:35:37,597 - oppo_R11t - ERROR - Exception, IMAGE:LoginWebPage.login_operate-20190827113536.png
+2019-08-27 11:35:37,597 - oppo_R11t - ERROR - <-- FlashCard.test_check_speak_game_is_unit, Exception, Error
+
+2019-08-27 11:35:37,598 - oppo_R11t - INFO - --> FlashCard.tearDown
+2019-08-27 11:35:37,598 - oppo_R11t - INFO - <-- FlashCard.tearDown, Success
+

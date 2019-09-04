@@ -1,0 +1,41 @@
+2019-08-02 14:37:27,452 - honor_9 - INFO - --> Word.setUp
+2019-08-02 14:37:27,453 - honor_9 - INFO -   --> LoginPage.app_status
+2019-08-02 14:37:27,454 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-08-02 14:37:30,027 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-02 14:37:30,027 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-08-02 14:37:32,028 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-08-02 14:37:32,254 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-08-02 14:37:33,540 - honor_9 - INFO - 	--> LoginPage.login_button
+2019-08-02 14:37:36,142 - honor_9 - INFO -   <-- LoginPage.login_operate, Success
+2019-08-02 14:37:36,143 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-08-02 14:37:36,215 - honor_9 - INFO - <-- Word.setUp, Success
+
+2019-08-02 14:37:36,216 - honor_9 - INFO - --> Word.test_study_word
+2019-08-02 14:37:36,217 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-08-02 14:37:57,039 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-02 14:37:57,042 - honor_9 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-02 14:38:00,916 - honor_9 - INFO - 	--> WordBookRebuildPage.wait_check_start_wrong_again_page
+2019-08-02 14:38:00,930 - honor_9 - INFO - 	--> ResultPage.wait_check_result_page
+2019-08-02 14:38:00,945 - honor_9 - INFO - <-- Word.test_study_word, Success
+
+2019-08-02 14:38:00,946 - honor_9 - INFO - --> Word.tearDown
+2019-08-02 14:38:00,947 - honor_9 - INFO - <-- Word.tearDown, Success
+
+2019-08-02 14:38:00,947 - honor_9 - INFO - --> Word.setUp
+2019-08-02 14:38:00,947 - honor_9 - INFO -   --> LoginPage.app_status
+2019-08-02 14:38:00,948 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-08-02 14:38:00,967 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-02 14:38:00,967 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-08-02 14:38:00,984 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-02 14:38:00,984 - honor_9 - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-08-02 14:38:00,995 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-08-02 14:38:02,044 - honor_9 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s FA6AN0301645 shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: 'error: device 'FA6AN0301645' not found'; Code: '1'
+
+2019-08-02 14:38:02,044 - honor_9 - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-02 14:38:02,051 - honor_9 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8210
+
+2019-08-02 14:38:02,051 - honor_9 - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-02 14:38:02,057 - honor_9 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8210
+
+2019-08-02 14:38:02,057 - honor_9 - ERROR - <-- Word.setUp, WebDriverException, Error
+

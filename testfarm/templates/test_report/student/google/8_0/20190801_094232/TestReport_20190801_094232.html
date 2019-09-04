@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>google:  测试用例执行报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+    body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #ebebeb;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #6c6; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+
+
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+
+    #div_base {
+                position:absolute;
+                top:0%;
+                left:5%;
+                right:5%;
+                width: auto;
+                height: auto;
+                margin: -15px 0 0 0;
+    }
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.common.min.js"></script>
+    <!-- <script type="text/javascript" src="js/echarts.common.min.js"></script> -->
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level < 1) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level > 1) {
+                    tr.className = '';
+                }
+                else {
+                    tr.className = 'hiddenRow';
+                }
+            }
+        }
+    }
+
+
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+
+
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState != 'block' ) {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+        else {
+            details_div.style.display = 'none'
+        }
+    }
+
+
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>google:  测试用例执行报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2019-08-01 09:42:49</p>
+<p class='attribute'><strong>运行时长:</strong> 0:22:47.742653</p>
+<p class='attribute'><strong>状态:</strong> 通过 2 错误 1</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>用例执行情况统计：</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+        <button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+        <button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+    </div>
+    <p></p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row'>
+            <td>测试套件/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='errorClass'>
+        <td>test_cases.test001_study_word.Word: 单词本</td>
+        <td>3</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c1',3)">详情</a></td>
+    </tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_study_word_1_1: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <pre>
+        pt1.1: 在登录界面：
+/Users/vanthink_test_ios/aa/testone
+用户信息，即将登陆： {'student': {'student': 18686107552, 'teacher': 18823452349}, 'pwd': '1N14VXUCJTHoA'}
+/Users/vanthink_test_ios/aa/testone
+===== 第1组练习 =====
+学生昵称： 武政锟 
+ 学校名称： 包头朗文国际教育 
+ 学校id： 1 
+ 学生id： 3026 
+
+title: 单词本
+❌未进入单词拼写页面
+❌进入结果页：失败
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_study_word_2_2: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        错误</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <pre>
+        ft1.2: 做题页面
+/Users/vanthink_test_ios/aa/testone
+===== 第2组练习 =====
+title: 词汇运用(复习)
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：The road was blocked by a ____ rock.
+句子解释： 道路被一块巨石堵住了。
+选择答案： huge
+------------------------------ 
+
+题目：It is about a ____ in length.
+句子解释： 它长约1米。
+选择答案： meter
+------------------------------ 
+
+题目：Strong coffee can ____ your nerves.
+句子解释： 浓咖啡能够刺激你的神经。
+选择答案： excite
+------------------------------ 
+
+题目：Is your ring real ____?
+句子解释： 你的戒指是真金的吗?
+选择答案： gold
+------------------------------ 
+
+题目：Eva married her ____ Jack in 1957.
+句子解释： 伊娃和她的丈夫杰克于1957年结婚。
+选择答案： husband
+------------------------------ 
+
+题目：He is going to ____ Jane.
+句子解释： 他将与简结婚。
+选择答案： marry
+------------------------------ 
+
+题目：____ your shoes before going out.
+句子解释： 出门前把你的皮鞋擦亮。
+选择答案： shine
+------------------------------ 
+
+题目：A fox cannot hide its ____.
+句子解释： 狐狸的尾巴是藏不住的。
+选择答案： tail
+------------------------------ 
+
+题目：He was a liar and a ____.
+句子解释： 他曾坑蒙拐骗。
+选择答案： cheat
+------------------------------ 
+
+题目：She tried to ____ but he wouldn't listen.
+句子解释： 她试图说明一下原因，可他根本不听。
+选择答案： explain
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  adj. 巨大的，庞大的
+点击提示出现首字母提示 h
+单词: huge
+我输入的： huge
+------------------------------ 
+
+解释：  n. 米，公尺（等同于metre）
+点击提示出现首字母提示 m
+单词: meter
+我输入的： meter
+------------------------------ 
+
+解释：  v. 使兴奋，使激动
+点击提示出现首字母提示 e
+单词: excite
+我输入的： excite
+------------------------------ 
+
+解释：  adj. 金的，黄金的;n. 黄金
+点击提示出现首字母提示 g
+单词: gold
+我输入的： gold
+------------------------------ 
+
+解释：  n. 丈夫
+点击提示出现首字母提示 h
+单词: husband
+我输入的： husband
+------------------------------ 
+
+解释：  v. 成婚，结婚
+点击提示出现首字母提示 m
+单词: marry
+我输入的： marry
+------------------------------ 
+
+解释：  v. 擦亮;v. 发光，照耀
+点击提示出现首字母提示 s
+单词: shine
+我输入的： shine
+------------------------------ 
+
+解释：  n. 末梢;n. 尾巴，尾部
+点击提示出现首字母提示 t
+单词: tail
+我输入的： tail
+------------------------------ 
+
+解释：  n. 欺骗行为;n. 欺诈;n. 骗子;v. 作弊;v. 欺诈;v. 骗取，哄骗
+点击提示出现首字母提示 c
+单词: cheat
+我输入的： cheat
+------------------------------ 
+
+解释：  v. 辩解;v. 解释，说明
+点击提示出现首字母提示 e
+单词: explain
+我输入的： explain
+------------------------------ 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：Your ____ is important for us.
+句子解释： 你的意见对我们很重要。
+选择答案： opinion
+------------------------------ 
+
+题目：This is just a toy gun, it doesn't ____.
+句子解释： 这只是玩具枪, 不能发射子弹。
+选择答案： shoot
+------------------------------ 
+
+题目：Everybody should watch the movie in ____.
+句子解释： 每个人都应该安静地看电影。
+选择答案： silence
+------------------------------ 
+
+题目：She has the ____ in this story.
+句子解释： 故事中她是有魔法的。
+选择答案： magic
+------------------------------ 
+
+题目：What is your ____ with him? 
+句子解释： 他是你什么人？
+选择答案： relation
+------------------------------ 
+
+题目：Please ____ me to answer that letter.
+句子解释： 请提醒我回复那封信。
+选择答案： remind
+------------------------------ 
+
+题目：I ____ with him regularly.
+句子解释： 我经常和他交流。
+选择答案： communicate
+------------------------------ 
+
+题目：I think you should wear your warm ____ today.
+句子解释： 我想今天你应该穿上你的保暖内衣。
+选择答案： underwear
+------------------------------ 
+
+题目：Greece was the origin of ____ civilization.
+句子解释： 希腊是西方文明的起源。
+选择答案： Western
+------------------------------ 
+
+题目：My father married another woman and she became my ____.
+句子解释： 我父亲娶了另一个女人，她成了我的继母。
+选择答案： stepmother
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  n. 意见，看法，主张，见解
+点击提示出现首字母提示 o
+单词: opinion
+我输入的： opinion
+------------------------------ 
+
+解释：  n. 苗，芽;n. 嫩枝;v. 射击，射中，发射
+点击提示出现首字母提示 s
+单词: shoot
+我输入的： shoot
+------------------------------ 
+
+解释：  n. 沉默，寂静，静默，无声
+点击提示出现首字母提示 s
+单词: silence
+我输入的： silence
+------------------------------ 
+
+解释：  adj. 不可思议的;adj. 戏法的;adj. 有魔力的;adj. 魔术的;n. 魔力;n. 戏法;n. 魔术，魔法
+点击提示出现首字母提示 m
+单词: magic
+我输入的： magic
+------------------------------ 
+
+解释：  n. 讲述;n. 亲属;n. 联系;n. 关系
+点击提示出现首字母提示 r
+单词: relation
+我输入的： relation
+------------------------------ 
+
+解释：  v. 使记起;v. 提醒
+点击提示出现首字母提示 r
+单词: remind
+我输入的： remind
+------------------------------ 
+
+解释：  v. 传递信息;v. 联络;v. 通讯;v. 传染;v. 传达（热、感情、信息等）;v. 传达
+点击提示出现首字母提示 c
+单词: communicate
+我输入的： communicate
+------------------------------ 
+
+解释：  n. 内衣
+点击提示出现首字母提示 u
+单词: underwear
+我输入的： underwear
+------------------------------ 
+
+解释：  adj. 西方的
+点击提示出现首字母提示 W
+单词: Western
+我输入的： Western
+------------------------------ 
+
+解释：  n. 继母
+点击提示出现首字母提示 s
+单词: stepmother
+我输入的： stepmother
+------------------------------ 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：They were ____ by the impropriety of the young man's action.
+句子解释： 他们为那年轻人的不当举止而感到震惊。
+选择答案： shocked
+------------------------------ 
+
+题目：The police barred the exits in an attempt to prevent the ____ from escaping.
+句子解释： 警察堵住了各出口，以防恐怖分子逃跑。
+选择答案： terrorist
+------------------------------ 
+
+题目：There is a ____ forest behind the village.
+句子解释： 村子后面有一片密密的森林。
+选择答案： thick
+------------------------------ 
+
+题目：Please put the picture on the ____.
+句子解释： 请把画挂到墙上。
+选择答案： wall
+------------------------------ 
+
+题目：Children must be accompanied by an ____.
+句子解释： 儿童必须要有大人陪同。
+选择答案： adult
+------------------------------ 
+
+题目：____ includes many countries, such as China, Japan, Korea and so on.
+句子解释： 亚洲包括许多国家，像中国、日本、韩国等等。
+选择答案： Asia
+------------------------------ 
+
+题目：He died after a long ____.
+句子解释： 他久病不愈而亡。
+选择答案： illness
+------------------------------ 
+
+题目：They made a ____ of the Great Wall.
+句子解释： 我们到长城旅游了。
+选择答案： tour
+------------------------------ 
+
+题目：The road is only one meter ____.
+句子解释： 这条路只有一米宽。
+选择答案： wide
+------------------------------ 
+
+题目：Are you ____ or asleep？
+句子解释： 你醒着呢还是睡着呢？
+选择答案： awake
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  adj. 惊愕的；受震惊的
+点击提示出现首字母提示 s
+单词: shocked
+我输入的： shocked
+------------------------------ 
+
+解释：  n. 恐怖主义者；恐怖分子
+点击提示出现首字母提示 t
+单词: terrorist
+我输入的： terrorist
+------------------------------ 
+
+解释：  adj. 密集的;adj. 粗的;adj. 浓的;adj. 厚的
+点击提示出现首字母提示 t
+单词: thick
+我输入的： thick
+------------------------------ 
+
+解释：  n. 围墙;n. 墙，墙壁
+点击提示出现首字母提示 w
+单词: wall
+我输入的： wall
+------------------------------ 
+
+解释：  adj. 成人的;adj. 成熟的;n. 成年人
+点击提示出现首字母提示 a
+单词: adult
+我输入的： adult
+------------------------------ 
+
+解释：  n. 亚洲
+点击提示出现首字母提示 A
+单词: Asia
+我输入的： Asia
+------------------------------ 
+
+解释：  n. 病，疾病
+点击提示出现首字母提示 i
+单词: illness
+我输入的： illness
+------------------------------ 
+
+解释：  n. 参观，观光，旅行
+点击提示出现首字母提示 t
+单词: tour
+我输入的： tour
+------------------------------ 
+
+解释：  adj. 广泛的;adj. 广阔的;adj. 宽的，宽阔的
+点击提示出现首字母提示 w
+单词: wide
+我输入的： wide
+------------------------------ 
+
+解释：  adj. 醒着的;v. 唤醒，醒
+点击提示出现首字母提示 a
+单词: awake
+我输入的： awake
+------------------------------ 
+
+❌未进入单词拼写页面
+进入结果页面
+新词个数： 0
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 29, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book/object_page/result_page.py", line 21, in verify_result_page_data
+    word_play_times = int(today_already_study_word_data[1])
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 100, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book/test_cases/test001_study_word.py", line 89, in test_study_word
+    recite_words_count, group_index)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 54, in wrapper
+    raise Exception(flag + _screenshot(func.__qualname__))
+Exception: IMAGE:WordResultPage.verify_result_page_data-20190801100406.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 124, in wrapper
+    raise Exception(e)
+Exception: IMAGE:WordResultPage.verify_result_page_data-20190801100406.png
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_study_word_3_3: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        通过</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <pre>
+        pt1.3: 在其他页面
+主界面
+/Users/vanthink_test_ios/aa/testone
+===== 第3组练习 =====
+❌未进入单词拼写页面
+❌进入结果页：失败
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+        <tr id='total_row'>
+            <td>总计</td>
+            <td>3</td>
+            <td>2</td>
+            <td>0</td>
+            <td>1</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            color: ['#95b75d', 'grey', '#b64645'],
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:2, name:'通过'},
+                        {value:0, name:'失败'},
+                        {value:1, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>

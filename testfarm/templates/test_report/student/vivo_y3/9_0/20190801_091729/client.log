@@ -1,0 +1,35 @@
+2019-08-01 09:17:48,680 - vivo_y3 - INFO - --> Word.setUp
+2019-08-01 09:17:48,682 - vivo_y3 - INFO -   --> LoginPage.app_status
+2019-08-01 09:17:48,682 - vivo_y3 - INFO -   --> LoginPage.wait_check_page
+2019-08-01 09:17:51,347 - vivo_y3 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-01 09:17:51,347 - vivo_y3 - INFO -   --> LoginPage.login_operate
+2019-08-01 09:17:53,349 - vivo_y3 - INFO - 	--> LoginPage.input_username
+2019-08-01 09:17:53,550 - vivo_y3 - INFO - 	--> LoginPage.input_password
+2019-08-01 09:17:56,121 - vivo_y3 - INFO - 	--> LoginPage.login_button
+2019-08-01 09:17:58,840 - vivo_y3 - INFO -   <-- LoginPage.login_operate, Success
+2019-08-01 09:17:58,841 - vivo_y3 - INFO -   <-- LoginPage.app_status, Success
+2019-08-01 09:17:58,877 - vivo_y3 - INFO - <-- Word.setUp, Success
+
+2019-08-01 09:17:58,878 - vivo_y3 - INFO - --> Word.test_study_word
+2019-08-01 09:17:58,879 - vivo_y3 - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 09:18:19,397 - vivo_y3 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 09:18:19,398 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 09:18:36,160 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_start_wrong_again_page
+2019-08-01 09:18:51,657 - vivo_y3 - INFO - 	--> ResultPage.wait_check_result_page
+2019-08-01 09:18:56,732 - vivo_y3 - INFO - <-- Word.test_study_word, Success
+
+2019-08-01 09:18:56,734 - vivo_y3 - INFO - --> Word.tearDown
+2019-08-01 09:18:56,735 - vivo_y3 - INFO - <-- Word.tearDown, Success
+
+2019-08-01 09:18:56,735 - vivo_y3 - INFO - --> Word.setUp
+2019-08-01 09:18:56,735 - vivo_y3 - INFO -   --> LoginPage.app_status
+2019-08-01 09:18:56,735 - vivo_y3 - INFO -   --> LoginPage.wait_check_page
+2019-08-01 09:19:01,793 - vivo_y3 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-01 09:19:01,794 - vivo_y3 - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 09:19:03,597 - vivo_y3 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 09:19:03,598 - vivo_y3 - INFO -   <-- LoginPage.app_status, Success
+2019-08-01 09:19:03,628 - vivo_y3 - INFO - <-- Word.setUp, Success
+
+2019-08-01 09:19:03,629 - vivo_y3 - INFO - --> Word.test_study_word
+2019-08-01 09:19:03,630 - vivo_y3 - INFO - 	--> WordDataHandlePage.get_student_today_word_data
+2019-08-01 09:19:03,641 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page

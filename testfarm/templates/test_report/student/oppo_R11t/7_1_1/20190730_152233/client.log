@@ -1,0 +1,177 @@
+2019-07-30 15:22:52,020 - oppo_R11t - INFO - --> Word.setUp
+2019-07-30 15:22:52,021 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-07-30 15:22:52,022 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-07-30 15:22:55,816 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 15:22:55,817 - oppo_R11t - INFO -   --> LoginPage.login_operate
+2019-07-30 15:22:57,818 - oppo_R11t - INFO - 	--> LoginPage.input_username
+2019-07-30 15:22:58,862 - oppo_R11t - INFO - 	--> LoginPage.input_password
+2019-07-30 15:23:00,934 - oppo_R11t - INFO - 	--> LoginPage.login_button
+2019-07-30 15:23:04,002 - oppo_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-07-30 15:23:04,003 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-07-30 15:23:04,054 - oppo_R11t - INFO - <-- Word.setUp, Success
+
+2019-07-30 15:23:04,055 - oppo_R11t - INFO - --> Word.test_study_word
+2019-07-30 15:23:04,055 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:23:24,250 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:23:24,250 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-07-30 15:23:24,250 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-07-30 15:23:24,431 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-07-30 15:23:27,350 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-07-30 15:23:29,855 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-07-30 15:23:30,034 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-07-30 15:23:32,374 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-07-30 15:23:33,734 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-07-30 15:23:35,375 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-07-30 15:23:35,551 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-07-30 15:23:35,737 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-07-30 15:23:37,270 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-07-30 15:23:41,450 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-07-30 15:23:41,880 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-07-30 15:23:42,070 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:23:43,143 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:23:43,144 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-07-30 15:23:43,368 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_start_page
+2019-07-30 15:23:44,588 - oppo_R11t - INFO - 	--> WordBookRebuildPage.word_start_button
+2019-07-30 15:23:50,691 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:23:50,746 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:23:50,842 - oppo_R11t - INFO - 	--> ReciteWordPage.word_book_recite_operate
+2019-07-30 15:23:50,842 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:23:50,899 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:23:51,001 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-30 15:23:51,001 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:23:51,002 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:23:51,049 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:23:51,101 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:23:51,238 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-30 15:23:53,325 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-30 15:23:53,645 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-07-30 15:23:53,646 - oppo_R11t - ERROR - 	<-- VocabularyChoose.hint_button_judge, WebDriverException, Error
+2019-07-30 15:23:53,704 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-07-30 15:23:53,705 - oppo_R11t - ERROR - 	<-- VocabGamePage.vocab_apply_game_operate, WebDriverException, Error
+2019-07-30 15:23:53,720 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-07-30 15:23:53,720 - oppo_R11t - ERROR - 	<-- ReciteWordPage.word_book_recite_operate, WebDriverException, Error
+2019-07-30 15:23:53,740 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-07-30 15:23:53,741 - oppo_R11t - ERROR - <-- Word.test_study_word, WebDriverException, Error
+
+2019-07-30 15:23:53,755 - oppo_R11t - INFO - --> Word.tearDown
+2019-07-30 15:23:53,755 - oppo_R11t - INFO - <-- Word.tearDown, Success
+
+2019-07-30 15:23:53,767 - oppo_R11t - INFO - --> Word.setUp
+2019-07-30 15:23:53,768 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-07-30 15:23:53,768 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-07-30 15:23:53,784 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 15:23:53,784 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:23:53,796 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:23:53,797 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-07-30 15:23:53,814 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-07-30 15:23:54,489 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-07-30 15:24:02,802 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:24:03,090 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:24:03,090 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-07-30 15:24:03,164 - oppo_R11t - INFO - <-- Word.setUp, Success
+
+2019-07-30 15:24:03,164 - oppo_R11t - INFO - --> Word.test_study_word
+2019-07-30 15:24:03,165 - oppo_R11t - INFO - 	--> WordDataHandlePage.get_student_today_word_data
+2019-07-30 15:24:03,200 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:24:18,472 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_start_wrong_again_page
+2019-07-30 15:24:24,528 - oppo_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-07-30 15:24:39,719 - oppo_R11t - INFO - <-- Word.test_study_word, Success
+
+2019-07-30 15:24:39,720 - oppo_R11t - INFO - --> Word.tearDown
+2019-07-30 15:24:39,720 - oppo_R11t - INFO - <-- Word.tearDown, Success
+
+2019-07-30 15:24:39,721 - oppo_R11t - INFO - --> Word.setUp
+2019-07-30 15:24:39,721 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-07-30 15:24:39,722 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-07-30 15:24:45,730 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 15:24:45,731 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:25:06,041 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:25:06,043 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-07-30 15:25:06,546 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-07-30 15:25:06,587 - oppo_R11t - INFO - <-- Word.setUp, Success
+
+2019-07-30 15:25:06,588 - oppo_R11t - INFO - --> Word.test_study_word
+2019-07-30 15:25:06,589 - oppo_R11t - INFO - 	--> WordDataHandlePage.get_student_today_word_data
+2019-07-30 15:25:06,607 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:25:06,671 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:25:06,762 - oppo_R11t - INFO - 	--> ReciteWordPage.word_book_recite_operate
+2019-07-30 15:25:06,762 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:25:06,814 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:25:06,946 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-30 15:25:06,946 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:25:06,947 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:25:07,005 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:25:07,071 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:25:07,237 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-30 15:25:09,360 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-30 15:25:09,614 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-30 15:25:09,663 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-30 15:25:09,743 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-07-30 15:25:10,996 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-30 15:25:10,997 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:25:10,998 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:25:11,038 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:25:11,069 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:25:12,691 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:25:13,223 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:25:13,341 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-30 15:25:13,342 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:25:13,342 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:25:13,422 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:25:13,469 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:25:13,597 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-30 15:25:15,717 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-30 15:25:15,815 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-30 15:25:15,857 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-30 15:25:15,942 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-07-30 15:25:17,183 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-30 15:25:17,184 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:25:17,185 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:25:17,235 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:25:17,267 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:25:18,885 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:25:18,959 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:25:19,064 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-30 15:25:19,064 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:25:19,065 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:25:19,107 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:25:19,147 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:25:19,297 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-30 15:25:21,400 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-30 15:25:21,823 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-30 15:25:21,871 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-30 15:25:21,961 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-07-30 15:25:23,245 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-30 15:25:23,246 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:25:23,246 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:25:23,308 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:25:23,337 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:25:24,954 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:25:25,017 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:25:25,124 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-30 15:25:25,125 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:25:25,125 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:25:25,174 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:25:25,204 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:25:25,347 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-30 15:25:27,463 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-30 15:25:27,475 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-07-30 15:25:27,475 - oppo_R11t - ERROR - 	<-- VocabularyChoose.hint_button_judge, WebDriverException, Error
+2019-07-30 15:25:27,518 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-07-30 15:25:27,519 - oppo_R11t - ERROR - 	<-- VocabGamePage.vocab_apply_game_operate, WebDriverException, Error
+2019-07-30 15:25:27,528 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-07-30 15:25:27,528 - oppo_R11t - ERROR - 	<-- ReciteWordPage.word_book_recite_operate, WebDriverException, Error
+2019-07-30 15:25:27,537 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-07-30 15:25:27,538 - oppo_R11t - ERROR - <-- Word.test_study_word, WebDriverException, Error
+
+2019-07-30 15:25:27,546 - oppo_R11t - INFO - --> Word.tearDown
+2019-07-30 15:25:27,547 - oppo_R11t - INFO - <-- Word.tearDown, Success
+

@@ -1,0 +1,1414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>OPPO_a37m:  测试用例执行报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+    body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #ebebeb;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #6c6; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+
+
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+
+    #div_base {
+                position:absolute;
+                top:0%;
+                left:5%;
+                right:5%;
+                width: auto;
+                height: auto;
+                margin: -15px 0 0 0;
+    }
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.common.min.js"></script>
+    <!-- <script type="text/javascript" src="js/echarts.common.min.js"></script> -->
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level < 1) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level > 1) {
+                    tr.className = '';
+                }
+                else {
+                    tr.className = 'hiddenRow';
+                }
+            }
+        }
+    }
+
+
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+
+
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState != 'block' ) {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+        else {
+            details_div.style.display = 'none'
+        }
+    }
+
+
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>OPPO_a37m:  测试用例执行报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2019-08-01 21:04:10</p>
+<p class='attribute'><strong>运行时长:</strong> 1:08:25.911357</p>
+<p class='attribute'><strong>状态:</strong> 错误 2</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>用例执行情况统计：</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+        <button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+        <button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+    </div>
+    <p></p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row'>
+            <td>测试套件/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='errorClass'>
+        <td>test_cases.test001_study_word.Word: 单词本</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td><a href="javascript:showClassDetail('c1',2)">详情</a></td>
+    </tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_study_word_1_1: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        错误</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <pre>
+        ft1.1: 在登录界面：
+/Users/vanthink_test_ios/aa/testone
+用户信息，即将登陆： {'student': {'student': 15248887321, 'teacher': 18823452347}, 'pwd': '1N14VXUCJTHoA'}
+720 1280 pingmu
+(720, 1280)
+/Users/vanthink_test_ios/aa/testone
+===== 第1组练习 =====
+720 1280 pingmu
+720 1280 pingmu
+学生昵称： 王佳悦 
+ 学校名称： 内蒙古巴彦淖尔市乌拉特前旗 菁华英语 
+ 学校id： 705 
+ 学生id： 119459 
+
+title: 单词拼写(复习)
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  adj. 像玻璃的；光亮透明的
+点击提示出现首字母提示 g
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: glassy
+g
+720 1280 pingmu
+g 353.268 1020.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+s
+720 1280 pingmu
+s 141.3072 1020.0
+s
+720 1280 pingmu
+s 141.3072 1020.0
+y
+720 1280 pingmu
+y 391.9248 916.0
+最终输入单词： glassy
+我输入的： glassy
+------------------------------ 
+
+解释：  adj. [昆虫]羊膜的
+点击提示出现首字母提示 a
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: amniotic
+a
+720 1280 pingmu
+a 70.6536 1020.0
+m
+720 1280 pingmu
+m 565.2288 1124.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+i
+720 1280 pingmu
+i 533.232 916.0
+o
+720 1280 pingmu
+o 603.8856 916.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+i
+720 1280 pingmu
+i 533.232 916.0
+c
+720 1280 pingmu
+c 282.6144 1124.0
+最终输入单词： amniotic
+我输入的： amniotic
+------------------------------ 
+
+解释：  adj. 行为的
+点击提示出现首字母提示 b
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: behavioral
+b
+720 1280 pingmu
+b 423.9216 1124.0
+e
+720 1280 pingmu
+e 179.964 916.0
+h
+720 1280 pingmu
+h 423.9216 1020.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+v
+720 1280 pingmu
+v 353.268 1124.0
+i
+720 1280 pingmu
+i 533.232 916.0
+o
+720 1280 pingmu
+o 603.8856 916.0
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+最终输入单词： behavioral
+我输入的： behavioral
+------------------------------ 
+
+解释：  adv. 反向地
+点击提示出现首字母提示 o
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: oppositely
+o
+720 1280 pingmu
+o 603.8856 916.0
+p
+720 1280 pingmu
+p 674.5392 916.0
+p
+720 1280 pingmu
+p 674.5392 916.0
+o
+720 1280 pingmu
+o 603.8856 916.0
+s
+720 1280 pingmu
+s 141.3072 1020.0
+i
+720 1280 pingmu
+i 533.232 916.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+e
+720 1280 pingmu
+e 179.964 916.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+y
+720 1280 pingmu
+y 391.9248 916.0
+最终输入单词： oppositely
+我输入的： oppositely
+------------------------------ 
+
+解释：  adv. 消极地；否定地
+点击提示出现首字母提示 n
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: negatively
+n
+720 1280 pingmu
+n 494.5752 1124.0
+e
+720 1280 pingmu
+e 179.964 916.0
+g
+720 1280 pingmu
+g 353.268 1020.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+i
+720 1280 pingmu
+i 533.232 916.0
+v
+720 1280 pingmu
+v 353.268 1124.0
+e
+720 1280 pingmu
+e 179.964 916.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+y
+720 1280 pingmu
+y 391.9248 916.0
+最终输入单词： negatively
+我输入的： negatively
+------------------------------ 
+
+解释：  v. 中和；使无效
+点击提示出现首字母提示 n
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: neutralize
+n
+720 1280 pingmu
+n 494.5752 1124.0
+e
+720 1280 pingmu
+e 179.964 916.0
+u
+720 1280 pingmu
+u 462.5784 916.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+i
+720 1280 pingmu
+i 533.232 916.0
+z
+720 1280 pingmu
+z 141.3072 1124.0
+e
+720 1280 pingmu
+e 179.964 916.0
+最终输入单词： neutralize
+我输入的： neutralize
+------------------------------ 
+
+解释：  n. 要求；申请书
+点击提示出现首字母提示 r
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: requisition
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+e
+720 1280 pingmu
+e 179.964 916.0
+q
+720 1280 pingmu
+q 38.6568 916.0
+u
+720 1280 pingmu
+u 462.5784 916.0
+i
+720 1280 pingmu
+i 533.232 916.0
+s
+720 1280 pingmu
+s 141.3072 1020.0
+i
+720 1280 pingmu
+i 533.232 916.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+i
+720 1280 pingmu
+i 533.232 916.0
+o
+720 1280 pingmu
+o 603.8856 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+最终输入单词： requisition
+我输入的： requisition
+------------------------------ 
+
+解释：  n. 不忠不义；背信弃义
+点击提示出现首字母提示 d
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: disloyalty
+d
+720 1280 pingmu
+d 211.9608 1020.0
+i
+720 1280 pingmu
+i 533.232 916.0
+s
+720 1280 pingmu
+s 141.3072 1020.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+o
+720 1280 pingmu
+o 603.8856 916.0
+y
+720 1280 pingmu
+y 391.9248 916.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+y
+720 1280 pingmu
+y 391.9248 916.0
+最终输入单词： disloyalty
+我输入的： disloyalty
+------------------------------ 
+
+解释：  adv. 显然，明显地
+点击提示出现首字母提示 e
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: evidently
+e
+720 1280 pingmu
+e 179.964 916.0
+v
+720 1280 pingmu
+v 353.268 1124.0
+i
+720 1280 pingmu
+i 533.232 916.0
+d
+720 1280 pingmu
+d 211.9608 1020.0
+e
+720 1280 pingmu
+e 179.964 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+y
+720 1280 pingmu
+y 391.9248 916.0
+最终输入单词： evidently
+我输入的： evidently
+------------------------------ 
+
+解释：  adj. 非正式的；不拘礼节的
+点击提示出现首字母提示 i
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: informal
+i
+720 1280 pingmu
+i 533.232 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+f
+720 1280 pingmu
+f 282.6144 1020.0
+o
+720 1280 pingmu
+o 603.8856 916.0
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+m
+720 1280 pingmu
+m 565.2288 1124.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+最终输入单词： informal
+我输入的： informal
+------------------------------ 
+
+解释：  n. 基础设施；公共建设
+点击提示出现首字母提示 i
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: infrastructure
+i
+720 1280 pingmu
+i 533.232 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+f
+720 1280 pingmu
+f 282.6144 1020.0
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+s
+720 1280 pingmu
+s 141.3072 1020.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+u
+720 1280 pingmu
+u 462.5784 916.0
+c
+720 1280 pingmu
+c 282.6144 1124.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+u
+720 1280 pingmu
+u 462.5784 916.0
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+e
+720 1280 pingmu
+e 179.964 916.0
+最终输入单词： infrastructure
+我输入的： infrastructure
+------------------------------ 
+
+解释：  v. 缠住；盘绕
+点击提示出现首字母提示 e
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: entwine
+e
+720 1280 pingmu
+e 179.964 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+w
+720 1280 pingmu
+w 109.31039999999999 916.0
+i
+720 1280 pingmu
+i 533.232 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+e
+720 1280 pingmu
+e 179.964 916.0
+最终输入单词： entwine
+我输入的： entwine
+------------------------------ 
+
+解释：  n. 团；大量
+点击提示出现首字母提示 r
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: regiment
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+e
+720 1280 pingmu
+e 179.964 916.0
+g
+720 1280 pingmu
+g 353.268 1020.0
+i
+720 1280 pingmu
+i 533.232 916.0
+m
+720 1280 pingmu
+m 565.2288 1124.0
+e
+720 1280 pingmu
+e 179.964 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+最终输入单词： regiment
+我输入的： regiment
+------------------------------ 
+
+解释：  n. 叛乱；反抗
+点击提示出现首字母提示 r
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: rebellion
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+e
+720 1280 pingmu
+e 179.964 916.0
+b
+720 1280 pingmu
+b 423.9216 1124.0
+e
+720 1280 pingmu
+e 179.964 916.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+i
+720 1280 pingmu
+i 533.232 916.0
+o
+720 1280 pingmu
+o 603.8856 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+最终输入单词： rebellion
+我输入的： rebellion
+------------------------------ 
+
+解释：  v. 阻碍…的正常生长或发展；表演特技
+点击提示出现首字母提示 s
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: stunt
+s
+720 1280 pingmu
+s 141.3072 1020.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+u
+720 1280 pingmu
+u 462.5784 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+最终输入单词： stunt
+我输入的： stunt
+------------------------------ 
+
+解释：  n. 反对；敌对
+点击提示出现首字母提示 o
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: opposition
+o
+720 1280 pingmu
+o 603.8856 916.0
+p
+720 1280 pingmu
+p 674.5392 916.0
+p
+720 1280 pingmu
+p 674.5392 916.0
+o
+720 1280 pingmu
+o 603.8856 916.0
+s
+720 1280 pingmu
+s 141.3072 1020.0
+i
+720 1280 pingmu
+i 533.232 916.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+i
+720 1280 pingmu
+i 533.232 916.0
+o
+720 1280 pingmu
+o 603.8856 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+最终输入单词： opposition
+我输入的： opposition
+------------------------------ 
+
+解释：  n. 动物群
+点击提示出现首字母提示 f
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: fauna
+f
+720 1280 pingmu
+f 282.6144 1020.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+u
+720 1280 pingmu
+u 462.5784 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+最终输入单词： fauna
+我输入的： fauna
+------------------------------ 
+
+解释：  n. 植物群
+点击提示出现首字母提示 f
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: flora
+f
+720 1280 pingmu
+f 282.6144 1020.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+o
+720 1280 pingmu
+o 603.8856 916.0
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+最终输入单词： flora
+我输入的： flora
+------------------------------ 
+
+解释：  n. 凝聚力；结合
+点击提示出现首字母提示 c
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: cohesion
+c
+720 1280 pingmu
+c 282.6144 1124.0
+o
+720 1280 pingmu
+o 603.8856 916.0
+h
+720 1280 pingmu
+h 423.9216 1020.0
+e
+720 1280 pingmu
+e 179.964 916.0
+s
+720 1280 pingmu
+s 141.3072 1020.0
+i
+720 1280 pingmu
+i 533.232 916.0
+o
+720 1280 pingmu
+o 603.8856 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+最终输入单词： cohesion
+我输入的： cohesion
+------------------------------ 
+
+解释：  adj. 似法律的
+点击提示出现首字母提示 l
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: lawlike
+l
+720 1280 pingmu
+l 635.8824 1020.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+w
+720 1280 pingmu
+w 109.31039999999999 916.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+i
+720 1280 pingmu
+i 533.232 916.0
+k
+720 1280 pingmu
+k 565.2288 1020.0
+e
+720 1280 pingmu
+e 179.964 916.0
+最终输入单词： lawlike
+我输入的： lawlike
+------------------------------ 
+
+解释：  adj. 令人误解的；引入歧途的
+点击提示出现首字母提示 m
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: misleading
+m
+720 1280 pingmu
+m 565.2288 1124.0
+i
+720 1280 pingmu
+i 533.232 916.0
+s
+720 1280 pingmu
+s 141.3072 1020.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+e
+720 1280 pingmu
+e 179.964 916.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+d
+720 1280 pingmu
+d 211.9608 1020.0
+i
+720 1280 pingmu
+i 533.232 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+g
+720 1280 pingmu
+g 353.268 1020.0
+最终输入单词： misleading
+我输入的： misleading
+------------------------------ 
+
+解释：  n. 流通，循环；发行量
+点击提示出现首字母提示 c
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: circulation
+c
+720 1280 pingmu
+c 282.6144 1124.0
+i
+720 1280 pingmu
+i 533.232 916.0
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+c
+720 1280 pingmu
+c 282.6144 1124.0
+u
+720 1280 pingmu
+u 462.5784 916.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+i
+720 1280 pingmu
+i 533.232 916.0
+o
+720 1280 pingmu
+o 603.8856 916.0
+n
+720 1280 pingmu
+n 494.5752 1124.0
+最终输入单词： circulation
+我输入的： circulation
+------------------------------ 
+
+解释：  adv. 严格地
+点击提示出现首字母提示 s
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: strictly
+s
+720 1280 pingmu
+s 141.3072 1020.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+i
+720 1280 pingmu
+i 533.232 916.0
+c
+720 1280 pingmu
+c 282.6144 1124.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+y
+720 1280 pingmu
+y 391.9248 916.0
+最终输入单词： strictly
+我输入的： strictly
+------------------------------ 
+
+解释：  v. 移居入境
+点击提示出现首字母提示 i
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: immigrate
+i
+720 1280 pingmu
+i 533.232 916.0
+m
+720 1280 pingmu
+m 565.2288 1124.0
+m
+720 1280 pingmu
+m 565.2288 1124.0
+i
+720 1280 pingmu
+i 533.232 916.0
+g
+720 1280 pingmu
+g 353.268 1020.0
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+a
+720 1280 pingmu
+a 70.6536 1020.0
+t
+720 1280 pingmu
+t 321.2712 916.0
+e
+720 1280 pingmu
+e 179.964 916.0
+最终输入单词： immigrate
+我输入的： immigrate
+------------------------------ 
+
+解释：  adv. 精神饱满地
+点击提示出现首字母提示 f
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: freshly
+f
+720 1280 pingmu
+f 282.6144 1020.0
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+e
+720 1280 pingmu
+e 179.964 916.0
+s
+720 1280 pingmu
+s 141.3072 1020.0
+h
+720 1280 pingmu
+h 423.9216 1020.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+y
+720 1280 pingmu
+y 391.9248 916.0
+最终输入单词： freshly
+我输入的： freshly
+------------------------------ 
+
+解释：  vt. 取代，代替；紧接着……而到来
+点击提示出现首字母提示 s
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: supersede
+s
+720 1280 pingmu
+s 141.3072 1020.0
+u
+720 1280 pingmu
+u 462.5784 916.0
+p
+720 1280 pingmu
+p 674.5392 916.0
+e
+720 1280 pingmu
+e 179.964 916.0
+r
+720 1280 pingmu
+r 250.61759999999998 916.0
+s
+720 1280 pingmu
+s 141.3072 1020.0
+e
+720 1280 pingmu
+e 179.964 916.0
+d
+720 1280 pingmu
+d 211.9608 1020.0
+e
+720 1280 pingmu
+e 179.964 916.0
+最终输入单词： supersede
+我输入的： supersede
+------------------------------ 
+
+解释：  adj. 体积大的；庞大的
+点击提示出现首字母提示 b
+720 1280 pingmu
+backspace 635.8824 1124.0
+单词: bulky
+b
+720 1280 pingmu
+b 423.9216 1124.0
+u
+720 1280 pingmu
+u 462.5784 916.0
+l
+720 1280 pingmu
+l 635.8824 1020.0
+k
+720 1280 pingmu
+k 565.2288 1020.0
+y
+720 1280 pingmu
+y 391.9248 916.0
+最终输入单词： bulky
+我输入的： bulky
+------------------------------ 
+
+错题再练
+title: 错题再练
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 64, in wrapper
+    ret = func(*args, **kwargs)
+TypeError: dictation_random_pattern_recite() takes 2 positional arguments but 3 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 100, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book/test_cases/test001_study_word.py", line 80, in test_study_word
+    wrong_again_count = SpellingWord().dictation_random_pattern_recite(self.stu_id, wrong_again_words)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 90, in wrapper
+    raise Exception(flag + _screenshot(func.__qualname__))
+Exception: IMAGE:SpellingWord.dictation_random_pattern_recite-20190801221125.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 124, in wrapper
+    raise Exception(e)
+Exception: IMAGE:SpellingWord.dictation_random_pattern_recite-20190801221125.png
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_study_word_2_2: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        错误</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <pre>
+        ft1.2: 做题页面
+720 1280 pingmu
+(720, 1280)
+/Users/vanthink_test_ios/aa/testone
+===== 第2组练习 =====
+title: 单词拼写(复习)
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  n. 贸易，商业
+★★★ Error - 单词拼写 默写模式 - 字母未全部消除
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 29, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book_rebuild/object_page/word_spelling_page.py", line 108, in hint_button
+    .find_element_by_id(self.id_type() + "hint")
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 361, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/webdriver.py", line 272, in find_element
+    'value': value})['value']
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 64, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book_rebuild/object_page/word_spelling_page.py", line 236, in hint_ele_operate
+    hint = self.hint_button()  # 提示按钮
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 38, in wrapper
+    raise WebDriverException(flag + _screenshot(func.__qualname__))
+selenium.common.exceptions.WebDriverException: Message: IMAGE:SpellingWord.hint_button-20190801221235.png
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 29, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book_rebuild/object_page/word_spelling_page.py", line 132, in spell_right_word_operate
+    self.hint_ele_operate(word)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 72, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: IMAGE:SpellingWord.hint_button-20190801221235.png
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 29, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book/object_page/recite_word_operate.py", line 33, in word_book_recite_operate
+    word_spell_index = WordSpellGamePage().word_spell_game_operate(stu_id, word_spell_index, game_type)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book/object_page/word_spell_game.py", line 19, in word_spell_game_operate
+    self.spell_right_word_operate(right_word)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 36, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: IMAGE:SpellingWord.hint_button-20190801221235.png
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 100, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book/test_cases/test001_study_word.py", line 74, in test_study_word
+    recite_words_count = ReciteWordPage().word_book_recite_operate(self.stu_id, wrong_again_words)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 36, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: Message: IMAGE:SpellingWord.hint_button-20190801221235.png
+
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 108, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: Message: Message: IMAGE:SpellingWord.hint_button-20190801221235.png
+
+
+
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+        <tr id='total_row'>
+            <td>总计</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>2</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            color: ['#95b75d', 'grey', '#b64645'],
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:0, name:'通过'},
+                        {value:0, name:'失败'},
+                        {value:2, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>

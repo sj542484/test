@@ -1,0 +1,540 @@
+2019-08-12 15:55:49,854 - RedMi_7 - INFO - --> FlashCard.setUp
+2019-08-12 15:55:49,856 - RedMi_7 - INFO -   --> LoginPage.app_status
+2019-08-12 15:55:49,857 - RedMi_7 - INFO -   --> LoginPage.wait_check_page
+2019-08-12 15:55:52,277 - RedMi_7 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-12 15:55:52,277 - RedMi_7 - INFO -   --> LoginPage.login_operate
+2019-08-12 15:55:54,279 - RedMi_7 - INFO - 	--> LoginPage.input_username
+2019-08-12 15:55:54,432 - RedMi_7 - INFO - 	--> LoginPage.input_password
+2019-08-12 15:55:56,387 - RedMi_7 - INFO - 	--> LoginPage.login_button
+2019-08-12 15:55:59,066 - RedMi_7 - INFO -   <-- LoginPage.login_operate, Success
+2019-08-12 15:55:59,067 - RedMi_7 - INFO -   <-- LoginPage.app_status, Success
+2019-08-12 15:55:59,067 - RedMi_7 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-12 15:55:59,068 - RedMi_7 - INFO - --> FlashCard.test_all_game
+2019-08-12 15:55:59,069 - RedMi_7 - INFO -   --> HomePage.wait_check_home_page
+2019-08-12 15:56:00,663 - RedMi_7 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-12 15:56:00,664 - RedMi_7 - INFO - 	--> UserCenterPage.get_user_info
+2019-08-12 15:56:00,664 - RedMi_7 - INFO - 	--> HomePage.click_tab_profile
+2019-08-12 15:56:01,388 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-12 15:56:04,821 - RedMi_7 - INFO - 	--> UserCenterPage.nickname
+2019-08-12 15:56:07,469 - RedMi_7 - INFO - 	--> UserCenterPage.purchase
+2019-08-12 15:56:07,700 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-12 15:56:09,481 - RedMi_7 - INFO - 	--> UserCenterPage.phone
+2019-08-12 15:56:11,196 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-12 15:56:12,136 - RedMi_7 - INFO - 	--> UserCenterPage.school_name
+2019-08-12 15:56:12,305 - RedMi_7 - INFO - 	--> UserCenterPage.setting_up
+2019-08-12 15:56:12,529 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-12 15:56:13,344 - RedMi_7 - INFO - 	--> UserCenterPage.clear_cache
+2019-08-12 15:56:16,674 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-12 15:56:17,248 - RedMi_7 - INFO - 	--> HomePage.click_tab_hw
+2019-08-12 15:56:18,357 - RedMi_7 - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-12 15:56:18,392 - RedMi_7 - INFO -   --> HomePage.wait_check_home_page
+2019-08-12 15:56:19,081 - RedMi_7 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-12 15:56:19,082 - RedMi_7 - INFO - 	--> HomePage.click_hk_tab
+2019-08-12 15:56:19,456 - RedMi_7 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-12 15:56:19,457 - RedMi_7 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-12 15:56:20,598 - RedMi_7 - INFO - 	--> LibraryGamePage.homework_list
+2019-08-12 15:56:21,769 - RedMi_7 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-12 15:56:22,849 - RedMi_7 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-12 15:56:22,851 - RedMi_7 - INFO - 	--> LibraryGamePage.testbank_type
+2019-08-12 15:56:23,487 - RedMi_7 - INFO - 	--> LibraryGamePage.testbank_name
+2019-08-12 15:56:23,739 - RedMi_7 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-12 15:56:23,861 - RedMi_7 - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-08-12 15:56:24,197 - RedMi_7 - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-08-12 15:56:24,544 - RedMi_7 - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-08-12 15:56:26,669 - RedMi_7 - INFO - 	--> LibraryGamePage.play_book_games
+2019-08-12 15:56:26,670 - RedMi_7 - INFO - 	--> LibraryGamePage.game_name
+2019-08-12 15:56:26,896 - RedMi_7 - INFO - 	--> FlashCard.play_flash_game
+2019-08-12 15:56:26,896 - RedMi_7 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-12 15:56:32,450 - RedMi_7 - INFO - 	--> FlashCardGame.wait_check_copy_page
+2019-08-12 15:56:32,525 - RedMi_7 - INFO -   --> FlashCard.flash_copy_operate
+2019-08-12 15:56:32,526 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 15:56:32,647 - RedMi_7 - INFO - 	--> FlashCardGame.click_voice
+2019-08-12 15:56:32,813 - RedMi_7 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-12 15:56:32,814 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 15:56:33,453 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 15:56:33,556 - RedMi_7 - INFO - 	--> FlashCardGame.star_button
+2019-08-12 15:56:33,695 - RedMi_7 - INFO - 	--> FlashCardGame.copy_input
+2019-08-12 15:56:34,301 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:34,301 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:34,341 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:34,827 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:34,828 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:34,828 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:34,872 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:35,325 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:35,325 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:35,326 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:35,358 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:36,359 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:36,360 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:36,360 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:36,406 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:36,852 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:36,852 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:36,884 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:37,291 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:37,291 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:37,331 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:38,306 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:38,306 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:38,307 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:38,353 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:38,808 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:38,808 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:38,809 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:38,841 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:39,831 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:41,832 - RedMi_7 - INFO - 	--> FlashCardGame.click_voice
+2019-08-12 15:56:42,108 - RedMi_7 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-12 15:56:42,109 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 15:56:42,709 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 15:56:42,828 - RedMi_7 - INFO - 	--> FlashCardGame.copy_input
+2019-08-12 15:56:42,968 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:42,968 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:43,000 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:43,412 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:43,413 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:43,413 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:43,444 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:44,442 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:44,443 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:44,443 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:44,486 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:44,931 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:44,931 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:44,932 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:44,965 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:45,954 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:45,954 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:45,994 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:46,449 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:46,449 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:46,483 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:47,327 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:49,329 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 15:56:49,447 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:49,488 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:49,954 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:49,955 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:49,996 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:50,462 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:50,462 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:50,504 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:50,917 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:50,918 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:50,960 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:51,371 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:52,373 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:52,374 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:52,421 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:53,316 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:53,316 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:53,317 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:53,357 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:54,308 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:54,309 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:54,309 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:54,341 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:55,177 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:55,177 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:55,178 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:55,222 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:55,614 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:55,614 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:55,657 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:56,115 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:56,115 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:56,144 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:56,990 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:56,991 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:56,991 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:57,033 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:57,477 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:56:57,478 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:56:57,478 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:56:57,506 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:56:58,361 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:00,362 - RedMi_7 - INFO - 	--> FlashCardGame.click_voice
+2019-08-12 15:57:00,537 - RedMi_7 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-12 15:57:00,537 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 15:57:01,376 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 15:57:01,502 - RedMi_7 - INFO - 	--> FlashCardGame.star_button
+2019-08-12 15:57:01,647 - RedMi_7 - INFO - 	--> FlashCardGame.copy_input
+2019-08-12 15:57:02,273 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:57:02,273 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:02,312 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:02,747 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:02,747 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:57:02,748 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:02,792 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:03,496 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:03,497 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:57:03,497 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:03,527 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:04,403 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:04,403 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:57:04,404 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:04,447 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:05,375 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:05,376 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:05,415 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:06,332 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:06,332 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:06,361 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:07,204 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:07,205 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:57:07,205 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:07,253 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:07,680 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:07,680 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:57:07,681 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:07,715 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:08,604 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:10,607 - RedMi_7 - INFO - 	--> FlashCardGame.click_voice
+2019-08-12 15:57:10,775 - RedMi_7 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-12 15:57:10,776 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 15:57:11,363 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 15:57:11,473 - RedMi_7 - INFO - 	--> FlashCardGame.copy_input
+2019-08-12 15:57:11,601 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:57:11,602 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:11,643 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:12,078 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:12,078 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:57:12,079 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:12,119 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:12,509 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:12,511 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:57:12,512 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:12,556 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:13,425 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:13,426 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:57:13,426 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:13,465 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:13,897 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:13,898 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:13,946 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:14,346 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:14,347 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:14,377 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:15,263 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:15,264 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:57:15,265 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:15,301 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:15,729 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:15,730 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 15:57:15,730 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 15:57:15,761 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 15:57:16,622 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 15:57:18,623 - RedMi_7 - INFO -   <-- FlashCard.flash_copy_operate, Success
+2019-08-12 15:57:18,624 - RedMi_7 - INFO -   --> FlashCard.flash_card_result_operate
+2019-08-12 15:57:18,625 - RedMi_7 - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-08-12 15:57:22,092 - RedMi_7 - INFO -   <-- FlashCard.flash_card_result_operate, Success
+2019-08-12 15:57:22,096 - RedMi_7 - INFO -   --> FlashCard.flash_copy_operate
+2019-08-12 15:57:22,097 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 15:57:22,116 - RedMi_7 - ERROR - WebDriverException, Message: cannot forward the request Failed to connect to /127.0.0.1:4725
+Stacktrace:
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:143)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doPost (DriverServlet.java:70)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:707)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-08-12 15:57:22,121 - RedMi_7 - ERROR - 	<-- LibraryPubicPage.rest_bank_num, WebDriverException, Error
+2019-08-12 15:57:22,130 - RedMi_7 - ERROR - WebDriverException, Message: Session [fc872b4a-dfa4-4768-adda-25a58afdce82] was terminated due to FORWARDING_TO_NODE_FAILED
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doGet (DriverServlet.java:64)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:687)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-08-12 15:57:22,140 - RedMi_7 - ERROR -   <-- FlashCard.flash_copy_operate, WebDriverException, Error
+2019-08-12 15:57:22,145 - RedMi_7 - ERROR - WebDriverException, Message: Session [fc872b4a-dfa4-4768-adda-25a58afdce82] was terminated due to FORWARDING_TO_NODE_FAILED
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doGet (DriverServlet.java:64)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:687)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-08-12 15:57:22,146 - RedMi_7 - ERROR - 	<-- FlashCard.play_flash_game, WebDriverException, Error
+2019-08-12 15:57:22,148 - RedMi_7 - ERROR - WebDriverException, Message: Session [fc872b4a-dfa4-4768-adda-25a58afdce82] was terminated due to FORWARDING_TO_NODE_FAILED
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doGet (DriverServlet.java:64)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:687)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-08-12 15:57:22,149 - RedMi_7 - ERROR - 	<-- LibraryGamePage.play_book_games, WebDriverException, Error
+2019-08-12 15:57:22,154 - RedMi_7 - ERROR - WebDriverException, Message: Session [fc872b4a-dfa4-4768-adda-25a58afdce82] was terminated due to FORWARDING_TO_NODE_FAILED
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doGet (DriverServlet.java:64)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:687)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-08-12 15:57:22,157 - RedMi_7 - ERROR - <-- FlashCard.test_all_game, WebDriverException, Error
+
+2019-08-12 15:57:22,162 - RedMi_7 - INFO - --> FlashCard.tearDown
+2019-08-12 15:57:22,162 - RedMi_7 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-12 15:57:22,190 - RedMi_7 - INFO - --> WKGame.setUp
+2019-08-12 15:57:22,192 - RedMi_7 - INFO -   --> LoginPage.app_status
+2019-08-12 15:57:22,193 - RedMi_7 - INFO -   --> LoginPage.wait_check_page
+2019-08-12 15:57:22,199 - RedMi_7 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-12 15:57:22,200 - RedMi_7 - INFO -   --> HomePage.wait_check_home_page
+2019-08-12 15:57:22,203 - RedMi_7 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-12 15:57:22,204 - RedMi_7 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-12 15:57:22,204 - RedMi_7 - INFO - 	--> LoginPage.close_app
+2019-08-12 15:57:22,211 - RedMi_7 - ERROR - WebDriverException, Message: Session [fc872b4a-dfa4-4768-adda-25a58afdce82] was terminated due to FORWARDING_TO_NODE_FAILED
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doPost (DriverServlet.java:70)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:707)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-08-12 15:57:22,212 - RedMi_7 - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-12 15:57:22,214 - RedMi_7 - ERROR - WebDriverException, Message: Session [fc872b4a-dfa4-4768-adda-25a58afdce82] was terminated due to FORWARDING_TO_NODE_FAILED
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doGet (DriverServlet.java:64)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:687)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-08-12 15:57:22,215 - RedMi_7 - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-12 15:57:22,217 - RedMi_7 - ERROR - WebDriverException, Message: Session [fc872b4a-dfa4-4768-adda-25a58afdce82] was terminated due to FORWARDING_TO_NODE_FAILED
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doGet (DriverServlet.java:64)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:687)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-08-12 15:57:22,218 - RedMi_7 - ERROR - <-- WKGame.setUp, WebDriverException, Error
+

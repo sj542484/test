@@ -1,0 +1,231 @@
+2019-08-27 11:22:42,284 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:22:42,286 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:22:42,287 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:22:45,409 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:22:45,415 - oppo_R11t - INFO -   --> LoginPage.login_operate
+2019-08-27 11:22:47,419 - oppo_R11t - INFO - 	--> LoginPage.input_username
+2019-08-27 11:22:47,480 - oppo_R11t - INFO - 	--> LoginPage.input_password
+2019-08-27 11:22:50,359 - oppo_R11t - INFO - 	--> LoginPage.login_button
+2019-08-27 11:22:52,960 - oppo_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-08-27 11:22:52,961 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:22:52,962 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:22:52,963 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:22:52,963 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:22:53,865 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:22:53,865 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:22:53,866 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:22:54,052 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:22:57,459 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:22:59,892 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:23:00,037 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-27 11:23:02,473 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-27 11:23:03,764 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:23:05,450 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-27 11:23:05,575 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-27 11:23:06,658 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-27 11:23:06,713 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-27 11:23:10,280 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:23:11,817 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-27 11:23:12,451 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-27 11:23:12,452 - oppo_R11t - ERROR - Exception, 'HomeworkSql' object has no attribute 'db'
+2019-08-27 11:23:12,453 - oppo_R11t - ERROR - 	<-- HomeworkDataHandle.delete_student_homework_data, Exception, Error
+2019-08-27 11:23:13,600 - oppo_R11t - ERROR - Exception, IMAGE:HomeworkDataHandle.delete_student_homework_data-20190827112312.png
+2019-08-27 11:23:13,600 - oppo_R11t - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-08-27 11:23:13,601 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 11:23:13,601 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 11:23:13,609 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:23:13,610 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:23:13,610 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:23:19,024 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:23:19,027 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:23:20,664 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:23:20,665 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:23:20,666 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:23:20,666 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:23:20,666 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:23:21,496 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:23:21,497 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:23:21,497 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:23:21,717 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:23:24,697 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:23:27,125 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:23:27,391 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-27 11:23:30,570 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-27 11:23:32,853 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:23:34,262 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-27 11:23:34,368 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-27 11:23:34,499 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-27 11:23:35,885 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-27 11:23:39,131 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:23:39,720 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-27 11:23:40,399 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-27 11:23:40,400 - oppo_R11t - ERROR - Exception, 'HomeworkSql' object has no attribute 'db'
+2019-08-27 11:23:40,404 - oppo_R11t - ERROR - 	<-- HomeworkDataHandle.delete_student_homework_data, Exception, Error
+2019-08-27 11:23:41,515 - oppo_R11t - ERROR - Exception, IMAGE:HomeworkDataHandle.delete_student_homework_data-20190827112340.png
+2019-08-27 11:23:41,516 - oppo_R11t - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-08-27 11:23:41,516 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 11:23:41,516 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 11:23:41,517 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:23:41,517 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:23:41,517 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:23:46,971 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:23:46,973 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:23:48,035 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:23:48,035 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:23:48,036 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:23:48,036 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:23:48,037 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:23:48,465 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:23:48,465 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:23:48,466 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:23:48,641 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:23:51,684 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:23:54,164 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:23:54,439 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-27 11:23:57,364 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-27 11:23:58,703 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:24:01,632 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-27 11:24:01,732 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-27 11:24:03,276 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-27 11:24:06,378 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-27 11:24:09,599 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:24:10,593 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-27 11:24:10,720 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-27 11:24:10,721 - oppo_R11t - ERROR - Exception, 'HomeworkSql' object has no attribute 'db'
+2019-08-27 11:24:10,721 - oppo_R11t - ERROR - 	<-- HomeworkDataHandle.delete_student_homework_data, Exception, Error
+2019-08-27 11:24:11,690 - oppo_R11t - ERROR - Exception, IMAGE:HomeworkDataHandle.delete_student_homework_data-20190827112410.png
+2019-08-27 11:24:11,690 - oppo_R11t - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-08-27 11:24:11,690 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 11:24:11,691 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 11:24:11,691 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:24:11,691 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:24:11,691 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:24:17,542 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:24:17,544 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:24:19,384 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:24:19,385 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:24:19,385 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:24:19,385 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:24:19,386 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:24:19,863 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:24:19,863 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:24:19,864 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:24:21,975 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:24:25,700 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:24:28,108 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:24:28,261 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-27 11:24:30,661 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-27 11:24:32,495 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:24:33,653 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-27 11:24:33,766 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-27 11:24:33,889 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-27 11:24:35,470 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-27 11:24:38,667 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:24:39,979 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-27 11:24:40,108 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-27 11:24:40,109 - oppo_R11t - ERROR - Exception, 'HomeworkSql' object has no attribute 'db'
+2019-08-27 11:24:40,109 - oppo_R11t - ERROR - 	<-- HomeworkDataHandle.delete_student_homework_data, Exception, Error
+2019-08-27 11:24:41,190 - oppo_R11t - ERROR - Exception, IMAGE:HomeworkDataHandle.delete_student_homework_data-20190827112440.png
+2019-08-27 11:24:41,191 - oppo_R11t - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-08-27 11:24:41,191 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 11:24:41,191 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 11:24:41,192 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:24:41,192 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:24:41,192 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:24:46,820 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:24:46,821 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:24:47,262 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:24:47,263 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:24:47,263 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:24:47,263 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:24:47,264 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:24:47,733 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:24:47,734 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:24:47,735 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:24:48,883 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:24:51,855 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:24:54,248 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:24:55,544 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-27 11:24:57,997 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-27 11:24:59,662 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:25:01,300 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-27 11:25:01,376 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-27 11:25:01,502 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-27 11:25:03,054 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-27 11:25:07,243 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:25:07,839 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-27 11:25:07,985 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-27 11:25:07,985 - oppo_R11t - ERROR - Exception, 'HomeworkSql' object has no attribute 'db'
+2019-08-27 11:25:07,986 - oppo_R11t - ERROR - 	<-- HomeworkDataHandle.delete_student_homework_data, Exception, Error
+2019-08-27 11:25:09,064 - oppo_R11t - ERROR - Exception, IMAGE:HomeworkDataHandle.delete_student_homework_data-20190827112507.png
+2019-08-27 11:25:09,064 - oppo_R11t - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-08-27 11:25:09,065 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 11:25:09,065 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 11:25:09,066 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:25:09,066 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:25:09,066 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:25:14,552 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:25:14,553 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:25:15,025 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:25:15,026 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:25:15,026 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:25:15,026 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:25:15,027 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:25:16,232 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:25:16,233 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:25:16,233 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:25:16,415 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:25:19,402 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:25:21,823 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:25:22,427 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-27 11:25:25,416 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-27 11:25:28,580 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:25:29,853 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-27 11:25:29,941 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-27 11:25:30,059 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-27 11:25:32,127 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-27 11:25:35,317 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:25:37,579 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-27 11:25:37,707 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-27 11:25:37,707 - oppo_R11t - ERROR - Exception, 'HomeworkSql' object has no attribute 'db'
+2019-08-27 11:25:37,708 - oppo_R11t - ERROR - 	<-- HomeworkDataHandle.delete_student_homework_data, Exception, Error
+2019-08-27 11:25:38,692 - oppo_R11t - ERROR - Exception, IMAGE:HomeworkDataHandle.delete_student_homework_data-20190827112537.png
+2019-08-27 11:25:38,693 - oppo_R11t - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-08-27 11:25:38,693 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 11:25:38,693 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 11:25:38,694 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:25:38,694 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:25:38,694 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:25:44,292 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:25:44,293 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:25:44,738 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:25:44,739 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:25:44,739 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:25:44,740 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:25:44,740 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:25:45,171 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:25:45,172 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:25:45,172 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:25:45,325 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:25:49,011 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:25:52,067 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:25:52,841 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page

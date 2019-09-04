@@ -1,0 +1,84 @@
+2019-08-01 14:49:44,940 - RedMi_7 - INFO - --> Word.setUp
+2019-08-01 14:49:44,941 - RedMi_7 - INFO -   --> LoginPage.app_status
+2019-08-01 14:49:44,942 - RedMi_7 - INFO -   --> LoginPage.wait_check_page
+2019-08-01 14:49:47,480 - RedMi_7 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-01 14:49:47,481 - RedMi_7 - INFO -   --> LoginPage.login_operate
+2019-08-01 14:49:49,482 - RedMi_7 - INFO - 	--> LoginPage.input_username
+2019-08-01 14:49:49,580 - RedMi_7 - INFO - 	--> LoginPage.input_password
+2019-08-01 14:49:51,470 - RedMi_7 - INFO - 	--> LoginPage.login_button
+2019-08-01 14:49:54,126 - RedMi_7 - INFO -   <-- LoginPage.login_operate, Success
+2019-08-01 14:49:54,127 - RedMi_7 - INFO -   <-- LoginPage.app_status, Success
+2019-08-01 14:49:54,210 - RedMi_7 - INFO - <-- Word.setUp, Success
+
+2019-08-01 14:49:54,211 - RedMi_7 - INFO - --> Word.test_study_word
+2019-08-01 14:49:54,211 - RedMi_7 - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 14:49:55,921 - RedMi_7 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 14:49:55,922 - RedMi_7 - INFO - 	--> UserCenterPage.get_user_info
+2019-08-01 14:49:55,922 - RedMi_7 - INFO - 	--> HomePage.click_tab_profile
+2019-08-01 14:49:56,282 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 14:49:59,796 - RedMi_7 - INFO - 	--> UserCenterPage.nickname
+2019-08-01 14:50:02,321 - RedMi_7 - INFO - 	--> UserCenterPage.purchase
+2019-08-01 14:50:02,498 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-01 14:50:04,511 - RedMi_7 - INFO - 	--> UserCenterPage.phone
+2019-08-01 14:50:05,890 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 14:50:06,451 - RedMi_7 - INFO - 	--> UserCenterPage.school_name
+2019-08-01 14:50:06,614 - RedMi_7 - INFO - 	--> UserCenterPage.setting_up
+2019-08-01 14:50:06,768 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-01 14:50:07,541 - RedMi_7 - INFO - 	--> UserCenterPage.clear_cache
+2019-08-01 14:50:10,811 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 14:50:11,386 - RedMi_7 - INFO - 	--> HomePage.click_tab_hw
+2019-08-01 14:50:12,445 - RedMi_7 - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 14:50:13,042 - RedMi_7 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 14:50:13,042 - RedMi_7 - INFO - 	--> HomePage.click_hk_tab
+2019-08-01 14:50:13,306 - RedMi_7 - INFO - 	--> WordBookRebuildPage.wait_check_start_page
+2019-08-01 14:50:14,307 - RedMi_7 - INFO - 	--> WordBookRebuildPage.word_start_button
+2019-08-01 14:50:20,435 - RedMi_7 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 14:50:28,955 - RedMi_7 - INFO - 	--> PublicElementPage.game_title
+2019-08-01 14:50:29,070 - RedMi_7 - INFO - 	--> ReciteWordPage.word_book_recite_operate
+2019-08-01 14:50:29,070 - RedMi_7 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 14:50:29,126 - RedMi_7 - INFO - 	--> PublicElementPage.game_title
+2019-08-01 14:50:29,274 - RedMi_7 - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 14:50:29,275 - RedMi_7 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 14:50:29,275 - RedMi_7 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 14:50:29,333 - RedMi_7 - INFO - 	--> GetAttribute.enabled
+2019-08-01 14:50:30,388 - RedMi_7 - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 14:50:31,550 - RedMi_7 - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 14:50:33,677 - RedMi_7 - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 14:50:33,778 - RedMi_7 - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 14:50:33,832 - RedMi_7 - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 14:50:33,925 - RedMi_7 - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 14:50:35,296 - RedMi_7 - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 14:50:35,296 - RedMi_7 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 14:50:35,297 - RedMi_7 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 14:50:35,390 - RedMi_7 - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-08-01 14:50:35,392 - RedMi_7 - ERROR - 	<-- PublicElementPage.fab_next_btn, WebDriverException, Error
+2019-08-01 14:50:35,900 - RedMi_7 - ERROR - WebDriverException, Message: IMAGE:PublicElementPage.fab_next_btn-20190801145035.png
+
+2019-08-01 14:50:35,901 - RedMi_7 - ERROR - 	<-- PublicElementPage.next_btn_judge, WebDriverException, Error
+2019-08-01 14:50:35,901 - RedMi_7 - ERROR - WebDriverException, Message: Message: IMAGE:PublicElementPage.fab_next_btn-20190801145035.png
+
+
+2019-08-01 14:50:35,902 - RedMi_7 - ERROR - 	<-- PublicElementPage.next_btn_operate, WebDriverException, Error
+2019-08-01 14:50:35,902 - RedMi_7 - ERROR - WebDriverException, Message: Message: Message: IMAGE:PublicElementPage.fab_next_btn-20190801145035.png
+
+
+
+2019-08-01 14:50:35,903 - RedMi_7 - ERROR - 	<-- VocabGamePage.vocab_apply_game_operate, WebDriverException, Error
+2019-08-01 14:50:35,903 - RedMi_7 - ERROR - WebDriverException, Message: Message: Message: Message: IMAGE:PublicElementPage.fab_next_btn-20190801145035.png
+
+
+
+
+2019-08-01 14:50:35,903 - RedMi_7 - ERROR - 	<-- ReciteWordPage.word_book_recite_operate, WebDriverException, Error
+2019-08-01 14:50:35,904 - RedMi_7 - ERROR - WebDriverException, Message: Message: Message: Message: Message: IMAGE:PublicElementPage.fab_next_btn-20190801145035.png
+
+
+
+
+
+2019-08-01 14:50:35,904 - RedMi_7 - ERROR - <-- Word.test_study_word, WebDriverException, Error
+
+2019-08-01 14:50:35,904 - RedMi_7 - INFO - --> Word.tearDown
+2019-08-01 14:50:35,905 - RedMi_7 - INFO - <-- Word.tearDown, Success
+

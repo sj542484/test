@@ -1,0 +1,27 @@
+2019-07-22 13:46:57,362 - honor_P9 - INFO - --> AssignHw.setUp
+2019-07-22 13:46:57,364 - honor_P9 - INFO - <-- AssignHw.setUp, Success
+
+2019-07-22 13:46:57,364 - honor_P9 - INFO - --> AssignHw.test_assign_hw_timing
+2019-07-22 13:46:57,365 - honor_P9 - INFO -   --> TloginPage.app_status
+2019-07-22 13:46:57,365 - honor_P9 - INFO -   --> ThomePage.wait_check_page
+2019-07-22 13:46:57,366 - honor_P9 - INFO -   --> WaitElement.wait_check_element
+2019-07-22 13:47:17,461 - honor_P9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-07-22 13:47:17,462 - honor_P9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-07-22 13:47:17,463 - honor_P9 - INFO -   --> TloginPage.wait_check_page
+2019-07-22 13:47:17,463 - honor_P9 - INFO -   --> WaitElement.wait_check_element
+2019-07-22 13:47:17,570 - honor_P9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-07-22 13:47:17,571 - honor_P9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-07-22 13:47:17,571 - honor_P9 - INFO -   --> TloginPage.login_operation
+2019-07-22 13:47:17,572 - honor_P9 - INFO - 	--> TloginPage.input_username
+2019-07-22 13:47:17,572 - honor_P9 - ERROR - Exception, 'TloginPage' object has no attribute 'driver'
+2019-07-22 13:47:17,573 - honor_P9 - ERROR - 	<-- TloginPage.input_username, Exception, Error
+2019-07-22 13:47:18,206 - honor_P9 - ERROR - Exception, IMAGE:TloginPage.input_username-20190722134717.png
+2019-07-22 13:47:18,207 - honor_P9 - ERROR -   <-- TloginPage.login_operation, Exception, Error
+2019-07-22 13:47:18,207 - honor_P9 - ERROR - Exception, IMAGE:TloginPage.input_username-20190722134717.png
+2019-07-22 13:47:18,208 - honor_P9 - ERROR -   <-- TloginPage.app_status, Exception, Error
+2019-07-22 13:47:18,208 - honor_P9 - ERROR - Exception, IMAGE:TloginPage.input_username-20190722134717.png
+2019-07-22 13:47:18,208 - honor_P9 - ERROR - <-- AssignHw.test_assign_hw_timing, Exception, Error
+
+2019-07-22 13:47:18,209 - honor_P9 - INFO - --> AssignHw.tearDown
+2019-07-22 13:47:18,209 - honor_P9 - INFO - <-- AssignHw.tearDown, Success
+

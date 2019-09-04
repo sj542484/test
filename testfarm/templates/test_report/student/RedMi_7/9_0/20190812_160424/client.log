@@ -1,0 +1,19 @@
+2019-08-12 16:04:40,189 - RedMi_7 - INFO - --> FlashCard.setUp
+2019-08-12 16:04:40,190 - RedMi_7 - INFO -   --> LoginPage.app_status
+2019-08-12 16:04:40,191 - RedMi_7 - INFO -   --> LoginPage.wait_check_page
+2019-08-12 16:04:42,838 - RedMi_7 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-12 16:04:42,839 - RedMi_7 - INFO -   --> LoginPage.login_operate
+2019-08-12 16:04:44,841 - RedMi_7 - INFO - 	--> LoginPage.input_username
+2019-08-12 16:04:44,987 - RedMi_7 - INFO - 	--> LoginPage.input_password
+2019-08-12 16:04:46,912 - RedMi_7 - INFO - 	--> LoginPage.login_button
+2019-08-12 16:04:49,565 - RedMi_7 - INFO -   <-- LoginPage.login_operate, Success
+2019-08-12 16:04:49,566 - RedMi_7 - INFO -   <-- LoginPage.app_status, Success
+2019-08-12 16:04:49,567 - RedMi_7 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-12 16:04:49,567 - RedMi_7 - INFO - --> FlashCard.test_all_game
+2019-08-12 16:04:49,568 - RedMi_7 - INFO -   --> HomePage.wait_check_home_page
+2019-08-12 16:04:52,819 - RedMi_7 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-12 16:04:52,820 - RedMi_7 - INFO - 	--> UserCenterPage.get_user_info
+2019-08-12 16:04:52,820 - RedMi_7 - INFO - 	--> HomePage.click_tab_profile
+2019-08-12 16:04:53,173 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-12 16:04:56,731 - RedMi_7 - INFO - 	--> UserCenterPage.nickname

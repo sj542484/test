@@ -1,0 +1,1500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>oppo_R11t:  测试用例执行报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+    body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #ebebeb;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #6c6; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+
+
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+
+    #div_base {
+                position:absolute;
+                top:0%;
+                left:5%;
+                right:5%;
+                width: auto;
+                height: auto;
+                margin: -15px 0 0 0;
+    }
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.common.min.js"></script>
+    <!-- <script type="text/javascript" src="js/echarts.common.min.js"></script> -->
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level < 1) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level > 1) {
+                    tr.className = '';
+                }
+                else {
+                    tr.className = 'hiddenRow';
+                }
+            }
+        }
+    }
+
+
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+
+
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState != 'block' ) {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+        else {
+            details_div.style.display = 'none'
+        }
+    }
+
+
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>oppo_R11t:  测试用例执行报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2019-08-01 19:47:26</p>
+<p class='attribute'><strong>运行时长:</strong> 0:23:29.742554</p>
+<p class='attribute'><strong>状态:</strong> 通过 2</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>用例执行情况统计：</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+        <button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+        <button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+    </div>
+    <p></p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row'>
+            <td>测试套件/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='passClass'>
+        <td>test_cases.test001_study_word.Word: 单词本</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c1',2)">详情</a></td>
+    </tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_study_word_1_1: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <pre>
+        pt1.1: 在登录界面：
+/Users/vanthink_test_ios/aa/testone
+用户信息，即将登陆： {'student': {'student': 18522372104, 'teacher': 18823452346}, 'pwd': '1N14VXUCJTHoA'}
+1080 1920 pingmu
+(1080, 1920)
+/Users/vanthink_test_ios/aa/testone
+===== 第1组练习 =====
+1080 1920 pingmu
+1080 1920 pingmu
+学生昵称： Anna学生 
+ 学校名称： 万星教育 
+ 学校id： 1558 
+ 学生id： 9674 
+
+title: 单词本
+❌进入结果页：失败
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_study_word_2_2: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        通过</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <pre>
+        pt1.2: 做题页面
+1080 1920 pingmu
+(1080, 1920)
+/Users/vanthink_test_ios/aa/testone
+===== 第2组练习 =====
+title: 词汇选择(复习)
+===== 🌟🌟 词汇选择-根据解释选单词模式（复习）🌟🌟 =====
+
+题目:  n. 人类;n. 成年男人
+选择答案： man
+------------------------------ 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：He is a handsome ____.
+句子解释： 他是一位英俊的男子。
+选择答案： man
+------------------------------ 
+
+题目：It was ____ cold now and the ground was frozen hard. 
+句子解释： 现在天气冷极了，地面都冻硬了。
+选择答案： bitterly
+------------------------------ 
+
+题目：I'm very poor and can't ____ to buy such expensive things.
+句子解释： 我很穷，负担不起这么贵的东西。
+选择答案： afford
+------------------------------ 
+
+题目：After much hard discussion, we reached an ____.
+句子解释： 经过一番艰难的讨论，我们达成了协议。
+选择答案： agreement
+------------------------------ 
+
+题目：I lost my balance and fell ____.
+句子解释： 我没有站稳，仰面摔倒。
+选择答案： backwards
+------------------------------ 
+
+题目：Will you please tell us your ____ in winter holiday?
+句子解释： 和我们说说你的寒假经历好吗？
+选择答案： experience
+------------------------------ 
+
+题目：They did an ____ in their physics class.
+句子解释： 他们在物理课上做了一个实验。
+选择答案： experiment
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  n. 人类;n. 成年男人
+点击提示出现首字母提示 m
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: man
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+最终输入单词： man
+我输入的： man
+------------------------------ 
+
+解释：  adj. 诊断的；特征的
+点击提示出现首字母提示 d
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: diagnostic
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+g
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+最终输入单词： diagnostic
+我输入的： diagnostic
+------------------------------ 
+
+解释：  n. [地]潜没（指地壳的板块沉到另一板块之下）
+点击提示出现首字母提示 s
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: subduction
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+b
+1080 1920 pingmu
+b 635.8824 1686.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+最终输入单词： subduction
+我输入的： subduction
+------------------------------ 
+
+解释：  vt. 垄断；独占
+点击提示出现首字母提示 m
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: monopolize
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+p
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+z
+1080 1920 pingmu
+z 211.96079999999998 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： monopolize
+我输入的： monopolize
+------------------------------ 
+
+解释：  adj. 火的；[岩]火成的
+点击提示出现首字母提示 i
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: igneous
+i
+1080 1920 pingmu
+i 799.848 1374.0
+g
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+最终输入单词： igneous
+我输入的： igneous
+------------------------------ 
+
+解释：  adj. 纯洁的；不懂世故的；不精细的
+点击提示出现首字母提示 u
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: unsophisticated
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+p
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+最终输入单词： unsophisticated
+我输入的： unsophisticated
+------------------------------ 
+
+解释：  adj. 象征的；指示的
+点击提示出现首字母提示 i
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: indicative
+i
+1080 1920 pingmu
+i 799.848 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+v
+1080 1920 pingmu
+v 529.9019999999999 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： indicative
+我输入的： indicative
+------------------------------ 
+
+解释：  adj. 悲观的，厌世的
+点击提示出现首字母提示 p
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: pessimistic
+p
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+最终输入单词： pessimistic
+我输入的： pessimistic
+------------------------------ 
+
+解释：  adj. 有权威的
+点击提示出现首字母提示 a
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: authoritative
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+v
+1080 1920 pingmu
+v 529.9019999999999 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： authoritative
+我输入的： authoritative
+------------------------------ 
+
+解释：  n. 差异
+点击提示出现首字母提示 d
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: discrepancy
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+p
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+y
+1080 1920 pingmu
+y 587.8871999999999 1374.0
+最终输入单词： discrepancy
+我输入的： discrepancy
+------------------------------ 
+
+解释：  vi. 下降；遗传
+点击提示出现首字母提示 d
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: descend
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+最终输入单词： descend
+我输入的： descend
+------------------------------ 
+
+解释：  adj. 中立的，中性的
+点击提示出现首字母提示 n
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: neutral
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+最终输入单词： neutral
+我输入的： neutral
+------------------------------ 
+
+解释：  adj. 粗糙的；粗俗的
+点击提示出现首字母提示 c
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: coarse
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： coarse
+我输入的： coarse
+------------------------------ 
+
+解释：  v. 耕地
+点击提示出现首字母提示 p
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: plow
+p
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+w
+1080 1920 pingmu
+w 163.96559999999997 1374.0
+最终输入单词： plow
+我输入的： plow
+------------------------------ 
+
+解释：  adj. 可行的；能养活的
+点击提示出现首字母提示 v
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: viable
+v
+1080 1920 pingmu
+v 529.9019999999999 1686.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+b
+1080 1920 pingmu
+b 635.8824 1686.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： viable
+我输入的： viable
+------------------------------ 
+
+解释：  vt. 改善；减轻（痛苦等）
+点击提示出现首字母提示 a
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: ameliorate
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： ameliorate
+我输入的： ameliorate
+------------------------------ 
+
+解释：  adv. 一贯地；一致地
+点击提示出现首字母提示 c
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: consistently
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+y
+1080 1920 pingmu
+y 587.8871999999999 1374.0
+最终输入单词： consistently
+我输入的： consistently
+------------------------------ 
+
+解释：  n. 贵族；上层社会
+点击提示出现首字母提示 a
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: aristocracy
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+y
+1080 1920 pingmu
+y 587.8871999999999 1374.0
+最终输入单词： aristocracy
+我输入的： aristocracy
+------------------------------ 
+
+解释：  adj. 同种的
+点击提示出现首字母提示 h
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: homogeneous
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+g
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+最终输入单词： homogeneous
+我输入的： homogeneous
+------------------------------ 
+
+解释：  n. 现代化
+点击提示出现首字母提示 m
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: modernization
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+z
+1080 1920 pingmu
+z 211.96079999999998 1686.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+最终输入单词： modernization
+我输入的： modernization
+------------------------------ 
+
+解释：  vt. 致使；实施
+点击提示出现首字母提示 r
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: render
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+最终输入单词： render
+我输入的： render
+------------------------------ 
+
+解释：  n. 死亡率,必死的命运
+点击提示出现首字母提示 m
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: mortality
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+y
+1080 1920 pingmu
+y 587.8871999999999 1374.0
+最终输入单词： mortality
+我输入的： mortality
+------------------------------ 
+
+解释：  v. 延长；伸展
+点击提示出现首字母提示 p
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: protract
+p
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： protract
+我输入的： protract
+------------------------------ 
+
+解释：  n. 蜂群；一大群
+点击提示出现首字母提示 s
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: swarm
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+w
+1080 1920 pingmu
+w 163.96559999999997 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+最终输入单词： swarm
+我输入的： swarm
+------------------------------ 
+
+解释：  adv. 刺骨地
+点击提示出现首字母提示 b
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: bitterly
+b
+1080 1920 pingmu
+b 635.8824 1686.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+y
+1080 1920 pingmu
+y 587.8871999999999 1374.0
+最终输入单词： bitterly
+我输入的： bitterly
+------------------------------ 
+
+解释：  v. 抽得出;v. 提供;v. 负担得起
+点击提示出现首字母提示 a
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: afford
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+f
+1080 1920 pingmu
+f 423.92159999999996 1530.0
+f
+1080 1920 pingmu
+f 423.92159999999996 1530.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+最终输入单词： afford
+我输入的： afford
+------------------------------ 
+
+解释：  n. 协定，协议;n. 同意，一致
+点击提示出现首字母提示 a
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: agreement
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+g
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： agreement
+我输入的： agreement
+------------------------------ 
+
+解释：  adv. 相反;adv. 反;adv. 退步;adv. 倒;adv. 向后
+点击提示出现首字母提示 b
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: backwards
+b
+1080 1920 pingmu
+b 635.8824 1686.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+k
+1080 1920 pingmu
+k 847.8431999999999 1530.0
+w
+1080 1920 pingmu
+w 163.96559999999997 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+最终输入单词： backwards
+我输入的： backwards
+------------------------------ 
+
+解释：  n. 经验，经历
+点击提示出现首字母提示 e
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: experience
+e
+1080 1920 pingmu
+e 269.946 1374.0
+x
+1080 1920 pingmu
+x 317.9412 1686.0
+p
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： experience
+我输入的： experience
+------------------------------ 
+
+解释：  v. 进行实验;n. 实验，试验
+点击提示出现首字母提示 e
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: experiment
+e
+1080 1920 pingmu
+e 269.946 1374.0
+x
+1080 1920 pingmu
+x 317.9412 1686.0
+p
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： experiment
+我输入的： experiment
+------------------------------ 
+
+进入结果页面
+新词个数： 0
+数据库记载今日新词数： 3
+数据库记载组数： 2
+数据库记载复习数 57
+ &lt;结果页&gt;：
+今日已练单词：30
+日期：2019-08-01
+已背单词 3065
+已练1组
+复习30个，新词0个，新释义0个
+★★★ 复习组数非第一组, 但是复习个数大于27
+~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+需要练习的新词： ['roll', 'accidental', 'pierce', 'feed on', 'civilization', 'aim at', 'attach to', 'back up', 'ferlize', 'accourate', 'above', 'AD', 'BC', 'black', 'CD', 'cloth', 'clothing', 'color', 'cream', 'daddy', 'dead', 'disk', 'disc', 'earth', 'ending', 'examination', 'flow', 'forever', 'gas', 'grandchild', 'grandparents', 'granny', 'her', 'herself', 'himself', 'hour', 'I', 'ink', 'itself', 'madame', 'meter', 'millimetre', 'mister', 'Mrs.', 'mistress', 'myself', 'net', 'No.', 'nowhere', 'oneself', 'onto', 'ours', 'P.E.', 'P.C.', 'self', 'sick', 'sight', 'tear', 'their', 'theirs', 'them', 'themselves', 'they', 'TV', 'unlike', 'user', 'we', 'within', 'yourself', 'yourselves', 'zero', 'aboard', 'adult', 'afterward', 'alongside', 'America', 'anyhow', 'base', 'bat', 'bathe', 'blackboard', 'breathe', 'Britain', 'broom', 'cash', 'cast', 'centimeter', 'centimetre', 'cheek', 'childhood', 'China', 'cycle', 'deed', 'dial', 'dislike', 'dozen', 'drag', 'dusk', 'entry', 'excite', 'favourite', 'fee', 'focus', 'fog', 'fond', 'freeway', 'goal', 'golden', 'hearing', 'highway', 'hopeful', 'hopeless', 'indeed', 'injure', 'likely', 'lung', 'merry', 'northeast', 'northwest', 'ought', 'ourselves', 'outdoors', 'outer', 'outward', 'painter', 'parking', 'partly', 'part-time', 'pill', 'plus', 'poet', 'practise', 'produce', 'rail', 'reading', 'recorder', 'rely', 'sadness', 'saying', 'schoolboy', 'schoolmate', 'seaside', 'sex', 'shopkeeper', 'sightseeing', 'southwest', 'spoken', 'stare', 'sunlight', 'tasty', 'teamwork', 'textbook', 'theater', 'thinking', 'thus', 'timetable', 'tip', 'title', 'toward', 'traveler', 'turning', 'tire', 'unable', 'upper', 'upwards', 'used', 'useless', 'visa', 'wage', 'waste', 'weekly', 'wool', 'workday', 'zone', 'thankful', 'lastly', 'moose', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Saturday', 'Sunday', 'English', 'January', 'February', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'bookstore', 'busman', 'cable', 'calendar', 'caller', 'cardboard', 'career', 'cherry', 'chopstick', 'clavichord', 'clearly', 'cling', 'cloakroom', 'closed', 'clumsily', 'cod', 'colony', 'community', 'compartment', 'confidence', 'confidently', 'creative', 'critic', 'critically', 'crowded', 'curiously', 'cursed', 'dairy', 'darling', 'daytime', 'dedicate', 'deny', 'despair', 'desperately', 'determined', 'dinghy', 'disappearance', 'dismay', 'diver', 'donkey', 'doorknob', 'downhill', 'dreadful', 'dust', 'dustman', 'dye', 'earache', 'educational', 'elderly', 'election', 'embarrassed', 'emit', 'emotionally', 'employee', 'employer', 'enable', 'enclosure', 'enthusiast', 'evil', 'examiner', 'excited', 'excitement', 'exclaim', 'excursion', 'exempt', 'explorer', 'explosive', 'faint', 'faintly', 'fanatical', 'farewell', 'fascinate', 'faulty', 'feline', 'fiance', 'finally', 'fireman', 'footstep', 'foreign', 'foreigner', 'frightened', 'galaxy', 'gangster', 'gardening', 'gently', 'genuinely', 'ghost', 'grab', 'graceful', 'grandparent', 'gratitude', 'grease', 'groceries', 'grower', 'guiltily', 'gust', 'guy', 'hairdresser', 'hard-working', 'haunt', 'headlight', 'heavily', 'helper', 'hip', 'hitchhike', 'honesty', 'horror', 'horsepower', 'hostel', 'hurriedly', 'iceberg', 'immortal', 'impatient', 'impatiently', 'inquire', 'inspector', 'instalment', 'intelligent', 'internet', 'item', 'jelly', 'jewellery', 'kidnapper', 'kindly', 'kitten', 'label', 'landlord', 'latch', 'latest', 'least', 'less', 'lettuce', 'licence', 'lifeboat', 'lighthouse', 'limelight', 'liner', 'lobster', 'local', 'logo', 'lookout', 'lord', 'lost', 'loudly', 'macaroni', 'machinery', 'magnetize', 'manual', 'matador', 'mattress', 'meantime', 'measles', 'mechanic', 'Mediterranean', 'microphone', 'middle-aged', 'milkman', 'mince', 'miraculously', 'missing', 'monk', 'most', 'mournful', 'Mr', 'Mrs', 'Ms', 'mumps', 'mysterious', 'narrowly', 'newsagent', 'nostril', 'nuisance', 'oblige', 'observatory', 'obviously', 'occasion', 'oddly', 'officious', 'online', 'opportunity', 'orderly', 'oven', 'overfish', 'overseas', 'packing', 'pad', 'pants', 'paradise', 'paratrooper', 'parliament', 'pastry', 'patch', 'paw', 'PE', 'pedal', 'peel', 'penny', 'phrasebook', 'pigeon', 'pirate', 'pizza', 'player', 'pleasantly', 'plough', 'polo', 'popularity', 'pounce', 'precaution', 'prehistoric', 'prince', 'prisoner', 'privacy', 'professional', 'prosecute', 'puma', 'punctually', 'puppet', 'quietly', 'racing', 'raid', 'ransom', 'rapidly', 'rashly', 'rattle', 'recently', 'rediscover', 'relieve', 'resin', 'retired', 'revenge', 'reward', 'rifle', 'rudely', 'rusty', 'sack', 'sadly', 'sarcastically', 'saving', 'scornfully', 'scramble', 'seashore', 'semester', 'sensational', 'shady', 'shampoo', 'shining', 'simply', 'skier', 'slam', 'slowly', 'smash', 'smoothly', 'smuggler', 'snatch', 'sneer', 'soundly', 'source', 'spark', 'speedboat', 'stale', 'stalk', 'stationer', 'stationery', 'statistic', 'stereo', 'sticky', 'stomachache', 'storey', 'stranger', 'strap', 'stuff', 'suddenly', 'sum', 'superman', 'surprised', 'survivor', 'suspicious', 'swimmer', 'swimming', 'sympathetic', 'sympathetically', 'tanker', 'teaspoonful', 'temper', 'temporarily', 'temptation', 'terribly', 'thirstily', 'thousand', 'thresh', 'thrifty', 'torch', 'torchlight', 'tragic', 'trail', 'tramp', 'truant', 'tunnel', 'unaware', 'unhappy', 'unhurt', 'unimaginative', 'unload', 'unpleasant', 'unrealistic', 'unscrew', 'unsmiling', 'untidy', 'valiant', 'van', 'velvet', 'ventilate', 'ventilation', 'vibration', 'vicar', 'violently', 'volt', 'waterski', 'watertight', 'whisky', 'wicked', 'windowsill', 'wit', 'woollen', 'workshop', 'worse', 'worship', 'worst', 'worthless', 'wreck', 'wretched', 'accord', 'acquaint', 'afflict', 'amply', 'anticipate', 'archway', 'aristocrat', 'assail', 'assorted', 'astride', 'belongings', 'bet', 'bewilder', 'blackberry', 'boulder', 'boxer', 'bullion', 'cherish', 'china', 'chug', 'clump', 'comedian', 'comic', 'confusion', 'conscientious', 'console', 'conspire', 'consumer', 'contempt', 'convention', 'convoy', 'correlate', 'crane', 'credulous', 'criticize', 'crockery', 'cruel', 'cruiser', 'dagger', 'dangle', 'dashboard', 'dawdle', 'dealer', 'deception', 'deck', 'dedicated', 'deduce', 'deeply', 'delicacy', 'despise', 'determine', 'dim', 'disembark', 'dislocate', 'distasteful', 'disused', 'downfall', 'dread', 'eccentric', 'eccentricity', 'eminent', 'envious', 'era', 'exceptionally', 'exert', 'extravagant', 'falter', 'fame', 'fascination', 'fireplace', 'fissure', 'forbidding', 'gaoler', 'gear', 'gesticulate', 'grant', 'greedily', 'grudge', 'halt', 'historian', 'hoax', 'hobble', 'illogical', 'imprison', 'improbable', 'impulse', 'indulge', 'innocence', 'inscribe', 'insignificant', 'intensely', 'interference', 'involve', 'issue', 'junk', 'labyrinth', 'largely', 'learner', 'lightning', 'lodge', 'lovable', 'maidservant', 'mammoth', 'marquis', 'masterpiece', 'mere', 'mete', 'mighty', 'moonlight', 'muffle', 'mumble', 'muscle', 'muster', 'musty', 'naive', 'naval', 'nomad', 'octopus', 'odd', 'ominously', 'overnight', 'perturb', 'pester', 'petrify', 'philosopher', 'plank', 'pleading', 'pneumatic', 'poverty', 'prelude', 'premises', 'presume', 'pretentious', 'priest', 'prise', 'prizefighter', 'rarity', 'reader', 'recluse', 'recovery', 'relaxed', 'remonstrate', 'renew', 'reprimand', 'repulsive', 'resemblance', 'respectable', 'reunite', 'rip', 'rudder', 'salvage', 'satisfied', 'scoop', 'scorn', 'scour', 'self-respecting', 'series', 'shell', 'shrewd', 'silverware', 'snail', 'snob', 'solely', 'squint', 'steamship', 'steer', 'stray', 'stroll', 'suburb', 'sunken', 'sway', 'swerve', 'technically', 'tempt', 'thrust', 'torpedo', 'tusk', 'unacceptable', 'underclothes', 'underestimate', 'unforeseen', 'unfortunately', 'unpack', 'unshakable', 'unsympathetic', 'ware', 'wheelbarrow', 'windscreen', 'zigzag', 'France', 'French', 'German', 'Germany', 'Japan', 'Japanese', 'Italian', 'Italy', 'Australian', 'outdoor', 'flute', 'aged', 'dancer', 'beautifully', 'terrorist', 'airway', 'airship', 'resource', 'responsible', 'reuse', 'completely', 'properly', 'disappointing', 'dishonest', 'politely', 'expend', 'relaxing', 'emotion', 'usable', 'pearl', 'possibly', 'selection', 'million', 'blond', 'surf', 'mainly', 'underlined', 'hardware', 'elbow', 'victor', 'failing', 'napkin', 'oversleep', 'safely', 'bore', 'image', 'arouse', 'mice', 'dolphin', 'happily', 'enjoyment', 'able', 'abroad', 'accept', 'action', 'add', 'advice', 'advise', 'after', 'afterwards', 'against', 'ahead', 'alive', 'all', 'almost', 'alone', 'aloud', 'already', 'always', 'among', 'anyone', 'anyway', 'anywhere', 'apple', 'are', 'area', 'arm', 'army', 'Asia', 'Asian', 'ask', 'asleep', 'aunt', 'autumn', 'banana', 'band', 'bar', 'basketball', 'bathroom', 'bedroom', 'bee', 'beer', 'beg', 'begin', 'believe', 'bell', 'beside', 'bill', 'billion', 'birth', 'bit', 'blouse', 'blue', 'board', 'bone', 'boot', 'born', 'boss', 'body', 'boy', 'brain', 'break', 'breath', 'bright', 'build', 'building', 'burn', 'business', 'busy', 'buy', 'bye', 'cage', 'call', 'calm', 'campfire', 'care', 'careful', 'carry', 'cent', 'century', 'certain', 'certainly', 'chalk', 'chance', 'change', 'chicken', 'chip', 'choose', 'city', 'classmate', 'classroom', 'clear', 'clever', 'clock', 'clothes', 'coal', 'coat', 'coffee', 'coin', 'collect', 'colour', 'company', 'concert', 'cooker', 'cookie', 'copy', 'corner', 'cotton', 'cough', 'count', 'couple', 'cousin', 'cover', 'crowd', 'cry', 'date', 'daughter', 'deal', 'death', 'dialogue', 'diary', 'die', 'dig', 'dinner', 'doctor', 'doll', 'dollar', 'door', 'double', 'downstairs', 'driver', 'drop', 'drunk', 'during', 'duty', 'east', 'eastern', 'eat', 'elder', 'else', 'e-mail', 'empty', 'enemy', 'enough', 'enter', 'equal', 'even', 'evening', 'ever', 'everyday', 'everyone', 'everywhere', 'exam', 'examine', 'example', 'except', 'excuse', 'exit', 'factory', 'fall', 'famous', 'fan', 'fax', 'feeling', 'fever', 'few', 'field', 'fill', 'film', 'find', 'finger', 'finish', 'fit', 'fix', 'flight', 'flood', 'floor', 'food', 'fool', 'for', 'fork', 'form', 'forward', 'fridge', 'from', 'fruit', 'full', 'fun', 'game', 'gate', 'girl', 'give', 'glad', 'glass', 'god', 'grade', 'granddaughter', 'grandfather', 'grandmother', 'great', 'green', 'greet', 'grey', 'ground', 'guess', 'gun', 'habit', 'hang', 'happen', 'happy', 'hardly', 'hate', 'headache', 'heat', 'help', 'hero', 'hit', 'hobby', 'hole', 'holiday', 'hometown', 'hope', 'housework', 'however', 'huge', 'hungry', 'hurry', 'husband', 'ice', 'ill', 'illness', 'inside', 'instead', 'interest', 'interesting', 'invent', 'invite', 'island', 'jacket', 'jazz', 'joke', 'joy', 'key', 'kilo', 'king', 'knee', 'knife', 'knock', 'lab', 'ladder', 'lady', 'land', 'late', 'laugh', 'lead', 'leaf', 'lend', 'lesson', 'library', 'lie', 'lift', 'light', 'list', 'lively', 'lock', 'long', 'lose', 'low', 'lunch', 'machine', 'madam', 'mail', 'main', 'map', 'mark', 'market', 'match', 'mathematics', 'matter', 'maybe', 'meal', 'mean', 'meaning', 'medicine', 'meeting', 'member', 'mend', 'middle', 'mile', 'mine', 'mistake', 'moment', 'mother', 'much', 'mummy', 'music', 'must', 'necessary', 'neck', 'neither', 'news', 'nobody', 'nod', 'noise', 'none', 'nor', 'notebook', 'novel', 'nurse', 'nut', 'object', 'of', 'offer', 'oil', 'old', 'once', 'orange', 'overcoat', 'owner', 'pace', 'pain', 'paint', 'pair', 'paper', 'parent', 'party', 'pass', 'path', 'peace', 'per', 'perhaps', 'photo', 'picnic', 'piece', 'plan', 'plane', 'play', 'playground', 'pleased', 'pleasure', 'plenty', 'pocket', 'poem', 'pole', 'policeman', 'policewoman', 'polite', 'poor', 'pork', 'possible', 'postman', 'pound', 'prefer', 'prepare', 'press', 'price', 'pride', 'print', 'proud', 'prove', 'public', 'pull', 'purse', 'question', 'quilt', 'radio', 'railway', 'rather', 'really', 'receive', 'reduce', 'regard', 'regularly', 'repair', 'reply', 'report', 'reporter', 'result', 'return', 'rich', 'ring', 'rise', 'rock', 'role', 'roof', 'rope', 'row', 'rubber', 'safe', 'sail', 'sailor', 'sale', 'salt', 'same', 'sand', 'say', 'scene', 'school', 'schoolbag', 'science', 'score', 'screen', 'sea', 'season', 'seat', 'second', 'seem', 'seldom', 'sell', 'send', 'sense', 'service', 'set', 'several', 'shake', 'shall', 'shine', 'short', 'shot', 'should', 'side', 'sigh', 'simple', 'since', 'sir', 'ski', 'skill', 'skin', 'skirt', 'sky', 'sleepy', 'smile', 'soap', 'sofa', 'soft', 'soil', 'soldier', 'some', 'somebody', 'somehow', 'someone', 'something', 'somewhere', 'son', 'song', 'southeast', 'space', 'spaceship', 'speaker', 'speed', 'spell', 'spelling', 'sport', 'spring', 'stair', 'stamp', 'steal', 'steel', 'stocking', 'stone', 'store', 'strong', 'style', 'such', 'suit', 'supper', 'support', 'sweater', 'sweep', 'table', 'take', 'tape', 'task', 'teacher', 'team', 'telephone', 'television', 'tennis', 'test', 'text', 'thank', 'then', 'these', 'thief', 'thing', 'think', 'those', 'though', 'through', 'throw', 'ticket', 'tidy', 'tie', 'to', 'toe', 'toilet', 'ton', 'tool', 'top', 'topic', 'touch', 'tour', 'tower', 'traffic', 'travel', 'trouble', 'trousers', 'trust', 'T-shirt', 'twice', 'tyre', 'uncle', 'underground', 'understand', 'unit', 'unless', 'until', 'upon', 'useful', 'usual', 'view', 'voice', 'wait', 'waiter', 'want', 'wardrobe', 'week', 'weekday', 'weigh', 'weight', 'well', 'west', 'whatever', 'whenever', 'where', 'whether', 'which', 'while', 'white', 'whole', 'whom', 'whose', 'why', 'wide', 'wife', 'win', 'wind', 'wine', 'winner', 'wire', 'wise', 'with', 'without', 'wolf', 'woman', 'wonder', 'wonderful', 'wood', 'wooden', 'worker', 'worth', 'wrong', 'yellow', 'youth', 'affair', 'aid', 'AIDS', 'anger', 'boxing', 'brick', 'bridegroom', 'burst', 'businessman', 'button', 'cafe', 'careless', 'cartoon', 'case', 'castle', 'cattle', 'ceiling', 'cheat', 'cheer', 'cheerful', 'cheers', 'check', 'chest', 'chimney', 'choice', 'Christmas', 'cigar', 'citizen', 'click', 'climate', 'coach', 'cocoa', 'control', 'correct', 'counter', 'court', 'courtyard', 'crash', 'crazy', 'credit', 'deer', 'delay', 'desert', 'difference', 'difficult', 'difficulty', 'dine', 'direct', 'director', 'disagreement', 'disappear', 'discovery', 'discuss', 'disease', 'download', 'downtown', 'dusty', 'earn', 'earthquake', 'ease', 'Easter', 'effect', 'enjoyable', 'event', 'exactly', 'exchange', 'expense', 'explain', 'faith', 'fashion', 'fear', 'final', 'fisherman', 'foggy', 'force', 'found', 'fresh', 'goods', 'goose', 'grasp', 'guard', 'harm', 'hay', 'headmaster', 'healthy', 'hide', 'homeland', 'honest', 'housewife', 'hunt', 'insist', 'introduction', 'judge', 'kingdom', 'labor', 'labour', 'lantern', 'latter', 'lay', 'leader', 'level', 'limit', 'load', 'method', 'mirror', 'nature', 'neighbor', 'network', 'nowadays', 'ocean', 'official', 'opinion', 'ordinary', 'owe', 'pardon', 'passage', 'passenger', 'pause', 'peaceful', 'percent', 'perform', 'performer', 'period', 'permit', 'persuade', 'pond', 'pour', 'powerful', 'pray', 'pretend', 'pretty', 'prize', 'probably', 'process', 'product', 'production', 'professor', 'programme', 'promise', 'protect', 'protection', 'provide', 'punish', 'purpose', 'puzzle', 'quality', 'quantity', 'quit', 'rainbow', 'rare', 'receiver', 'recent', 'recover', 'refer', 'remove', 'review', 'rude', 'salary', 'salesman', 'salty', 'scare', 'scientist', 'search', 'serious', 'shortly', 'silence', 'silent', 'similar', 'snack', 'software', 'sorrow', 'square', 'stick', 'strange', 'stress', 'stupid', 'suppose', 'thirst', 'throughout', 'total', 'trade', 'treat', 'ugly', 'uncertain', 'value', 'volleyball', 'vote', 'waitress', 'warn', 'warning', 'wealth', 'wealthy', 'wedding', 'western', 'westwards', 'willing', 'worldwide', 'worn', 'worthy', 'accustomed', 'acre', 'addition', 'advance', 'African', 'airline', 'angle', 'approve', 'arrow', 'attempt', 'attraction', 'attractive', 'bargain', 'battery', 'behavior', 'birthplace', 'booth', 'bowling', 'brief', 'cab', 'camera', 'carrier', 'celebration', 'centigrade', 'changeable', 'chaos', 'charge', 'chopsticks', 'cigarette', 'claw', 'clinic', 'cold-blooded', 'comb', 'comedy', 'comfort', 'comment', 'compare', 'compete', 'complain', 'conclude', 'conclusion', 'condition', 'conductor', 'confident', 'confuse', 'congratulate', 'congratulation', 'correction', 'cottage', 'create', 'crew', 'cyclist', 'dam', 'deaf', 'debate', 'defence', 'degree', 'destroy', 'diamond', 'dip', 'disappoint', 'discussion', 'distance', 'district', 'disturb', 'dormitory', 'dorm', 'drawback', 'drown', 'effort', 'encouragement', 'energy', 'engine', 'European', 'extra', 'facial', 'familiar', 'fare', 'feast', 'fellow', 'female', 'festival', 'fiber', 'fibre', 'file', 'fist', 'flashlight', 'flesh', 'folk', 'forehead', 'fortunate', 'frequent', 'fur', 'glare', 'glove', 'glue', 'gram', 'grape', 'graph', 'grocer', 'grocery', 'haircut', 'handful', 'handwriting', 'hatch', 'heap', 'heaven', 'heel', 'helicopter', 'hire', 'honour', 'honor', 'horrible', 'hug', 'humor', 'humorous', 'hunger', 'idiom', 'improve', 'incident', 'increase', 'influence', 'inform', 'inn', 'interview', 'iron', 'jar', 'jaw', 'keyboard', 'lamb', 'lap', 'league', 'librarian', 'lid', 'lip', 'litre', 'mailbox', 'majority', 'male', 'manage', 'March', 'material', 'measure', 'medal', 'mention', 'minus', 'mix', 'motor', 'mountainous', 'muddy', 'narrow', 'national', 'native', 'needle', 'niece', 'Olympic', 'operation', 'organize', 'organization', 'overweight', 'package', 'palace', 'paperwork', 'passport', 'peach', 'permission', 'personally', 'phrase', 'physicist', 'pipe', 'planet', 'porter', 'position', 'possibility', 'postcode', 'pot', 'practical', 'preparation', 'profit', 'proper', 'province', 'punishment', 'queue', 'rainfall', 'realize', 'reasonable', 'rebuild', 'recite', 'regardless', 'relation', 'remind', 'rent', 'request', 'requirement', 'rescue', 'responsibility', 'ripe', 'ripen', 'rocket', 'salad', 'sauce', 'scholar', 'scold', 'seashell', 'select', 'sentence', 'shark', 'sharp', 'shortcoming', 'sidewalk', 'sideways', 'silver', 'spear', 'spokesman', 'spoon', 'steak', 'strength', 'strengthen', 'studio', 'suffer', 'suitcase', 'tale', 'target', 'taxpayer', 'technology', 'teenager', 'temperature', 'terror', 'thread', 'tiresome', 'toothache', 'towel', 'trick', 'troublesome', 'trunk', 'tube', 'typewriter', 'valuable', 'volunteer', 'warmth', 'washroom', 'weed', 'wheat', 'wheel', 'academic', 'academy', 'acknowledge', 'advertise', 'amuse', 'announce', 'anxiety', 'anxious', 'applicant', 'appoint', 'argument', 'athletic', 'aware', 'barbecue', 'bathrobe', 'bedclothes', 'breakthrough', 'breathless', 'brotherhood', 'burden', 'cancel', 'casual', 'caution', 'certificate', 'challenging', 'circumstance', 'circus', 'clarify', 'comprehension', 'conference', 'consult', 'consultant', 'contribute', 'convenience', 'conversation', 'cordless', 'corporation', 'decrease', 'deliver', 'dentist', 'description', 'deserve', 'destination', 'detective', 'directory', 'disaster', 'dismiss', 'downward', 'drier', 'educator', 'electronic', 'environment', 'essay', 'evidence', 'exhibition', 'explanation', 'eyewitness', 'firework', 'flaming', 'fluency', 'fluent', 'following', 'forecast', 'fortune', 'furniture', 'gay', 'generation', 'generous', 'gesture', 'goodness', 'grateful', 'greengrocer', 'hammer', 'handkerchief', 'harbor', 'harbour', 'illegal', 'independence', 'independent', 'jewelry', 'jewellry', 'judgment', 'laborer', 'lame', 'lately', 'laughter', 'lawyer', 'liberation', 'luggage', 'media', 'medical', 'memorize', 'memory', 'mercy', 'microwave', 'millionaire', 'misunderstand', 'monument', 'murder', 'nylon', 'optimistic', 'outcome', 'outstanding', 'overlook', 'percentage', 'poison', 'poisonous', 'political', 'politician', 'president', 'prison', 'prohibit', 'pronounce', 'pronunciation', 'recognize', 'recognise', 'recommend', 'reform', 'regular', 'regulation', 'salute', 'satellite', 'satisfaction', 'scar', 'scientific', 'secretary', 'section', 'selfish', 'sharpen', 'sharpener', 'single', 'social', 'solid', 'sour', 'staff', 'straightforward', 'struggle', 'surface', 'swift', 'sympathy', 'system', 'tailor', 'talent', 'tease', 'telescope', 'tense', 'theft', 'theory', 'thriller', 'throat', 'tick', 'tight', 'tomb', 'toothbrush', 'tough', 'translator', 'treasure', 'unbelievable', 'union', 'unite', 'urgent', 'video', 'waist', 'whisper', 'widow', 'wildlife', 'wing', 'wound', 'wrist', 'abnormal', 'accuracy', 'addicted', 'affection', 'agricultural', 'agriculture', 'alcohol', 'alcoholic', 'amaze', 'ambition', 'analyse', 'analysis', 'anchor', 'ankle', 'applaud', 'architecture', 'astronomer', 'astronomy', 'Atlantic', 'bacon', 'balcony', 'bandage', 'behalf', 'betray', 'bleed', 'bless', 'bucket', 'cafeteria', 'cell', 'chain', 'chapter', 'chart', 'civilisation', 'comma', 'commitment', 'correspond', 'cubic', 'deadline', 'departure', 'diagram', 'divorce', 'dustbin', 'eagle', 'elegant', 'embarrass', 'enquiry', 'inquiry', 'envy', 'error', 'erupt', 'ferry', 'fierce', 'fingernail', 'forgive', 'fortnight', 'gallery', 'gallon', 'geometry', 'greedy', 'guilty', 'gymnastics', 'hive', 'howl', 'jungle', 'laser', 'lemon', 'lorry', 'truck', 'mat', 'messy', 'ministry', 'moustache', 'nail', 'navy', 'necktie', 'nephew', 'nuclear', 'Oceania', 'oilfield', 'operator', 'Pacific', 'paddle', 'parrot', 'pavement', 'personnel', 'pest', 'pine', 'pink', 'policy', 'poster', 'pulse', 'purple', 'quiz', 'rag', 'remark', 'riddle', 'routine', 'schedule', 'seek', 'shabby', 'shave', 'shorts', 'slave', 'slavery', 'sleeve', 'stable', 'sunburn', 'surgeon', 'thunderstorm', 'toast', 'tobacco', 'trial', 'vest', 'via', 'vice', 'victim', 'videophone', 'violence', 'violent', 'vivid', 'vocabulary', 'whale', 'worm', 'yard', 'airspace', 'beam', 'biography', 'bunch', 'candidate', 'carpenter', 'civilian', 'coincidence', 'committee', 'consequence', 'coral', 'cozy', 'cosy', 'dizzy', 'emergency', 'enterprise', 'gale', 'marble', 'nutrition', 'optional', 'outspoken', 'oxygen', 'passive', 'physician', 'polish', 'popcorn', 'procedure', 'profession', 'punctual', 'questionnaire', 'razor', 'receipt', 'rot', 'rugby', 'scratch', 'seminar', 'shrink', 'signature', 'skip', 'sob', 'socialism', 'socialist', 'spade', 'sparrow', 'spin', 'steady', 'strawberry', 'superb', 'vinegar', 'violate', 'volcano', 'watermelon', 'weep', 'wrinkle', 'yawn', 'yell', 'abuse', 'acute', 'agenda', 'algebra', 'allergic', 'allocate', 'allowance', 'aluminum', 'amateur', 'anecdote', 'anniversary', 'apron', 'bacterium', 'bishop', 'brewery', 'Buddhism', 'bungalow', 'catastrophe', 'Catholic', 'chant', 'Christian', 'clumsy', 'compass', 'conflict', 'conservative', 'constitution', 'contradict', 'corrupt', 'crayon', 'criterion', 'cuisine', 'curriculum', 'cushion', 'deliberately', 'dilemma', 'diploma', 'federal', 'grill', 'gruel', 'lavatory', 'litter', 'lounge', 'maple', 'modem', 'Moslem', 'mosquito', 'mustard', 'numb', 'pedestrian', 'pepper', 'pineapple', 'pregnant', 'premier', 'radioactive', 'rectangle', 'relief', 'rewind', 'roundabout', 'sacrifice', 'seagull', 'semicircle', 'sneaker', 'socket', 'souvenir', 'squirrel', 'steward', 'stewardess', 'stubborn', 'subscribe', 'suite', 'suspension', 'swap', 'swear', 'tablet', 'yummy', 'zipper', 'be', 'bird', 'brother', 'cap', 'chair', 'class', 'come', 'computer', 'fine', 'foot', 'get', 'good', 'hand', 'have', 'head', 'hello', 'here', 'how', 'look', 'me', 'morning', 'now', 'number', 'oh', 'pencil', 'picture', 'ready', 'ruler', 'shirt', 'so', 'stand', 'sure', 'the', 'this', 'too', 'who', 'window', 'you', 'your', 'bear', 'eraser', 'jet', 'kid', 'umbrella', 'ox', 'kangaroo', 'nest', 'zebra', 'monster', 'ouch', 'thanks', 'Miss', 'first', 'seven', 'two', 'eight', 'five', 'nine', 'three', 'ten', 'six', 'four', 'yo-yo', 'good-bye', 'hippo', 'photograph', 'airmail', 'airplane', 'airport', 'allow', 'although', 'altogether', 'amount', 'apartment', 'apologize', 'apology', 'appear', 'appearance', 'argue', 'armchair', 'arrival', 'ashamed', 'attack', 'awake', 'award', 'backward', 'bake', 'balance', 'ballet', 'balloon', 'ban', 'barber', 'barbershop', 'basic', 'basis', 'bay', 'beard', 'beast', 'beauty', 'beginning', 'belong', 'belt', 'bench', 'benefit', 'beneath', 'bent', 'beyond', 'biscuit', 'bite', 'bitter', 'blame', 'blank', 'blanket', 'blind', 'boring', 'bother', 'bottom', 'bow', 'chairman', 'chat', 'common', 'comrade', 'connect', 'consider', 'crossroads', 'culture', 'cupboard', 'cure', 'customs', 'damage', 'dangerous', 'delight', 'delighted', 'demand', 'department', 'depend', 'design', 'develop', 'development', 'devote', 'dictionary', 'express', 'expression', 'eyesight', 'factor', 'friendship', 'gain', 'general', 'gentle', 'gentleman', 'government', 'graduate', 'graduation', 'grammar', 'grand', 'gymnasium', 'happiness', 'hardworking', 'imagine', 'importance', 'impossible', 'include', 'information', 'junior', 'kick', 'kindhearted', 'kindness', 'knowledge', 'loss', 'manager', 'manner', 'meanwhile', 'mobile', 'modern', 'monitor', 'motherland', 'movement', 'photographer', 'physics', 'pianist', 'politics', 'pollute', 'pollution', 'succeed', 'success', 'successful', 'sudden', 'suggest', 'suggestion', 'supply', 'unfortunate', 'university', 'unwilling', 'update', 'tune', 'turkey', 'tutor', 'typical', 'unbearable', 'uncomfortable', 'unconditional', 'universe', 'garment', 'gown', 'holy', 'hurricane', 'hydrogen', 'innocent', 'insert', 'insurance', 'interpreter', 'laundry', 'lemonade', 'locust', 'marathon', 'spiritual', 'split', 'stainless', 'swell', 'swing', 'thermos', 'toothpaste', 'tortoise', 'tournament', 'transparent', 'tremble', 'typhoon', 'underwear', 'tentative', 'vacant', 'wag', 'walnut', 'ward', 'warehouse', 'yoghurt', 'basket', 'become', 'both', 'broken', 'easy', 'grass', 'hurt', 'Internet', 'last', 'loud', 'metre', 'nothing', 'part', 'than', 'till', 'trip', 'active', 'lamp', 'magazine', 'dinosaur', 'taller', 'saw', 'stronger', 'bigger', 'had', 'went', 'ate', 'drank', 'took', 'fell', 'bought', 'rode', 'younger', 'older', 'shorter', 'longer', 'thinner', 'heavier', 'smaller', 'lower', 'smarter', 'cleaned', 'stayed', 'washed', 'watched', 'slept', 'faster', 'mule', 'Turpan', 'licked', 'laughed', 'ice-skate', 'felt', 'cheetah', 'woke', 'again', 'age', 'ago', 'along', 'also', 'another', 'any', 'anything', 'around', 'as', 'away', 'back', 'bank', 'behind', 'bring', 'by', 'candle', 'car', 'centre', 'center', 'cheap', 'child', 'cinema', 'clean', 'climb', 'cold', 'could', 'cow', 'crossing', 'dark', 'different', 'dirty', 'dish', 'down', 'drink', 'dry', 'each', 'early', 'either', 'enjoy', 'every', 'exercise', 'eye', 'face', 'farmer', 'feel', 'fight', 'flower', 'forget', 'free', 'friendly', 'front', 'grow', 'hair', 'hall', 'hear', 'heavy', 'high', 'homework', 'horse', 'hospital', 'hotel', 'house', 'idea', 'if', 'into', 'job', 'jump', 'just', 'keep', 'kill', 'kind', 'lake', 'large', 'learn', 'leave', 'left', 'leg', 'life', 'like', 'little', 'lot', 'luck', 'many', 'meat', 'milk', 'miss', 'moon', 'mouth', 'move', 'never', 'new', 'night', 'north', 'nose', "o'clock", 'office', 'or', 'other', 'out', 'outside', 'panda', 'park', 'past', 'pay', 'people', 'person', 'pet', 'piano', 'place', 'popular', 'post', 'problem', 'put', 'quarter', 'quiet', 'read', 'right', 'river', 'road', 'round', 'rule', 'save', 'sheep', 'shop', 'shout', 'show', 'sing', 'sit', 'size', 'sleep', 'slow', 'snow', 'sorry', 'south', 'start', 'stay', 'still', 'stop', 'story', 'street', 'study', 'summer', 'talk', 'tea', 'tell', 'thin', 'tired', 'today', 'tomorrow', 'tonight', 'town', 'train', 'true', 'turn', 'up', 'visit', 'walk', 'warm', 'wash', 'water', 'way', 'wear', 'will', 'wish', 'work', 'world', 'worry', 'would', 'write', 'year', 'yet', 'young', 'zoo', 'across', 'actor', 'actress', 'animal', 'arrive', 'artist', 'beautiful', 'beef', 'between', 'camp', 'cloudy', 'club', 'danger', 'flag', 'follow', 'forest', 'funny', 'guide', 'guitar', 'important', 'kilometer', 'lucky', 'message', 'money', 'monkey', 'mountain', 'movie', 'newspaper', 'order', 'painting', 'police', 'pool', 'practice', 'rainy', 'restaurant', 'snake', 'snowy', 'sometimes', 'spend', 'state', 'station', 'strict', 'sunny', 'sunshine', 'tent', 'tooth', 'villager', 'visitor', 'wake', 'weather', 'windy', 'winter', 'yesterday', 'beach', 'chess', 'crime', 'delicious', 'dream', 'host', 'kitchen', 'museum', 'noisy', 'supermarket', 'surprise', 'terrible', 'describe', 'drum', 'elephant', 'Europe', 'musician', 'mutton', 'natural', 'neighborhood', 'pancake', 'relax', 'straight', 'butterfly', 'shower', 'giraffe', 'later', 'easily', 'more', 'cute', 'American', 'interested', 'fifty', 'usually', 'subway', 'hundred', 'wow', 'Russian', 'India', 'glasses', 'sixty', 'seventy', 'eighty', 'ninety', 'quickly', 'koala', 'exciting', 'Australia', 'dragon', 'scary', 'tofu', 'scared', 'children', 'snowman', 'luckily', 'ropeway', 'hallway', 'ivory', 'curly', 'singer', 'differently', 'draw', 'strike', 'apply', 'bend', 'block', 'bored', 'channel', 'consist', 'damp', 'devotion', 'gather', 'major', 'progress', 'absorb', 'attend', 'complex', 'constant', 'project', 'accompany', 'achieve', 'association', 'decline', 'primary', 'refresh', 'various', 'delicate', 'expand', 'initial', 'status', 'twist', 'undertake', 'universal', 'accumulate', 'diverse', 'extension', 'fragile', 'guarantee', 'hibernate', 'institute', 'institution', 'instrument', 'irrigation', 'literary', 'splendid', 'starvation', 'systematic', 'temporary', 'tendency', 'theoretical', 'tolerate', 'transform', 'parallel', 'potential', 'random', 'tension', 'terminal', 'triangle', 'urban', 'vague', 'valid', 'vertical', 'gradually', 'slope', 'stretch', 'promptly', 'prey', 'and', 'at', 'bag', 'bed', 'big', 'bike', 'bicycle', 'box', 'but', 'can', 'cat', 'catch', 'cup', 'dad', 'desk', 'dog', 'dress', 'duck', 'egg', 'fly', 'fox', 'go', 'he', 'hill', 'him', 'his', 'home', 'hot', 'in', 'it', 'kite', 'let', 'make', 'my', 'name', 'no', 'on', 'pen', 'pig', 'red', 'she', 'skate', 'us', 'use', 'wet', 'yes', 'chick', 'rat', 'frog', 'an', 'is', 'hut', 'coke', 'mooncake', 'pod', 'feet', 'teeth', 'princess', 'fairy', 'sport-lover', 'traveller', 'cashier', 'clown', 'craftsman', 'gatekeeper', 'taikonaut', 'owl', 'rhino', 'turtle', 'swimsuit', 'paints', 'stairs', 'Scotland', 'Russia', 'Sydney', 'Halloween', 'Thanksgiving', 'jasmine', 'warm-up', 'hiking', 'bullet', 'dancing', 'firecracker', 'fireworks', 'snowball', 'crown', 'gave', 'has', 'were', 'became', 'brought', 'flew', 'got', 'planned', 'riding', 'said', 'spent', 'spoke', 'won', 'done', 'unhealthy', 'well-known', 'badly', 'carefully', 'someday', 'eighth', 'fifth', 'fourth', 'ninth', 'seventh', 'sixth', 'tenth', 'third', 'sometime']
+~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- 
+
+★★★ 已练组数不正确， 应为 4
+★★★ 新词学单词数不正确，应为 3
+★★★ 复习单词个数不正确， 应为 87
+再来一组
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+        <tr id='total_row'>
+            <td>总计</td>
+            <td>2</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            color: ['#95b75d', 'grey', '#b64645'],
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:2, name:'通过'},
+                        {value:0, name:'失败'},
+                        {value:0, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>

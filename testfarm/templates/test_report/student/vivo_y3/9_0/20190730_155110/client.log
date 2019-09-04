@@ -1,0 +1,197 @@
+2019-07-30 15:51:29,992 - vivo_y3 - INFO - --> Word.setUp
+2019-07-30 15:51:29,993 - vivo_y3 - INFO -   --> LoginPage.app_status
+2019-07-30 15:51:29,993 - vivo_y3 - INFO -   --> LoginPage.wait_check_page
+2019-07-30 15:51:32,657 - vivo_y3 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 15:51:32,658 - vivo_y3 - INFO -   --> LoginPage.login_operate
+2019-07-30 15:51:34,659 - vivo_y3 - INFO - 	--> LoginPage.input_username
+2019-07-30 15:51:34,798 - vivo_y3 - INFO - 	--> LoginPage.input_password
+2019-07-30 15:51:36,717 - vivo_y3 - INFO - 	--> LoginPage.login_button
+2019-07-30 15:51:39,450 - vivo_y3 - INFO -   <-- LoginPage.login_operate, Success
+2019-07-30 15:51:39,452 - vivo_y3 - INFO -   <-- LoginPage.app_status, Success
+2019-07-30 15:51:39,490 - vivo_y3 - INFO - <-- Word.setUp, Success
+
+2019-07-30 15:51:39,491 - vivo_y3 - INFO - --> Word.test_study_word
+2019-07-30 15:51:39,492 - vivo_y3 - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:51:44,326 - vivo_y3 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:51:44,328 - vivo_y3 - INFO - 	--> UserCenterPage.get_user_info
+2019-07-30 15:51:44,328 - vivo_y3 - INFO - 	--> HomePage.click_tab_profile
+2019-07-30 15:51:44,663 - vivo_y3 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-07-30 15:51:47,894 - vivo_y3 - INFO - 	--> UserCenterPage.nickname
+2019-07-30 15:51:50,408 - vivo_y3 - INFO - 	--> UserCenterPage.purchase
+2019-07-30 15:51:50,633 - vivo_y3 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-07-30 15:51:53,036 - vivo_y3 - INFO - 	--> UserCenterPage.phone
+2019-07-30 15:51:54,606 - vivo_y3 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-07-30 15:51:56,206 - vivo_y3 - INFO - 	--> UserCenterPage.school_name
+2019-07-30 15:51:57,390 - vivo_y3 - INFO - 	--> UserCenterPage.setting_up
+2019-07-30 15:51:57,571 - vivo_y3 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-07-30 15:51:59,070 - vivo_y3 - INFO - 	--> UserCenterPage.clear_cache
+2019-07-30 15:52:02,424 - vivo_y3 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-07-30 15:52:03,350 - vivo_y3 - INFO - 	--> HomePage.click_tab_hw
+2019-07-30 15:52:04,728 - vivo_y3 - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:52:06,371 - vivo_y3 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:52:06,372 - vivo_y3 - INFO - 	--> HomePage.click_hk_tab
+2019-07-30 15:52:06,562 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_start_page
+2019-07-30 15:52:08,367 - vivo_y3 - INFO - 	--> WordBookRebuildPage.word_start_button
+2019-07-30 15:52:14,512 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:52:14,589 - vivo_y3 - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:52:14,700 - vivo_y3 - INFO - 	--> ReciteWordPage.word_book_recite_operate
+2019-07-30 15:52:14,700 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:52:14,763 - vivo_y3 - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:52:14,919 - vivo_y3 - INFO - 	--> VocabGamePage.select_word_by_explain
+2019-07-30 15:52:14,919 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:14,920 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:14,979 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:15,019 - vivo_y3 - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:52:15,223 - vivo_y3 - INFO - 	--> VocabularyChoose.option_button
+2019-07-30 15:52:15,556 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-30 15:52:15,557 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:15,557 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:16,419 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:16,482 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:18,126 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:52:18,402 - vivo_y3 - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:52:18,569 - vivo_y3 - INFO - 	--> VocabGamePage.select_word_by_explain
+2019-07-30 15:52:18,570 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:18,579 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:18,647 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:18,681 - vivo_y3 - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:52:18,863 - vivo_y3 - INFO - 	--> VocabularyChoose.option_button
+2019-07-30 15:52:19,078 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-30 15:52:19,078 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:19,078 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:20,426 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:20,489 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:22,165 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:52:22,411 - vivo_y3 - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:52:22,534 - vivo_y3 - INFO - 	--> VocabGamePage.select_word_by_explain
+2019-07-30 15:52:22,534 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:22,535 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:22,589 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:22,623 - vivo_y3 - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:52:22,800 - vivo_y3 - INFO - 	--> VocabularyChoose.option_button
+2019-07-30 15:52:23,015 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-30 15:52:23,015 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:23,016 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:23,717 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:23,755 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:25,992 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:52:26,417 - vivo_y3 - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:52:26,541 - vivo_y3 - INFO - 	--> VocabGamePage.select_word_by_explain
+2019-07-30 15:52:26,542 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:26,542 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:26,584 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:26,613 - vivo_y3 - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:52:26,773 - vivo_y3 - INFO - 	--> VocabularyChoose.option_button
+2019-07-30 15:52:27,589 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-30 15:52:27,590 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:27,590 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:28,309 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:28,371 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:30,070 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:52:30,136 - vivo_y3 - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:52:30,253 - vivo_y3 - INFO - 	--> VocabGamePage.select_word_by_explain
+2019-07-30 15:52:30,253 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:30,253 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:30,293 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:30,321 - vivo_y3 - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:52:30,460 - vivo_y3 - INFO - 	--> VocabularyChoose.option_button
+2019-07-30 15:52:30,661 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-30 15:52:30,662 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:30,662 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:31,344 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:31,387 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:32,983 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:52:33,049 - vivo_y3 - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:52:33,172 - vivo_y3 - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-30 15:52:33,172 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:33,173 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:33,216 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:33,253 - vivo_y3 - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:52:33,411 - vivo_y3 - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-30 15:52:35,526 - vivo_y3 - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-30 15:52:35,632 - vivo_y3 - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-30 15:52:35,685 - vivo_y3 - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-30 15:52:35,770 - vivo_y3 - INFO - 	--> VocabularyChoose.option_button
+2019-07-30 15:52:36,968 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-30 15:52:36,969 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:36,969 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:37,061 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:37,109 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:38,744 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:52:38,817 - vivo_y3 - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:52:38,959 - vivo_y3 - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-30 15:52:38,960 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:38,960 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:39,032 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:39,097 - vivo_y3 - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:52:39,323 - vivo_y3 - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-30 15:52:41,457 - vivo_y3 - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-30 15:52:41,586 - vivo_y3 - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-30 15:52:41,652 - vivo_y3 - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-30 15:52:41,733 - vivo_y3 - INFO - 	--> VocabularyChoose.option_button
+2019-07-30 15:52:43,641 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-30 15:52:43,641 - vivo_y3 - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:52:43,642 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:43,703 - vivo_y3 - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:52:43,738 - vivo_y3 - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:52:45,377 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:52:45,447 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:52:45,473 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_start_wrong_again_page
+2019-07-30 15:52:45,492 - vivo_y3 - INFO - 	--> ResultPage.wait_check_result_page
+2019-07-30 15:52:45,506 - vivo_y3 - INFO - <-- Word.test_study_word, Success
+
+2019-07-30 15:52:45,507 - vivo_y3 - INFO - --> Word.tearDown
+2019-07-30 15:52:45,507 - vivo_y3 - INFO - <-- Word.tearDown, Success
+
+2019-07-30 15:52:45,508 - vivo_y3 - INFO - --> Word.setUp
+2019-07-30 15:52:45,508 - vivo_y3 - INFO -   --> LoginPage.app_status
+2019-07-30 15:52:45,508 - vivo_y3 - INFO -   --> LoginPage.wait_check_page
+2019-07-30 15:52:45,526 - vivo_y3 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 15:52:45,527 - vivo_y3 - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:52:45,551 - vivo_y3 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:52:45,552 - vivo_y3 - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-07-30 15:52:45,570 - vivo_y3 - INFO - 	--> LoginPage.close_app
+2019-07-30 15:52:45,888 - vivo_y3 - INFO - 	--> LoginPage.launch_app
+2019-07-30 15:52:55,418 - vivo_y3 - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:52:55,435 - vivo_y3 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:52:55,435 - vivo_y3 - INFO -   --> LoginPage.wait_check_page
+2019-07-30 15:52:55,452 - vivo_y3 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 15:52:55,452 - vivo_y3 - INFO -   <-- LoginPage.app_status, Success
+2019-07-30 15:52:55,500 - vivo_y3 - INFO - <-- Word.setUp, Success
+
+2019-07-30 15:52:55,500 - vivo_y3 - INFO - --> Word.test_study_word
+2019-07-30 15:52:55,501 - vivo_y3 - INFO - 	--> WordDataHandlePage.get_student_today_word_data
+2019-07-30 15:52:55,519 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:52:55,537 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_start_wrong_again_page
+2019-07-30 15:52:55,560 - vivo_y3 - INFO - 	--> ResultPage.wait_check_result_page
+2019-07-30 15:52:55,576 - vivo_y3 - INFO - <-- Word.test_study_word, Success
+
+2019-07-30 15:52:55,577 - vivo_y3 - INFO - --> Word.tearDown
+2019-07-30 15:52:55,577 - vivo_y3 - INFO - <-- Word.tearDown, Success
+
+2019-07-30 15:52:55,578 - vivo_y3 - INFO - --> Word.setUp
+2019-07-30 15:52:55,578 - vivo_y3 - INFO -   --> LoginPage.app_status
+2019-07-30 15:52:55,578 - vivo_y3 - INFO -   --> LoginPage.wait_check_page
+2019-07-30 15:52:55,599 - vivo_y3 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 15:52:55,599 - vivo_y3 - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:52:55,617 - vivo_y3 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:52:55,618 - vivo_y3 - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-07-30 15:52:55,637 - vivo_y3 - INFO - 	--> LoginPage.close_app
+2019-07-30 15:52:55,840 - vivo_y3 - INFO - 	--> LoginPage.launch_app
+2019-07-30 15:53:05,597 - vivo_y3 - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:53:05,614 - vivo_y3 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:53:05,614 - vivo_y3 - INFO -   --> LoginPage.wait_check_page
+2019-07-30 15:53:05,631 - vivo_y3 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 15:53:05,631 - vivo_y3 - INFO -   <-- LoginPage.app_status, Success
+2019-07-30 15:53:05,691 - vivo_y3 - INFO - <-- Word.setUp, Success
+
+2019-07-30 15:53:05,691 - vivo_y3 - INFO - --> Word.test_study_word
+2019-07-30 15:53:05,692 - vivo_y3 - INFO - 	--> WordDataHandlePage.get_student_today_word_data
+2019-07-30 15:53:05,709 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:53:05,722 - vivo_y3 - INFO - 	--> WordBookRebuildPage.wait_check_start_wrong_again_page
+2019-07-30 15:53:05,736 - vivo_y3 - INFO - 	--> ResultPage.wait_check_result_page
+2019-07-30 15:53:05,752 - vivo_y3 - INFO - <-- Word.test_study_word, Success
+
+2019-07-30 15:53:05,752 - vivo_y3 - INFO - --> Word.tearDown
+2019-07-30 15:53:05,752 - vivo_y3 - INFO - <-- Word.tearDown, Success
+

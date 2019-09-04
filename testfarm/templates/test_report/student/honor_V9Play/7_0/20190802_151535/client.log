@@ -1,0 +1,54 @@
+2019-08-02 15:15:53,853 - honor_V9Play - INFO - --> Word.setUp
+2019-08-02 15:15:53,854 - honor_V9Play - INFO -   --> LoginPage.app_status
+2019-08-02 15:15:53,854 - honor_V9Play - INFO -   --> LoginPage.wait_check_page
+2019-08-02 15:15:56,813 - honor_V9Play - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-02 15:15:56,813 - honor_V9Play - INFO -   --> LoginPage.login_operate
+2019-08-02 15:15:58,814 - honor_V9Play - INFO - 	--> LoginPage.input_username
+2019-08-02 15:15:58,908 - honor_V9Play - INFO - 	--> LoginPage.input_password
+2019-08-02 15:16:00,804 - honor_V9Play - INFO - 	--> LoginPage.login_button
+2019-08-02 15:16:03,606 - honor_V9Play - INFO -   <-- LoginPage.login_operate, Success
+2019-08-02 15:16:03,607 - honor_V9Play - INFO -   <-- LoginPage.app_status, Success
+2019-08-02 15:16:03,714 - honor_V9Play - INFO - <-- Word.setUp, Success
+
+2019-08-02 15:16:03,715 - honor_V9Play - INFO - --> Word.test_study_word
+2019-08-02 15:16:03,715 - honor_V9Play - INFO -   --> HomePage.wait_check_home_page
+2019-08-02 15:16:04,254 - honor_V9Play - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-02 15:16:04,254 - honor_V9Play - INFO - 	--> UserCenterPage.get_user_info
+2019-08-02 15:16:04,255 - honor_V9Play - INFO - 	--> HomePage.click_tab_profile
+2019-08-02 15:16:04,376 - honor_V9Play - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-02 15:16:07,257 - honor_V9Play - INFO - 	--> UserCenterPage.nickname
+2019-08-02 15:16:09,675 - honor_V9Play - INFO - 	--> UserCenterPage.purchase
+2019-08-02 15:16:09,873 - honor_V9Play - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-02 15:16:11,653 - honor_V9Play - INFO - 	--> UserCenterPage.phone
+2019-08-02 15:16:12,973 - honor_V9Play - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-02 15:16:14,075 - honor_V9Play - INFO - 	--> UserCenterPage.school_name
+2019-08-02 15:16:14,193 - honor_V9Play - INFO - 	--> UserCenterPage.setting_up
+2019-08-02 15:16:14,312 - honor_V9Play - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-02 15:16:17,307 - honor_V9Play - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-08-02 15:16:17,309 - honor_V9Play - ERROR - 	<-- UserCenterPage.get_user_info, WebDriverException, Error
+2019-08-02 15:16:17,320 - honor_V9Play - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-08-02 15:16:17,320 - honor_V9Play - ERROR - <-- Word.test_study_word, WebDriverException, Error
+
+2019-08-02 15:16:17,332 - honor_V9Play - INFO - --> Word.tearDown
+2019-08-02 15:16:17,333 - honor_V9Play - INFO - <-- Word.tearDown, Success
+
+2019-08-02 15:16:17,337 - honor_V9Play - INFO - --> Word.setUp
+2019-08-02 15:16:17,338 - honor_V9Play - INFO -   --> LoginPage.app_status
+2019-08-02 15:16:17,338 - honor_V9Play - INFO -   --> LoginPage.wait_check_page
+2019-08-02 15:16:17,348 - honor_V9Play - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-02 15:16:17,348 - honor_V9Play - INFO -   --> HomePage.wait_check_home_page
+2019-08-02 15:16:17,358 - honor_V9Play - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-02 15:16:17,359 - honor_V9Play - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-08-02 15:16:17,369 - honor_V9Play - INFO - 	--> LoginPage.close_app
+2019-08-02 15:16:18,374 - honor_V9Play - INFO - 	--> LoginPage.launch_app
+2019-08-02 15:16:27,033 - honor_V9Play - INFO -   --> HomePage.wait_check_home_page
+2019-08-02 15:16:27,048 - honor_V9Play - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-02 15:16:27,049 - honor_V9Play - INFO -   --> LoginPage.wait_check_page
+2019-08-02 15:16:27,060 - honor_V9Play - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-02 15:16:27,060 - honor_V9Play - INFO -   <-- LoginPage.app_status, Success
+2019-08-02 15:16:27,073 - honor_V9Play - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-08-02 15:16:27,073 - honor_V9Play - ERROR - <-- Word.setUp, WebDriverException, Error
+

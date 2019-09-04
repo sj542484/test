@@ -1,0 +1,79 @@
+2019-07-30 14:27:58,842 - oppo_R11t - INFO - --> Word.setUp
+2019-07-30 14:27:58,843 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-07-30 14:27:58,844 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-07-30 14:28:01,370 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 14:28:01,371 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 14:28:01,382 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 14:28:01,383 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-07-30 14:28:01,395 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-07-30 14:28:01,854 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-07-30 14:28:09,334 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 14:28:09,355 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 14:28:09,355 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-07-30 14:28:09,372 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 14:28:09,372 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-07-30 14:28:09,450 - oppo_R11t - INFO - <-- Word.setUp, Success
+
+2019-07-30 14:28:09,450 - oppo_R11t - INFO - --> Word.test_study_word
+2019-07-30 14:28:09,451 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 14:28:09,464 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 14:28:09,465 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 14:28:09,476 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_start_wrong_again_page
+2019-07-30 14:28:09,491 - oppo_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-07-30 14:28:09,507 - oppo_R11t - INFO - <-- Word.test_study_word, Success
+
+2019-07-30 14:28:09,508 - oppo_R11t - INFO - --> Word.tearDown
+2019-07-30 14:28:09,508 - oppo_R11t - INFO - <-- Word.tearDown, Success
+
+2019-07-30 14:28:09,509 - oppo_R11t - INFO - --> Word.setUp
+2019-07-30 14:28:09,509 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-07-30 14:28:09,510 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-07-30 14:28:09,522 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 14:28:09,523 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 14:28:09,540 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 14:28:09,541 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-07-30 14:28:09,553 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-07-30 14:28:10,212 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-07-30 14:28:18,142 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 14:28:18,157 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 14:28:18,158 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-07-30 14:28:18,171 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 14:28:18,171 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-07-30 14:28:18,220 - oppo_R11t - INFO - <-- Word.setUp, Success
+
+2019-07-30 14:28:18,221 - oppo_R11t - INFO - --> Word.test_study_word
+2019-07-30 14:28:18,221 - oppo_R11t - INFO - 	--> WordDataHandlePage.get_student_today_word_data
+2019-07-30 14:28:18,280 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 14:28:18,292 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_start_wrong_again_page
+2019-07-30 14:28:18,312 - oppo_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-07-30 14:28:18,330 - oppo_R11t - INFO - <-- Word.test_study_word, Success
+
+2019-07-30 14:28:18,330 - oppo_R11t - INFO - --> Word.tearDown
+2019-07-30 14:28:18,330 - oppo_R11t - INFO - <-- Word.tearDown, Success
+
+2019-07-30 14:28:18,330 - oppo_R11t - INFO - --> Word.setUp
+2019-07-30 14:28:18,331 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-07-30 14:28:18,331 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-07-30 14:28:18,343 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 14:28:18,343 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 14:28:18,385 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 14:28:18,386 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-07-30 14:28:18,406 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-07-30 14:28:19,042 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-07-30 14:28:27,070 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 14:28:27,085 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 14:28:27,085 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-07-30 14:28:27,099 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 14:28:27,099 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-07-30 14:28:27,140 - oppo_R11t - INFO - <-- Word.setUp, Success
+
+2019-07-30 14:28:27,141 - oppo_R11t - INFO - --> Word.test_study_word
+2019-07-30 14:28:27,142 - oppo_R11t - INFO - 	--> WordDataHandlePage.get_student_today_word_data
+2019-07-30 14:28:27,160 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 14:28:27,173 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_start_wrong_again_page
+2019-07-30 14:28:27,187 - oppo_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-07-30 14:28:27,202 - oppo_R11t - INFO - <-- Word.test_study_word, Success
+
+2019-07-30 14:28:27,202 - oppo_R11t - INFO - --> Word.tearDown
+2019-07-30 14:28:27,203 - oppo_R11t - INFO - <-- Word.tearDown, Success
+

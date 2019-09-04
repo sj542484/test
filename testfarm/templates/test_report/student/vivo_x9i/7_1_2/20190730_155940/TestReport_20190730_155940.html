@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>vivo_x9i:  测试用例执行报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+    body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #ebebeb;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #6c6; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+
+
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+
+    #div_base {
+                position:absolute;
+                top:0%;
+                left:5%;
+                right:5%;
+                width: auto;
+                height: auto;
+                margin: -15px 0 0 0;
+    }
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.common.min.js"></script>
+    <!-- <script type="text/javascript" src="js/echarts.common.min.js"></script> -->
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level < 1) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level > 1) {
+                    tr.className = '';
+                }
+                else {
+                    tr.className = 'hiddenRow';
+                }
+            }
+        }
+    }
+
+
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+
+
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState != 'block' ) {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+        else {
+            details_div.style.display = 'none'
+        }
+    }
+
+
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>vivo_x9i:  测试用例执行报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2019-07-30 15:59:57</p>
+<p class='attribute'><strong>运行时长:</strong> 0:14:40.450157</p>
+<p class='attribute'><strong>状态:</strong> 通过 3</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>用例执行情况统计：</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+        <button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+        <button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+    </div>
+    <p></p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row'>
+            <td>测试套件/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='passClass'>
+        <td>test_cases.test001_study_word.Word: 单词本</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c1',3)">详情</a></td>
+    </tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_study_word_1_1: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <pre>
+        pt1.1: 在登录界面：
+/Users/vanthink_test_ios/aa/testone
+用户信息，即将登陆： {'student': {'student': 13641319701, 'teacher': 1882345238}, 'pwd': '1N14VXUCJTHoA'}
+/Users/vanthink_test_ios/aa/testone
+===== 第1组练习 =====
+13641319701
+学生昵称： Spring 
+ 学校名称： 北京欧叶教育科技有限公司 
+ 学校id： 5041 
+ 学生id： 501549 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：You have an ____.
+句子解释： 你带了眼罩。
+选择答案： eye-patch
+------------------------------ 
+
+题目：What is a ____?
+句子解释： 什么是单轨火车？
+选择答案： monorail
+------------------------------ 
+
+题目：The film was taken by a camera mounted on a ____.
+句子解释： 这部影片是用摄影机系在悬挂式滑翔机上拍摄的。
+选择答案： hang-glider
+------------------------------ 
+
+题目：We set off to see the Pyramids and ____.
+句子解释： 我们出发去看金字塔和狮身人面像。
+选择答案： Sphinx
+------------------------------ 
+
+题目：The bronze ____ proved to be a valuable find.
+句子解释： 那辆青铜战车证明是有价值的发现。
+选择答案： chariot
+------------------------------ 
+
+题目：____ is a kind of writing made up of pictures.
+句子解释： 象形文字是一种由图画构成的文字。
+选择答案： hieroglyphics
+------------------------------ 
+
+题目：My father taught me ____ as a child.
+句子解释： 我父亲从小就在训练我射箭了。
+选择答案： archery
+------------------------------ 
+
+题目：He is an old hand at ____.
+句子解释： 击剑他是老手。
+选择答案： fencing
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  n. 欲望;n. 食欲，胃口
+点击提示出现首字母提示 a
+单词: appetite
+我输入的： appetite
+------------------------------ 
+
+解释：  adj. 狂热的
+点击提示出现首字母提示 f
+单词: fanatical
+我输入的： fanatical
+------------------------------ 
+
+解释：  adj. 怀疑的
+点击提示出现首字母提示 s
+单词: suspicious
+我输入的： suspicious
+------------------------------ 
+
+解释：  v. 投稿;v. 捐款;v. 贡献;v. 捐献
+点击提示出现首字母提示 c
+单词: contribute
+我输入的： contribute
+------------------------------ 
+
+解释：  n. 固体结晶
+点击提示出现首字母提示 c
+单词: crystaline
+我输入的： crystaline
+------------------------------ 
+
+解释：  n. 眼罩
+点击提示出现首字母提示 e
+单词: eye-patch
+我输入的： eye-patch
+------------------------------ 
+
+解释：  n. 单轨列车
+点击提示出现首字母提示 m
+单词: monorail
+我输入的： monorail
+------------------------------ 
+
+解释：  n. 悬挂式滑翔机
+点击提示出现首字母提示 h
+单词: hang-glider
+我输入的： hang-glider
+------------------------------ 
+
+解释：  n. 狮身人面像
+点击提示出现首字母提示 S
+单词: Sphinx
+我输入的： Sphinx
+------------------------------ 
+
+解释：  n. 战车
+点击提示出现首字母提示 c
+单词: chariot
+我输入的： chariot
+------------------------------ 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：She went into a ____ and bought some aspirin.
+句子解释： 她进了一家药店，买了些阿司匹林。
+选择答案： chemist's
+------------------------------ 
+
+题目：I am going to the ____ to fit on my new coat.
+句子解释： 我要去裁缝店试穿新外衣。
+选择答案： tailor's
+------------------------------ 
+
+题目：I must go to the ____ to get some eggs.
+句子解释： 我得去趟杂货店去买些鸡蛋。
+选择答案： grocer's
+------------------------------ 
+
+题目：There is no meat left. I must go to the ____.
+句子解释： 没有肉了。我得去趟肉店。
+选择答案： butcher's
+------------------------------ 
+
+题目：They are sleeping in the ____ directly above.
+句子解释： 他们正在正上方的木匠铺子里睡觉。
+选择答案： carpenter's
+------------------------------ 
+
+题目：This ____ is very handy.
+句子解释： 这把扳子使起来挺顺手儿。
+选择答案： spanner
+------------------------------ 
+
+题目：The taps have a ____ to control the mix of hot and cold water.
+句子解释： 水阀上有一个手柄控制冷热水。
+选择答案： lever
+------------------------------ 
+
+题目：I pulled off my sopping ____.
+句子解释： 我摘下了湿漉漉的手套。
+选择答案： mittens
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  n. 象形文字
+点击提示出现首字母提示 h
+单词: hieroglyphics
+我输入的： hieroglyphics
+------------------------------ 
+
+解释：  n. 射箭
+点击提示出现首字母提示 a
+单词: archery
+我输入的： archery
+------------------------------ 
+
+解释：  n. 击剑运动
+点击提示出现首字母提示 f
+单词: fencing
+我输入的： fencing
+------------------------------ 
+
+解释：  n. 药店
+点击提示出现首字母提示 c
+单词: chemist's
+我输入的： chemist's
+------------------------------ 
+
+解释：  n. 裁缝店
+点击提示出现首字母提示 t
+单词: tailor's
+我输入的： tailor's
+------------------------------ 
+
+解释：  n. 杂货店
+点击提示出现首字母提示 g
+单词: grocer's
+我输入的： grocer's
+------------------------------ 
+
+解释：  n. 肉店
+点击提示出现首字母提示 b
+单词: butcher's
+我输入的： butcher's
+------------------------------ 
+
+解释：  n. 木匠铺
+点击提示出现首字母提示 c
+单词: carpenter's
+我输入的： carpenter's
+------------------------------ 
+
+解释：  n. 扳手
+点击提示出现首字母提示 s
+单词: spanner
+我输入的： spanner
+------------------------------ 
+
+解释：  n. 操纵杆
+点击提示出现首字母提示 l
+单词: lever
+我输入的： lever
+------------------------------ 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：The soldiers became bogged in the ____.
+句子解释： 士兵们陷在沼泽中。
+选择答案： swamp
+------------------------------ 
+
+题目：An ____ is a protection when doing dirty work.
+句子解释： 围裙是做脏活时的保护物。
+选择答案： apron
+------------------------------ 
+
+题目：Make sure you read the ____ before you turn on the engine.
+句子解释： 打开机器之前一定要看使用说明。
+选择答案： instructions
+------------------------------ 
+
+题目：A ____ is a large animal of the cat family.
+句子解释： 美洲虎是猫科动物中的一种大型动物。
+选择答案： jaguar
+------------------------------ 
+
+题目：I'll buy you a ____ of beer.
+句子解释： 我要给你买一桶啤酒。
+选择答案： barrel
+------------------------------ 
+
+题目：He gave a leap and landed himself on the ____ of the horse.
+句子解释： 他身子一纵，就跨上了马。
+选择答案： saddle
+------------------------------ 
+
+题目：This station ____ is the most practical car you can find.
+句子解释： 这辆客货两用轿车是你所能找到的最实用的车。
+选择答案： wagon
+------------------------------ 
+
+题目：The ____ escaped with the jewels.
+句子解释： 强盗带着珠宝逃跑了。
+选择答案： robbers
+------------------------------ 
+
+题目：You must wear ____ and a mask.
+句子解释： 你必须戴上护目镜和面罩。
+选择答案： goggles
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  n. 连指手套
+点击提示出现首字母提示 m
+单词: mittens
+我输入的： mittens
+------------------------------ 
+
+解释：  n. 沼泽
+点击提示出现首字母提示 s
+单词: swamp
+我输入的： swamp
+------------------------------ 
+
+解释：  n. 停机坪;n. 围裙
+点击提示出现首字母提示 a
+单词: apron
+我输入的： apron
+------------------------------ 
+
+解释：  n. 使用说明(复数形式)
+点击提示出现首字母提示 i
+单词: instructions
+我输入的： instructions
+------------------------------ 
+
+解释：  n. 美洲虎
+点击提示出现首字母提示 j
+单词: jaguar
+我输入的： jaguar
+------------------------------ 
+
+解释：  vt. 装进桶里，放进桶里;n. 桶;圆筒
+点击提示出现首字母提示 b
+单词: barrel
+我输入的： barrel
+------------------------------ 
+
+解释：  vt. 使承担;n. 马鞍;（自行车或摩托车的）车座
+点击提示出现首字母提示 s
+单词: saddle
+我输入的： saddle
+------------------------------ 
+
+解释：  n. 四轮马车，客货两用车
+点击提示出现首字母提示 w
+单词: wagon
+我输入的： wagon
+------------------------------ 
+
+解释：  n. 盗匪;抢劫者，强盗，盗贼( robber的名词复数 )
+点击提示出现首字母提示 r
+单词: robbers
+我输入的： robbers
+------------------------------ 
+
+解释：  n. 护目镜
+点击提示出现首字母提示 g
+单词: goggles
+我输入的： goggles
+------------------------------ 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_study_word_2_2: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        通过</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <pre>
+        pt1.2: 在其他页面
+在登录界面：
+/Users/vanthink_test_ios/aa/testone
+用户信息，即将登陆： {'student': {'student': 13641319701, 'teacher': 1882345238}, 'pwd': '1N14VXUCJTHoA'}
+/Users/vanthink_test_ios/aa/testone
+===== 第2组练习 =====
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_study_word_3_3: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        通过</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <pre>
+        pt1.3: 主界面
+/Users/vanthink_test_ios/aa/testone
+===== 第3组练习 =====
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+        <tr id='total_row'>
+            <td>总计</td>
+            <td>3</td>
+            <td>3</td>
+            <td>0</td>
+            <td>0</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            color: ['#95b75d', 'grey', '#b64645'],
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:3, name:'通过'},
+                        {value:0, name:'失败'},
+                        {value:0, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>

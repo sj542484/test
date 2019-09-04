@@ -1,0 +1,384 @@
+2019-08-06 09:47:28,510 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:47:28,513 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:47:28,514 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:47:31,136 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:47:31,137 - google - INFO -   --> LoginPage.login_operate
+2019-08-06 09:47:33,138 - google - INFO - 	--> LoginPage.input_username
+2019-08-06 09:47:33,211 - google - INFO - 	--> LoginPage.input_password
+2019-08-06 09:47:34,452 - google - INFO - 	--> LoginPage.login_button
+2019-08-06 09:47:37,057 - google - INFO -   <-- LoginPage.login_operate, Success
+2019-08-06 09:47:37,059 - google - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 09:47:37,059 - google - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 09:47:37,060 - google - INFO - --> FlashCard.test_all_game
+2019-08-06 09:47:37,061 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:47:45,587 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:47:45,588 - google - INFO - 	--> UserCenterPage.get_user_info
+2019-08-06 09:47:45,588 - google - INFO - 	--> HomePage.click_tab_profile
+2019-08-06 09:47:46,008 - google - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-06 09:47:46,623 - google - ERROR - Exception, 'UserCenterPage' object has no attribute 'get_window_size'
+2019-08-06 09:47:46,625 - google - ERROR - 	<-- UserCenterPage.get_user_info, Exception, Error
+2019-08-06 09:47:47,061 - google - ERROR - Exception, IMAGE:UserCenterPage.get_user_info-20190806094746.png
+2019-08-06 09:47:47,062 - google - ERROR - <-- FlashCard.test_all_game, Exception, Error
+
+2019-08-06 09:47:47,063 - google - INFO - --> FlashCard.tearDown
+2019-08-06 09:47:47,063 - google - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 09:47:47,072 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:47:47,073 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:47:47,073 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:47:52,132 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:47:52,135 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:48:12,826 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:48:12,829 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 09:48:12,832 - google - INFO - 	--> LoginPage.close_app
+2019-08-06 09:48:13,074 - google - INFO - 	--> LoginPage.launch_app
+2019-08-06 09:48:20,825 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:48:21,351 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:48:21,352 - google - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 09:48:21,352 - google - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 09:48:21,353 - google - INFO - --> FlashCard.test_all_game
+2019-08-06 09:48:21,353 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:48:22,267 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:48:22,268 - google - INFO - 	--> UserCenterPage.get_user_info
+2019-08-06 09:48:22,268 - google - INFO - 	--> HomePage.click_tab_profile
+2019-08-06 09:48:22,431 - google - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-06 09:48:23,269 - google - ERROR - Exception, 'UserCenterPage' object has no attribute 'get_window_size'
+2019-08-06 09:48:23,269 - google - ERROR - 	<-- UserCenterPage.get_user_info, Exception, Error
+2019-08-06 09:48:23,671 - google - ERROR - Exception, IMAGE:UserCenterPage.get_user_info-20190806094823.png
+2019-08-06 09:48:23,672 - google - ERROR - <-- FlashCard.test_all_game, Exception, Error
+
+2019-08-06 09:48:23,672 - google - INFO - --> FlashCard.tearDown
+2019-08-06 09:48:23,672 - google - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 09:48:23,673 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:48:23,673 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:48:23,674 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:48:28,751 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:48:28,752 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:48:49,037 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:48:49,038 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 09:48:49,038 - google - INFO - 	--> LoginPage.close_app
+2019-08-06 09:48:49,344 - google - INFO - 	--> LoginPage.launch_app
+2019-08-06 09:48:57,018 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:49:17,351 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:49:17,353 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:49:17,489 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:49:17,491 - google - INFO -   --> LoginPage.login_operate
+2019-08-06 09:49:19,496 - google - INFO - 	--> LoginPage.input_username
+2019-08-06 09:49:19,586 - google - INFO - 	--> LoginPage.input_password
+2019-08-06 09:49:20,823 - google - INFO - 	--> LoginPage.login_button
+2019-08-06 09:49:23,390 - google - INFO -   <-- LoginPage.login_operate, Success
+2019-08-06 09:49:23,391 - google - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 09:49:23,391 - google - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 09:49:23,392 - google - INFO - --> FlashCard.test_all_game
+2019-08-06 09:49:23,392 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:49:44,031 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:49:44,032 - google - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 09:49:44,033 - google - INFO - --> FlashCard.tearDown
+2019-08-06 09:49:44,033 - google - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 09:49:44,034 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:49:44,034 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:49:44,035 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:49:44,133 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:49:44,133 - google - INFO -   --> LoginPage.login_operate
+2019-08-06 09:49:46,134 - google - INFO - 	--> LoginPage.input_username
+2019-08-06 09:49:46,204 - google - INFO - 	--> LoginPage.input_password
+2019-08-06 09:49:47,942 - google - INFO - 	--> LoginPage.login_button
+2019-08-06 09:49:50,499 - google - INFO -   <-- LoginPage.login_operate, Success
+2019-08-06 09:49:50,500 - google - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 09:49:50,500 - google - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 09:49:50,501 - google - INFO - --> FlashCard.test_all_game
+2019-08-06 09:49:50,501 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:50:11,139 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:50:11,140 - google - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 09:50:11,140 - google - INFO - --> FlashCard.tearDown
+2019-08-06 09:50:11,141 - google - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 09:50:11,141 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:50:11,142 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:50:11,142 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:50:11,246 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:50:11,246 - google - INFO -   --> LoginPage.login_operate
+2019-08-06 09:50:13,247 - google - INFO - 	--> LoginPage.input_username
+2019-08-06 09:50:13,338 - google - INFO - 	--> LoginPage.input_password
+2019-08-06 09:50:15,125 - google - INFO - 	--> LoginPage.login_button
+2019-08-06 09:50:17,682 - google - INFO -   <-- LoginPage.login_operate, Success
+2019-08-06 09:50:17,682 - google - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 09:50:17,683 - google - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 09:50:17,683 - google - INFO - --> FlashCard.test_all_game
+2019-08-06 09:50:17,683 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:50:37,980 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:50:37,981 - google - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 09:50:37,981 - google - INFO - --> FlashCard.tearDown
+2019-08-06 09:50:37,982 - google - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 09:50:37,982 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:50:37,982 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:50:37,982 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:50:38,089 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:50:38,089 - google - INFO -   --> LoginPage.login_operate
+2019-08-06 09:50:40,090 - google - INFO - 	--> LoginPage.input_username
+2019-08-06 09:50:40,142 - google - INFO - 	--> LoginPage.input_password
+2019-08-06 09:50:41,806 - google - INFO - 	--> LoginPage.login_button
+2019-08-06 09:50:44,360 - google - INFO -   <-- LoginPage.login_operate, Success
+2019-08-06 09:50:44,360 - google - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 09:50:44,360 - google - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 09:50:44,361 - google - INFO - --> FlashCard.test_all_game
+2019-08-06 09:50:44,361 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:51:05,696 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:51:05,698 - google - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-06 09:51:05,699 - google - INFO - --> FlashCard.tearDown
+2019-08-06 09:51:05,699 - google - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 09:51:05,700 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:51:05,700 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:51:05,700 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:51:05,741 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:51:05,741 - google - INFO -   --> LoginPage.login_operate
+2019-08-06 09:51:07,742 - google - INFO - 	--> LoginPage.input_username
+2019-08-06 09:51:08,257 - google - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-08-06 09:51:08,258 - google - ERROR - 	<-- LoginPage.input_username, WebDriverException, Error
+2019-08-06 09:51:08,627 - google - ERROR - WebDriverException, Message: IMAGE:LoginPage.input_username-20190806095108.png
+
+2019-08-06 09:51:08,627 - google - ERROR -   <-- LoginPage.login_operate, WebDriverException, Error
+2019-08-06 09:51:08,628 - google - ERROR - WebDriverException, Message: Message: IMAGE:LoginPage.input_username-20190806095108.png
+
+
+2019-08-06 09:51:08,628 - google - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 09:51:08,628 - google - ERROR - WebDriverException, Message: Message: Message: IMAGE:LoginPage.input_username-20190806095108.png
+
+
+
+2019-08-06 09:51:08,628 - google - ERROR - <-- FlashCard.setUp, WebDriverException, Error
+
+2019-08-06 09:51:08,634 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:51:08,635 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:51:08,635 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:51:10,813 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:51:10,813 - google - INFO -   --> LoginPage.login_operate
+2019-08-06 09:51:12,815 - google - INFO - 	--> LoginPage.input_username
+2019-08-06 09:51:12,884 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:12,884 - google - ERROR - 	<-- LoginPage.input_username, WebDriverException, Error
+2019-08-06 09:51:12,899 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:12,900 - google - ERROR -   <-- LoginPage.login_operate, WebDriverException, Error
+2019-08-06 09:51:12,908 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:12,908 - google - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 09:51:12,915 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:12,916 - google - ERROR - <-- FlashCard.setUp, WebDriverException, Error
+
+2019-08-06 09:51:12,926 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:51:12,926 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:51:12,926 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:51:12,937 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:51:12,938 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:51:12,946 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:51:12,947 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 09:51:12,947 - google - INFO - 	--> LoginPage.close_app
+2019-08-06 09:51:35,734 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device.
+
+2019-08-06 09:51:35,734 - google - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-06 09:51:35,742 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:35,743 - google - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 09:51:35,750 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:35,750 - google - ERROR - <-- FlashCard.setUp, WebDriverException, Error
+
+2019-08-06 09:51:35,758 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:51:35,759 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:51:35,759 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:51:35,770 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:51:35,770 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:51:35,780 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:51:35,780 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 09:51:35,780 - google - INFO - 	--> LoginPage.close_app
+2019-08-06 09:51:46,576 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s FA6AN0301645 shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: '* daemon not running; starting now at tcp:5037
+* daemon started successfully
+error: device 'FA6AN0301645' not found'; Code: '1'
+
+2019-08-06 09:51:46,576 - google - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-06 09:51:46,584 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:46,584 - google - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 09:51:46,593 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:46,605 - google - ERROR - <-- FlashCard.setUp, WebDriverException, Error
+
+2019-08-06 09:51:46,615 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:51:46,616 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:51:46,616 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:51:46,626 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:51:46,626 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:51:46,639 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:51:46,639 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 09:51:46,639 - google - INFO - 	--> LoginPage.close_app
+2019-08-06 09:51:47,665 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s FA6AN0301645 shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: 'error: device 'FA6AN0301645' not found'; Code: '1'
+
+2019-08-06 09:51:47,666 - google - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-06 09:51:47,675 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:47,675 - google - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 09:51:47,685 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:47,685 - google - ERROR - <-- FlashCard.setUp, WebDriverException, Error
+
+2019-08-06 09:51:47,697 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:51:47,698 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:51:47,698 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:51:47,709 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:51:47,709 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:51:47,721 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:51:47,721 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 09:51:47,721 - google - INFO - 	--> LoginPage.close_app
+2019-08-06 09:51:48,753 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s FA6AN0301645 shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: 'error: device 'FA6AN0301645' not found'; Code: '1'
+
+2019-08-06 09:51:48,753 - google - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-06 09:51:48,764 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:48,765 - google - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 09:51:48,780 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:48,780 - google - ERROR - <-- FlashCard.setUp, WebDriverException, Error
+
+2019-08-06 09:51:48,792 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:51:48,792 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:51:48,793 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:51:48,805 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:51:48,806 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:51:48,820 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:51:48,821 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 09:51:48,821 - google - INFO - 	--> LoginPage.close_app
+2019-08-06 09:51:49,847 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s FA6AN0301645 shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: 'error: device 'FA6AN0301645' not found'; Code: '1'
+
+2019-08-06 09:51:49,848 - google - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-06 09:51:49,857 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:49,858 - google - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 09:51:49,865 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:49,866 - google - ERROR - <-- FlashCard.setUp, WebDriverException, Error
+
+2019-08-06 09:51:49,872 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:51:49,872 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:51:49,873 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:51:49,881 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:51:49,881 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:51:49,890 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:51:49,891 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 09:51:49,891 - google - INFO - 	--> LoginPage.close_app
+2019-08-06 09:51:50,916 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s FA6AN0301645 shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: 'error: device 'FA6AN0301645' not found'; Code: '1'
+
+2019-08-06 09:51:50,917 - google - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-06 09:51:50,923 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:50,923 - google - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 09:51:50,929 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:50,929 - google - ERROR - <-- FlashCard.setUp, WebDriverException, Error
+
+2019-08-06 09:51:50,937 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:51:50,937 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:51:50,937 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:51:50,949 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:51:50,950 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:51:50,964 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:51:50,965 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 09:51:50,965 - google - INFO - 	--> LoginPage.close_app
+2019-08-06 09:51:51,987 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s FA6AN0301645 shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: 'error: device 'FA6AN0301645' not found'; Code: '1'
+
+2019-08-06 09:51:51,988 - google - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-06 09:51:51,995 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:51,995 - google - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 09:51:52,002 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:52,005 - google - ERROR - <-- FlashCard.setUp, WebDriverException, Error
+
+2019-08-06 09:51:52,013 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:51:52,013 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:51:52,014 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:51:52,023 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:51:52,023 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:51:52,033 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:51:52,034 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 09:51:52,034 - google - INFO - 	--> LoginPage.close_app
+2019-08-06 09:51:53,061 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s FA6AN0301645 shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: 'error: device 'FA6AN0301645' not found'; Code: '1'
+
+2019-08-06 09:51:53,061 - google - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-06 09:51:53,070 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:53,071 - google - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 09:51:53,080 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:53,080 - google - ERROR - <-- FlashCard.setUp, WebDriverException, Error
+
+2019-08-06 09:51:53,088 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:51:53,089 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:51:53,089 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:51:53,098 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:51:53,098 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:51:53,106 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:51:53,106 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 09:51:53,106 - google - INFO - 	--> LoginPage.close_app
+2019-08-06 09:51:54,130 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s FA6AN0301645 shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: 'error: device 'FA6AN0301645' not found'; Code: '1'
+
+2019-08-06 09:51:54,130 - google - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-06 09:51:54,143 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:54,143 - google - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 09:51:54,206 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:54,207 - google - ERROR - <-- FlashCard.setUp, WebDriverException, Error
+
+2019-08-06 09:51:54,215 - google - INFO - --> FlashCard.setUp
+2019-08-06 09:51:54,215 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:51:54,216 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:51:54,224 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:51:54,224 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:51:54,232 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:51:54,232 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 09:51:54,232 - google - INFO - 	--> LoginPage.close_app
+2019-08-06 09:51:55,260 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s FA6AN0301645 shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: 'error: device 'FA6AN0301645' not found'; Code: '1'
+
+2019-08-06 09:51:55,260 - google - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-06 09:51:55,267 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:55,267 - google - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 09:51:55,273 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:55,273 - google - ERROR - <-- FlashCard.setUp, WebDriverException, Error
+
+2019-08-06 09:51:55,281 - google - INFO - --> WKGame.setUp
+2019-08-06 09:51:55,282 - google - INFO -   --> LoginPage.app_status
+2019-08-06 09:51:55,282 - google - INFO -   --> LoginPage.wait_check_page
+2019-08-06 09:51:55,294 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 09:51:55,295 - google - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 09:51:55,305 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 09:51:55,305 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 09:51:55,306 - google - INFO - 	--> LoginPage.close_app
+2019-08-06 09:51:56,332 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s FA6AN0301645 shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: 'error: device 'FA6AN0301645' not found'; Code: '1'
+
+2019-08-06 09:51:56,332 - google - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-06 09:51:56,340 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:56,341 - google - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-06 09:51:56,349 - google - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8202
+
+2019-08-06 09:51:56,356 - google - ERROR - <-- WKGame.setUp, WebDriverException, Error
+

@@ -1,0 +1,314 @@
+2019-07-30 15:26:43,459 - oppo_R11t - INFO - --> Word.setUp
+2019-07-30 15:26:43,460 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-07-30 15:26:43,461 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-07-30 15:26:48,852 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 15:26:48,853 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:26:49,870 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:26:49,870 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-07-30 15:26:49,928 - oppo_R11t - INFO - <-- Word.setUp, Success
+
+2019-07-30 15:26:49,929 - oppo_R11t - INFO - --> Word.test_study_word
+2019-07-30 15:26:49,929 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:26:50,430 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:26:50,430 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-07-30 15:26:50,431 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-07-30 15:26:50,563 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-07-30 15:26:53,466 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-07-30 15:26:55,865 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-07-30 15:26:56,131 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-07-30 15:26:57,795 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-07-30 15:26:59,721 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-07-30 15:27:01,444 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-07-30 15:27:01,638 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-07-30 15:27:01,780 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-07-30 15:27:03,411 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-07-30 15:27:06,603 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-07-30 15:27:07,869 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-07-30 15:27:07,963 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:27:09,016 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:27:09,017 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-07-30 15:27:09,133 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_start_page
+2019-07-30 15:27:10,550 - oppo_R11t - INFO - 	--> WordBookRebuildPage.word_start_button
+2019-07-30 15:27:16,620 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:27:16,667 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:27:16,724 - oppo_R11t - INFO - 	--> ReciteWordPage.word_book_recite_operate
+2019-07-30 15:27:16,725 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:27:16,756 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:27:16,844 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-30 15:27:16,844 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:27:16,845 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:27:16,882 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:27:16,908 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:27:17,017 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-30 15:27:19,101 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-30 15:27:19,512 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-07-30 15:27:19,551 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-07-30 15:27:19,625 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-07-30 15:27:20,811 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-07-30 15:27:20,812 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:27:20,813 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:27:20,856 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:27:20,876 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:27:22,458 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-07-30 15:27:22,491 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-07-30 15:27:22,571 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-07-30 15:27:22,571 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-07-30 15:27:22,571 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-07-30 15:27:22,610 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-07-30 15:27:22,640 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-07-30 15:27:22,771 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-07-30 15:27:25,453 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-07-30 15:27:25,470 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-07-30 15:27:25,470 - oppo_R11t - ERROR - 	<-- VocabularyChoose.hint_button_judge, WebDriverException, Error
+2019-07-30 15:27:25,514 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-07-30 15:27:25,514 - oppo_R11t - ERROR - 	<-- VocabGamePage.vocab_apply_game_operate, WebDriverException, Error
+2019-07-30 15:27:25,525 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-07-30 15:27:25,525 - oppo_R11t - ERROR - 	<-- ReciteWordPage.word_book_recite_operate, WebDriverException, Error
+2019-07-30 15:27:25,533 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-07-30 15:27:25,534 - oppo_R11t - ERROR - <-- Word.test_study_word, WebDriverException, Error
+
+2019-07-30 15:27:25,543 - oppo_R11t - INFO - --> Word.tearDown
+2019-07-30 15:27:25,543 - oppo_R11t - INFO - <-- Word.tearDown, Success
+
+2019-07-30 15:27:25,562 - oppo_R11t - INFO - --> Word.setUp
+2019-07-30 15:27:25,562 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-07-30 15:27:25,562 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-07-30 15:27:25,574 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 15:27:25,575 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:27:25,586 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:27:25,586 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-07-30 15:27:25,599 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-07-30 15:27:26,384 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-07-30 15:27:26,891 - oppo_R11t - ERROR - WebDriverException, Message: cannot forward the request Failed to connect to /127.0.0.1:4757
+Stacktrace:
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:143)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doPost (DriverServlet.java:70)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:707)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-07-30 15:27:26,891 - oppo_R11t - ERROR - 	<-- LoginPage.launch_app, WebDriverException, Error
+2019-07-30 15:27:26,894 - oppo_R11t - ERROR - WebDriverException, Message: Session [3cb6746a-9105-402b-98eb-90449c323196] was terminated due to FORWARDING_TO_NODE_FAILED
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doGet (DriverServlet.java:64)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:687)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-07-30 15:27:26,895 - oppo_R11t - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-07-30 15:27:26,899 - oppo_R11t - ERROR - WebDriverException, Message: Session [3cb6746a-9105-402b-98eb-90449c323196] was terminated due to FORWARDING_TO_NODE_FAILED
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doGet (DriverServlet.java:64)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:687)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-07-30 15:27:26,900 - oppo_R11t - ERROR - <-- Word.setUp, WebDriverException, Error
+
+2019-07-30 15:27:26,905 - oppo_R11t - INFO - --> Word.setUp
+2019-07-30 15:27:26,905 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-07-30 15:27:26,905 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-07-30 15:27:26,907 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 15:27:26,907 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 15:27:26,909 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 15:27:26,910 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-07-30 15:27:26,913 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-07-30 15:27:26,916 - oppo_R11t - ERROR - WebDriverException, Message: Session [3cb6746a-9105-402b-98eb-90449c323196] was terminated due to FORWARDING_TO_NODE_FAILED
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doPost (DriverServlet.java:70)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:707)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-07-30 15:27:26,916 - oppo_R11t - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-07-30 15:27:26,918 - oppo_R11t - ERROR - WebDriverException, Message: Session [3cb6746a-9105-402b-98eb-90449c323196] was terminated due to FORWARDING_TO_NODE_FAILED
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doGet (DriverServlet.java:64)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:687)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-07-30 15:27:26,919 - oppo_R11t - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-07-30 15:27:26,921 - oppo_R11t - ERROR - WebDriverException, Message: Session [3cb6746a-9105-402b-98eb-90449c323196] was terminated due to FORWARDING_TO_NODE_FAILED
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doGet (DriverServlet.java:64)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:687)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-07-30 15:27:26,921 - oppo_R11t - ERROR - <-- Word.setUp, WebDriverException, Error
+

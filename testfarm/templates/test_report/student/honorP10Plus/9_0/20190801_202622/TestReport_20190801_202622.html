@@ -1,0 +1,2384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>honorP10Plus:  测试用例执行报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+    body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #ebebeb;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #6c6; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+
+
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+
+    #div_base {
+                position:absolute;
+                top:0%;
+                left:5%;
+                right:5%;
+                width: auto;
+                height: auto;
+                margin: -15px 0 0 0;
+    }
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.common.min.js"></script>
+    <!-- <script type="text/javascript" src="js/echarts.common.min.js"></script> -->
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level < 1) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level > 1) {
+                    tr.className = '';
+                }
+                else {
+                    tr.className = 'hiddenRow';
+                }
+            }
+        }
+    }
+
+
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+
+
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState != 'block' ) {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+        else {
+            details_div.style.display = 'none'
+        }
+    }
+
+
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>honorP10Plus:  测试用例执行报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2019-08-01 20:26:40</p>
+<p class='attribute'><strong>运行时长:</strong> 0:46:26.918983</p>
+<p class='attribute'><strong>状态:</strong> 通过 1 错误 1</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>用例执行情况统计：</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+        <button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+        <button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+    </div>
+    <p></p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row'>
+            <td>测试套件/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='errorClass'>
+        <td>test_cases.test001_study_word.Word: 单词本</td>
+        <td>2</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c1',2)">详情</a></td>
+    </tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_study_word_1_1: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <pre>
+        pt1.1: 在登录界面：
+/Users/vanthink_test_ios/aa/testone
+用户信息，即将登陆： {'student': {'student': 15344289703, 'teacher': 18823452348}, 'pwd': '1N14VXUCJTHoA'}
+1080 1920 pingmu
+(1080, 1920)
+/Users/vanthink_test_ios/aa/testone
+===== 第1组练习 =====
+1080 1920 pingmu
+1080 1920 pingmu
+学生昵称： 王崇达 
+ 学校名称： 内蒙古巴彦淖尔市乌拉特前旗 菁华英语 
+ 学校id： 705 
+ 学生id： 558833 
+
+title: 词汇选择(复习)
+===== 🌟🌟 词汇选择-根据解释选单词模式（复习）🌟🌟 =====
+
+题目:  n. 胡萝卜
+选择答案： carrot
+------------------------------ 
+
+题目:  n. 夹牛肉饼的面包片;n. 汉堡包
+选择答案： hamburger
+------------------------------ 
+
+题目:  n. 早餐
+选择错误答案： hope
+正确答案为: breakfast
+------------------------------ 
+
+题目:  n. 早餐
+选择错误答案： washroom
+正确答案为: breakfast
+------------------------------ 
+
+题目:  n. 早餐
+选择答案： breakfast
+------------------------------ 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：Can you  give my rabbit a ____?
+句子解释： 你能给我的兔子一根胡萝卜吗？
+选择答案： carrot
+------------------------------ 
+
+题目：I want a ____, a large coke and French fries.
+句子解释： 我要一个汉堡、一个大杯可乐和炸薯条。
+选择答案： hamburger
+------------------------------ 
+
+题目：He didn't eat ____ this morning.
+句子解释： 今天早上他没吃早餐。
+选择答案： breakfast
+------------------------------ 
+
+题目：He asked for the ____ time this month.
+句子解释： 这是他这个月第20次问我了。
+选择答案： twentieth
+------------------------------ 
+
+题目：This hill is hard to ____. 
+句子解释： 这山很难爬。
+选择答案： climb
+------------------------------ 
+
+题目：I like ____ weather.
+句子解释： 我喜欢冷天。
+选择答案： cold
+------------------------------ 
+
+题目：We're going to England for summer ____.
+句子解释： 我们打算去英国度暑假。
+选择答案： holiday
+------------------------------ 
+
+题目：It was a ____ summer day.
+句子解释： 这是个炎热的夏日。
+选择答案： hot
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  n. 饮食，食物
+点击提示出现首字母提示 d
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: diet
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： diet
+我输入的： diet
+------------------------------ 
+
+解释：  n. 进餐时间;n. 饭食;n. 一餐
+点击提示出现首字母提示 m
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: meal
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+最终输入单词： meal
+我输入的： meal
+------------------------------ 
+
+解释：  n. 午餐，午饭
+点击提示出现首字母提示 l
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: lunch
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+最终输入单词： lunch
+我输入的： lunch
+------------------------------ 
+
+解释：  n. 胡萝卜
+点击提示出现首字母提示 c
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: carrot
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： carrot
+我输入的： carrot
+------------------------------ 
+
+解释：  n. 小鸟;n. 鸡肉;n. 小鸡
+点击提示出现首字母提示 c
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: chicken
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+k
+1080 1920 pingmu
+k 847.8431999999999 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+最终输入单词： chicken
+我输入的： chicken
+------------------------------ 
+
+解释：  n. 夹牛肉饼的面包片;n. 汉堡包
+点击提示出现首字母提示 h
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: hamburger
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+b
+1080 1920 pingmu
+b 635.8824 1686.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+g
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+最终输入单词： hamburger
+我输入的： hamburger
+------------------------------ 
+
+解释：  n. 早餐
+点击提示出现首字母提示 b
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: breakfast
+b
+1080 1920 pingmu
+b 635.8824 1686.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+k
+1080 1920 pingmu
+k 847.8431999999999 1530.0
+f
+1080 1920 pingmu
+f 423.92159999999996 1530.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： breakfast
+我输入的： breakfast
+------------------------------ 
+
+解释：  num. 第二十
+点击提示出现首字母提示 t
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: twentieth
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+w
+1080 1920 pingmu
+w 163.96559999999997 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+最终输入单词： twentieth
+我输入的： twentieth
+------------------------------ 
+
+解释：  v. 上升;v. 登上;v. 爬，攀登
+点击提示出现首字母提示 c
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: climb
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+b
+1080 1920 pingmu
+b 635.8824 1686.0
+最终输入单词： climb
+我输入的： climb
+------------------------------ 
+
+解释：  n. 感冒，伤风;n. 寒冷;adj. 冷淡的;adj. 寒冷的;adj. 冷的
+点击提示出现首字母提示 c
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: cold
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+最终输入单词： cold
+我输入的： cold
+------------------------------ 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：Do you want ____ cream?
+句子解释： 你想要冰激凌吗？
+选择答案： ice
+------------------------------ 
+
+题目：A ____ fell from the tree. 
+句子解释： 一片叶子从树上落了下来。
+选择答案： leaf
+------------------------------ 
+
+题目：He was one of thirteen children from a ____ family.
+句子解释： 他是13名来自贫困家庭的孩子之一。
+选择答案： poor
+------------------------------ 
+
+题目：We always ____ class at 8 o'clock.
+句子解释： 我们一般八点开始上课。
+选择答案： start
+------------------------------ 
+
+题目：____ your hands before eating.
+句子解释： 吃东西前先洗手。
+选择答案： wash
+------------------------------ 
+
+题目：I ____ I was a bird.
+句子解释： 我希望我是一只鸟。
+选择答案： wish
+------------------------------ 
+
+题目：Leaves fall off the trees in the ____. 
+句子解释： 秋天，树叶纷纷从树上掉下来。
+选择答案： autumn
+------------------------------ 
+
+题目：Wait a ____!
+句子解释： 等一下！
+选择答案： minute
+------------------------------ 
+
+题目：The weather was warm and ____.
+句子解释： 天气温暖而晴朗。
+选择答案： sunny
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  n. 假期;n. 假日
+点击提示出现首字母提示 h
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: holiday
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+y
+1080 1920 pingmu
+y 587.8871999999999 1374.0
+最终输入单词： holiday
+我输入的： holiday
+------------------------------ 
+
+解释：  adj. 最新的;adj. 狂热的;adj. 热心的;adj. 强烈的;adj. 辛辣的;adj. 热的
+点击提示出现首字母提示 h
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: hot
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： hot
+我输入的： hot
+------------------------------ 
+
+解释：  n. 冰
+点击提示出现首字母提示 i
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: ice
+i
+1080 1920 pingmu
+i 799.848 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： ice
+我输入的： ice
+------------------------------ 
+
+解释：  n. 叶，叶子（复leaves）
+点击提示出现首字母提示 l
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: leaf
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+f
+1080 1920 pingmu
+f 423.92159999999996 1530.0
+最终输入单词： leaf
+我输入的： leaf
+------------------------------ 
+
+解释：  adj. 不好的，差的;adj. 可怜的;adj. 贫穷的
+点击提示出现首字母提示 p
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: poor
+p
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+最终输入单词： poor
+我输入的： poor
+------------------------------ 
+
+解释：  n. 起点;n. 出发;v. 出发，动身，启程;v. 开始，着手
+点击提示出现首字母提示 s
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: start
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： start
+我输入的： start
+------------------------------ 
+
+解释：  n. 洗（涤），冲洗，洗剂，洗的衣服;v. 洗（涤），冲洗，流过，弄湿
+点击提示出现首字母提示 w
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: wash
+w
+1080 1920 pingmu
+w 163.96559999999997 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+最终输入单词： wash
+我输入的： wash
+------------------------------ 
+
+解释：  n. 愿望，祝愿;v. 希望，想要，祝愿
+点击提示出现首字母提示 w
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: wish
+w
+1080 1920 pingmu
+w 163.96559999999997 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+最终输入单词： wish
+我输入的： wish
+------------------------------ 
+
+解释：  n. 秋天，秋季
+点击提示出现首字母提示 a
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: autumn
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+最终输入单词： autumn
+我输入的： autumn
+------------------------------ 
+
+解释：  n. 一会儿，瞬间;n. 分钟
+点击提示出现首字母提示 m
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: minute
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： minute
+我输入的： minute
+------------------------------ 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：She has the ____ in this story.
+句子解释： 故事中她是有魔法的。
+选择答案： magic
+------------------------------ 
+
+题目：Children often play treat or ____ on Halloween.
+句子解释： 孩子们经常在万圣节玩“不给糖就捣乱”的游戏。
+选择答案： trick
+------------------------------ 
+
+题目：You must pee in the ____.
+句子解释： 你必须在洗手间小便。
+选择答案： washroom
+------------------------------ 
+
+题目：____, you stepped on my foot.
+句子解释： 哎哟，你踩了我的脚了。
+选择答案： ouch
+------------------------------ 
+
+题目：She put it down on the ____ table.
+句子解释： 她把它放到矮桌上。
+选择答案： low
+------------------------------ 
+
+题目：He is a singer who comes from a ____ family.
+句子解释： 他是出身于音乐世家的歌手。
+选择答案： musical
+------------------------------ 
+
+题目：A ____ farmer has little free time.
+句子解释： 一个勤劳的农民很少有空闲时间。
+选择答案： busy
+------------------------------ 
+
+题目：I'm taking off my ____ from my head.
+句子解释： 我正在摘帽子。
+选择答案： hat
+------------------------------ 
+
+题目：I ____ to get a job tomorrow.
+句子解释： 我希望明天能找到一份工作。
+选择答案： hope
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  adj. 晴朗的，阳光充足的
+点击提示出现首字母提示 s
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: sunny
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+y
+1080 1920 pingmu
+y 587.8871999999999 1374.0
+最终输入单词： sunny
+我输入的： sunny
+------------------------------ 
+
+解释：  adj. 不可思议的;adj. 戏法的;adj. 有魔力的;adj. 魔术的;n. 魔力;n. 戏法;n. 魔术，魔法
+点击提示出现首字母提示 m
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: magic
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+g
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+最终输入单词： magic
+我输入的： magic
+------------------------------ 
+
+解释：  n. 玩笑;n. 恶作剧;n. 骗局;n. 诡计，把戏
+点击提示出现首字母提示 t
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: trick
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+k
+1080 1920 pingmu
+k 847.8431999999999 1530.0
+最终输入单词： trick
+我输入的： trick
+------------------------------ 
+
+解释：  n. 盥洗室，厕所
+点击提示出现首字母提示 w
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: washroom
+w
+1080 1920 pingmu
+w 163.96559999999997 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+最终输入单词： washroom
+我输入的： washroom
+------------------------------ 
+
+解释：  int. 哎哟
+点击提示出现首字母提示 o
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: ouch
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+最终输入单词： ouch
+我输入的： ouch
+------------------------------ 
+
+解释：  adv. 卑微地;adv. 低下地，低价地;adj. 卑劣的;adj. 低级的;adj. 低等的;adj. 浅的;adj. 低的
+点击提示出现首字母提示 l
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: low
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+w
+1080 1920 pingmu
+w 163.96559999999997 1374.0
+最终输入单词： low
+我输入的： low
+------------------------------ 
+
+解释：  n. 音乐片;adj. 音乐的，爱好音乐的
+点击提示出现首字母提示 m
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: musical
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+最终输入单词： musical
+我输入的： musical
+------------------------------ 
+
+解释：  adj. 繁华的;adj. 繁忙的;adj. 忙（碌）的
+点击提示出现首字母提示 b
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: busy
+b
+1080 1920 pingmu
+b 635.8824 1686.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+y
+1080 1920 pingmu
+y 587.8871999999999 1374.0
+最终输入单词： busy
+我输入的： busy
+------------------------------ 
+
+解释：  n. 礼帽;n. 帽子
+点击提示出现首字母提示 h
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: hat
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： hat
+我输入的： hat
+------------------------------ 
+
+解释：  n. 被期望的人（或物）;n. 期望;n. 期待;n. 希望;v. 希望，期望
+点击提示出现首字母提示 h
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: hope
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+p
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： hope
+我输入的： hope
+------------------------------ 
+
+进入结果页面
+新词个数： 0
+数据库记载今日新词数： 0
+数据库记载组数： 0
+数据库记载复习数 0
+ &lt;结果页&gt;：
+今日已练单词：60
+日期：2019-08-01
+已背单词 845
+已学习845个，继续加油哦！
+~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+需要练习的新词： ['diary', 'roll', 'island', 'Spain', 'dancing', 'contest', 'bunny', 'twenty-first', 'twenty-third', 'thirtieth', 'climbing', 'eating', 'playing', 'jumping', 'drinking', 'sleeping', 'Spanish', 'dry', 'shopping', 'mistake', 'offer', 'plenty', 'rubbish', 'thief', 'toilet', 'tyre', 'visitor', 'youth', 'beard', 'belong', 'counter', 'engineer', 'impossible', 'introduce', 'neighbour', 'surprise', 'describe', 'extra', 'grocer', 'haircut', 'handle', 'opposite', 'pence', 'phrase', 'surround', 'appointment', 'association', 'millionaire', 'platform', 'urgent', 'parrot', 'powder', 'uncomfortable', 'deposit', 'lemonade', 'swallow', 'awful', 'zip', 'latest', 'kitten', 'Egypt', 'baker', 'torch', 'intelligent', 'embarrassed', 'worst', 'compact', 'overtake', 'Rome', 'dairy', 'pleasantly', 'phrasebook', 'thirstily', 'groceries', 'stationery', 'newsagent', 'Paris', 'lamp-post', 'Tokyo', 'Athens', 'Berlin', 'label', 'hostel', 'mathematics', 'stale', 'teaspoonful', 'worse', 'instalment', 'tramp', 'terribly', 'nuisance', 'darling', 'sensational', 'overseas', 'engineering', 'middle-aged', 'curiously', 'kindly', 'amused', 'rusty', 'prosecute', 'centre', 'certain', 'double', 'fix', 'flat', 'fool', 'hole', 'ladder', 'rush', 'sand', 'sight', 'soil', 'stone', 'abroad', 'afterwards', 'alive', 'bark', 'bear', 'bee', 'billion', 'cage', 'capital', 'chip', 'college', 'company', 'complete', 'drunk', 'entrance', 'examine', 'expect', 'firm', 'flight', 'flood', 'form', 'grey', 'hang', 'hurry', 'journey', 'market', 'mend', 'nod', 'object', 'ought', 'paint', 'path', 'per', 'pile', 'pole', 'port', 'produce', 'prove', 'real', 'reply', 'root', 'sail', 'sailor', 'scene', 'shore', 'shot', 'sort', 'spy', 'state', 'steal', 'steam', 'storm', 'sunshine', 'support', 'sweep', 'tap', 'theatre', 'tiny', 'towards', 'tower', 'truth', 'view', 'villager', 'waiter', 'waste', 'wave', 'weigh', 'weight', 'wire', 'wooden', 'admit', 'agreement', 'allow', 'avoid', 'balloon', 'beneath', 'block', 'bow', 'burst', 'bury', 'bush', 'cave', 'channel', 'chimney', 'coast', 'connect', 'contain', 'continue', 'courtyard', 'damage', 'darkness', 'defeat', 'delighted', 'desert', 'develop', 'devote', 'difference', 'discover', 'eager', 'effect', 'employ', 'escape', 'exchange', 'expert', 'explain', 'factor', 'fair', 'fear', 'globe', 'goods', 'government', 'guard', 'hostess', 'insist', 'manager', 'meanwhile', 'mirror', 'movement', 'percent', 'performance', 'persuade', 'pressure', 'pretend', 'process', 'progress', 'punish', 'quantity', 'rare', 'react', 'receiver', 'remove', 'repeat', 'rude', 'salary', 'shame', 'shortly', 'strange', 'suppose', 'value', 'wedding', 'actual', 'aircraft', 'ancient', 'arrest', 'astronaut', 'average', 'bomb', 'border', 'brake', 'captain', 'champion', 'charge', 'comedy', 'complain', 'creature', 'crew', 'diamond', 'distance', 'distant', 'district', 'drill', 'dull', 'edge', 'encouragement', 'European', 'figure', 'fortunate', 'glance', 'heaven', 'helicopter', 'honour', 'immediately', 'inch', 'income', 'increase', 'inform', 'iron', 'liquid', 'manage', 'march', 'mix', 'noble', 'occur', 'operation', 'package', 'palace', 'patience', 'petrol', 'pipe', 'porter', 'profit', 'pub', 'queue', 'realize', 'relation', 'relative', 'remind', 'rescue', 'shark', 'sharp', 'stadium', 'studio', 'suffer', 'surrounding', 'survive', 'terrify', 'trunk', 'valuable', 'volunteer', 'wheel', 'accompany', 'acquire', 'admire', 'appreciate', 'approach', 'astonish', 'atmosphere', 'basement', 'circus', 'competition', 'confirm', 'contribute', 'conversation', 'curious', 'curtain', 'deserve', 'detective', 'endless', 'exhibition', 'extraordinary', 'following', 'forbid', 'fright', 'harbour', 'instruct', 'intend', 'interrupt', 'lawyer', 'leading', 'murder', 'possess', 'possession', 'precious', 'preserve', 'private', 'recognize', 'royal', 'salute', 'satisfaction', 'shoulder', 'solid', 'string', 'struggle', 'telescope', 'temple', 'tight', 'transport', 'trap', 'treasure', 'variety', 'various', 'album', 'appetite', 'brilliant', 'capsule', 'commit', 'continent', 'embarrass', 'erupt', 'fantastic', 'fantasy', 'framework', 'hesitate', 'hive', 'liberty', 'lorry', 'neat', 'Pacific', 'parcel', 'reception', 'remark', 'remote', 'spray', 'statue', 'tune', 'universe', 'urge', 'victim', 'authority', 'coincidence', 'companion', 'embassy', 'pattern', 'register', 'reputation', 'sensitive', 'shuttle', 'splendid', 'swing', 'track', 'virtue', 'volcano', 'wander', 'ambassador', 'conscience', 'monster', 'giant', 'thirsty', 'loudly', 'galaxy', 'fireman', 'paw', 'recently', 'confidence', 'elderly', 'survivor', 'display', 'explorer', 'leap', 'smoothly', 'rapidly', 'Egyptian', 'mystery', 'footstep', 'grab', 'tunnel', 'actually', 'gently', 'blessing', 'honesty', 'crystal', 'site', 'patch', 'excitement', 'simply', 'normally', 'wicked', 'definitely', 'detect', 'concentration', 'drift', 'occasionally', 'collapse', 'destruction', 'explosion', 'tremendous', 'invasion', 'threaten', 'disguise', 'confine', 'rival', 'remains', 'wrap', 'versus', 'extent', 'persistent', 'immense', 'glimpse', 'creep', 'myth', 'continually', 'layer', 'officially', 'criticism', 'spectacle', 'cliff', 'restore', 'extremely', 'thoroughly', 'opponent', 'blaze', 'launch', 'claim', 'apparently', 'peculiar', 'progressive', 'entitle', 'nerve', 'reminder', 'radical', 'reluctant', 'desolate', 'evade', 'erect', 'spoil', 'promptly', 'pirate', 'sheriff', 'hurriedly', 'angrily', 'rudely', 'pigeon', 'beggar', 'airfield', 'clavichord', 'amusing', 'landlord', 'exclaim', 'sum', 'determined', 'sympathetic', 'foreigner', 'critic', 'critically', 'campfire', 'soundly', 'plough', 'polo', 'workshop', 'helper', 'temptation', 'battered', 'anxiously', 'Mediterranean', 'bitterly', 'inquire', 'caller', 'unsmiling', 'despair', 'lighthouse', 'sack', 'strap', 'contents', 'savings', 'unload', 'woollen', 'haunt', 'whisky', 'mattress', 'gust', 'smash', 'miraculously', 'unhurt', 'excursion', 'guiltily', 'temporarily', 'accidentally', 'volt', 'snatch', 'spark', 'sticky', 'pastry', 'annoying', 'dismay', 'doorknob', 'revealer', 'seashore', 'worthless', 'downhill', 'scornfully', 'cursed', 'evil', 'vicar', 'source', 'latch', 'fortune-teller', 'impatiently', 'faulty', 'robot-arm', 'grass-seed', 'blacken', 'ventilate', 'ventilation', 'bomber', 'wreck', 'rediscover', 'aerial', 'enthusiast', 'colony', 'beeswax', 'Congo', 'violently', 'examiner', 'pedal', 'mournful', 'bullfight', 'unaware', 'bull', 'matador', 'clumsily', 'sympathetically', 'parliament', 'accurate', 'observatory', 'microphone', 'racing', 'horsepower', 'record-holder', 'truant', 'unimaginative', 'hitchhike', 'meantime', 'limelight', 'precaution', 'shady', 'sneer', 'bulletin', 'announcer', 'macaroni', 'grower', 'stalk', 'thresh', 'mummy', 'resin', 'temper', 'machinery', 'prisoner', 'rifle', 'boldly', 'shining', 'oarfish', 'election', 'fanatical', 'suspicious', 'busman', 'relieve', 'gratitude', 'gardening', 'speedboat', 'desperately', 'buoy', 'alibi', 'inspector', 'employer', 'explosive', 'vibration', 'artiste', 'advertiser', 'overfish', 'diver', 'wit', 'cod', 'binoculars', 'shed', 'sarcastic', 'tone', 'sculptor', 'copper', 'pedestal', 'underwater', 'tricycle', 'gasp', 'frightful', 'drily', 'reward', 'obviously', 'farewell', 'able', 'above', 'another', 'anyone', 'anywhere', 'beside', 'bicycle', 'body', 'break', 'build', 'business', 'care', 'certainly', 'check', 'choose', 'coffee', 'cookie', 'corn', 'cotton', 'cover', 'cow', 'cream', 'cry', 'dark', 'dead', 'die', 'dirty', 'dish', 'doll', 'drop', 'duck', 'during', 'earth', 'east', 'either', 'elder', 'empty', 'even', 'everyday', 'exercise', 'fact', 'feeling', 'field', 'fight', 'fill', 'fire', 'fit', 'forward', 'gas', 'grandson', 'ground', 'group', 'grow', 'happen', 'hen', 'hero', 'herself', 'hit', 'hold', 'horse', 'however', 'into', 'itself', 'job', 'jump', 'kill', 'king', 'lady', 'lake', 'land', 'laugh', 'lend', 'lie', 'lift', 'line', 'list', 'news', 'north', 'nowhere', 'oneself', 'own', 'pay', 'person', 'pet', 'pick', 'piece', 'pig', 'pity', 'plant', 'plate', 'pop', 'popular', 'pork', 'push', 'quick', 'quite', 'rich', 'river', 'rock', 'role', 'roof', 'row', 'salt', 'seat', 'send', 'sheep', 'sick', 'side', 'silk', 'size', 'skate', 'sky', 'smile', 'smoke', 'soldier', 'somebody', 'someone', 'south', 'still', 'supper', 'tea', 'team', 'tear', 'text', 'themselves', 'thick', 'thin', 'through', 'tired', 'true', 'wait', 'weak', 'west', 'wet', 'while', 'win', 'without', 'wood', 'world', 'accept', 'add', 'advice', 'advise', 'against', 'agree', 'ahead', 'almost', 'among', 'anyway', 'army', 'Asia', 'Asian', 'athlete', 'bean', 'beat', 'beef', 'beer', 'bill', 'blouse', 'boil', 'bone', 'boot', 'boss', 'bowl', 'brave', 'brush', 'burn', 'candy', 'calm', 'central', 'century', 'chance', 'childhood', 'clear', 'coin', 'collect', 'concert', 'cooker', 'cough', 'customer', 'cycle', 'daily', 'deal', 'enter', 'example', 'excite', 'feed', 'fever', 'finger', 'flu', 'fond', 'forest', 'fork', 'fridge', 'refrigerator', 'funny', 'future', 'gold', 'guest', 'handbag', 'headache', 'health', 'heart', 'heat', 'helpful', 'hungry', 'illness', 'instead', 'invent', 'invite', 'jazz', 'joke', 'knee', 'lively', 'lonely', 'lovely', 'lung', 'mad', 'main', 'match', 'maybe', 'meaning', 'medicine', 'member', 'message', 'mile', 'mind', 'necessary', 'noise', 'noodle', 'northeast', 'northern', 'northwest', 'oil', 'outdoors', 'owner', 'painting', 'pan', 'partner', 'peace', 'pill', 'pleasant', 'pleasure', 'pocket', 'point', 'policeman', 'policewoman', 'polite', 'possible', 'potato', 'practice', 'prefer', 'press', 'proud', 'queen', 'raise', 'reason', 'receive', 'record', 'refuse', 'regard', 'result', 'rose', 'sadness', 'saying', 'score', 'seaside', 'seem', 'sense', 'serve', 'shake', 'shock', 'shy', 'simple', 'skill', 'skin', 'smell', 'smoker', 'snake', 'somewhere', 'southeast', 'southern', 'southwest', 'speech', 'spend', 'stage', 'step', 'strict', 'strike', 'style', 'sugar', 'suit', 'task', 'taste', 'teamwork', 'theater', 'though', 'throw', 'tie', 'title', 'tooth', 'touch', 'tour', 'trouble', 'truck', 'understand', 'useless', 'usual', 'violin', 'voice', 'wake', 'war', 'website', 'weekend', 'whether', 'whole', 'wine', 'wonder', 'affect', 'afford', 'airport', 'appear', 'article', 'background', 'beauty', 'beginning', 'biscuit', 'blind', 'broad', 'cancer', 'careless', 'case', 'cause', 'ceiling', 'chairman', 'chat', 'cheat', 'cheese', 'choice', 'climate', 'collection', 'common', 'control', 'correct', 'court', 'crazy', 'culture', 'depend', 'design', 'dine', 'direction', 'disagree', 'disappear', 'discuss', 'disease', 'earthquake', 'experience', 'express', 'fashion', 'final', 'force', 'former', 'found', 'friendship', 'gather', 'gentleman', 'goose', 'grammar', 'happiness', 'harm', 'headmaster', 'host', 'imagine', 'information', 'injury', 'introduction', 'kick', 'knowledge', 'language', 'lazy', 'level', 'manner', 'menu', 'mobile', 'modern', 'nation', 'nature', 'normal', 'notice', 'nowadays', 'ocean', 'officer', 'official', 'opinion', 'passage', 'patient', 'perfect', 'pollution', 'pond', 'power', 'pray', 'pretty', 'prevent', 'protect', 'provide', 'purpose', 'regret', 'safety', 'search', 'serious', 'silent', 'similar', 'snack', 'solve', 'spirit', 'spread', 'stick', 'succeed', 'success', 'successful', 'suggest', 'suggestion', 'terrible', 'total', 'ugly', 'unfair', 'western', 'advantage', 'African', 'airline', 'attractive', 'birthplace', 'butter', 'cabbage', 'celebration', 'cigarette', 'classical', 'comfort', 'comfortable', 'compete', 'conclusion', 'condition', 'confident', 'congratulation', 'cyclist', 'decision', 'dessert', 'disappointed', 'drum', 'effort', 'energy', 'especially', 'facial', 'fancy', 'flame', 'folk', 'frog', 'fry', 'function', 'fur', 'glue', 'ham', 'handsome', 'improve', 'interview', 'jeans', 'lap', 'leather', 'male', 'marriage', 'material', 'medal', 'motorcycle', 'musician', 'nervous', 'Olympic', 'pancake', 'passport', 'personal', 'pot', 'proper', 'province', 'rebuild', 'recite', 'relax', 'risk', 'rocket', 'soup', 'spoon', 'standard', 'steak', 'stove', 'suitable', 'toothache', 'wheat', 'altitude', 'announce', 'casual', 'chemical', 'decoration', 'dentist', 'environment', 'equipment', 'explore', 'furniture', 'gesture', 'instruction', 'journalist', 'memorial', 'minority', 'monument', 'plain', 'sandwich', 'scarf', 'section', 'shower', 'signal', 'sincerely', 'single', 'skateboard', 'slim', 'smooth', 'stream', 'surface', 'symbol', 'throat', 'uniform', 'upset', 'vacation', 'waist', 'bamboo', 'dustbin', 'fingernail', 'lemon', 'motto', 'poster', 'scissors', 'vehicle', 'whale', 'windbreaker', 'dynasty', 'holy', 'instrument', 'onion', 'religious', 'republic', 'sausage', 'watermelon', 'litter', 'symptom', 'seafood', 'finally', 'online', 'unhappy', 'carefully', 'gatekeeper', 'well-known', 'excited', 'beautifully', 'interested', 'slowly', 'surprised', 'Russian', 'composer', 'France', 'Indian', 'yeah', 'quietly', 'sadly', 'happily', 'badly', 'safely', 'million', 'indoor', 'Canadian', 'impolite', 'meaningful', 'survey', 'inventor', 'widely', 'Mars', 'crowded', 'mainly', 'frightened', 'relaxed', 'mood', 'mount', 'sleeper', 'rostrum', 'rider', 'light-colored', 'reflector', 'Greek', 'curry', 'fried', 'sushi', 'address', 'finely', 'lightly', 'ingredient', 'healthily', 'noisily', 'formal', 'napkin', 'elbow', 'chopstick', 'kind-hearted', 'tofu', 'successfully', 'neatly', 'regularly', 'costume', 'contrast', 'cold-colored', 'kimono', 'sportswear', 'easy-going', 'discipline', 'occasion', 'correctly', 'firefighter', 'greatly', 'dressing', 'catwalk', 'cheongsam', 'Tibetan', 'Korean', 'knot', 'western-style', 'Mongolian', 'item', 'Olympics', 'teammate', 'less', 'rainforest', 'least', 'missing', 'singer', 'sore', 'rainstorm', 'stretch', 'swimmer', 'stomachache', 'lover', 'unhealthy', 'chips', 'closed', 'indoors', 'snowstorm', 'so-so', 'cricket', 'freestyle', 'backache', 'staple', 'etc.', 'second-hand', 'dose', 'scrapbook', 'unfriendly', 'doorway', 'aftershock', 'injured', 'English-speaking', 'redwood', 'carry', 'clothing', 'decide', 'friendly', 'full', 'knock', 'luck', 'open', 'shout', 'alone', 'arrive', 'dumpling', 'flag', 'harvest', 'hometown', 'important', 'interest', 'lucky', 'merry', 'mountain', 'ourselves', 'prepare', 'rainy', 'season', 'shine', 'snowy', 'spring', 'stocking', 'tent', 'weather', 'wind', 'windy', 'winter', 'Christmas', 'dangerous', 'Easter', 'event', 'foggy', 'labor', 'lantern', 'midnight', 'raincoat', 'treat', 'umbrella', 'camera', 'church', 'grape', 'honey', 'national', 'opera', 'temperature', 'decorate', 'international', 'special', 'pie', 'riddle', 'turkey', 'suddenly', 'India', 'sunglasses', 'Australia', 'most', 'brightly', 'heavily', 'strongly', 'anytime', 'dragon', 'lunar', 'Thanksgiving', 'pumpkin', 'Christ', 'eve', 'fireplace', 'Jewish', 'Halloween', 'scary', 'ghost', 'town', 'crowd', 'stand', 'exciting', 'winner', 'asleep', 'glasses', 'cut', 'greet', 'believe', 'since', 'retire', 'pound', 'worth', 'penny', 'Moscow', 'Sydney', 'slip', 'downstairs', 'X-ray', 'exam', 'pass', 'enough', 'paper', 'fail', 'answer', 'mark', 'hate', 'cheer', 'guy', 'top', 'attendant', 'garage', 'crash', 'repair', 'mess', 'pack', 'suitcase', 'leave', 'already', 'conductor', 'fare', 'note', 'passenger', 'none', 'neither', 'except', 'famous', 'actress', 'bath', 'nearly', 'ready', 'roast', 'stupid', 'cheap', 'expensive', 'sweet', 'soft', 'sour', 'clothes', 'desk', 'dollar', 'e-mail', 'everywhere', 'fat', 'finish', 'fun', 'pear', 'question', 'radio', 'ring', 'sell', 'set', 'sweater', 'tape', 'tennis', 'term', 'test', 'tidy', 'bat', 'habit', 'ice-cream', 'notebook', 'really', 'sale', 'tomato', 'trousers', 'useful', 'healthy', 'volleyball', 'festival', 'salad', 'baseball', 'sock', 'shorts', 'strawberry', 'lost', 'has', 'player', 'relaxing', 'bookcase', 'math', 'burger', 'grandpa', 'grandma', 'fruit', 'chemist', 'ever']
+~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~- 
+
+再来一组
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_study_word_2_2: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        错误</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <pre>
+        ft1.2: 做题页面
+1080 1920 pingmu
+(1080, 1920)
+/Users/vanthink_test_ios/aa/testone
+===== 第2组练习 =====
+title: 词汇运用(复习)
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：We put up our tent in the ____.
+句子解释： 我们在营地搭起了帐篷。
+选择答案： camp
+------------------------------ 
+
+题目：I ____ she was pretty.
+句子解释： 我觉得她很漂亮。
+选择答案： thought
+------------------------------ 
+
+题目：My sister is always taking an ____ part in all kinds of sports meetings.
+句子解释： 我的姐姐总是很积极的参加各种运动会。
+选择答案： active
+------------------------------ 
+
+题目：She took the kids to the ____ yesterday.
+句子解释： 她昨天带孩子去海滩了。
+选择答案： beach
+------------------------------ 
+
+题目：My son's ____ is to be an English teacher.
+句子解释： 我儿子的梦想是当一名英语老师。
+选择答案： dream
+------------------------------ 
+
+题目：Several ____ fossils were found in Yunnan.
+句子解释： 在云南发现了几个恐龙化石。
+选择答案： dinosaur
+------------------------------ 
+
+题目：I ____ swimming yesterday.
+句子解释： 我昨天去游泳了。
+选择答案： went
+------------------------------ 
+
+题目：He ____ a pie yesterday afternoon.
+句子解释： 他昨天下午吃了一个馅饼。
+选择答案： ate
+------------------------------ 
+
+题目：He ____ a bus to school yesterday.
+句子解释： 他昨天坐公交车上学。
+选择答案： took
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  v. 野营，宿营;n. 营
+点击提示出现首字母提示 c
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: camp
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+p
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+最终输入单词： camp
+我输入的： camp
+------------------------------ 
+
+解释：  n. 念头;n. 思考，思想
+点击提示出现首字母提示 t
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: thought
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+g
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： thought
+我输入的： thought
+------------------------------ 
+
+解释：  adj. 积极的，主动的
+点击提示出现首字母提示 a
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: active
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+v
+1080 1920 pingmu
+v 529.9019999999999 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： active
+我输入的： active
+------------------------------ 
+
+解释：  n. 海滨，海滩
+点击提示出现首字母提示 b
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: beach
+b
+1080 1920 pingmu
+b 635.8824 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+最终输入单词： beach
+我输入的： beach
+------------------------------ 
+
+解释：  v. 向往;v. 梦想;v. 梦见;v. 做梦;n. 愿望;n. 梦想;n. 梦
+点击提示出现首字母提示 d
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: dream
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+最终输入单词： dream
+我输入的： dream
+------------------------------ 
+
+解释：  n. 庞大而过时的东西;n. 恐龙
+点击提示出现首字母提示 d
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: dinosaur
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+最终输入单词： dinosaur
+我输入的： dinosaur
+------------------------------ 
+
+解释：  v. （go的过去式）去
+点击提示出现首字母提示 w
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: went
+w
+1080 1920 pingmu
+w 163.96559999999997 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： went
+我输入的： went
+------------------------------ 
+
+解释：  v. （eat的过去式）吃
+点击提示出现首字母提示 a
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: ate
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： ate
+我输入的： ate
+------------------------------ 
+
+解释：  v. （take 的过去式）拍摄
+点击提示出现首字母提示 t
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: took
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+k
+1080 1920 pingmu
+k 847.8431999999999 1530.0
+最终输入单词： took
+我输入的： took
+------------------------------ 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：I ____ down from the bike and broke my leg.
+句子解释： 我从自行车上摔下来，摔断了腿。
+选择答案： fell
+------------------------------ 
+
+题目：I ____ this watch last year.
+句子解释： 我去年买的这只表。
+选择答案： bought
+------------------------------ 
+
+题目：He ____ to work on a bicycle. 
+句子解释： 他骑自行车上班。
+选择答案： rode
+------------------------------ 
+
+题目：Look carefully! This is a horse not a ____. 
+句子解释： 看仔细！这个是马不是骡子。
+选择答案： mule
+------------------------------ 
+
+题目：The ____ grapes are famous in China.
+句子解释： 吐鲁番葡萄在中国很有名。
+选择答案： Turpan
+------------------------------ 
+
+题目：The child ____ his ice cream.
+句子解释： 孩子舔了一下冰激凌。
+选择答案： licked
+------------------------------ 
+
+题目：We will ____ with time.
+句子解释： 我们要和时间赛跑。
+选择答案： race
+------------------------------ 
+
+题目：It is the brightest ____ in the sky.
+句子解释： 它是天空中最亮的星星。
+选择答案： star
+------------------------------ 
+
+题目：Let's go and see Snow White on Sunday ____.
+句子解释： 让我们在星期日下午去看《白雪公主》。
+选择答案： afternoon
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  v. （fall的过去式）掉下来
+点击提示出现首字母提示 f
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: fell
+f
+1080 1920 pingmu
+f 423.92159999999996 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+最终输入单词： fell
+我输入的： fell
+------------------------------ 
+
+解释：  v. （buy 的过去式）买
+点击提示出现首字母提示 b
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: bought
+b
+1080 1920 pingmu
+b 635.8824 1686.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+g
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： bought
+我输入的： bought
+------------------------------ 
+
+解释：  v. （ride的过去式）骑
+点击提示出现首字母提示 r
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: rode
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： rode
+我输入的： rode
+------------------------------ 
+
+解释：  n. 骡子
+点击提示出现首字母提示 m
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: mule
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： mule
+我输入的： mule
+------------------------------ 
+
+解释：  n. 吐鲁番
+点击提示出现首字母提示 T
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: Turpan
+T
+1080 1920 pingmu
+T 481.9068 1374.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+p
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+最终输入单词： turpan
+我输入的： Turpan
+------------------------------ 
+
+解释：  v. （过去式）舔
+点击提示出现首字母提示 l
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: licked
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+k
+1080 1920 pingmu
+k 847.8431999999999 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+最终输入单词： licked
+我输入的： licked
+------------------------------ 
+
+解释：  n. 人种，种族;n. 赛跑，竞赛;v. （速度）竞赛，赛跑
+点击提示出现首字母提示 r
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: race
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： race
+我输入的： race
+------------------------------ 
+
+解释：  n. 明星;n. 星，恒星
+点击提示出现首字母提示 s
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: star
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+最终输入单词： star
+我输入的： star
+------------------------------ 
+
+解释：  n. 下午，午后
+点击提示出现首字母提示 a
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: afternoon
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+f
+1080 1920 pingmu
+f 423.92159999999996 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+最终输入单词： afternoon
+我输入的： afternoon
+------------------------------ 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：She gave us five ____ kinds of cakes.
+句子解释： 她给了我们五种不同的蛋糕。
+选择答案： different
+------------------------------ 
+
+题目：Lin Dan is a famous ____ player.
+句子解释： 林丹是著名的羽毛球运动员。
+选择答案： badminton
+------------------------------ 
+
+题目：I have a new bike, and I want to go ____ after dinner.
+句子解释： 我有一辆新自行车，晚饭后我想去骑自行车。
+选择答案： cycling
+------------------------------ 
+
+题目：He looked at Michael and ____.
+句子解释： 他看着迈克尔笑了。
+选择答案： laughed
+------------------------------ 
+
+题目：The children want to ____ on the ice.
+句子解释： 孩子们想在冰面上溜冰。
+选择答案： ice-skate
+------------------------------ 
+
+题目：I ____ much better after taking the medicine.
+句子解释： 我吃了药以后好受多了。
+选择答案： felt
+------------------------------ 
+
+题目：The ____ is the fastest of all animals.
+句子解释： 猎豹是所有的动物当中跑得最快的。
+选择答案： cheetah
+------------------------------ 
+
+题目：I ____ up at six and got up right away.
+句子解释： 我六点醒了，然后马上起床了。
+选择答案： woke
+------------------------------ 
+
+题目：I ____ cleaning my room.
+句子解释： 我正在打扫房间。
+选择答案： am
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  adj. 各种的;adj. 不同的，有差异的
+点击提示出现首字母提示 d
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: different
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+f
+1080 1920 pingmu
+f 423.92159999999996 1530.0
+f
+1080 1920 pingmu
+f 423.92159999999996 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： different
+我输入的： different
+------------------------------ 
+
+解释：  n. 羽毛球
+点击提示出现首字母提示 b
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: badminton
+b
+1080 1920 pingmu
+b 635.8824 1686.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+最终输入单词： badminton
+我输入的： badminton
+------------------------------ 
+
+解释：  n. 骑自行车运动
+点击提示出现首字母提示 c
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: cycling
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+y
+1080 1920 pingmu
+y 587.8871999999999 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+i
+1080 1920 pingmu
+i 799.848 1374.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+g
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+最终输入单词： cycling
+我输入的： cycling
+------------------------------ 
+
+解释：  v. （过去式）笑
+点击提示出现首字母提示 l
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: laughed
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+u
+1080 1920 pingmu
+u 693.8676 1374.0
+g
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+最终输入单词： laughed
+我输入的： laughed
+------------------------------ 
+
+解释：  v. 滑冰
+点击提示出现首字母提示 i
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: ice-skate
+i
+1080 1920 pingmu
+i 799.848 1374.0
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+-
+1080 1920 pingmu
+- 269.946 1842.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+k
+1080 1920 pingmu
+k 847.8431999999999 1530.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： ice-skate
+我输入的： ice-skate
+------------------------------ 
+
+解释：  v. （过去式）感觉
+点击提示出现首字母提示 f
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: felt
+f
+1080 1920 pingmu
+f 423.92159999999996 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+最终输入单词： felt
+我输入的： felt
+------------------------------ 
+
+解释：  n. 猎豹
+点击提示出现首字母提示 c
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: cheetah
+c
+1080 1920 pingmu
+c 423.92159999999996 1686.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+t
+1080 1920 pingmu
+t 481.9068 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+h
+1080 1920 pingmu
+h 635.8824 1530.0
+最终输入单词： cheetah
+我输入的： cheetah
+------------------------------ 
+
+解释：  v. （过去式）醒
+点击提示出现首字母提示 w
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: woke
+w
+1080 1920 pingmu
+w 163.96559999999997 1374.0
+o
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+k
+1080 1920 pingmu
+k 847.8431999999999 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+最终输入单词： woke
+我输入的： woke
+------------------------------ 
+
+解释：  v. be的第一人称单数现在式
+点击提示出现首字母提示 a
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: am
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+m
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+最终输入单词： am
+我输入的： am
+------------------------------ 
+
+闪卡练习(新词)
+title: 闪卡练习(新词)
+===== 🌟🌟 闪卡练习 学习模式 🌟🌟 =====
+
+单词： grandpa 
+ 解释：  n. 爷爷；姥爷；（外）祖父；外公（口语） 
+ 句子： They are my grandpa and grandma. 
+ 句子解释： 他们是我的爷爷和奶奶。 
+ 推荐老师： Edward老师 
+
+您刚刚标记了熟词，系统随后将对该词进行测试。默写正确系统将减少您的复习次数,否则标记无效哦! 
+
+您刚刚标记了重点词，系统随后将对重点词进行抄写训练。 
+
+------------------------------ 
+
+单词： grandma 
+ 解释：  n. 奶奶；姥姥；（外）祖母；外婆（口语） 
+ 句子： I love my grandma very much. 
+ 句子解释： 我很爱我的奶奶。 
+ 推荐老师： Peterson老师 
+
+------------------------------ 
+
+单词： baseball 
+ 解释：  n. 棒球 
+ 句子： Baseball is very popular among Americans. 
+ 句子解释： 棒球运动很受美国人的欢迎。 
+ 推荐老师： Roy老师 
+
+------------------------------ 
+
+1
+===== 🌟🌟 单词拼写 新词 🌟🌟 ======
+
+标熟单词： {'12191': 'grandpa', '5523': 'baseball'} 
+
+解释：  n. 爷爷；姥爷；（外）祖父；外公（口语）
+点击提示出现首字母提示 g
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: grandpa
+g
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+r
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+n
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+d
+1080 1920 pingmu
+d 317.9412 1530.0
+p
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+最终输入单词： grandpa
+------------------------------ 
+
+解释：  n. 棒球
+点击提示出现首字母提示 b
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+单词: baseball
+b
+1080 1920 pingmu
+b 635.8824 1686.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+s
+1080 1920 pingmu
+s 211.96079999999998 1530.0
+e
+1080 1920 pingmu
+e 269.946 1374.0
+b
+1080 1920 pingmu
+b 635.8824 1686.0
+a
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+l
+1080 1920 pingmu
+l 953.8235999999999 1530.0
+最终输入单词： baseball
+------------------------------ 
+
+===== 🌟🌟 闪卡抄写模式 🌟🌟 =====
+
+单词：grandpa
+解释： n. 爷爷；姥爷；（外）祖父；外公（口语）
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+1080 1920 pingmu
+capslock 105.98039999999999 1686.0
+1080 1920 pingmu
+D 317.9412 1530.0
+1080 1920 pingmu
+capslock 105.98039999999999 1686.0
+1080 1920 pingmu
+p 1011.8087999999999 1374.0
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+------------------------------ 
+
+单词：grandma
+解释： n. 奶奶；姥姥；（外）祖母；外婆（口语）
+1080 1920 pingmu
+v 529.9019999999999 1686.0
+1080 1920 pingmu
+q 57.9852 1374.0
+1080 1920 pingmu
+k 847.8431999999999 1530.0
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+1080 1920 pingmu
+capslock 105.98039999999999 1686.0
+1080 1920 pingmu
+A 105.98039999999999 1530.0
+1080 1920 pingmu
+capslock 105.98039999999999 1686.0
+1080 1920 pingmu
+o 905.8283999999999 1374.0
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+1080 1920 pingmu
+u 693.8676 1374.0
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+1080 1920 pingmu
+backspace 953.8235999999999 1686.0
+1080 1920 pingmu
+g 529.9019999999999 1530.0
+1080 1920 pingmu
+r 375.92639999999994 1374.0
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+1080 1920 pingmu
+n 741.8627999999999 1686.0
+1080 1920 pingmu
+capslock 105.98039999999999 1686.0
+1080 1920 pingmu
+D 317.9412 1530.0
+1080 1920 pingmu
+capslock 105.98039999999999 1686.0
+1080 1920 pingmu
+m 847.8431999999999 1686.0
+1080 1920 pingmu
+a 105.98039999999999 1530.0
+------------------------------ 
+
+===== 🌟🌟 词汇选择(新词) 听音选词模式(第一遍选错，第二遍选择正确) 🌟🌟=====
+
+题目个数： 1
+
+选择答案为： cycling
+解释:  n. 奶奶；姥姥；（外）祖母；外婆（口语）
+选择错误，正确答案为 grandma
+------------------------------ 
+
+
+答案正确：grandma
+解释： n. 奶奶；姥姥；（外）祖母；外婆（口语）
+------------------------------ 
+
+===== 还原单词模式(新词) (做一遍错一遍对)=====
+
+英文解释： n. 奶奶；姥姥；（外）祖母；外婆（口语）
+还原前单词为： ngrdmaa
+还原后单词为：angrdma
+正确答案： grandma
+------------------------------ 
+
+英文解释： n. 奶奶；姥姥；（外）祖母；外婆（口语）
+还原前单词为： ranmagd
+还原后单词为：grandma
+------------------------------ 
+
+===== 🌟🌟 单词听写模式(新词)(输错一次，输对一次) 🌟🌟 =====
+
+1080 1920 pingmu
+i 799.848 1374.0
+正确答案：grandma
+解释：  n. 奶奶；姥姥；（外）祖母；外婆（口语）
+我输入的答案： i
+正确答案为: grandma
+------------------------------ 
+
+1080 1920 pingmu
+G 529.9019999999999 1530.0
+1080 1920 pingmu
+R 375.92639999999994 1374.0
+1080 1920 pingmu
+A 105.98039999999999 1530.0
+1080 1920 pingmu
+N 741.8627999999999 1686.0
+1080 1920 pingmu
+D 317.9412 1530.0
+1080 1920 pingmu
+M 847.8431999999999 1686.0
+1080 1920 pingmu
+A 105.98039999999999 1530.0
+我输入的单词： GRANDMA
+解释：  n. 奶奶；姥姥；（外）祖母；外婆（口语）
+回答正确！
+------------------------------ 
+
+title: 错题再练
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 64, in wrapper
+    ret = func(*args, **kwargs)
+TypeError: dictation_random_pattern_recite() takes 2 positional arguments but 3 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 100, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book/test_cases/test001_study_word.py", line 80, in test_study_word
+    wrong_again_count = SpellingWord().dictation_random_pattern_recite(self.stu_id, wrong_again_words)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 90, in wrapper
+    raise Exception(flag + _screenshot(func.__qualname__))
+Exception: IMAGE:SpellingWord.dictation_random_pattern_recite-20190801211305.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 124, in wrapper
+    raise Exception(e)
+Exception: IMAGE:SpellingWord.dictation_random_pattern_recite-20190801211305.png
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+        <tr id='total_row'>
+            <td>总计</td>
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            color: ['#95b75d', 'grey', '#b64645'],
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:1, name:'通过'},
+                        {value:0, name:'失败'},
+                        {value:1, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>

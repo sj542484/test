@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>oppo_R11t:  测试用例执行报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+    body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #ebebeb;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #6c6; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+
+
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+
+    #div_base {
+                position:absolute;
+                top:0%;
+                left:5%;
+                right:5%;
+                width: auto;
+                height: auto;
+                margin: -15px 0 0 0;
+    }
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.common.min.js"></script>
+    <!-- <script type="text/javascript" src="js/echarts.common.min.js"></script> -->
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level < 1) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level > 1) {
+                    tr.className = '';
+                }
+                else {
+                    tr.className = 'hiddenRow';
+                }
+            }
+        }
+    }
+
+
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+
+
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState != 'block' ) {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+        else {
+            details_div.style.display = 'none'
+        }
+    }
+
+
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>oppo_R11t:  测试用例执行报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2019-07-30 14:56:45</p>
+<p class='attribute'><strong>运行时长:</strong> 0:14:11.979260</p>
+<p class='attribute'><strong>状态:</strong> 通过 2 错误 1</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>用例执行情况统计：</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+        <button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+        <button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+    </div>
+    <p></p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row'>
+            <td>测试套件/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='errorClass'>
+        <td>test_cases.test001_study_word.Word: 单词本</td>
+        <td>3</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c1',3)">详情</a></td>
+    </tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_study_word_1_1: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        错误</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <pre>
+        ft1.1: 在登录界面：
+/Users/vanthink_test_ios/aa/testone
+用户信息，即将登陆： {'student': {'student': 13113988883, 'teacher': 18823452346}, 'pwd': '1N14VXUCJTHoA'}
+/Users/vanthink_test_ios/aa/testone
+===== 第1组练习 =====
+13113988883
+学生昵称： 黄大大 
+ 学校名称： 鸿才乐学教育咨询有限公司 
+ 学校id： 1383 
+ 学生id： 178320 
+
+====== 🌟🌟 词汇选择 - 根据单词选解释模式（复习）🌟🌟 =====
+
+题目: dominant
+选择答案：  adj. 显性的；占优势的，支配的
+正确答案： adj. 显性的；占优势的，支配的
+------------------------------ 
+
+题目: personnel
+选择答案：  n. 全体职员（复数名词）;n. 全体员工，员工
+正确答案： n. 全体职员（复数名词）;n. 全体员工，员工
+------------------------------ 
+
+题目: accommodation
+选择错误答案：  n. 迹象;n. 证词;n. 证据
+正确答案为: n. 住宿，膳宿
+正确答案： n. 住宿，膳宿
+------------------------------ 
+
+题目: accommodation
+选择错误答案：  n. 专门化；特殊化
+正确答案为: n. 住宿，膳宿
+正确答案： n. 住宿，膳宿
+------------------------------ 
+
+题目: accommodation
+选择答案：  n. 住宿，膳宿
+正确答案： n. 住宿，膳宿
+------------------------------ 
+
+题目: appropriate
+选择答案：  adj. 适当的，相当的
+正确答案： adj. 适当的，相当的
+------------------------------ 
+
+题目: contradict
+选择答案：  v. 顶嘴;v. 与……相矛盾;v. 反驳，驳斥，批驳
+正确答案： v. 顶嘴;v. 与……相矛盾;v. 反驳，驳斥，批驳
+------------------------------ 
+
+题目: further
+选择答案：  adj. 更多的，更进一步的
+正确答案： adj. 更多的，更进一步的
+------------------------------ 
+
+===== 🌟🌟 词汇运用 --句子选单词模式(复习) 🌟🌟 =====
+
+题目：I looked your address up in the ____ file. 
+句子解释： 我在人事档案里找到了你的地址。
+选择答案： personnel
+------------------------------ 
+
+题目：First-class ____ is available on all flights.
+句子解释： 所有班机都备有一等舱位。
+选择答案： accommodation
+------------------------------ 
+
+题目：I use it when it's ____.
+句子解释： 我只会在适当的时候使用。
+选择答案： appropriate
+------------------------------ 
+
+题目：The two statements ____ each other.
+句子解释： 这两种说法相互矛盾。
+选择答案： contradict
+------------------------------ 
+
+题目：You can only gain by ____ study.
+句子解释： 只有更进一步地学习,你才能提高。
+选择答案： further
+------------------------------ 
+
+题目：The building is nearing ____. 
+句子解释： 这座大楼差不多快完工了。
+选择答案： completion
+------------------------------ 
+
+题目：There are many ____ of dogs.
+句子解释： 狗有许多种。
+选择答案： species
+------------------------------ 
+
+题目：It is the most ____ method to stop the flood.
+句子解释： 这是阻止洪水的最有效的方法。
+选择答案： efficient
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  adj. 显性的；占优势的，支配的
+点击提示出现首字母提示 d
+单词: dominant
+我输入的： dominant
+------------------------------ 
+
+解释：  n. 迹象;n. 证词;n. 证据
+点击提示出现首字母提示 e
+单词: evidence
+我输入的： evidence
+------------------------------ 
+
+解释：  adj. 明白的;adj. 显而易见的;adj. 清楚的
+点击提示出现首字母提示 e
+单词: evident
+我输入的： evident
+------------------------------ 
+
+解释：  n. 电视专门节目;n. 号外;n. 专车;adj. 专门的;adj. 特别的，特殊的
+点击提示出现首字母提示 s
+单词: special
+我输入的： special
+------------------------------ 
+
+解释：  n. 五线谱;n. 棒，竿，杖;n. 全体职工
+点击提示出现首字母提示 s
+单词: staff
+我输入的： staff
+------------------------------ 
+
+解释：  n. 柔情;n. 爱，爱情
+点击提示出现首字母提示 a
+单词: affection
+我输入的： affection
+------------------------------ 
+
+解释：  n. 相反，反面，对立面;adj. 对抗的;adj. 相对的;adj. 相反的
+点击提示出现首字母提示 c
+单词: contrary
+我输入的： contrary
+------------------------------ 
+
+解释：  n. 全体职员（复数名词）;n. 全体员工，员工
+点击提示出现首字母提示 p
+单词: personnel
+我输入的： personnel
+------------------------------ 
+
+解释：  n. 专业人员;n. 专家;n. 专家，专科医生
+点击提示出现首字母提示 s
+单词: specialist
+我输入的： specialist
+------------------------------ 
+
+解释：  adj. 特有的;adj. 特定的;adj. 特殊的;adj. 明确的，具体的
+点击提示出现首字母提示 s
+单词: specific
+我输入的： specific
+------------------------------ 
+
+====== 🌟🌟 词汇选择 - 根据单词选解释模式（复习）🌟🌟 =====
+
+题目: completion
+选择答案：  n. 竣工;n. 完成
+正确答案： n. 竣工;n. 完成
+------------------------------ 
+
+题目: species
+选择答案：  n. 物种;n. 种类
+正确答案： n. 物种;n. 种类
+------------------------------ 
+
+题目: sufficient
+选择答案：  adj. 足够的；充分的
+正确答案： adj. 足够的；充分的
+------------------------------ 
+
+题目: efficient
+选择答案：  adj. 有效率的，（直接）生效的；能干的
+正确答案： adj. 有效率的，（直接）生效的；能干的
+------------------------------ 
+
+题目: specialization
+选择答案：  n. 专门化；特殊化
+正确答案： n. 专门化；特殊化
+------------------------------ 
+
+题目: insufficient
+选择答案：  adj. 不足的，不充足的
+正确答案： adj. 不足的，不充足的
+------------------------------ 
+
+题目: evolutionary
+选择答案：  adj. 进化的；发展的
+正确答案： adj. 进化的；发展的
+------------------------------ 
+
+===== 🌟🌟 单词默写 复习 🌟🌟 ===== 
+
+解释：  v. 取得……成就;v. 达到;v. 完成
+点击提示出现首字母提示 a
+单词: accomplish
+我输入的： accomplish
+------------------------------ 
+
+解释：  n. 住宿，膳宿
+点击提示出现首字母提示 a
+单词: accommodation
+我输入的： accommodation
+------------------------------ 
+
+解释：  n. 公转;n. 彻底变革;n. 革命
+点击提示出现首字母提示 r
+单词: revolution
+我输入的： revolution
+------------------------------ 
+
+解释：  n. 抉择;n. 二者择一;adj. 二者选一的，选择性的
+点击提示出现首字母提示 a
+单词: alternative
+我输入的： alternative
+------------------------------ 
+
+解释：  adj. 适当的，相当的
+点击提示出现首字母提示 a
+单词: appropriate
+我输入的： appropriate
+------------------------------ 
+
+解释：  v. 顶嘴;v. 与……相矛盾;v. 反驳，驳斥，批驳
+点击提示出现首字母提示 c
+单词: contradict
+我输入的： contradict
+------------------------------ 
+
+解释：  n. 演变;n. 进化;n. 发展
+点击提示出现首字母提示 e
+单词: evolution
+我输入的： evolution
+------------------------------ 
+
+解释：  adj. 更多的，更进一步的
+点击提示出现首字母提示 f
+单词: further
+我输入的： further
+------------------------------ 
+
+解释：  adv. 完全地
+点击提示出现首字母提示 c
+单词: completely
+我输入的： completely
+------------------------------ 
+
+解释：  v. 对比，对照;n. 明显的差异，对比，对照
+点击提示出现首字母提示 c
+单词: contrast
+我输入的： contrast
+------------------------------ 
+
+解释：  n. 竣工;n. 完成
+点击提示出现首字母提示 c
+单词: completion
+我输入的： completion
+------------------------------ 
+
+解释：  n. 物种;n. 种类
+点击提示出现首字母提示 s
+单词: species
+我输入的： species
+------------------------------ 
+
+解释：  v. （使）参加；包含
+点击提示出现首字母提示 i
+单词: involve
+我输入的： involve
+------------------------------ 
+
+解释：  adj. 足够的；充分的
+点击提示出现首字母提示 s
+单词: sufficient
+我输入的： sufficient
+------------------------------ 
+
+解释：  adj. 有效率的，（直接）生效的；能干的
+点击提示出现首字母提示 e
+单词: efficient
+我输入的： efficient
+------------------------------ 
+
+解释：  v. 改变，更改
+点击提示出现首字母提示 a
+单词: alter
+我输入的： alter
+------------------------------ 
+
+解释：  n. 专门化；特殊化
+点击提示出现首字母提示 s
+单词: specialization
+我输入的： specialization
+------------------------------ 
+
+解释：  adj. 不足的，不充足的
+点击提示出现首字母提示 i
+单词: insufficient
+我输入的： insufficient
+------------------------------ 
+
+解释：  adj. 进化的；发展的
+点击提示出现首字母提示 e
+单词: evolutionary
+我输入的： evolutionary
+------------------------------ 
+
+解释：  adj. 革命的;大变革的
+点击提示出现首字母提示 r
+单词: revolutionary
+我输入的： revolutionary
+------------------------------ 
+
+进入结果页面
+新词个数： 0
+数据库记载今日新词数： 0
+数据库记载组数： 0
+数据库记载复习数 0
+ &lt;结果页&gt;：
+今日已练单词：30
+日期：2019-07-30
+已背单词 93
+已练1组
+复习30个，新词0个，新释义0个
+&lt;class 'AttributeError'&gt; 'CheckWordSql' object has no attribute 'cursor'
+Traceback (most recent call last):
+  File "./testfarm/test_program/utils/sql.py", line 27, in execute_sql_return_result
+    self.cursor.execute(sql)
+AttributeError: 'CheckWordSql' object has no attribute 'cursor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./testfarm/test_program/conf/decorator.py", line 29, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book/object_page/check_sql_handle.py", line 32, in get_student_words_count
+    count = self.mysql.find_student_words_count(stu_id)
+  File "./testfarm/test_program/app/honor/student/word_book/object_page/check_word_sql.py", line 13, in find_student_words_count
+    return self.execute_sql_return_result(sql)
+  File "./testfarm/test_program/utils/sql.py", line 32, in execute_sql_return_result
+    self.db.rollback()
+AttributeError: 'CheckWordSql' object has no attribute 'db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 29, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book/object_page/result_page.py", line 40, in verify_result_page_data
+    student_studied_word_count = self.data.get_student_words_count(stu_id)
+  File "./testfarm/test_program/conf/decorator.py", line 54, in wrapper
+    raise Exception(flag + _screenshot(func.__qualname__))
+Exception: IMAGE:CheckSqlHandle.get_student_words_count-20190730151018.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 100, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/app/honor/student/word_book/test_cases/test001_study_word.py", line 82, in test_study_word
+    recite_words_count, group_index)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 52, in wrapper
+    raise Exception(e)
+Exception: IMAGE:CheckSqlHandle.get_student_words_count-20190730151018.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/testone/testfarm/test_program/conf/decorator.py", line 124, in wrapper
+    raise Exception(e)
+Exception: IMAGE:CheckSqlHandle.get_student_words_count-20190730151018.png
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_study_word_2_2: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        通过</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <pre>
+        pt1.2: 在其他页面
+/Users/vanthink_test_ios/aa/testone
+===== 第2组练习 =====
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_study_word_3_3: 新词练习</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        通过</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <pre>
+        pt1.3: 在其他页面
+/Users/vanthink_test_ios/aa/testone
+===== 第3组练习 =====
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    
+    </td>
+    
+    
+</tr>
+
+        <tr id='total_row'>
+            <td>总计</td>
+            <td>3</td>
+            <td>2</td>
+            <td>0</td>
+            <td>1</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            color: ['#95b75d', 'grey', '#b64645'],
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:2, name:'通过'},
+                        {value:0, name:'失败'},
+                        {value:1, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>

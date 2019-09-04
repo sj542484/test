@@ -1,0 +1,470 @@
+2019-08-12 10:14:12,735 - RedMi_7 - INFO - --> FlashCard.setUp
+2019-08-12 10:14:12,737 - RedMi_7 - INFO -   --> LoginPage.app_status
+2019-08-12 10:14:12,737 - RedMi_7 - INFO -   --> LoginPage.wait_check_page
+2019-08-12 10:14:15,130 - RedMi_7 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-12 10:14:15,131 - RedMi_7 - INFO -   --> LoginPage.login_operate
+2019-08-12 10:14:17,133 - RedMi_7 - INFO - 	--> LoginPage.input_username
+2019-08-12 10:14:17,257 - RedMi_7 - INFO - 	--> LoginPage.input_password
+2019-08-12 10:14:19,181 - RedMi_7 - INFO - 	--> LoginPage.login_button
+2019-08-12 10:14:21,840 - RedMi_7 - INFO -   <-- LoginPage.login_operate, Success
+2019-08-12 10:14:21,841 - RedMi_7 - INFO -   <-- LoginPage.app_status, Success
+2019-08-12 10:14:21,841 - RedMi_7 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-12 10:14:21,842 - RedMi_7 - INFO - --> FlashCard.test_all_game
+2019-08-12 10:14:21,842 - RedMi_7 - INFO -   --> HomePage.wait_check_home_page
+2019-08-12 10:14:23,832 - RedMi_7 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-12 10:14:23,833 - RedMi_7 - INFO - 	--> UserCenterPage.get_user_info
+2019-08-12 10:14:23,833 - RedMi_7 - INFO - 	--> HomePage.click_tab_profile
+2019-08-12 10:14:24,195 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-12 10:14:27,594 - RedMi_7 - INFO - 	--> UserCenterPage.nickname
+2019-08-12 10:14:30,226 - RedMi_7 - INFO - 	--> UserCenterPage.purchase
+2019-08-12 10:14:30,416 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-12 10:14:32,339 - RedMi_7 - INFO - 	--> UserCenterPage.phone
+2019-08-12 10:14:33,899 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-12 10:14:35,038 - RedMi_7 - INFO - 	--> UserCenterPage.school_name
+2019-08-12 10:14:35,257 - RedMi_7 - INFO - 	--> UserCenterPage.setting_up
+2019-08-12 10:14:35,441 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-12 10:14:36,250 - RedMi_7 - INFO - 	--> UserCenterPage.clear_cache
+2019-08-12 10:14:39,546 - RedMi_7 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-12 10:14:40,319 - RedMi_7 - INFO - 	--> HomePage.click_tab_hw
+2019-08-12 10:14:41,261 - RedMi_7 - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-12 10:14:41,289 - RedMi_7 - INFO -   --> HomePage.wait_check_home_page
+2019-08-12 10:14:41,856 - RedMi_7 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-12 10:14:41,856 - RedMi_7 - INFO - 	--> HomePage.click_hk_tab
+2019-08-12 10:14:42,114 - RedMi_7 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-12 10:14:42,115 - RedMi_7 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-12 10:14:43,202 - RedMi_7 - INFO - 	--> LibraryGamePage.homework_list
+2019-08-12 10:14:44,327 - RedMi_7 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-12 10:14:45,396 - RedMi_7 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-12 10:14:45,396 - RedMi_7 - INFO - 	--> LibraryGamePage.testbank_type
+2019-08-12 10:14:45,919 - RedMi_7 - INFO - 	--> LibraryGamePage.testbank_name
+2019-08-12 10:14:46,160 - RedMi_7 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-12 10:14:46,312 - RedMi_7 - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-08-12 10:14:46,622 - RedMi_7 - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-08-12 10:14:46,951 - RedMi_7 - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-08-12 10:14:48,969 - RedMi_7 - INFO - 	--> LibraryGamePage.play_book_games
+2019-08-12 10:14:48,969 - RedMi_7 - INFO - 	--> LibraryGamePage.game_name
+2019-08-12 10:14:49,165 - RedMi_7 - INFO - 	--> FlashCard.play_flash_game
+2019-08-12 10:14:49,165 - RedMi_7 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-12 10:14:54,380 - RedMi_7 - INFO - 	--> FlashCardGame.wait_check_copy_page
+2019-08-12 10:14:54,454 - RedMi_7 - INFO -   --> FlashCard.flash_copy_operate
+2019-08-12 10:14:54,455 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 10:14:54,557 - RedMi_7 - INFO - 	--> FlashCardGame.click_voice
+2019-08-12 10:14:54,700 - RedMi_7 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-12 10:14:54,701 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 10:14:55,241 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 10:14:55,318 - RedMi_7 - INFO - 	--> FlashCardGame.star_button
+2019-08-12 10:14:55,458 - RedMi_7 - INFO - 	--> FlashCardGame.copy_input
+2019-08-12 10:14:56,063 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:14:56,063 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:14:56,108 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:14:56,567 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:14:56,567 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:14:56,567 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:14:56,616 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:14:57,031 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:14:57,031 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:14:57,032 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:14:57,068 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:14:58,609 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:14:58,610 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:14:58,611 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:14:58,639 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:14:59,054 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:14:59,054 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:14:59,092 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:14:59,518 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:14:59,518 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:14:59,554 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:00,498 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:00,498 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:00,499 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:00,533 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:00,949 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:00,949 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:00,950 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:00,976 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:01,933 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:03,934 - RedMi_7 - INFO - 	--> FlashCardGame.click_voice
+2019-08-12 10:15:04,095 - RedMi_7 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-12 10:15:04,095 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 10:15:04,685 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 10:15:04,779 - RedMi_7 - INFO - 	--> FlashCardGame.copy_input
+2019-08-12 10:15:04,912 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:04,912 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:04,944 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:05,428 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:05,429 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:05,429 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:05,458 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:06,434 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:06,435 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:06,435 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:06,469 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:06,865 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:06,866 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:06,866 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:06,894 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:07,757 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:07,757 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:07,799 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:08,682 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:08,683 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:08,714 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:09,124 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:11,126 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 10:15:11,243 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:11,279 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:11,704 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:11,704 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:11,749 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:12,170 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:12,170 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:12,208 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:12,608 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:12,609 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:12,641 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:13,133 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:14,135 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:14,136 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:14,188 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:14,642 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:14,643 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:14,643 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:14,688 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:15,095 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:15,095 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:15,096 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:15,128 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:16,203 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:16,204 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:16,204 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:16,235 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:16,739 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:16,739 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:16,776 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:17,320 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:17,321 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:17,349 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:18,221 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:18,222 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:18,222 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:18,257 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:18,732 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:18,733 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:18,733 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:18,765 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:19,585 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:21,588 - RedMi_7 - INFO - 	--> FlashCardGame.click_voice
+2019-08-12 10:15:21,684 - RedMi_7 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-12 10:15:21,685 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 10:15:22,462 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 10:15:22,558 - RedMi_7 - INFO - 	--> FlashCardGame.star_button
+2019-08-12 10:15:22,728 - RedMi_7 - INFO - 	--> FlashCardGame.copy_input
+2019-08-12 10:15:23,514 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:23,515 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:23,555 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:24,015 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:24,016 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:24,017 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:24,058 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:24,577 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:24,577 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:24,578 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:24,606 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:25,439 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:25,439 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:25,440 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:25,471 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:25,888 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:25,889 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:25,922 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:26,401 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:26,401 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:26,431 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:27,336 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:27,336 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:27,337 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:27,372 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:27,862 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:27,862 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:27,863 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:27,896 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:28,741 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:30,743 - RedMi_7 - INFO - 	--> FlashCardGame.click_voice
+2019-08-12 10:15:30,867 - RedMi_7 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-12 10:15:30,868 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 10:15:31,465 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 10:15:31,558 - RedMi_7 - INFO - 	--> FlashCardGame.copy_input
+2019-08-12 10:15:31,701 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:31,702 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:31,736 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:32,156 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:32,156 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:32,157 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:32,196 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:32,592 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:32,593 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:32,593 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:32,633 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:33,432 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:33,433 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:33,434 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:33,470 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:33,940 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:33,940 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:33,976 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:34,440 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:34,441 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:34,474 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:35,423 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:35,423 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:35,424 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:35,460 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:35,838 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:35,839 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:35,839 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:35,868 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:36,726 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:38,727 - RedMi_7 - INFO -   <-- FlashCard.flash_copy_operate, Success
+2019-08-12 10:15:38,728 - RedMi_7 - INFO -   --> FlashCard.flash_card_result_operate
+2019-08-12 10:15:38,729 - RedMi_7 - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-08-12 10:15:43,915 - RedMi_7 - INFO -   <-- FlashCard.flash_card_result_operate, Success
+2019-08-12 10:15:43,916 - RedMi_7 - INFO -   --> FlashCard.flash_copy_operate
+2019-08-12 10:15:43,916 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 10:15:44,007 - RedMi_7 - INFO - 	--> FlashCardGame.click_voice
+2019-08-12 10:15:44,109 - RedMi_7 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-12 10:15:44,110 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 10:15:44,699 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 10:15:44,785 - RedMi_7 - INFO - 	--> FlashCardGame.star_button
+2019-08-12 10:15:44,831 - RedMi_7 - INFO - 	--> GetAttribute.selected
+2019-08-12 10:15:44,866 - RedMi_7 - INFO - 	--> FlashCardGame.copy_input
+2019-08-12 10:15:44,962 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:44,962 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:44,995 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:45,423 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:45,423 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:45,424 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:45,453 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:45,841 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:45,842 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:45,842 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:45,882 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:46,711 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:46,711 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:46,711 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:46,750 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:47,186 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:47,186 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:47,221 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:47,622 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:47,622 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:47,654 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:48,466 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:48,467 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:48,468 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:48,502 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:48,923 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:48,923 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:48,924 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:48,954 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:49,774 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:51,776 - RedMi_7 - INFO - 	--> FlashCardGame.click_voice
+2019-08-12 10:15:51,928 - RedMi_7 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-12 10:15:51,928 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 10:15:52,524 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 10:15:52,619 - RedMi_7 - INFO - 	--> FlashCardGame.copy_input
+2019-08-12 10:15:52,728 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:52,729 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:52,762 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:53,176 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:53,176 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:53,177 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:53,216 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:54,115 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:54,115 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:54,116 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:54,150 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:55,038 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:55,038 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:15:55,039 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:55,076 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:55,951 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:55,952 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:55,991 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:56,418 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:56,419 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:56,461 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:15:56,839 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:15:58,841 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 10:15:58,963 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:15:58,995 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:00,023 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:00,024 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:00,062 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:00,894 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:00,894 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:00,930 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:01,867 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:01,867 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:01,899 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:02,308 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:03,309 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:03,310 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:03,360 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:03,774 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:03,774 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:03,775 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:03,810 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:04,260 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:04,261 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:04,261 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:04,291 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:05,210 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:05,211 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:05,211 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:05,252 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:05,678 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:05,679 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:05,722 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:06,095 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:06,095 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:06,139 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:06,981 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:06,981 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:06,981 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:07,007 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:07,308 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:07,308 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:07,309 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:07,340 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:08,259 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:10,260 - RedMi_7 - INFO - 	--> FlashCardGame.click_voice
+2019-08-12 10:16:10,397 - RedMi_7 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-12 10:16:10,397 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 10:16:11,018 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 10:16:11,115 - RedMi_7 - INFO - 	--> FlashCardGame.star_button
+2019-08-12 10:16:11,175 - RedMi_7 - INFO - 	--> GetAttribute.selected
+2019-08-12 10:16:11,218 - RedMi_7 - INFO - 	--> FlashCardGame.copy_input
+2019-08-12 10:16:11,322 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:11,323 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:11,352 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:11,799 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:11,800 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:11,800 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:11,836 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:12,256 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:12,257 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:12,257 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:12,293 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:13,102 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:13,103 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:13,103 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:13,137 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:13,520 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:13,521 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:13,558 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:13,998 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:13,999 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:14,029 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:14,867 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:14,868 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:14,868 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:14,897 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:15,374 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:15,375 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:15,375 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:15,410 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:16,350 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:18,352 - RedMi_7 - INFO - 	--> FlashCardGame.click_voice
+2019-08-12 10:16:18,472 - RedMi_7 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-12 10:16:18,472 - RedMi_7 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-12 10:16:19,054 - RedMi_7 - INFO - 	--> FlashCardGame.copy_word
+2019-08-12 10:16:19,166 - RedMi_7 - INFO - 	--> FlashCardGame.copy_input
+2019-08-12 10:16:19,283 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:19,283 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:19,318 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:19,843 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:19,844 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:19,844 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:19,875 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:20,310 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:20,311 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:20,312 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:20,340 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:21,187 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:21,188 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:21,188 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:21,224 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:21,619 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:21,620 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:21,656 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:22,059 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:22,060 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:22,085 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:22,930 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:22,931 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:22,931 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:22,963 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:23,426 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:23,426 - RedMi_7 - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-12 10:16:23,427 - RedMi_7 - INFO -   --> Keyboard.games_keyboard
+2019-08-12 10:16:23,463 - RedMi_7 - INFO - 	--> Keyboard.keyboard_view
+2019-08-12 10:16:24,339 - RedMi_7 - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-12 10:16:26,341 - RedMi_7 - INFO -   <-- FlashCard.flash_copy_operate, Success
+2019-08-12 10:16:26,342 - RedMi_7 - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-08-12 10:16:31,893 - RedMi_7 - INFO - 	--> ResultPage.wait_check_medal_page
+2019-08-12 10:16:42,146 - RedMi_7 - INFO - 	--> ResultPage.wait_check_result_page
+2019-08-12 10:16:52,173 - RedMi_7 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-12 10:17:02,434 - RedMi_7 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-12 10:17:12,656 - RedMi_7 - INFO - <-- FlashCard.test_all_game, Success
+
+2019-08-12 10:17:12,657 - RedMi_7 - INFO - --> FlashCard.tearDown
+2019-08-12 10:17:12,658 - RedMi_7 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-12 10:17:12,659 - RedMi_7 - INFO - --> WKGame.setUp
+2019-08-12 10:17:12,659 - RedMi_7 - INFO -   --> LoginPage.app_status
+2019-08-12 10:17:12,660 - RedMi_7 - INFO -   --> LoginPage.wait_check_page
+2019-08-12 10:17:17,739 - RedMi_7 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-12 10:17:17,740 - RedMi_7 - INFO -   --> HomePage.wait_check_home_page
+2019-08-12 10:17:38,262 - RedMi_7 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-12 10:17:38,263 - RedMi_7 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-12 10:17:38,264 - RedMi_7 - INFO - 	--> LoginPage.close_app
+2019-08-12 10:17:38,418 - RedMi_7 - INFO - 	--> LoginPage.launch_app
+2019-08-12 10:17:45,845 - RedMi_7 - INFO -   --> HomePage.wait_check_home_page
+2019-08-12 10:17:46,436 - RedMi_7 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-12 10:17:46,437 - RedMi_7 - INFO -   <-- LoginPage.app_status, Success
+2019-08-12 10:17:46,437 - RedMi_7 - INFO - <-- WKGame.setUp, Success
+
+2019-08-12 10:17:46,438 - RedMi_7 - INFO - --> WKGame.test_wk_game
+2019-08-12 10:17:46,438 - RedMi_7 - INFO -   --> HomePage.wait_check_home_page
+2019-08-12 10:17:47,010 - RedMi_7 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-12 10:17:47,011 - RedMi_7 - INFO - 	--> HomePage.click_hk_tab
+2019-08-12 10:17:47,292 - RedMi_7 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-12 10:17:47,293 - RedMi_7 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-12 10:17:48,502 - RedMi_7 - INFO - 	--> LibraryGamePage.homework_list
+2019-08-12 10:17:49,021 - RedMi_7 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-12 10:17:50,184 - RedMi_7 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-12 10:17:50,185 - RedMi_7 - INFO - 	--> LibraryGamePage.testbank_type
+2019-08-12 10:17:50,320 - RedMi_7 - INFO - 	--> LibraryGamePage.testbank_name
+2019-08-12 10:17:50,579 - RedMi_7 - INFO -   --> WKGamePage.wk_game_operate
+2019-08-12 10:17:50,579 - RedMi_7 - INFO - 	--> WKGamePage.wait_check_wk_page
+2019-08-12 10:17:53,253 - RedMi_7 - INFO - 	--> WKGamePage.play_time
+2019-08-12 10:17:54,328 - RedMi_7 - INFO - 	--> WKGamePage.play_time
+2019-08-12 10:17:54,416 - RedMi_7 - INFO - 	--> WKGamePage.video_pause_btn
+2019-08-12 10:17:54,506 - RedMi_7 - INFO - 	--> WKGamePage.play_time
+2019-08-12 10:17:55,162 - RedMi_7 - INFO - 	--> WKGamePage.wait_check_play_btn_page
+2019-08-12 10:17:57,211 - RedMi_7 - INFO - 	--> WKGamePage.play_time
+2019-08-12 10:17:57,327 - RedMi_7 - INFO - 	--> WKGamePage.video_size
+2019-08-12 10:17:57,445 - RedMi_7 - INFO - 	--> WKGamePage.screen_rotate_btn
+2019-08-12 10:17:59,156 - RedMi_7 - INFO - 	--> WKGamePage.video_size
+2019-08-12 10:18:00,376 - RedMi_7 - INFO - 	--> WKGamePage.video_size
+2019-08-12 10:18:01,533 - RedMi_7 - INFO -   <-- WKGamePage.wk_game_operate, Success
+2019-08-12 10:18:01,533 - RedMi_7 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-12 10:18:02,270 - RedMi_7 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-12 10:18:03,411 - RedMi_7 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-12 10:18:13,793 - RedMi_7 - INFO - <-- WKGame.test_wk_game, Success
+
+2019-08-12 10:18:13,794 - RedMi_7 - INFO - --> WKGame.tearDown
+2019-08-12 10:18:13,795 - RedMi_7 - INFO - <-- WKGame.tearDown, Success
+

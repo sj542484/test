@@ -1,0 +1,72 @@
+2019-08-06 10:19:18,011 - MI_5 - INFO - --> FlashCard.setUp
+2019-08-06 10:19:18,015 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 10:19:18,015 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 10:19:20,823 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 10:19:20,824 - MI_5 - INFO -   --> LoginPage.login_operate
+2019-08-06 10:19:22,824 - MI_5 - INFO - 	--> LoginPage.input_username
+2019-08-06 10:19:22,940 - MI_5 - INFO - 	--> LoginPage.input_password
+2019-08-06 10:19:23,903 - MI_5 - INFO - 	--> LoginPage.login_button
+2019-08-06 10:19:26,586 - MI_5 - INFO -   <-- LoginPage.login_operate, Success
+2019-08-06 10:19:26,587 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 10:19:26,587 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-08-06 10:19:26,588 - MI_5 - INFO - --> FlashCard.test_all_game
+2019-08-06 10:19:26,588 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 10:19:28,092 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 10:19:28,106 - MI_5 - INFO - 	--> UserCenterPage.get_user_info
+2019-08-06 10:19:28,107 - MI_5 - INFO - 	--> HomePage.click_tab_profile
+2019-08-06 10:19:28,294 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-06 10:19:29,381 - MI_5 - ERROR - Exception, can't multiply sequence by non-int of type 'float'
+2019-08-06 10:19:29,382 - MI_5 - ERROR - 	<-- UserCenterPage.get_user_info, Exception, Error
+2019-08-06 10:19:29,911 - MI_5 - ERROR - Exception, IMAGE:UserCenterPage.get_user_info-20190806101929.png
+2019-08-06 10:19:29,912 - MI_5 - ERROR - <-- FlashCard.test_all_game, Exception, Error
+
+2019-08-06 10:19:29,912 - MI_5 - INFO - --> FlashCard.tearDown
+2019-08-06 10:19:29,913 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+
+2019-08-06 10:19:29,918 - MI_5 - INFO - --> WKGame.setUp
+2019-08-06 10:19:29,919 - MI_5 - INFO -   --> LoginPage.app_status
+2019-08-06 10:19:29,919 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-08-06 10:19:35,460 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-06 10:19:35,461 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 10:19:56,101 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 10:19:56,106 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-06 10:19:56,106 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-08-06 10:19:56,989 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-08-06 10:20:08,227 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 10:20:09,016 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 10:20:09,016 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-08-06 10:20:09,017 - MI_5 - INFO - <-- WKGame.setUp, Success
+
+2019-08-06 10:20:09,017 - MI_5 - INFO - --> WKGame.test_wk_game
+2019-08-06 10:20:09,018 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-08-06 10:20:09,747 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-06 10:20:09,747 - MI_5 - INFO - 	--> HomePage.click_hk_tab
+2019-08-06 10:20:09,922 - MI_5 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-06 10:20:09,922 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-06 10:20:11,337 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-08-06 10:20:11,707 - MI_5 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-06 10:20:13,150 - MI_5 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-06 10:20:13,151 - MI_5 - INFO - 	--> LibraryGamePage.testbank_type
+2019-08-06 10:20:13,327 - MI_5 - INFO - 	--> LibraryGamePage.testbank_name
+2019-08-06 10:20:13,607 - MI_5 - INFO -   --> WKGamePage.wk_game_operate
+2019-08-06 10:20:13,608 - MI_5 - INFO - 	--> WKGamePage.wait_check_wk_page
+2019-08-06 10:20:16,965 - MI_5 - INFO - 	--> WKGamePage.play_time
+2019-08-06 10:20:18,069 - MI_5 - INFO - 	--> WKGamePage.play_time
+2019-08-06 10:20:18,151 - MI_5 - INFO - 	--> WKGamePage.video_pause_btn
+2019-08-06 10:20:18,237 - MI_5 - INFO - 	--> WKGamePage.play_time
+2019-08-06 10:20:18,935 - MI_5 - INFO - 	--> WKGamePage.wait_check_play_btn_page
+2019-08-06 10:20:20,987 - MI_5 - INFO - 	--> WKGamePage.play_time
+2019-08-06 10:20:21,071 - MI_5 - INFO - 	--> WKGamePage.video_size
+2019-08-06 10:20:21,171 - MI_5 - INFO - 	--> WKGamePage.screen_rotate_btn
+2019-08-06 10:20:21,846 - MI_5 - INFO - 	--> WKGamePage.video_size
+2019-08-06 10:20:24,959 - MI_5 - INFO - 	--> WKGamePage.video_size
+2019-08-06 10:20:26,735 - MI_5 - INFO -   <-- WKGamePage.wk_game_operate, Success
+2019-08-06 10:20:26,736 - MI_5 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-06 10:20:27,434 - MI_5 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-06 10:20:28,586 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-06 10:20:39,025 - MI_5 - INFO - <-- WKGame.test_wk_game, Success
+
+2019-08-06 10:20:39,026 - MI_5 - INFO - --> WKGame.tearDown
+2019-08-06 10:20:39,026 - MI_5 - INFO - <-- WKGame.tearDown, Success
+

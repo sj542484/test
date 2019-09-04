@@ -1,0 +1,18 @@
+2019-07-30 10:07:22,628 - OPPO_K3 - INFO - --> Word.setUp
+2019-07-30 10:07:22,629 - OPPO_K3 - INFO -   --> LoginPage.app_status
+2019-07-30 10:07:22,630 - OPPO_K3 - INFO -   --> LoginPage.wait_check_page
+2019-07-30 10:07:27,631 - OPPO_K3 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 10:07:27,632 - OPPO_K3 - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 10:07:48,155 - OPPO_K3 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 10:07:48,156 - OPPO_K3 - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-07-30 10:08:03,534 - OPPO_K3 - INFO - 	--> LoginPage.close_app
+2019-07-30 10:08:03,762 - OPPO_K3 - INFO - 	--> LoginPage.launch_app
+2019-07-30 10:08:12,106 - OPPO_K3 - INFO -   --> HomePage.wait_check_home_page
+2019-07-30 10:08:32,600 - OPPO_K3 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-07-30 10:08:32,601 - OPPO_K3 - INFO -   --> LoginPage.wait_check_page
+2019-07-30 10:08:38,183 - OPPO_K3 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-07-30 10:08:38,184 - OPPO_K3 - INFO -   <-- LoginPage.app_status, Success
+2019-07-30 10:08:38,297 - OPPO_K3 - INFO - <-- Word.setUp, Success
+
+2019-07-30 10:08:38,298 - OPPO_K3 - INFO - --> Word.test_study_word
+2019-07-30 10:08:38,299 - OPPO_K3 - INFO -   --> HomePage.wait_check_home_page

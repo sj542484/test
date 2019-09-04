@@ -1,0 +1,1635 @@
+2019-08-01 20:12:00,491 - oppo_R11t - INFO - --> Word.setUp
+2019-08-01 20:12:00,492 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-01 20:12:00,493 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-01 20:12:03,590 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-01 20:12:03,590 - oppo_R11t - INFO -   --> LoginPage.login_operate
+2019-08-01 20:12:05,592 - oppo_R11t - INFO - 	--> LoginPage.input_username
+2019-08-01 20:12:05,656 - oppo_R11t - INFO - 	--> LoginPage.input_password
+2019-08-01 20:12:08,640 - oppo_R11t - INFO - 	--> LoginPage.login_button
+2019-08-01 20:12:11,662 - oppo_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-08-01 20:12:11,663 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-01 20:12:11,734 - oppo_R11t - INFO - <-- Word.setUp, Success
+
+2019-08-01 20:12:11,735 - oppo_R11t - INFO - --> Word.test_study_word
+2019-08-01 20:12:11,735 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 20:12:12,545 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 20:12:12,546 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-01 20:12:12,546 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-01 20:12:12,771 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 20:12:15,713 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-01 20:12:18,201 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-01 20:12:18,370 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-01 20:12:20,769 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-01 20:12:22,666 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 20:12:23,254 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-01 20:12:23,864 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-01 20:12:24,011 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-01 20:12:25,619 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-01 20:12:29,818 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 20:12:30,187 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-01 20:12:30,318 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 20:12:31,439 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 20:12:31,440 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-08-01 20:12:31,642 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_start_page
+2019-08-01 20:12:32,943 - oppo_R11t - INFO - 	--> WordBookRebuildPage.word_start_button
+2019-08-01 20:12:39,034 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:12:39,102 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:12:39,695 - oppo_R11t - INFO - 	--> ReciteWordPage.word_book_recite_operate
+2019-08-01 20:12:39,696 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:12:39,747 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:12:39,877 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:12:39,878 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:12:39,878 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:12:39,933 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:12:42,002 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:12:43,678 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:12:45,789 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:12:45,895 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:12:45,942 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:12:46,021 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:12:47,754 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:12:47,755 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:12:47,755 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:12:48,089 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:12:49,646 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:12:51,258 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:12:51,373 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:12:51,488 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:12:51,488 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:12:51,489 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:12:51,552 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:12:53,092 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:12:54,497 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:12:56,622 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:12:57,272 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:12:57,329 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:12:57,424 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:12:58,571 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:12:58,572 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:12:58,572 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:12:58,631 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:13:00,404 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:02,002 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:13:03,432 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:13:03,559 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:13:03,559 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:13:03,560 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:03,618 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:13:06,364 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:13:07,539 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:13:09,669 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:13:09,772 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:13:09,831 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:13:09,909 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:13:11,209 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:13:11,210 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:13:11,210 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:11,277 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:13:12,833 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:14,428 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:13:14,479 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:13:15,537 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:13:15,538 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:13:15,538 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:15,592 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:13:17,143 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:13:18,690 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:13:20,808 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:13:21,614 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:13:21,667 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:13:21,754 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:13:22,942 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:13:22,943 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:13:22,943 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:22,992 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:13:24,626 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:26,241 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:13:26,498 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:13:26,619 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:13:26,620 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:13:26,620 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:27,664 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:13:29,219 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:13:30,818 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:13:32,931 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:13:33,812 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:13:33,877 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:13:33,960 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:13:35,130 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:13:35,131 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:13:35,131 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:35,210 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:13:36,808 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:38,414 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:13:38,471 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:13:38,580 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:13:38,580 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:13:38,581 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:38,625 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:13:40,528 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:13:41,671 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:13:43,777 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:13:43,885 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:13:43,936 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:13:44,026 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:13:45,312 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:13:45,313 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:13:45,313 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:45,960 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:13:47,515 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:49,123 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:13:49,186 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:13:49,292 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:13:49,293 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:13:49,294 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:49,342 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:13:50,886 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:13:52,143 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:13:54,261 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:13:55,147 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:13:55,207 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:13:55,293 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:13:56,511 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:13:56,512 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:13:56,513 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:13:56,567 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:13:58,578 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:14:00,180 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:14:01,198 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:14:01,304 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:14:01,453 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:14:01,453 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:14:02,614 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:14:04,631 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:14:04,631 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:14:04,632 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:14:04,632 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:14:05,698 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:14:07,602 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:14:07,650 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:14:07,650 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:14:10,711 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:14:12,311 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:14:15,373 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:14:16,919 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:14:16,966 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:14:16,966 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:14:17,036 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:14:17,036 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:14:18,038 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:18,076 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:14:18,470 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:14:18,470 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:18,494 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:14:19,821 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:14:19,822 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:19,847 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:14:20,723 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:14:20,723 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:20,750 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:14:21,577 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:14:21,577 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:21,642 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:14:23,008 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:14:23,009 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:23,041 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:14:23,961 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:14:23,961 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:23,990 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:14:25,908 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:14:25,908 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:25,938 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:14:26,757 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:14:26,758 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:14:27,323 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:14:27,324 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:14:27,324 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:14:28,595 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:14:30,153 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:14:33,198 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:14:33,260 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:14:33,260 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:14:33,261 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:14:33,309 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:14:34,856 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:14:36,481 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:14:37,800 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:14:37,919 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:14:38,047 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:14:38,047 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:14:39,108 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:14:40,835 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:14:40,836 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:14:40,836 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:14:40,837 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:14:41,897 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:14:43,810 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:14:43,865 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:14:43,865 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:14:46,925 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:14:48,811 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:14:51,865 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:14:53,416 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:14:53,464 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:14:53,465 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:14:53,544 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:14:53,545 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:14:54,547 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:54,588 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:14:55,181 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:14:55,182 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:55,209 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:14:56,357 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:14:56,358 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:56,388 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:14:57,239 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:14:57,239 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:57,271 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:14:58,123 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:14:58,123 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:58,148 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:14:59,355 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:14:59,356 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:14:59,382 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:15:01,056 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:15:01,057 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:15:02,108 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:15:02,108 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:15:02,109 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:15:03,179 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:15:05,114 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:15:07,751 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:15:08,174 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:15:08,175 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:15:08,175 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:15:08,223 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:15:09,778 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:15:11,390 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:15:11,454 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:15:11,568 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:15:11,705 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:15:11,705 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:15:12,839 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:15:14,859 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:15:14,860 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:15:14,860 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:15:14,861 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:15:15,928 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:15:17,843 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:15:17,892 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:15:17,892 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:15:20,941 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:15:23,918 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:15:26,980 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:15:29,503 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:15:29,551 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:15:29,551 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:15:29,625 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:15:29,626 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:15:30,627 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:15:30,656 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:15:31,042 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:15:31,043 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:15:31,069 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:15:32,778 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:15:32,778 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:15:32,805 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:15:33,659 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:15:33,660 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:15:33,686 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:15:34,539 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:15:34,539 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:15:34,560 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:15:35,829 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:15:35,829 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:15:36,406 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:15:36,407 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:15:36,407 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:15:37,464 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:15:39,016 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:15:41,631 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:15:41,692 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:15:41,693 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:15:41,693 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:15:41,750 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:15:43,298 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:15:44,899 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:15:44,961 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:15:45,069 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:15:45,225 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:15:45,225 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:15:46,283 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:15:47,855 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:15:47,856 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:15:47,857 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:15:47,857 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:15:48,954 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:15:50,794 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:15:50,861 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:15:50,862 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:15:53,921 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:15:55,523 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:16:00,491 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:16:02,484 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:16:03,111 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:16:03,111 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:16:03,190 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:16:03,190 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:16:04,191 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:16:04,231 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:16:04,590 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:16:04,591 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:16:04,615 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:16:06,372 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:16:06,373 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:16:06,394 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:16:07,222 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:16:07,222 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:16:07,248 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:16:08,095 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:16:08,096 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:16:08,129 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:16:09,451 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:16:09,452 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:16:09,491 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:16:10,339 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:16:10,340 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:16:10,921 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:16:10,921 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:16:10,922 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:16:12,134 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:16:13,679 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:16:16,744 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:16:16,817 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:16:16,818 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:16:16,819 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:16:16,881 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:16:18,426 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:16:20,858 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:16:21,265 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:16:21,467 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:16:21,572 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:16:21,572 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:16:23,068 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:16:24,684 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:16:24,685 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:16:24,686 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:16:24,686 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:16:26,053 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:16:28,063 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:16:28,116 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:16:28,116 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:16:31,180 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:16:33,558 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:16:36,615 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:16:38,159 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:16:38,208 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:16:38,208 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:16:38,287 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:16:38,288 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:16:39,289 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:16:39,323 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:16:40,372 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:16:40,372 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:16:40,394 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:16:41,472 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:16:41,472 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:16:41,495 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:16:42,969 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:16:42,970 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:16:42,993 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:16:44,316 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:16:44,317 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:16:44,340 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:16:45,934 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:16:45,934 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:16:45,961 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:16:47,325 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:16:47,325 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:16:47,349 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:16:49,474 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:16:49,475 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:16:50,177 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:16:50,178 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:16:50,178 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:16:51,712 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:16:53,256 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:16:56,705 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:16:56,764 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:16:56,764 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:16:56,764 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:16:57,800 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:16:59,345 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:17:00,950 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:17:01,014 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:17:01,121 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:17:01,226 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:17:01,226 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:17:02,279 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:17:03,878 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:17:03,879 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:17:03,880 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:17:03,880 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:17:04,943 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:17:07,160 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:17:07,211 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:17:07,211 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:17:10,269 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:17:11,857 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:17:14,909 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:17:16,456 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:17:16,498 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:17:16,499 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:17:16,578 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:17:16,579 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:17:17,580 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:17:17,622 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:17:18,012 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:17:18,012 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:17:18,036 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:17:19,434 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:17:19,434 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:17:19,465 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:17:20,316 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:17:20,316 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:17:20,343 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:17:21,178 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:17:21,178 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:17:21,199 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:17:22,473 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:17:22,473 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:17:22,493 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:17:23,324 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:17:23,325 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:17:23,350 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:17:24,177 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:17:24,177 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:17:24,204 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:17:25,543 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:17:25,543 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:17:25,575 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:17:26,378 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:17:26,378 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:17:26,398 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:17:27,262 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:17:27,262 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:17:28,407 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:17:28,408 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:17:28,409 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:17:29,481 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:17:31,308 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:17:33,913 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:17:34,357 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:17:34,357 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:17:34,358 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:17:34,405 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:17:35,965 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:17:37,573 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:17:37,635 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:17:38,262 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:17:38,398 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:17:38,399 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:17:40,449 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:17:42,014 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:17:42,015 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:17:42,015 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:17:42,015 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:17:43,497 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:17:45,299 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:17:45,351 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:17:45,351 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:17:48,410 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:17:50,013 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:17:53,064 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:17:54,609 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:17:55,647 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:17:55,648 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:17:55,717 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:17:55,717 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:17:56,718 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:17:56,748 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:17:57,584 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:17:57,584 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:17:57,613 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:17:59,515 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:17:59,516 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:17:59,544 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:00,781 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:00,782 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:00,810 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:02,078 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:02,079 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:02,106 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:02,975 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:02,976 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:18:03,547 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:18:03,547 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:18:03,548 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:18:04,817 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:18:06,362 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:18:09,418 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:18:09,471 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:18:09,471 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:18:09,472 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:18:09,535 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:18:11,082 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:18:12,679 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:18:12,746 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:18:14,389 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:18:14,489 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:18:14,489 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:18:15,548 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:18:17,426 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:18:17,427 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:18:17,427 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:18:17,428 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:18:18,503 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:18:20,379 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:18:20,438 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:18:20,438 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:18:23,489 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:18:26,393 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:18:29,449 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:18:30,991 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:18:31,044 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:18:31,044 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:18:31,129 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:18:31,130 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:18:32,131 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:32,169 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:32,531 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:32,531 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:32,563 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:33,382 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:33,383 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:33,412 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:34,230 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:34,231 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:34,267 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:35,584 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:35,585 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:35,615 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:36,471 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:36,471 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:36,497 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:37,377 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:37,378 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:37,400 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:38,580 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:38,580 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:38,607 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:39,480 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:39,481 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:39,501 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:40,337 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:40,338 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:40,360 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:41,795 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:41,795 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:41,823 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:42,651 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:42,652 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:18:42,672 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:18:44,679 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:18:44,679 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:18:45,533 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:18:45,533 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:18:45,534 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:18:47,412 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:18:48,958 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:18:52,135 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:18:52,193 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:18:52,197 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:18:52,198 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:18:52,257 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:18:53,812 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:18:55,414 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:18:55,514 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:18:56,607 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:18:56,711 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:18:56,712 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:18:57,763 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:18:59,652 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:18:59,653 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:18:59,653 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:18:59,653 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:19:00,718 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:19:02,625 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:19:02,675 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:19:02,675 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:19:05,733 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:19:07,589 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:19:10,644 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:19:12,197 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:19:12,242 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:19:12,243 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:19:12,317 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:19:12,318 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:19:13,319 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:19:13,353 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:19:13,895 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:19:13,896 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:19:13,929 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:19:15,099 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:19:15,100 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:19:15,131 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:19:15,941 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:19:15,942 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:19:15,963 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:19:16,874 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:19:16,874 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:19:16,898 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:19:18,149 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:19:18,149 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:19:18,182 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:19:18,998 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:19:18,998 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:19:19,017 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:19:19,829 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:19:19,829 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:19:20,908 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:19:20,909 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:19:20,909 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:19:21,948 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:19:23,914 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:19:26,519 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:19:26,978 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:19:26,979 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:19:26,979 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:19:27,037 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:19:28,608 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:19:30,212 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:19:30,269 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:19:30,419 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:19:30,420 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:19:30,420 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:19:30,468 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:19:32,007 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:19:33,151 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:19:35,248 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:19:36,629 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:19:36,686 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:19:36,773 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:19:37,973 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:19:37,974 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:19:37,974 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:19:38,036 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:19:39,630 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:19:41,245 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:19:42,215 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:19:42,356 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:19:42,357 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:19:42,357 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:19:42,407 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:19:43,947 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:19:45,749 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:19:47,837 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:19:48,699 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:19:48,757 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:19:48,839 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:19:50,078 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:19:50,079 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:19:50,079 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:19:50,128 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:19:51,679 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:19:53,287 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:19:53,341 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:19:54,697 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:19:54,698 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:19:54,698 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:19:54,748 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:19:56,290 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:19:57,767 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:19:59,883 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:20:00,724 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:20:00,768 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:20:00,853 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:20:02,084 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:20:02,085 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:20:02,085 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:02,153 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:20:03,706 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:05,313 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:20:06,574 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:20:06,701 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:20:06,702 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:20:06,702 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:06,761 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:20:08,306 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:20:09,806 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:20:11,910 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:20:12,716 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:20:12,765 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:20:12,853 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:20:14,097 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:20:14,098 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:20:14,098 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:14,158 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:20:15,780 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:17,376 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:20:18,238 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:20:18,941 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:20:18,941 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:20:18,942 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:18,985 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:20:20,528 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:20:21,974 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:20:24,112 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:20:24,906 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:20:24,955 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:20:25,042 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:20:26,324 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:20:26,325 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:20:26,325 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:26,374 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:20:27,927 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:29,525 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:20:29,590 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:20:29,705 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:20:29,706 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:20:29,707 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:29,762 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:20:31,311 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:20:32,438 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:20:34,556 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:20:34,644 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:20:34,683 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:20:34,767 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:20:36,462 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:20:36,463 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:20:36,464 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:37,009 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:20:38,561 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:40,169 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:20:40,225 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:20:40,332 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:20:40,333 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:20:40,333 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:40,381 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:20:41,921 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:20:43,194 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:20:45,290 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:20:46,413 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:20:46,473 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:20:46,554 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:20:47,725 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:20:47,726 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:20:47,726 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:47,788 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:20:49,407 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:50,993 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:20:52,274 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:20:52,394 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:20:52,394 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:20:52,395 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:52,445 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:20:53,996 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:20:55,420 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:20:57,558 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:20:58,397 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:20:58,449 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:20:58,534 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:20:59,800 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:20:59,801 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:20:59,802 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:20:59,859 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:21:01,411 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:21:03,027 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:21:03,069 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:21:03,162 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:21:03,272 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:21:03,272 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:21:04,456 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:21:06,030 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:21:06,031 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:21:06,031 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:21:06,031 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:21:07,497 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:21:09,035 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:21:09,090 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:21:09,091 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:21:12,485 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:21:14,558 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:21:17,608 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:21:19,676 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:21:19,748 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:21:19,748 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:21:19,837 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:21:19,838 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:21:20,840 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:21:20,863 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:21:21,718 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:21:21,718 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:21:21,743 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:21:23,044 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:21:23,046 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:21:23,071 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:21:23,952 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:21:23,953 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:21:23,976 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:21:24,853 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:21:24,854 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:21:24,912 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:21:26,100 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:21:26,100 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:21:26,123 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:21:26,943 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:21:26,945 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:21:26,969 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:21:27,861 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:21:27,861 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:21:27,887 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:21:29,123 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:21:29,124 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:21:29,147 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:21:29,955 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:21:29,955 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:21:29,980 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:21:30,840 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:21:30,841 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:21:30,872 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:21:32,177 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:21:32,177 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:21:32,208 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:21:33,018 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:21:33,018 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:21:33,588 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:21:33,588 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:21:33,589 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:21:34,930 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:21:36,558 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:21:39,523 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:21:39,583 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:21:39,583 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:21:39,583 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:21:39,630 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:21:41,582 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:21:43,200 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:21:44,071 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:21:44,189 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:21:44,305 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:21:44,305 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:21:45,595 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:21:47,167 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:21:47,169 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:21:47,169 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:21:47,170 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:21:48,598 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:21:50,139 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:21:50,201 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:21:50,202 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:21:53,612 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:21:56,647 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:21:59,707 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:22:01,252 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:22:02,285 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:22:02,286 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:22:02,372 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:22:02,373 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:22:03,374 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:03,414 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:03,793 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:03,794 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:03,820 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:05,568 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:05,569 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:05,590 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:06,450 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:06,451 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:06,475 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:08,564 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:08,566 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:08,592 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:09,428 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:09,428 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:09,461 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:10,281 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:10,282 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:10,311 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:12,001 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:12,001 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:12,023 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:12,866 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:12,867 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:12,894 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:14,857 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:14,858 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:14,875 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:15,730 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:15,731 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:15,833 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:17,839 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:17,839 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:17,864 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:18,735 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:18,736 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:22:19,303 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:22:19,303 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:22:19,303 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:22:20,674 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:22:23,608 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:22:26,230 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:22:26,681 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:22:26,682 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:22:26,682 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:22:26,738 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:22:28,686 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:22:31,270 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:22:31,333 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:22:31,445 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:22:31,554 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:22:31,555 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:22:32,759 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:22:34,324 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:22:34,324 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:22:34,325 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:22:34,325 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:22:35,850 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:22:37,401 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:22:37,457 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:22:37,457 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:22:40,523 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:22:42,117 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:22:45,167 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:22:46,710 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:22:46,752 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:22:46,753 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:22:46,830 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:22:46,830 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:22:47,831 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:47,859 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:48,294 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:48,294 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:48,313 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:49,133 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:49,133 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:49,167 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:50,007 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:50,008 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:50,039 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:51,330 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:51,331 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:51,364 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:52,197 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:52,198 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:52,218 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:53,050 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:53,050 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:22:53,080 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:22:54,357 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:22:54,358 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:22:54,921 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:22:54,922 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:22:54,923 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:22:55,970 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:22:57,789 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:23:00,398 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:23:00,460 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:23:00,461 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:23:00,461 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:23:00,503 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:23:02,042 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:23:03,655 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:23:03,724 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:23:03,848 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:23:03,958 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:23:03,959 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:23:05,019 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:23:06,597 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:23:06,599 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:23:06,600 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:23:06,600 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:23:07,660 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:23:09,310 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:23:09,357 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:23:09,357 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:23:12,675 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:23:14,264 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:23:17,320 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:23:18,874 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:23:18,912 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:23:18,912 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:23:18,989 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:23:18,990 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:23:19,992 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:23:20,034 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:23:20,426 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:23:20,426 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:23:20,452 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:23:21,781 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:23:21,781 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:23:21,808 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:23:22,633 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:23:22,633 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:23:22,658 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:23:23,515 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:23:23,515 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:23:23,540 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:23:24,812 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:23:24,813 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:23:24,844 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:23:26,115 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:23:26,115 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:23:26,147 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:23:27,940 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:23:27,941 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:23:27,970 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:23:29,285 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:23:29,286 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:23:29,313 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:23:30,921 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:23:30,921 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:23:31,509 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:23:31,510 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:23:31,510 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:23:32,571 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:23:34,114 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:23:36,710 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:23:36,914 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:23:36,914 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:23:36,915 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:23:36,959 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:23:39,912 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:23:41,535 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:23:41,587 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:23:41,692 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:23:41,796 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:23:41,797 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:23:42,859 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:23:44,417 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:23:44,417 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:23:44,418 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:23:44,418 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:23:45,941 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:23:47,493 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:23:47,554 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:23:47,555 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:23:50,608 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:23:52,212 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:23:55,279 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:23:56,816 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:23:56,879 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:23:56,880 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:23:56,948 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:23:56,949 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:23:57,949 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:23:57,989 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:23:58,360 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:23:58,361 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:23:58,383 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:23:59,359 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:23:59,360 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:23:59,381 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:01,389 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:01,389 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:01,411 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:02,341 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:02,342 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:02,365 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:03,232 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:03,233 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:03,257 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:04,413 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:04,414 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:04,435 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:05,280 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:05,282 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:05,304 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:06,110 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:06,110 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:06,137 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:07,440 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:07,440 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:07,463 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:08,296 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:08,296 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:08,319 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:09,151 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:09,151 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:24:10,235 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:24:10,235 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:24:10,236 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:24:11,286 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:24:13,239 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:24:15,854 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:24:16,305 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:24:16,305 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:24:16,305 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:24:16,355 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:24:18,048 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:24:19,650 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:24:19,705 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:24:19,824 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:24:19,946 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:24:19,946 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:24:20,997 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:24:22,571 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:24:22,571 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:24:22,572 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:24:22,572 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:24:24,080 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:24:26,085 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:24:26,138 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:24:26,138 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:24:29,204 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:24:31,578 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:24:35,121 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:24:37,605 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:24:38,133 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:24:38,134 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:24:38,214 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:24:38,215 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:24:39,216 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:39,258 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:39,627 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:39,628 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:39,649 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:40,973 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:40,974 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:40,994 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:41,825 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:41,826 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:41,852 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:42,692 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:42,693 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:42,713 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:44,434 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:44,435 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:44,457 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:45,461 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:45,461 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:45,485 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:47,494 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:47,495 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:47,522 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:48,348 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:48,348 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:48,371 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:50,535 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:50,536 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:24:50,558 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:24:51,491 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:24:51,492 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:24:53,178 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:24:53,178 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:24:53,178 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:24:54,241 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:24:55,836 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:24:58,453 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:24:58,915 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:24:58,916 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:24:58,916 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:24:58,973 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:25:00,528 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:25:02,139 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:25:02,203 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:25:02,308 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:25:02,408 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:25:02,409 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:25:03,468 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:25:05,028 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:25:05,029 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:25:05,030 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:25:05,030 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:25:06,207 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:25:08,032 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:25:08,087 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:25:08,087 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:25:11,145 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:25:12,750 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:25:15,807 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:25:17,355 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:25:17,404 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:25:17,405 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:25:17,483 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:25:17,484 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:25:18,485 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:25:18,527 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:25:18,920 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:25:18,921 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:25:18,944 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:25:20,462 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:25:20,463 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:25:20,496 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:25:21,298 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:25:21,298 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:25:21,330 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:25:22,138 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:25:22,138 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:25:22,170 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:25:23,579 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:25:23,580 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:25:23,607 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:25:24,439 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:25:24,439 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:25:24,467 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:25:26,631 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:25:26,632 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:25:26,656 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:25:27,477 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:25:27,477 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:25:27,501 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:25:29,654 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:25:29,655 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:25:29,677 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:25:30,498 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:25:30,499 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:25:31,049 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:25:31,049 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:25:31,050 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:25:32,410 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:25:34,300 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:25:36,991 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:25:37,059 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:25:37,060 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:25:37,061 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:25:37,112 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:25:38,658 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:25:40,252 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:25:40,302 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:25:40,410 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:25:41,529 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:25:41,530 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:25:42,589 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:25:44,611 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:25:44,612 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:25:44,613 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:25:44,613 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:25:45,666 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:25:47,624 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:25:47,676 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:25:47,676 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:25:50,735 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:25:52,346 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:25:55,403 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:25:57,387 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:25:57,436 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:25:57,436 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:25:57,521 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:25:57,522 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:25:58,523 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:25:58,552 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:25:58,915 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:25:58,916 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:25:58,945 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:00,737 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:00,738 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:00,762 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:01,580 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:01,581 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:01,609 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:03,084 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:03,085 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:03,112 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:04,039 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:04,042 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:04,072 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:04,907 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:04,907 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:04,936 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:06,179 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:06,180 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:06,198 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:07,018 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:07,019 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:07,049 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:07,857 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:07,857 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:07,884 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:09,161 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:09,162 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:09,179 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:10,015 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:10,016 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:10,034 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:10,890 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:10,891 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:10,914 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:12,717 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:12,718 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:12,742 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:13,594 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:13,599 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:26:15,060 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:26:15,061 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:26:15,062 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:26:16,438 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:26:18,414 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:26:21,018 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:26:21,108 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:26:21,109 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:26:21,109 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:26:21,148 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:26:22,693 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:26:24,290 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:26:24,350 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:26:24,452 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:26:24,560 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:26:24,561 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:26:25,630 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:26:27,467 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:26:27,468 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:26:27,469 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:26:27,469 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:26:28,525 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:26:30,457 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:26:30,517 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:26:30,518 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:26:33,582 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:26:36,388 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:26:39,494 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:26:41,039 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:26:41,076 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:26:41,077 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:26:41,148 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:26:41,149 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:26:42,151 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:42,176 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:42,753 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:42,753 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:42,778 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:43,577 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:43,578 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:43,600 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:44,450 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:44,451 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:44,475 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:45,815 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:45,815 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:45,831 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:46,858 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:46,859 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:46,880 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:48,699 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:48,700 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:48,720 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:49,562 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:49,562 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:26:49,584 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:26:51,901 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:26:51,901 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:26:52,471 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:26:52,471 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:26:52,472 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:26:53,524 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:26:55,072 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:26:57,663 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:26:57,737 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:26:57,737 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:26:57,738 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:26:57,780 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:26:59,317 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:00,909 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:27:00,974 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:27:01,087 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:27:01,087 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:27:01,088 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:01,138 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:27:02,675 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:27:03,817 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:27:05,926 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:27:06,819 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:27:06,867 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:27:06,939 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:27:08,624 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:27:08,625 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:27:08,625 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:08,683 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:27:10,226 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:11,822 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:27:12,861 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:27:12,957 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:27:12,958 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:27:12,958 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:13,005 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:27:14,540 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:27:15,998 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:27:18,094 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:27:18,991 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:27:19,038 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:27:19,120 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:27:20,336 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:27:20,337 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:27:20,337 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:20,391 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:27:21,991 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:23,603 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:27:23,685 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:27:23,785 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:27:23,785 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:27:23,785 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:23,832 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:27:25,372 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:27:26,788 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:27:28,885 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:27:28,972 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:27:29,019 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:27:29,103 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:27:30,354 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:27:30,355 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:27:30,355 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:31,139 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:27:32,690 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:34,303 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:27:34,369 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:27:34,471 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:27:34,472 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:27:34,472 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:34,517 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:27:36,052 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:27:37,288 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:27:39,406 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:27:40,737 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:27:40,783 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:27:40,859 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:27:42,096 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:27:42,096 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:27:42,097 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:42,142 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:27:43,715 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:45,327 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:27:46,736 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:27:46,835 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:27:46,835 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:27:46,836 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:46,884 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:27:49,720 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:27:50,854 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:27:52,966 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:27:53,069 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:27:53,114 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:27:53,183 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:27:54,873 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:27:54,874 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:27:54,875 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:55,473 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:27:57,016 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:58,601 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:27:58,664 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:27:58,764 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:27:58,766 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:27:58,766 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:27:58,812 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:28:00,519 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:28:01,877 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:28:03,984 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:28:04,849 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:28:04,892 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:28:04,971 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:28:06,949 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:28:06,950 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:28:06,950 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:28:07,658 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:28:09,201 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:28:12,172 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:28:12,228 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:28:12,351 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:28:12,351 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:28:12,351 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:28:12,395 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:28:13,943 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:28:15,091 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:28:17,201 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:28:17,304 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:28:17,355 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:28:17,443 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:28:18,664 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:28:18,665 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:28:18,667 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:28:18,724 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:28:20,272 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:28:21,858 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:28:22,890 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:28:22,975 - oppo_R11t - INFO - 	--> VocabGamePage.vocab_apply_game_operate
+2019-08-01 20:28:22,976 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:28:22,976 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:28:23,009 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:28:24,549 - oppo_R11t - INFO - 	--> VocabularyChoose.question_content
+2019-08-01 20:28:26,059 - oppo_R11t - INFO - 	--> VocabularyChoose.click_hint_button
+2019-08-01 20:28:28,176 - oppo_R11t - INFO - 	--> VocabularyChoose.hint_button_judge
+2019-08-01 20:28:29,034 - oppo_R11t - INFO - 	--> VocabularyChoose.wait_vocab_apply_explain_page
+2019-08-01 20:28:29,077 - oppo_R11t - INFO - 	--> VocabularyChoose.sentence_explain
+2019-08-01 20:28:29,150 - oppo_R11t - INFO - 	--> VocabularyChoose.option_button
+2019-08-01 20:28:30,415 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:28:30,415 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:28:30,416 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:28:30,880 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:28:32,884 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:28:34,484 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:28:35,077 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:28:35,180 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:28:35,303 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:28:35,303 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:28:36,367 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:28:38,124 - oppo_R11t - INFO - 	--> SpellingWord.spell_right_word_operate
+2019-08-01 20:28:38,125 - oppo_R11t - INFO -   --> SpellingWord.hint_ele_operate
+2019-08-01 20:28:38,125 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:28:38,125 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:28:39,186 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:28:41,158 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:28:41,210 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:28:41,211 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:28:44,270 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:28:45,877 - oppo_R11t - INFO - 	--> SpellingWord.hint_button
+2019-08-01 20:28:48,930 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:28:50,478 - oppo_R11t - INFO -   --> SpellingWord.dictation_word_judge
+2019-08-01 20:28:50,527 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word_judge, Success
+2019-08-01 20:28:50,528 - oppo_R11t - INFO -   --> SpellingWord.dictation_word
+2019-08-01 20:28:50,611 - oppo_R11t - INFO -   <-- SpellingWord.dictation_word, Success
+2019-08-01 20:28:50,611 - oppo_R11t - INFO -   <-- SpellingWord.hint_ele_operate, Success
+2019-08-01 20:28:51,612 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:28:51,648 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:28:52,261 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:28:52,262 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:28:52,290 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:28:53,621 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:28:53,621 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:28:53,650 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:28:54,473 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:28:54,474 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:28:54,501 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:28:55,328 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:28:55,329 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:28:55,351 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:28:56,595 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:28:56,597 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:28:56,630 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:28:57,435 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:28:57,435 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-01 20:28:57,459 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-01 20:28:58,304 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-01 20:28:58,304 - oppo_R11t - INFO - 	--> SpellingWord.finish_word
+2019-08-01 20:28:59,443 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:28:59,443 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:28:59,444 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:29:00,544 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:29:02,451 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:29:05,545 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_play_voice_page
+2019-08-01 20:29:05,605 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_operate
+2019-08-01 20:29:05,606 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:29:05,607 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:29:05,647 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-01 20:29:07,185 - oppo_R11t - INFO - 	--> PublicElementPage.fab_next_btn
+2019-08-01 20:29:08,773 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:29:08,823 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:29:08,917 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:29:09,031 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:29:09,031 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:29:10,093 - oppo_R11t - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-08-01 20:29:10,095 - oppo_R11t - ERROR - 	<-- PublicElementPage.fab_commit_btn, WebDriverException, Error
+2019-08-01 20:29:10,711 - oppo_R11t - ERROR - WebDriverException, Message: IMAGE:PublicElementPage.fab_commit_btn-20190801202910.png
+
+2019-08-01 20:29:10,712 - oppo_R11t - ERROR - 	<-- PublicElementPage.next_btn_judge, WebDriverException, Error
+2019-08-01 20:29:10,712 - oppo_R11t - ERROR - WebDriverException, Message: Message: IMAGE:PublicElementPage.fab_commit_btn-20190801202910.png
+
+
+2019-08-01 20:29:10,712 - oppo_R11t - ERROR - 	<-- ReciteWordPage.word_book_recite_operate, WebDriverException, Error
+2019-08-01 20:29:10,713 - oppo_R11t - ERROR - WebDriverException, Message: Message: Message: IMAGE:PublicElementPage.fab_commit_btn-20190801202910.png
+
+
+
+2019-08-01 20:29:10,713 - oppo_R11t - ERROR - <-- Word.test_study_word, WebDriverException, Error
+
+2019-08-01 20:29:10,713 - oppo_R11t - INFO - --> Word.tearDown
+2019-08-01 20:29:10,714 - oppo_R11t - INFO - <-- Word.tearDown, Success
+
+2019-08-01 20:29:10,731 - oppo_R11t - INFO - --> Word.setUp
+2019-08-01 20:29:10,732 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-01 20:29:10,741 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-01 20:29:16,241 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-01 20:29:16,242 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 20:29:36,667 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 20:29:36,668 - oppo_R11t - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-08-01 20:29:37,098 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-01 20:29:37,159 - oppo_R11t - INFO - <-- Word.setUp, Success
+
+2019-08-01 20:29:37,160 - oppo_R11t - INFO - --> Word.test_study_word
+2019-08-01 20:29:37,160 - oppo_R11t - INFO - 	--> WordDataHandlePage.get_student_today_word_data
+2019-08-01 20:29:37,169 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:29:37,225 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:29:37,292 - oppo_R11t - INFO - 	--> ReciteWordPage.word_book_recite_operate
+2019-08-01 20:29:37,292 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 20:29:37,337 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 20:29:37,446 - oppo_R11t - INFO - 	--> SpellingWord.explain
+2019-08-01 20:29:37,550 - oppo_R11t - INFO - 	--> PublicElementPage.next_btn_judge
+2019-08-01 20:29:37,550 - oppo_R11t - INFO - 	--> PublicElementPage.fab_commit_btn
+2019-08-01 20:29:39,007 - oppo_R11t - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-08-01 20:29:39,007 - oppo_R11t - ERROR - 	<-- PublicElementPage.fab_commit_btn, WebDriverException, Error
+2019-08-01 20:29:39,594 - oppo_R11t - ERROR - WebDriverException, Message: IMAGE:PublicElementPage.fab_commit_btn-20190801202939.png
+
+2019-08-01 20:29:39,595 - oppo_R11t - ERROR - 	<-- PublicElementPage.next_btn_judge, WebDriverException, Error
+2019-08-01 20:29:39,595 - oppo_R11t - ERROR - WebDriverException, Message: Message: IMAGE:PublicElementPage.fab_commit_btn-20190801202939.png
+
+
+2019-08-01 20:29:39,596 - oppo_R11t - ERROR - 	<-- ReciteWordPage.word_book_recite_operate, WebDriverException, Error
+2019-08-01 20:29:39,596 - oppo_R11t - ERROR - WebDriverException, Message: Message: Message: IMAGE:PublicElementPage.fab_commit_btn-20190801202939.png
+
+
+
+2019-08-01 20:29:39,596 - oppo_R11t - ERROR - <-- Word.test_study_word, WebDriverException, Error
+
+2019-08-01 20:29:39,597 - oppo_R11t - INFO - --> Word.tearDown
+2019-08-01 20:29:39,597 - oppo_R11t - INFO - <-- Word.tearDown, Success
+

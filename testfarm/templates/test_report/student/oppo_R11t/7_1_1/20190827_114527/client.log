@@ -1,0 +1,1324 @@
+2019-08-27 11:45:44,597 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:45:44,603 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:45:44,603 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:45:47,745 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:45:47,746 - oppo_R11t - INFO -   --> LoginPage.login_operate
+2019-08-27 11:45:49,747 - oppo_R11t - INFO - 	--> LoginPage.input_username
+2019-08-27 11:45:49,813 - oppo_R11t - INFO - 	--> LoginPage.input_password
+2019-08-27 11:45:51,997 - oppo_R11t - INFO - 	--> LoginPage.login_button
+2019-08-27 11:45:54,597 - oppo_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-08-27 11:45:54,598 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:45:54,598 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:45:54,599 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:45:54,599 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:45:56,273 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:45:56,273 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:45:56,274 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:45:56,526 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:45:59,462 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:46:01,897 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:46:02,373 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-27 11:46:05,203 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-27 11:46:06,489 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:46:08,290 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-27 11:46:08,412 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-27 11:46:08,534 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-27 11:46:10,754 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-27 11:46:14,501 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:46:15,308 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-27 11:46:15,484 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-27 11:46:15,757 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:46:17,435 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:46:17,436 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-08-27 11:46:17,637 - oppo_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-27 11:46:17,638 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-27 11:46:18,743 - oppo_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-08-27 11:46:20,475 - oppo_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-27 11:46:23,330 - oppo_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-27 11:46:23,330 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-08-27 11:46:23,727 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-08-27 11:46:24,560 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-27 11:46:24,661 - oppo_R11t - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-08-27 11:46:25,918 - oppo_R11t - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-08-27 11:46:26,371 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-08-27 11:46:29,693 - oppo_R11t - INFO - 	--> LibraryGamePage.play_book_games
+2019-08-27 11:46:29,693 - oppo_R11t - INFO - 	--> LibraryGamePage.game_name
+2019-08-27 11:46:30,355 - oppo_R11t - INFO - 	--> FlashCard.play_flash_game
+2019-08-27 11:46:30,356 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-27 11:46:35,568 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_copy_page
+2019-08-27 11:46:35,639 - oppo_R11t - INFO -   --> FlashCard.flash_copy_operate
+2019-08-27 11:46:35,639 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:46:35,729 - oppo_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-08-27 11:46:35,840 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:46:35,841 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:46:36,426 - oppo_R11t - INFO - 	--> FlashCardGame.copy_word
+2019-08-27 11:46:36,508 - oppo_R11t - INFO - 	--> FlashCardGame.star_button
+2019-08-27 11:46:36,622 - oppo_R11t - INFO - 	--> FlashCardGame.copy_input
+2019-08-27 11:46:38,156 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:46:38,157 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:38,183 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:46:38,569 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:46:38,570 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:46:38,571 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:38,592 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:46:39,503 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:46:39,504 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:46:39,504 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:39,537 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:46:41,622 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:46:41,623 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:46:41,623 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:41,647 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:46:42,812 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:46:42,812 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:42,831 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:46:44,385 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:46:44,386 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:44,416 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:46:45,796 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:46:45,796 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:46:45,797 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:45,813 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:46:47,425 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:46:47,425 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:46:47,426 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:47,448 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:46:48,294 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:46:50,294 - oppo_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-08-27 11:46:51,478 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:46:51,478 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:46:53,305 - oppo_R11t - INFO - 	--> FlashCardGame.copy_word
+2019-08-27 11:46:53,418 - oppo_R11t - INFO - 	--> FlashCardGame.copy_input
+2019-08-27 11:46:53,521 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:46:53,521 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:53,547 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:46:53,900 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:46:53,900 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:46:53,900 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:53,916 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:46:54,809 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:46:54,809 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:46:54,810 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:54,838 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:46:56,664 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:46:56,665 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:46:56,666 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:56,687 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:46:58,067 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:46:58,068 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:58,087 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:46:59,694 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:46:59,695 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:46:59,718 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:02,791 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:04,793 - oppo_R11t - INFO - 	--> FlashCardGame.copy_word
+2019-08-27 11:47:05,509 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:05,536 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:05,988 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:05,988 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:06,009 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:07,111 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:07,112 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:07,134 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:08,837 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:08,838 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:08,861 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:09,688 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:10,689 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:10,690 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:10,723 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:11,856 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:11,857 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:11,857 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:11,877 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:12,733 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:12,734 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:12,734 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:12,763 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:13,610 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:13,611 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:13,611 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:13,636 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:14,935 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:14,936 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:14,956 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:16,349 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:16,349 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:16,373 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:17,976 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:19,977 - oppo_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-08-27 11:47:20,708 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:47:20,709 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:47:21,542 - oppo_R11t - INFO - 	--> FlashCardGame.copy_word
+2019-08-27 11:47:21,623 - oppo_R11t - INFO - 	--> FlashCardGame.star_button
+2019-08-27 11:47:21,728 - oppo_R11t - INFO - 	--> FlashCardGame.copy_input
+2019-08-27 11:47:22,565 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:22,566 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:22,591 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:23,881 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:23,882 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:23,882 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:23,910 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:24,834 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:24,834 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:24,835 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:24,862 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:25,701 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:25,702 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:25,702 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:25,722 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:27,086 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:27,086 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:27,104 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:27,907 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:27,907 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:27,931 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:28,872 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:28,872 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:28,873 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:28,887 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:30,096 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:32,097 - oppo_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-08-27 11:47:32,931 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:47:32,931 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:47:33,560 - oppo_R11t - INFO - 	--> FlashCardGame.copy_word
+2019-08-27 11:47:33,645 - oppo_R11t - INFO - 	--> FlashCardGame.copy_input
+2019-08-27 11:47:33,734 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:33,735 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:33,752 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:34,106 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:34,106 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:34,107 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:34,132 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:34,987 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:34,987 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:34,988 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:35,020 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:36,154 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:36,154 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:36,155 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:36,172 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:37,032 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:37,033 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:37,054 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:37,964 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:37,964 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:37,987 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:40,193 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:40,194 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:40,194 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:40,211 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:41,039 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:41,040 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:41,040 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:41,060 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:42,246 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:42,247 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:42,247 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:42,279 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:43,098 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:43,099 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:47:43,099 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:47:43,119 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:47:43,991 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:47:45,991 - oppo_R11t - INFO -   <-- FlashCard.flash_copy_operate, Success
+2019-08-27 11:47:45,992 - oppo_R11t - INFO -   --> FlashCard.flash_card_result_operate
+2019-08-27 11:47:45,993 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-08-27 11:47:48,246 - oppo_R11t - INFO - 	--> FlashCard.study_sum
+2019-08-27 11:47:48,354 - oppo_R11t - INFO - 	--> FlashCard.get_start_sum
+2019-08-27 11:47:48,354 - oppo_R11t - INFO - 	--> FlashCard.study_sum
+2019-08-27 11:47:48,459 - oppo_R11t - INFO - 	--> FlashCard.cancel_or_add_star
+2019-08-27 11:47:48,459 - oppo_R11t - INFO - 	--> FlashCard.result_words
+2019-08-27 11:47:48,592 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:47:48,899 - oppo_R11t - INFO - 	--> FlashCard.word_explain
+2019-08-27 11:47:49,614 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:47:49,910 - oppo_R11t - INFO - 	--> GetAttribute.selected
+2019-08-27 11:47:49,938 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:47:51,660 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:47:51,966 - oppo_R11t - INFO - 	--> FlashCard.word_explain
+2019-08-27 11:47:54,085 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:47:54,403 - oppo_R11t - INFO - 	--> GetAttribute.selected
+2019-08-27 11:47:54,479 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:47:54,783 - oppo_R11t - INFO - 	--> FlashCard.word_explain
+2019-08-27 11:47:55,513 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:47:57,122 - oppo_R11t - INFO - 	--> GetAttribute.selected
+2019-08-27 11:47:57,157 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:48:00,185 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:48:00,966 - oppo_R11t - INFO - 	--> FlashCard.word_explain
+2019-08-27 11:48:01,668 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:48:03,219 - oppo_R11t - INFO - 	--> GetAttribute.selected
+2019-08-27 11:48:03,262 - oppo_R11t - INFO - 	--> FlashCard.get_start_sum
+2019-08-27 11:48:03,263 - oppo_R11t - INFO - 	--> FlashCard.study_sum
+2019-08-27 11:48:03,369 - oppo_R11t - INFO - 	--> FlashCard.study_star_again
+2019-08-27 11:48:03,524 - oppo_R11t - INFO -   --> Toast.find_toast
+2019-08-27 11:48:04,050 - oppo_R11t - INFO -   <-- Toast.find_toast, Success
+2019-08-27 11:48:04,050 - oppo_R11t - INFO - 	--> FlashCard.cancel_or_add_star
+2019-08-27 11:48:04,051 - oppo_R11t - INFO - 	--> FlashCard.result_words
+2019-08-27 11:48:04,709 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:48:06,783 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:48:07,757 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:48:09,355 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:48:12,628 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:48:12,933 - oppo_R11t - INFO - 	--> FlashCard.study_star_again
+2019-08-27 11:48:13,680 - oppo_R11t - INFO -   <-- FlashCard.flash_card_result_operate, Success
+2019-08-27 11:48:13,680 - oppo_R11t - INFO -   --> FlashCard.flash_copy_operate
+2019-08-27 11:48:13,681 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:48:15,653 - oppo_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-08-27 11:48:15,743 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:48:15,744 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:48:16,633 - oppo_R11t - INFO - 	--> FlashCardGame.copy_word
+2019-08-27 11:48:16,706 - oppo_R11t - INFO - 	--> FlashCardGame.star_button
+2019-08-27 11:48:16,750 - oppo_R11t - INFO - 	--> GetAttribute.selected
+2019-08-27 11:48:16,778 - oppo_R11t - INFO - 	--> FlashCardGame.copy_input
+2019-08-27 11:48:16,861 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:48:16,861 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:48:16,887 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:48:17,234 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:48:17,234 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:48:17,235 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:48:17,261 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:48:19,414 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:48:19,415 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:48:19,415 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:48:19,434 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:48:20,278 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:48:20,278 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:48:20,279 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:48:20,304 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:48:22,006 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:48:22,007 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:48:22,029 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:48:23,034 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:48:23,034 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:48:23,060 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:48:24,796 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:48:24,796 - oppo_R11t - INFO - 	--> FlashCardGame.keyboard_operate
+2019-08-27 11:48:24,797 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:48:24,814 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:48:25,606 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:48:27,608 - oppo_R11t - INFO -   <-- FlashCard.flash_copy_operate, Success
+2019-08-27 11:48:27,608 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-08-27 11:48:29,123 - oppo_R11t - INFO - 	--> FlashCard.study_sum
+2019-08-27 11:48:30,746 - oppo_R11t - INFO - 	--> ResultPage.wait_check_medal_page
+2019-08-27 11:48:41,297 - oppo_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-08-27 11:48:53,322 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-27 11:48:53,399 - oppo_R11t - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-08-27 11:48:53,817 - oppo_R11t - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-08-27 11:48:55,014 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-08-27 11:48:58,079 - oppo_R11t - INFO - 	--> LibraryGamePage.play_book_games
+2019-08-27 11:48:58,079 - oppo_R11t - INFO - 	--> LibraryGamePage.game_name
+2019-08-27 11:48:58,285 - oppo_R11t - INFO - 	--> FlashCard.play_flash_game
+2019-08-27 11:48:58,286 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-27 11:48:58,346 - oppo_R11t - INFO -   --> FlashCard.flash_study_operate
+2019-08-27 11:48:58,346 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-27 11:48:58,404 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:48:58,505 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-27 11:48:59,044 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:48:59,044 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:48:59,156 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:48:59,156 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:48:59,216 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:49:01,403 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:49:01,403 - oppo_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-08-27 11:49:01,522 - oppo_R11t - INFO - 	--> FlashCardGame.study_word
+2019-08-27 11:49:02,120 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:49:02,177 - oppo_R11t - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-27 11:49:02,267 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence
+2019-08-27 11:49:02,358 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-27 11:49:02,442 - oppo_R11t - INFO - 	--> FlashCardGame.author
+2019-08-27 11:49:02,527 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:49:02,632 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:49:04,162 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:49:04,245 - oppo_R11t - INFO - 	--> FlashCardGame.star_button
+2019-08-27 11:49:04,966 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:49:05,592 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-27 11:49:07,196 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:49:07,196 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:49:07,788 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:49:07,788 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:49:07,856 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:49:10,228 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:49:10,229 - oppo_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-08-27 11:49:10,331 - oppo_R11t - INFO - 	--> FlashCardGame.study_word
+2019-08-27 11:49:10,932 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:49:11,006 - oppo_R11t - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-27 11:49:11,117 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence
+2019-08-27 11:49:11,209 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-27 11:49:11,312 - oppo_R11t - INFO - 	--> FlashCardGame.author
+2019-08-27 11:49:11,449 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:49:11,565 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:49:12,243 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:49:13,851 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:49:14,892 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-27 11:49:16,325 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:49:16,325 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:49:16,409 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:49:16,410 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:49:16,486 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:49:18,022 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:49:18,022 - oppo_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-08-27 11:49:18,145 - oppo_R11t - INFO - 	--> FlashCardGame.study_word
+2019-08-27 11:49:19,376 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:49:19,924 - oppo_R11t - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-27 11:49:20,019 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence
+2019-08-27 11:49:20,102 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-27 11:49:20,182 - oppo_R11t - INFO - 	--> FlashCardGame.author
+2019-08-27 11:49:20,264 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:49:20,365 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:49:21,033 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:49:21,136 - oppo_R11t - INFO - 	--> FlashCardGame.star_button
+2019-08-27 11:49:22,899 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:49:23,909 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-27 11:49:25,424 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:49:25,424 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:49:25,544 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:49:25,544 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:49:25,625 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:49:27,161 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:49:27,161 - oppo_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-08-27 11:49:27,262 - oppo_R11t - INFO - 	--> FlashCardGame.study_word
+2019-08-27 11:49:28,482 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:49:28,555 - oppo_R11t - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-27 11:49:28,660 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence
+2019-08-27 11:49:28,752 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-27 11:49:28,837 - oppo_R11t - INFO - 	--> FlashCardGame.author
+2019-08-27 11:49:28,920 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:49:29,016 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:49:29,691 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:49:29,790 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:49:31,491 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-27 11:49:32,300 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:49:32,301 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:49:32,873 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:49:32,873 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:49:32,987 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:49:34,533 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:49:34,533 - oppo_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-08-27 11:49:34,628 - oppo_R11t - INFO - 	--> FlashCardGame.study_word
+2019-08-27 11:49:35,205 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:49:35,266 - oppo_R11t - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-27 11:49:35,850 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence
+2019-08-27 11:49:35,931 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-27 11:49:36,019 - oppo_R11t - INFO - 	--> FlashCardGame.author
+2019-08-27 11:49:36,091 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:49:36,186 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:49:37,592 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:49:37,690 - oppo_R11t - INFO - 	--> FlashCardGame.star_button
+2019-08-27 11:49:38,376 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:49:38,983 - oppo_R11t - INFO -   <-- FlashCard.flash_study_operate, Success
+2019-08-27 11:49:38,983 - oppo_R11t - INFO -   --> FlashCard.flash_card_result_operate
+2019-08-27 11:49:38,984 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-08-27 11:49:41,073 - oppo_R11t - INFO - 	--> FlashCard.study_sum
+2019-08-27 11:49:41,168 - oppo_R11t - INFO - 	--> FlashCard.get_start_sum
+2019-08-27 11:49:41,168 - oppo_R11t - INFO - 	--> FlashCard.study_sum
+2019-08-27 11:49:41,249 - oppo_R11t - INFO - 	--> FlashCard.cancel_or_add_star
+2019-08-27 11:49:41,250 - oppo_R11t - INFO - 	--> FlashCard.result_words
+2019-08-27 11:49:41,413 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:49:41,754 - oppo_R11t - INFO - 	--> FlashCard.word_explain
+2019-08-27 11:49:43,651 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:49:43,949 - oppo_R11t - INFO - 	--> GetAttribute.selected
+2019-08-27 11:49:43,979 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:49:44,878 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:49:45,212 - oppo_R11t - INFO - 	--> FlashCard.word_explain
+2019-08-27 11:49:46,706 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:49:47,009 - oppo_R11t - INFO - 	--> GetAttribute.selected
+2019-08-27 11:49:47,092 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:49:47,414 - oppo_R11t - INFO - 	--> FlashCard.word_explain
+2019-08-27 11:49:48,123 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:49:49,209 - oppo_R11t - INFO - 	--> GetAttribute.selected
+2019-08-27 11:49:49,721 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:49:50,923 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:49:51,254 - oppo_R11t - INFO - 	--> FlashCard.word_explain
+2019-08-27 11:49:52,850 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:49:53,168 - oppo_R11t - INFO - 	--> GetAttribute.selected
+2019-08-27 11:49:55,912 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:49:56,270 - oppo_R11t - INFO - 	--> FlashCard.word_explain
+2019-08-27 11:49:57,768 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:49:58,828 - oppo_R11t - INFO - 	--> GetAttribute.selected
+2019-08-27 11:49:58,878 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:49:59,482 - oppo_R11t - INFO - 	--> FlashCard.get_start_sum
+2019-08-27 11:49:59,483 - oppo_R11t - INFO - 	--> FlashCard.study_sum
+2019-08-27 11:50:00,093 - oppo_R11t - INFO - 	--> FlashCard.study_star_again
+2019-08-27 11:50:00,224 - oppo_R11t - INFO -   --> Toast.find_toast
+2019-08-27 11:50:01,876 - oppo_R11t - INFO -   <-- Toast.find_toast, Success
+2019-08-27 11:50:01,878 - oppo_R11t - INFO - 	--> FlashCard.cancel_or_add_star
+2019-08-27 11:50:01,878 - oppo_R11t - INFO - 	--> FlashCard.result_words
+2019-08-27 11:50:02,055 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:50:03,060 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:50:04,930 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:50:05,294 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:50:06,784 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:50:09,889 - oppo_R11t - INFO - 	--> FlashCard.word_voice
+2019-08-27 11:50:11,031 - oppo_R11t - INFO - 	--> FlashCard.word_star
+2019-08-27 11:50:11,757 - oppo_R11t - INFO - 	--> FlashCard.study_star_again
+2019-08-27 11:50:12,537 - oppo_R11t - INFO -   <-- FlashCard.flash_card_result_operate, Success
+2019-08-27 11:50:12,538 - oppo_R11t - INFO -   --> FlashCard.flash_study_operate
+2019-08-27 11:50:12,539 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-27 11:50:14,052 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:50:14,129 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-27 11:50:14,257 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:50:14,257 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:50:14,336 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:50:14,336 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:50:14,387 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:50:15,924 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:50:15,925 - oppo_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-08-27 11:50:16,045 - oppo_R11t - INFO - 	--> FlashCardGame.study_word
+2019-08-27 11:50:17,122 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:50:17,183 - oppo_R11t - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-27 11:50:17,264 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence
+2019-08-27 11:50:17,349 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-27 11:50:17,432 - oppo_R11t - INFO - 	--> FlashCardGame.author
+2019-08-27 11:50:17,528 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:50:17,639 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:50:18,295 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:50:18,391 - oppo_R11t - INFO - 	--> FlashCardGame.star_button
+2019-08-27 11:50:19,044 - oppo_R11t - INFO - 	--> GetAttribute.selected
+2019-08-27 11:50:19,076 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:50:20,184 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-08-27 11:50:20,987 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:50:20,992 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:50:21,098 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:50:21,099 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:50:21,159 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:50:23,136 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:50:23,137 - oppo_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-08-27 11:50:23,226 - oppo_R11t - INFO - 	--> FlashCardGame.study_word
+2019-08-27 11:50:23,965 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:50:24,016 - oppo_R11t - INFO - 	--> FlashCardGame.study_word_explain
+2019-08-27 11:50:24,112 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence
+2019-08-27 11:50:24,197 - oppo_R11t - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-08-27 11:50:24,288 - oppo_R11t - INFO - 	--> FlashCardGame.author
+2019-08-27 11:50:24,382 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:50:24,486 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-08-27 11:50:25,147 - oppo_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-08-27 11:50:26,247 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:50:27,025 - oppo_R11t - INFO -   <-- FlashCard.flash_study_operate, Success
+2019-08-27 11:50:27,026 - oppo_R11t - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-08-27 11:50:29,218 - oppo_R11t - INFO - 	--> FlashCard.study_sum
+2019-08-27 11:50:30,956 - oppo_R11t - INFO - 	--> ResultPage.wait_check_medal_page
+2019-08-27 11:50:42,021 - oppo_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-08-27 11:50:52,228 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-27 11:50:53,730 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-27 11:50:55,629 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 11:50:55,630 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 11:50:55,630 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 11:50:55,631 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:50:55,632 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:50:55,632 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:51:01,752 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:51:01,753 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:51:03,157 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:51:03,157 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:51:03,158 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:51:03,158 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:51:03,159 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:51:04,023 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:51:04,024 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:51:04,024 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:51:04,208 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:51:08,347 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:51:11,174 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:51:11,949 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-27 11:51:15,107 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-27 11:51:16,356 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:51:18,357 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-27 11:51:18,441 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-27 11:51:19,509 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-27 11:51:19,556 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-27 11:51:24,195 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:51:25,101 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-27 11:51:25,266 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-27 11:51:25,450 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:51:27,082 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:51:27,082 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-08-27 11:51:27,265 - oppo_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-27 11:51:27,265 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-27 11:51:28,353 - oppo_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-08-27 11:51:28,613 - oppo_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-27 11:51:30,184 - oppo_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-27 11:51:30,185 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-08-27 11:51:31,123 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-08-27 11:51:31,475 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-27 11:51:31,530 - oppo_R11t - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-08-27 11:51:31,883 - oppo_R11t - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-08-27 11:51:33,282 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-08-27 11:51:43,359 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-27 11:51:53,610 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 11:51:53,611 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 11:51:53,611 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 11:51:53,612 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:51:53,612 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:51:53,613 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:51:58,693 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:51:58,695 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:52:19,431 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:52:19,432 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 11:52:19,433 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 11:52:20,128 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 11:52:28,064 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:52:28,633 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:52:28,634 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:52:28,635 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:52:28,635 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:52:28,636 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:52:29,275 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:52:29,276 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:52:29,277 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:52:29,477 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:52:32,721 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:52:35,103 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:52:35,237 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-27 11:52:37,714 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-27 11:52:39,000 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:52:40,567 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-27 11:52:40,644 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-27 11:52:40,769 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-27 11:52:41,757 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-27 11:52:46,206 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:52:46,794 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-27 11:52:47,411 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-27 11:52:47,450 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:52:49,557 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:52:49,558 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-08-27 11:52:49,681 - oppo_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-27 11:52:49,681 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-27 11:52:50,763 - oppo_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-08-27 11:52:52,630 - oppo_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-27 11:52:53,631 - oppo_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-27 11:52:53,631 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-08-27 11:52:55,781 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-08-27 11:52:56,119 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-27 11:52:56,174 - oppo_R11t - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-08-27 11:52:56,523 - oppo_R11t - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-08-27 11:52:56,887 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-08-27 11:53:07,935 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-27 11:53:18,195 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 11:53:18,196 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 11:53:18,197 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 11:53:18,197 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:53:18,198 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:53:18,198 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:53:23,685 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:53:23,688 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:53:44,531 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:53:44,532 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 11:53:44,533 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 11:53:45,216 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 11:53:53,056 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:53:53,891 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:53:53,891 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:53:53,892 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:53:53,893 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:53:53,893 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:53:54,307 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:53:54,308 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:53:54,308 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:53:54,500 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:53:58,327 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:54:01,905 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:54:02,243 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-27 11:54:05,561 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-27 11:54:06,836 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:54:08,779 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-27 11:54:08,858 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-27 11:54:08,981 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-27 11:54:11,564 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-27 11:54:14,778 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:54:15,730 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-27 11:54:15,852 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-27 11:54:15,909 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:54:17,781 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:54:17,781 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-08-27 11:54:17,929 - oppo_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-27 11:54:17,929 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-27 11:54:19,009 - oppo_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-08-27 11:54:20,806 - oppo_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-27 11:54:23,563 - oppo_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-27 11:54:23,564 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-08-27 11:54:24,053 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-08-27 11:54:24,453 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-27 11:54:24,501 - oppo_R11t - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-08-27 11:54:26,623 - oppo_R11t - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-08-27 11:54:27,047 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-08-27 11:54:37,296 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-27 11:54:47,345 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-27 11:54:57,519 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 11:54:57,522 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 11:54:57,523 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 11:54:57,524 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:54:57,525 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:54:57,525 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:55:02,535 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:55:02,535 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:55:25,580 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:55:25,585 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 11:55:25,586 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 11:55:26,242 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 11:55:34,124 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:55:34,563 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:55:34,564 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:55:34,564 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:55:34,564 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:55:34,565 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:55:35,013 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:55:35,013 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:55:35,014 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:55:35,200 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:55:38,783 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:55:42,208 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:55:42,903 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-27 11:55:45,848 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-27 11:55:47,123 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:55:49,084 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-27 11:55:49,169 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-27 11:55:49,286 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-27 11:55:51,863 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-27 11:55:55,064 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:55:55,664 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-27 11:55:55,801 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-27 11:55:55,839 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:55:58,311 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:55:58,313 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-08-27 11:55:59,035 - oppo_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-27 11:55:59,036 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-27 11:56:01,048 - oppo_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-08-27 11:56:02,500 - oppo_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-27 11:56:04,362 - oppo_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-27 11:56:04,364 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-08-27 11:56:04,774 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-08-27 11:56:05,115 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-27 11:56:05,176 - oppo_R11t - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-08-27 11:56:05,864 - oppo_R11t - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-08-27 11:56:06,990 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-08-27 11:56:09,970 - oppo_R11t - INFO - 	--> LibraryGamePage.play_book_games
+2019-08-27 11:56:09,970 - oppo_R11t - INFO - 	--> LibraryGamePage.game_name
+2019-08-27 11:56:10,132 - oppo_R11t - INFO - 	--> SingleChoice.single_choice_operate
+2019-08-27 11:56:10,133 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:56:10,205 - oppo_R11t - INFO - 	--> SingleChoiceGame.wait_check_single_choice_page
+2019-08-27 11:56:10,255 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:56:10,256 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:56:10,310 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:56:11,984 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:56:11,985 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:56:11,985 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:56:13,076 - oppo_R11t - INFO - 	--> PublicPage.question
+2019-08-27 11:56:13,152 - oppo_R11t - INFO - 	--> PublicPage.opt_char
+2019-08-27 11:56:13,207 - oppo_R11t - INFO - 	--> PublicPage.opt_text
+2019-08-27 11:56:15,049 - oppo_R11t - INFO - 	--> SingleChoiceGame.right_choice
+2019-08-27 11:56:16,108 - oppo_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-08-27 11:56:16,184 - oppo_R11t - INFO -   --> PublicPage.next_btn_operate
+2019-08-27 11:56:16,185 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:56:16,185 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:56:16,240 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:56:17,984 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:56:17,985 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:56:19,600 - oppo_R11t - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-08-27 11:56:19,601 - oppo_R11t - INFO - 	--> SingleChoiceGame.wait_check_single_choice_page
+2019-08-27 11:56:20,012 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:56:20,012 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:56:20,063 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:56:22,186 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:56:22,186 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:56:22,187 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:56:22,264 - oppo_R11t - INFO - 	--> PublicPage.question
+2019-08-27 11:56:22,356 - oppo_R11t - INFO - 	--> PublicPage.opt_char
+2019-08-27 11:56:22,404 - oppo_R11t - INFO - 	--> PublicPage.opt_text
+2019-08-27 11:56:24,257 - oppo_R11t - INFO - 	--> SingleChoiceGame.right_choice
+2019-08-27 11:56:25,363 - oppo_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-08-27 11:56:25,433 - oppo_R11t - INFO -   --> PublicPage.next_btn_operate
+2019-08-27 11:56:25,434 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:56:25,435 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:56:25,493 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:56:27,028 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:56:27,029 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:56:28,647 - oppo_R11t - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-08-27 11:56:28,648 - oppo_R11t - INFO - 	--> SingleChoiceGame.wait_check_single_choice_page
+2019-08-27 11:56:29,010 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:56:29,011 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:56:29,068 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:56:31,333 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:56:31,333 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:56:31,334 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:56:31,420 - oppo_R11t - INFO - 	--> PublicPage.question
+2019-08-27 11:56:32,004 - oppo_R11t - INFO - 	--> PublicPage.opt_char
+2019-08-27 11:56:32,055 - oppo_R11t - INFO - 	--> PublicPage.opt_text
+2019-08-27 11:56:33,417 - oppo_R11t - INFO - 	--> SingleChoiceGame.right_choice
+2019-08-27 11:56:35,010 - oppo_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-08-27 11:56:35,089 - oppo_R11t - INFO -   --> PublicPage.next_btn_operate
+2019-08-27 11:56:35,089 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:56:35,090 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:56:35,143 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:56:37,406 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:56:37,407 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:56:39,533 - oppo_R11t - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-08-27 11:56:39,534 - oppo_R11t - INFO - 	--> SingleChoiceGame.wait_check_single_choice_page
+2019-08-27 11:56:40,985 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:56:40,986 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:56:41,068 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:56:44,056 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:56:44,056 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-08-27 11:56:44,057 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:56:44,142 - oppo_R11t - INFO - 	--> PublicPage.question
+2019-08-27 11:56:44,219 - oppo_R11t - INFO - 	--> PublicPage.opt_char
+2019-08-27 11:56:44,261 - oppo_R11t - INFO - 	--> PublicPage.opt_text
+2019-08-27 11:56:46,055 - oppo_R11t - INFO - 	--> SingleChoiceGame.right_choice
+2019-08-27 11:56:47,014 - oppo_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-08-27 11:56:47,083 - oppo_R11t - INFO -   --> PublicPage.next_btn_operate
+2019-08-27 11:56:47,083 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:56:47,084 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:56:47,130 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:56:50,008 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:56:50,008 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:56:51,625 - oppo_R11t - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-08-27 11:56:51,626 - oppo_R11t - INFO -   --> LibraryPubicPage.judge_timer
+2019-08-27 11:56:51,626 - oppo_R11t - INFO -   <-- LibraryPubicPage.judge_timer, Success
+2019-08-27 11:56:51,627 - oppo_R11t - INFO - 	--> ResultPage.wait_check_medal_page
+2019-08-27 11:57:02,240 - oppo_R11t - INFO - 	--> LibraryGamePage.check_bank_result
+2019-08-27 11:57:02,242 - oppo_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-08-27 11:57:02,306 - oppo_R11t - INFO - 	--> ResultPage.check_result_btn
+2019-08-27 11:57:04,413 - oppo_R11t - INFO -   --> ClozePage.cloze_result_operate
+2019-08-27 11:57:04,414 - oppo_R11t - INFO - 	--> ResultPage.wait_check_answer_page
+2019-08-27 11:57:04,959 - oppo_R11t - INFO - 	--> PublicPage.wait_check_dragger_btn
+2019-08-27 11:57:11,406 - oppo_R11t - INFO - 	--> PublicPage.get_ques_opt_scale
+2019-08-27 11:57:11,408 - oppo_R11t - INFO - 	--> PublicPage.question
+2019-08-27 11:57:12,153 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_question
+2019-08-27 11:57:12,236 - oppo_R11t - INFO - 	--> PublicPage.get_last_text_id
+2019-08-27 11:57:12,463 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_text
+2019-08-27 11:57:12,754 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_char
+2019-08-27 11:57:14,004 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_char
+2019-08-27 11:57:14,365 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_char
+2019-08-27 11:57:14,812 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_text
+2019-08-27 11:57:15,100 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_char
+2019-08-27 11:57:15,438 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_char
+2019-08-27 11:57:15,841 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_char
+2019-08-27 11:57:20,020 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_text
+2019-08-27 11:57:20,658 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_char
+2019-08-27 11:57:20,997 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_char
+2019-08-27 11:57:21,398 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_char
+2019-08-27 11:57:21,780 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_question
+2019-08-27 11:57:21,855 - oppo_R11t - INFO - 	--> PublicPage.get_last_text_id
+2019-08-27 11:57:26,123 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_text
+2019-08-27 11:57:26,474 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_char
+2019-08-27 11:57:26,900 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_char
+2019-08-27 11:57:27,240 - oppo_R11t - INFO - 	--> LibraryPubicPage.result_opt_char
+2019-08-27 11:57:29,182 - oppo_R11t - INFO -   <-- ClozePage.cloze_result_operate, Success
+2019-08-27 11:57:29,183 - oppo_R11t - INFO - 	--> ResultPage.result_multi_data_check
+2019-08-27 11:57:29,183 - oppo_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-08-27 11:57:30,549 - oppo_R11t - INFO - 	--> ResultPage.correct_rate
+2019-08-27 11:57:30,612 - oppo_R11t - INFO - 	--> ResultPage.score
+2019-08-27 11:57:30,674 - oppo_R11t - INFO - 	--> ResultPage.star
+2019-08-27 11:57:30,746 - oppo_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-08-27 11:57:30,798 - oppo_R11t - INFO - 	--> ResultPage.again_btn
+2019-08-27 11:57:30,889 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-08-27 11:57:43,004 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-27 11:57:53,982 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 11:57:53,984 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 11:57:53,984 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 11:57:53,985 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:57:53,986 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:57:53,986 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:58:00,079 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:58:00,081 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:58:20,205 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:58:20,208 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 11:58:20,208 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 11:58:20,919 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 11:58:28,825 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:58:30,231 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:58:30,232 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 11:58:30,233 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 11:58:30,233 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 11:58:30,233 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:58:30,693 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:58:30,694 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-27 11:58:30,695 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-27 11:58:30,867 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:58:33,799 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-27 11:58:36,194 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-27 11:58:36,330 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-27 11:58:37,881 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-27 11:58:39,390 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:58:40,526 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-27 11:58:40,606 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-27 11:58:40,728 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-27 11:58:42,826 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-27 11:58:46,381 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-27 11:58:48,455 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-27 11:58:48,564 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-08-27 11:58:48,788 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:58:51,268 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:58:51,269 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-08-27 11:58:51,452 - oppo_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-08-27 11:58:51,453 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-08-27 11:58:52,554 - oppo_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-08-27 11:58:52,974 - oppo_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-08-27 11:58:54,276 - oppo_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-08-27 11:58:54,277 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-08-27 11:58:54,702 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-08-27 11:58:55,301 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-08-27 11:58:55,362 - oppo_R11t - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-08-27 11:58:55,623 - oppo_R11t - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-08-27 11:58:55,886 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-08-27 11:58:57,879 - oppo_R11t - INFO - 	--> LibraryGamePage.play_book_games
+2019-08-27 11:58:57,880 - oppo_R11t - INFO - 	--> LibraryGamePage.game_name
+2019-08-27 11:58:58,041 - oppo_R11t - INFO -   --> ListenSpell.listen_spell_operate
+2019-08-27 11:58:58,044 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-08-27 11:58:58,109 - oppo_R11t - INFO - 	--> ListenSpellGame.wait_check_listen_spell_word_page
+2019-08-27 11:58:58,236 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:58:58,237 - oppo_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-08-27 11:58:58,276 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:59:00,945 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:59:00,947 - oppo_R11t - INFO - 	--> ListenSpellGame.input_word
+2019-08-27 11:59:01,019 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:01,038 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:01,373 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:01,376 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:01,404 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:02,223 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:02,223 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:02,245 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:04,152 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:04,152 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:04,186 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:05,141 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:05,142 - oppo_R11t - INFO -   --> PublicPage.next_btn_operate
+2019-08-27 11:59:05,142 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:59:05,143 - oppo_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-08-27 11:59:06,853 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:59:09,839 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:59:09,840 - oppo_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-08-27 11:59:11,423 - oppo_R11t - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-08-27 11:59:11,425 - oppo_R11t - INFO - 	--> ListenSpellGame.input_word
+2019-08-27 11:59:12,860 - oppo_R11t - INFO - 	--> ListenSpellGame.word_explain
+2019-08-27 11:59:12,944 - oppo_R11t - INFO - 	--> ListenSpellGame.word_explain
+2019-08-27 11:59:13,022 - oppo_R11t - INFO - 	--> ListenSpellGame.input_word
+2019-08-27 11:59:13,105 - oppo_R11t - INFO - 	--> ListenSpellGame.click_voice
+2019-08-27 11:59:13,201 - oppo_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-08-27 11:59:13,867 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:59:13,978 - oppo_R11t - INFO - 	--> ListenSpellGame.wait_check_listen_spell_word_page
+2019-08-27 11:59:15,835 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:59:15,836 - oppo_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-08-27 11:59:18,841 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:59:21,843 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:59:21,844 - oppo_R11t - INFO - 	--> ListenSpellGame.input_word
+2019-08-27 11:59:21,929 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:21,953 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:22,309 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:22,309 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:22,343 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:23,149 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:23,149 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:23,171 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:25,177 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:25,177 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:25,206 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:26,488 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:26,488 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:26,513 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:29,069 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:29,070 - oppo_R11t - INFO -   --> PublicPage.next_btn_operate
+2019-08-27 11:59:29,070 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:59:29,071 - oppo_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-08-27 11:59:30,854 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:59:33,871 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:59:33,873 - oppo_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-08-27 11:59:36,408 - oppo_R11t - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-08-27 11:59:36,408 - oppo_R11t - INFO - 	--> ListenSpellGame.input_word
+2019-08-27 11:59:36,954 - oppo_R11t - INFO - 	--> ListenSpellGame.word_explain
+2019-08-27 11:59:37,036 - oppo_R11t - INFO - 	--> ListenSpellGame.word_explain
+2019-08-27 11:59:37,871 - oppo_R11t - INFO - 	--> ListenSpellGame.input_word
+2019-08-27 11:59:37,959 - oppo_R11t - INFO - 	--> ListenSpellGame.click_voice
+2019-08-27 11:59:38,053 - oppo_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-08-27 11:59:38,849 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-08-27 11:59:38,928 - oppo_R11t - INFO - 	--> ListenSpellGame.wait_check_listen_spell_word_page
+2019-08-27 11:59:40,841 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:59:40,842 - oppo_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-08-27 11:59:40,897 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:59:42,986 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:59:42,988 - oppo_R11t - INFO - 	--> ListenSpellGame.input_word
+2019-08-27 11:59:43,057 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:43,076 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:43,450 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:43,451 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:43,480 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:45,164 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:45,165 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:45,184 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:46,359 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:46,360 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:46,380 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:47,175 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:47,176 - oppo_R11t - INFO -   --> Keyboard.games_keyboard
+2019-08-27 11:59:47,207 - oppo_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-08-27 11:59:48,161 - oppo_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-08-27 11:59:48,161 - oppo_R11t - INFO -   --> PublicPage.next_btn_operate
+2019-08-27 11:59:48,162 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-08-27 11:59:48,162 - oppo_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-08-27 11:59:49,075 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-08-27 11:59:50,833 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-08-27 11:59:50,833 - oppo_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-08-27 11:59:52,419 - oppo_R11t - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-08-27 11:59:52,421 - oppo_R11t - INFO - 	--> ListenSpellGame.input_word
+2019-08-27 11:59:52,448 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8214
+
+2019-08-27 11:59:52,449 - oppo_R11t - ERROR - 	<-- ListenSpellGame.input_word, WebDriverException, Error
+2019-08-27 11:59:52,455 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8214
+
+2019-08-27 11:59:52,456 - oppo_R11t - ERROR -   <-- ListenSpell.listen_spell_operate, WebDriverException, Error
+2019-08-27 11:59:52,461 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8214
+
+2019-08-27 11:59:52,462 - oppo_R11t - ERROR - 	<-- LibraryGamePage.play_book_games, WebDriverException, Error
+2019-08-27 11:59:52,470 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8214
+
+2019-08-27 11:59:52,483 - oppo_R11t - ERROR - <-- PlayAllGame.test_all_game, WebDriverException, Error
+
+2019-08-27 11:59:52,491 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 11:59:52,492 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 11:59:52,505 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:59:52,505 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:59:52,505 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:59:52,514 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:59:52,515 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:59:52,522 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:59:52,523 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 11:59:52,523 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 11:59:56,955 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s a973dcdc shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: 'error: device 'a973dcdc' not found'; Code: '1'
+
+2019-08-27 11:59:56,955 - oppo_R11t - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-27 11:59:56,962 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8214
+
+2019-08-27 11:59:56,962 - oppo_R11t - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-27 11:59:56,968 - oppo_R11t - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8214
+
+2019-08-27 11:59:56,969 - oppo_R11t - ERROR - <-- PlayAllGame.setUp, WebDriverException, Error
+
+2019-08-27 11:59:56,980 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 11:59:56,981 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 11:59:56,981 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 11:59:56,992 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 11:59:56,992 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 11:59:57,007 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 11:59:57,008 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 11:59:57,008 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 11:59:57,748 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 12:00:05,696 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:05,709 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:05,709 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:05,718 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:05,719 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 12:00:05,719 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 12:00:05,719 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 12:00:05,719 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:05,727 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:05,727 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 12:00:05,727 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 12:00:05,728 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 12:00:05,728 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 12:00:05,728 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 12:00:05,728 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:05,741 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:05,741 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:05,751 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:05,751 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 12:00:05,752 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 12:00:06,357 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 12:00:14,182 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:14,193 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:14,194 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:14,203 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:14,204 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 12:00:14,204 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 12:00:14,205 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 12:00:14,205 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:14,213 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:14,213 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 12:00:14,214 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 12:00:14,214 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 12:00:14,214 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 12:00:14,215 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 12:00:14,215 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:14,226 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:14,227 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:14,237 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:14,238 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 12:00:14,238 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 12:00:14,861 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 12:00:22,674 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:22,686 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:22,687 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:22,696 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:22,696 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 12:00:22,696 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 12:00:22,697 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 12:00:22,697 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:22,707 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:22,707 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 12:00:22,707 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 12:00:22,708 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 12:00:22,708 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 12:00:22,708 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 12:00:22,709 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:22,721 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:22,721 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:22,731 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:22,731 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 12:00:22,731 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 12:00:23,378 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 12:00:31,193 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:31,206 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:31,206 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:31,216 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:31,216 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 12:00:31,216 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 12:00:31,217 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 12:00:31,217 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:31,226 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:31,227 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 12:00:31,227 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 12:00:31,227 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 12:00:31,228 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 12:00:31,228 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 12:00:31,229 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:31,240 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:31,241 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:31,249 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:31,249 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 12:00:31,249 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 12:00:31,883 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 12:00:39,667 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:39,680 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:39,680 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:39,690 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:39,690 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 12:00:39,690 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 12:00:39,691 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 12:00:39,691 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:39,700 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:39,701 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 12:00:39,701 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 12:00:39,703 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 12:00:39,706 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 12:00:39,706 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 12:00:39,706 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:39,717 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:39,717 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:39,727 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:39,728 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 12:00:39,728 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 12:00:40,320 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 12:00:48,125 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:48,144 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:48,145 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:48,157 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:48,158 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 12:00:48,158 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 12:00:48,158 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 12:00:48,158 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:48,171 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:48,171 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 12:00:48,172 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 12:00:48,173 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 12:00:48,173 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 12:00:48,173 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 12:00:48,174 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:48,182 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:48,183 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:48,192 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:48,193 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 12:00:48,193 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 12:00:48,838 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 12:00:56,575 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:56,585 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:56,586 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:56,598 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:56,598 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 12:00:56,598 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 12:00:56,599 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 12:00:56,599 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:56,609 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:56,609 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 12:00:56,609 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 12:00:56,610 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 12:00:56,610 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 12:00:56,610 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 12:00:56,611 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:00:56,622 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:00:56,632 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:00:56,650 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:00:56,650 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 12:00:56,650 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 12:00:57,269 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 12:01:05,154 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:05,165 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:05,166 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:01:05,175 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:01:05,175 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 12:01:05,175 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 12:01:05,176 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 12:01:05,176 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:05,187 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:05,187 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 12:01:05,188 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 12:01:05,188 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 12:01:05,189 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 12:01:05,189 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 12:01:05,190 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:01:05,199 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:01:05,199 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:05,209 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:05,210 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 12:01:05,210 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 12:01:05,880 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 12:01:13,656 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:13,671 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:13,671 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:01:13,681 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:01:13,681 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 12:01:13,681 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 12:01:13,682 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 12:01:13,682 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:13,692 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:13,692 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 12:01:13,693 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 12:01:13,693 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 12:01:13,693 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 12:01:13,693 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 12:01:13,694 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:01:13,703 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:01:13,704 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:13,713 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:13,713 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 12:01:13,713 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 12:01:14,371 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 12:01:22,694 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:22,710 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:22,711 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:01:22,720 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:01:22,721 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 12:01:22,721 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 12:01:22,721 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 12:01:22,721 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:22,731 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:22,732 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 12:01:22,732 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 12:01:22,732 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 12:01:22,733 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-08-27 12:01:22,733 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 12:01:22,734 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:01:22,743 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:01:22,744 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:22,752 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:22,753 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 12:01:22,753 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 12:01:23,384 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 12:01:31,404 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:31,415 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:31,415 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:01:31,425 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:01:31,425 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 12:01:31,425 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-08-27 12:01:31,426 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-08-27 12:01:31,426 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:31,434 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:31,434 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-08-27 12:01:31,434 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-08-27 12:01:31,435 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-08-27 12:01:31,436 - oppo_R11t - INFO - --> WKGame.setUp
+2019-08-27 12:01:31,436 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 12:01:31,436 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:01:31,446 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:01:31,447 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:31,457 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:31,458 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 12:01:31,458 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 12:01:32,024 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 12:01:39,858 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:39,873 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:39,873 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:01:39,882 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:01:39,882 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 12:01:39,882 - oppo_R11t - INFO - <-- WKGame.setUp, Success
+
+2019-08-27 12:01:39,883 - oppo_R11t - INFO - --> WKGame.test_wk_game
+2019-08-27 12:01:39,883 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:39,892 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:39,892 - oppo_R11t - INFO - <-- WKGame.test_wk_game, Success
+
+2019-08-27 12:01:39,893 - oppo_R11t - INFO - --> WKGame.tearDown
+2019-08-27 12:01:39,893 - oppo_R11t - INFO - <-- WKGame.tearDown, Success
+
+2019-08-27 12:01:39,894 - oppo_R11t - INFO - --> FlashCard.setUp
+2019-08-27 12:01:39,894 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-27 12:01:39,894 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:01:39,902 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:01:39,902 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:39,911 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:39,911 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-08-27 12:01:39,911 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-08-27 12:01:40,588 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-08-27 12:01:48,369 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:48,381 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:48,382 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-27 12:01:48,391 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-27 12:01:48,391 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-27 12:01:48,392 - oppo_R11t - INFO - <-- FlashCard.setUp, Success
+
+2019-08-27 12:01:48,392 - oppo_R11t - INFO - --> FlashCard.test_check_speak_game_is_unit
+2019-08-27 12:01:48,393 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-27 12:01:48,403 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-27 12:01:48,404 - oppo_R11t - INFO - <-- FlashCard.test_check_speak_game_is_unit, Success
+
+2019-08-27 12:01:48,404 - oppo_R11t - INFO - --> FlashCard.tearDown
+2019-08-27 12:01:48,405 - oppo_R11t - INFO - <-- FlashCard.tearDown, Success
+

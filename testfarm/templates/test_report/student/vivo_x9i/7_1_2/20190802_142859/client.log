@@ -1,0 +1,41 @@
+2019-08-02 14:29:29,778 - vivo_x9i - INFO - --> Word.setUp
+2019-08-02 14:29:29,779 - vivo_x9i - INFO -   --> LoginPage.app_status
+2019-08-02 14:29:29,779 - vivo_x9i - INFO -   --> LoginPage.wait_check_page
+2019-08-02 14:29:32,769 - vivo_x9i - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-02 14:29:32,769 - vivo_x9i - INFO -   --> LoginPage.login_operate
+2019-08-02 14:29:34,770 - vivo_x9i - INFO - 	--> LoginPage.input_username
+2019-08-02 14:29:34,842 - vivo_x9i - INFO - 	--> LoginPage.input_password
+2019-08-02 14:29:36,759 - vivo_x9i - INFO - 	--> LoginPage.login_button
+2019-08-02 14:29:39,355 - vivo_x9i - INFO -   <-- LoginPage.login_operate, Success
+2019-08-02 14:29:39,356 - vivo_x9i - INFO -   <-- LoginPage.app_status, Success
+2019-08-02 14:29:39,483 - vivo_x9i - INFO - <-- Word.setUp, Success
+
+2019-08-02 14:29:39,484 - vivo_x9i - INFO - --> Word.test_study_word
+2019-08-02 14:29:39,484 - vivo_x9i - INFO -   --> HomePage.wait_check_home_page
+2019-08-02 14:29:59,762 - vivo_x9i - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-02 14:29:59,762 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-02 14:30:14,331 - vivo_x9i - INFO - 	--> WordBookRebuildPage.wait_check_start_wrong_again_page
+2019-08-02 14:30:14,344 - vivo_x9i - INFO - 	--> ResultPage.wait_check_result_page
+2019-08-02 14:30:14,355 - vivo_x9i - INFO - <-- Word.test_study_word, Success
+
+2019-08-02 14:30:14,355 - vivo_x9i - INFO - --> Word.tearDown
+2019-08-02 14:30:14,355 - vivo_x9i - INFO - <-- Word.tearDown, Success
+
+2019-08-02 14:30:14,356 - vivo_x9i - INFO - --> Word.setUp
+2019-08-02 14:30:14,356 - vivo_x9i - INFO -   --> LoginPage.app_status
+2019-08-02 14:30:14,356 - vivo_x9i - INFO -   --> LoginPage.wait_check_page
+2019-08-02 14:30:14,366 - vivo_x9i - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-02 14:30:14,366 - vivo_x9i - INFO -   --> HomePage.wait_check_home_page
+2019-08-02 14:30:14,376 - vivo_x9i - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-02 14:30:14,377 - vivo_x9i - INFO - 	--> PublicElementPage.wait_check_game_title_page
+2019-08-02 14:30:14,387 - vivo_x9i - INFO - 	--> LoginPage.close_app
+2019-08-02 14:30:15,437 - vivo_x9i - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s 2fb1d8b9 shell am force-stop com.vanthink.student.debug' exited with code 1'; Stderr: 'error: device '2fb1d8b9' not found'; Code: '1'
+
+2019-08-02 14:30:15,438 - vivo_x9i - ERROR - 	<-- LoginPage.close_app, WebDriverException, Error
+2019-08-02 14:30:15,445 - vivo_x9i - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8204
+
+2019-08-02 14:30:15,445 - vivo_x9i - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-08-02 14:30:15,451 - vivo_x9i - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8204
+
+2019-08-02 14:30:15,452 - vivo_x9i - ERROR - <-- Word.setUp, WebDriverException, Error
+

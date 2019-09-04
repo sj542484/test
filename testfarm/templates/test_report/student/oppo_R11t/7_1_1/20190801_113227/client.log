@@ -1,0 +1,43 @@
+2019-08-01 11:32:48,712 - oppo_R11t - INFO - --> Word.setUp
+2019-08-01 11:32:48,713 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-08-01 11:32:48,714 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-08-01 11:32:51,884 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-08-01 11:32:51,884 - oppo_R11t - INFO -   --> LoginPage.login_operate
+2019-08-01 11:32:53,885 - oppo_R11t - INFO - 	--> LoginPage.input_username
+2019-08-01 11:32:53,947 - oppo_R11t - INFO - 	--> LoginPage.input_password
+2019-08-01 11:32:56,532 - oppo_R11t - INFO - 	--> LoginPage.login_button
+2019-08-01 11:32:59,148 - oppo_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-08-01 11:32:59,148 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-08-01 11:32:59,208 - oppo_R11t - INFO - <-- Word.setUp, Success
+
+2019-08-01 11:32:59,208 - oppo_R11t - INFO - --> Word.test_study_word
+2019-08-01 11:32:59,209 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 11:33:05,012 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 11:33:05,016 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-08-01 11:33:05,017 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-08-01 11:33:05,255 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 11:33:08,197 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-08-01 11:33:10,669 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-08-01 11:33:11,220 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-08-01 11:33:12,813 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-08-01 11:33:14,318 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 11:33:15,284 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-08-01 11:33:15,401 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-08-01 11:33:15,555 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-08-01 11:33:17,212 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-08-01 11:33:20,953 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-08-01 11:33:21,886 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-08-01 11:33:21,998 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-08-01 11:33:23,278 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-08-01 11:33:23,278 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-08-01 11:33:23,511 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_start_page
+2019-08-01 11:33:24,590 - oppo_R11t - INFO - 	--> WordBookRebuildPage.word_start_button
+2019-08-01 11:33:30,685 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_game_title_page
+2019-08-01 11:33:30,740 - oppo_R11t - INFO - 	--> PublicElementPage.game_title
+2019-08-01 11:33:30,812 - oppo_R11t - INFO - 	--> WordBookRebuildPage.wait_check_start_wrong_again_page
+2019-08-01 11:33:46,231 - oppo_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-08-01 11:33:51,398 - oppo_R11t - INFO - <-- Word.test_study_word, Success
+
+2019-08-01 11:33:51,399 - oppo_R11t - INFO - --> Word.tearDown
+2019-08-01 11:33:51,400 - oppo_R11t - INFO - <-- Word.tearDown, Success
+
