@@ -8,6 +8,9 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
+from app.honor.student.listen_everyday.object_page.game_link_sentence import LinkWordSentencePage
+from app.honor.student.listen_everyday.object_page.game_listen_choice import ListenChoicePage
+from app.honor.student.listen_everyday.object_page.game_select_image import ListenSelectImagePage
 from app.honor.student.login.object_page.home_page import HomePage
 from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
@@ -63,7 +66,7 @@ class ListenResultPage(BasePage):
         """微信登录页 以题目的text作为依据"""
         locator = (By.XPATH, '//android.widget.TextView[contains(@text,"登录微信")]')
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -73,7 +76,7 @@ class ListenResultPage(BasePage):
         """音频播放按钮的id"""
         locator = (By.ID, '{}seek_bar'.format(self.id_type()))
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -83,7 +86,7 @@ class ListenResultPage(BasePage):
         """听音选题结果页 -- 以图片的id作为依据"""
         locator = (By.ID, '{}img'.format(self.id_type()))
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -93,7 +96,7 @@ class ListenResultPage(BasePage):
         """听后选择结果页 -- 以选项的id作为依据"""
         locator = (By.ID, '{}tv_char'.format(self.id_type()))
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -102,7 +105,7 @@ class ListenResultPage(BasePage):
     def wait_sentence_speak_page(self):
         locator = (By.ID, '{}iv_speak'.format(self.id_type()))
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -120,7 +123,7 @@ class ListenResultPage(BasePage):
     def wait_check_listen_text(self):
         locator = (By.ID, '{}fs_content'.format(self.id_type()))
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -291,13 +294,9 @@ class ListenResultPage(BasePage):
         ele = self.driver.find_element_by_id('{}fs_content'.format(self.id_type()))
         return ele
 
-    @teststep
-    def last_text_id(self):
-        last_text_attr = self.driver.find_elements_by_class_name('')
-
 
     @teststeps
-    def result_page_operate(self, total, question_info):
+    def result_page_operate(self, bank_info):
         if self.wait_check_result_page():
             print('----- < 结果页 > -----\n')
             today_excise = self.today_excise_time()
@@ -312,7 +311,7 @@ class ListenResultPage(BasePage):
             self.share_page_operate()
             if self.wait_check_result_page():
                 self.check_answer_button().click()
-                self.answer_page_operate(total, question_info)
+                self.answer_page_operate(bank_info)
 
     @teststeps
     def share_page_operate(self):
@@ -346,7 +345,7 @@ class ListenResultPage(BasePage):
         self.home.click_back_up_button()
 
     @teststeps
-    def answer_page_operate(self, total, question_info):
+    def answer_page_operate(self, bank_info):
         if self.wait_check_audio_bar_page():
             self.audio_play().click()
             if self.audio_time().text == '00:00/00:00':
@@ -354,7 +353,7 @@ class ListenResultPage(BasePage):
 
             if self.wait_check_img_result_page():
                 print('----- < 听音选图答案详情页 > -----', '\n')
-                self.listen_img_answer_page_operate(total, question_info)
+                ListenSelectImagePage().listen_select_image_result_operate(bank_info)
 
             elif self.wait_check_listen_text():
                 print(self.listen_text().text)
@@ -363,139 +362,13 @@ class ListenResultPage(BasePage):
                         break
                     else:
                         self.home.screen_swipe_up(0.5, 0.6, 0.5, 1000)
-                self.listen_choice_answer_page_operate(total, question_info)
+                ListenChoicePage().listen_choice_result_operate(bank_info)
 
             elif self.wait_check_listen_choice_question_page():
                 print('----- < 听后选择答案详情页 > -----', '\n')
-                self.listen_choice_answer_page_operate(total, question_info)
+                ListenChoicePage().listen_choice_result_operate(bank_info)
 
         elif self.wait_sentence_speak_page():
             print('----- < 听音连句答案详情页 > -----', '\n')
-            self.listen_form_sentence_answer_page_operate(total, question_info)
+            LinkWordSentencePage().link_word_to_sentence_result_operate(bank_info)
 
-    @teststeps
-    def listen_img_answer_page_operate(self, total, question_info):
-        tips = []
-        while True:
-            questions = self.listen_img_question_text()
-            question_num = range(1, len(questions)) if questions[0].text in tips else range(0, len(questions))
-            for i in question_num:
-                if i != len(questions) - 1:
-                    self.check_selected_img(questions[i].text, question_info[len(tips)], tips)
-                else:
-                    self.home.screen_swipe_up(0.5, 0.9, 0.55, 1500)
-                    self.check_selected_img(questions[-1].text, question_info[len(tips)], tips)
-                    self.home.screen_swipe_down(0.5, 0.55, 0.9, 1500)
-
-            if len(tips) != total:
-                self.screen_swipe_down(0.5, 0.9, 0.3, 1500)
-            else:
-                break
-
-    @teststeps
-    def check_selected_img(self, question, ques_info, tips):
-        img_options = self.selected_img_options(question)
-        option_list = img_options[:ques_info[2]]
-        selected_index = [x for x in range(len(option_list)) if option_list[x].get_attribute('selected') == 'true']
-        if len(selected_index) != 1:
-            print("★★★ Error--所选个数并非一个")
-        else:
-            if selected_index[0] != ques_info[1]:
-                print("★★★ Error--所选答案与已选答案不一致", selected_index[0])
-            print(question)
-            print('所选答案为:', selected_index[0], '核实正确')
-            tips.append(question)
-            print('-'*30, '\n')
-
-    @teststeps
-    def listen_choice_answer_page_operate(self, total, question_info):
-        tips = []
-        while True:
-            questions = self.listen_choice_question()
-            question_text = [x.text for x in questions]
-            tips_ques = tips if len(tips) == 0 else [x for x in tips]
-            quest_list = [x for x in question_text if x not in tips_ques]
-            for i in range(len(quest_list)):
-                if i != len(quest_list) - 1:
-                    self.check_selected_choice(quest_list[i], question_info[len(tips)], tips)
-                else:
-                    self.home.screen_swipe_down(0.5, 0.9, 0.55, 1500)
-                    self.check_selected_choice(quest_list[-1], question_info[len(tips)], tips)
-                    self.home.screen_swipe_down(0.5, 0.55, 0.9, 1500)
-
-            if len(tips) != total:
-                self.screen_swipe_down(0.5, 0.9, 0.3, 1500)
-            else:
-                break
-
-    @teststeps
-    def check_selected_choice(self, question, ques_info, tips):
-        char = self.choice_char(question)
-        item = self.choice_item(question)
-        print(question)
-        right_char = []
-        wrong_char = []
-        for i in range(len(char)):
-            if char[i].get_attribute('contentDescription') == 'right':
-                right_char.append(char[i].text)
-            elif char[i].get_attribute('contentDescription') == 'error':
-                wrong_char.append(char[i].text)
-
-            print(char[i].text, ' ', item[i].text)
-
-        if len(wrong_char) > 1:
-            print('★★★ Error--所选答案非一个')
-        else:
-            if len(wrong_char) == 0:
-                print("我的答案:", right_char[0])
-                print('正确答案:', right_char[0])
-            else:
-                if len(right_char) == 0:
-                    print('★★★ Error-- 未发现正确答案')
-                else:
-                    print('我的答案:', wrong_char[0])
-                    print('正确答案:', right_char[0])
-
-            tips.append(question)
-            print('-' * 30, '\n')
-
-    @teststeps
-    def listen_form_sentence_answer_page_operate(self, total, question_info):
-        tips = []
-        while True:
-            right_answers = self.sentence_right_answer()
-            question_num = range(1, len(right_answers)) if right_answers[0].text in tips else range(0, len(right_answers))
-            for i in question_num:
-                if i != len(right_answers) - 1:
-                    self.check_sentence_answer_operate(right_answers[i].text, question_info[len(tips)], tips)
-                else:
-                    self.home.screen_swipe_down(0.5, 0.9, 0.6, 1500)
-                    self.check_sentence_answer_operate(right_answers[-1].text, question_info[len(tips)], tips)
-                    self.home.screen_swipe_down(0.5, 0.6, 0.9, 1500)
-
-            if len(tips) != total:
-                self.screen_swipe_down(0.5, 0.9, 0.3, 1500)
-            else:
-                break
-
-    @teststeps
-    def check_sentence_answer_operate(self, right_answer, answer, tips):
-        speak = self.sentence_speak(right_answer)
-        mine_answer = self.sentence_mine_answer(right_answer)
-        explain = self.sentence_explain(right_answer)
-
-        speak.click()
-        time.sleep(2)
-
-        if not self.wait_check_mine_answer_icon_page(right_answer):
-            print('★★★ Error-- 答案中未出现正确与错误图标')
-
-        sentence = mine_answer.text.split(': ')[1].strip()
-        if sentence != answer:
-            print('★★★ Error-- 所填答案与结果不一致', mine_answer.text)
-
-        tips.append(right_answer)
-        print(right_answer)
-        print(mine_answer.text)
-        print(explain.text)
-        print('-'*30, '\n')

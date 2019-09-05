@@ -25,13 +25,10 @@ class BlankCloze(SelectBlankGame):
         if self.wait_check_hint_content_page():
             print("提示词：", self.hint_answer())
             HomePage().click_blank()
-        else:
-            print('★★★ 未发现提示词！')
-
         answers = []
         for i in range(num):   # 其他点击回车键顺序填空，填空的文本为26个字母随机填写3-6个
             alphas = random.sample(string.ascii_letters, 52)
-            length = random.randint(3, 6)
+            length = random.randint(2, 5)
             random_input = []
             for j in range(length):
                 index = random.randint(0, len(alphas)-1)
@@ -51,7 +48,7 @@ class BlankCloze(SelectBlankGame):
     @teststeps
     def judge_tip_status(self, input_word):
         desc = self.rich_text().get_attribute('contentDescription')
-        if input_word in re.findall(r'\[(.*?)\]', desc)[0]:
+        if input_word in desc.split('##')[1].split():
             print('跳转后填空内容未发生变化')
         else:
             print('★★★ Error-- 跳转回来填空内容发生改变')
@@ -61,10 +58,15 @@ class BlankCloze(SelectBlankGame):
         """选词填空 试卷详情页"""
         article = self.rich_text()
         print(article.text)
-        desc = article.get_attribute('contentDescription')
-        answers = re.findall(r'\[(.*?)\]', desc)[0]
+        if self.wait_check_hint_btn_page():
+            self.hint_btn().click()
+            if self.wait_check_hint_content_page():
+                print("提示词：", self.hint_answer())
+            else:
+                print('★★★ 未发现提示词页面')
+            HomePage().click_blank()
+        answers = self.get_rich_text_answer()
         print('正确答案：', answers)
-
         print('我的答案：', ', '.join(list(bank_info.values())))
 
 

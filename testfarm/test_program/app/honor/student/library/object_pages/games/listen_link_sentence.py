@@ -3,8 +3,7 @@
 # Author:   Vector
 # Date:     2019/4/8 13:18
 # -------------------------------------------
-import time
-
+import random
 from testfarm.test_program.app.honor.student.games.sentence_listen_link import ListenLinkSentenceGame
 from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
@@ -23,27 +22,28 @@ class ListenLinkSentence(ListenLinkSentenceGame):
         return ele
 
     @teststep
-    def result_answer(self, explain):
-        """结果页答案"""
-        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/..'.format(explain))
-        mine_answer = ele.find_element_by_xpath('.//android.widget.TextView[contains(@resource-id,"{}tv_mine")]'
-                                                .format(self.id_type())).text.strip()
-        right_answer = ele.find_element_by_xpath('.//android.widget.TextView[contains(@resource-id,"{}tv_right")]'
-                                                 .format(self.id_type())).text.strip()
-        return mine_answer, right_answer
+    def mine_answer(self, explain):
+        """我的答案"""
+        ele = self.driver.find_element_by_xpath("//android.widget.TextView[contains(@text, '{}')]/preceding-sibling::"
+                                                "android.widget.TextView".format(explain))
+        return ele.text
+
+    @teststep
+    def right_answer(self, explain):
+        ele = self.driver.find_element_by_xpath("//android.widget.TextView[contains(@text, '{}')]/preceding-sibling::"
+                                                "android.widget.LinearLayout/android.widget.TextView".format(explain))
+        return ele.text
 
     def result_voice(self, explain):
         """结果页声音按钮"""
-        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/..'.format(explain))
-        voice_btn = ele.find_element_by_xpath('.//android.widget.ImageView[contains(@resource-id, "{}iv_speak")]'
-                                              .format(self.id_type()))
+        voice_btn = self.driver.find_element_by_xpath('//android.widget.TextView[contains(@text, "{}")]/../following'
+                                                      '-sibling::android.widget.ImageView'.format(explain))
         return voice_btn
 
-    def mine_icon(self, explain):
+    def right_wrong_icon(self, explain):
         """结果图标"""
-        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/../..'.format(explain))
-        icon = ele.find_element_by_xpath('.//android.widget.ImageView[contains(@resource-id, "{}iv_mine")]'
-                                         .format(self.id_type()))
+        icon = self.driver.find_element_by_xpath('//android.widget.TextView[contains(@text, "{}")]/preceding-sibling::'
+                                                 'android.widget.LinearLayout/android.widget.ImageView'.format(explain))
         return icon
 
     @teststep
@@ -58,25 +58,14 @@ class ListenLinkSentence(ListenLinkSentenceGame):
                 self.next_btn_operate('false', self.listen_link_clear_btn)                     # 清除按钮状态校验
                 self.common.rate_judge(total_num, i)              # 剩余题数校验
                 input_num = self.get_rich_text_input_count()
-                print(input_num)
                 if fq == 1:                                       # 第一轮，按下方单词或词组顺序依次点击
-                    index = 0
-                    # print([x.text for x in self.text_for_select() if x.text])
-                    # self.text_for_select()[0].click()
-                    # time.sleep(2)
-                    # print([x.text for x in self.text_for_select() if x.text])
-                    # self.text_for_select()[0].click()
-                    while index < input_num:
-                        select_text = self.text_for_select()
-                        for x in select_text:
-                            if x.text:
-                                x.click()
-                                index += 1
+                    for j in range(input_num):
+                        random.choice(self.text_for_select()).click()
                 else:                                            # 第二轮，依次点击正确答案拆分后的顺序
                     right_answer = sec_answer[i].split(' ')
                     print('正确答案：', right_answer)
                     index = 0
-                    while ' '.join(self.rich_text().split()) != sec_answer[i]:
+                    while ' '.join(self.rich_text().text.split()) != sec_answer[i]:
                         for x in self.text_for_select():       # 每次只点击一个（与答案相同的词组）
                             if x.text == right_answer[index]:
                                 index += 1
@@ -88,14 +77,11 @@ class ListenLinkSentence(ListenLinkSentenceGame):
                 if self.wait_check_clear_btn_page():
                     print('★★★ 点击下一步后，清除按钮依然存在')
 
-                rich_content = self.rich_text().get_attribute('contentDescription')  # 获取完成句子的desc
-                finish_answer = rich_content.split('## ')[1].strip().replace('  ', '')
-                right_answer = self.right_sentence_answer().replace('\n', ': ')
-                explain = self.sentence_explain().replace('\n', ': ')
-                print('我的答案: ', finish_answer.strip())
-                print(right_answer)
-                print(explain)
-                mine_answers[i] = finish_answer.strip()
+                finish_answer = ' '.join(self.rich_text().text.split())
+                mine_answers[i] = finish_answer
+                print('我的答案: ', finish_answer)
+                print(self.right_sentence_answer())
+                print(self.sentence_explain()[0].text)
                 timer.append(self.common.bank_time())
                 print('-'*20, '\n')
                 self.fab_next_btn().click()
@@ -105,45 +91,46 @@ class ListenLinkSentence(ListenLinkSentenceGame):
         return answer, total_num
 
     @teststep
-    def listen_to_sentence_result_operate(self, mine_answer):
+    def listen_to_sentence_result_operate(self, mine_done_answer):
         right_answer = {}
+        tips = []
         right, wrong = [], []
-        index = 0
         if ResultPage().wait_check_answer_page():
-            while True:
-                explains = self.result_explain()
-                for j, x in enumerate(explains):
-                    result_answer = self.result_answer(x.text)
-                    self.result_voice(x.text).click()
-                    print('explain:', x.text)
-                    print('right:', result_answer[1])
-                    print('mine:', result_answer[0].split(': ')[1])
-                    print('done:', mine_answer[j])
-
-                    if result_answer[0].split(': ')[1] != mine_answer[j]:
-                        print('★★★ 输入的答案与页面展示的不一致！')
-
-                    mine_icon = self.mine_icon(x.text)
-                    if result_answer[0] != result_answer[1]:
-                        if GetAttribute().selected(mine_icon) == 'true':
-                            print('★★★ 我的答案与正确答案不一致，但是图标显示正确！')
-                        else:
-                            print('图标验证正确')
-                        wrong.append(x.text)
-                        right_answer[index] = result_answer[1].split(': ')[1]
+            while len(tips) < len(mine_done_answer):
+                result_explains = self.result_explain()
+                for explain in result_explains:
+                    if explain.text in tips:
+                        continue
                     else:
-                        if GetAttribute().selected(mine_icon) == 'false':
-                            print('★★★ 我的答案与正确答案一致，但是图标显示不正确！')
-                        else:
-                            print('图标验证正确')
-                        right.append(x.text)
+                        mine_answer = self.mine_answer(explain.text)
+                        result_right_answer = self.right_answer(explain.text)
+                        record_answer = mine_done_answer[len(tips)]
+                        self.result_voice(explain.text).click()
+                        print(explain.text)
+                        print(result_right_answer)
+                        print(mine_answer)
+                        print('记录答案:', record_answer)
+                        if mine_answer.split(': ')[1].strip() != record_answer:
+                            print('★★★ 输入的答案与页面展示的不一致！')
 
-                    index += 1
-                    print('-' * 20, '\n')
-                if index == len(mine_answer):
-                    break
-                else:
-                    self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
+                        mine_icon = self.right_wrong_icon(explain.text)
+                        if mine_answer != result_right_answer:
+                            if GetAttribute().selected(mine_icon) == 'true':
+                                print('★★★ 我的答案与正确答案不一致，但是图标显示正确！')
+                            else:
+                                print('图标验证正确')
+                            wrong.append(explain.text)
+                            right_answer[len(tips)] = result_right_answer.split(': ')[1].strip()
+                        else:
+                            if GetAttribute().selected(mine_icon) == 'false':
+                                print('★★★ 我的答案与正确答案一致，但是图标显示不正确！')
+                            else:
+                                print('图标验证正确')
+                            right.append(explain.text)
+
+                        tips.append(explain.text)
+                        print('-' * 20, '\n')
+                self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
         print(right_answer)
         self.click_back_up_button()
         return wrong, right, right_answer

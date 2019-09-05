@@ -18,7 +18,7 @@ class StudySettingPage(UserCenterPage):
         """学习设置页面检查点"""
         locator = (By.XPATH, '//android.widget.TextView[contains(@text, "学习设置")]')
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -27,7 +27,7 @@ class StudySettingPage(UserCenterPage):
     def wait_check_wordbook_study_setting_page(self):
         locator = (By.XPATH, '//android.widget.TextView[contains(@text, "单词本学习设置")]')
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -36,6 +36,12 @@ class StudySettingPage(UserCenterPage):
     def study_setting(self):
         """单词本"""
         ele = self.driver.find_elements_by_id(self.id_type() + 'study_setting')
+        return ele
+
+    @teststep
+    def get_study_setting_side(self):
+        """获取学习设置外边框"""
+        ele = self.driver.find_elements_by_xpath('//android.support.v7.widget.RecyclerView/android.view.View')
         return ele
 
 
@@ -49,7 +55,7 @@ class StudySettingPage(UserCenterPage):
             if self.wait_check_study_setting_page():
                 self.study_setting()[0].click()
                 if self.wait_check_wordbook_study_setting_page():
-                    thirty_model = self.study_setting()[0]
+                    thirty_model = self.get_study_setting_side()[0]
                     if thirty_model.get_attribute('clickable') == 'false':
                         print('★★★ 默认单词本学习设置不为每组30词')
                     if study_model == 2:

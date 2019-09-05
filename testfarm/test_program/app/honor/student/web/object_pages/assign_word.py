@@ -10,22 +10,14 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from app.honor.student.web.object_pages.driver import BaseDriverPage
+from app.honor.student.web.object_pages.home_page import WebHomePage
 from app.honor.student.web.object_pages.login_page import LoginWebPage
 from conf.decorator import teststep
 
 
 class AssignWord(BaseDriverPage):
-
-    @teststep
-    def wait_check_home_page(self):
-        """首页页面检查点"""
-        time.sleep(2)
-        locator = (By.ID, 'logo')
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(EC.visibility_of_element_located(locator))
-            return True
-        except:
-            return False
+    def __init__(self):
+        self.home = WebHomePage()
 
     @teststep
     def wait_check_wordbook_page(self):
@@ -292,7 +284,7 @@ class AssignWord(BaseDriverPage):
     def assign_wordbook_operate(self, class_num, teacher_account, teacher_pass):
         """布置单词操作"""
         LoginWebPage().login_operate(teacher_account, teacher_pass)
-        if self.wait_check_home_page():
+        if self.home.wait_check_home_page():
             index = 0
             for x in self.class_list():
                 class_id = x.get_attribute('href').split('/')[-1]
@@ -308,7 +300,7 @@ class AssignWord(BaseDriverPage):
     @teststep
     def revoke_van_class_wordbook_operate(self, teacher_account, teacher_pass):
         LoginWebPage().login_operate(teacher_account, teacher_pass)
-        if self.wait_check_home_page():
+        if self.home.wait_check_home_page():
             for x in self.class_list():
                 x.click()
                 self.driver.implicitly_wait(2)

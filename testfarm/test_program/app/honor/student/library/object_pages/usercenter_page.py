@@ -8,11 +8,11 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.library.object_pages.library_sql import LibrarySql
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep
+from app.honor.student.library.object_pages.library_sql import LibrarySql
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
+from conf.base_page import BasePage
+from conf.decorator import teststep
 
 
 class UserCenterPage(BasePage):
@@ -81,7 +81,6 @@ class UserCenterPage(BasePage):
         """清除缓存"""
         ele = self.driver.find_element_by_id(self.id_type() + 'clear_cache')
         return ele
-
 
 
     @teststep

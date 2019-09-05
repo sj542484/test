@@ -40,20 +40,23 @@ class FlashCard(unittest.TestCase):
             AssignHomeworkPage().assign_homework_operate()
             web_driver.quit_web()
             self.home.screen_swipe_up(0.5, 0.3, 0.8, 1000)
-            for index in [1, 3]:
-                if self.home.wait_check_home_page():
-                    self.home.click_hk_tab(index)
-                    if index == 1:
-                        print('检验口语练习作业\n')
-                    else:
-                        print('检验普通练习作业\n')
-                    if self.library.wait_check_homework_list_page():
-                        self.find_test_homework()
+            if self.home.wait_check_home_page():
+                self.home.click_hk_tab(2)
+                if self.library.wait_check_homework_list_page():
+                    self.find_test_homework()
+                    if self.library.wait_check_bank_list_page():
+                        bank_type = self.library.testbank_type()
+                        bank_type_names = [x.text for x in bank_type]
+                        if '口语跟读' not in bank_type_names:
+                            print('★★★ 口语作业未与其他游戏合并在一个作业中')
+
+                        if '连连看' not in bank_type_names:
+                            print('★★★ 连连看游戏未布置成功')
+                    self.home.click_back_up_button()
+                    if self.library.wait_check_bank_list_page():
                         self.home.click_back_up_button()
-                        if self.library.wait_check_bank_list_page():
+                        if self.library.wait_check_homework_list_page():
                             self.home.click_back_up_button()
-                            if self.library.wait_check_homework_list_page():
-                                self.home.click_back_up_button()
 
     @teststep
     def find_test_homework(self):

@@ -2,7 +2,7 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/7/18 15:45
 # -----------------------------------------
-from app.honor.student.word_book_rebuild.object_page.flash_card_page import FlashCard
+from app.honor.student.word_book_rebuild.object_page.games.flash_card_page import FlashCard
 from conf.decorator import teststep
 
 

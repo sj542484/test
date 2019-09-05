@@ -3,7 +3,10 @@
 # Author:   Vector
 # Date:     2018/12/17 10:57
 # -------------------------------------------
+import re
 import unittest
+
+from ddt import ddt, data
 
 from app.honor.student.library.object_pages.library_page import LibraryGamePage
 from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
@@ -11,10 +14,12 @@ from app.honor.student.listen_everyday.object_page.level_page import LevelPage
 from app.honor.student.listen_everyday.object_page.listen_data_handle import ListenDataHandle
 from app.honor.student.listen_everyday.object_page.listen_game_page import ListenGamePage
 from app.honor.student.listen_everyday.object_page.listen_home_page import ListenHomePage
+from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.login.object_page.login_page import LoginPage
 from conf.decorator import setup, teardown, teststeps
 
 
+@ddt
 class SelectLevel(unittest.TestCase):
 
     @classmethod
@@ -31,8 +36,10 @@ class SelectLevel(unittest.TestCase):
     def tearDown(cls):
         pass
 
+
+    @data('2A')
     @teststeps
-    def test_select_level(self):
+    def test_listen_game(self, level_name):
         if self.game.home.wait_check_home_page():  # 页面检查点
             user_data = UserCenterPage().get_user_info()
             stu_id = user_data[0]
@@ -42,11 +49,17 @@ class SelectLevel(unittest.TestCase):
             self.game.home.click_hk_tab(4)   # 点击每日一听
             if self.listen.wait_check_listen_everyday_home_page():
                 self.listen.level_button().click()
+
                 if self.level.wait_check_listening_level_page():
-                    if self.level.start_button('2A').text == '开始':
-                        self.level.start_button('2A').click()
+                    while not self.level.wait_check_level_page(level_name):
+                        HomePage().screen_swipe_up(0.5, 0.8, 0.4, 1000)
+
+                    if self.level.start_button(level_name).text == '开始':
+                        self.level.start_button(level_name).click()
                     self.game.home.click_back_up_button()
-                    for i in range(4):
+                    level_num = int(re.findall(r'\d+', level_name)[0])
+                    exercise_count = 3 if level_num > 4 else 5
+                    for i in range(exercise_count + 1):
                         if self.listen.wait_check_listen_everyday_home_page():
                             self.listen.start_button().click()
 
@@ -64,9 +77,9 @@ class SelectLevel(unittest.TestCase):
                                 self.listen.start_excise_button().click()
 
 
-                        if i == 3:
+                        if i == exercise_count:
                             if self.listen.wait_today_limit_img_page():
-                                print('今天你已练完3道听力，保持适度才能事半公倍哦！', '\n')
+                                print('今天你已练完{}道听力，保持适度才能事半公倍哦！'.format(exercise_count), '\n')
                                 self.listen.commit_button().click()
 
                             else:

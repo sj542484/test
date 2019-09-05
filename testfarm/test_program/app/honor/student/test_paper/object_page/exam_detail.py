@@ -272,10 +272,9 @@ class DetailPage(BasePage):
             quote_list = [x.text for x in self.ques_type()]
             quote_name = list(exam_data.keys())[index]
             bank_data = exam_data[quote_name]
-            quote_name = "听力练习" if quote_name == "听后选择" else quote_name
             if quote_name in quote_list:
                 score = self.ques_score(quote_name)  # 分数
-                desc = self.ques_desc(quote_name)   # 描述
+                # desc = self.ques_desc(quote_name)   # 描述
                 score.click()  # 点击分数进入题目的详情页
                 print('\n-----', quote_name, '------\n')
                 if self.wait_check_again_btn_page():
@@ -306,8 +305,8 @@ class DetailPage(BasePage):
             VocabSelect().game_detail(bank_info, game_type=2)
             # pass
 
-        elif ques_type in ['听力练习', '单项选择']:
-            if ques_type == '听力练习':
+        elif ques_type in ['听后选择', '单项选择']:
+            if ques_type == '听后选择':
                 ListenSelect().voice_play()
             ListenSelect().check_result_detail_operate(bank_info)
             pass

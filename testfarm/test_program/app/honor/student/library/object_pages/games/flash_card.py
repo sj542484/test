@@ -103,7 +103,8 @@ class FlashCard(FlashCardGame):
                     print('单词：', word)
                     if not self.wait_check_explain_page():  # 验证页面是否默认选择英汉模式
                         print('★★★ 未发现单词解释，页面没有默认选择英汉模式')
-                    print('解释：', self.study_word_explain())  # 单词解释
+                    else:
+                        print('解释：', self.study_word_explain().text)  # 单词解释
                     print("句子：", self.study_sentence())  # 句子
                     print("句子解释：", self.study_sentence_explain())  # 句子解释
                     print("推荐老师：", self.author())  # 推荐老师

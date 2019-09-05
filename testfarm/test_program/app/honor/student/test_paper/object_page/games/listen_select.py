@@ -1,5 +1,9 @@
 import random
 import time
+
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+
 from app.honor.student.games.choice_listen import ListenChoiceGame
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.test_paper.object_page.answer_page import AnswerPage
@@ -12,6 +16,7 @@ class ListenSelect(ListenChoiceGame):
         self.home = HomePage()
         self.answer = AnswerPage()
 
+
     # 详情页 元素
     @teststep
     def voice_play(self):
@@ -21,10 +26,14 @@ class ListenSelect(ListenChoiceGame):
             .click()
 
     @teststep
-    def first_content(self):
-        """第一行文本"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'fs_content')
-        print(ele.text)
+    def get_option_last_text_id(self):
+        """获取最后一个text_id"""
+        ele = self.driver.find_elements_by_class_name('android.widget.TextView')
+        last_text_id = ele[-2].get_attribute('resourceId')
+        if 'question' in last_text_id:
+            return 'ques'
+        else:
+            return 'opt'
 
     @teststeps
     def option_button(self, var):
@@ -52,11 +61,11 @@ class ListenSelect(ListenChoiceGame):
     @teststeps
     def play_listening_select_game(self, num, exam_json):
         """听力选择 """
-        if self.wait_check_listen_select_page():
+        if self.wait_check_listen_audio_page():
             print(self.red_hint())
             self.voice_button().click()
             time.sleep(2)
-            if self.wait_check_listen_select_page():
+            if self.wait_check_listen_audio_page():
                 print('★★★ Error-- 红色标识未消失')
 
             if self.voice_button().get_attribute('enabled') == 'true':
@@ -71,7 +80,7 @@ class ListenSelect(ListenChoiceGame):
         """滑动操作"""
         tips = []
         while True:
-            questions = self.questions()
+            questions = self.question()
             for j in range(len(questions)):
                 ques = questions[j].text
                 if ques in tips:
@@ -94,7 +103,9 @@ class ListenSelect(ListenChoiceGame):
                         else:
                             time.sleep(3)
                 opt_text = tips[-1]
-                self.answer.skip_operator(len(tips) - 1, num, name, self.wait_check_listen_select_page,
+                func = self.wait_check_listen_audio_page if name == '听后选择' \
+                    else self.wait_check_rich_text_page
+                self.answer.skip_operator(len(tips) - 1, num, name, func,
                                           self.judge_tip_status, opt_text, next_page=1)
 
             if len(tips) == num:
@@ -110,34 +121,30 @@ class ListenSelect(ListenChoiceGame):
             print('题目跳转后题目状态未改变：已完成')
 
     @teststep
-    def check_result_detail_operate(self, bank_info, quote_type=1):
+    def check_result_detail_operate(self, bank_info):
         tips = []
-        while True:
-            questions = self.questions()
+        scale_info = self.get_ques_opt_scale()
+        while len(tips) < len(bank_info):
+            last_text_id = self.get_option_last_text_id()
+            questions = self.question()
             for i in range(len(questions)):
                 ques = questions[i].text
-                mine_answer = bank_info[ques]
+                try:
+                    mine_answer = bank_info[ques]
+                except:
+                    mine_answer = 0
                 if ques in tips:
                     continue
                 else:
                     tips.append(ques)
-                    print(ques)
-                    if i != len(questions) - 1:
-                        options = self.option_button(ques)
-                        self.print_options(options)
-                        self.check_answer(options, mine_answer)
+                if i == len(questions) - 1:
+                    if last_text_id == 'ques':
+                        self.screen_swipe_up(0.5, 0.8, 0.86 - scale_info[0], 1000)
                     else:
-                        self.home.screen_swipe_up(0.5, 0.8, 0.42, 1000)
-                        options = self.option_button(ques)
-                        self.print_options(options)
-                        self.check_answer(options, mine_answer)
-            if len(tips) < len(bank_info):
-                if quote_type == 1:
-                    self.screen_swipe_up(0.5, 0.8, 0.25, 1500)
-                else:
-                    self.screen_swipe_up(0.5, 0.8, 0.4, 1500)
-            else:
-                break
+                        self.screen_swipe_up(0.5, 0.8, 0.86 - scale_info[1], 1000)
+                options = self.option_button(ques)
+                self.print_options(options)
+                self.check_answer(options, mine_answer)
 
     @teststep
     def check_answer(self, options, mine_answer):
@@ -151,15 +158,14 @@ class ListenSelect(ListenChoiceGame):
         else:
             print('正确答案：', right_answer[0])
             print("我的答案：", mine_answer)
-            if len(error_answer) == 0:
-                print('所选答案：', right_answer[0])
-                if mine_answer != right_answer[0]:
-                    print("★★★ 所选答案与页面显示不一致！\n")
+            if mine_answer:
+                if len(error_answer) == 0:
+                    if mine_answer != right_answer[0]:
+                        print("★★★ 所选答案与页面显示不一致！\n")
+                    else:
+                        print("答案核实正确\n")
                 else:
-                    print("答案核实正确\n")
-            else:
-                print("所选答案：", error_answer[0])
-                if mine_answer != error_answer[0]:
-                    print('★★★ 所选答案与页面显示不一致！\n')
-                else:
-                    print("答案核实正确\n")
+                    if mine_answer != error_answer[0]:
+                        print('★★★ 所选答案与页面显示不一致！\n')
+                    else:
+                        print("答案核实正确\n")

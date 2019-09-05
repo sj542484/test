@@ -28,24 +28,15 @@ class LevelPage(BasePage):
             return False
 
     @teststep
-    def wait_last_level_page(self):
+    def wait_check_level_page(self, level_name):
         """最后一个等级页面检查点"""
-        locator = (By.XPATH, '//android.widget.TextView[contains(@text,"10级B")]')
+        locator = (By.XPATH, '//android.widget.TextView[contains(@text,"{}")]'.format(level_name))
         try:
             WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
 
-    @teststep
-    def wait_first_level_page(self):
-        """第一个等级页面检查点"""
-        locator = (By.XPATH, '//android.widget.TextView[contains(@text,"2级A")]')
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
 
     @teststep
     def wait_start_button(self, back_name):
@@ -62,21 +53,21 @@ class LevelPage(BasePage):
 
     @teststep
     def play_voice_button(self, back_name):
-        ele = self.driver.find_element_by_xpath('//android.widget.TextView[contains(@text, "{}")]/'
+        ele = self.driver.find_element_by_xpath('//android.widget.TextView[@text="{}"]/'
                                                 'following-sibling::android.widget.LinearLayout/'
                                                 'android.widget.ImageView'.format(back_name))
         return ele
 
     @teststep
     def level_name(self, back_name):
-        ele = self.driver.find_elements_by_xpath('//android.widget.TextView[contains(@text, "{}")]/../following-sibling'
+        ele = self.driver.find_elements_by_xpath('//android.widget.TextView[@text="{}"]/../following-sibling'
                                                  '::android.widget.LinearLayout/android.widget.TextView'
                                                  .format(back_name))
         return ele
 
     @teststep
     def start_button(self, back_name):
-        ele = self.driver.find_element_by_xpath('//android.widget.TextView[contains(@text, "{}")]/../following-sibling'
+        ele = self.driver.find_element_by_xpath('//android.widget.TextView[@text="{}"]/../following-sibling'
                                                 '::android.widget.TextView'.format(back_name))
         return ele
 
@@ -91,16 +82,15 @@ class LevelPage(BasePage):
             for i in back_num:
                 level_info[back_name[i].text] = [y.text for y in self.level_name(back_name[i].text)]
 
-            if self.wait_last_level_page():
+            if self.wait_check_level_page('10级B'):
+                self.start_button('10B').click()
                 break
             else:
                 self.home.screen_swipe_up(0.5, 0.9, 0.3, 1000)
                 index = index + 1
 
-        while True:
+        while not self.wait_check_level_page('2级A'):
             self.home.screen_swipe_up(0.5, 0.3, 0.9, 1000)
-            if self.wait_first_level_page():
-                break
 
         print('级别类型:')
         for level in level_info:

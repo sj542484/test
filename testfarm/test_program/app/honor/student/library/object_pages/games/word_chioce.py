@@ -34,7 +34,7 @@ class WordChoice(VocabChoiceGame):
             if bank_type == 2:
                 self.listen_choice_speak_icon().click()
             elif bank_type == 1:
-                print('问题：', self.vocab_question())
+                print('问题：', self.vocab_question().text)
 
             if fq == 1:                              # 第一次选择 随机选择一个选项
                 random_index = random.randint(0, len(self.vocab_options()) - 1)
@@ -43,13 +43,15 @@ class WordChoice(VocabChoiceGame):
                 print('我的答案：', selected_opt)
                 random_choice.click()
                 if bank_type == 1:
-                    mine_answer[self.vocab_question()] = selected_opt
+                    mine_answer[self.vocab_question().text] = selected_opt
                 else:
-                    mine_answer[self.vocab_word_explain().text] = selected_opt
+                    print(self.wait_listen_explain_page())
+                    explain = self.vocab_word_explain().text
+                    mine_answer[explain] = selected_opt
 
             else:                              # 第二次(错题再练) 选择正确答案
                 if bank_type == 1:
-                    answer = sec_answer[self.vocab_question()]
+                    answer = sec_answer[self.vocab_question().text]
                 else:
                     answer = list(sec_answer.keys())[i]
 

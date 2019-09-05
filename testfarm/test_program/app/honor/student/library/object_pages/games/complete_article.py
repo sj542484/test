@@ -78,7 +78,8 @@ class CompleteArticle(CompleteArticleGame):
         right, wrong = [], []
         index = 0
         if ResultPage().wait_check_answer_page():
-            self.home.screen_swipe_up(0.5, 0.9, 0.4, 1000)
+            loc = self.get_element_location(self.drag_btn())  # 获取按钮坐标
+            self.driver.swipe(loc[0] + 45, loc[1] + 45, loc[0] + 45, loc[1] - 450)  # 拖拽至最上方
             desc = self.rich_text().get_attribute('contentDescription')
             desc_right_answer = re.findall(r' (.*?) \(.*?\) .*?', desc.split('##')[1])
             result_right_answer = [x.strip() for x in desc_right_answer]

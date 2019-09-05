@@ -82,7 +82,7 @@ class WordDataHandlePage(BasePage):
     def get_word_by_explain_id(self, stu_id, explain_id):
         """根据解释id获取单词"""
         word = self.mysql.find_word_by_explain_id(stu_id, explain_id)
-        return word[0][0] if word else 0
+        return word[0][0] if word else -1
 
     @teststep
     def get_explain_by_id(self, explain_id):
@@ -161,3 +161,25 @@ class WordDataHandlePage(BasePage):
     def change_10_word_fl_equal_three(self, stu_id):
         """将F值小于3 的前10 个单词的F值更改为3"""
         self.mysql.update_student_10_word_f3(stu_id)
+
+
+    @teststep
+    def get_total_words(self, stu_id):
+        """获取学生已被单词总数"""
+        words_id = self.mysql.find_student_total_words_count(stu_id)
+        if words_id:
+            return [self.mysql.find_word_by_id(x[0])[0][0] for x in words_id]
+        else:
+            return []
+
+    @teststep
+    def get_student_familiar_explain_ids(self, stu_id):
+        """获取学生标熟解释id"""
+        familiar_explains = self.mysql.find_student_familiar_explain_id(stu_id)
+        return [x[0] for x in familiar_explains] if familiar_explains else []
+
+    @teststep
+    def get_student_star_explain_ids(self, stu_id):
+        """获取学生表象单词解释id"""
+        star_explains = self.mysql.find_student_star_explain_id(stu_id)
+        return [x[0] for x in star_explains] if star_explains else []

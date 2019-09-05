@@ -39,7 +39,7 @@ class RestoreWordGame(PublicPage):
     def word_explain(self):
         """解释"""
         ele = self.driver.find_element_by_id(self.id_type() + 'tv_prompt')
-        return ele.text
+        return ele
 
     @teststep
     def word_alpha(self):

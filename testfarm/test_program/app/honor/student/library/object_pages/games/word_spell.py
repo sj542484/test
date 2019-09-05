@@ -26,7 +26,7 @@ class WordSpell(SpellWordGame):
         for i in range(total_num):
             self.next_btn_judge('false', self.fab_commit_btn)  # 判断下一题按钮状态
             self.common.rate_judge(total_num, i)  # 校验剩余题数
-            explain = self.word_explain()
+            explain = self.word_explain().text
             print('解释：', explain)
             if self.wait_check_tv_word_or_random_page():
                 wait_spell_word = self.spell_word()[1::2]
@@ -71,7 +71,7 @@ class WordSpell(SpellWordGame):
                         Keyboard().games_keyboard(right_answer[j])
 
                 self.next_btn_operate('true', self.fab_commit_btn)  # 判断下一题按钮状态
-                print('我的答案：', self.spell_word())
+                print('我的答案：', self.spell_word()[1::2])
 
             if fq == 1:
                 if self.wait_check_right_answer_page():

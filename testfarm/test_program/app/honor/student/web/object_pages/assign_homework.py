@@ -9,10 +9,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from testfarm.test_program.app.honor.student.web.object_pages.base import BaseDriverPage
-from testfarm.test_program.app.honor.student.web.object_pages.home_page import WebHomePage
-from testfarm.test_program.app.honor.student.web.object_pages.login_page import LoginWebPage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from app.honor.student.web.object_pages.base import BaseDriverPage
+from app.honor.student.web.object_pages.home_page import WebHomePage
+from app.honor.student.web.object_pages.login_page import LoginWebPage
+from conf.decorator import teststep, teststeps
 
 
 class AssignHomeworkPage(BaseDriverPage):

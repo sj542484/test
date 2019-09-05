@@ -6,19 +6,20 @@ import json
 import time
 
 import numpy as np
-from math import ceil, floor
+from math import floor
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
+from app.honor.student.games.game_public_element import PublicPage
 from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
-from app.honor.student.word_book_rebuild.object_page.flash_card_page import FlashCard
-from app.honor.student.word_book_rebuild.object_page.listen_spell_page import ListenSpellWordPage
+from app.honor.student.word_book_rebuild.object_page.games.flash_card_page import FlashCard
+from app.honor.student.word_book_rebuild.object_page.games.listen_spell_page import ListenSpellWordPage
 from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
-from app.honor.student.word_book_rebuild.object_page.restore_word_page import WordRestore
-from app.honor.student.word_book_rebuild.object_page.word_spelling_page import SpellingWord
-from app.honor.student.word_book_rebuild.object_page.vocabulary_choose_page import VocabularyChoose
-from app.honor.student.word_book_rebuild.object_page.word_match_page import MatchingWord
+from app.honor.student.word_book_rebuild.object_page.games.restore_word_page import WordRestore
+from app.honor.student.word_book_rebuild.object_page.games.word_spelling_page import SpellingWord
+from app.honor.student.word_book_rebuild.object_page.games.vocabulary_choose_page import VocabularyChoose
+from app.honor.student.word_book_rebuild.object_page.games.word_match_page import MatchingWord
 from conf.base_page import BasePage
 from conf.decorator import teststep
 
@@ -152,26 +153,26 @@ class WordBookRebuildPage(BasePage):
         return group
 
     @teststep
-    def check_new_word_after_recite_process(self, flash_result, recite_words, group_count, study_model=1):
+    def check_new_word_after_recite_process(self, flash_result, group_recite_count, group_count, study_model=1):
         """校验新词奖励个数"""
         boundary_value = 28 if study_model == 1 else 17       # 根据学习类型设置边界值
         if flash_result:
             if group_count == 0:
-                if len(recite_words) < boundary_value:
+                if group_recite_count < boundary_value:
                     if len(flash_result[0]) > 10:
                         print('★★★ 新词奖励个数大于10个')
             else:
                 if len(flash_result[0]) not in range(3, 11):
                     print('★★★ 复习的新词奖励个数不在3-10之间', len(flash_result[0]))
         else:
-            if len(recite_words) < boundary_value:
+            if group_recite_count < boundary_value:
                 print('★★★ 复习个数小于“{}”, 未有新词奖励'.format(boundary_value))
 
     @teststep
     def from_wordbook_back_to_home(self):
         """从单词本中退回主页面"""
         self.click_back_up_button()
-        self.public.tips_operate()
+        PublicPage().tips_operate()
         if self.wait_check_continue_page():
             self.click_back_up_button()
 

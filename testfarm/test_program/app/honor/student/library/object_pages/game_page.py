@@ -181,10 +181,17 @@ class LibraryGamePage(BasePage):
         return ele
 
     @teststep
+    def bank_name_list(self):
+        """大题列表"""
+        ele = self.driver.find_elements_by_id(self.id_type() + 'tv_testbank_name')
+        return ele
+
+    @teststep
     def testbank_type(self):
         """大题类型"""
         ele = self.driver.find_elements_by_id(self.id_type() + 'tv_testbank_type')
         return ele
+
 
     @teststep
     def testbank_name(self, bank_type):
@@ -197,14 +204,14 @@ class LibraryGamePage(BasePage):
     @teststep
     def bank_progress_by_name(self, bank_name):
         """根据大题名称获取"""
-        ele = self.driver.find_elements_by_xpath('//*[@text="{}"]/../following-sibling::android.widget.RelativeLayout/'
+        ele = self.driver.find_elements_by_xpath('//android.widget.TextView[@text="{}"]/../following-sibling::android.widget.RelativeLayout/'
                                                  'android.widget.TextView'.format(bank_name))
         return ele[1].text
 
     @teststep
     def click_bank_by_name(self, bank_name):
         """通过名称定为大题并点击"""
-        ele = self.driver.find_element_by_xpath('//*[@text="{}"]'.format(bank_name))
+        ele = self.driver.find_element_by_xpath('//android.widget.TextView[@text="{}"]'.format(bank_name))
         ele.click()
 
     @teststep
@@ -318,9 +325,9 @@ class LibraryGamePage(BasePage):
             game_result = ListenLinkSentence().listen_to_sentence_operate(fq, second_ans)
 
         elif game_name == '强化炼句':
-            # if fq == 1:
-            #     SentenceStrengthen().sentence_strengthen_operate(fq, second_ans, half_exit=True)
-            #     self.check_process_change(bank_name, bank_progress)
+            if fq == 1:
+                SentenceStrengthen().sentence_strengthen_operate(fq, second_ans, half_exit=True)
+                self.check_process_change(bank_name, bank_progress)
             game_result = SentenceStrengthen().sentence_strengthen_operate(fq, second_ans, half_exit)
 
         elif game_name == '连词成句':
@@ -330,9 +337,6 @@ class LibraryGamePage(BasePage):
             game_result = SelectWordBlank().select_word_blank_operate(fq, second_ans)
 
         elif game_name == '补全文章':
-            if fq == 1:
-                CompleteArticle().complete_article_operate(fq, second_ans, half_exit=True)
-                self.check_process_change(bank_name, bank_progress)
             game_result = CompleteArticle().complete_article_operate(fq, second_ans, half_exit)
 
         elif game_name == '完形填空':
@@ -377,8 +381,11 @@ class LibraryGamePage(BasePage):
             print('----- 查看答案页面 ------\n')
             mine_done_answer = mine_answer[0]
 
-            if game_name in ['猜词游戏', '还原单词', '连连看', '单词拼写', '单词听写', '词汇选择']:
+            if game_name in ['猜词游戏', '还原单词', '单词拼写', '单词听写', '词汇选择']:
                 result = self.result.word_game_answer_detail_operate(mine_done_answer)
+
+            if game_name in '连连看':
+                result = self.result.word_match_result_operate(mine_done_answer)
 
             elif game_name in ['句型转换']:
                 result = ChangeSentence().sentence_game_result_operate(mine_done_answer)

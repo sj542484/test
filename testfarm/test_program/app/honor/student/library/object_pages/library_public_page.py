@@ -4,8 +4,6 @@
 # Date:     2019/3/28 11:30
 # -------------------------------------------
 import re
-import time
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 

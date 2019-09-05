@@ -145,7 +145,7 @@ class SentenceStrengthen(SentenceStrengthenGame):
                         print('-' * 20, '\n')
 
                 if len(right_answer) != len(mine_answer):
-                    self.screen_swipe_up(0.5, 0.9, 0.2, 1000)
+                    self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
                 else:
                     break
 

@@ -25,8 +25,8 @@ class LinkWordGame(PublicPage):
     @teststep
     def get_word_cards(self):
         """获取所有卡片"""
-        cards = self.driver.find_elements_by_class_name('android.widget.TextView')
-        return cards[4:]
+        cards = self.driver.find_elements_by_xpath('//android.widget.TextView[contains(@resource-id, "mg")]')
+        return cards
 
     @teststep
     def is_word(self, word):
@@ -40,11 +40,11 @@ class LinkWordGame(PublicPage):
     @teststep
     def get_english_cards(self):
         """获取英文卡片"""
-        en_cards = [x for x in self.get_word_cards() if self.is_word(x.text)]
+        en_cards = [x for x in self.get_word_cards() if self.is_word(x.text) and GetAttribute().selected(x) == 'false']
         return en_cards
 
     @teststep
     def get_not_selected_hans_card(self):
         """获取中文未被选择的卡片"""
-        ch_cards =[x for x in self.get_word_cards() if not self.is_word(x.text) and GetAttribute().selected(x) == 'false']
+        ch_cards = [x for x in self.get_word_cards() if not self.is_word(x.text) and GetAttribute().selected(x) == 'false']
         return ch_cards

@@ -10,6 +10,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from app.honor.student.web.object_pages.driver import BaseDriverPage
+from app.honor.student.web.test_data.teacher_account import TeacherAccount
 from conf.decorator import teststeps, teststep
 
 
@@ -86,8 +87,10 @@ class LoginWebPage(BaseDriverPage):
         ele = self.driver.find_elements_by_css_selector('.menu .list a')
         return ele[1]
 
+
     @teststep
-    def login_operate(self, teacher_account, teacher_pass):
+    def login_operate(self, teacher_account=TeacherAccount.Account[-1][0],
+                      teacher_pass=TeacherAccount.Account[-1][1]):
         """登录操作"""
         if self.wait_check_login_page():
             self.username().click()

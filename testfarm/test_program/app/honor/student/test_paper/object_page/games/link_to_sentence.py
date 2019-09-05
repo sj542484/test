@@ -2,7 +2,7 @@
 from app.honor.student.games.sentence_link_word import LinkWordToSentenceGame
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.test_paper.object_page.answer_page import AnswerPage
-from app.honor.student.word_book_rebuild.object_page.restore_word_page import WordRestore
+from app.honor.student.word_book_rebuild.object_page.games.restore_word_page import WordRestore
 from conf.decorator import teststep, teststeps
 
 
@@ -45,19 +45,17 @@ class Conjunctions(LinkWordToSentenceGame):
             word_alpha = self.word_alpha()
             word = [x.text for x in word_alpha]
             print('连句前句子：', ' '.join(word))
+            self.restore.drag_operate(self.word_alpha()[0], self.word_alpha()[-1])
 
-            for j in range(len(word_alpha)-1, -1, -1):
-                self.restore.drag_operate(self.word_alpha()[j], self.word_alpha()[0])
-
-            finish_word = [x.text for x in self.word_alpha()]
-            print('连句后句子：', ' '.join(finish_word))
-            bank_json[explain] = ' '.join(finish_word)
+            finish_word = ' '.join([x.text for x in self.word_alpha()])
+            print('连句后句子：', finish_word)
+            bank_json[explain] = finish_word
             self.answer.skip_operator(i, num, "连词成句", self.wait_check_link_sentence_page,
                                       self.judge_tip_status, finish_word)
 
     @teststep
     def judge_tip_status(self, finish_word):
-        sentence = ''.join([x.text for x in self.word_alpha()])
+        sentence = ' '.join([x.text for x in self.word_alpha()])
         if finish_word == sentence:
             print('题目跳转后句子顺序未发生变化')
         else:

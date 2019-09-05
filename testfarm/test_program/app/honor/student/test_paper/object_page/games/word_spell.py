@@ -19,7 +19,7 @@ class WordSpell(SpellWordGame):
         alphas = random.sample(string.ascii_lowercase, 26)
         for i in range(num):
             if self.wait_check_normal_spell_page():
-                explain = self.word_explain()
+                explain = self.word_explain().text
                 print('解释：', explain)
                 length = random.randint(3, 5)
                 for j in range(length):
@@ -31,7 +31,7 @@ class WordSpell(SpellWordGame):
                 self.answer.skip_operator(i, num, '单词拼写', self.wait_check_normal_spell_page,
                                           self.judge_tip_status, word)
             elif self.wait_check_tv_word_or_random_page():
-                explain = self.word_explain()
+                explain = self.word_explain().text
                 print('解释：', explain)
 
                 input_count = len(re.findall(r'_', self.spell_word()))

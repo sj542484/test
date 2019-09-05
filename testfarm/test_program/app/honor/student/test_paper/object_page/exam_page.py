@@ -38,7 +38,7 @@ class ExamPage(BasePage):
         """以 试卷的标题作为 页面检查点"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'试卷')]")
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -48,7 +48,7 @@ class ExamPage(BasePage):
         """以 做试卷时的计时作为 页面检查点"""
         locator = (By.ID, self.id_type() + "time_container")
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -58,7 +58,7 @@ class ExamPage(BasePage):
         """以 试卷确认的标题作为 页面检查点"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'试卷确认')]")
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -68,7 +68,7 @@ class ExamPage(BasePage):
         """以 炫耀一下的text作为 页面检查点"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'炫耀一下')]")
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -132,7 +132,7 @@ class ExamPage(BasePage):
                 print('返回主页面')
 
     @teststeps
-    def select_one_exam(self, exam_index):
+    def select_one_exam(self):
         """随机选择一个试卷"""
         exams_info = {}     # 将试卷存入一个字典当周，以试卷名作为key，试卷描述与完成状态作为value
         while True:
@@ -151,7 +151,7 @@ class ExamPage(BasePage):
         for name in exams_info.keys():
             print(name, '   ', exams_info[name])
 
-        exam = self.exam_names()[exam_index]
+        exam = self.exam_names()[0]
         test_name = exam.text
         print('选择试卷：', test_name)
         exam.click()
@@ -241,7 +241,6 @@ class ExamPage(BasePage):
             ListenSelect().play_listening_select_game(num, exam_json)
             self.answer.wait_result_btn_enabled()
 
-
         elif '猜词游戏' in title:
             GuessingWord().play_guessing_word_game(num, exam_json)
 
@@ -263,30 +262,23 @@ class ExamPage(BasePage):
         elif '还原单词' in title:
             RestoreWord().play_restore_word_game(num, exam_json)
 
-
         elif '选词填空' in title:
             BlankCloze().play_bank_cloze_game(num, exam_json)
-
 
         elif '强化炼句' in title:
             SentenceEnhance().play_sentence_enhance_game(num, exam_json)
 
-
         elif '补全文章' in title:
             CompleteText().play_complete_article_game(num, exam_json)
 
-
         elif '听音连句' in title:
             ListenSentence().play_listen_sentence_game(num, exam_json)
-            # pass
 
         elif '词汇选择' in title:
             VocabSelect().play_vocab_select_game(num, exam_json)
 
-
         elif '阅读理解' in title:
             ReadUnderstand().play_read_understand_game(num, exam_json)
-            # pass
 
         elif '单词拼写' in title:
             WordSpell().play_word_spell_game(num, exam_json)

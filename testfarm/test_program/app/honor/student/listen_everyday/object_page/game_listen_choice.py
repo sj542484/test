@@ -15,7 +15,7 @@ class ListenChoicePage(ListenChoice):
     @teststeps
     def play_listen_choice_game(self):
         mine_answer = {}
-        if self.wait_check_listen_select_page():  # 点击喇叭验证红色字体是否消失
+        if self.wait_check_listen_audio_page():  # 点击喇叭验证红色字体是否消失
             print(self.red_hint())
             self.next_btn_judge('true', self.voice_button)
             self.voice_button().click()
@@ -58,7 +58,7 @@ class ListenChoicePage(ListenChoice):
                         print('-' * 20, '\n')
                         timer.append(self.common.bank_time())  # 添加学生
             self.common.judge_timer(timer)
-            while self.wait_check_listen_select_page():
+            while self.wait_check_listen_audio_page():
                 time.sleep(3)
             self.next_btn_operate('true', self.fab_commit_btn)
             return mine_answer

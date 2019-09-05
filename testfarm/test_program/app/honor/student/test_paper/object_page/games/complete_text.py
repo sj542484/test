@@ -14,14 +14,11 @@ class CompleteText(CompleteArticleGame):
         """补全文章 答卷过程"""
         exam_json['补全文章'] = bank_json = {}
         if self.wait_check_complete_article_page():
-            self.next_btn_judge('false', self.fab_next_btn)  # 下一题按钮状态判断
             article = self.rich_text()
             print(article.text)
-
             loc = self.get_element_location(self.drag_btn())  # 获取按钮坐标
             self.driver.swipe(loc[0] + 45, loc[1] + 45, loc[0] + 45, loc[1] - 300)  # 向上拖拽 使题目全部显现
             self.get_options()
-
             for i in range(num):  # 依次点击选项
                 if self.wait_check_complete_article_page():
                     select_text = self.opt_text()[i].text
@@ -54,9 +51,7 @@ class CompleteText(CompleteArticleGame):
         article = self.rich_text()
         print(article.text, '\n')
         self.drag_operate()
-        desc = article.get_attribute('contentDescription')
-        answer_order = re.findall(r'\[(.*?)\]', desc)[0]
-        right_answer_list = answer_order.split(', ')
+        right_answer_list = self.get_rich_text_answer()
         mine_answer_list = list(bank_info.values())
         right = []
         wrong = []

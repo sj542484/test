@@ -13,7 +13,6 @@ from testfarm.test_program.app.honor.student.games.choice_listen import ListenCh
 from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
 from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
 class ListenChoice(ListenChoiceGame):
@@ -48,7 +47,7 @@ class ListenChoice(ListenChoiceGame):
     def listen_choice_operate(self, fq, sec_answer):
         """听力选择游戏过程"""
         mine_answer = {}
-        if self.wait_check_listen_select_page():   # 点击喇叭验证红色字体是否消失
+        if self.wait_check_listen_audio_page():   # 点击喇叭验证红色字体是否消失
             print(self.red_hint())
             self.next_btn_judge('true', self.voice_button)
             self.voice_button().click()
@@ -100,7 +99,7 @@ class ListenChoice(ListenChoiceGame):
                     timer.append(self.common.bank_time())  # 添加学生
 
             self.common.judge_timer(timer)
-            while self.wait_check_listen_select_page():
+            while self.wait_check_listen_audio_page():
                 time.sleep(3)
             self.next_btn_operate('true', self.fab_commit_btn)
             answer = mine_answer if fq == 1 else sec_answer
@@ -129,7 +128,7 @@ class ListenChoice(ListenChoiceGame):
                 last_text_attr = self.get_last_text_id()
                 for x, ques in enumerate(questions):
                     if ques.text in ques_info:
-                        continue
+                        self.screen_swipe_up(0.5, 0.9, 0.8, 1000)
                     else:
                         if x == len(questions) - 1:
                             if last_text_attr == 'ques':

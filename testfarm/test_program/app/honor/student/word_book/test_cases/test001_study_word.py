@@ -14,7 +14,7 @@ from app.honor.student.word_book.object_page.recite_word_operate import ReciteWo
 from app.honor.student.word_book.object_page.result_page import WordResultPage
 from app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
 from app.honor.student.word_book_rebuild.object_page.word_result_page import ResultPage
-from app.honor.student.word_book_rebuild.object_page.word_spelling_page import SpellingWord
+from app.honor.student.word_book_rebuild.object_page.games.word_spelling_page import SpellingWord
 from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
 from conf.decorator import teardown, testcase, setup
 

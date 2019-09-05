@@ -6,7 +6,7 @@
 # 昵称：由2~20位中文、数字及英文组成，数字不能做首位；可以允许有字符【.】【@】【空格】
 # 密码：6-20位非空字符；只允许设置数字、英文字母（英文字母区分大小写）
 import random
-phone_data = [{'account': '18011' + str(x) + str(random.randint(1000, 9999))} for x in range(10, 25)]
+phone_data = [{'account': '18022' + str(x) + str(random.randint(1000, 9999))} for x in range(10, 25)]
 
 
 pwd_data = [

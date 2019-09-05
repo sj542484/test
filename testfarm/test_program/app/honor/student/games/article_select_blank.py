@@ -43,7 +43,8 @@ class SelectBlankGame(PublicPage):
     @teststep
     def hint_answer(self):
         """提示答案"""
-        ele = self.driver.find_element_by_xpath('//*[@resource-id="{}md_customViewFrame"]/'
+        ele = self.driver.find_element_by_xpath('//android.widget.FrameLayout[contains(@resource-id, '
+                                                '"{}md_customViewFrame")]/'
                                                 'android.widget.ScrollView/android.widget.TextView'
                                                 .format(self.id_type()))
         return ele.text

@@ -34,11 +34,11 @@ class WKGame(unittest.TestCase):
         """测试微课"""
         if self.home.wait_check_home_page():  # 页面检查点
             self.home.click_hk_tab(2)  # 进入习题
-            bank_info = self.library.enter_into_game('微课测试1', '微课')
+            bank_info = self.library.enter_into_game('微课测试', '微课')
             bank_name = bank_info[1][0].text
             bank_info[0][0].click()
             self.wk.wk_game_operate()
-            if self.library.wait_check_game_list_page('微课测试1'):
+            if self.library.wait_check_game_list_page('微课测试'):
                 self.library.click_back_up_button()
                 if self.library.wait_check_bank_list_page():
                     if self.library.bank_progress_by_name(bank_name) != '100%':

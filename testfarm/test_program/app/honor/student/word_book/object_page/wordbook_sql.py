@@ -1,5 +1,5 @@
 
-from testfarm.test_program.utils.sql import SqlDb
+from utils.sql import SqlDb
 
 
 class WordBookSql(SqlDb):
@@ -206,8 +206,6 @@ class WordBookSql(SqlDb):
         """删除所有单词"""
         sql = "DELETE FROM word_student_fluency WHERE student_id = '%s'" % student_id
         self.execute_sql_only(sql)
-
-
 
 
 

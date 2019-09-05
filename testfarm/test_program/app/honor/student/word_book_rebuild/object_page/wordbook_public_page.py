@@ -52,7 +52,6 @@ class WorldBookPublicPage(BasePage):
     def get_explain_id(self, explain_ele):
         return explain_ele.get_attribute('contentDescription')
 
-
     @teststep
     def check_word_order_is_right(self, study_words, word_info, sys_only=False):
         """查看单词练习顺序是否正确"""

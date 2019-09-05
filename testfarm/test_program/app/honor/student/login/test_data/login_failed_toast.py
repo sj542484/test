@@ -4,7 +4,7 @@
 import random
 
 
-# data base of login failed toast
+# data.json base of login failed toast
 # we can add a or multiple login failed toast in it, like this '{'toast': 'xxxxxxxxxxx'},'
 _VALID_LOGIN_TOAST = (
     {'toast': '手机号或密码错误'},

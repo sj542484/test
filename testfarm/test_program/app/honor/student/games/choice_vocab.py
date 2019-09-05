@@ -4,7 +4,6 @@
 # -----------------------------------------
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-
 from testfarm.test_program.app.honor.student.games.game_public_element import PublicPage
 from testfarm.test_program.conf.decorator import teststep
 
@@ -50,12 +49,22 @@ class VocabChoiceGame(PublicPage):
         except:
             return False
 
+    @teststep
+    def wait_listen_explain_page(self):
+        """词汇运用解释页面检查点"""
+        locator = (By.ID, self.id_type() + "explain")
+        try:
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
+            return True
+        except:
+            return False
+
 
     @teststep
     def vocab_question(self):
         """问题"""
         ele = self.driver.find_element_by_id(self.id_type() + 'tv_head')
-        return ele.text
+        return ele
 
     @teststep
     def vocab_options(self):

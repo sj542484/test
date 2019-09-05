@@ -9,7 +9,7 @@ class ReadUnderstand(ReadUnderstandGame):
     @teststeps
     def play_read_understand_game(self, num, exam_json):
         exam_json['阅读理解'] = bank_json = {}
-        text = self.rich_text()
+        text = self.rich_text().text
         print(text)
         self.drag_operate()
         time.sleep(5)
@@ -18,4 +18,4 @@ class ReadUnderstand(ReadUnderstandGame):
     @teststeps
     def read_understand_detail(self, bank_info):
         self.drag_operate()
-        ListenSelect().check_result_detail_operate(bank_info, quote_type=2)
+        ListenSelect().check_result_detail_operate(bank_info)

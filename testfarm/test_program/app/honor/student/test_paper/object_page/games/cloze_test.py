@@ -17,8 +17,8 @@ class ClozeTest(ClozeGame):
     def play_cloze_test_game(self, num, exam_json):
         """完型填空  答卷过程"""
         exam_json['完形填空'] = bank_json = {}
-        text = self.rich_text()
-        print(text)
+        article = self.rich_text()
+        print(article.text)
         for i in range(num):
             question = self.question()[0].text
             print('题目：', question)

@@ -13,10 +13,10 @@ from testfarm.test_program.utils.games_keyboard import Keyboard
 class FlashCardGame(PublicPage):
     @teststep
     def wait_check_study_page(self):
-        """以“闪卡练习 -学习模式”的xpath-text为依据"""
+        """学习模式页面检查点"""
         locator = (By.ID, self.id_type() + "iv_rotate")
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -26,14 +26,14 @@ class FlashCardGame(PublicPage):
         """抄写模式页面检查点 以键盘id作为索引"""
         locator = (By.ID, self.id_type() + "keyboard_abc_view")
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
 
     @teststep
     def wait_check_sentence_page(self):
-        """以“闪卡练习 -抄写模式”的xpath-text为依据"""
+        """以“闪卡练习 -句子模式”的句子id为依据"""
         locator = (By.ID, self.id_type() + "sentence")
         try:
             WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
@@ -56,7 +56,7 @@ class FlashCardGame(PublicPage):
         """结果页页面检查点"""
         locator = (By.XPATH, "//*[@text='完成学习']")
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -116,7 +116,7 @@ class FlashCardGame(PublicPage):
     def study_word_explain(self):
         """英汉模式 页面内展示的word解释"""
         explain = self.driver.find_element_by_id(self.id_type() + "tv_chinese")
-        return explain.text
+        return explain
 
     @teststep
     def study_sentence(self):

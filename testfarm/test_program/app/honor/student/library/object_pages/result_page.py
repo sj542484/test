@@ -87,30 +87,29 @@ class ResultPage(BasePage):
         return ele
 
     @teststep
-    def answers(self):
+    def explains(self):
+        ele = self.driver.find_elements_by_id(self.id_type() + 'explain')
+        return ele
+
+    @teststep
+    def words(self, explain):
         """单词"""
-        ele = self.driver.find_elements_by_id(self.id_type() + 'tv_answer')
-        return ele
-
-    @teststep
-    def voices(self, var):
-        """声音图标"""
-        ele = self.driver.find_element_by_xpath('//android.widget.TextView[contains(@text,"%s")]/'
-                                                'preceding-sibling::android.widget.ImageView' % var)
-        return ele
-
-    @teststep
-    def explain(self, var):
-        """解释"""
-        ele = self.driver.find_element_by_xpath('//android.widget.TextView[contains(@text,"%s")]/../'
-                                                'following-sibling::android.widget.TextView' % var)
+        ele = self.driver.find_element_by_xpath('//android.widget.TextView[@text="%s"]/'
+                                                'preceding-sibling::android.widget.TextView' % explain)
         return ele.text
 
     @teststep
-    def mine_result(self, var):
+    def voices(self, explain):
+        """声音图标"""
+        ele = self.driver.find_element_by_xpath('//android.widget.TextView[@text="%s"]/'
+                                                'preceding-sibling::android.widget.ImageView[contains(@resource-id, "audio")]' % explain)
+        return ele
+
+    @teststep
+    def correct_wrong_icon(self, explain):
         """我的结果图标"""
-        ele = self.driver.find_element_by_xpath('//android.widget.TextView[contains(@text,"%s")]/../'
-                                                'following-sibling::android.widget.ImageView' % var)
+        ele = self.driver.find_element_by_xpath('//android.widget.TextView[@text="%s"]/'
+                                                'preceding-sibling::android.widget.ImageView[contains(@resource-id, "result")]' % explain)
         return ele
 
     @teststep
@@ -152,37 +151,62 @@ class ResultPage(BasePage):
 
         if self.wait_check_answer_page():
             print('===== 查看结果页 =====\n')
-            words = self.answers()
+            explains = self.explains()
 
-            for i in range(len(words)):
-                self.voices(words[i].text).click()
+            for explain in explains:
+                self.voices(explain.text).click()
                 time.sleep(0.5)
-                explain = self.explain(words[i].text)
-                print('单词：', words[i].text)
-                print('解释：', explain)
+                word = self.words(explain.text)
+                print('单词：', word)
+                print('解释：', explain.text)
                 if word_is_key:
-                    right_answer[words[i].text.lower()] = explain
+                    right_answer[word.lower()] = explain.text
                 else:
-                    right_answer[explain] = words[i].text
+                    right_answer[explain.text] = word
 
-                value = explain if word_is_key else words[i].text
-                mine = mine_answer[words[i].text] if word_is_key else mine_answer[explain]
+                value = explain.text if word_is_key else word
+                mine = mine_answer[word] if word_is_key else mine_answer[explain.text]
+
                 if value != mine:
-                    if GetAttribute().selected(self.mine_result(words[i].text)) == 'true':
+                    if GetAttribute().selected(self.correct_wrong_icon(explain.text)) == 'true':
                         print('★★★ 单词与我输入的不一致，但图标显示正确\n')
                     else:
                         print('图标标识正确\n')
-                        wrong[words[i].text] = explain
+                        wrong[word] = explain.text
 
                 else:
-                    if GetAttribute().selected(self.mine_result(words[i].text)) == 'false':
+                    if GetAttribute().selected(self.correct_wrong_icon(explain.text)) == 'false':
                         print('★★★ 单词与我输入一致，但图标显示错误\n')
                     else:
                         print('图标标识正确\n')
-                        right[words[i].text] = explain
+                        right[word] = explain.text
 
         print("错误：", wrong)
         print("正确：", right)
         self.click_back_up_button()
         return wrong, right, right_answer
 
+    @teststeps
+    def word_match_result_operate(self, mine_answer):
+        word_list = []
+        while len(word_list) < len(mine_answer):
+            explains = self.explains()
+            for x in explains:
+                if x.text in word_list:
+                    continue
+                else:
+                    word_list.append(x.text)
+                    word = self.words(x.text)
+                    print('单词：', word)
+                    print('解释：', x.text)
+
+                    self.voices(x.text).click()
+                    correct_icon = self.correct_wrong_icon(x.text)
+                    if correct_icon.get_attribute('selected') == 'false':
+                        print('★★★ 单词选择正确， 但是图标显示错误！')
+                    print('-'*30, '\n')
+            self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
+        right = list(mine_answer.values())
+        right_answer = mine_answer
+        self.click_back_up_button()
+        return mine_answer, right, right_answer

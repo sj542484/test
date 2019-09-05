@@ -23,9 +23,9 @@ class RankPage(BasePage):
 
     @teststep
     def wait_check_rank_page(self):
-        locator = (By.ID, self.id_type() + 'cover')
+        locator = (By.ID, self.id_type() + 'tv_order')
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -34,7 +34,7 @@ class RankPage(BasePage):
     def wait_check_name_page(self):
         locator = (By.ID, 'android:id/text1')
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_elements(*locator))
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_elements(*locator))
             return True
         except:
             return False

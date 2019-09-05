@@ -14,6 +14,16 @@ from testfarm.test_program.utils.get_attribute import GetAttribute
 
 class PublicPage(BasePage):
     @teststep
+    def wait_check_end_tip_page(self):
+        """游戏标题页面检查点"""
+        locator = (By.XPATH, '//android.widget.TextView[contains(@text, "到底啦 下拉刷新试试")]')
+        try:
+            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            return True
+        except:
+            return False
+
+    @teststep
     def wait_check_game_title_page(self):
         """游戏标题页面检查点"""
         locator = (By.ID, self.id_type() + 'tv_title')
@@ -28,7 +38,7 @@ class PublicPage(BasePage):
         """提示页面检查点"""
         locator = (By.ID, '{}md_title'.format(self.id_type()))
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -38,7 +48,7 @@ class PublicPage(BasePage):
         """喇叭播放按钮"""
         locator = (By.ID, '{}play_voice'.format(self.id_type()))
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -48,7 +58,7 @@ class PublicPage(BasePage):
         """检查页面是否存在拖拽按钮"""
         locator = (By.ID, self.id_type() + "dragger")
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -58,7 +68,7 @@ class PublicPage(BasePage):
         """文章类游戏富文本元素页面检查点"""
         locator = (By.ID, '{}rich_text'.format(self.id_type()))
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -68,7 +78,7 @@ class PublicPage(BasePage):
         """键盘页面检查"""
         locator = (By.ID, '{}keyboard_abc_view'.format(self.id_type()))
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -199,6 +209,12 @@ class PublicPage(BasePage):
         input_num = len([x for x in sentence_desc.split('##')[1].split('  ') if x != ''])
         return input_num
 
+    @teststep
+    def get_rich_text_answer(self):
+        """获取我输入的答案"""
+        desc = self.rich_text().get_attribute('contentDescription')
+        return [x for x in desc.split('## ')[1].split() if x and '(' not in x]
+
 
     @teststeps
     def check_position_change(self):
@@ -210,17 +226,14 @@ class PublicPage(BasePage):
 
         # 依次点击Aa，并获取第一个填空的X轴位置，比较大小
         large_size = self.rich_text().size
-        print("中等字体", large_size)
 
         self.font_middle().click()
         time.sleep(1)
         middle_size = self.rich_text().size
-        print("小字体", middle_size)
 
         self.font_great().click()
         time.sleep(1)
         great_size = self.rich_text().size
-        print("大字体", great_size)
 
         if large_size['height'] < middle_size['height']:
             print('★★★ 大字体变中等字体未发生变化')

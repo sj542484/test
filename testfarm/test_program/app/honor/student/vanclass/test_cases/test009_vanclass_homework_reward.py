@@ -82,7 +82,7 @@ class HwReward(unittest.TestCase):
         name = []
         for i in range(len(status)):
             count = re.sub("\D", "", status[i].text)
-            if int(count) != 0:
+            if int(count) == 0:
                 name = self.detail.hw_name()[i].text
                 status[i].click()  # 进入作业
                 break

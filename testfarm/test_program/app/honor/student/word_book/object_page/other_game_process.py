@@ -2,12 +2,12 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/7/18 16:19
 # -----------------------------------------
-from app.honor.student.word_book_rebuild.object_page.flash_card_page import FlashCard
-from app.honor.student.word_book_rebuild.object_page.listen_spell_page import ListenSpellWordPage
-from app.honor.student.word_book_rebuild.object_page.restore_word_page import WordRestore
-from app.honor.student.word_book_rebuild.object_page.vocabulary_choose_page import VocabularyChoose
-from app.honor.student.word_book_rebuild.object_page.word_match_page import MatchingWord
-from app.honor.student.word_book_rebuild.object_page.word_spelling_page import SpellingWord
+from app.honor.student.word_book_rebuild.object_page.games.flash_card_page import FlashCard
+from app.honor.student.word_book_rebuild.object_page.games.listen_spell_page import ListenSpellWordPage
+from app.honor.student.word_book_rebuild.object_page.games.restore_word_page import WordRestore
+from app.honor.student.word_book_rebuild.object_page.games.vocabulary_choose_page import VocabularyChoose
+from app.honor.student.word_book_rebuild.object_page.games.word_match_page import MatchingWord
+from app.honor.student.word_book_rebuild.object_page.games.word_spelling_page import SpellingWord
 from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
 from conf.decorator import teststep
 

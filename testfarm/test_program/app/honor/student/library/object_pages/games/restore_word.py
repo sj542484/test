@@ -22,7 +22,7 @@ class RestoreWord(RestoreWordGame):
         for i in range(total_num):
             if self.wait_restore_word_explain_page():
                 self.common.rate_judge(total_num, i)
-                explain = self.word_explain()
+                explain = self.word_explain().text
                 print('解释：', explain)
                 self.next_btn_judge('false', self.fab_commit_btn)
                 word_alpha = self.word_alpha()

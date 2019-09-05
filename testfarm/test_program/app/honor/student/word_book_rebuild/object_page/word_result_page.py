@@ -20,7 +20,7 @@ class ResultPage(BasePage):
         """结果页 以今日已练单词图片的Id为依据"""
         locator = (By.ID, self.id_type() + 'word_count')
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -30,7 +30,7 @@ class ResultPage(BasePage):
         """微信登陆页面检查点"""
         locator = (By.XPATH, '//android.widget.TextView[contains(@text,"登录微信")]')
         try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -40,7 +40,7 @@ class ResultPage(BasePage):
         """打卡页，以分享图片id为依据"""
         locator = (By.ID, self.id_type() + "share_img")
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -50,10 +50,21 @@ class ResultPage(BasePage):
         """再来一组 以继续挑战的图片的Id为依据"""
         locator = (By.ID, self.id_type() + "level_up_hint")
         try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
+
+    @teststep
+    def wait_check_study_times_limit_page(self):
+        """练习次数已用完页面检查点"""
+        locator = (By.ID, self.id_type() + "error_img")
+        try:
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
+            return True
+        except:
+            return False
+
 
     @teststep
     def date(self):
@@ -99,7 +110,7 @@ class ResultPage(BasePage):
     @teststep
     def more_again_button(self):
         """再来一组"""
-        print('再来一组')
+        print('再来一组', '\n')
         self.driver.\
             find_element_by_id(self.id_type() + "again")\
             .click()
@@ -242,15 +253,25 @@ class ResultPage(BasePage):
                 print('返回主界面')
 
     @teststeps
-    def result_page_handle(self, new_word_count, new_explain_words_count, already_recite_count, group_count):
+    def result_page_handle(self, new_word_count, new_explain_words_count,
+                           already_recite_count, group_count, study_model=1):
         """结果页处理"""
         if self.wait_check_result_page():
             print('进入结果页面')
-            self.check_result_word_data(new_word_count, new_explain_words_count, already_recite_count, group_count)   # 结果页元素
+            self.check_result_word_data(new_word_count, new_explain_words_count,
+                                        already_recite_count, group_count)   # 结果页元素
             self.share_button()  # 打卡
+            group_num = 6 if study_model == 1 else 9
             self.share_page_operate()  # 炫耀一下页面
             if self.wait_check_result_page():
                 self.more_again_button()  # 再练一次
+                if group_count == group_num:
+                    if not self.wait_check_study_times_limit_page():
+                        print('★★★ 练习次数已达到顶峰值， 未显示练完提示页面')
+                    else:
+                        print('你已练完今日单词， 保持适度才能事半功倍哦！休息一下，明天再练吧')
                 if self.wait_check_next_grade():  # 继续挑战页面
                     self.level_up_text()
                     self.confirm_button().click()
+
+

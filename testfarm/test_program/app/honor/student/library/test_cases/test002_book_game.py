@@ -37,7 +37,12 @@ class BookGame(unittest.TestCase):
     def tearDown(cls):
         pass
 
-    @data('单词', '句子', '文章', '其他')
+    @data(*[
+            '单词',
+            '句子',
+            '文章',
+            '其他'
+           ])
     @teststeps
     def test_book_game(self, book_name):
         """测试书籍游戏"""

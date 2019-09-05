@@ -83,7 +83,7 @@ class ClozePage(ClozeGame):
                 last_text_attr = self.get_last_text_id()
                 for i, ques in enumerate(questions):
                     if ques.text in ques_info:
-                        continue
+                        self.screen_swipe_up(0.5, 0.9, 0.8, 1000)
                     else:
                         if i == len(questions) - 1:
                             if last_text_attr == 'ques':

@@ -4,7 +4,7 @@
 # -----------------------------------------
 import time
 
-from app.honor.student.word_book_rebuild.object_page.vocabulary_choose_page import VocabularyChoose
+from app.honor.student.word_book_rebuild.object_page.games.vocabulary_choose_page import VocabularyChoose
 from conf.decorator import teststep
 
 

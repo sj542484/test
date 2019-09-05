@@ -11,10 +11,10 @@ from app.honor.student.web.object_pages.driver import Driver
 from app.honor.student.web.object_pages.login_page import LoginWebPage
 from app.honor.student.word_book_rebuild.object_page.class_operate import QuitAddClass
 from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
-from app.honor.student.word_book_rebuild.object_page.flash_card_page import FlashCard
+from app.honor.student.word_book_rebuild.object_page.games.flash_card_page import FlashCard
 from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
 from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
-from app.honor.student.word_book_rebuild.test_data.account import VANCLASS_ID
+from app.honor.student.word_book_rebuild.test_data.account import VANCLASS_ID, TEACHER_ACCOUNT, STU_PASSWORD
 from conf.decorator import setup, teardown, testcase
 
 

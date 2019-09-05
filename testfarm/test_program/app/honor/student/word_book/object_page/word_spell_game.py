@@ -2,7 +2,7 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/7/26 17:14
 # -----------------------------------------
-from app.honor.student.word_book_rebuild.object_page.word_spelling_page import SpellingWord
+from app.honor.student.word_book_rebuild.object_page.games.word_spelling_page import SpellingWord
 
 
 class WordSpellGamePage(SpellingWord):

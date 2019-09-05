@@ -8,8 +8,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from testfarm.test_program.app.honor.student.web.object_pages.base import BaseDriverPage
-from testfarm.test_program.conf.decorator import teststep
+from app.honor.student.web.object_pages.base import BaseDriverPage
+from conf.decorator import teststep
 
 
 class WebHomePage(BaseDriverPage):

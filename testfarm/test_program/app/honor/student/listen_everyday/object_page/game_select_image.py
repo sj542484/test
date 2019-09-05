@@ -9,6 +9,7 @@ from app.honor.student.library.object_pages.games.listen_select_img import Liste
 from app.honor.student.library.object_pages.result_page import ResultPage
 from conf.decorator import teststep
 from utils.get_attribute import GetAttribute
+from utils.toast_find import Toast
 
 
 class ListenSelectImagePage(ListenSelectImg):
@@ -16,7 +17,7 @@ class ListenSelectImagePage(ListenSelectImg):
     def play_listen_select_image_game(self):
         """听音选图游戏过程"""
         print('----- < 听音选图 > -----\n')
-        mine_answer = []
+        mine_answer = {}
         total_num = self.public.rest_bank_num()
         for i in range(total_num):
             if self.wait_check_listen_image_page():
@@ -31,6 +32,14 @@ class ListenSelectImagePage(ListenSelectImg):
                 mine_answer[question] = choice_desc
                 random_choice.click()
                 time.sleep(1)
+                print('-'*30, '\n')
+        while True:
+            self.fab_commit_btn().click()
+            if Toast().find_toast('请听完音频，再提交答案'):
+                time.sleep(3)
+            else:
+                break
+        return mine_answer
 
     @teststep
     def listen_select_image_game_result_operate(self, mine_answer):
@@ -38,7 +47,6 @@ class ListenSelectImagePage(ListenSelectImg):
         if ResultPage().wait_check_answer_page():
             self.voice_play_btn().click()
             banks = []
-            index = 0
             while True:
                 questions = self.result_question()
                 for i, ques in enumerate(questions):

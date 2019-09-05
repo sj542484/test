@@ -10,13 +10,13 @@ class WordRebuildSql(WordBookSql):
     def find_sys_words_trans_id(self, stu_id):
         """获取系统的解释的id"""
         sql = "SELECT translation_id FROM word_student_fluency WHERE student_id = {} and " \
-              "deleted_at is NULL and auth_type_ids=1".format(stu_id)
+              "deleted_at is NULL and auth_type_ids like '%1%'".format(stu_id)
         return self.execute_sql_return_result(sql)
 
     def find_teacher_words_trans_id(self, stu_id):
         """获取老师单词的解释的id"""
         sql = "SELECT translation_id FROM word_student_fluency WHERE student_id = {} and " \
-              "deleted_at is NULL and auth_type_ids=2 order by created_at".format(stu_id)
+              "deleted_at is NULL and auth_type_ids like '%2&' order by created_at".format(stu_id)
         return self.execute_sql_return_result(sql)
 
     def update_student_word_fluency_data(self, stu_id):
@@ -150,9 +150,9 @@ class WordRebuildSql(WordBookSql):
 
     def update_student_study_rule_value(self, stu_id):
         """更改学生单词本学习设置"""
-        sql = 'UPDATE user_word_data set value = 1, create_at= DATE_ADD(now(),INTERVAL -1 DAY), update_at=' \
+        sql = 'UPDATE user_word_data set value = 1, created_at= DATE_ADD(now(),INTERVAL -1 DAY), updated_at=' \
               'DATE_ADD(now(),INTERVAL -1 DAY) WHERE ' \
-              'student_id = {} and `key`= "word_learn_rule"'.format(stu_id)
+              'account_id = {} and `key`= "word_learn_rule"'.format(stu_id)
         return self.execute_sql_return_result(sql)
 
     def update_student_all_word_fluency_f1(self, stu_id):
@@ -165,4 +165,22 @@ class WordRebuildSql(WordBookSql):
         """将F值小于3的单词的前十个的F值更改为3， 时间改为10天前"""
         sql = 'UPDATE word_student_fluency set fluency_level = 3, last_finish_at= DATE_ADD(now(),INTERVAL -10 day) ' \
               'WHERE student_id = {} and fluency_level< 3 LIMIT 10'.format(stu_id)
+        return self.execute_sql_return_result(sql)
+
+    # ======================== 我的单词 ================================
+    def find_student_total_words_count(self, stu_id):
+        sql = 'SELECT DISTINCT(wordbank_id) FROM word_student_fluency ' \
+              'WHERE student_id = {} and fluency_level > 0'.format(stu_id)
+        return self.execute_sql_return_result(sql)
+
+    def find_student_familiar_explain_id(self, stu_id):
+        """查询学生标熟单词"""
+        sql = "SELECT translation_id FROM `word_student_fluency_flag` " \
+              "WHERE `student_id` = '{}' and flag = 'familiar_word'".format(stu_id)
+        return self.execute_sql_return_result(sql)
+
+    def find_student_star_explain_id(self, stu_id):
+        """查询学生标星单词"""
+        sql = "SELECT translation_id FROM `word_student_fluency_flag` " \
+              "WHERE `student_id` = '{}' and flag = 'star_word'".format(stu_id)
         return self.execute_sql_return_result(sql)

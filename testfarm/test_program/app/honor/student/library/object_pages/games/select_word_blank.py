@@ -5,20 +5,12 @@
 # -------------------------------------------
 import random
 import string
-import time
-
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
 from testfarm.test_program.app.honor.student.games.article_select_blank import SelectBlankGame
 from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
 from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
-from testfarm.test_program.conf.base_page import BasePage
 from testfarm.test_program.conf.decorator import teststep, teststeps
 from testfarm.test_program.utils.games_keyboard import Keyboard
-from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
 class SelectWordBlank(SelectBlankGame):

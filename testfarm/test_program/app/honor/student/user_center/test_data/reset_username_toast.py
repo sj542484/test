@@ -2,7 +2,7 @@
 # encoding:UTF-8
 import random
 
-# data base of username reset toast
+# data.json base of username reset toast
 # we can add a or multiple password reset toast in it, like this '{'toast': 'xxxxxxxxxxx'},'
 _VALID_RESETUSERNAME = (
     {'toast': '用户名重复'},

@@ -29,20 +29,15 @@ class GuessWord(GuessWordGame):
             count = self.common.rest_bank_num()
             if fq == 1:
                 mine_input = []
-                if i != total_num - 1:
-                    for x in self.keyboard_key():
-                        mine_input.append(x.text)
-                        x.click()
+                for x in self.keyboard_key():
+                    mine_input.append(x.text)
+                    x.click()
+                    mine_answers[explain] = ''.join(mine_input)
+                    if self.wait_check_guess_word_page():
                         if self.common.rest_bank_num() != count:
-                            mine_answers[explain] = ''.join(mine_input)
                             break
-                else:
-                    for x in self.keyboard_key():
-                        mine_input.append(x.text)
-                        x.click()
-                        if not self.wait_check_guess_word_page():
-                            mine_answers[explain] = ''.join(mine_input)
-                            break
+                    else:
+                        break
                 print('我的答案:', ''.join(mine_input))
 
             else:

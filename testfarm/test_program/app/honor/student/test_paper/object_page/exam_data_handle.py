@@ -21,12 +21,12 @@ class DataPage(BasePage):
 
     @teststep
     def write_json_to_file(self, json_data):
-        with open('app/honor/student/test_paper/test_data/data', 'w') as f:
+        with open('app/honor/student/test_paper/test_data/data.json', 'w') as f:
             json.dump(json_data, f, ensure_ascii=False)
 
     @teststep
     def get_data_json_from_file(self):
-        with open('app/honor/student/test_paper/test_data/data', 'r') as f:
+        with open('app/honor/student/test_paper/test_data/data.json', 'r', encoding='gbk', errors='ignore') as f:
             try:
                 data_json = json.load(f)
                 return data_json

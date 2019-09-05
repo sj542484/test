@@ -54,3 +54,8 @@ class ListenSpellGame(PublicPage):
         ele = self.driver.find_element_by_id(self.id_type() + 'tv_answer')
         return ele.text
 
+    @teststep
+    def input_wrap_side(self):
+        """单词听写输入栏外侧"""
+        ele = self.driver.find_element_by_id(self.id_type() + 'll_container')
+        return ele

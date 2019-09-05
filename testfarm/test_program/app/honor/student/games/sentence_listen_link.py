@@ -41,7 +41,7 @@ class ListenLinkSentenceGame(PublicPage):
     def text_for_select(self):
         """下方可点击的文本"""
         ele = self.driver.find_elements_by_id(self.id_type() + "text")
-        return ele
+        return [x for x in ele if x.text]
 
     @teststep
     def right_sentence_answer(self):
@@ -52,7 +52,7 @@ class ListenLinkSentenceGame(PublicPage):
     @teststep
     def sentence_explain(self):
         """解释"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'tv_explain')
-        return ele.text
+        ele = self.driver.find_elements_by_id(self.id_type() + 'tv_explain')
+        return ele
 
 

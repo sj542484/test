@@ -5,7 +5,6 @@
 # -------------------------------------------
 import random
 import string
-
 from testfarm.test_program.app.honor.student.games.word_listen_spell import ListenSpellGame
 from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 from testfarm.test_program.conf.decorator import teststeps

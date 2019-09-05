@@ -2,12 +2,12 @@
 # encoding:UTF-8  
 # @Author  : SUN FEIFEI
 import time
-from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
+from app.honor.student.homework.object_page.homework_page import Homework
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from conf.base_page import BasePage
 
 
 class HomePage(BasePage):
@@ -17,7 +17,7 @@ class HomePage(BasePage):
         """以“做试卷”为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'做试卷')]")
         try:
-            WebDriverWait(self.driver, 20, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -105,28 +105,28 @@ class HomePage(BasePage):
     def click_tab_library(self):
         """下方图书馆Tab"""
         self.driver.\
-            find_element_by_id(self.id_type() + 'tab_lib')\
+            find_element_by_id(self.id_type() + 'tab_lib_icon')\
             .click()
 
     @teststep
     def click_tab_hw(self):
         """以“学习tab”的id为依据"""
         self.driver\
-            .find_element_by_id(self.id_type() + 'tab_home')\
+            .find_element_by_id(self.id_type() + 'tab_hw_icon')\
             .click()
 
     @teststep
     def click_test_vanclass(self):
         """以“班级tab”的id为依据"""
         self.driver \
-            .find_element_by_id(self.id_type() + 'tab_class')\
+            .find_element_by_id(self.id_type() + 'tab_class_icon')\
             .click()
 
     @teststep
     def click_tab_profile(self):
         """以“个人中心tab”的id为依据"""
         self.driver \
-            .find_element_by_id(self.id_type() + 'tab_profile')\
+            .find_element_by_id(self.id_type() + 'tab_profile_icon')\
             .click()
 
     @teststep

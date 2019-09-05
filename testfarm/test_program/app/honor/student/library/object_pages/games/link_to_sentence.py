@@ -19,7 +19,7 @@ from testfarm.test_program.utils.get_attribute import GetAttribute
 class LinkToSentence(LinkWordToSentenceGame):
 
     def __init__(self):
-        self.common = LibraryPubicPage()
+        self.public = LibraryPubicPage()
 
     @teststep
     def result_explain(self):
@@ -52,11 +52,11 @@ class LinkToSentence(LinkWordToSentenceGame):
         """连词成句操作"""
         timer = []
         mine_answer = {}
-        total_num = self.common.rest_bank_num()
+        total_num = self.public.rest_bank_num()
         for i in range(0, total_num):
             if self.wait_check_link_sentence_page():
                 self.next_btn_judge('false', self.fab_commit_btn)             # 判断下一步状态
-                self.common.rate_judge(total_num, i)
+                self.public.rate_judge(total_num, i)
                 explain = self.sentence_explain().strip()
                 print('解释：', explain)
                 if fq == 1:
@@ -75,10 +75,10 @@ class LinkToSentence(LinkWordToSentenceGame):
                 mine_answer[explain] = mine
                 print('我的答案：', mine)
                 print('-' * 20, '\n')
-                timer.append(self.common.bank_time())
+                timer.append(self.public.bank_time())
                 self.fab_next_btn().click()
 
-        self.common.judge_timer(timer)
+        self.public.judge_timer(timer)
         done_answer = mine_answer if fq == 1 else sec_answer
         return done_answer, total_num
 
@@ -89,25 +89,20 @@ class LinkToSentence(LinkWordToSentenceGame):
             right_answer = {}
             right, wrong = [], []
             answer_info = []
-            sentence_size = self.get_sentence_size(self.result_explain()[0].text)
-            sentence_scale = sentence_size['height'] / self.get_window_size()[1]
             print('===== 查看结果页 =====\n')
             while len(answer_info) < len(mine_answer):
                 result_explains = self.result_explain()
-                for i, exp in enumerate(result_explains):
-                    if exp.text in answer_info:
+                for explain in result_explains:
+                    if explain.text in answer_info:
                         continue
                     else:                                           # 倒数第一道题，向上滑出一道题的距离
-                        if i == len(result_explains) - 1:
-                            self.screen_swipe_up(0.5, 0.9, 0.9 - sentence_scale, 1000)
-
-                        result_explain = exp.text.strip()
+                        result_explain = explain.text
                         print('解释：', result_explain)
-                        answer_info.append(exp.text)
-                        result_answer = self.result_answer_by_explain(exp.text)
+                        answer_info.append(result_explain)
+                        result_answer = self.result_answer_by_explain(result_explain)
                         print('答案：', result_answer)
 
-                        mine_icon = self.mine_icon_by_sentence(exp.text)
+                        mine_icon = self.mine_icon_by_sentence(result_explain)
                         if mine_answer[result_explain] != result_answer:
                             if GetAttribute().selected(mine_icon) == 'true':       # 校验图标是否正确
                                 print('★★★ 我的答案与正确答案不一致，但是图标显示正确！')
@@ -124,7 +119,7 @@ class LinkToSentence(LinkWordToSentenceGame):
                         right_answer[result_explain] = result_answer
 
                     print('-'*30, '\n ')
-
+                self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
             print('正确题：', right)
             print('错误题：', wrong)
             self.click_back_up_button()

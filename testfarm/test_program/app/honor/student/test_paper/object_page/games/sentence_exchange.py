@@ -47,18 +47,18 @@ class SentenceExchange(SentenceExchangeGame):
         """句型转换"""
         exam_json['句型转换'] = bank_json = {}
         for i in range(num):
-            question = self.sentence_question()
+            question = self.sentence_question()[0].text
             print(question)
             self.next_btn_judge('false', self.clear_btn)
             print('提示词序：', ' '.join([x.text for x in self.text_bottom()]))
 
             answer_parts = self.text_bottom()
-            for x in range(answer_parts):
+            for x in range(len(answer_parts)):
                 random.choice(self.text_bottom()).click()
             mine_answer = ' '.join([x.text for x in self.input_text()])
             print('我的答案：', mine_answer)
             self.next_btn_judge('true', self.clear_btn)
-            bank_json[question] = ' '.join(mine_answer)
+            bank_json[question] = mine_answer
             self.answer.skip_operator(i, num, "句型转换", self.wait_check_exchange_sentence_page, self.judge_tip_status)
 
     @teststeps

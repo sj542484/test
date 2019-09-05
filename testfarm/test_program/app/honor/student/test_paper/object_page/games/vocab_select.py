@@ -20,61 +20,63 @@ class VocabSelect(VocabChoiceGame):
         return ele
 
     @teststep
-    def answers(self):
-        """单词"""
-        ele = self.driver.find_elements_by_id('{}tv_answer'.format(self.id_type()))
-        return ele
-
-    @teststep
-    def voices(self, var):
-        """声音图标"""
-        ele = self.driver.find_element_by_xpath('//android.widget.TextView[contains(@text,"%s")]/'
-                                                'preceding-sibling::android.widget.ImageView' % var)
-        return ele
-
-    @teststep
-    def explain(self, var):
+    def explains(self):
         """解释"""
-        ele = self.driver.find_element_by_xpath('//android.widget.TextView[contains(@text,"%s")]/../'
-                                                'following-sibling::android.widget.TextView' % var)
+        ele = self.driver.find_elements_by_id(self.id_type() + 'explain')
+        return ele
+
+    @teststep
+    def word(self, explain):
+        """单词"""
+        ele = self.driver.find_element_by_xpath('//android.widget.TextView[@text="%s"]/'
+                                                'preceding-sibling::android.widget.TextView' % explain)
         return ele.text
 
     @teststep
-    def mine_result(self, var):
-        """我的结果图标"""
-        ele = self.driver.find_element_by_xpath('//android.widget.TextView[contains(@text,"%s")]/../'
-                                                'following-sibling::android.widget.ImageView' % var)
+    def voices(self, explain):
+        """声音图标"""
+        ele = self.driver.find_element_by_xpath('//android.widget.TextView[@text="%s"]/preceding-sibling'
+                                                '::android.widget.ImageView[contains(@resource-id, "audio")]' % explain)
         return ele
 
+
+    @teststep
+    def mine_result(self, explain):
+        """我的结果图标"""
+        ele = self.driver.find_element_by_xpath('//android.widget.TextView[@text="%s"]/preceding-sibling'
+                                                '::android.widget.ImageView[contains(@resource-id, "result")]' % explain)
+        return ele
 
 
     @teststeps
     def play_vocab_select_game(self, num, exam_json):
         """词汇选择 """
         exam_json['词汇选择'] = bank_json = {}
-        # self.click_voice()
         for i in range(num):
             if self.wait_check_head_page():
                 word = self.vocab_question()
-                print('题目：', word)
-
+                print('题目：', word.text)
                 options = self.vocab_options()
                 print('选项如下：')
                 for opt in options:
                     print(opt.text)
                 opt_index = random.randint(0, len(options)-1)
-                print('选择选项：', options[opt_index].text)
-                bank_json[word] = options[opt_index].text
+                select_opt = options[opt_index].text
+                print('选择选项：', select_opt)
+                bank_json[word] = select_opt
                 options[opt_index].click()
-                self.answer.skip_operator(i, num, '词汇选择', self.wait_check_head_page, self.judge_tip_status)
+                self.answer.skip_operator(i, num, '词汇选择', self.wait_check_head_page, self.judge_tip_status, select_opt)
 
     @teststeps
-    def judge_tip_status(self):
-        select_char = self.vocab_right_answer()
-        if len(select_char) == 0:
-            print('★★★ Error-- 跳转回来后题目完成状态发生变化')
+    def judge_tip_status(self, select_opt):
+        page_opt = [x.text for x in self.vocab_options() if x.get_attribute('selected') == 'true']
+        if len(page_opt) == 0:
+            print('★★★ Error-- 跳转回来后题目选中状态被取消')
         else:
-            print('题目跳转后题目状态未改变：已完成')
+            if select_opt != page_opt[0]:
+                print('★★★ 题目跳转选择内容发生改变')
+            else:
+                print('题目跳转后题目状态未改变：已完成')
 
     @teststeps
     def game_detail(self, bank_info, game_type=1):
@@ -83,14 +85,13 @@ class VocabSelect(VocabChoiceGame):
         print(all_text[3].text, '\t', all_text[4].text, '\t', all_text[5].text)
         tips = []
         while True:
-            answers = self.answers()
-            for i in range(len(answers)):
-                right_word = answers[i].text
-                if right_word in tips:
-                    continue
+            explains = self.explains()
+            for explain in explains:
+                if explain.text in tips:
+                    self.home.screen_swipe_up(0.5, 0.9, 0.8, 1000)
                 else:
-                    self.result_check(right_word, bank_info, tips, game_type)
-                    tips.append(right_word)
+                    self.result_check(explain.text, bank_info, tips, game_type)
+                    tips.append(explain.text)
 
             if len(tips) < len(bank_info):
                 self.home.screen_swipe_up(0.5, 0.9, 0.3, 2000)
@@ -98,11 +99,11 @@ class VocabSelect(VocabChoiceGame):
                 break
 
     @teststeps
-    def result_check(self, right_word, bank_info, tips, game_type):
+    def result_check(self, explain, bank_info, tips, game_type):
         """结果比对"""
-        explain = self.explain(right_word)
-        mine_icon = self.mine_result(right_word)
-        self.voices(right_word).click()
+        word = self.word(explain)
+        mine_icon = self.mine_result(explain)
+        self.voices(explain).click()
         time.sleep(1)
 
         if game_type != 2:
@@ -111,27 +112,27 @@ class VocabSelect(VocabChoiceGame):
             else:
                 mine_answer = bank_info[list(bank_info.keys())[len(tips)]]
 
-            if right_word == mine_answer:
+            if word == mine_answer:
                 if mine_icon.get_attribute('selected') == 'true':
-                    print("单词：", right_word + '\n解释：', explain, '\n图标显示为正确')
+                    print("单词：", word + '\n解释：', explain, '\n图标显示为正确')
                     print("我的答案：", mine_answer)
                     print('结果核实正确\n')
 
                 else:
-                    print("单词：", right_word + '\n解释：', explain, '\n图标显示为错误')
+                    print("单词：", word + '\n解释：', explain, '\n图标显示为错误')
                     print("我的答案：", mine_answer)
                     print('★★★ Error--结果一致我的图标显示错误！\n')
             else:
                 if mine_icon.get_attribute('selected') == 'false':
-                    print("单词：", right_word + '\n解释：', explain, '\n图标显示为错误')
+                    print("单词：", word + '\n解释：', explain, '\n图标显示为错误')
                     print('我的答案：', mine_answer)
                     print('结果核实正确\n')
                 else:
-                    print("单词：", right_word + '\n解释：', explain, '\n图标显示为正确')
+                    print("单词：", word + '\n解释：', explain, '\n图标显示为正确')
                     print('我的答案：', mine_answer)
                     print('★★★ Error-- 答案有误但是图标显示正确！\n')
         else:
-            print('单词：', right_word, '\t解释：', explain, '\t正确')
+            print('单词：', word, '\t解释：', explain, '\t正确')
             if mine_icon.get_attribute('selected') == "false":
                 print("★★★ Error-- 答案正确但是图标显示错误！\n")
 
