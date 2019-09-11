@@ -2,12 +2,12 @@
 # encoding:UTF-8  
 # @Author  : SUN FEIFEI
 import time
-from app.honor.student.homework.object_page.homework_page import Homework
+from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from conf.decorator import teststep, teststeps
-from conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststep, teststeps
+from testfarm.test_program.conf.base_page import BasePage
 
 
 class HomePage(BasePage):

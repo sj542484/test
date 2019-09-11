@@ -1,16 +1,16 @@
 import time
 
-from app.honor.student.login.test_data.account import VALID_ACCOUNT
-from app.honor.student.login.object_page.home_page import HomePage
-from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
+from testfarm.test_program.app.honor.student.login.test_data.account import VALID_ACCOUNT
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
-from conf.decorator import teststep, teststeps
-from conf.base_page import BasePage
-from utils.reset_phone_find_toast import verify_find
-from utils.toast_find import Toast
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
+from testfarm.test_program.conf.decorator import teststep, teststeps
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.utils.reset_phone_find_toast import verify_find
+from testfarm.test_program.utils.toast_find import Toast
 
 
 class LoginPage(BasePage):
@@ -268,7 +268,7 @@ class LoginPage(BasePage):
     @teststeps
     def app_status(self, stu_account=VALID_ACCOUNT.account(), stu_password=VALID_ACCOUNT.password()):
         """判断应用当前状态"""
-        activity = self.wait_activity()
+        activity = self.driver.wait_activity
         if self.wait_check_page():  # 在登录界面
             self.login_operate(stu_account, stu_password)
 

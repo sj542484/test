@@ -2,7 +2,7 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/6/27 16:41
 # -----------------------------------------
-from app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
+from testfarm.test_program.app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
 
 
 class WordRebuildSql(WordBookSql):

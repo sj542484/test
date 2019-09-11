@@ -1,0 +1,125 @@
+2019-09-05 15:06:55,514 - vivo_X20 - INFO - --> PlayAllGame.setUp
+2019-09-05 15:06:55,518 - vivo_X20 - INFO -   --> LoginPage.app_status
+2019-09-05 15:06:55,518 - vivo_X20 - INFO -   --> LoginPage.wait_check_page
+2019-09-05 15:06:58,773 - vivo_X20 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 15:06:58,774 - vivo_X20 - INFO -   --> LoginPage.login_operate
+2019-09-05 15:07:00,775 - vivo_X20 - INFO - 	--> LoginPage.input_username
+2019-09-05 15:07:01,021 - vivo_X20 - INFO - 	--> LoginPage.input_password
+2019-09-05 15:07:03,508 - vivo_X20 - INFO - 	--> LoginPage.login_button
+2019-09-05 15:07:06,781 - vivo_X20 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-05 15:07:06,782 - vivo_X20 - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 15:07:06,782 - vivo_X20 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-05 15:07:06,783 - vivo_X20 - INFO - --> PlayAllGame.test_all_game
+2019-09-05 15:07:06,783 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:07:08,636 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:07:08,636 - vivo_X20 - INFO - 	--> UserCenterPage.get_user_info
+2019-09-05 15:07:08,636 - vivo_X20 - INFO - 	--> HomePage.click_tab_profile
+2019-09-05 15:07:08,925 - vivo_X20 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-05 15:07:12,091 - vivo_X20 - INFO - 	--> UserCenterPage.nickname
+2019-09-05 15:07:14,886 - vivo_X20 - INFO - 	--> UserCenterPage.purchase
+2019-09-05 15:07:15,099 - vivo_X20 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-05 15:07:17,499 - vivo_X20 - INFO - 	--> UserCenterPage.phone
+2019-09-05 15:07:17,666 - vivo_X20 - ERROR - Exception, 'WordBookSql' object has no attribute 'db'
+2019-09-05 15:07:17,667 - vivo_X20 - ERROR - 	<-- UserCenterPage.get_user_info, Exception, Error
+2019-09-05 15:07:18,767 - vivo_X20 - ERROR - Exception, IMAGE:UserCenterPage.get_user_info-20190905150717.png
+2019-09-05 15:07:18,767 - vivo_X20 - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-09-05 15:07:18,768 - vivo_X20 - INFO - --> PlayAllGame.tearDown
+2019-09-05 15:07:18,768 - vivo_X20 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-05 15:07:18,774 - vivo_X20 - INFO - --> WKGame.setUp
+2019-09-05 15:07:18,775 - vivo_X20 - INFO -   --> LoginPage.app_status
+2019-09-05 15:07:18,775 - vivo_X20 - INFO -   --> LoginPage.wait_check_page
+2019-09-05 15:07:24,303 - vivo_X20 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 15:07:24,304 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:07:34,391 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:07:34,392 - vivo_X20 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-05 15:07:34,393 - vivo_X20 - INFO - 	--> LoginPage.close_app
+2019-09-05 15:07:34,580 - vivo_X20 - INFO - 	--> LoginPage.launch_app
+2019-09-05 15:07:41,937 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:07:42,752 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:07:42,752 - vivo_X20 - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 15:07:42,753 - vivo_X20 - INFO - <-- WKGame.setUp, Success
+
+2019-09-05 15:07:42,753 - vivo_X20 - INFO - --> WKGame.test_wk_game
+2019-09-05 15:07:42,754 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:07:43,324 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:07:43,325 - vivo_X20 - INFO - 	--> HomePage.click_hk_tab
+2019-09-05 15:07:43,560 - vivo_X20 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-05 15:07:43,560 - vivo_X20 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-05 15:07:45,492 - vivo_X20 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 15:07:47,490 - vivo_X20 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-05 15:07:48,782 - vivo_X20 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-05 15:07:48,784 - vivo_X20 - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-05 15:07:48,998 - vivo_X20 - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-05 15:07:49,302 - vivo_X20 - INFO -   --> WKGamePage.wk_game_operate
+2019-09-05 15:07:49,303 - vivo_X20 - INFO - 	--> WKGamePage.wait_check_wk_page
+2019-09-05 15:07:51,931 - vivo_X20 - INFO - 	--> WKGamePage.play_time
+2019-09-05 15:07:53,044 - vivo_X20 - INFO - 	--> WKGamePage.play_time
+2019-09-05 15:07:53,328 - vivo_X20 - INFO - 	--> WKGamePage.video_pause_btn
+2019-09-05 15:07:53,458 - vivo_X20 - INFO - 	--> WKGamePage.play_time
+2019-09-05 15:07:54,129 - vivo_X20 - INFO - 	--> WKGamePage.wait_check_play_btn_page
+2019-09-05 15:07:56,184 - vivo_X20 - INFO - 	--> WKGamePage.play_time
+2019-09-05 15:07:58,157 - vivo_X20 - INFO - 	--> WKGamePage.video_size
+2019-09-05 15:07:58,301 - vivo_X20 - INFO - 	--> WKGamePage.screen_rotate_btn
+2019-09-05 15:07:58,421 - vivo_X20 - INFO - 	--> WKGamePage.video_size
+2019-09-05 15:08:03,336 - vivo_X20 - INFO - 	--> WKGamePage.video_size
+2019-09-05 15:08:05,966 - vivo_X20 - INFO -   <-- WKGamePage.wk_game_operate, Success
+2019-09-05 15:08:05,967 - vivo_X20 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-05 15:08:06,834 - vivo_X20 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-05 15:08:08,738 - vivo_X20 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-05 15:08:19,154 - vivo_X20 - INFO - <-- WKGame.test_wk_game, Success
+
+2019-09-05 15:08:19,155 - vivo_X20 - INFO - --> WKGame.tearDown
+2019-09-05 15:08:19,156 - vivo_X20 - INFO - <-- WKGame.tearDown, Success
+
+2019-09-05 15:08:19,156 - vivo_X20 - INFO - --> FlashCard.setUp
+2019-09-05 15:08:19,157 - vivo_X20 - INFO -   --> LoginPage.app_status
+2019-09-05 15:08:19,157 - vivo_X20 - INFO -   --> LoginPage.wait_check_page
+2019-09-05 15:08:24,227 - vivo_X20 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 15:08:24,229 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:08:34,487 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:08:34,488 - vivo_X20 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-05 15:08:34,489 - vivo_X20 - INFO - 	--> LoginPage.close_app
+2019-09-05 15:08:34,727 - vivo_X20 - INFO - 	--> LoginPage.launch_app
+2019-09-05 15:08:41,893 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:08:42,608 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:08:42,608 - vivo_X20 - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 15:08:42,609 - vivo_X20 - INFO - <-- FlashCard.setUp, Success
+
+2019-09-05 15:08:42,609 - vivo_X20 - INFO - --> FlashCard.test_check_speak_game_is_unit
+2019-09-05 15:08:42,609 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:08:43,625 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:08:46,909 - vivo_X20 - INFO -   --> AssignHomeworkPage.assign_homework_operate
+2019-09-05 15:08:46,910 - vivo_X20 - INFO - 	--> LoginWebPage.login_operate
+2019-09-05 15:08:46,910 - vivo_X20 - INFO - 	--> LoginWebPage.wait_check_login_page
+2019-09-05 15:08:46,933 - vivo_X20 - INFO - 	--> LoginWebPage.username
+2019-09-05 15:08:46,982 - vivo_X20 - INFO - 	--> LoginWebPage.username
+2019-09-05 15:08:47,082 - vivo_X20 - INFO - 	--> LoginWebPage.password
+2019-09-05 15:08:47,139 - vivo_X20 - INFO - 	--> LoginWebPage.login_btn
+2019-09-05 15:08:49,182 - vivo_X20 - INFO - 	--> LoginWebPage.wait_check_identity_page
+2019-09-05 15:08:49,205 - vivo_X20 - INFO - 	--> LoginWebPage.teacher_ele
+2019-09-05 15:08:51,248 - vivo_X20 - INFO - 	--> WebHomePage.wait_check_home_page
+2019-09-05 15:08:53,276 - vivo_X20 - INFO - 	--> WebHomePage.click_logo
+2019-09-05 15:08:55,320 - vivo_X20 - INFO - 	--> AssignHomeworkPage.delete_homework_operate
+2019-09-05 15:08:55,322 - vivo_X20 - INFO - 	--> WebHomePage.click_test_class
+2019-09-05 15:08:55,417 - vivo_X20 - INFO - 	--> WebHomePage.wait_check_class_page
+2019-09-05 15:08:57,445 - vivo_X20 - INFO - 	--> WebHomePage.homework_name
+2019-09-05 15:08:58,636 - vivo_X20 - INFO - 	--> WebHomePage.homework_tab
+2019-09-05 15:08:58,736 - vivo_X20 - ERROR - WebDriverException, Message: unknown error: Element <a href="#/master/vanclass/9820/homework/66499/info/homework-detail" class="">...</a> is not clickable at point (699, 187). Other element would receive the click: <div class="el-loading-mask is-fullscreen el-loading-fade-leave-active el-loading-fade-leave-to" style="">...</div>
+  (Session info: chrome=76.0.3809.132)
+  (Driver info: chromedriver=71.0.3578.80 (2ac50e7249fbd55e6f517a28131605c9fb9fe897),platform=Mac OS X 10.14.5 x86_64)
+
+2019-09-05 15:08:58,737 - vivo_X20 - ERROR - 	<-- AssignHomeworkPage.delete_homework_operate, WebDriverException, Error
+2019-09-05 15:09:00,478 - vivo_X20 - ERROR - WebDriverException, Message: IMAGE:AssignHomeworkPage.delete_homework_operate-20190905150858.png
+
+2019-09-05 15:09:00,479 - vivo_X20 - ERROR -   <-- AssignHomeworkPage.assign_homework_operate, WebDriverException, Error
+2019-09-05 15:09:00,479 - vivo_X20 - ERROR - WebDriverException, Message: Message: IMAGE:AssignHomeworkPage.delete_homework_operate-20190905150858.png
+
+
+2019-09-05 15:09:00,480 - vivo_X20 - ERROR - <-- FlashCard.test_check_speak_game_is_unit, WebDriverException, Error
+
+2019-09-05 15:09:00,480 - vivo_X20 - INFO - --> FlashCard.tearDown
+2019-09-05 15:09:00,480 - vivo_X20 - INFO - <-- FlashCard.tearDown, Success
+

@@ -1,0 +1,68 @@
+2019-09-05 11:44:09,918 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-09-05 11:44:09,924 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-09-05 11:44:09,925 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-09-05 11:44:12,977 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 11:44:12,977 - oppo_R11t - INFO -   --> LoginPage.login_operate
+2019-09-05 11:44:14,979 - oppo_R11t - INFO - 	--> LoginPage.input_username
+2019-09-05 11:44:15,959 - oppo_R11t - INFO - 	--> LoginPage.input_password
+2019-09-05 11:44:17,760 - oppo_R11t - INFO - 	--> LoginPage.login_button
+2019-09-05 11:44:21,449 - oppo_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-09-05 11:44:21,450 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 11:44:21,450 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-05 11:44:21,451 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-09-05 11:44:21,452 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:44:21,452 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:44:21,453 - oppo_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-05 11:44:21,453 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-09-05 11:44:21,453 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-05 11:44:21,454 - oppo_R11t - INFO - --> WKGame.setUp
+2019-09-05 11:44:21,454 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-09-05 11:44:21,455 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-09-05 11:44:27,487 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 11:44:27,488 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:44:27,489 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:44:27,489 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-05 11:44:27,490 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-09-05 11:44:28,145 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-09-05 11:44:36,023 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:44:36,024 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:44:36,024 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-09-05 11:44:41,527 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 11:44:41,528 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 11:44:41,528 - oppo_R11t - INFO - <-- WKGame.setUp, Success
+
+2019-09-05 11:44:41,529 - oppo_R11t - INFO - --> WKGame.test_wk_game
+2019-09-05 11:44:41,529 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:44:41,529 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:44:41,530 - oppo_R11t - INFO - <-- WKGame.test_wk_game, Success
+
+2019-09-05 11:44:41,530 - oppo_R11t - INFO - --> WKGame.tearDown
+2019-09-05 11:44:41,531 - oppo_R11t - INFO - <-- WKGame.tearDown, Success
+
+2019-09-05 11:44:41,531 - oppo_R11t - INFO - --> FlashCard.setUp
+2019-09-05 11:44:41,531 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-09-05 11:44:41,532 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-09-05 11:44:46,954 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 11:44:46,956 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:44:46,956 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:44:46,957 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-05 11:44:46,957 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-09-05 11:44:47,646 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-09-05 11:44:55,026 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:44:55,027 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:44:55,028 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-09-05 11:45:00,073 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 11:45:00,074 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 11:45:00,074 - oppo_R11t - INFO - <-- FlashCard.setUp, Success
+
+2019-09-05 11:45:00,074 - oppo_R11t - INFO - --> FlashCard.test_check_speak_game_is_unit
+2019-09-05 11:45:00,075 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:45:00,075 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:45:00,075 - oppo_R11t - INFO - <-- FlashCard.test_check_speak_game_is_unit, Success
+
+2019-09-05 11:45:00,076 - oppo_R11t - INFO - --> FlashCard.tearDown
+2019-09-05 11:45:00,076 - oppo_R11t - INFO - <-- FlashCard.tearDown, Success
+

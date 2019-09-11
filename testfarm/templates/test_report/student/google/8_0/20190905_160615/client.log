@@ -1,0 +1,839 @@
+2019-09-05 16:06:32,119 - google - INFO - --> PlayAllGame.setUp
+2019-09-05 16:06:32,121 - google - INFO -   --> LoginPage.app_status
+2019-09-05 16:06:32,122 - google - INFO -   --> LoginPage.wait_check_page
+2019-09-05 16:06:34,557 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 16:06:34,558 - google - INFO -   --> LoginPage.login_operate
+2019-09-05 16:06:36,560 - google - INFO - 	--> LoginPage.input_username
+2019-09-05 16:06:36,635 - google - INFO - 	--> LoginPage.input_password
+2019-09-05 16:06:38,346 - google - INFO - 	--> LoginPage.login_button
+2019-09-05 16:06:41,639 - google - INFO -   <-- LoginPage.login_operate, Success
+2019-09-05 16:06:41,639 - google - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 16:06:41,640 - google - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-05 16:06:41,640 - google - INFO - --> PlayAllGame.test_all_game
+2019-09-05 16:06:41,641 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 16:06:43,825 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 16:06:43,825 - google - INFO - 	--> UserCenterPage.get_user_info
+2019-09-05 16:06:43,826 - google - INFO - 	--> HomePage.click_tab_profile
+2019-09-05 16:06:44,057 - google - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-05 16:06:47,342 - google - INFO - 	--> UserCenterPage.nickname
+2019-09-05 16:06:49,827 - google - INFO - 	--> UserCenterPage.purchase
+2019-09-05 16:06:50,049 - google - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-05 16:06:52,001 - google - INFO - 	--> UserCenterPage.phone
+2019-09-05 16:06:53,309 - google - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-05 16:06:54,795 - google - INFO - 	--> UserCenterPage.school_name
+2019-09-05 16:06:54,901 - google - INFO - 	--> UserCenterPage.setting_up
+2019-09-05 16:06:55,024 - google - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-09-05 16:06:55,814 - google - INFO - 	--> UserCenterPage.clear_cache
+2019-09-05 16:06:58,987 - google - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-05 16:07:00,121 - google - INFO - 	--> HomePage.click_tab_hw
+2019-09-05 16:07:00,219 - google - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-09-05 16:07:00,253 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 16:07:01,470 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 16:07:01,470 - google - INFO - 	--> HomePage.click_hk_tab
+2019-09-05 16:07:01,615 - google - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-05 16:07:01,616 - google - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-05 16:07:03,141 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:07:03,317 - google - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-05 16:07:04,418 - google - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-05 16:07:04,419 - google - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-05 16:07:04,841 - google - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-05 16:07:05,304 - google - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-05 16:07:05,376 - google - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-09-05 16:07:05,741 - google - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-09-05 16:07:06,127 - google - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-09-05 16:07:08,109 - google - INFO - 	--> LibraryGamePage.play_book_games
+2019-09-05 16:07:08,110 - google - INFO - 	--> LibraryGamePage.game_name
+2019-09-05 16:07:08,315 - google - INFO - 	--> FlashCard.play_flash_game
+2019-09-05 16:07:08,315 - google - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-09-05 16:07:23,591 - google - INFO - 	--> FlashCardGame.wait_check_copy_page
+2019-09-05 16:07:23,671 - google - INFO -   --> FlashCard.flash_copy_operate
+2019-09-05 16:07:23,672 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:07:23,774 - google - INFO - 	--> FlashCardGame.click_voice
+2019-09-05 16:07:23,868 - google - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-05 16:07:23,869 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:07:24,445 - google - INFO - 	--> FlashCardGame.copy_word
+2019-09-05 16:07:24,510 - google - INFO - 	--> FlashCardGame.star_button
+2019-09-05 16:07:24,585 - google - INFO - 	--> FlashCardGame.copy_input
+2019-09-05 16:07:25,153 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:25,154 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:25,176 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:25,510 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:25,510 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:25,511 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:25,534 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:26,437 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:26,437 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:26,438 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:26,459 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:27,327 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:27,328 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:27,328 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:27,355 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:28,278 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:28,278 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:28,297 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:29,029 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:29,030 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:29,054 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:29,955 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:29,956 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:29,956 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:29,977 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:30,728 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:30,728 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:30,729 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:30,750 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:31,728 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:33,730 - google - INFO - 	--> FlashCardGame.click_voice
+2019-09-05 16:07:34,670 - google - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-05 16:07:34,671 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:07:35,210 - google - INFO - 	--> FlashCardGame.copy_word
+2019-09-05 16:07:35,281 - google - INFO - 	--> FlashCardGame.copy_input
+2019-09-05 16:07:35,356 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:35,357 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:35,375 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:35,794 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:35,795 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:35,795 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:35,818 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:36,713 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:36,713 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:36,714 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:36,743 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:37,671 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:37,672 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:37,672 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:37,700 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:38,599 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:38,599 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:38,617 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:39,366 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:39,367 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:39,389 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:40,306 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:42,307 - google - INFO - 	--> FlashCardGame.copy_word
+2019-09-05 16:07:42,440 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:42,470 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:42,830 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:42,831 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:42,847 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:43,653 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:43,653 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:43,676 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:44,444 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:44,445 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:44,470 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:45,285 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:46,287 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:46,288 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:46,312 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:46,623 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:46,623 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:46,624 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:46,647 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:47,546 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:47,547 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:47,547 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:47,573 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:48,471 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:48,471 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:48,472 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:48,498 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:49,433 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:49,433 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:49,455 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:50,264 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:50,265 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:50,291 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:51,197 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:53,199 - google - INFO - 	--> FlashCardGame.click_voice
+2019-09-05 16:07:53,315 - google - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-05 16:07:53,316 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:07:53,860 - google - INFO - 	--> FlashCardGame.copy_word
+2019-09-05 16:07:53,915 - google - INFO - 	--> FlashCardGame.star_button
+2019-09-05 16:07:54,066 - google - INFO - 	--> FlashCardGame.copy_input
+2019-09-05 16:07:54,639 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:54,640 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:54,662 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:54,980 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:54,981 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:54,982 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:55,002 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:55,898 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:55,898 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:55,899 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:55,924 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:56,823 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:56,824 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:56,825 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:56,848 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:57,741 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:57,742 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:57,761 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:58,525 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:58,526 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:58,548 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:07:59,466 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:07:59,467 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:07:59,467 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:07:59,487 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:00,235 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:02,236 - google - INFO - 	--> FlashCardGame.click_voice
+2019-09-05 16:08:03,095 - google - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-05 16:08:03,095 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:08:03,632 - google - INFO - 	--> FlashCardGame.copy_word
+2019-09-05 16:08:03,694 - google - INFO - 	--> FlashCardGame.copy_input
+2019-09-05 16:08:03,763 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:08:03,763 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:03,782 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:04,075 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:04,076 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:08:04,076 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:04,097 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:04,968 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:04,969 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:08:04,969 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:04,988 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:05,839 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:05,839 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:08:05,840 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:05,859 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:06,759 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:06,760 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:06,778 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:07,530 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:07,531 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:07,552 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:08,439 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:08,440 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:08:08,440 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:08,461 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:09,180 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:09,183 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:08:09,183 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:09,203 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:10,693 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:10,694 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:08:10,694 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:10,717 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:11,608 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:11,608 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:08:11,609 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:11,638 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:12,542 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:14,543 - google - INFO -   <-- FlashCard.flash_copy_operate, Success
+2019-09-05 16:08:14,546 - google - INFO -   --> FlashCard.flash_card_result_operate
+2019-09-05 16:08:14,546 - google - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-09-05 16:08:16,176 - google - INFO - 	--> FlashCard.study_sum
+2019-09-05 16:08:16,231 - google - INFO - 	--> FlashCard.get_start_sum
+2019-09-05 16:08:16,231 - google - INFO - 	--> FlashCard.study_sum
+2019-09-05 16:08:16,303 - google - INFO - 	--> FlashCard.cancel_or_add_star
+2019-09-05 16:08:16,303 - google - INFO - 	--> FlashCard.result_words
+2019-09-05 16:08:16,429 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:08:16,727 - google - INFO - 	--> FlashCard.word_explain
+2019-09-05 16:08:17,557 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:08:18,332 - google - INFO - 	--> GetAttribute.selected
+2019-09-05 16:08:18,364 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:08:19,242 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:08:19,447 - google - INFO - 	--> FlashCard.word_explain
+2019-09-05 16:08:20,122 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:08:20,291 - google - INFO - 	--> GetAttribute.selected
+2019-09-05 16:08:20,969 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:08:21,242 - google - INFO - 	--> FlashCard.word_explain
+2019-09-05 16:08:22,607 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:08:22,785 - google - INFO - 	--> GetAttribute.selected
+2019-09-05 16:08:22,807 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:08:25,499 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:08:25,793 - google - INFO - 	--> FlashCard.word_explain
+2019-09-05 16:08:26,461 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:08:27,240 - google - INFO - 	--> GetAttribute.selected
+2019-09-05 16:08:27,266 - google - INFO - 	--> FlashCard.get_start_sum
+2019-09-05 16:08:27,266 - google - INFO - 	--> FlashCard.study_sum
+2019-09-05 16:08:27,331 - google - INFO - 	--> FlashCard.study_star_again
+2019-09-05 16:08:27,413 - google - INFO -   --> Toast.find_toast
+2019-09-05 16:08:27,941 - google - INFO -   <-- Toast.find_toast, Success
+2019-09-05 16:08:27,941 - google - INFO - 	--> FlashCard.cancel_or_add_star
+2019-09-05 16:08:27,942 - google - INFO - 	--> FlashCard.result_words
+2019-09-05 16:08:28,048 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:08:28,981 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:08:29,846 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:08:30,081 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:08:33,232 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:08:33,511 - google - INFO - 	--> FlashCard.study_star_again
+2019-09-05 16:08:34,199 - google - INFO -   <-- FlashCard.flash_card_result_operate, Success
+2019-09-05 16:08:34,200 - google - INFO -   --> FlashCard.flash_copy_operate
+2019-09-05 16:08:34,200 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:08:35,162 - google - INFO - 	--> FlashCardGame.click_voice
+2019-09-05 16:08:35,239 - google - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-05 16:08:35,240 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:08:35,798 - google - INFO - 	--> FlashCardGame.copy_word
+2019-09-05 16:08:35,846 - google - INFO - 	--> FlashCardGame.star_button
+2019-09-05 16:08:35,874 - google - INFO - 	--> GetAttribute.selected
+2019-09-05 16:08:35,918 - google - INFO - 	--> FlashCardGame.copy_input
+2019-09-05 16:08:36,014 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:08:36,015 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:36,037 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:36,313 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:36,313 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:08:36,314 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:36,374 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:37,210 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:37,210 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:08:37,211 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:37,231 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:38,075 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:38,076 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:08:38,076 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:38,095 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:39,004 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:39,005 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:39,025 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:39,744 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:39,745 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:39,766 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:40,659 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:40,660 - google - INFO - 	--> FlashCardGame.keyboard_operate
+2019-09-05 16:08:40,661 - google - INFO -   --> Keyboard.games_keyboard
+2019-09-05 16:08:40,678 - google - INFO - 	--> Keyboard.keyboard_view
+2019-09-05 16:08:41,410 - google - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-05 16:08:43,412 - google - INFO -   <-- FlashCard.flash_copy_operate, Success
+2019-09-05 16:08:43,413 - google - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-09-05 16:08:45,094 - google - INFO - 	--> FlashCard.study_sum
+2019-09-05 16:08:46,332 - google - INFO - 	--> ResultPage.wait_check_medal_page
+2019-09-05 16:08:56,426 - google - INFO - 	--> ResultPage.wait_check_result_page
+2019-09-05 16:09:06,710 - google - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-05 16:09:06,795 - google - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-09-05 16:09:07,095 - google - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-09-05 16:09:07,427 - google - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-09-05 16:09:09,160 - google - INFO - 	--> LibraryGamePage.play_book_games
+2019-09-05 16:09:09,160 - google - INFO - 	--> LibraryGamePage.game_name
+2019-09-05 16:09:09,285 - google - INFO - 	--> FlashCard.play_flash_game
+2019-09-05 16:09:09,285 - google - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-09-05 16:09:09,318 - google - INFO -   --> FlashCard.flash_study_operate
+2019-09-05 16:09:09,319 - google - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-09-05 16:09:09,360 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:09:09,438 - google - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-09-05 16:09:09,482 - google - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-05 16:09:09,482 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:09:09,548 - google - INFO -   --> PublicPage.next_btn_judge
+2019-09-05 16:09:09,549 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:09:09,589 - google - INFO - 	--> GetAttribute.enabled
+2019-09-05 16:09:11,139 - google - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-05 16:09:11,140 - google - INFO - 	--> FlashCardGame.click_voice
+2019-09-05 16:09:11,265 - google - INFO - 	--> FlashCardGame.study_word
+2019-09-05 16:09:11,820 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:09:11,863 - google - INFO - 	--> FlashCardGame.study_word_explain
+2019-09-05 16:09:11,929 - google - INFO - 	--> FlashCardGame.study_sentence
+2019-09-05 16:09:11,993 - google - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-09-05 16:09:12,062 - google - INFO - 	--> FlashCardGame.author
+2019-09-05 16:09:12,114 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:09:12,181 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:09:12,799 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:09:12,861 - google - INFO - 	--> FlashCardGame.star_button
+2019-09-05 16:09:13,531 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:09:14,098 - google - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-09-05 16:09:14,926 - google - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-05 16:09:14,926 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:09:14,994 - google - INFO -   --> PublicPage.next_btn_judge
+2019-09-05 16:09:14,995 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:09:15,040 - google - INFO - 	--> GetAttribute.enabled
+2019-09-05 16:09:16,593 - google - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-05 16:09:16,593 - google - INFO - 	--> FlashCardGame.click_voice
+2019-09-05 16:09:16,708 - google - INFO - 	--> FlashCardGame.study_word
+2019-09-05 16:09:17,283 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:09:17,331 - google - INFO - 	--> FlashCardGame.study_word_explain
+2019-09-05 16:09:17,404 - google - INFO - 	--> FlashCardGame.study_sentence
+2019-09-05 16:09:17,464 - google - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-09-05 16:09:17,544 - google - INFO - 	--> FlashCardGame.author
+2019-09-05 16:09:17,649 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:09:17,724 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:09:18,364 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:09:18,437 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:09:19,118 - google - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-09-05 16:09:19,955 - google - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-05 16:09:19,955 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:09:20,032 - google - INFO -   --> PublicPage.next_btn_judge
+2019-09-05 16:09:20,032 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:09:20,105 - google - INFO - 	--> GetAttribute.enabled
+2019-09-05 16:09:21,644 - google - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-05 16:09:21,644 - google - INFO - 	--> FlashCardGame.click_voice
+2019-09-05 16:09:21,747 - google - INFO - 	--> FlashCardGame.study_word
+2019-09-05 16:09:22,316 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:09:22,366 - google - INFO - 	--> FlashCardGame.study_word_explain
+2019-09-05 16:09:22,428 - google - INFO - 	--> FlashCardGame.study_sentence
+2019-09-05 16:09:22,502 - google - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-09-05 16:09:22,569 - google - INFO - 	--> FlashCardGame.author
+2019-09-05 16:09:22,630 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:09:22,696 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:09:23,344 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:09:23,422 - google - INFO - 	--> FlashCardGame.star_button
+2019-09-05 16:09:24,092 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:09:24,678 - google - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-09-05 16:09:25,502 - google - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-05 16:09:25,503 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:09:25,577 - google - INFO -   --> PublicPage.next_btn_judge
+2019-09-05 16:09:25,577 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:09:25,639 - google - INFO - 	--> GetAttribute.enabled
+2019-09-05 16:09:27,182 - google - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-05 16:09:27,183 - google - INFO - 	--> FlashCardGame.click_voice
+2019-09-05 16:09:27,317 - google - INFO - 	--> FlashCardGame.study_word
+2019-09-05 16:09:27,882 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:09:27,935 - google - INFO - 	--> FlashCardGame.study_word_explain
+2019-09-05 16:09:28,007 - google - INFO - 	--> FlashCardGame.study_sentence
+2019-09-05 16:09:28,084 - google - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-09-05 16:09:28,175 - google - INFO - 	--> FlashCardGame.author
+2019-09-05 16:09:28,241 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:09:28,312 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:09:28,967 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:09:29,052 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:09:29,738 - google - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-09-05 16:09:30,513 - google - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-05 16:09:30,513 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:09:30,573 - google - INFO -   --> PublicPage.next_btn_judge
+2019-09-05 16:09:30,574 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:09:30,612 - google - INFO - 	--> GetAttribute.enabled
+2019-09-05 16:09:32,160 - google - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-05 16:09:32,160 - google - INFO - 	--> FlashCardGame.click_voice
+2019-09-05 16:09:32,274 - google - INFO - 	--> FlashCardGame.study_word
+2019-09-05 16:09:32,838 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:09:32,876 - google - INFO - 	--> FlashCardGame.study_word_explain
+2019-09-05 16:09:32,937 - google - INFO - 	--> FlashCardGame.study_sentence
+2019-09-05 16:09:33,000 - google - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-09-05 16:09:33,083 - google - INFO - 	--> FlashCardGame.author
+2019-09-05 16:09:33,146 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:09:33,214 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:09:33,837 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:09:33,903 - google - INFO - 	--> FlashCardGame.star_button
+2019-09-05 16:09:34,568 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:09:35,129 - google - INFO -   <-- FlashCard.flash_study_operate, Success
+2019-09-05 16:09:35,130 - google - INFO -   --> FlashCard.flash_card_result_operate
+2019-09-05 16:09:35,130 - google - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-09-05 16:09:36,446 - google - INFO - 	--> FlashCard.study_sum
+2019-09-05 16:09:36,503 - google - INFO - 	--> FlashCard.get_start_sum
+2019-09-05 16:09:36,503 - google - INFO - 	--> FlashCard.study_sum
+2019-09-05 16:09:36,560 - google - INFO - 	--> FlashCard.cancel_or_add_star
+2019-09-05 16:09:36,560 - google - INFO - 	--> FlashCard.result_words
+2019-09-05 16:09:36,648 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:09:36,925 - google - INFO - 	--> FlashCard.word_explain
+2019-09-05 16:09:37,765 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:09:37,955 - google - INFO - 	--> GetAttribute.selected
+2019-09-05 16:09:37,974 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:09:39,407 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:09:39,625 - google - INFO - 	--> FlashCard.word_explain
+2019-09-05 16:09:41,043 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:09:41,256 - google - INFO - 	--> GetAttribute.selected
+2019-09-05 16:09:41,314 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:09:41,539 - google - INFO - 	--> FlashCard.word_explain
+2019-09-05 16:09:42,963 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:09:43,160 - google - INFO - 	--> GetAttribute.selected
+2019-09-05 16:09:43,183 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:09:44,040 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:09:44,255 - google - INFO - 	--> FlashCard.word_explain
+2019-09-05 16:09:45,688 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:09:45,948 - google - INFO - 	--> GetAttribute.selected
+2019-09-05 16:09:47,850 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:09:48,153 - google - INFO - 	--> FlashCard.word_explain
+2019-09-05 16:09:48,838 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:09:49,549 - google - INFO - 	--> GetAttribute.selected
+2019-09-05 16:09:49,573 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:09:49,831 - google - INFO - 	--> FlashCard.get_start_sum
+2019-09-05 16:09:49,831 - google - INFO - 	--> FlashCard.study_sum
+2019-09-05 16:09:50,484 - google - INFO - 	--> FlashCard.study_star_again
+2019-09-05 16:09:50,557 - google - INFO -   --> Toast.find_toast
+2019-09-05 16:09:51,116 - google - INFO -   <-- Toast.find_toast, Success
+2019-09-05 16:09:51,116 - google - INFO - 	--> FlashCard.cancel_or_add_star
+2019-09-05 16:09:51,117 - google - INFO - 	--> FlashCard.result_words
+2019-09-05 16:09:51,225 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:09:52,085 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:09:53,032 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:09:53,795 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:09:55,787 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:09:58,484 - google - INFO - 	--> FlashCard.word_voice
+2019-09-05 16:09:58,785 - google - INFO - 	--> FlashCard.word_star
+2019-09-05 16:10:00,192 - google - INFO - 	--> FlashCard.study_star_again
+2019-09-05 16:10:00,774 - google - INFO -   <-- FlashCard.flash_card_result_operate, Success
+2019-09-05 16:10:00,774 - google - INFO -   --> FlashCard.flash_study_operate
+2019-09-05 16:10:00,775 - google - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-09-05 16:10:01,546 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:10:01,606 - google - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-09-05 16:10:01,648 - google - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-05 16:10:01,648 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:10:01,695 - google - INFO -   --> PublicPage.next_btn_judge
+2019-09-05 16:10:01,695 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:10:01,731 - google - INFO - 	--> GetAttribute.enabled
+2019-09-05 16:10:03,269 - google - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-05 16:10:03,270 - google - INFO - 	--> FlashCardGame.click_voice
+2019-09-05 16:10:03,396 - google - INFO - 	--> FlashCardGame.study_word
+2019-09-05 16:10:03,958 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:10:03,995 - google - INFO - 	--> FlashCardGame.study_word_explain
+2019-09-05 16:10:04,061 - google - INFO - 	--> FlashCardGame.study_sentence
+2019-09-05 16:10:04,119 - google - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-09-05 16:10:04,180 - google - INFO - 	--> FlashCardGame.author
+2019-09-05 16:10:04,234 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:10:04,301 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:10:04,936 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:10:05,000 - google - INFO - 	--> FlashCardGame.star_button
+2019-09-05 16:10:05,623 - google - INFO - 	--> GetAttribute.selected
+2019-09-05 16:10:05,645 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:10:05,719 - google - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-09-05 16:10:06,487 - google - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-05 16:10:06,487 - google - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-05 16:10:06,544 - google - INFO -   --> PublicPage.next_btn_judge
+2019-09-05 16:10:06,545 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:10:06,577 - google - INFO - 	--> GetAttribute.enabled
+2019-09-05 16:10:08,122 - google - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-05 16:10:08,123 - google - INFO - 	--> FlashCardGame.click_voice
+2019-09-05 16:10:08,229 - google - INFO - 	--> FlashCardGame.study_word
+2019-09-05 16:10:08,791 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:10:08,831 - google - INFO - 	--> FlashCardGame.study_word_explain
+2019-09-05 16:10:08,888 - google - INFO - 	--> FlashCardGame.study_sentence
+2019-09-05 16:10:08,951 - google - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-09-05 16:10:09,020 - google - INFO - 	--> FlashCardGame.author
+2019-09-05 16:10:09,073 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:10:09,139 - google - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-09-05 16:10:10,355 - google - INFO - 	--> FlashCardGame.change_model_btn
+2019-09-05 16:10:10,424 - google - INFO - 	--> PublicPage.fab_next_btn
+2019-09-05 16:10:11,101 - google - INFO -   <-- FlashCard.flash_study_operate, Success
+2019-09-05 16:10:11,102 - google - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-09-05 16:10:12,511 - google - INFO - 	--> FlashCard.study_sum
+2019-09-05 16:10:13,728 - google - INFO - 	--> ResultPage.wait_check_medal_page
+2019-09-05 16:10:24,067 - google - INFO - 	--> ResultPage.wait_check_result_page
+2019-09-05 16:10:34,591 - google - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-05 16:10:35,797 - google - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-05 16:10:37,509 - google - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-05 16:10:37,510 - google - INFO - --> PlayAllGame.tearDown
+2019-09-05 16:10:37,510 - google - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-05 16:10:37,511 - google - INFO - --> WKGame.setUp
+2019-09-05 16:10:37,511 - google - INFO -   --> LoginPage.app_status
+2019-09-05 16:10:37,512 - google - INFO -   --> LoginPage.wait_check_page
+2019-09-05 16:10:42,553 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 16:10:42,556 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 16:10:44,037 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 16:10:44,038 - google - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 16:10:44,039 - google - INFO - <-- WKGame.setUp, Success
+
+2019-09-05 16:10:44,039 - google - INFO - --> WKGame.test_wk_game
+2019-09-05 16:10:44,040 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 16:10:44,418 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 16:10:44,419 - google - INFO - 	--> HomePage.click_hk_tab
+2019-09-05 16:10:44,543 - google - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-05 16:10:44,544 - google - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-05 16:10:45,522 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:10:48,090 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:10:50,587 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:10:53,051 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:10:55,519 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:10:57,980 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:00,479 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:02,942 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:05,392 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:07,855 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:10,389 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:12,851 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:15,349 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:17,927 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:20,408 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:22,871 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:25,352 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:27,816 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:30,278 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:32,765 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:35,224 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:37,706 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:40,171 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:42,620 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:45,083 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:47,531 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:49,981 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:52,442 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:54,906 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:57,454 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:11:59,901 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:02,332 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:04,781 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:07,260 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:09,692 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:12,758 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:15,223 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:17,686 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:20,118 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:22,548 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:25,012 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:27,477 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:29,908 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:32,337 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:34,817 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:37,299 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:39,780 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:42,214 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:44,694 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:47,159 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:49,608 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:52,037 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:54,469 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:56,882 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:12:59,317 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:01,779 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:04,243 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:06,708 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:09,173 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:11,653 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:14,100 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:16,565 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:19,013 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:21,462 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:23,926 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:26,393 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:28,838 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:31,286 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:33,735 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:36,182 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:38,683 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:41,146 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:43,611 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:46,060 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:48,507 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:50,971 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:53,403 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:55,886 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:13:58,447 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:00,913 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:03,409 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:05,859 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:08,321 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:10,772 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:13,217 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:15,664 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:18,178 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:20,641 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:23,056 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:25,488 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:27,921 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:30,351 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:32,833 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:35,280 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:37,710 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:40,141 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:42,572 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:45,021 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:47,469 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:49,901 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:52,349 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:54,831 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:57,312 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:14:59,710 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:02,160 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:04,623 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:07,104 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:09,569 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:12,016 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:14,464 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:16,901 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:19,362 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:21,841 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:24,321 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:26,768 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:29,200 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:31,614 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:34,095 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:36,527 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:38,957 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:41,388 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:43,818 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:46,266 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:48,729 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:51,143 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:53,590 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:56,041 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:15:58,466 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:00,932 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:03,362 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:05,800 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:08,239 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:10,739 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:13,171 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:15,600 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:18,051 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:20,496 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:22,943 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:25,373 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:27,821 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:30,269 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:32,716 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:35,166 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:37,613 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:40,079 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:42,507 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:44,938 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:47,436 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:49,884 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:52,348 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:54,795 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:57,246 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:16:59,707 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:02,173 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:04,605 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:07,036 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:09,483 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:11,932 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:14,377 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:16,826 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:19,255 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:21,687 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:24,185 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:26,634 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:29,080 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:31,528 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:33,975 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:36,422 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:38,851 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:41,297 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:43,727 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:46,157 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:48,622 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:51,051 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:53,513 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:55,962 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:17:58,424 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:00,870 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:03,366 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:05,767 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:08,210 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:10,638 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:13,086 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:15,530 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:17,977 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:20,406 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:22,802 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:25,232 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:27,678 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:30,126 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:32,556 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:34,987 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:37,450 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:39,930 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:42,377 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:44,824 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:47,254 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:49,684 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:52,130 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:54,560 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:57,008 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:18:59,454 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:01,917 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:04,363 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:06,779 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:09,222 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:11,655 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:14,084 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:16,514 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:18,930 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:21,378 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:23,811 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:26,243 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:28,689 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:31,136 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:33,566 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:36,015 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:38,431 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:40,880 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:43,326 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:45,829 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:48,255 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:50,687 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:53,103 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:55,553 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:19:58,000 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:00,432 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:02,862 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:05,312 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:07,727 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:10,178 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:12,771 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:15,271 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:17,701 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:20,149 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:22,647 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:25,079 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:27,525 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:29,940 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:32,375 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:34,802 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:37,234 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:39,681 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:42,111 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:44,559 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:46,939 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:49,336 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:51,783 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:54,217 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:56,663 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:20:59,143 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:03,403 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:05,837 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:08,264 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:10,711 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:13,177 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:15,608 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:18,055 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:20,467 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:22,882 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:25,315 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:27,761 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:30,173 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:32,638 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:35,087 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:37,500 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:39,897 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:42,312 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:44,774 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:47,221 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:49,605 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:52,059 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 16:21:52,243 - google - ERROR - WebDriverException, Message: io.appium.uiautomator2.common.exceptions.InvalidCoordinatesException: Coordinate [x=540.0, y=1728.0] is outside of element rect: [0,0][1794,1080]
+	at io.appium.uiautomator2.utils.PositionHelper.getAbsolutePosition(PositionHelper.java:71)
+	at io.appium.uiautomator2.utils.PositionHelper.getDeviceAbsPos(PositionHelper.java:83)
+	at io.appium.uiautomator2.handler.Swipe.safeHandle(Swipe.java:46)
+	at io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:37)
+	at io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)
+	at io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:243)
+	at io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:435)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:250)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1294)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:911)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:611)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:466)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:438)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:140)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:764)
+
+
+2019-09-05 16:21:52,244 - google - ERROR - 	<-- LibraryGamePage.enter_into_game, WebDriverException, Error
+2019-09-05 16:21:52,703 - google - ERROR - WebDriverException, Message: IMAGE:LibraryGamePage.enter_into_game-20190905162152.png
+
+2019-09-05 16:21:52,703 - google - ERROR - <-- WKGame.test_wk_game, WebDriverException, Error
+
+2019-09-05 16:21:52,704 - google - INFO - --> WKGame.tearDown
+2019-09-05 16:21:52,704 - google - INFO - <-- WKGame.tearDown, Success
+

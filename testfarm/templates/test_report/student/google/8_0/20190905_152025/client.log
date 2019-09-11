@@ -1,0 +1,78 @@
+2019-09-05 15:20:47,599 - google - INFO - --> PlayAllGame.setUp
+2019-09-05 15:20:47,601 - google - INFO -   --> LoginPage.app_status
+2019-09-05 15:20:47,602 - google - INFO -   --> LoginPage.wait_check_page
+2019-09-05 15:20:50,107 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 15:20:50,107 - google - INFO -   --> LoginPage.login_operate
+2019-09-05 15:20:52,108 - google - INFO - 	--> LoginPage.input_username
+2019-09-05 15:20:52,252 - google - INFO - 	--> LoginPage.input_password
+2019-09-05 15:20:53,465 - google - INFO - 	--> LoginPage.login_button
+2019-09-05 15:20:56,072 - google - INFO -   <-- LoginPage.login_operate, Success
+2019-09-05 15:20:56,073 - google - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 15:20:56,074 - google - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-05 15:20:56,074 - google - INFO - --> PlayAllGame.test_all_game
+2019-09-05 15:20:56,074 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:20:58,092 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:20:58,093 - google - INFO - 	--> UserCenterPage.get_user_info
+2019-09-05 15:20:58,094 - google - INFO - 	--> HomePage.click_tab_profile
+2019-09-05 15:20:58,385 - google - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-05 15:21:01,318 - google - INFO - 	--> UserCenterPage.nickname
+2019-09-05 15:21:03,782 - google - INFO - 	--> UserCenterPage.purchase
+2019-09-05 15:21:03,983 - google - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-05 15:21:05,760 - google - INFO - 	--> UserCenterPage.phone
+2019-09-05 15:21:07,112 - google - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-05 15:21:08,253 - google - INFO - 	--> UserCenterPage.school_name
+2019-09-05 15:21:08,353 - google - ERROR - Exception, 'LibrarySql' object has no attribute 'db'
+2019-09-05 15:21:08,354 - google - ERROR - 	<-- UserCenterPage.get_user_info, Exception, Error
+2019-09-05 15:21:08,791 - google - ERROR - Exception, IMAGE:UserCenterPage.get_user_info-20190905152108.png
+2019-09-05 15:21:08,791 - google - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-09-05 15:21:08,792 - google - INFO - --> PlayAllGame.tearDown
+2019-09-05 15:21:08,792 - google - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-05 15:21:08,803 - google - INFO - --> WKGame.setUp
+2019-09-05 15:21:08,803 - google - INFO -   --> LoginPage.app_status
+2019-09-05 15:21:08,804 - google - INFO -   --> LoginPage.wait_check_page
+2019-09-05 15:21:13,958 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 15:21:13,959 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:21:24,561 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:21:24,564 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-05 15:21:24,565 - google - INFO - 	--> LoginPage.close_app
+2019-09-05 15:21:24,719 - google - INFO - 	--> LoginPage.launch_app
+2019-09-05 15:21:33,246 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:21:33,712 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:21:33,712 - google - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 15:21:33,713 - google - INFO - <-- WKGame.setUp, Success
+
+2019-09-05 15:21:33,713 - google - INFO - --> WKGame.test_wk_game
+2019-09-05 15:21:33,714 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:21:34,041 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:21:34,041 - google - INFO - 	--> HomePage.click_hk_tab
+2019-09-05 15:21:34,189 - google - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-05 15:21:34,190 - google - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-05 15:21:35,367 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 15:21:35,795 - google - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-05 15:21:36,780 - google - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-05 15:21:36,781 - google - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-05 15:21:36,876 - google - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-05 15:21:37,069 - google - INFO -   --> WKGamePage.wk_game_operate
+2019-09-05 15:21:37,070 - google - INFO - 	--> WKGamePage.wait_check_wk_page
+2019-09-05 15:21:39,866 - google - INFO - 	--> WKGamePage.play_time
+2019-09-05 15:21:40,939 - google - INFO - 	--> WKGamePage.play_time
+2019-09-05 15:21:41,029 - google - INFO - 	--> WKGamePage.video_pause_btn
+2019-09-05 15:21:41,120 - google - INFO - 	--> WKGamePage.play_time
+2019-09-05 15:21:41,776 - google - INFO - 	--> WKGamePage.wait_check_play_btn_page
+2019-09-05 15:21:43,816 - google - INFO - 	--> WKGamePage.play_time
+2019-09-05 15:21:43,937 - google - INFO - 	--> WKGamePage.video_size
+2019-09-05 15:21:44,051 - google - INFO - 	--> WKGamePage.screen_rotate_btn
+2019-09-05 15:21:44,150 - google - INFO - 	--> WKGamePage.video_size
+2019-09-05 15:21:47,067 - google - INFO - 	--> WKGamePage.video_size
+2019-09-05 15:21:48,923 - google - INFO -   <-- WKGamePage.wk_game_operate, Success
+2019-09-05 15:21:48,923 - google - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-05 15:21:49,601 - google - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-05 15:21:50,749 - google - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-05 15:22:01,145 - google - INFO - <-- WKGame.test_wk_game, Success
+
+2019-09-05 15:22:01,146 - google - INFO - --> WKGame.tearDown
+2019-09-05 15:22:01,147 - google - INFO - <-- WKGame.tearDown, Success
+

@@ -2,6 +2,7 @@
 # code:UTF-8
 # @Author  : SUN FEIFEI
 
+
 class GetVariable(object):
     """参数化"""
     # ==== DEV ====

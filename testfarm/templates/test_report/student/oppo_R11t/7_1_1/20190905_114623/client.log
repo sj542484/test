@@ -1,0 +1,116 @@
+2019-09-05 11:46:40,215 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-09-05 11:46:40,217 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-09-05 11:46:40,218 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-09-05 11:46:43,812 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 11:46:43,813 - oppo_R11t - INFO -   --> LoginPage.login_operate
+2019-09-05 11:46:45,815 - oppo_R11t - INFO - 	--> LoginPage.input_username
+2019-09-05 11:46:46,093 - oppo_R11t - INFO - 	--> LoginPage.input_password
+2019-09-05 11:46:48,517 - oppo_R11t - INFO - 	--> LoginPage.login_button
+2019-09-05 11:46:51,166 - oppo_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-09-05 11:46:51,167 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 11:46:51,167 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-05 11:46:51,168 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-09-05 11:46:51,169 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:46:51,791 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:46:51,791 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-09-05 11:46:51,791 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-09-05 11:46:54,396 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-05 11:46:54,397 - oppo_R11t - ERROR - Exception, 'NoneType' object is not subscriptable
+2019-09-05 11:46:54,398 - oppo_R11t - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-09-05 11:46:55,007 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-09-05 11:46:55,007 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-05 11:46:55,013 - oppo_R11t - INFO - --> WKGame.setUp
+2019-09-05 11:46:55,013 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-09-05 11:46:55,013 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-09-05 11:47:00,660 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 11:47:00,661 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:47:10,835 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:47:10,836 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-05 11:47:10,837 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-09-05 11:47:11,466 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-09-05 11:47:19,940 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:47:21,344 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:47:21,345 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 11:47:21,345 - oppo_R11t - INFO - <-- WKGame.setUp, Success
+
+2019-09-05 11:47:21,345 - oppo_R11t - INFO - --> WKGame.test_wk_game
+2019-09-05 11:47:21,346 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:47:21,760 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:47:21,760 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-09-05 11:47:21,957 - oppo_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-05 11:47:21,958 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-05 11:47:24,645 - oppo_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 11:47:25,291 - oppo_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-05 11:47:27,533 - oppo_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-05 11:47:27,534 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-05 11:47:27,670 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-05 11:47:27,922 - oppo_R11t - INFO -   --> WKGamePage.wk_game_operate
+2019-09-05 11:47:27,923 - oppo_R11t - INFO - 	--> WKGamePage.wait_check_wk_page
+2019-09-05 11:47:30,967 - oppo_R11t - INFO - 	--> WKGamePage.play_time
+2019-09-05 11:47:32,060 - oppo_R11t - INFO - 	--> WKGamePage.play_time
+2019-09-05 11:47:33,505 - oppo_R11t - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-09-05 11:47:33,505 - oppo_R11t - ERROR - 	<-- WKGamePage.play_time, WebDriverException, Error
+2019-09-05 11:47:34,313 - oppo_R11t - ERROR - WebDriverException, Message: IMAGE:WKGamePage.play_time-20190905114733.png
+
+2019-09-05 11:47:34,313 - oppo_R11t - ERROR -   <-- WKGamePage.wk_game_operate, WebDriverException, Error
+2019-09-05 11:47:34,314 - oppo_R11t - ERROR - WebDriverException, Message: Message: IMAGE:WKGamePage.play_time-20190905114733.png
+
+
+2019-09-05 11:47:34,314 - oppo_R11t - ERROR - <-- WKGame.test_wk_game, WebDriverException, Error
+
+2019-09-05 11:47:34,314 - oppo_R11t - INFO - --> WKGame.tearDown
+2019-09-05 11:47:34,315 - oppo_R11t - INFO - <-- WKGame.tearDown, Success
+
+2019-09-05 11:47:34,324 - oppo_R11t - INFO - --> FlashCard.setUp
+2019-09-05 11:47:34,324 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-09-05 11:47:34,325 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-09-05 11:47:40,074 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 11:47:40,074 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:47:50,466 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:47:50,467 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-05 11:47:50,468 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-09-05 11:47:51,136 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-09-05 11:47:58,989 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:48:00,844 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:48:00,845 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 11:48:00,845 - oppo_R11t - INFO - <-- FlashCard.setUp, Success
+
+2019-09-05 11:48:00,846 - oppo_R11t - INFO - --> FlashCard.test_check_speak_game_is_unit
+2019-09-05 11:48:00,846 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 11:48:01,342 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 11:48:04,641 - oppo_R11t - INFO -   --> AssignHomeworkPage.assign_homework_operate
+2019-09-05 11:48:04,642 - oppo_R11t - INFO - 	--> LoginWebPage.login_operate
+2019-09-05 11:48:04,642 - oppo_R11t - INFO - 	--> LoginWebPage.wait_check_login_page
+2019-09-05 11:48:04,667 - oppo_R11t - INFO - 	--> LoginWebPage.username
+2019-09-05 11:48:04,712 - oppo_R11t - INFO - 	--> LoginWebPage.username
+2019-09-05 11:48:04,815 - oppo_R11t - INFO - 	--> LoginWebPage.password
+2019-09-05 11:48:04,887 - oppo_R11t - INFO - 	--> LoginWebPage.login_btn
+2019-09-05 11:48:06,937 - oppo_R11t - INFO - 	--> LoginWebPage.wait_check_identity_page
+2019-09-05 11:48:06,957 - oppo_R11t - INFO - 	--> LoginWebPage.teacher_ele
+2019-09-05 11:48:08,996 - oppo_R11t - INFO - 	--> WebHomePage.wait_check_home_page
+2019-09-05 11:48:11,021 - oppo_R11t - INFO - 	--> WebHomePage.click_logo
+2019-09-05 11:48:13,058 - oppo_R11t - INFO - 	--> AssignHomeworkPage.delete_homework_operate
+2019-09-05 11:48:13,059 - oppo_R11t - INFO - 	--> WebHomePage.click_test_class
+2019-09-05 11:48:13,115 - oppo_R11t - INFO - 	--> WebHomePage.wait_check_class_page
+2019-09-05 11:48:15,138 - oppo_R11t - INFO - 	--> WebHomePage.homework_name
+2019-09-05 11:48:16,283 - oppo_R11t - INFO - 	--> WebHomePage.homework_tab
+2019-09-05 11:48:16,329 - oppo_R11t - ERROR - WebDriverException, Message: unknown error: Element <a href="#/master/vanclass/9820/homework/66499/info/homework-detail" class="">...</a> is not clickable at point (699, 187). Other element would receive the click: <div class="el-loading-mask is-fullscreen" style="">...</div>
+  (Session info: chrome=76.0.3809.132)
+  (Driver info: chromedriver=71.0.3578.80 (2ac50e7249fbd55e6f517a28131605c9fb9fe897),platform=Mac OS X 10.14.5 x86_64)
+
+2019-09-05 11:48:16,329 - oppo_R11t - ERROR - 	<-- AssignHomeworkPage.delete_homework_operate, WebDriverException, Error
+2019-09-05 11:48:17,262 - oppo_R11t - ERROR - WebDriverException, Message: IMAGE:AssignHomeworkPage.delete_homework_operate-20190905114816.png
+
+2019-09-05 11:48:17,262 - oppo_R11t - ERROR -   <-- AssignHomeworkPage.assign_homework_operate, WebDriverException, Error
+2019-09-05 11:48:17,263 - oppo_R11t - ERROR - WebDriverException, Message: Message: IMAGE:AssignHomeworkPage.delete_homework_operate-20190905114816.png
+
+
+2019-09-05 11:48:17,263 - oppo_R11t - ERROR - <-- FlashCard.test_check_speak_game_is_unit, WebDriverException, Error
+
+2019-09-05 11:48:17,263 - oppo_R11t - INFO - --> FlashCard.tearDown
+2019-09-05 11:48:17,263 - oppo_R11t - INFO - <-- FlashCard.tearDown, Success
+

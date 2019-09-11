@@ -1,0 +1,226 @@
+2019-09-05 15:07:02,330 - google - INFO - --> PlayAllGame.setUp
+2019-09-05 15:07:02,331 - google - INFO -   --> LoginPage.app_status
+2019-09-05 15:07:02,332 - google - INFO -   --> LoginPage.wait_check_page
+2019-09-05 15:07:04,888 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 15:07:04,889 - google - INFO -   --> LoginPage.login_operate
+2019-09-05 15:07:06,890 - google - INFO - 	--> LoginPage.input_username
+2019-09-05 15:07:07,005 - google - INFO - 	--> LoginPage.input_password
+2019-09-05 15:07:08,236 - google - INFO - 	--> LoginPage.login_button
+2019-09-05 15:07:10,836 - google - INFO -   <-- LoginPage.login_operate, Success
+2019-09-05 15:07:10,837 - google - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 15:07:10,838 - google - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-05 15:07:10,838 - google - INFO - --> PlayAllGame.test_all_game
+2019-09-05 15:07:10,839 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:07:12,977 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:07:12,977 - google - INFO - 	--> UserCenterPage.get_user_info
+2019-09-05 15:07:12,978 - google - INFO - 	--> HomePage.click_tab_profile
+2019-09-05 15:07:13,180 - google - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-05 15:07:16,476 - google - INFO - 	--> UserCenterPage.nickname
+2019-09-05 15:07:18,924 - google - INFO - 	--> UserCenterPage.purchase
+2019-09-05 15:07:19,186 - google - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-05 15:07:20,346 - google - INFO - 	--> UserCenterPage.phone
+2019-09-05 15:07:20,441 - google - ERROR - Exception, 'WordBookSql' object has no attribute 'db'
+2019-09-05 15:07:20,442 - google - ERROR - 	<-- UserCenterPage.get_user_info, Exception, Error
+2019-09-05 15:07:20,877 - google - ERROR - Exception, IMAGE:UserCenterPage.get_user_info-20190905150720.png
+2019-09-05 15:07:20,877 - google - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-09-05 15:07:20,878 - google - INFO - --> PlayAllGame.tearDown
+2019-09-05 15:07:20,878 - google - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-05 15:07:20,879 - google - INFO - --> WKGame.setUp
+2019-09-05 15:07:20,880 - google - INFO -   --> LoginPage.app_status
+2019-09-05 15:07:20,880 - google - INFO -   --> LoginPage.wait_check_page
+2019-09-05 15:07:26,410 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 15:07:26,413 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:07:36,535 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:07:36,536 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-05 15:07:36,537 - google - INFO - 	--> LoginPage.close_app
+2019-09-05 15:07:36,700 - google - INFO - 	--> LoginPage.launch_app
+2019-09-05 15:07:44,798 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:07:45,237 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:07:45,237 - google - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 15:07:45,238 - google - INFO - <-- WKGame.setUp, Success
+
+2019-09-05 15:07:45,238 - google - INFO - --> WKGame.test_wk_game
+2019-09-05 15:07:45,239 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:07:45,616 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:07:45,616 - google - INFO - 	--> HomePage.click_hk_tab
+2019-09-05 15:07:45,782 - google - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-05 15:07:45,783 - google - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-05 15:07:46,984 - google - INFO - 	--> LibraryGamePage.homework_list
+2019-09-05 15:07:47,581 - google - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-05 15:07:48,677 - google - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-05 15:07:48,679 - google - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-05 15:07:48,786 - google - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-05 15:07:48,961 - google - INFO -   --> WKGamePage.wk_game_operate
+2019-09-05 15:07:48,962 - google - INFO - 	--> WKGamePage.wait_check_wk_page
+2019-09-05 15:07:51,656 - google - INFO - 	--> WKGamePage.play_time
+2019-09-05 15:07:52,737 - google - INFO - 	--> WKGamePage.play_time
+2019-09-05 15:07:52,823 - google - INFO - 	--> WKGamePage.video_pause_btn
+2019-09-05 15:07:52,977 - google - INFO - 	--> WKGamePage.play_time
+2019-09-05 15:07:53,635 - google - INFO - 	--> WKGamePage.wait_check_play_btn_page
+2019-09-05 15:07:55,677 - google - INFO - 	--> WKGamePage.play_time
+2019-09-05 15:07:55,801 - google - INFO - 	--> WKGamePage.video_size
+2019-09-05 15:07:55,916 - google - INFO - 	--> WKGamePage.screen_rotate_btn
+2019-09-05 15:07:55,997 - google - INFO - 	--> WKGamePage.video_size
+2019-09-05 15:07:58,880 - google - INFO - 	--> WKGamePage.video_size
+2019-09-05 15:08:00,051 - google - INFO -   <-- WKGamePage.wk_game_operate, Success
+2019-09-05 15:08:00,052 - google - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-05 15:08:00,768 - google - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-05 15:08:01,911 - google - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-05 15:08:12,344 - google - INFO - <-- WKGame.test_wk_game, Success
+
+2019-09-05 15:08:12,345 - google - INFO - --> WKGame.tearDown
+2019-09-05 15:08:12,345 - google - INFO - <-- WKGame.tearDown, Success
+
+2019-09-05 15:08:12,346 - google - INFO - --> FlashCard.setUp
+2019-09-05 15:08:12,346 - google - INFO -   --> LoginPage.app_status
+2019-09-05 15:08:12,347 - google - INFO -   --> LoginPage.wait_check_page
+2019-09-05 15:08:17,867 - google - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-05 15:08:17,867 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:08:27,928 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:08:27,929 - google - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-05 15:08:27,929 - google - INFO - 	--> LoginPage.close_app
+2019-09-05 15:08:28,215 - google - INFO - 	--> LoginPage.launch_app
+2019-09-05 15:08:36,929 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:08:37,474 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:08:37,474 - google - INFO -   <-- LoginPage.app_status, Success
+2019-09-05 15:08:37,475 - google - INFO - <-- FlashCard.setUp, Success
+
+2019-09-05 15:08:37,476 - google - INFO - --> FlashCard.test_check_speak_game_is_unit
+2019-09-05 15:08:37,476 - google - INFO -   --> HomePage.wait_check_home_page
+2019-09-05 15:08:37,817 - google - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-05 15:08:41,044 - google - INFO -   --> AssignHomeworkPage.assign_homework_operate
+2019-09-05 15:08:41,046 - google - INFO - 	--> LoginWebPage.login_operate
+2019-09-05 15:08:41,046 - google - INFO - 	--> LoginWebPage.wait_check_login_page
+2019-09-05 15:08:41,069 - google - INFO - 	--> LoginWebPage.username
+2019-09-05 15:08:41,114 - google - INFO - 	--> LoginWebPage.username
+2019-09-05 15:08:41,207 - google - INFO - 	--> LoginWebPage.password
+2019-09-05 15:08:41,261 - google - INFO - 	--> LoginWebPage.login_btn
+2019-09-05 15:08:43,313 - google - INFO - 	--> LoginWebPage.wait_check_identity_page
+2019-09-05 15:08:43,336 - google - INFO - 	--> LoginWebPage.teacher_ele
+2019-09-05 15:08:45,379 - google - INFO - 	--> WebHomePage.wait_check_home_page
+2019-09-05 15:08:47,407 - google - INFO - 	--> WebHomePage.click_logo
+2019-09-05 15:08:54,470 - google - INFO - 	--> AssignHomeworkPage.delete_homework_operate
+2019-09-05 15:08:54,474 - google - INFO - 	--> WebHomePage.click_test_class
+2019-09-05 15:08:54,702 - google - INFO - 	--> WebHomePage.wait_check_class_page
+2019-09-05 15:08:56,724 - google - INFO - 	--> WebHomePage.homework_name
+2019-09-05 15:08:57,870 - google - INFO - 	--> WebHomePage.homework_tab
+2019-09-05 15:08:58,934 - google - INFO - 	--> WebHomePage.delete_btn
+2019-09-05 15:08:59,006 - google - INFO - 	--> WebHomePage.tip_box_operate
+2019-09-05 15:08:59,007 - google - INFO - 	--> WebHomePage.wait_check_delete_tip_page
+2019-09-05 15:09:01,030 - google - INFO - 	--> WebHomePage.delete_tip_content
+2019-09-05 15:09:01,056 - google - INFO - 	--> WebHomePage.click_confirm_delete_btn
+2019-09-05 15:09:06,105 - google - INFO - 	--> WebHomePage.homework_name
+2019-09-05 15:09:06,200 - google - INFO - 	--> AssignHomeworkPage.nav_bars
+2019-09-05 15:09:06,252 - google - INFO - 	--> AssignHomeworkPage.wait_check_bank_pool_page
+2019-09-05 15:09:08,277 - google - INFO - 	--> AssignHomeworkPage.type_tab
+2019-09-05 15:09:10,356 - google - INFO - 	--> AssignHomeworkPage.wait_check_bank_list_page
+2019-09-05 15:09:12,380 - google - INFO - 	--> AssignHomeworkPage.all_type_selector
+2019-09-05 15:09:14,435 - google - INFO - 	--> AssignHomeworkPage.type_name_list
+2019-09-05 15:09:16,502 - google - INFO - 	--> AssignHomeworkPage.game_name_list
+2019-09-05 15:09:20,612 - google - INFO - 	--> AssignHomeworkPage.bank_list
+2019-09-05 15:09:20,636 - google - INFO - 	--> AssignHomeworkPage.get_bank_label
+2019-09-05 15:09:20,719 - google - INFO - 	--> WebHomePage.join_blanket
+2019-09-05 15:09:20,805 - google - INFO - 	--> WebHomePage.tips_operate
+2019-09-05 15:09:20,806 - google - INFO - 	--> WebHomePage.wait_check_tips_page
+2019-09-05 15:09:22,830 - google - INFO - 	--> WebHomePage.tip_content
+2019-09-05 15:09:22,851 - google - INFO - 	--> WebHomePage.click_confirm_btn
+2019-09-05 15:09:27,891 - google - INFO - 	--> AssignHomeworkPage.wait_check_bank_list_page
+2019-09-05 15:09:29,911 - google - INFO - 	--> AssignHomeworkPage.all_type_selector
+2019-09-05 15:09:31,952 - google - INFO - 	--> AssignHomeworkPage.type_name_list
+2019-09-05 15:09:34,037 - google - INFO - 	--> AssignHomeworkPage.game_name_list
+2019-09-05 15:09:38,120 - google - INFO - 	--> AssignHomeworkPage.bank_list
+2019-09-05 15:09:38,137 - google - INFO - 	--> AssignHomeworkPage.get_bank_label
+2019-09-05 15:09:38,192 - google - INFO - 	--> WebHomePage.join_blanket
+2019-09-05 15:09:38,239 - google - INFO - 	--> WebHomePage.tips_operate
+2019-09-05 15:09:38,240 - google - INFO - 	--> WebHomePage.wait_check_tips_page
+2019-09-05 15:09:41,806 - google - INFO - 	--> WebHomePage.tip_content
+2019-09-05 15:09:41,823 - google - INFO - 	--> WebHomePage.click_confirm_btn
+2019-09-05 15:09:41,874 - google - ERROR - WebDriverException, Message: unknown error: Element <button type="button" class="el-button el-button--primary">...</button> is not clickable at point (883, 278). Other element would receive the click: <div class="el-loading-mask is-fullscreen el-loading-fade-leave-active el-loading-fade-leave-to" style="">...</div>
+  (Session info: chrome=76.0.3809.132)
+  (Driver info: chromedriver=71.0.3578.80 (2ac50e7249fbd55e6f517a28131605c9fb9fe897),platform=Mac OS X 10.14.5 x86_64)
+
+2019-09-05 15:09:41,875 - google - ERROR - 	<-- WebHomePage.click_confirm_btn, WebDriverException, Error
+2019-09-05 15:09:41,915 - google - ERROR - WebDriverException, Message: A session is either terminated or not started
+
+2019-09-05 15:09:41,916 - google - ERROR - 	<-- WebHomePage.tips_operate, WebDriverException, Error
+2019-09-05 15:09:41,924 - google - ERROR - WebDriverException, Message: Session [8fdc5cbf-ab68-4588-83c1-e219cbaacb3f] was terminated due to BROWSER_TIMEOUT
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doGet (DriverServlet.java:64)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:687)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-09-05 15:09:41,925 - google - ERROR -   <-- AssignHomeworkPage.assign_homework_operate, WebDriverException, Error
+2019-09-05 15:09:41,928 - google - ERROR - WebDriverException, Message: Session [8fdc5cbf-ab68-4588-83c1-e219cbaacb3f] was terminated due to BROWSER_TIMEOUT
+Stacktrace:
+    at org.openqa.grid.internal.ActiveTestSessions.getExistingSession (ActiveTestSessions.java:115)
+    at org.openqa.grid.internal.DefaultGridRegistry.getExistingSession (DefaultGridRegistry.java:380)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.getSession (RequestHandler.java:241)
+    at org.openqa.grid.web.servlet.handler.RequestHandler.process (RequestHandler.java:123)
+    at org.openqa.grid.web.servlet.DriverServlet.process (DriverServlet.java:86)
+    at org.openqa.grid.web.servlet.DriverServlet.doGet (DriverServlet.java:64)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:687)
+    at javax.servlet.http.HttpServlet.service (HttpServlet.java:790)
+    at org.seleniumhq.jetty9.servlet.ServletHolder.handle (ServletHolder.java:860)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle (ServletHandler.java:535)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle (SessionHandler.java:1595)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle (ScopedHandler.java:188)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle (ContextHandler.java:1253)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:168)
+    at org.seleniumhq.jetty9.servlet.ServletHandler.doScope (ServletHandler.java:473)
+    at org.seleniumhq.jetty9.server.session.SessionHandler.doScope (SessionHandler.java:1564)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope (ScopedHandler.java:166)
+    at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope (ContextHandler.java:1155)
+    at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle (ScopedHandler.java:141)
+    at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle (HandlerWrapper.java:132)
+    at org.seleniumhq.jetty9.server.Server.handle (Server.java:530)
+    at org.seleniumhq.jetty9.server.HttpChannel.handle (HttpChannel.java:347)
+    at org.seleniumhq.jetty9.server.HttpConnection.onFillable (HttpConnection.java:256)
+    at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded (AbstractConnection.java:279)
+    at org.seleniumhq.jetty9.io.FillInterest.fillable (FillInterest.java:102)
+    at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run (ChannelEndPoint.java:124)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.doProduce (EatWhatYouKill.java:247)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.produce (EatWhatYouKill.java:140)
+    at org.seleniumhq.jetty9.util.thread.strategy.EatWhatYouKill.run (EatWhatYouKill.java:131)
+    at org.seleniumhq.jetty9.util.thread.ReservedThreadExecutor$ReservedThread.run (ReservedThreadExecutor.java:382)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob (QueuedThreadPool.java:708)
+    at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run (QueuedThreadPool.java:626)
+    at java.lang.Thread.run (Thread.java:748)
+2019-09-05 15:09:41,928 - google - ERROR - <-- FlashCard.test_check_speak_game_is_unit, WebDriverException, Error
+
+2019-09-05 15:09:41,931 - google - INFO - --> FlashCard.tearDown
+2019-09-05 15:09:41,931 - google - INFO - <-- FlashCard.tearDown, Success
+
