@@ -5,12 +5,12 @@
 # -------------------------------------------
 import re
 
-from testfarm.test_program.app.honor.student.games.article_complete import CompleteArticleGame
-from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from testfarm.test_program.app.honor.student.library.object_pages.games.select_word_blank import SelectWordBlank
-from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from app.honor.student.games.article_complete import CompleteArticleGame
+from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from app.honor.student.library.object_pages.games.select_word_blank import SelectWordBlank
+from app.honor.student.library.object_pages.result_page import ResultPage
+from app.honor.student.login.object_page.home_page import HomePage
+from conf.decorator import teststep, teststeps
 
 
 class CompleteArticle(CompleteArticleGame):

@@ -8,27 +8,27 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.library.object_pages.games.cloze import ClozePage
-from testfarm.test_program.app.honor.student.library.object_pages.games.complete_article import CompleteArticle
-from testfarm.test_program.app.honor.student.library.object_pages.games.flash_card import FlashCard
-from testfarm.test_program.app.honor.student.library.object_pages.games.guess_word import GuessWord
-from testfarm.test_program.app.honor.student.library.object_pages.games.word_match import LibraryWordMatch
-from testfarm.test_program.app.honor.student.library.object_pages.games.link_to_sentence import LinkToSentence
-from testfarm.test_program.app.honor.student.library.object_pages.games.listen_choice import ListenChoice
-from testfarm.test_program.app.honor.student.library.object_pages.games.listen_link_sentence import ListenLinkSentence
-from testfarm.test_program.app.honor.student.library.object_pages.games.listen_select_img import ListenSelectImg
-from testfarm.test_program.app.honor.student.library.object_pages.games.listen_spell import ListenSpell
-from testfarm.test_program.app.honor.student.library.object_pages.games.read_understand import ReadUnderstand
-from testfarm.test_program.app.honor.student.library.object_pages.games.restore_word import RestoreWord
-from testfarm.test_program.app.honor.student.library.object_pages.games.select_word_blank import SelectWordBlank
-from testfarm.test_program.app.honor.student.library.object_pages.games.sentence_exchange import ChangeSentence
-from testfarm.test_program.app.honor.student.library.object_pages.games.sentence_strengthen import SentenceStrengthen
-from testfarm.test_program.app.honor.student.library.object_pages.games.single_choice import SingleChoice
-from testfarm.test_program.app.honor.student.library.object_pages.games.word_chioce import WordChoice
-from testfarm.test_program.app.honor.student.library.object_pages.games.word_spell import WordSpell
-from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from app.honor.student.library.object_pages.games.cloze import ClozePage
+from app.honor.student.library.object_pages.games.complete_article import CompleteArticle
+from app.honor.student.library.object_pages.games.flash_card import FlashCard
+from app.honor.student.library.object_pages.games.guess_word import GuessWord
+from app.honor.student.library.object_pages.games.word_match import LibraryWordMatch
+from app.honor.student.library.object_pages.games.link_to_sentence import LinkToSentence
+from app.honor.student.library.object_pages.games.listen_choice import ListenChoice
+from app.honor.student.library.object_pages.games.listen_link_sentence import ListenLinkSentence
+from app.honor.student.library.object_pages.games.listen_select_img import ListenSelectImg
+from app.honor.student.library.object_pages.games.listen_spell import ListenSpell
+from app.honor.student.library.object_pages.games.read_understand import ReadUnderstand
+from app.honor.student.library.object_pages.games.restore_word import RestoreWord
+from app.honor.student.library.object_pages.games.select_word_blank import SelectWordBlank
+from app.honor.student.library.object_pages.games.sentence_exchange import ChangeSentence
+from app.honor.student.library.object_pages.games.sentence_strengthen import SentenceStrengthen
+from app.honor.student.library.object_pages.games.single_choice import SingleChoice
+from app.honor.student.library.object_pages.games.word_chioce import WordChoice
+from app.honor.student.library.object_pages.games.word_spell import WordSpell
+from app.honor.student.library.object_pages.result_page import ResultPage
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
 
 
 class LibraryGamePage(BasePage):

@@ -4,11 +4,11 @@
 # -----------------------------------------
 import unittest
 
-from testfarm.test_program.app.honor.student.homework.object_page.wk_game_page import WKGamePage
-from testfarm.test_program.app.honor.student.library.object_pages.game_page import LibraryGamePage
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.conf.decorator import setup, teardown, testcase
+from app.honor.student.homework.object_page.wk_game_page import WKGamePage
+from app.honor.student.library.object_pages.game_page import LibraryGamePage
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.login.object_page.login_page import LoginPage
+from conf.decorator import setup, teardown, testcase
 
 
 class WKGame(unittest.TestCase):

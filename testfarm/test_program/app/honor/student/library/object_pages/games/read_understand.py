@@ -5,9 +5,9 @@
 # -------------------------------------------
 import random
 
-from testfarm.test_program.app.honor.student.games.article_read_understand import ReadUnderstandGame
-from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from testfarm.test_program.conf.decorator import teststep
+from app.honor.student.games.article_read_understand import ReadUnderstandGame
+from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from conf.decorator import teststep
 
 
 class ReadUnderstand(ReadUnderstandGame):

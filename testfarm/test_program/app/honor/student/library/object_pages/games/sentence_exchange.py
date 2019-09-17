@@ -5,12 +5,12 @@
 # -------------------------------------------
 import time
 
-from testfarm.test_program.app.honor.student.games.sentence_exchange import SentenceExchangeGame
-from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
-from testfarm.test_program.conf.decorator import teststep
-from testfarm.test_program.utils.get_attribute import GetAttribute
+from app.honor.student.games.sentence_exchange import SentenceExchangeGame
+from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from app.honor.student.library.object_pages.result_page import ResultPage
+from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
+from conf.decorator import teststep
+from utils.get_attribute import GetAttribute
 
 
 class ChangeSentence(SentenceExchangeGame):

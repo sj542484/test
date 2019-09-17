@@ -4,11 +4,15 @@
 # Date:     2019/3/28 11:30
 # -------------------------------------------
 import re
+import time
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from utils.games_keyboard import Keyboard
+from utils.get_attribute import GetAttribute
 
 
 class LibraryPubicPage(BasePage):

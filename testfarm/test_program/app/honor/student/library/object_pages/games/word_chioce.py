@@ -6,9 +6,9 @@
 import random
 import time
 
-from testfarm.test_program.app.honor.student.games.choice_vocab import VocabChoiceGame
-from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from testfarm.test_program.conf.decorator import teststeps
+from app.honor.student.games.choice_vocab import VocabChoiceGame
+from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from conf.decorator import teststeps
 
 
 class WordChoice(VocabChoiceGame):

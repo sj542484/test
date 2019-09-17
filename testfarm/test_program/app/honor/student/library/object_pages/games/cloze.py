@@ -4,11 +4,11 @@
 # Date:     2019/4/10 11:53
 # -------------------------------------------
 import random
-from testfarm.test_program.app.honor.student.games.article_cloze import ClozeGame
-from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from testfarm.test_program.app.honor.student.library.object_pages.games.select_word_blank import SelectWordBlank
-from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from app.honor.student.games.article_cloze import ClozeGame
+from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from app.honor.student.library.object_pages.games.select_word_blank import SelectWordBlank
+from app.honor.student.library.object_pages.result_page import ResultPage
+from conf.decorator import teststep, teststeps
 
 
 class ClozePage(ClozeGame):

@@ -6,12 +6,12 @@
 import random
 import time
 
-from testfarm.test_program.app.honor.student.games.choice_images import ListenSelectImageGame
-from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.get_attribute import GetAttribute
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.games.choice_images import ListenSelectImageGame
+from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from app.honor.student.library.object_pages.result_page import ResultPage
+from conf.decorator import teststep, teststeps
+from utils.get_attribute import GetAttribute
+from utils.toast_find import Toast
 
 
 class ListenSelectImg(ListenSelectImageGame):

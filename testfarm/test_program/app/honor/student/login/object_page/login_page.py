@@ -1,16 +1,16 @@
 import time
 
-from testfarm.test_program.app.honor.student.login.test_data.account import VALID_ACCOUNT
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import UserCenterPage
+from app.honor.student.login.test_data.account import VALID_ACCOUNT
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.utils.reset_phone_find_toast import verify_find
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
+from conf.decorator import teststep, teststeps
+from conf.base_page import BasePage
+from utils.reset_phone_find_toast import verify_find
+from utils.toast_find import Toast
 
 
 class LoginPage(BasePage):
@@ -259,7 +259,13 @@ class LoginPage(BasePage):
         time.sleep(2)
         phone = self.input_username()
         pwd = self.input_password()
-
+        import yaml
+        f = open('testfarm/test_program/conf/user_info', 'r', encoding='utf8')
+        res = f.read()
+        res = yaml.full_load(res)
+        stu_info = res['userinfo'][self.deviceName]
+        stu_account = stu_info['student']['student']
+        stu_password = stu_info['pwd']
         phone.send_keys(stu_account)
         pwd.send_keys(stu_password)
         self.login_button()

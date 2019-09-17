@@ -3,8 +3,8 @@
 #  @Time   : 2019/8/1 15:16
 # -----------------------------------------
 import re
-from testfarm.test_program.app.honor.student.games.game_public_element import PublicPage
-from testfarm.test_program.conf.decorator import teststep
+from app.honor.student.games.game_public_element import PublicPage
+from conf.decorator import teststep
 
 
 class HomeWorkPublicElePage(PublicPage):

@@ -5,9 +5,9 @@
 # -------------------------------------------
 import time
 
-from testfarm.test_program.app.honor.student.games.word_guess import GuessWordGame
-from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from app.honor.student.games.word_guess import GuessWordGame
+from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from conf.decorator import teststep, teststeps
 
 
 class GuessWord(GuessWordGame):

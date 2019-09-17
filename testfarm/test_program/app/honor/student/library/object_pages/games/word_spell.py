@@ -6,10 +6,10 @@
 import random
 import re
 import string
-from testfarm.test_program.app.honor.student.games.word_spell import SpellWordGame
-from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from testfarm.test_program.conf.decorator import teststeps
-from testfarm.test_program.utils.games_keyboard import Keyboard
+from app.honor.student.games.word_spell import SpellWordGame
+from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from conf.decorator import teststeps
+from utils.games_keyboard import Keyboard
 
 
 class WordSpell(SpellWordGame):

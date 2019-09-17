@@ -5,7 +5,7 @@ import random
 # we can add a or multiple account in it, like this '{'account': 'xxxxxxxxxxx', 'password': 'yyyyyyyy'},'
 _VALID_ACCOUNT = (
     # {'username': '16667896789', 'password': '123456'},
-    {'username': '18823452345', 'password': '123456'},
+    {'username': '17711110000', 'password': '123456'},
     # {'username': '13998777007', 'password': '1N14VXUCJTHoA'},
     # {'username': '18711111234', 'password': '456789'},
 )

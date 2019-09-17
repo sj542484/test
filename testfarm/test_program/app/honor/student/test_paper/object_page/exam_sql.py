@@ -2,7 +2,7 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/6/27 15:41
 # -----------------------------------------
-from testfarm.test_program.utils.sql import SqlDb
+from utils.sql import SqlDb
 
 
 class ExamSql(SqlDb):

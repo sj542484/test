@@ -7,12 +7,12 @@ import random
 import re
 import string
 import time
-from testfarm.test_program.app.honor.student.games.sentence_strengthen import SentenceStrengthenGame
-from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.utils.games_keyboard import Keyboard
-from testfarm.test_program.utils.get_attribute import GetAttribute
+from app.honor.student.games.sentence_strengthen import SentenceStrengthenGame
+from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from app.honor.student.library.object_pages.result_page import ResultPage
+from conf.decorator import teststep, teststeps
+from utils.games_keyboard import Keyboard
+from utils.get_attribute import GetAttribute
 
 
 class SentenceStrengthen(SentenceStrengthenGame):

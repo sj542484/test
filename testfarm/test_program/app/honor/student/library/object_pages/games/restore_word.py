@@ -4,9 +4,9 @@
 # Date:     2019/3/28 16:05
 # -------------------------------------------
 import time
-from testfarm.test_program.app.honor.student.games.word_restore import RestoreWordGame
-from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from testfarm.test_program.conf.decorator import teststeps
+from app.honor.student.games.word_restore import RestoreWordGame
+from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from conf.decorator import teststeps
 
 
 class RestoreWord(RestoreWordGame):

@@ -5,14 +5,14 @@
 import unittest
 from ddt import ddt, data, unpack
 
-from testfarm.test_program.app.honor.student.homework_rebuild.object_pages.homework_data_handle import HomeworkDataHandle
-from testfarm.test_program.app.honor.student.library.object_pages.game_page import LibraryGamePage
-from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.app.honor.student.library.object_pages.usercenter_page import UserCenterPage
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.login.object_page.login_page import LoginPage
-from testfarm.test_program.app.honor.student.homework_rebuild.test_data.homework_type_page import HomeworkTypePage as ht
-from testfarm.test_program.conf.decorator import setup, teardown, testcase
+from app.honor.student.homework_rebuild.object_pages.homework_data_handle import HomeworkDataHandle
+from app.honor.student.library.object_pages.game_page import LibraryGamePage
+from app.honor.student.library.object_pages.result_page import ResultPage
+from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.login.object_page.login_page import LoginPage
+from app.honor.student.homework_rebuild.test_data.homework_type_page import HomeworkTypePage as ht
+from conf.decorator import setup, teardown, testcase
 
 
 @ddt
@@ -36,23 +36,23 @@ class PlayAllGame(unittest.TestCase):
 
     @data(
         [ht.HW1, '闪卡练习'],
-        # [ht.HW1, '猜词游戏'],
-        # [ht.HW1, '还原单词'],
-        # [ht.HW1, '连连看'],
-        # [ht.HW2, '单项选择'],
-        # [ht.HW2, '单词听写'],
-        # [ht.HW2, '连词成句'],
-        # [ht.HW2, '单词拼写'],
-        # [ht.HW2, '选词填空'],
-        # [ht.HW3, '词汇选择'],
-        # [ht.HW3, '听音选图'],
-        # [ht.HW3, '句型转换'],
-        # [ht.HW3, '听后选择'],
-        # [ht.HW4, '强化炼句'],
-        # [ht.HW4, '听音连句'],
-        # [ht.HW4, '完形填空'],
-        # [ht.HW4, '阅读理解'],
-        # [ht.HW4, '补全文章'],
+        [ht.HW1, '猜词游戏'],
+        [ht.HW1, '还原单词'],
+        [ht.HW1, '连连看'],
+        [ht.HW2, '单项选择'],
+        [ht.HW2, '单词听写'],
+        [ht.HW2, '连词成句'],
+        [ht.HW2, '单词拼写'],
+        [ht.HW2, '选词填空'],
+        [ht.HW3, '词汇选择'],
+        [ht.HW3, '听音选图'],
+        [ht.HW3, '句型转换'],
+        [ht.HW3, '听后选择'],
+        [ht.HW4, '强化炼句'],
+        [ht.HW4, '听音连句'],
+        [ht.HW4, '完形填空'],
+        [ht.HW4, '阅读理解'],
+        [ht.HW4, '补全文章'],
     )
     @unpack
     @testcase

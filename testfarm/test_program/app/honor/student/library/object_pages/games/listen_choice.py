@@ -9,10 +9,11 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.games.choice_listen import ListenChoiceGame
-from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from app.honor.student.games.choice_listen import ListenChoiceGame
+from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from app.honor.student.library.object_pages.result_page import ResultPage
+from conf.decorator import teststep, teststeps
+from utils.get_attribute import GetAttribute
 
 
 class ListenChoice(ListenChoiceGame):

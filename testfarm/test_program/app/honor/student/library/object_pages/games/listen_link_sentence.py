@@ -4,11 +4,13 @@
 # Date:     2019/4/8 13:18
 # -------------------------------------------
 import random
-from testfarm.test_program.app.honor.student.games.sentence_listen_link import ListenLinkSentenceGame
-from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
-from testfarm.test_program.conf.decorator import teststep
-from testfarm.test_program.utils.get_attribute import GetAttribute
+import time
+
+from app.honor.student.games.sentence_listen_link import ListenLinkSentenceGame
+from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from app.honor.student.library.object_pages.result_page import ResultPage
+from conf.decorator import teststep
+from utils.get_attribute import GetAttribute
 
 
 class ListenLinkSentence(ListenLinkSentenceGame):
