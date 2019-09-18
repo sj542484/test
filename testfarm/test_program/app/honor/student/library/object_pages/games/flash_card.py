@@ -9,6 +9,7 @@ import string
 import time
 from app.honor.student.games.word_flash_card import FlashCardGame
 from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from app.honor.student.library.object_pages.result_page import ResultPage
 from conf.decorator import teststeps, teststep
 from utils.games_keyboard import Keyboard
 from utils.get_attribute import GetAttribute
@@ -71,18 +72,38 @@ class FlashCard(FlashCardGame):
                                                 .format(word))
         return ele
 
+    @teststep
+    def sentence_voice(self, sentence):
+        """句子左侧喇叭按钮"""
+        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/../preceding-sibling::android.widget.ImageView'
+                                                '[contains(@resource-id,"{}iv_voice")]'.format(sentence, self.id_type()))
+        return ele
+
+    @teststep
+    def sentence_explain(self, sentence):
+        """句子对应的解释"""
+        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/following-sibling::android.widget.TextView'.format(sentence))
+        return ele.text
+
+    @teststep
+    def sentence_star(self, sentence):
+        """句子的标星"""
+        ele = self.driver.find_element_by_xpath('//*[@text="{}"]/../following-sibling::android.widget.ImageView'
+                                                .format(sentence))
+        return ele
+
 
     @teststep
     def play_flash_game(self):
         """闪卡的总体流程"""
         if self.wait_check_study_page():
             first_result = self.flash_study_operate()
-            self.flash_card_result_operate(first_result[0], first_result[1])
+            self.flash_card_result_operate(first_result)
             self.flash_study_operate(fq=2, star_list=first_result[1])
         elif self.wait_check_copy_page():
             first_result = self.flash_copy_operate()
-            self.flash_card_result_operate(first_result[0], first_result[1])
-            self.flash_copy_operate(fq=2, star_list=first_result[1])
+            self.flash_card_result_operate(first_result)
+            self.flash_copy_operate(fq=2, star_list=first_result[1], haex=False)
 
         if self.wait_check_flash_result_page():
             print(self.study_sum())
@@ -92,6 +113,7 @@ class FlashCard(FlashCardGame):
     def flash_study_operate(self, fq=1, star_list=0):
         """闪卡练习学习模式"""
         star_words = [] if fq == 1 else star_list
+        flash_type = 0
         if self.wait_check_study_page():
             total_num = self.common.rest_bank_num()
             for i in range(total_num):
@@ -105,9 +127,12 @@ class FlashCard(FlashCardGame):
                         print('★★★ 未发现单词解释，页面没有默认选择英汉模式')
                     else:
                         print('解释：', self.study_word_explain().text)  # 单词解释
-                    print("句子：", self.study_sentence())  # 句子
-                    print("句子解释：", self.study_sentence_explain())  # 句子解释
-                    print("推荐老师：", self.author())  # 推荐老师
+
+                    if self.wait_check_sentence_page():
+                        print("句子：", self.study_sentence())  # 句子
+                        print("句子解释：", self.study_sentence_explain())  # 句子解释
+                        print("推荐老师：", self.author())  # 推荐老师
+                        flash_type = 1
 
                     self.change_model_btn().click()  # 切换全英模式
                     if self.wait_check_explain_page():  # 校验翻译是否出现
@@ -127,13 +152,14 @@ class FlashCard(FlashCardGame):
 
                     print('-' * 20, '\n')
                     self.fab_next_btn().click()
-            return total_num, star_words
+            return total_num, star_words, flash_type
 
     @teststeps
     def flash_copy_operate(self, fq=1, star_list=0, haex=False):
         """闪卡练习抄写模式"""
         star_words = [] if fq == 1 else star_list
         total_num = self.common.rest_bank_num()
+        flash_type = 1
         for i in range(total_num):
             self.click_voice()
             self.common.rate_judge(total_num, i)
@@ -174,11 +200,17 @@ class FlashCard(FlashCardGame):
                 self.keyboard_operate(j, s)
             time.sleep(2)
             print('-'*30, '\n')
-        return total_num, star_words
+        return total_num, star_words, flash_type
 
     @teststeps
-    def flash_card_result_operate(self, total, star_words):
+    def flash_card_result_operate(self, flash_result):
         """闪卡结果页面处理"""
+        total, star_words, flash_type = flash_result
+
+        if ResultPage().wait_check_medal_page():
+            print('获取勋章')
+            self.click_back_up_button()
+
         if self.wait_check_flash_result_page():
             print('完成学习！')
             summary = self.study_sum()
@@ -192,7 +224,7 @@ class FlashCard(FlashCardGame):
             if len(star_words) != star_count:
                 print('★★★ 标星个数与页面统计个数不一致')
 
-            self.cancel_or_add_star(total, star_words, cancel=True)
+            self.cancel_or_add_star(total, star_words, flash_type, cancel=True)
             if self.get_start_sum() != 0:
                 print('★★★ 单词标星取消，页面标星统计数未发生变化，与实际标星数不一致')
 
@@ -202,11 +234,11 @@ class FlashCard(FlashCardGame):
             else:
                 print('★★★ 未提示没有标星单词')
 
-            self.cancel_or_add_star(total, star_words)
+            self.cancel_or_add_star(total, star_words, flash_type)
             self.study_star_again().click()
 
     @teststep
-    def cancel_or_add_star(self, total, star_words, cancel=False):
+    def cancel_or_add_star(self, total, star_words, flash_type, cancel=False):
         """添加或取消标星"""
         word_list = []
         while True:
@@ -216,22 +248,32 @@ class FlashCard(FlashCardGame):
                     continue
                 else:
                     if i == len(words) - 1:
-                        self.screen_swipe_up(0.5, 0.8, 0.72)
+                        self.screen_swipe_up(0.5, 0.8, 0.72, 1000)
                     result_word = w.text
                     word_list.append(result_word)
-                    self.word_voice(result_word).click()
+                    if flash_type:
+                        word_voice = self.word_voice(result_word)
+                        word_explain = self.word_explain(result_word)
+                        word_star = self.word_star(result_word)
+                    else:
+                        word_voice = self.sentence_voice(result_word)
+                        word_explain = self.sentence_explain(result_word)
+                        word_star = self.sentence_star(result_word)
+
+                    word_voice.click()
+
                     if cancel:
-                        print('单词：', result_word, end='\t')
-                        print('解释', self.word_explain(result_word))
-                        if GetAttribute().selected(self.word_star(result_word)) == 'true':
-                            self.word_star(result_word).click()
+                        print('单词：', result_word)
+                        print('解释', word_explain)
+                        if GetAttribute().selected(word_star) == 'true':
+                            word_star.click()
                             print('取消标星')
                             star_words.remove(result_word)
                         print('-' * 20, '\n')
                     else:
                         if i == 2 or i == 4:
                             print('单词：', result_word, end='\t')
-                            self.word_star(result_word).click()
+                            word_star.click()
                             print('添加标星')
                             star_words.append(result_word)
                             print('-' * 20, '\n')
@@ -240,3 +282,4 @@ class FlashCard(FlashCardGame):
                 self.screen_swipe_up(0.5, 0.8, 0.3, 1000)
             else:
                 break
+        self.screen_swipe_down(0.5, 0.2, 0.8, 1000)

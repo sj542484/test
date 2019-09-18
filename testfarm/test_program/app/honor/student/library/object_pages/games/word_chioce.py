@@ -24,7 +24,10 @@ class WordChoice(VocabChoiceGame):
         total_num = self.common.rest_bank_num()  # 获取总题数
         bank_type = 1 if self.wait_check_head_page() else 2      # 区分听音选词和 选单词、选解释
         if fq == 2:                                               # 若为第二次做题，则给sec_answer 赋值
-            sec_answer = first_result[2] if bank_type == 1 else first_result[0]
+            if bank_type == 1:
+                sec_answer = first_result[2]
+            else:
+                sec_answer = first_result[0]
         else:
             sec_answer = 0
 
@@ -45,7 +48,7 @@ class WordChoice(VocabChoiceGame):
                 if bank_type == 1:
                     mine_answer[self.vocab_question().text] = selected_opt
                 else:
-                    print(self.wait_listen_explain_page())
+                    time.sleep(1)
                     explain = self.vocab_word_explain().text
                     mine_answer[explain] = selected_opt
 
@@ -65,11 +68,13 @@ class WordChoice(VocabChoiceGame):
                 if half_exit:
                     self.click_back_up_button()
                     break
-
-            print('正确答案：', self.vocab_right_answer())
+            if fq == 1:
+                print('正确答案：', self.vocab_right_answer())
             print('-'*20, '\n')
+
             timer.append(self.common.bank_time())    # 添加时间
             self.next_btn_operate('true', self.fab_next_btn)
+
         self.common.judge_timer(timer)                 # 判断做题时间
         answer = mine_answer if fq == 1 else sec_answer
 

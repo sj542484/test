@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep
 from conf.base_config import GetVariable as gv
 

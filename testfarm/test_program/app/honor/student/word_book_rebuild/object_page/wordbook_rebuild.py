@@ -20,7 +20,7 @@ from app.honor.student.word_book_rebuild.object_page.games.restore_word_page imp
 from app.honor.student.word_book_rebuild.object_page.games.word_spelling_page import SpellingWord
 from app.honor.student.word_book_rebuild.object_page.games.vocabulary_choose_page import VocabularyChoose
 from app.honor.student.word_book_rebuild.object_page.games.word_match_page import MatchingWord
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep
 
 

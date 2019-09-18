@@ -7,12 +7,9 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
-from conf.base_page import BasePage
-from conf.decorator import teststep, teststeps
-from utils.games_keyboard import Keyboard
-from utils.get_attribute import GetAttribute
-
+from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststep, teststeps
 
 class WorldBookPublicPage(BasePage):
 

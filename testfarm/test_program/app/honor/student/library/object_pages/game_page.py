@@ -8,27 +8,27 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.honor.student.library.object_pages.games.cloze import ClozePage
-from app.honor.student.library.object_pages.games.complete_article import CompleteArticle
-from app.honor.student.library.object_pages.games.flash_card import FlashCard
-from app.honor.student.library.object_pages.games.guess_word import GuessWord
-from app.honor.student.library.object_pages.games.word_match import LibraryWordMatch
-from app.honor.student.library.object_pages.games.link_to_sentence import LinkToSentence
-from app.honor.student.library.object_pages.games.listen_choice import ListenChoice
-from app.honor.student.library.object_pages.games.listen_link_sentence import ListenLinkSentence
-from app.honor.student.library.object_pages.games.listen_select_img import ListenSelectImg
-from app.honor.student.library.object_pages.games.listen_spell import ListenSpell
-from app.honor.student.library.object_pages.games.read_understand import ReadUnderstand
-from app.honor.student.library.object_pages.games.restore_word import RestoreWord
-from app.honor.student.library.object_pages.games.select_word_blank import SelectWordBlank
-from app.honor.student.library.object_pages.games.sentence_exchange import ChangeSentence
-from app.honor.student.library.object_pages.games.sentence_strengthen import SentenceStrengthen
-from app.honor.student.library.object_pages.games.single_choice import SingleChoice
-from app.honor.student.library.object_pages.games.word_chioce import WordChoice
-from app.honor.student.library.object_pages.games.word_spell import WordSpell
-from app.honor.student.library.object_pages.result_page import ResultPage
-from conf.base_page import BasePage
-from conf.decorator import teststep, teststeps
+from testfarm.test_program.app.honor.student.library.object_pages.games.cloze import ClozePage
+from testfarm.test_program.app.honor.student.library.object_pages.games.complete_article import CompleteArticle
+from testfarm.test_program.app.honor.student.library.object_pages.games.flash_card import FlashCard
+from testfarm.test_program.app.honor.student.library.object_pages.games.guess_word import GuessWord
+from testfarm.test_program.app.honor.student.library.object_pages.games.word_match import LibraryWordMatch
+from testfarm.test_program.app.honor.student.library.object_pages.games.link_to_sentence import LinkToSentence
+from testfarm.test_program.app.honor.student.library.object_pages.games.listen_choice import ListenChoice
+from testfarm.test_program.app.honor.student.library.object_pages.games.listen_link_sentence import ListenLinkSentence
+from testfarm.test_program.app.honor.student.library.object_pages.games.listen_select_img import ListenSelectImg
+from testfarm.test_program.app.honor.student.library.object_pages.games.listen_spell import ListenSpell
+from testfarm.test_program.app.honor.student.library.object_pages.games.read_understand import ReadUnderstand
+from testfarm.test_program.app.honor.student.library.object_pages.games.restore_word import RestoreWord
+from testfarm.test_program.app.honor.student.library.object_pages.games.select_word_blank import SelectWordBlank
+from testfarm.test_program.app.honor.student.library.object_pages.games.sentence_exchange import ChangeSentence
+from testfarm.test_program.app.honor.student.library.object_pages.games.sentence_strengthen import SentenceStrengthen
+from testfarm.test_program.app.honor.student.library.object_pages.games.single_choice import SingleChoice
+from testfarm.test_program.app.honor.student.library.object_pages.games.word_chioce import WordChoice
+from testfarm.test_program.app.honor.student.library.object_pages.games.word_spell import WordSpell
+from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststep, teststeps
 
 
 class LibraryGamePage(BasePage):
@@ -90,7 +90,7 @@ class LibraryGamePage(BasePage):
         """游戏页面检查点"""
         locator = (By.ID, '{}rate'.format(self.id_type()))
         try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
+            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
@@ -197,16 +197,15 @@ class LibraryGamePage(BasePage):
     def testbank_name(self, bank_type):
         """大题名称"""
         ele = self.driver.find_elements_by_xpath('//*[@text="{}"]/../preceding-sibling::android.widget.RelativeLayout/'
-                                                 'android.widget.TextView[@resource-id="{}tv_testbank_name"]'
-                                                 .format(bank_type, self.id_type()))
+                                                 'android.widget.TextView[contains(@resource-id, "tv_testbank_name")]'.format(bank_type))
         return [x for x in ele]
 
     @teststep
     def bank_progress_by_name(self, bank_name):
         """根据大题名称获取"""
-        ele = self.driver.find_elements_by_xpath('//android.widget.TextView[@text="{}"]/../following-sibling::android.widget.RelativeLayout/'
-                                                 'android.widget.TextView'.format(bank_name))
-        return ele[1].text
+        ele = self.driver.find_element_by_xpath('//android.widget.TextView[@text="{}"]/../following-sibling::android.widget.RelativeLayout/'
+                                                'android.widget.TextView[contains(@resource-id, "tv_testbank_status")]'.format(bank_name))
+        return ele.text
 
     @teststep
     def click_bank_by_name(self, bank_name):
@@ -224,8 +223,9 @@ class LibraryGamePage(BasePage):
     @teststep
     def check_process_change(self, bank_name, bank_progress):
         """检查大题进度变化"""
-        print(bank_name)
+        print(self.wait_check_bank_list_page())
         if self.wait_check_bank_list_page():
+            print(bank_name)
             if self.bank_progress_by_name(bank_name) != bank_progress:
                 print('★★★ 中途返回进度却发生变化！')
             self.click_bank_by_name(bank_name)
@@ -235,7 +235,7 @@ class LibraryGamePage(BasePage):
     @teststep
     def enter_into_game(self, hw_name, bank_type):
         """进入游戏过程"""
-        type_ele_list, hw_name_list = 0, 0
+        hw_name_list = 0
         if self.wait_check_homework_list_page():  # 页面检查点
             homework_name = []
             while True:
@@ -258,12 +258,11 @@ class LibraryGamePage(BasePage):
                     if bank_type not in [x.text for x in game_list]:
                         self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
                     else:
-                        type_ele_list = [x for x in game_list if x.text == bank_type]
-                        hw_name_list = self.testbank_name(bank_type)
                         break
+                hw_name_list = self.testbank_name(bank_type)
             else:
                 print('★★★ 未进入大题列表')
-        return type_ele_list, hw_name_list
+        return  hw_name_list
 
     @teststeps
     def share_page_operate(self):
@@ -284,8 +283,7 @@ class LibraryGamePage(BasePage):
                 self.click_back_up_button()
 
     @teststep
-    def play_book_games(self, fq, bank_name, first_result='',
-                        half_exit=False, bank_progress=0):
+    def play_book_games(self, fq, bank_name, first_result='', half_exit=False, bank_progress=0):
         """各种游戏过程
            fq:: 大题练习次数
            sec_answer :: 第二次练习的正确答案
@@ -293,12 +291,23 @@ class LibraryGamePage(BasePage):
            total_num :: 记录每道大题的总数
            bank_name :: 大题名称
         """
+        if fq == 1:
+            print('========== 第一次做错操作 ========== \n')
+        else:
+            print('========== 第二次做对操作 ========== \n')
 
-        second_ans = {} if fq == 1 else first_result[2]
+        if fq == 1:
+            second_ans = {}
+        else:
+            # 若第一次做的全对， 则第二次结果参数更改为第一次的记录的正确答案
+
+            if first_result[2]:
+                second_ans = first_result[2]
+            else:
+                second_ans = first_result[1]
+
         first_count = 0 if fq == 1 else len(first_result[0]) + len(first_result[1])
         game_name = self.game_name()
-        print('*-' * 20, '\n')
-        print(game_name, '\n')
         game_result = 0
         if game_name == "猜词游戏":
             game_result = GuessWord().play_guess_game_operate(fq, second_ans)
@@ -325,9 +334,9 @@ class LibraryGamePage(BasePage):
             game_result = ListenLinkSentence().listen_to_sentence_operate(fq, second_ans)
 
         elif game_name == '强化炼句':
-            if fq == 1:
-                SentenceStrengthen().sentence_strengthen_operate(fq, second_ans, half_exit=True)
-                self.check_process_change(bank_name, bank_progress)
+            # if fq == 1:
+            #     SentenceStrengthen().sentence_strengthen_operate(fq, second_ans, half_exit=True)
+            #     self.check_process_change(bank_name, bank_progress)
             game_result = SentenceStrengthen().sentence_strengthen_operate(fq, second_ans, half_exit)
 
         elif game_name == '连词成句':
@@ -369,7 +378,6 @@ class LibraryGamePage(BasePage):
             total_num = game_result[1]
             self.result.result_multi_data_check(fq, check_info, first_num=first_count, current_count=total_num)
             return check_info
-
 
     @teststep
     def check_bank_result(self, game_name, mine_answer):

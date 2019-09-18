@@ -137,8 +137,9 @@ class ListenSelectImg(ListenSelectImageGame):
                     self.screen_swipe_up(0.5, 0.9, 0.5, 1000)
                 else:
                     break
+
+        print("正确答案：", right_answer)
         self.click_back_up_button()
-        print(right_answer)
         return wrong, right, right_answer
 
 

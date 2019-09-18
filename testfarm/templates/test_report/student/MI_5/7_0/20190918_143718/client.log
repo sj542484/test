@@ -1,0 +1,92 @@
+2019-09-18 14:37:35,797 - MI_5 - INFO - --> PlayAllGame.setUp
+2019-09-18 14:37:35,799 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 14:37:35,873 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 14:37:38,780 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 14:37:38,781 - MI_5 - INFO -   --> LoginPage.login_operate
+2019-09-18 14:37:40,782 - MI_5 - INFO - 	--> LoginPage.input_username
+2019-09-18 14:37:40,876 - MI_5 - INFO - 	--> LoginPage.input_password
+2019-09-18 14:37:42,804 - MI_5 - INFO - 	--> LoginPage.login_button
+2019-09-18 14:37:45,434 - MI_5 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 14:37:45,434 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 14:37:45,435 - MI_5 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-18 14:37:45,435 - MI_5 - INFO - --> PlayAllGame.test_all_game
+2019-09-18 14:37:45,436 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 14:37:45,436 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 14:37:45,436 - MI_5 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-18 14:37:45,437 - MI_5 - INFO - --> PlayAllGame.tearDown
+2019-09-18 14:37:45,437 - MI_5 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-18 14:37:45,438 - MI_5 - INFO - --> PlayAllGame.setUp
+2019-09-18 14:37:45,438 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 14:37:45,534 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 14:37:51,008 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 14:37:51,011 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 14:37:51,011 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 14:37:51,012 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-18 14:37:51,013 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-09-18 14:37:51,715 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-09-18 14:37:59,562 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 14:37:59,563 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 14:37:59,563 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 14:38:05,155 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 14:38:05,156 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 14:38:05,156 - MI_5 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-18 14:38:05,157 - MI_5 - INFO - --> PlayAllGame.test_all_game
+2019-09-18 14:38:05,157 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 14:38:05,158 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 14:38:05,158 - MI_5 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-18 14:38:05,159 - MI_5 - INFO - --> PlayAllGame.tearDown
+2019-09-18 14:38:05,159 - MI_5 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-18 14:38:05,160 - MI_5 - INFO - --> WKGame.setUp
+2019-09-18 14:38:05,160 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 14:38:05,245 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 14:38:11,003 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 14:38:11,003 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 14:38:11,004 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 14:38:11,004 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-18 14:38:11,005 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-09-18 14:38:11,675 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-09-18 14:38:19,267 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 14:38:19,270 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 14:38:19,271 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 14:38:24,928 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 14:38:24,929 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 14:38:24,929 - MI_5 - INFO - <-- WKGame.setUp, Success
+
+2019-09-18 14:38:24,930 - MI_5 - INFO - --> WKGame.test_wk_game
+2019-09-18 14:38:24,930 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 14:38:24,931 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 14:38:24,931 - MI_5 - INFO - <-- WKGame.test_wk_game, Success
+
+2019-09-18 14:38:24,932 - MI_5 - INFO - --> WKGame.tearDown
+2019-09-18 14:38:24,932 - MI_5 - INFO - <-- WKGame.tearDown, Success
+
+2019-09-18 14:38:24,933 - MI_5 - INFO - --> FlashCard.setUp
+2019-09-18 14:38:24,933 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 14:38:25,025 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 14:38:31,034 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 14:38:31,037 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 14:38:31,037 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 14:38:31,038 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-18 14:38:31,038 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-09-18 14:38:31,748 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-09-18 14:38:39,447 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 14:38:39,448 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 14:38:39,448 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 14:38:45,031 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 14:38:45,032 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 14:38:45,032 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-09-18 14:38:45,033 - MI_5 - INFO - --> FlashCard.test_check_speak_game_is_unit
+2019-09-18 14:38:45,033 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 14:38:45,034 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 14:38:45,034 - MI_5 - INFO - <-- FlashCard.test_check_speak_game_is_unit, Success
+
+2019-09-18 14:38:45,034 - MI_5 - INFO - --> FlashCard.tearDown
+2019-09-18 14:38:45,035 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+

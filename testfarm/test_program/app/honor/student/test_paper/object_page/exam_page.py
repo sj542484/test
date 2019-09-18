@@ -21,7 +21,7 @@ from app.honor.student.test_paper.object_page.games.single_choice import SingleC
 from app.honor.student.test_paper.object_page.games.vocab_select import VocabSelect
 from app.honor.student.test_paper.object_page.games.word_match import WordMatch
 from app.honor.student.test_paper.object_page.games.word_spell import WordSpell
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 
 

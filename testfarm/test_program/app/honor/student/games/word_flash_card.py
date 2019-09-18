@@ -5,9 +5,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.honor.student.games.game_public_element import PublicPage
-from conf.decorator import teststep
-from utils.games_keyboard import Keyboard
+from testfarm.test_program.app.honor.student.games.game_public_element import PublicPage
+from testfarm.test_program.conf.decorator import teststep
+from testfarm.test_program.utils.games_keyboard import Keyboard
 
 
 class FlashCardGame(PublicPage):

@@ -1,0 +1,173 @@
+2019-09-18 17:25:37,470 - MI_5 - INFO - --> PlayAllGame.setUp
+2019-09-18 17:25:37,472 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 17:25:37,540 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 17:25:40,488 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 17:25:40,488 - MI_5 - INFO -   --> LoginPage.login_operate
+2019-09-18 17:25:42,490 - MI_5 - INFO - 	--> LoginPage.input_username
+2019-09-18 17:25:42,572 - MI_5 - INFO - 	--> LoginPage.input_password
+2019-09-18 17:25:43,969 - MI_5 - INFO - 	--> LoginPage.login_button
+2019-09-18 17:25:46,678 - MI_5 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 17:25:46,680 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 17:25:46,682 - MI_5 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-18 17:25:46,682 - MI_5 - INFO - --> PlayAllGame.test_all_game
+2019-09-18 17:25:46,683 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 17:25:47,830 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 17:25:47,830 - MI_5 - INFO - 	--> UserCenterPage.get_user_info
+2019-09-18 17:25:47,831 - MI_5 - INFO - 	--> HomePage.click_tab_profile
+2019-09-18 17:25:48,042 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-18 17:25:51,157 - MI_5 - INFO - 	--> UserCenterPage.nickname
+2019-09-18 17:25:53,780 - MI_5 - INFO - 	--> UserCenterPage.purchase
+2019-09-18 17:25:53,962 - MI_5 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-18 17:25:56,213 - MI_5 - INFO - 	--> UserCenterPage.phone
+2019-09-18 17:25:57,691 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-18 17:25:59,344 - MI_5 - INFO - 	--> UserCenterPage.school_name
+2019-09-18 17:25:59,570 - MI_5 - INFO - 	--> UserCenterPage.setting_up
+2019-09-18 17:25:59,789 - MI_5 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-09-18 17:26:01,786 - MI_5 - INFO - 	--> UserCenterPage.clear_cache
+2019-09-18 17:26:05,052 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-18 17:26:06,015 - MI_5 - INFO - 	--> HomePage.click_tab_hw
+2019-09-18 17:26:06,206 - MI_5 - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-09-18 17:26:06,250 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 17:26:08,168 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 17:26:08,168 - MI_5 - INFO - 	--> HomePage.click_hk_tab
+2019-09-18 17:26:08,434 - MI_5 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-18 17:26:08,435 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-18 17:26:09,930 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 17:26:10,309 - MI_5 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-18 17:26:11,473 - MI_5 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-18 17:26:11,474 - MI_5 - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-18 17:26:11,920 - MI_5 - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-18 17:26:12,421 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-18 17:26:12,520 - MI_5 - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-09-18 17:26:13,115 - MI_5 - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-09-18 17:26:13,622 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-09-18 17:26:15,888 - MI_5 - INFO - 	--> LibraryGamePage.play_book_games
+2019-09-18 17:26:15,888 - MI_5 - INFO - 	--> LibraryGamePage.game_name
+2019-09-18 17:26:16,250 - MI_5 - INFO -   --> CompleteArticle.complete_article_operate
+2019-09-18 17:26:16,250 - MI_5 - INFO - 	--> CompleteArticleGame.wait_check_complete_article_page
+2019-09-18 17:26:16,339 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-18 17:26:16,950 - MI_5 - INFO - 	--> PublicPage.rich_text
+2019-09-18 17:26:17,068 - MI_5 - INFO - 	--> PublicPage.drag_btn
+2019-09-18 17:26:18,450 - MI_5 - INFO -   --> PublicPage.next_btn_judge
+2019-09-18 17:26:18,450 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-09-18 17:26:18,892 - MI_5 - INFO - 	--> GetAttribute.enabled
+2019-09-18 17:26:20,864 - MI_5 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-18 17:26:20,864 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-18 17:26:20,865 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-18 17:26:20,999 - MI_5 - INFO - 	--> PublicPage.opt_text
+2019-09-18 17:26:21,123 - MI_5 - INFO - 	--> PublicPage.opt_char
+2019-09-18 17:26:21,283 - MI_5 - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-18 17:26:22,148 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-18 17:26:22,148 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-18 17:26:22,286 - MI_5 - INFO - 	--> PublicPage.opt_text
+2019-09-18 17:26:22,870 - MI_5 - INFO - 	--> PublicPage.opt_char
+2019-09-18 17:26:23,034 - MI_5 - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-18 17:26:23,954 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-18 17:26:23,954 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-18 17:26:24,087 - MI_5 - INFO - 	--> PublicPage.opt_text
+2019-09-18 17:26:24,213 - MI_5 - INFO - 	--> PublicPage.opt_char
+2019-09-18 17:26:25,085 - MI_5 - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-18 17:26:25,231 - MI_5 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-18 17:26:25,232 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-18 17:26:25,870 - MI_5 - INFO - 	--> PublicPage.opt_text
+2019-09-18 17:26:25,989 - MI_5 - INFO - 	--> PublicPage.opt_char
+2019-09-18 17:26:26,125 - MI_5 - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-18 17:26:26,908 - MI_5 - INFO -   --> LibraryPubicPage.judge_timer
+2019-09-18 17:26:26,909 - MI_5 - INFO -   <-- LibraryPubicPage.judge_timer, Success
+2019-09-18 17:26:26,909 - MI_5 - INFO - 	--> PublicPage.drag_btn
+2019-09-18 17:26:28,320 - MI_5 - INFO -   --> PublicPage.check_position_change
+2019-09-18 17:26:28,320 - MI_5 - INFO - 	--> PublicPage.wait_check_keyboard_page
+2019-09-18 17:26:43,394 - MI_5 - INFO - 	--> PublicPage.font_large
+2019-09-18 17:26:43,885 - MI_5 - INFO - 	--> GetAttribute.checked
+2019-09-18 17:26:43,920 - MI_5 - INFO - 	--> PublicPage.rich_text
+2019-09-18 17:26:44,036 - MI_5 - INFO - 	--> PublicPage.font_middle
+2019-09-18 17:26:45,175 - MI_5 - INFO - 	--> PublicPage.rich_text
+2019-09-18 17:26:45,300 - MI_5 - INFO - 	--> PublicPage.font_great
+2019-09-18 17:26:46,895 - MI_5 - INFO - 	--> PublicPage.rich_text
+2019-09-18 17:26:47,000 - MI_5 - INFO -   <-- PublicPage.check_position_change, Success
+2019-09-18 17:26:47,000 - MI_5 - INFO -   --> PublicPage.next_btn_operate
+2019-09-18 17:26:47,001 - MI_5 - INFO -   --> PublicPage.next_btn_judge
+2019-09-18 17:26:47,001 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-09-18 17:26:47,059 - MI_5 - INFO - 	--> GetAttribute.enabled
+2019-09-18 17:26:48,858 - MI_5 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-18 17:26:48,859 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-09-18 17:26:50,527 - MI_5 - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-09-18 17:26:50,528 - MI_5 - INFO -   <-- CompleteArticle.complete_article_operate, Success
+2019-09-18 17:26:50,528 - MI_5 - INFO - 	--> ResultPage.wait_check_medal_page
+2019-09-18 17:27:00,551 - MI_5 - INFO - 	--> LibraryGamePage.check_bank_result
+2019-09-18 17:27:00,556 - MI_5 - INFO - 	--> ResultPage.wait_check_result_page
+2019-09-18 17:27:00,647 - MI_5 - INFO - 	--> ResultPage.check_result_btn
+2019-09-18 17:27:03,311 - MI_5 - INFO -   --> CompleteArticle.complete_article_result_operate
+2019-09-18 17:27:03,312 - MI_5 - INFO - 	--> ResultPage.wait_check_answer_page
+2019-09-18 17:27:03,605 - MI_5 - INFO - 	--> PublicPage.drag_btn
+2019-09-18 17:27:04,917 - MI_5 - INFO - 	--> PublicPage.rich_text
+2019-09-18 17:27:05,019 - MI_5 - INFO - 	--> CompleteArticle.result_opt_char
+2019-09-18 17:27:05,314 - MI_5 - INFO - 	--> CompleteArticle.result_opt_char
+2019-09-18 17:27:05,569 - MI_5 - INFO - 	--> CompleteArticle.result_opt_char
+2019-09-18 17:27:05,869 - MI_5 - INFO - 	--> CompleteArticle.result_opt_char
+2019-09-18 17:27:07,324 - MI_5 - INFO -   <-- CompleteArticle.complete_article_result_operate, Success
+2019-09-18 17:27:07,325 - MI_5 - INFO - 	--> ResultPage.result_multi_data_check
+2019-09-18 17:27:07,325 - MI_5 - INFO - 	--> ResultPage.wait_check_result_page
+2019-09-18 17:27:08,919 - MI_5 - INFO - 	--> ResultPage.correct_rate
+2019-09-18 17:27:09,040 - MI_5 - INFO - 	--> ResultPage.score
+2019-09-18 17:27:09,166 - MI_5 - INFO - 	--> ResultPage.star
+2019-09-18 17:27:09,276 - MI_5 - INFO - 	--> ResultPage.wait_check_result_page
+2019-09-18 17:27:09,345 - MI_5 - INFO - 	--> ResultPage.again_btn
+2019-09-18 17:27:09,460 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-09-18 17:27:11,471 - MI_5 - INFO - 	--> LibraryGamePage.play_book_games
+2019-09-18 17:27:11,471 - MI_5 - INFO - 	--> LibraryGamePage.game_name
+2019-09-18 17:27:11,850 - MI_5 - INFO -   --> CompleteArticle.complete_article_operate
+2019-09-18 17:27:11,850 - MI_5 - INFO - 	--> CompleteArticleGame.wait_check_complete_article_page
+2019-09-18 17:27:12,405 - MI_5 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-18 17:27:12,530 - MI_5 - INFO - 	--> PublicPage.rich_text
+2019-09-18 17:27:12,655 - MI_5 - INFO - 	--> PublicPage.drag_btn
+2019-09-18 17:27:14,035 - MI_5 - INFO -   --> PublicPage.next_btn_judge
+2019-09-18 17:27:14,036 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-09-18 17:27:14,912 - MI_5 - INFO - 	--> GetAttribute.enabled
+2019-09-18 17:27:16,878 - MI_5 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-18 17:27:16,878 - MI_5 - INFO - 	--> PublicPage.key_is_digit
+2019-09-18 17:27:16,879 - MI_5 - INFO - 	--> CompleteArticle.click_opt_by_text
+2019-09-18 17:27:17,809 - MI_5 - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-18 17:27:19,441 - MI_5 - INFO - 	--> CompleteArticle.click_opt_by_text
+2019-09-18 17:27:19,785 - MI_5 - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-18 17:27:20,639 - MI_5 - INFO - 	--> CompleteArticle.click_opt_by_text
+2019-09-18 17:27:21,485 - MI_5 - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-18 17:27:22,521 - MI_5 - INFO - 	--> CompleteArticle.click_opt_by_text
+2019-09-18 17:27:23,415 - MI_5 - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-18 17:27:24,425 - MI_5 - INFO -   --> LibraryPubicPage.judge_timer
+2019-09-18 17:27:24,425 - MI_5 - INFO -   <-- LibraryPubicPage.judge_timer, Success
+2019-09-18 17:27:24,426 - MI_5 - INFO - 	--> PublicPage.drag_btn
+2019-09-18 17:27:25,904 - MI_5 - INFO -   --> PublicPage.check_position_change
+2019-09-18 17:27:25,905 - MI_5 - INFO - 	--> PublicPage.wait_check_keyboard_page
+2019-09-18 17:27:40,944 - MI_5 - INFO - 	--> PublicPage.font_large
+2019-09-18 17:27:41,452 - MI_5 - INFO - 	--> GetAttribute.checked
+2019-09-18 17:27:41,480 - MI_5 - INFO - 	--> PublicPage.rich_text
+2019-09-18 17:27:41,561 - MI_5 - INFO - 	--> PublicPage.font_middle
+2019-09-18 17:27:42,675 - MI_5 - INFO - 	--> PublicPage.rich_text
+2019-09-18 17:27:42,812 - MI_5 - INFO - 	--> PublicPage.font_great
+2019-09-18 17:27:44,446 - MI_5 - INFO - 	--> PublicPage.rich_text
+2019-09-18 17:27:44,610 - MI_5 - INFO -   <-- PublicPage.check_position_change, Success
+2019-09-18 17:27:44,610 - MI_5 - INFO -   --> PublicPage.next_btn_operate
+2019-09-18 17:27:44,611 - MI_5 - INFO -   --> PublicPage.next_btn_judge
+2019-09-18 17:27:44,611 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-09-18 17:27:44,677 - MI_5 - INFO - 	--> GetAttribute.enabled
+2019-09-18 17:27:46,408 - MI_5 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-18 17:27:46,409 - MI_5 - INFO - 	--> PublicPage.fab_next_btn
+2019-09-18 17:27:48,969 - MI_5 - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-09-18 17:27:48,970 - MI_5 - INFO -   <-- CompleteArticle.complete_article_operate, Success
+2019-09-18 17:27:48,970 - MI_5 - INFO - 	--> ResultPage.wait_check_medal_page
+2019-09-18 17:27:59,131 - MI_5 - INFO - 	--> LibraryGamePage.check_bank_result
+2019-09-18 17:27:59,132 - MI_5 - INFO - 	--> ResultPage.wait_check_result_page
+2019-09-18 17:27:59,213 - MI_5 - INFO - 	--> ResultPage.check_result_btn
+2019-09-18 17:28:01,323 - MI_5 - INFO -   --> CompleteArticle.complete_article_result_operate
+2019-09-18 17:28:01,324 - MI_5 - INFO - 	--> ResultPage.wait_check_answer_page
+2019-09-18 17:28:01,611 - MI_5 - INFO - 	--> PublicPage.drag_btn
+2019-09-18 17:28:02,964 - MI_5 - INFO - 	--> PublicPage.rich_text
+2019-09-18 17:28:03,066 - MI_5 - INFO - 	--> CompleteArticle.result_opt_char
+2019-09-18 17:28:03,341 - MI_5 - INFO - 	--> CompleteArticle.result_opt_char
+2019-09-18 17:28:03,588 - MI_5 - INFO - 	--> CompleteArticle.result_opt_char
+2019-09-18 17:28:03,786 - MI_5 - INFO - 	--> CompleteArticle.result_opt_char
+2019-09-18 17:28:05,218 - MI_5 - INFO -   <-- CompleteArticle.complete_article_result_operate, Success
+2019-09-18 17:28:05,219 - MI_5 - INFO - 	--> ResultPage.result_multi_data_check
+2019-09-18 17:28:05,219 - MI_5 - INFO - 	--> ResultPage.wait_check_result_page

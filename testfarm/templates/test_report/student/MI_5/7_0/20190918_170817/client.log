@@ -1,0 +1,301 @@
+2019-09-18 17:08:32,980 - MI_5 - INFO - --> SelectLevel.setUp
+2019-09-18 17:08:32,982 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 17:08:33,056 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 17:08:35,952 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 17:08:35,952 - MI_5 - INFO -   --> LoginPage.login_operate
+2019-09-18 17:08:37,954 - MI_5 - INFO - 	--> LoginPage.input_username
+2019-09-18 17:08:38,031 - MI_5 - INFO - 	--> LoginPage.input_password
+2019-09-18 17:08:39,922 - MI_5 - INFO - 	--> LoginPage.login_button
+2019-09-18 17:08:42,512 - MI_5 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 17:08:42,513 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 17:08:42,514 - MI_5 - INFO - <-- SelectLevel.setUp, Success
+
+2019-09-18 17:08:42,514 - MI_5 - INFO -   --> SelectLevel.test_select_level
+2019-09-18 17:08:42,515 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 17:08:43,700 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 17:08:43,700 - MI_5 - INFO - 	--> HomePage.click_hk_tab
+2019-09-18 17:08:43,936 - MI_5 - INFO - 	--> ListenHomePage.wait_check_listen_everyday_home_page
+2019-09-18 17:08:45,132 - MI_5 - INFO - 	--> ListenHomePage.level_button
+2019-09-18 17:08:45,249 - MI_5 - INFO - 	--> LevelPage.wait_check_listening_level_page
+2019-09-18 17:08:46,735 - MI_5 - INFO -   --> LevelPage.level_page_ele_operate
+2019-09-18 17:08:46,735 - MI_5 - INFO - 	--> LevelPage.back_name
+2019-09-18 17:08:46,901 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:08:47,991 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:08:49,054 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:08:50,633 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:08:51,657 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:08:52,582 - MI_5 - INFO - 	--> LevelPage.wait_check_level_page
+2019-09-18 17:09:00,427 - MI_5 - INFO - 	--> LevelPage.back_name
+2019-09-18 17:09:01,167 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:09:02,085 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:09:03,239 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:09:04,310 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:09:05,677 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:09:06,718 - MI_5 - INFO - 	--> LevelPage.wait_check_level_page
+2019-09-18 17:09:14,549 - MI_5 - INFO - 	--> LevelPage.back_name
+2019-09-18 17:09:14,790 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:09:15,773 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:09:16,954 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:09:17,708 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:09:18,743 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:09:19,853 - MI_5 - INFO - 	--> LevelPage.wait_check_level_page
+2019-09-18 17:09:20,700 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:09:21,609 - MI_5 - INFO - 	--> LevelPage.wait_check_level_page
+2019-09-18 17:09:29,476 - MI_5 - INFO - 	--> LevelPage.wait_check_level_page
+2019-09-18 17:09:37,868 - MI_5 - INFO - 	--> LevelPage.wait_check_level_page
+2019-09-18 17:09:40,775 - MI_5 - INFO - 	--> LevelPage.wait_start_button
+2019-09-18 17:09:40,776 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:09:41,632 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:09:42,710 - MI_5 - INFO - 	--> LevelPage.level_name_toast_judge
+2019-09-18 17:09:42,710 - MI_5 - INFO - 	--> LevelPage.play_voice_button
+2019-09-18 17:09:43,756 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:09:44,736 - MI_5 - INFO -   --> Toast.find_toast
+2019-09-18 17:09:46,538 - MI_5 - INFO -   <-- Toast.find_toast, Success
+2019-09-18 17:09:46,538 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:09:49,322 - MI_5 - INFO - 	--> LevelPage.wait_start_button
+2019-09-18 17:09:49,323 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:09:50,202 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:09:51,608 - MI_5 - INFO - 	--> LevelPage.level_name_toast_judge
+2019-09-18 17:09:51,608 - MI_5 - INFO - 	--> LevelPage.play_voice_button
+2019-09-18 17:09:52,526 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:09:53,352 - MI_5 - INFO -   --> Toast.find_toast
+2019-09-18 17:09:55,462 - MI_5 - INFO -   <-- Toast.find_toast, Success
+2019-09-18 17:09:55,463 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:09:58,297 - MI_5 - INFO - 	--> LevelPage.wait_start_button
+2019-09-18 17:09:58,298 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:09:59,187 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:00,504 - MI_5 - INFO - 	--> LevelPage.level_name_toast_judge
+2019-09-18 17:10:00,505 - MI_5 - INFO - 	--> LevelPage.play_voice_button
+2019-09-18 17:10:01,269 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:02,066 - MI_5 - INFO -   --> Toast.find_toast
+2019-09-18 17:10:04,622 - MI_5 - INFO -   <-- Toast.find_toast, Success
+2019-09-18 17:10:04,623 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:07,475 - MI_5 - INFO - 	--> LevelPage.wait_start_button
+2019-09-18 17:10:07,476 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:08,325 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:09,176 - MI_5 - INFO - 	--> LevelPage.level_name_toast_judge
+2019-09-18 17:10:09,177 - MI_5 - INFO - 	--> LevelPage.play_voice_button
+2019-09-18 17:10:10,071 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:10,923 - MI_5 - INFO -   --> Toast.find_toast
+2019-09-18 17:10:12,843 - MI_5 - INFO -   <-- Toast.find_toast, Success
+2019-09-18 17:10:12,844 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:15,695 - MI_5 - INFO - 	--> LevelPage.wait_start_button
+2019-09-18 17:10:15,696 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:16,776 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:17,670 - MI_5 - INFO - 	--> LevelPage.level_name_toast_judge
+2019-09-18 17:10:17,670 - MI_5 - INFO - 	--> LevelPage.play_voice_button
+2019-09-18 17:10:18,578 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:20,171 - MI_5 - INFO -   --> Toast.find_toast
+2019-09-18 17:10:22,137 - MI_5 - INFO -   <-- Toast.find_toast, Success
+2019-09-18 17:10:22,138 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:24,812 - MI_5 - INFO - 	--> LevelPage.wait_start_button
+2019-09-18 17:10:24,814 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:25,762 - MI_5 - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-09-18 17:10:25,763 - MI_5 - ERROR - 	<-- LevelPage.start_button, WebDriverException, Error
+2019-09-18 17:10:29,119 - MI_5 - INFO - 	--> LevelPage.level_name_toast_judge
+2019-09-18 17:10:29,122 - MI_5 - INFO - 	--> LevelPage.play_voice_button
+2019-09-18 17:10:30,099 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:30,901 - MI_5 - INFO -   --> Toast.find_toast
+2019-09-18 17:10:32,602 - MI_5 - INFO -   <-- Toast.find_toast, Success
+2019-09-18 17:10:32,602 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:35,390 - MI_5 - INFO - 	--> LevelPage.wait_start_button
+2019-09-18 17:10:35,391 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:36,271 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:37,131 - MI_5 - INFO - 	--> LevelPage.level_name_toast_judge
+2019-09-18 17:10:37,132 - MI_5 - INFO - 	--> LevelPage.play_voice_button
+2019-09-18 17:10:38,111 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:38,917 - MI_5 - INFO -   --> Toast.find_toast
+2019-09-18 17:10:40,782 - MI_5 - INFO -   <-- Toast.find_toast, Success
+2019-09-18 17:10:40,783 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:43,611 - MI_5 - INFO - 	--> LevelPage.wait_start_button
+2019-09-18 17:10:43,612 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:44,430 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:45,380 - MI_5 - INFO - 	--> LevelPage.level_name_toast_judge
+2019-09-18 17:10:45,380 - MI_5 - INFO - 	--> LevelPage.play_voice_button
+2019-09-18 17:10:46,275 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:47,064 - MI_5 - INFO -   --> Toast.find_toast
+2019-09-18 17:10:48,889 - MI_5 - INFO -   <-- Toast.find_toast, Success
+2019-09-18 17:10:48,889 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:51,673 - MI_5 - INFO - 	--> LevelPage.wait_start_button
+2019-09-18 17:10:51,674 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:52,508 - MI_5 - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-09-18 17:10:52,509 - MI_5 - ERROR - 	<-- LevelPage.start_button, WebDriverException, Error
+2019-09-18 17:10:55,849 - MI_5 - INFO - 	--> LevelPage.level_name_toast_judge
+2019-09-18 17:10:55,850 - MI_5 - INFO - 	--> LevelPage.play_voice_button
+2019-09-18 17:10:56,660 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:10:57,454 - MI_5 - INFO -   --> Toast.find_toast
+2019-09-18 17:10:59,810 - MI_5 - INFO -   <-- Toast.find_toast, Success
+2019-09-18 17:10:59,810 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:11:02,578 - MI_5 - INFO - 	--> LevelPage.wait_start_button
+2019-09-18 17:11:02,578 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:11:03,441 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:11:04,238 - MI_5 - INFO - 	--> LevelPage.level_name_toast_judge
+2019-09-18 17:11:04,239 - MI_5 - INFO - 	--> LevelPage.play_voice_button
+2019-09-18 17:11:05,103 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:11:06,022 - MI_5 - INFO -   --> Toast.find_toast
+2019-09-18 17:11:07,934 - MI_5 - INFO -   <-- Toast.find_toast, Success
+2019-09-18 17:11:07,934 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:11:10,731 - MI_5 - INFO - 	--> LevelPage.wait_start_button
+2019-09-18 17:11:10,732 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:11:11,969 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:11:12,893 - MI_5 - INFO - 	--> LevelPage.level_name_toast_judge
+2019-09-18 17:11:12,894 - MI_5 - INFO - 	--> LevelPage.play_voice_button
+2019-09-18 17:11:13,878 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:11:16,072 - MI_5 - INFO -   --> Toast.find_toast
+2019-09-18 17:11:18,089 - MI_5 - INFO -   <-- Toast.find_toast, Success
+2019-09-18 17:11:18,090 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:11:18,876 - MI_5 - INFO - 	--> HomePage.click_back_up_button
+2019-09-18 17:11:20,031 - MI_5 - INFO -   <-- LevelPage.level_page_ele_operate, Success
+2019-09-18 17:11:20,032 - MI_5 - INFO - 	--> ListenHomePage.wait_check_listen_everyday_home_page
+2019-09-18 17:11:22,442 - MI_5 - INFO -   <-- SelectLevel.test_select_level, Success
+2019-09-18 17:11:22,443 - MI_5 - INFO - --> SelectLevel.tearDown
+2019-09-18 17:11:22,443 - MI_5 - INFO - <-- SelectLevel.tearDown, Success
+
+2019-09-18 17:11:22,444 - MI_5 - INFO - --> SelectLevel.setUp
+2019-09-18 17:11:22,444 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 17:11:22,508 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 17:11:28,064 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 17:11:28,066 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 17:11:29,713 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 17:11:29,713 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 17:11:29,714 - MI_5 - INFO - <-- SelectLevel.setUp, Success
+
+2019-09-18 17:11:29,714 - MI_5 - INFO -   --> SelectLevel.test_listen_game
+2019-09-18 17:11:29,714 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 17:11:30,660 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 17:11:30,661 - MI_5 - INFO - 	--> UserCenterPage.get_user_info
+2019-09-18 17:11:30,661 - MI_5 - INFO - 	--> HomePage.click_tab_profile
+2019-09-18 17:11:30,847 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-18 17:11:33,893 - MI_5 - INFO - 	--> UserCenterPage.nickname
+2019-09-18 17:11:36,482 - MI_5 - INFO - 	--> UserCenterPage.purchase
+2019-09-18 17:11:36,767 - MI_5 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-18 17:11:38,709 - MI_5 - INFO - 	--> UserCenterPage.phone
+2019-09-18 17:11:40,069 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-18 17:11:41,741 - MI_5 - INFO - 	--> UserCenterPage.school_name
+2019-09-18 17:11:42,412 - MI_5 - INFO - 	--> UserCenterPage.setting_up
+2019-09-18 17:11:43,152 - MI_5 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-09-18 17:11:44,813 - MI_5 - INFO - 	--> UserCenterPage.clear_cache
+2019-09-18 17:11:48,050 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-18 17:11:49,028 - MI_5 - INFO - 	--> HomePage.click_tab_hw
+2019-09-18 17:11:49,338 - MI_5 - INFO - 	--> ListenDataHandle.delete_student_all_listening_records
+2019-09-18 17:11:49,339 - MI_5 - ERROR - Exception, 'ListenSql' object has no attribute 'db'
+2019-09-18 17:11:49,340 - MI_5 - ERROR - 	<-- ListenDataHandle.delete_student_all_listening_records, Exception, Error
+2019-09-18 17:11:50,162 - MI_5 - ERROR - Exception, IMAGE:ListenDataHandle.delete_student_all_listening_records-20190918171149.png
+2019-09-18 17:11:50,162 - MI_5 - ERROR -   <-- SelectLevel.test_listen_game, Exception, Error
+2019-09-18 17:11:50,163 - MI_5 - INFO - --> SelectLevel.tearDown
+2019-09-18 17:11:50,163 - MI_5 - INFO - <-- SelectLevel.tearDown, Success
+
+2019-09-18 17:11:50,171 - MI_5 - INFO - --> SelectLevel.setUp
+2019-09-18 17:11:50,172 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 17:11:50,249 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 17:11:55,924 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 17:11:55,925 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 17:11:57,083 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 17:11:57,083 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 17:11:57,084 - MI_5 - INFO - <-- SelectLevel.setUp, Success
+
+2019-09-18 17:11:57,084 - MI_5 - INFO -   --> SelectLevel.test_history_log
+2019-09-18 17:11:57,085 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 17:11:58,013 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 17:11:58,013 - MI_5 - INFO - 	--> HomePage.click_hk_tab
+2019-09-18 17:11:58,252 - MI_5 - INFO - 	--> ListenHomePage.wait_check_listen_everyday_home_page
+2019-09-18 17:11:59,498 - MI_5 - INFO - 	--> ListenHomePage.excise_time
+2019-09-18 17:11:59,605 - MI_5 - INFO - 	--> ListenHomePage.history_button
+2019-09-18 17:11:59,723 - MI_5 - INFO - 	--> HistoryPage.wait_check_history_page
+2019-09-18 17:12:01,280 - MI_5 - INFO - 	--> HistoryPage.history_page_operate
+2019-09-18 17:12:01,281 - MI_5 - INFO - 	--> HistoryPage.game_name
+2019-09-18 17:12:01,339 - MI_5 - INFO - 	--> HomePage.click_back_up_button
+2019-09-18 17:12:02,459 - MI_5 - INFO - 	--> ListenHomePage.wait_check_listen_everyday_home_page
+2019-09-18 17:12:04,854 - MI_5 - INFO -   <-- SelectLevel.test_history_log, Success
+2019-09-18 17:12:04,856 - MI_5 - INFO - --> SelectLevel.tearDown
+2019-09-18 17:12:04,857 - MI_5 - INFO - <-- SelectLevel.tearDown, Success
+
+2019-09-18 17:12:04,858 - MI_5 - INFO - --> SelectLevel.setUp
+2019-09-18 17:12:04,858 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 17:12:04,905 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 17:12:10,008 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 17:12:10,009 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 17:12:10,963 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 17:12:10,965 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 17:12:10,966 - MI_5 - INFO - <-- SelectLevel.setUp, Success
+
+2019-09-18 17:12:10,967 - MI_5 - INFO -   --> SelectLevel.test_rank
+2019-09-18 17:12:10,967 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 17:12:11,893 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 17:12:11,893 - MI_5 - INFO - 	--> UserCenterPage.get_user_info
+2019-09-18 17:12:11,894 - MI_5 - INFO - 	--> HomePage.click_tab_profile
+2019-09-18 17:12:12,138 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-18 17:12:15,212 - MI_5 - INFO - 	--> UserCenterPage.nickname
+2019-09-18 17:12:17,735 - MI_5 - INFO - 	--> UserCenterPage.purchase
+2019-09-18 17:12:17,983 - MI_5 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-18 17:12:19,811 - MI_5 - INFO - 	--> UserCenterPage.phone
+2019-09-18 17:12:21,221 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-18 17:12:23,405 - MI_5 - INFO - 	--> UserCenterPage.school_name
+2019-09-18 17:12:23,579 - MI_5 - INFO - 	--> UserCenterPage.setting_up
+2019-09-18 17:12:23,863 - MI_5 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-09-18 17:12:25,813 - MI_5 - INFO - 	--> UserCenterPage.clear_cache
+2019-09-18 17:12:29,039 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-18 17:12:30,008 - MI_5 - INFO - 	--> HomePage.click_tab_hw
+2019-09-18 17:12:30,336 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 17:12:32,329 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 17:12:32,330 - MI_5 - INFO - 	--> HomePage.click_hk_tab
+2019-09-18 17:12:32,562 - MI_5 - INFO - 	--> ListenHomePage.wait_check_listen_everyday_home_page
+2019-09-18 17:12:33,785 - MI_5 - INFO - 	--> ListenHomePage.excise_time
+2019-09-18 17:12:33,894 - MI_5 - INFO - 	--> ListenHomePage.rank_button
+2019-09-18 17:12:34,029 - MI_5 - INFO - 	--> RankPage.wait_check_rank_page
+2019-09-18 17:12:35,653 - MI_5 - INFO - 	--> RankPage.rank_ele_operate
+2019-09-18 17:12:35,653 - MI_5 - INFO - 	--> RankPage.select_class
+2019-09-18 17:12:37,786 - MI_5 - INFO - 	--> RankPage.class_name
+2019-09-18 17:12:37,834 - MI_5 - INFO -   --> HomePage.click_blank
+2019-09-18 17:12:37,993 - MI_5 - INFO -   <-- HomePage.click_blank, Success
+2019-09-18 17:12:37,993 - MI_5 - INFO - 	--> RankPage.select_class
+2019-09-18 17:12:40,573 - MI_5 - INFO - 	--> RankPage.class_name
+2019-09-18 17:12:41,466 - MI_5 - INFO - 	--> RankPage.wait_check_rank_page
+2019-09-18 17:12:41,543 - MI_5 - INFO - 	--> RankPage.user_name
+2019-09-18 17:12:41,685 - MI_5 - INFO - 	--> RankPage.user_rank
+2019-09-18 17:12:42,304 - MI_5 - INFO - 	--> RankPage.cover_title
+2019-09-18 17:12:42,422 - MI_5 - INFO - 	--> RankPage.day_num
+2019-09-18 17:12:42,506 - MI_5 - INFO - 	--> RankPage.week_rank
+2019-09-18 17:12:42,624 - MI_5 - INFO - 	--> RankPage.week_punch_days
+2019-09-18 17:12:42,729 - MI_5 - INFO - 	--> RankPage.student_names
+2019-09-18 17:12:42,849 - MI_5 - INFO - 	--> RankPage.days
+2019-09-18 17:12:43,092 - MI_5 - INFO - 	--> RankPage.select_class
+2019-09-18 17:12:45,182 - MI_5 - INFO - 	--> RankPage.class_name
+2019-09-18 17:12:45,315 - MI_5 - INFO - 	--> RankPage.wait_check_rank_page
+2019-09-18 17:12:46,315 - MI_5 - INFO - 	--> RankPage.user_name
+2019-09-18 17:12:46,413 - MI_5 - INFO - 	--> RankPage.user_rank
+2019-09-18 17:12:46,516 - MI_5 - INFO - 	--> RankPage.cover_title
+2019-09-18 17:12:46,653 - MI_5 - INFO - 	--> RankPage.day_num
+2019-09-18 17:12:46,733 - MI_5 - INFO - 	--> RankPage.week_rank
+2019-09-18 17:12:46,830 - MI_5 - INFO - 	--> RankPage.week_punch_days
+2019-09-18 17:12:46,928 - MI_5 - INFO - 	--> RankPage.student_names
+2019-09-18 17:12:47,089 - MI_5 - INFO - 	--> RankPage.days
+2019-09-18 17:12:47,325 - MI_5 - INFO - 	--> RankPage.show_button
+2019-09-18 17:12:47,487 - MI_5 - INFO - 	--> ListenResultPage.wait_check_punch_page
+2019-09-18 17:12:49,395 - MI_5 - INFO -   --> ListenResultPage.share_page_operate
+2019-09-18 17:12:49,396 - MI_5 - INFO - 	--> ListenResultPage.wait_check_punch_page
+2019-09-18 17:12:49,464 - MI_5 - INFO - 	--> ListenResultPage.wechat_button
+2019-09-18 17:12:49,548 - MI_5 - INFO - 	--> ListenResultPage.wechat_friend
+2019-09-18 17:12:49,614 - MI_5 - INFO - 	--> ListenResultPage.save_img
+2019-09-18 17:12:49,814 - MI_5 - INFO - 	--> ListenResultPage.wait_check_wechat_login_page
+2019-09-18 17:12:51,695 - MI_5 - INFO - 	--> ListenResultPage.quit_login_wechat
+2019-09-18 17:12:51,775 - MI_5 - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-09-18 17:12:51,776 - MI_5 - ERROR - 	<-- ListenResultPage.quit_login_wechat, WebDriverException, Error
+2019-09-18 17:12:52,251 - MI_5 - ERROR - WebDriverException, Message: IMAGE:ListenResultPage.quit_login_wechat-20190918171251.png
+
+2019-09-18 17:12:52,251 - MI_5 - ERROR -   <-- ListenResultPage.share_page_operate, WebDriverException, Error
+2019-09-18 17:12:52,251 - MI_5 - ERROR - WebDriverException, Message: Message: IMAGE:ListenResultPage.quit_login_wechat-20190918171251.png
+
+
+2019-09-18 17:12:52,252 - MI_5 - ERROR - 	<-- RankPage.rank_ele_operate, WebDriverException, Error
+2019-09-18 17:12:52,252 - MI_5 - ERROR - WebDriverException, Message: Message: Message: IMAGE:ListenResultPage.quit_login_wechat-20190918171251.png
+
+
+
+2019-09-18 17:12:52,252 - MI_5 - ERROR -   <-- SelectLevel.test_rank, WebDriverException, Error
+2019-09-18 17:12:52,253 - MI_5 - INFO - --> SelectLevel.tearDown
+2019-09-18 17:12:52,253 - MI_5 - INFO - <-- SelectLevel.tearDown, Success
+

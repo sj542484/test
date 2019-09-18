@@ -156,6 +156,6 @@ class ListenChoice(ListenChoiceGame):
 
                         print('-'*20, '\n')
 
-            print('结果页答案:', right_answer)
+            print('正确答案:', right_answer)
             self.click_back_up_button()
             return wrong, right, right_answer

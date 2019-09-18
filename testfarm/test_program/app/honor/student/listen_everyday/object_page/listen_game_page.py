@@ -15,7 +15,7 @@ from app.honor.student.listen_everyday.object_page.game_select_image import List
 from app.honor.student.listen_everyday.object_page.listen_home_page import ListenHomePage
 from app.honor.student.listen_everyday.object_page.listen_result_page import ListenResultPage
 from app.honor.student.login.object_page.home_page import HomePage
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from utils.toast_find import Toast
 

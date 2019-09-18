@@ -2,7 +2,7 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/6/27 15:44
 # -----------------------------------------
-from utils.sql import SqlDb
+from testfarm.test_program.utils.sql import SqlDb
 
 
 class LibrarySql(SqlDb):
@@ -11,6 +11,11 @@ class LibrarySql(SqlDb):
     def find_school_id(self, school_name):
         """查询学校id"""
         sql = 'SELECT id FROM school WHERE `name`= "%s"' % school_name
+        return self.execute_sql_return_result(sql)
+
+    def find_school_id_by_short_name(self, short_name):
+        """根据学校简称获取学校id"""
+        sql = 'SELECT school_id FROM `school_attribute` WHERE `key`="short_name" AND `value`="{}"'.format(short_name)
         return self.execute_sql_return_result(sql)
 
     def find_latest_school_books(self, school_id):

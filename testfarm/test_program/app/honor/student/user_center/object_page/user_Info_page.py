@@ -9,7 +9,7 @@ from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from utils.click_bounds import ClickBounds
 from conf.decorator import teststep, teststeps
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 
 
 class UserInfoPage(BasePage):

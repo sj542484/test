@@ -9,11 +9,11 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from app.honor.student.library.object_pages.games.word_match import LibraryWordMatch
-from conf.base_page import BasePage
-from conf.decorator import teststep, teststeps
-from utils.get_attribute import GetAttribute
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from testfarm.test_program.app.honor.student.library.object_pages.games.word_match import LibraryWordMatch
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststep, teststeps
+from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
 class ResultPage(BasePage):
@@ -139,12 +139,14 @@ class ResultPage(BasePage):
                 print('星星核实正确')
 
             print('===== 结果页数据核实完毕 =====\n')
+            if fq == 2:
+                print('-*' * 50, '\n')
 
     @teststeps
     def word_game_answer_detail_operate(self, mine_answer):
         """单词类游戏查看答案页面处理过程"""
         right, wrong, right_answer = {}, {}, {}
-        if any([LibraryWordMatch().is_word(x) for x in list(mine_answer.keys())]):
+        if any([LibraryWordMatch().is_word(x) for x in mine_answer]):
             word_is_key = True
         else:
             word_is_key = False
@@ -160,7 +162,7 @@ class ResultPage(BasePage):
                 print('单词：', word)
                 print('解释：', explain.text)
                 if word_is_key:
-                    right_answer[word.lower()] = explain.text
+                    right_answer[word] = explain.text
                 else:
                     right_answer[explain.text] = word
 
@@ -173,7 +175,6 @@ class ResultPage(BasePage):
                     else:
                         print('图标标识正确\n')
                         wrong[word] = explain.text
-
                 else:
                     if GetAttribute().selected(self.correct_wrong_icon(explain.text)) == 'false':
                         print('★★★ 单词与我输入一致，但图标显示错误\n')
@@ -181,8 +182,7 @@ class ResultPage(BasePage):
                         print('图标标识正确\n')
                         right[word] = explain.text
 
-        print("错误：", wrong)
-        print("正确：", right)
+        print('正确答案：', right_answer)
         self.click_back_up_button()
         return wrong, right, right_answer
 
@@ -208,5 +208,6 @@ class ResultPage(BasePage):
             self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
         right = list(mine_answer.values())
         right_answer = mine_answer
+        print('正确答案：', right_answer)
         self.click_back_up_button()
         return mine_answer, right, right_answer

@@ -12,7 +12,7 @@ from app.honor.student.listen_everyday.object_page.listen_result_page import Lis
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
 from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep
 
 

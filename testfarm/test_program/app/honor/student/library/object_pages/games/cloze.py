@@ -4,11 +4,11 @@
 # Date:     2019/4/10 11:53
 # -------------------------------------------
 import random
-from app.honor.student.games.article_cloze import ClozeGame
-from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
-from app.honor.student.library.object_pages.games.select_word_blank import SelectWordBlank
-from app.honor.student.library.object_pages.result_page import ResultPage
-from conf.decorator import teststep, teststeps
+from testfarm.test_program.app.honor.student.games.article_cloze import ClozeGame
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from testfarm.test_program.app.honor.student.library.object_pages.games.select_word_blank import SelectWordBlank
+from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
+from testfarm.test_program.conf.decorator import teststep, teststeps
 
 
 class ClozePage(ClozeGame):
@@ -119,7 +119,7 @@ class ClozePage(ClozeGame):
                                     print('正确答案：', opt.text)
                         print('-'*30, '\n')
 
-            print('结果页答案:', right_answer)
+            print('正确答案:', right_answer)
             self.click_back_up_button()
             return wrong, right, right_answer
 

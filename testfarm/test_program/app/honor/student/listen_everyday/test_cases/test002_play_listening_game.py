@@ -58,7 +58,9 @@ class SelectLevel(unittest.TestCase):
                         self.level.start_button(level_name).click()
                     self.game.home.click_back_up_button()
                     level_num = int(re.findall(r'\d+', level_name)[0])
+                    print('练习等级：', level_num)
                     exercise_count = 3 if level_num > 4 else 5
+                    print('练习次数：', exercise_count)
                     for i in range(exercise_count + 1):
                         if self.listen.wait_check_listen_everyday_home_page():
                             self.listen.start_button().click()
@@ -81,7 +83,6 @@ class SelectLevel(unittest.TestCase):
                             if self.listen.wait_today_limit_img_page():
                                 print('今天你已练完{}道听力，保持适度才能事半公倍哦！'.format(exercise_count), '\n')
                                 self.listen.commit_button().click()
-
                             else:
                                 print('★★★ Error-- 未发现题数限制提示页面！')
 

@@ -99,6 +99,7 @@ class SelectWordBlank(SelectBlankGame):
                     index += 1
                 else:
                     right.append(answers[i])
+        print('正确答案：', right_answer)
         self.click_back_up_button()
         return wrong, right, right_answer
 

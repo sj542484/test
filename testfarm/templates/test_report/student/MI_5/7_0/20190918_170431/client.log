@@ -1,0 +1,43 @@
+2019-09-18 17:04:46,205 - MI_5 - INFO - --> SelectLevel.setUp
+2019-09-18 17:04:46,207 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 17:04:46,277 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 17:04:49,204 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 17:04:49,205 - MI_5 - INFO -   --> LoginPage.login_operate
+2019-09-18 17:04:51,207 - MI_5 - INFO - 	--> LoginPage.input_username
+2019-09-18 17:04:51,275 - MI_5 - INFO - 	--> LoginPage.input_password
+2019-09-18 17:04:53,176 - MI_5 - INFO - 	--> LoginPage.login_button
+2019-09-18 17:04:55,788 - MI_5 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 17:04:55,788 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 17:04:55,789 - MI_5 - INFO - <-- SelectLevel.setUp, Success
+
+2019-09-18 17:04:55,789 - MI_5 - INFO -   --> SelectLevel.test_select_level
+2019-09-18 17:04:55,790 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 17:04:56,587 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 17:04:56,587 - MI_5 - INFO - 	--> HomePage.click_hk_tab
+2019-09-18 17:04:56,942 - MI_5 - INFO - 	--> ListenHomePage.wait_check_listen_everyday_home_page
+2019-09-18 17:04:58,235 - MI_5 - INFO - 	--> ListenHomePage.level_button
+2019-09-18 17:04:58,335 - MI_5 - INFO - 	--> LevelPage.wait_check_listening_level_page
+2019-09-18 17:04:59,809 - MI_5 - INFO -   --> LevelPage.level_page_ele_operate
+2019-09-18 17:04:59,810 - MI_5 - INFO - 	--> LevelPage.back_name
+2019-09-18 17:04:59,956 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:00,541 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:01,253 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:02,333 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:03,281 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:04,356 - MI_5 - INFO - 	--> LevelPage.wait_check_level_page
+2019-09-18 17:05:12,095 - MI_5 - INFO - 	--> LevelPage.back_name
+2019-09-18 17:05:12,322 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:13,392 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:14,789 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:15,760 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:16,830 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:17,895 - MI_5 - INFO - 	--> LevelPage.wait_check_level_page
+2019-09-18 17:05:26,161 - MI_5 - INFO - 	--> LevelPage.back_name
+2019-09-18 17:05:26,354 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:27,308 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:28,786 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:29,815 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:30,849 - MI_5 - INFO - 	--> LevelPage.level_name
+2019-09-18 17:05:31,775 - MI_5 - INFO - 	--> LevelPage.wait_check_level_page
+2019-09-18 17:05:32,687 - MI_5 - INFO - 	--> LevelPage.start_button
+2019-09-18 17:05:33,591 - MI_5 - INFO - 	--> LevelPage.wait_check_level_page

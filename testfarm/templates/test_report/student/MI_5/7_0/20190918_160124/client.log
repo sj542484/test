@@ -1,0 +1,107 @@
+2019-09-18 16:01:40,498 - MI_5 - INFO - --> PlayAllGame.setUp
+2019-09-18 16:01:40,500 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 16:01:40,571 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 16:01:43,486 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 16:01:43,486 - MI_5 - INFO -   --> LoginPage.login_operate
+2019-09-18 16:01:45,487 - MI_5 - INFO - 	--> LoginPage.input_username
+2019-09-18 16:01:46,063 - MI_5 - INFO - 	--> LoginPage.input_password
+2019-09-18 16:01:47,970 - MI_5 - INFO - 	--> LoginPage.login_button
+2019-09-18 16:01:50,575 - MI_5 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 16:01:50,576 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 16:01:50,577 - MI_5 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-18 16:01:50,577 - MI_5 - INFO - --> PlayAllGame.test_all_game
+2019-09-18 16:01:50,578 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 16:01:51,817 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 16:01:51,818 - MI_5 - INFO - 	--> UserCenterPage.get_user_info
+2019-09-18 16:01:51,818 - MI_5 - INFO - 	--> HomePage.click_tab_profile
+2019-09-18 16:01:52,065 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-18 16:01:55,751 - MI_5 - INFO - 	--> UserCenterPage.nickname
+2019-09-18 16:01:58,514 - MI_5 - INFO - 	--> UserCenterPage.purchase
+2019-09-18 16:01:58,739 - MI_5 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-18 16:02:00,421 - MI_5 - INFO - 	--> UserCenterPage.phone
+2019-09-18 16:02:01,785 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-18 16:02:03,494 - MI_5 - INFO - 	--> UserCenterPage.school_name
+2019-09-18 16:02:03,737 - MI_5 - INFO - 	--> UserCenterPage.setting_up
+2019-09-18 16:02:04,047 - MI_5 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-09-18 16:02:05,699 - MI_5 - INFO - 	--> UserCenterPage.clear_cache
+2019-09-18 16:02:09,023 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-18 16:02:09,986 - MI_5 - INFO - 	--> HomePage.click_tab_hw
+2019-09-18 16:02:10,266 - MI_5 - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-09-18 16:02:10,313 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 16:02:12,030 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 16:02:12,031 - MI_5 - INFO - 	--> HomePage.click_hk_tab
+2019-09-18 16:02:12,186 - MI_5 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-18 16:02:12,187 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-18 16:02:13,475 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:02:13,890 - MI_5 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-18 16:02:15,013 - MI_5 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-18 16:02:15,013 - MI_5 - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-18 16:02:15,414 - MI_5 - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-18 16:02:16,058 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-18 16:02:16,151 - MI_5 - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-09-18 16:02:16,967 - MI_5 - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-09-18 16:02:17,587 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-09-18 16:02:32,729 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-18 16:02:43,233 - MI_5 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-18 16:02:43,234 - MI_5 - INFO - --> PlayAllGame.tearDown
+2019-09-18 16:02:43,235 - MI_5 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-18 16:02:43,236 - MI_5 - INFO - --> WKGame.setUp
+2019-09-18 16:02:43,236 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 16:02:43,324 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 16:02:48,507 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 16:02:48,508 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 16:03:03,886 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 16:03:03,887 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-18 16:03:19,891 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-09-18 16:03:20,572 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-09-18 16:03:28,063 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 16:03:29,071 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 16:03:29,072 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 16:03:29,072 - MI_5 - INFO - <-- WKGame.setUp, Success
+
+2019-09-18 16:03:29,072 - MI_5 - INFO - --> WKGame.test_wk_game
+2019-09-18 16:03:29,073 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 16:03:30,098 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 16:03:30,098 - MI_5 - INFO - 	--> HomePage.click_hk_tab
+2019-09-18 16:03:30,388 - MI_5 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-18 16:03:30,388 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-18 16:03:31,647 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:03:34,883 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:03:37,850 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:03:40,628 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:03:43,955 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:03:46,826 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:03:49,689 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:03:52,602 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:03:55,460 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:03:58,168 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:00,973 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:03,921 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:06,800 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:09,464 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:12,237 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:14,992 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:18,258 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:20,864 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:23,750 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:26,489 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:29,102 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:31,721 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:34,556 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:37,094 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:39,725 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:42,443 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:45,048 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:47,667 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:50,273 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:52,948 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:55,668 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:04:58,363 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:05:01,010 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:05:04,360 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:05:07,053 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:05:09,796 - MI_5 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-18 16:05:12,468 - MI_5 - INFO - 	--> LibraryGamePage.homework_list

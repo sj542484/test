@@ -1,0 +1,80 @@
+2019-09-18 13:09:38,872 - MI_5 - INFO - --> PlayAllGame.setUp
+2019-09-18 13:09:38,874 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 13:09:38,947 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 13:09:41,634 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 13:09:41,635 - MI_5 - INFO -   --> LoginPage.login_operate
+2019-09-18 13:09:43,637 - MI_5 - INFO - 	--> LoginPage.input_username
+2019-09-18 13:09:43,715 - MI_5 - INFO - 	--> LoginPage.input_password
+2019-09-18 13:09:45,544 - MI_5 - INFO - 	--> LoginPage.login_button
+2019-09-18 13:09:48,162 - MI_5 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 13:09:48,163 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 13:09:48,164 - MI_5 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-18 13:09:48,164 - MI_5 - INFO - --> PlayAllGame.test_all_game
+2019-09-18 13:09:48,165 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 13:09:48,166 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 13:09:48,166 - MI_5 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-18 13:09:48,167 - MI_5 - INFO - --> PlayAllGame.tearDown
+2019-09-18 13:09:48,167 - MI_5 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-18 13:09:48,168 - MI_5 - INFO - --> PlayAllGame.setUp
+2019-09-18 13:09:48,168 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 13:09:48,241 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 13:09:48,309 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 13:09:48,310 - MI_5 - INFO -   --> LoginPage.login_operate
+2019-09-18 13:09:50,312 - MI_5 - INFO - 	--> LoginPage.input_username
+2019-09-18 13:09:50,388 - MI_5 - INFO - 	--> LoginPage.input_password
+2019-09-18 13:09:52,752 - MI_5 - INFO - 	--> LoginPage.login_button
+2019-09-18 13:09:55,336 - MI_5 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 13:09:55,338 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 13:09:55,338 - MI_5 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-18 13:09:55,339 - MI_5 - INFO - --> PlayAllGame.test_all_game
+2019-09-18 13:09:55,339 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 13:09:55,339 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 13:09:55,340 - MI_5 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-18 13:09:55,340 - MI_5 - INFO - --> PlayAllGame.tearDown
+2019-09-18 13:09:55,341 - MI_5 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-18 13:09:55,342 - MI_5 - INFO - --> WKGame.setUp
+2019-09-18 13:09:55,345 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 13:09:55,418 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 13:09:55,498 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 13:09:55,499 - MI_5 - INFO -   --> LoginPage.login_operate
+2019-09-18 13:09:57,500 - MI_5 - INFO - 	--> LoginPage.input_username
+2019-09-18 13:09:57,599 - MI_5 - INFO - 	--> LoginPage.input_password
+2019-09-18 13:09:59,450 - MI_5 - INFO - 	--> LoginPage.login_button
+2019-09-18 13:10:02,046 - MI_5 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 13:10:02,047 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 13:10:02,047 - MI_5 - INFO - <-- WKGame.setUp, Success
+
+2019-09-18 13:10:02,048 - MI_5 - INFO - --> WKGame.test_wk_game
+2019-09-18 13:10:02,048 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 13:10:02,049 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 13:10:02,049 - MI_5 - INFO - <-- WKGame.test_wk_game, Success
+
+2019-09-18 13:10:02,049 - MI_5 - INFO - --> WKGame.tearDown
+2019-09-18 13:10:02,050 - MI_5 - INFO - <-- WKGame.tearDown, Success
+
+2019-09-18 13:10:02,050 - MI_5 - INFO - --> FlashCard.setUp
+2019-09-18 13:10:02,051 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 13:10:02,132 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 13:10:02,178 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 13:10:02,178 - MI_5 - INFO -   --> LoginPage.login_operate
+2019-09-18 13:10:04,180 - MI_5 - INFO - 	--> LoginPage.input_username
+2019-09-18 13:10:04,261 - MI_5 - INFO - 	--> LoginPage.input_password
+2019-09-18 13:10:06,072 - MI_5 - INFO - 	--> LoginPage.login_button
+2019-09-18 13:10:08,669 - MI_5 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 13:10:08,670 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 13:10:08,671 - MI_5 - INFO - <-- FlashCard.setUp, Success
+
+2019-09-18 13:10:08,671 - MI_5 - INFO - --> FlashCard.test_check_speak_game_is_unit
+2019-09-18 13:10:08,672 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 13:10:08,673 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 13:10:08,673 - MI_5 - INFO - <-- FlashCard.test_check_speak_game_is_unit, Success
+
+2019-09-18 13:10:08,674 - MI_5 - INFO - --> FlashCard.tearDown
+2019-09-18 13:10:08,674 - MI_5 - INFO - <-- FlashCard.tearDown, Success
+

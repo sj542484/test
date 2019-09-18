@@ -39,7 +39,7 @@ class Exam(unittest.TestCase):
             self.common.delete_student_exam_record(stu_id)
             web_driver = Driver()
             web_driver.set_driver()
-            ResignExamPage().reassign_exam_operate(3)      # web端随机布置一套试卷
+            ResignExamPage().reassign_exam_operate()      # web端随机布置一套试卷
             web_driver.quit_web()
             if self.home.wait_check_home_page():          # 页面检查点
                 print('进入主界面')

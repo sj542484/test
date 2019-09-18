@@ -8,11 +8,11 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.honor.student.library.object_pages.library_sql import LibrarySql
-from app.honor.student.login.object_page.home_page import HomePage
-from app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
-from conf.base_page import BasePage
-from conf.decorator import teststep
+from testfarm.test_program.app.honor.student.library.object_pages.library_sql import LibrarySql
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststep
 
 
 class UserCenterPage(BasePage):
@@ -98,10 +98,15 @@ class UserCenterPage(BasePage):
                 self.click_back_up_button()
                 if self.wait_check_user_center_page():
                     school_name = self.school_name()           # 学习名称
-                    if school_name != '':
-                        school_id = LibrarySql().find_school_id(school_name)[0][0]     # 根据学校名称获取学校id
-                    else:
-                        school_id = 0
+                    school_id = 0
+                    if school_name:
+                        id1 = LibrarySql().find_school_id(school_name)
+                        id2 = LibrarySql().find_school_id_by_short_name(school_name)
+                        if id1:
+                            school_id = id1[0][0]
+                        else:
+                            school_id = id2[0][0]
+
                     self.setting_up().click()
                     if self.wait_check_logout_page():          # 清除缓存
                         self.clear_cache().click()

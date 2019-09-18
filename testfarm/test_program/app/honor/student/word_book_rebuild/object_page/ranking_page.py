@@ -5,7 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststeps, teststep
 
 

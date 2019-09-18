@@ -148,7 +148,7 @@ class SentenceStrengthen(SentenceStrengthenGame):
                     self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
                 else:
                     break
-
+        print('正确答案：', right_answer)
         self.click_back_up_button()
         return wrong, right, right_answer
 

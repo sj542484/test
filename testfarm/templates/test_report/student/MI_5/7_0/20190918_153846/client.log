@@ -1,0 +1,50 @@
+2019-09-18 15:39:03,457 - MI_5 - INFO - --> PlayAllGame.setUp
+2019-09-18 15:39:03,459 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 15:39:03,533 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 15:39:06,461 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 15:39:06,462 - MI_5 - INFO -   --> LoginPage.login_operate
+2019-09-18 15:39:08,464 - MI_5 - INFO - 	--> LoginPage.input_username
+2019-09-18 15:39:08,557 - MI_5 - INFO - 	--> LoginPage.input_password
+2019-09-18 15:39:09,951 - MI_5 - INFO - 	--> LoginPage.login_button
+2019-09-18 15:39:12,709 - MI_5 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 15:39:12,710 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 15:39:12,710 - MI_5 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-18 15:39:12,711 - MI_5 - INFO - --> PlayAllGame.test_all_game
+2019-09-18 15:39:12,711 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 15:39:13,565 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 15:39:13,566 - MI_5 - INFO - 	--> UserCenterPage.get_user_info
+2019-09-18 15:39:13,566 - MI_5 - INFO - 	--> HomePage.click_tab_profile
+2019-09-18 15:39:13,758 - MI_5 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-18 15:39:13,758 - MI_5 - ERROR - Exception, 'NoneType' object is not subscriptable
+2019-09-18 15:39:13,759 - MI_5 - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-09-18 15:39:14,211 - MI_5 - INFO - --> PlayAllGame.tearDown
+2019-09-18 15:39:14,212 - MI_5 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-18 15:39:14,215 - MI_5 - INFO - --> WKGame.setUp
+2019-09-18 15:39:14,215 - MI_5 - INFO -   --> LoginPage.app_status
+2019-09-18 15:39:14,260 - MI_5 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 15:39:19,469 - MI_5 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 15:39:19,470 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 15:39:35,186 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 15:39:35,187 - MI_5 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-18 15:39:35,187 - MI_5 - INFO - 	--> LoginPage.close_app
+2019-09-18 15:39:35,841 - MI_5 - INFO - 	--> LoginPage.launch_app
+2019-09-18 15:39:43,770 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 15:39:44,863 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 15:39:44,863 - MI_5 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 15:39:44,864 - MI_5 - INFO - <-- WKGame.setUp, Success
+
+2019-09-18 15:39:44,864 - MI_5 - INFO - --> WKGame.test_wk_game
+2019-09-18 15:39:44,865 - MI_5 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 15:39:45,987 - MI_5 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 15:39:45,988 - MI_5 - INFO - 	--> HomePage.click_hk_tab
+2019-09-18 15:39:46,261 - MI_5 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-18 15:39:46,261 - MI_5 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-18 15:39:46,262 - MI_5 - ERROR - Exception, 'int' object is not subscriptable
+2019-09-18 15:39:46,262 - MI_5 - ERROR - <-- WKGame.test_wk_game, Exception, Error
+
+2019-09-18 15:39:47,124 - MI_5 - INFO - --> WKGame.tearDown
+2019-09-18 15:39:47,125 - MI_5 - INFO - <-- WKGame.tearDown, Success
+

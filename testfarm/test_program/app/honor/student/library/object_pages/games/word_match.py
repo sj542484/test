@@ -6,10 +6,10 @@
 import time
 from math import ceil
 
-from app.honor.student.games.word_match_new import LinkWordNewGame
-from app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
+from testfarm.test_program.app.honor.student.games.word_match_new import LinkWordNewGame
+from testfarm.test_program.app.honor.student.library.object_pages.library_public_page import LibraryPubicPage
 
-from conf.decorator import teststeps, teststep
+from testfarm.test_program.conf.decorator import teststeps, teststep
 
 
 class LibraryWordMatch(LinkWordNewGame, LibraryPubicPage):

@@ -2,7 +2,7 @@ import json
 
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.test_paper.object_page.exam_sql import ExamSql
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep
 
 

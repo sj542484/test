@@ -54,7 +54,8 @@ class ListenLinkSentence(ListenLinkSentenceGame):
         timer = []
         mine_answers = {}
         total_num = self.common.rest_bank_num()
-        for i in range(0, total_num):
+        print('正确答案：', sec_answer)
+        for i in range(total_num):
             if self.wait_check_listen_sentence_page():
                 self.next_btn_judge('false', self.fab_commit_btn)     # 下一步按钮状态校验
                 self.next_btn_operate('false', self.listen_link_clear_btn)                     # 清除按钮状态校验
@@ -68,11 +69,12 @@ class ListenLinkSentence(ListenLinkSentenceGame):
                     print('正确答案：', right_answer)
                     index = 0
                     while ' '.join(self.rich_text().text.split()) != sec_answer[i]:
-                        for x in self.text_for_select():       # 每次只点击一个（与答案相同的词组）
+                        text_for_select = self.text_for_select()
+                        for x in text_for_select:       # 每次只点击一个（与答案相同的词组）
                             if x.text == right_answer[index]:
                                 index += 1
                                 x.click()
-                                break
+
                 self.next_btn_judge('true', self.listen_link_clear_btn)
                 self.next_btn_operate('true', self.fab_commit_btn)
 
@@ -133,6 +135,6 @@ class ListenLinkSentence(ListenLinkSentenceGame):
                         tips.append(explain.text)
                         print('-' * 20, '\n')
                 self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
-        print(right_answer)
+        print("正确答案：", right_answer)
         self.click_back_up_button()
         return wrong, right, right_answer

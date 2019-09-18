@@ -1,0 +1,92 @@
+2019-09-18 12:28:05,705 - vivo_X20 - INFO - --> PlayAllGame.setUp
+2019-09-18 12:28:05,708 - vivo_X20 - INFO -   --> LoginPage.app_status
+2019-09-18 12:28:05,778 - vivo_X20 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 12:28:08,548 - vivo_X20 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 12:28:08,548 - vivo_X20 - INFO -   --> LoginPage.login_operate
+2019-09-18 12:28:10,549 - vivo_X20 - INFO - 	--> LoginPage.input_username
+2019-09-18 12:28:10,671 - vivo_X20 - INFO - 	--> LoginPage.input_password
+2019-09-18 12:28:12,663 - vivo_X20 - INFO - 	--> LoginPage.login_button
+2019-09-18 12:28:15,469 - vivo_X20 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 12:28:15,470 - vivo_X20 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 12:28:15,470 - vivo_X20 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-18 12:28:15,471 - vivo_X20 - INFO - --> PlayAllGame.test_all_game
+2019-09-18 12:28:15,471 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 12:28:15,472 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 12:28:15,472 - vivo_X20 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-18 12:28:15,472 - vivo_X20 - INFO - --> PlayAllGame.tearDown
+2019-09-18 12:28:15,473 - vivo_X20 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-18 12:28:15,473 - vivo_X20 - INFO - --> PlayAllGame.setUp
+2019-09-18 12:28:15,474 - vivo_X20 - INFO -   --> LoginPage.app_status
+2019-09-18 12:28:15,523 - vivo_X20 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 12:28:21,454 - vivo_X20 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 12:28:21,455 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 12:28:21,455 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 12:28:21,456 - vivo_X20 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-18 12:28:21,457 - vivo_X20 - INFO - 	--> LoginPage.close_app
+2019-09-18 12:28:21,616 - vivo_X20 - INFO - 	--> LoginPage.launch_app
+2019-09-18 12:28:28,798 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 12:28:28,799 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 12:28:28,799 - vivo_X20 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 12:28:34,150 - vivo_X20 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 12:28:34,151 - vivo_X20 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 12:28:34,151 - vivo_X20 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-18 12:28:34,152 - vivo_X20 - INFO - --> PlayAllGame.test_all_game
+2019-09-18 12:28:34,152 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 12:28:34,153 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 12:28:34,153 - vivo_X20 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-18 12:28:34,154 - vivo_X20 - INFO - --> PlayAllGame.tearDown
+2019-09-18 12:28:34,154 - vivo_X20 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-18 12:28:34,154 - vivo_X20 - INFO - --> WKGame.setUp
+2019-09-18 12:28:34,155 - vivo_X20 - INFO -   --> LoginPage.app_status
+2019-09-18 12:28:34,242 - vivo_X20 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 12:28:39,802 - vivo_X20 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 12:28:39,803 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 12:28:39,803 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 12:28:39,804 - vivo_X20 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-18 12:28:39,804 - vivo_X20 - INFO - 	--> LoginPage.close_app
+2019-09-18 12:28:39,959 - vivo_X20 - INFO - 	--> LoginPage.launch_app
+2019-09-18 12:28:47,086 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 12:28:47,087 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 12:28:47,087 - vivo_X20 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 12:28:52,424 - vivo_X20 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 12:28:52,425 - vivo_X20 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 12:28:52,426 - vivo_X20 - INFO - <-- WKGame.setUp, Success
+
+2019-09-18 12:28:52,426 - vivo_X20 - INFO - --> WKGame.test_wk_game
+2019-09-18 12:28:52,427 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 12:28:52,427 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 12:28:52,427 - vivo_X20 - INFO - <-- WKGame.test_wk_game, Success
+
+2019-09-18 12:28:52,428 - vivo_X20 - INFO - --> WKGame.tearDown
+2019-09-18 12:28:52,428 - vivo_X20 - INFO - <-- WKGame.tearDown, Success
+
+2019-09-18 12:28:52,429 - vivo_X20 - INFO - --> FlashCard.setUp
+2019-09-18 12:28:52,429 - vivo_X20 - INFO -   --> LoginPage.app_status
+2019-09-18 12:28:52,510 - vivo_X20 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 12:28:58,084 - vivo_X20 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 12:28:58,085 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 12:28:58,086 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 12:28:58,086 - vivo_X20 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-18 12:28:58,086 - vivo_X20 - INFO - 	--> LoginPage.close_app
+2019-09-18 12:28:58,240 - vivo_X20 - INFO - 	--> LoginPage.launch_app
+2019-09-18 12:29:05,373 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 12:29:05,374 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 12:29:05,375 - vivo_X20 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 12:29:10,493 - vivo_X20 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 12:29:10,495 - vivo_X20 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 12:29:10,495 - vivo_X20 - INFO - <-- FlashCard.setUp, Success
+
+2019-09-18 12:29:10,496 - vivo_X20 - INFO - --> FlashCard.test_check_speak_game_is_unit
+2019-09-18 12:29:10,496 - vivo_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 12:29:10,497 - vivo_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 12:29:10,497 - vivo_X20 - INFO - <-- FlashCard.test_check_speak_game_is_unit, Success
+
+2019-09-18 12:29:10,497 - vivo_X20 - INFO - --> FlashCard.tearDown
+2019-09-18 12:29:10,498 - vivo_X20 - INFO - <-- FlashCard.tearDown, Success
+

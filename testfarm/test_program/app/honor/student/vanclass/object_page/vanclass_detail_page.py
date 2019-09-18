@@ -4,7 +4,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
 
@@ -134,7 +134,7 @@ class VanclassDetailPage(BasePage):
     def accurency(self):
         """正答率"""
         ele = self.driver \
-            .find_elements_by_id(self.id_type() + "tv_accurency")
+            .find_elements_by_id(self.id_type() + "tv_testbank_status")
         return ele
 
     @teststep
@@ -150,6 +150,7 @@ class VanclassDetailPage(BasePage):
         ele = self.driver \
             .find_elements_by_id(self.id_type() + "roundProgressBar")
         return ele
+
     @teststep
     def finish_status(self):
         """已经有x人完成"""

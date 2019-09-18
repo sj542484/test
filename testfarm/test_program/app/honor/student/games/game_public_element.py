@@ -7,9 +7,9 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from conf.base_page import BasePage
-from conf.decorator import teststep, teststeps
-from utils.get_attribute import GetAttribute
+from testfarm.test_program.conf.base_page import BasePage
+from testfarm.test_program.conf.decorator import teststep, teststeps
+from testfarm.test_program.utils.get_attribute import GetAttribute
 
 
 class PublicPage(BasePage):
@@ -284,3 +284,12 @@ class PublicPage(BasePage):
         ques_scale = float('%.2f' % (ques_bank.size['height'] / screen_height))
         opt_scale = float('%.2f' % (ques_options.size['height'] / screen_height))
         return ques_scale, opt_scale
+
+    @teststep
+    def key_is_digit(self, dict_info):
+        """判断字典的key是否都是数字"""
+        result = any([str(x).isdigit() for x in dict_info])
+        if result:
+            return True
+        else:
+            return False

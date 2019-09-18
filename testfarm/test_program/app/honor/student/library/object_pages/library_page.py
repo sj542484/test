@@ -11,7 +11,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from app.honor.student.library.object_pages.game_page import LibraryGamePage
 from app.honor.student.login.object_page.home_page import HomePage
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
 from utils.toast_find import Toast
@@ -385,16 +385,19 @@ class LibraryPage(BasePage):
                                     if self.wait_check_book_punch_page():
                                         self.game.start_game_btn().click()         # 开始/继续/再来一遍
                                         if self.game.wait_check_bank_list_page():  # 大题页面
-                                            bank_name = self.game.testbank_name(self.game.testbank_type()[0])
+                                            bank_name_list = self.game.testbank_name(self.game.testbank_type()[0])
+                                            bank_name = bank_name_list[0].text
+
                                             self.game.testbank_type()[0].click()   # 点击第一道大题
                                             if self.game.wait_check_game_page():   # 进入游戏页面
-                                                self.game.play_book_games(fq=1, bank_name=bank_name[0].text)    # 游戏过程
+                                                self.game.play_book_games(fq=1, bank_name=bank_name)    # 游戏过程
                                                 self.home.click_back_up_button()        # 返回
                                                 if self.game.wait_check_bank_list_page():
                                                     self.home.click_back_up_button()
                                                     if self.wait_check_book_punch_page():
                                                         pass
                                     self.PAUNCHED = 1                    # 讲打卡状态更改为1
+
                                 else:
                                     self.game.punch_share_btn().click()
                                     if self.PAUNCHED == 0:

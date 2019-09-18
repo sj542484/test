@@ -182,7 +182,7 @@ def st(e_uuid, ports, test_side, test_items):
     device = EquipmentList.objects.get(equipment_uuid=e_uuid)
     node_pid = device.node_pid
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=0, statue_statue=0, gid=None,
-                                                               report=file_name)
+                                                               node_pid=None, report=file_name)
     # 清除端口占用
     pp = Utils(_port).clear_port(appium_port, sysport)
     print(_port, pp, '端口占用情况')
@@ -194,12 +194,23 @@ def st(e_uuid, ports, test_side, test_items):
 @login_required
 def stopservice(request, gid, e_uuid):
     """关闭进程 结束测试"""
+    device = EquipmentList.objects.get(equipment_uuid=e_uuid)
+    node_pid = device.node_pid
+
     CMD = 'kill -9 {}'.format(gid)
     os.popen(CMD)
     print('kill进程:', CMD)
+
+    CMD = 'kill -9 {}'.format(node_pid)
+    os.popen(CMD)
+    print('kill进程:', CMD)
+
+    CMD = 'kill -9 {}'.format(int(node_pid)+1)
+    os.popen(CMD)
+    print('kill进程:', CMD)
     close_old_connections()
-    EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=0, statue_statue=0, gid=None,
-                                                               report=None)
+    EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=0, statue_statue=0,
+                                                               gid=None, node_pid=None, report=None)
     content = get_show_phone()
     return render(request, 'testproject/show_devices.html', content)
 

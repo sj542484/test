@@ -13,7 +13,7 @@ from app.honor.student.test_paper.object_page.games.sentence_enhance import Sent
 from app.honor.student.test_paper.object_page.games.sentence_exchange import SentenceExchange
 from app.honor.student.test_paper.object_page.games.vocab_select import VocabSelect
 from app.honor.student.word_book_rebuild.object_page.ranking_page import RankingPage
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 
 

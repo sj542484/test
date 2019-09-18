@@ -10,7 +10,7 @@ from app.honor.student.user_center.object_page.user_center_page import UserCente
 from app.honor.student.web.object_pages.assign_word import AssignWord
 from app.honor.student.web.object_pages.driver import Driver
 from app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep
 from utils.toast_find import Toast
 from conf.base_config import GetVariable as gv

@@ -64,10 +64,10 @@ class HwAnalysis(unittest.TestCase):
                                     print('暂无数据')
                                 else:
                                     self.hw_operate()  # 具体操作
-
-                                    self.home.click_back_up_button()  # 返回 作业详情页面
                                     if self.detail.wait_check_page(gv.CLASS_NAME):  # 页面检查点
                                         self.home.click_back_up_button()  # 返回 本班作业页面
+                                    if self.van.wait_check_page():
+                                        self.home.click_back_up_button()
 
                             if self.detail.wait_check_page(gv.CLASS_NAME):  # 页面检查点
                                 self.home.click_tab_hw()  # 返回主界面
@@ -83,17 +83,17 @@ class HwAnalysis(unittest.TestCase):
     @teststeps
     def hw_operate(self):
         """作业列表"""
+        print('======= 已完成作业列表 =======\n')
         name = self.detail.hw_name()  # 作业name
         for i in range(len(name)):
+            print('已完成作业名称：', name[i].text)
+            print(self.detail.finish_status()[i].text, '\n')
             if name[i].text == gv.FINISHED:
-                name[i].click()  # 进入作业
-                break
+                name[i].click()
+                if self.detail.wait_check_page(name[i].text):
+                    pass
 
-        if self.detail.wait_check_page(gv.FINISHED):  # 页面检查点
-            # todo 获取toast 无需答题报告  or
-            self.answer_detail([])
-        else:
-            print('未进入作业 %s 页面' % gv.FINISHED)
+        self.detail.click_back_up_button()
 
     @teststeps
     def answer_detail(self, content):

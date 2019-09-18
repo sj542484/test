@@ -1,0 +1,124 @@
+2019-09-18 11:38:58,003 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-18 11:38:58,004 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-18 11:38:58,109 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 11:39:00,988 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 11:39:00,989 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-18 11:39:02,990 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-18 11:39:03,078 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-18 11:39:05,173 - honor_9 - INFO - 	--> LoginPage.login_button
+2019-09-18 11:39:08,238 - honor_9 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 11:39:08,239 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 11:39:08,239 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-18 11:39:08,240 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-18 11:39:08,240 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 11:39:08,241 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 11:39:08,242 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-18 11:39:08,242 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-18 11:39:08,242 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-18 11:39:08,243 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-18 11:39:08,243 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-18 11:39:08,304 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 11:39:08,363 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 11:39:08,364 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-18 11:39:10,365 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-18 11:39:10,571 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-18 11:39:13,134 - honor_9 - ERROR - WebDriverException, Message: io.appium.uiautomator2.common.exceptions.StaleElementReferenceException: The element 'By.id: com.vanthink.student.debug:id/ed_user_pwd' does not exist in DOM anymore
+	at io.appium.uiautomator2.model.KnownElements.getElementFromCache(KnownElements.java:88)
+	at io.appium.uiautomator2.handler.SendKeysToElement.safeHandle(SendKeysToElement.java:60)
+	at io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:37)
+	at io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)
+	at io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:243)
+	at io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:435)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:250)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1294)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:911)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:611)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:466)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:438)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:140)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:784)
+
+
+2019-09-18 11:39:13,135 - honor_9 - ERROR -   <-- LoginPage.login_operate, WebDriverException, Error
+2019-09-18 11:39:13,809 - honor_9 - ERROR - WebDriverException, Message: IMAGE:LoginPage.login_operate-20190918113913.png
+
+2019-09-18 11:39:13,810 - honor_9 - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-09-18 11:39:13,810 - honor_9 - ERROR - WebDriverException, Message: Message: IMAGE:LoginPage.login_operate-20190918113913.png
+
+
+2019-09-18 11:39:13,810 - honor_9 - ERROR - <-- PlayAllGame.setUp, WebDriverException, Error
+
+2019-09-18 11:39:13,812 - honor_9 - INFO - --> WKGame.setUp
+2019-09-18 11:39:13,812 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-18 11:39:13,860 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 11:39:19,414 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 11:39:19,415 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 11:39:19,416 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 11:39:19,416 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-18 11:39:19,416 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-18 11:39:19,610 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-18 11:39:27,324 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 11:39:27,327 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 11:39:27,327 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 11:39:27,414 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 11:39:27,414 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-18 11:39:29,417 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-18 11:39:29,484 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-18 11:39:31,328 - honor_9 - INFO - 	--> LoginPage.login_button
+2019-09-18 11:39:34,493 - honor_9 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 11:39:34,494 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 11:39:34,495 - honor_9 - INFO - <-- WKGame.setUp, Success
+
+2019-09-18 11:39:34,495 - honor_9 - INFO - --> WKGame.test_wk_game
+2019-09-18 11:39:34,496 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 11:39:34,496 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 11:39:34,497 - honor_9 - INFO - <-- WKGame.test_wk_game, Success
+
+2019-09-18 11:39:34,497 - honor_9 - INFO - --> WKGame.tearDown
+2019-09-18 11:39:34,497 - honor_9 - INFO - <-- WKGame.tearDown, Success
+
+2019-09-18 11:39:34,498 - honor_9 - INFO - --> FlashCard.setUp
+2019-09-18 11:39:34,498 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-18 11:39:34,556 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 11:39:40,472 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 11:39:40,473 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 11:39:40,474 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 11:39:40,474 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-18 11:39:40,474 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-18 11:39:40,581 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-18 11:39:48,189 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 11:39:48,190 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 11:39:48,191 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 11:39:53,576 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 11:39:53,577 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 11:39:53,578 - honor_9 - INFO - <-- FlashCard.setUp, Success
+
+2019-09-18 11:39:53,579 - honor_9 - INFO - --> FlashCard.test_check_speak_game_is_unit
+2019-09-18 11:39:53,579 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 11:39:53,579 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 11:39:53,580 - honor_9 - INFO - <-- FlashCard.test_check_speak_game_is_unit, Success
+
+2019-09-18 11:39:53,580 - honor_9 - INFO - --> FlashCard.tearDown
+2019-09-18 11:39:53,581 - honor_9 - INFO - <-- FlashCard.tearDown, Success
+

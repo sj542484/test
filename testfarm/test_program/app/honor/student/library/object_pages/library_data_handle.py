@@ -6,7 +6,7 @@
 from app.honor.student.library.object_pages.library_sql import LibrarySql
 from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
 from app.honor.student.login.object_page.home_page import HomePage
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 
 
 class DataHandlePage(BasePage):

@@ -1,5 +1,5 @@
 
-from utils.sql import SqlDb
+from testfarm.test_program.utils.sql import SqlDb
 
 
 class WordBookSql(SqlDb):

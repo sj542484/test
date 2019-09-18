@@ -10,7 +10,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
 from app.honor.student.word_book_rebuild.object_page.games.flash_card_page import FlashCard
 from app.honor.student.word_book_rebuild.object_page.games.word_spelling_page import SpellingWord
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststeps, teststep
 
 

@@ -167,7 +167,7 @@ class ResignExamPage(BaseDriverPage):
         ele = self.driver.find_element_by_xpath('//*[@id="bodyer"]/div/div[1]/div/div/div/div[1]/button')
         return ele
 
-    def reassign_exam_operate(self, exam_index):
+    def reassign_exam_operate(self):
         LoginWebPage().login_operate(TeacherAccount.Account[-1][0],
                                      TeacherAccount.Account[-1][1])         # 登陆操作
         if self.wait_check_home_page():        # 进入我的试卷
@@ -179,7 +179,8 @@ class ResignExamPage(BaseDriverPage):
                 time.sleep(3)
             while True:                       # 若试题>4, 则删除多余部分， 若等于4 ，则随机布置一个试卷
                 if len(self.exam_list()) == 4:
-                    self.exam_name(self.exam_list()[exam_index]).click()
+                    random_index = random.randint(0, 4)
+                    self.exam_name(self.exam_list()[random_index]).click()
                     if self.wait_check_exam_detail_page():
                         self.assign_exam_btn().click()               # 布置试卷
                         if self.wait_check_assign_page():
