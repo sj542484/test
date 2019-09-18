@@ -39,10 +39,10 @@ class GetVariable(object):
     # 教师端
     TEA_PACKAGE = "./test_program/app_folder/teacher_env_devDebug_1.2.2(9).apk"
     # 学生端
-    STU_PACKAGE = "./test_program/app_folder/student_env_devDebug_1.4.0-3(1).apk"
+    STU_PACKAGE = "./test_program/app_folder/student_env_devMasterDebug_1.4.2-1.apk"
 
     # hub地址
-    HUBHOST = '192.168.222.67'
+    HUBHOST = '192.168.8.147'
 
     # 学生的ID
     STU_ID = 0

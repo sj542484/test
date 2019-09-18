@@ -1,0 +1,80 @@
+2019-09-18 10:35:48,966 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-18 10:35:48,967 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-18 10:35:49,039 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 10:35:51,820 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 10:35:51,821 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-18 10:35:53,822 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-18 10:35:53,962 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-18 10:35:56,343 - honor_9 - INFO - 	--> LoginPage.login_button
+2019-09-18 10:35:58,987 - honor_9 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 10:35:58,988 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 10:35:58,989 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-18 10:35:58,989 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-18 10:35:58,990 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 10:35:58,991 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 10:35:58,991 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-18 10:35:58,992 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-18 10:35:58,992 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-18 10:35:58,993 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-18 10:35:58,993 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-18 10:35:59,066 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 10:35:59,144 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 10:35:59,144 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-18 10:36:01,146 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-18 10:36:01,261 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-18 10:36:03,137 - honor_9 - INFO - 	--> LoginPage.login_button
+2019-09-18 10:36:05,755 - honor_9 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 10:36:05,757 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 10:36:05,758 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-18 10:36:05,758 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-18 10:36:05,759 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 10:36:05,759 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 10:36:05,760 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-18 10:36:05,760 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-18 10:36:05,760 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-18 10:36:05,761 - honor_9 - INFO - --> WKGame.setUp
+2019-09-18 10:36:05,761 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-18 10:36:05,821 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 10:36:05,913 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 10:36:05,914 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-18 10:36:07,914 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-18 10:36:07,995 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-18 10:36:09,869 - honor_9 - INFO - 	--> LoginPage.login_button
+2019-09-18 10:36:12,472 - honor_9 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 10:36:12,472 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 10:36:12,473 - honor_9 - INFO - <-- WKGame.setUp, Success
+
+2019-09-18 10:36:12,473 - honor_9 - INFO - --> WKGame.test_wk_game
+2019-09-18 10:36:12,474 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 10:36:12,474 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 10:36:12,474 - honor_9 - INFO - <-- WKGame.test_wk_game, Success
+
+2019-09-18 10:36:12,475 - honor_9 - INFO - --> WKGame.tearDown
+2019-09-18 10:36:12,475 - honor_9 - INFO - <-- WKGame.tearDown, Success
+
+2019-09-18 10:36:12,476 - honor_9 - INFO - --> FlashCard.setUp
+2019-09-18 10:36:12,476 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-18 10:36:12,545 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-18 10:36:12,656 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-18 10:36:12,658 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-18 10:36:14,659 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-18 10:36:14,753 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-18 10:36:16,554 - honor_9 - INFO - 	--> LoginPage.login_button
+2019-09-18 10:36:19,174 - honor_9 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-18 10:36:19,175 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-18 10:36:19,175 - honor_9 - INFO - <-- FlashCard.setUp, Success
+
+2019-09-18 10:36:19,176 - honor_9 - INFO - --> FlashCard.test_check_speak_game_is_unit
+2019-09-18 10:36:19,176 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-18 10:36:19,177 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-18 10:36:19,178 - honor_9 - INFO - <-- FlashCard.test_check_speak_game_is_unit, Success
+
+2019-09-18 10:36:19,178 - honor_9 - INFO - --> FlashCard.tearDown
+2019-09-18 10:36:19,179 - honor_9 - INFO - <-- FlashCard.tearDown, Success
+

@@ -1,14 +1,14 @@
 import time
 
 from app.honor.student.login.test_data.account import VALID_ACCOUNT
-from app.honor.student.login.object_page.home_page import HomePage
+from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
 from conf.decorator import teststep, teststeps
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from utils.reset_phone_find_toast import verify_find
 from utils.toast_find import Toast
 
@@ -255,12 +255,14 @@ class LoginPage(BasePage):
     @teststeps
     def login_operate(self, stu_account, stu_password):
         """登录"""
+        import os
+        print(os.getcwd())
         print('在登录界面：')
         time.sleep(2)
         phone = self.input_username()
         pwd = self.input_password()
         import yaml
-        f = open('testfarm/test_program/conf/user_info', 'r', encoding='utf8')
+        f = open('./testfarm/test_program/conf/user_info.yaml', 'r', encoding='utf8')
         res = f.read()
         res = yaml.full_load(res)
         stu_info = res['userinfo'][self.deviceName]
@@ -274,7 +276,7 @@ class LoginPage(BasePage):
     @teststeps
     def app_status(self, stu_account=VALID_ACCOUNT.account(), stu_password=VALID_ACCOUNT.password()):
         """判断应用当前状态"""
-        activity = self.driver.wait_activity
+        activity = self.wait_activity()
         if self.wait_check_page():  # 在登录界面
             self.login_operate(stu_account, stu_password)
 

@@ -1,0 +1,56 @@
+2019-09-17 17:31:09,124 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:31:09,126 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:31:09,192 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:31:11,829 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:31:11,830 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-17 17:31:13,832 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-17 17:31:13,952 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-17 17:31:14,026 - honor_9 - ERROR - Exception, [Errno 2] No such file or directory: './testfarm/test_program/conf/user_info'
+2019-09-17 17:31:14,027 - honor_9 - ERROR -   <-- LoginPage.login_operate, Exception, Error
+2019-09-17 17:31:14,807 - honor_9 - ERROR - Exception, IMAGE:LoginPage.login_operate-20190917173114.png
+2019-09-17 17:31:14,807 - honor_9 - ERROR -   <-- LoginPage.app_status, Exception, Error
+2019-09-17 17:31:14,808 - honor_9 - ERROR - Exception, IMAGE:LoginPage.login_operate-20190917173114.png
+2019-09-17 17:31:14,808 - honor_9 - ERROR - <-- PlayAllGame.setUp, Exception, Error
+
+2019-09-17 17:31:14,811 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:31:14,811 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:31:14,861 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:31:14,935 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:31:14,935 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-17 17:31:16,937 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-17 17:31:17,034 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-17 17:31:17,110 - honor_9 - ERROR - Exception, [Errno 2] No such file or directory: './testfarm/test_program/conf/user_info'
+2019-09-17 17:31:17,111 - honor_9 - ERROR -   <-- LoginPage.login_operate, Exception, Error
+2019-09-17 17:31:17,816 - honor_9 - ERROR - Exception, IMAGE:LoginPage.login_operate-20190917173117.png
+2019-09-17 17:31:17,816 - honor_9 - ERROR -   <-- LoginPage.app_status, Exception, Error
+2019-09-17 17:31:17,817 - honor_9 - ERROR - Exception, IMAGE:LoginPage.login_operate-20190917173117.png
+2019-09-17 17:31:17,817 - honor_9 - ERROR - <-- PlayAllGame.setUp, Exception, Error
+
+2019-09-17 17:31:17,817 - honor_9 - INFO - --> WKGame.setUp
+2019-09-17 17:31:17,818 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:31:17,866 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:31:17,931 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:31:17,932 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-17 17:31:19,932 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-17 17:31:20,038 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-17 17:31:20,107 - honor_9 - ERROR - Exception, [Errno 2] No such file or directory: './testfarm/test_program/conf/user_info'
+2019-09-17 17:31:20,108 - honor_9 - ERROR -   <-- LoginPage.login_operate, Exception, Error
+2019-09-17 17:31:20,767 - honor_9 - ERROR - Exception, IMAGE:LoginPage.login_operate-20190917173120.png
+2019-09-17 17:31:20,768 - honor_9 - ERROR -   <-- LoginPage.app_status, Exception, Error
+2019-09-17 17:31:20,768 - honor_9 - ERROR - Exception, IMAGE:LoginPage.login_operate-20190917173120.png
+2019-09-17 17:31:20,768 - honor_9 - ERROR - <-- WKGame.setUp, Exception, Error
+
+2019-09-17 17:31:20,769 - honor_9 - INFO - --> FlashCard.setUp
+2019-09-17 17:31:20,770 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:31:20,838 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:31:20,912 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:31:20,912 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-17 17:31:22,914 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-17 17:31:23,012 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-17 17:31:23,073 - honor_9 - ERROR - Exception, [Errno 2] No such file or directory: './testfarm/test_program/conf/user_info'
+2019-09-17 17:31:23,075 - honor_9 - ERROR -   <-- LoginPage.login_operate, Exception, Error
+2019-09-17 17:31:23,767 - honor_9 - ERROR - Exception, IMAGE:LoginPage.login_operate-20190917173123.png
+2019-09-17 17:31:23,768 - honor_9 - ERROR -   <-- LoginPage.app_status, Exception, Error
+2019-09-17 17:31:23,768 - honor_9 - ERROR - Exception, IMAGE:LoginPage.login_operate-20190917173123.png
+2019-09-17 17:31:23,768 - honor_9 - ERROR - <-- FlashCard.setUp, Exception, Error
+

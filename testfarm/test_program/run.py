@@ -45,7 +45,7 @@ class Driver:
         print('desired:',desired_caps)
         return desired_caps
 
-    def run_cases(self,appium_port,sysport):
+    def run_cases(self, appium_port, sysport):
         # 收集用例 根据测试端 和 测试项
         cs = CaseStrategy(self.test_side,self.test_items)
         cases = cs.collect_cases(suite=False)
@@ -57,7 +57,7 @@ class Driver:
         path = ReportPath()
         path.set_path(file_path)
         # 开启appium服务
-        Utils(port=self.ports).start_appium(dn = self.deviceName, udid=self.udid, plv=self.platformVersion, file_name=file_path,port=appium_port,bp=int(appium_port)+1000,systemPort=sysport,side=self.test_side)
+        Utils(port=self.ports).start_appium(dn=self.deviceName, udid=self.udid, plv=self.platformVersion, file_name=file_path, port=appium_port, bp=int(appium_port)+1000, systemPort=sysport, side=self.test_side)
         # hub地址
         addr = 'http://%s:4444/wd/hub'%gv.HUBHOST
 

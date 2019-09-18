@@ -1,0 +1,466 @@
+2019-09-17 17:26:11,948 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:26:11,949 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:26:12,046 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:26:14,660 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:26:14,661 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-17 17:26:16,662 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-17 17:26:16,779 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-17 17:26:16,855 - honor_9 - ERROR - Exception, [Errno 2] No such file or directory: './test_program/conf/user_info'
+2019-09-17 17:26:16,856 - honor_9 - ERROR -   <-- LoginPage.login_operate, Exception, Error
+2019-09-17 17:26:17,575 - honor_9 - ERROR - Exception, IMAGE:LoginPage.login_operate-20190917172616.png
+2019-09-17 17:26:17,575 - honor_9 - ERROR -   <-- LoginPage.app_status, Exception, Error
+2019-09-17 17:26:17,575 - honor_9 - ERROR - Exception, IMAGE:LoginPage.login_operate-20190917172616.png
+2019-09-17 17:26:17,576 - honor_9 - ERROR - <-- PlayAllGame.setUp, Exception, Error
+
+2019-09-17 17:26:17,580 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:26:17,581 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:26:17,631 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:26:17,715 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:26:17,715 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-17 17:26:19,717 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-17 17:26:19,817 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-17 17:26:19,846 - honor_9 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-09-17 17:26:19,847 - honor_9 - ERROR - 	<-- LoginPage.input_password, WebDriverException, Error
+2019-09-17 17:26:19,859 - honor_9 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-09-17 17:26:19,860 - honor_9 - ERROR -   <-- LoginPage.login_operate, WebDriverException, Error
+2019-09-17 17:26:19,872 - honor_9 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-09-17 17:26:19,872 - honor_9 - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-09-17 17:26:19,883 - honor_9 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-09-17 17:26:19,883 - honor_9 - ERROR - <-- PlayAllGame.setUp, WebDriverException, Error
+
+2019-09-17 17:26:19,917 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:26:19,918 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:26:19,986 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:26:20,007 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:26:20,007 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:26:20,008 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:26:20,008 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:26:20,008 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:26:20,077 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:26:27,383 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:26:27,384 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:26:27,385 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:26:27,406 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:26:27,406 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:26:27,407 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:26:27,407 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:26:27,408 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:26:27,408 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:26:27,408 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:26:27,409 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:26:27,409 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:26:27,410 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:26:27,410 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:26:27,468 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:26:27,486 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:26:27,487 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:26:27,487 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:26:27,488 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:26:27,488 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:26:27,648 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:26:34,952 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:26:34,953 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:26:34,954 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:26:34,977 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:26:34,977 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:26:34,978 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:26:34,978 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:26:34,978 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:26:34,979 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:26:34,979 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:26:34,979 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:26:34,980 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:26:34,980 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:26:34,980 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:26:35,038 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:26:35,054 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:26:35,054 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:26:35,055 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:26:35,055 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:26:35,055 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:26:35,184 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:26:42,474 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:26:42,475 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:26:42,476 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:26:42,499 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:26:42,499 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:26:42,500 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:26:42,500 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:26:42,500 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:26:42,501 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:26:42,501 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:26:42,501 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:26:42,502 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:26:42,502 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:26:42,502 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:26:42,565 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:26:42,580 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:26:42,580 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:26:42,581 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:26:42,581 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:26:42,581 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:26:42,713 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:26:50,051 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:26:50,052 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:26:50,053 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:26:50,074 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:26:50,074 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:26:50,075 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:26:50,075 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:26:50,076 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:26:50,076 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:26:50,076 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:26:50,077 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:26:50,077 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:26:50,078 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:26:50,078 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:26:50,137 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:26:50,154 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:26:50,154 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:26:50,154 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:26:50,155 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:26:50,155 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:26:50,305 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:27:06,216 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:06,217 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:06,217 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:06,241 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:06,242 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:27:06,242 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:27:06,243 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:27:06,244 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:06,244 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:06,245 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:27:06,245 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:27:06,246 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:27:06,246 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:27:06,247 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:27:06,306 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:06,323 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:06,324 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:06,324 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:06,325 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:27:06,325 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:27:06,390 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:27:13,845 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:13,846 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:13,846 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:13,881 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:13,881 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:27:13,882 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:27:13,882 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:27:13,883 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:13,883 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:13,883 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:27:13,885 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:27:13,886 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:27:13,886 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:27:13,887 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:27:13,952 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:13,974 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:13,974 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:13,975 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:13,975 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:27:13,976 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:27:14,122 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:27:22,008 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:22,008 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:22,009 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:22,039 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:22,039 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:27:22,040 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:27:22,040 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:27:22,041 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:22,041 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:22,041 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:27:22,041 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:27:22,042 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:27:22,042 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:27:22,043 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:27:22,102 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:22,124 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:22,125 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:22,125 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:22,126 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:27:22,126 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:27:22,272 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:27:29,585 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:29,586 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:29,587 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:29,610 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:29,611 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:27:29,611 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:27:29,612 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:27:29,612 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:29,612 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:29,613 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:27:29,613 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:27:29,614 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:27:29,614 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:27:29,614 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:27:29,673 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:29,690 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:29,690 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:29,690 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:29,691 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:27:29,691 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:27:29,829 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:27:37,161 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:37,161 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:37,162 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:37,182 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:37,182 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:27:37,183 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:27:37,183 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:27:37,184 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:37,184 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:37,184 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:27:37,185 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:27:37,185 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:27:37,185 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:27:37,186 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:27:37,249 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:37,264 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:37,265 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:37,265 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:37,266 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:27:37,266 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:27:37,416 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:27:44,706 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:44,707 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:44,707 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:44,726 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:44,726 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:27:44,726 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:27:44,727 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:27:44,727 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:44,727 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:44,728 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:27:44,728 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:27:44,729 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:27:44,729 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:27:44,729 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:27:44,786 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:44,804 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:44,804 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:44,804 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:44,805 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:27:44,805 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:27:44,929 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:27:52,246 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:52,247 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:52,248 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:52,268 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:52,268 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:27:52,268 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:27:52,269 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:27:52,269 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:52,269 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:52,269 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:27:52,270 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:27:52,270 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:27:52,270 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:27:52,271 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:27:52,329 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:52,346 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:52,346 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:52,347 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:52,347 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:27:52,347 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:27:52,476 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:27:59,768 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:59,769 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:59,770 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:59,792 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:59,793 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:27:59,793 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:27:59,794 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:27:59,794 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:59,794 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:59,794 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:27:59,795 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:27:59,795 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:27:59,796 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:27:59,797 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:27:59,851 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:27:59,867 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:27:59,867 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:27:59,868 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:27:59,868 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:27:59,868 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:27:59,993 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:28:07,285 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:07,287 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:07,287 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:28:07,308 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:28:07,309 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:28:07,309 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:28:07,310 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:28:07,310 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:07,311 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:07,311 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:28:07,312 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:28:07,312 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:28:07,313 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:28:07,313 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:28:07,375 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:28:07,389 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:28:07,390 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:07,390 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:07,391 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:28:07,391 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:28:07,528 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:28:14,894 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:14,894 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:14,895 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:28:14,919 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:28:14,919 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:28:14,920 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:28:14,920 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:28:14,921 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:14,921 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:14,921 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:28:14,922 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:28:14,922 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:28:14,922 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:28:14,923 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:28:14,982 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:28:14,997 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:28:14,998 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:14,998 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:14,999 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:28:14,999 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:28:15,144 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:28:22,428 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:22,429 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:22,430 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:28:22,448 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:28:22,449 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:28:22,449 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:28:22,449 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:28:22,450 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:22,450 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:22,450 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:28:22,451 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:28:22,451 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:28:22,451 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-17 17:28:22,452 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:28:22,509 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:28:22,528 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:28:22,529 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:22,529 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:22,529 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:28:22,530 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:28:22,687 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:28:30,025 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:30,026 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:30,027 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:28:30,053 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:28:30,054 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:28:30,054 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-17 17:28:30,054 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-17 17:28:30,055 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:30,055 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:30,055 - honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-17 17:28:30,056 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-17 17:28:30,056 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-17 17:28:30,056 - honor_9 - INFO - --> WKGame.setUp
+2019-09-17 17:28:30,057 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:28:30,115 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:28:30,130 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:28:30,131 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:30,131 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:30,132 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:28:30,132 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:28:30,262 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:28:37,573 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:37,574 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:37,575 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:28:37,595 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:28:37,596 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:28:37,596 - honor_9 - INFO - <-- WKGame.setUp, Success
+
+2019-09-17 17:28:37,597 - honor_9 - INFO - --> WKGame.test_wk_game
+2019-09-17 17:28:37,597 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:37,598 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:37,598 - honor_9 - INFO - <-- WKGame.test_wk_game, Success
+
+2019-09-17 17:28:37,599 - honor_9 - INFO - --> WKGame.tearDown
+2019-09-17 17:28:37,599 - honor_9 - INFO - <-- WKGame.tearDown, Success
+
+2019-09-17 17:28:37,600 - honor_9 - INFO - --> FlashCard.setUp
+2019-09-17 17:28:37,600 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-17 17:28:37,675 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:28:37,692 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:28:37,692 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:37,693 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:37,693 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-17 17:28:37,693 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-17 17:28:37,831 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-17 17:28:45,175 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:45,176 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:45,176 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-17 17:28:45,209 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-17 17:28:45,210 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-17 17:28:45,210 - honor_9 - INFO - <-- FlashCard.setUp, Success
+
+2019-09-17 17:28:45,211 - honor_9 - INFO - --> FlashCard.test_check_speak_game_is_unit
+2019-09-17 17:28:45,212 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-17 17:28:45,213 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-17 17:28:45,213 - honor_9 - INFO - <-- FlashCard.test_check_speak_game_is_unit, Success
+
+2019-09-17 17:28:45,214 - honor_9 - INFO - --> FlashCard.tearDown
+2019-09-17 17:28:45,214 - honor_9 - INFO - <-- FlashCard.tearDown, Success
+

@@ -1,5 +1,7 @@
 import os,json,subprocess
 from testfarm.test_program.conf.base_config import GetVariable as gv
+from testfarm.models import EquipmentList, SideType, ItemType
+
 
 class Utils:
     _con = {
@@ -65,7 +67,7 @@ class Utils:
                 port += 2
         return port_list
 
-    def appium_node_info(self,hubHost,port,device_name,udid,platversion,systemPort,side):
+    def appium_node_info(self, hubHost, port, device_name, udid, platversion, systemPort, side):
         self._con['configuration']['url'] = 'http://127.0.0.1:%s/wd/hub/'%port
         self._con['configuration']['port'] = '%s'%port
         self._con['configuration']['hubHost'] = hubHost
@@ -81,17 +83,18 @@ class Utils:
         if not os.path.exists(node_path):
             os.makedirs(node_path)
         print('app路径：',self._con['capabilities'][0]['app'])
-        fp = open('%smobile.json'%(node_path),'w')
+        fp = open('%smobile.json' % (node_path),'w')
         fp.write(json.dumps(self._con))
         fp.close()
 
-    def start_appium(self,dn, udid, plv,file_name,port,bp,systemPort,side):
+    def start_appium(self, dn, udid, plv, file_name, port, bp, systemPort, side):
         hubHost = gv.HUBHOST
-        self.appium_node_info(hubHost=hubHost,port=port,device_name=dn,udid=udid,platversion=plv,systemPort=systemPort,side=side)
+        self.appium_node_info(hubHost=hubHost,port=port,device_name=dn,udid=udid,platversion=plv,systemPort=systemPort, side=side)
         CMD = 'appium -p {port} -bp {bp} -U {udid} --nodeconfig ./test_program/nodeconfig/{devicename}/{platformversion}/mobile.json > {portPath}appium_server.log'.format(port=port,bp=bp,udid=udid,devicename=dn,platformversion=plv,portPath=file_name)
-        subprocess.Popen(CMD, shell=True)
+        res  = subprocess.Popen(CMD, shell=True)
         print('\ncmd:',CMD)
-        return int(port),systemPort
+        EquipmentList.objects.filter(equipment_uuid=udid).update(node_pid=res.pid)
+        return int(port), systemPort
 
     def clear_port(self,*port):
         for i in port:

@@ -144,6 +144,12 @@ def startservice(request):
 
 # @login_required
 def st(e_uuid, ports, test_side, test_items):
+    # 获取进程 id
+    gid = os.getpid()
+    print('gid:', gid)
+    # 变更该设备的 运行状态
+    EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=1, statue_statue=1, gid=gid)
+
     test_sides = SideType.objects.filter(id=int(test_side))[0].side_eng
     print(test_sides)
     test_item = ItemType.objects.filter(side=str(int(test_side)))[int(test_items) - 1].item_eng
@@ -156,18 +162,11 @@ def st(e_uuid, ports, test_side, test_items):
     sysport = p.get_ports(port=8200, count=1)[0]
     _port.append(sysport)
 
-
-    # 获取进程 id
-    gid = os.getpid()
-    print('gid:', gid)
     # 根据设别uuid 获取设备的详情
     close_old_connections()
     device = EquipmentList.objects.get(equipment_uuid=e_uuid)
     e_name = device.equipment_name
     plat_verion = device.platform_verion
-
-    # 变更该设备的 运行状态
-    EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=1, statue_statue=1, gid=gid)
 
     # 实例化 driver类，开始进行测试
     dr = Driver(udid=e_uuid, platformVersion=plat_verion, deviceName=e_name, ports=ports, test_side=test_sides,
@@ -180,6 +179,8 @@ def st(e_uuid, ports, test_side, test_items):
 
     # 跟新设备运行状态
     close_old_connections()
+    device = EquipmentList.objects.get(equipment_uuid=e_uuid)
+    node_pid = device.node_pid
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=0, statue_statue=0, gid=None,
                                                                report=file_name)
     # 清除端口占用
@@ -187,7 +188,7 @@ def st(e_uuid, ports, test_side, test_items):
     print(_port, pp, '端口占用情况')
 
     # kill掉 node
-    killPid().kill_pid(appium_port)
+    killPid().kill_pid(appium_port, node_pid)
 
 
 @login_required

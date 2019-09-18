@@ -65,6 +65,11 @@ class BasePage(object):
         ele = self.driver.find_elements_by_class_name("android.widget.ImageButton")[0]
         ele.click()
 
+    def wait_activity(self):
+        """获取当前窗口活动类"""
+        activity = self.driver.current_activity
+        return activity
+
     def page_source_android(self):
         """以“获取page_source”的TEXT为依据"""
         print('打开：', self.driver.page_source)
