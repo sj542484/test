@@ -4,13 +4,13 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
 from app.honor.teacher.test_bank.object_page.test_paper_detail_page import PaperDetailPage
-from app.honor.teacher.test_bank.object_page import PaperSharePage
-from app.honor.teacher.user_center import ChangeImage
+from app.honor.teacher.test_bank.object_page.test_paper_share_page import PaperSharePage
+from app.honor.teacher.user_center.user_information.object_page.change_image_page import ChangeImage
 from conf.decorator import setup, teardownclass, testcase
 from utils.screen_shot import ScreenShot
 
@@ -42,7 +42,7 @@ class PaperShare(unittest.TestCase):
                     self.home.click_tab_hw()
 
     @testcase
-    def test_001_paper_share_school_photo_cancel(self):
+    def test_001_paper_share_qr_photo_cancel(self):
         self.login.app_status()  # 判断APP当前状态
 
         self.share.into_paper_share_page()  # 进入试卷分享页面
@@ -58,7 +58,7 @@ class PaperShare(unittest.TestCase):
                     self.share.upload_img_cancel_operation(avatar, 'qr')  # cancel 上传图片操作
 
     @testcase
-    def test_002_paper_share_school_photo_retake(self):
+    def test_002_paper_share_qr_photo_retake(self):
         self.share.judge_app_status()  # 判断应用当前状态，并进入分享界面
 
         if self.share.wait_check_share_list_page():  # 页面检查点

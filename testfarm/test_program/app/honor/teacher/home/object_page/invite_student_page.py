@@ -3,7 +3,7 @@
 # @Author  : SUN FEIFEI
 from selenium.webdriver.common.by import By
 
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.wait_element import WaitElement

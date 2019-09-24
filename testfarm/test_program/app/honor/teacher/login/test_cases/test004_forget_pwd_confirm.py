@@ -2,7 +2,7 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.login.test_data.forget_pwd_data import phone_data, pwd_data
 from app.honor.teacher.user_center.setting_center.object_page.setting_page import SettingPage
 from conf.decorator import setup, teardown, testcase, teststeps
@@ -56,7 +56,7 @@ class Login(unittest.TestCase):
                 phone = self.login.input_phone()
                 code = self.login.input_code()
 
-                phone.send_keys(r'' + phone_data[-1]['account'])  # 输入手机号
+                phone.send_keys(phone_data[-1]['account'])  # 输入手机号
                 print('账号:', phone.text)
 
                 self.login.get_code_button().click()  # 点击 获取验证码 按钮
@@ -73,8 +73,8 @@ class Login(unittest.TestCase):
                         pwd = self.login.new_pwd()  # 设置密码
                         confirm = self.login.new_pwd_confirm()  # 密码再次确认
 
-                        pwd.send_keys(r'' + pwd_data[i]['password'])  # 输入密码
-                        confirm.send_keys(r'' + pwd_data[i]['confirm'])  # 再次输入密码
+                        pwd.send_keys(pwd_data[i]['password'])  # 输入密码
+                        confirm.send_keys(pwd_data[i]['confirm'])  # 再次输入密码
 
                         print('新密码:', pwd.text)
                         print('确认密码:', confirm.text)

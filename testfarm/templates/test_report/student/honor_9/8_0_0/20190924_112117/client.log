@@ -1,0 +1,162 @@
+2019-09-24 11:21:34,005 - honor_9 - INFO - --> PlayAllGame.setUp
+2019-09-24 11:21:34,007 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-24 11:21:34,105 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-24 11:21:36,712 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-24 11:21:36,713 - honor_9 - INFO -   --> LoginPage.login_operate
+2019-09-24 11:21:38,714 - honor_9 - INFO - 	--> LoginPage.input_username
+2019-09-24 11:21:38,864 - honor_9 - INFO - 	--> LoginPage.input_password
+2019-09-24 11:21:40,762 - honor_9 - INFO - 	--> LoginPage.login_button
+2019-09-24 11:21:43,399 - honor_9 - INFO -   <-- LoginPage.login_operate, Success
+2019-09-24 11:21:43,400 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-24 11:21:43,401 - honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-24 11:21:43,401 - honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-09-24 11:21:43,402 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-24 11:21:50,509 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-24 11:21:50,509 - honor_9 - INFO - 	--> UserCenterPage.get_user_info
+2019-09-24 11:21:50,510 - honor_9 - INFO - 	--> HomePage.click_tab_profile
+2019-09-24 11:21:50,734 - honor_9 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-24 11:21:53,710 - honor_9 - INFO - 	--> UserCenterPage.nickname
+2019-09-24 11:21:56,190 - honor_9 - INFO - 	--> UserCenterPage.purchase
+2019-09-24 11:21:56,390 - honor_9 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-24 11:21:57,983 - honor_9 - INFO - 	--> UserCenterPage.phone
+2019-09-24 11:21:59,309 - honor_9 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-24 11:22:00,332 - honor_9 - INFO - 	--> UserCenterPage.school_name
+2019-09-24 11:22:00,477 - honor_9 - INFO - 	--> UserCenterPage.setting_up
+2019-09-24 11:22:00,627 - honor_9 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-09-24 11:22:02,779 - honor_9 - INFO - 	--> UserCenterPage.clear_cache
+2019-09-24 11:22:06,422 - honor_9 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-24 11:22:07,489 - honor_9 - INFO - 	--> HomePage.click_tab_hw
+2019-09-24 11:22:07,709 - honor_9 - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-09-24 11:22:07,971 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-24 11:22:08,926 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-24 11:22:08,926 - honor_9 - INFO - 	--> HomePage.click_hk_tab
+2019-09-24 11:22:09,124 - honor_9 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-24 11:22:09,124 - honor_9 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-24 11:22:11,375 - honor_9 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-24 11:22:11,778 - honor_9 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-24 11:22:13,487 - honor_9 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-24 11:22:13,487 - honor_9 - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-24 11:22:13,750 - honor_9 - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-24 11:22:13,943 - honor_9 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-24 11:22:14,024 - honor_9 - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-09-24 11:22:14,235 - honor_9 - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-09-24 11:22:14,452 - honor_9 - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-09-24 11:22:21,426 - honor_9 - INFO - 	--> LibraryGamePage.play_book_games
+2019-09-24 11:22:21,426 - honor_9 - INFO - 	--> LibraryGamePage.game_name
+2019-09-24 11:22:22,050 - honor_9 - INFO -   --> CompleteArticle.complete_article_operate
+2019-09-24 11:22:22,051 - honor_9 - INFO - 	--> CompleteArticleGame.wait_check_complete_article_page
+2019-09-24 11:22:22,138 - honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-24 11:22:22,323 - honor_9 - INFO - 	--> PublicPage.rich_text
+2019-09-24 11:22:22,488 - honor_9 - INFO - 	--> PublicPage.drag_btn
+2019-09-24 11:22:24,356 - honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-09-24 11:22:24,356 - honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-09-24 11:22:24,456 - honor_9 - INFO - 	--> GetAttribute.enabled
+2019-09-24 11:22:26,006 - honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-24 11:22:26,007 - honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-24 11:22:26,007 - honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-24 11:22:26,145 - honor_9 - INFO - 	--> PublicPage.opt_text
+2019-09-24 11:22:26,255 - honor_9 - INFO - 	--> PublicPage.opt_char
+2019-09-24 11:22:26,397 - honor_9 - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-24 11:22:27,304 - honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-24 11:22:27,305 - honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-24 11:22:27,997 - honor_9 - INFO - 	--> PublicPage.opt_text
+2019-09-24 11:22:28,137 - honor_9 - INFO - 	--> PublicPage.opt_char
+2019-09-24 11:22:28,273 - honor_9 - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-24 11:22:29,212 - honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-24 11:22:29,213 - honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-24 11:22:29,383 - honor_9 - INFO - 	--> PublicPage.opt_text
+2019-09-24 11:22:30,003 - honor_9 - INFO - 	--> PublicPage.opt_char
+2019-09-24 11:22:30,203 - honor_9 - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-24 11:22:31,203 - honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-24 11:22:31,204 - honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-24 11:22:31,302 - honor_9 - INFO - 	--> PublicPage.opt_text
+2019-09-24 11:22:31,427 - honor_9 - INFO - 	--> PublicPage.opt_char
+2019-09-24 11:22:32,014 - honor_9 - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-24 11:22:33,113 - honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-24 11:22:33,113 - honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-24 11:22:33,202 - honor_9 - INFO - 	--> PublicPage.opt_text
+2019-09-24 11:22:33,318 - honor_9 - INFO - 	--> PublicPage.opt_char
+2019-09-24 11:22:33,457 - honor_9 - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-24 11:22:34,256 - honor_9 - INFO -   --> LibraryPubicPage.judge_timer
+2019-09-24 11:22:34,257 - honor_9 - INFO -   <-- LibraryPubicPage.judge_timer, Success
+2019-09-24 11:22:34,257 - honor_9 - INFO - 	--> PublicPage.drag_btn
+2019-09-24 11:22:34,554 - honor_9 - ERROR - WebDriverException, Message: io.appium.uiautomator2.common.exceptions.InvalidCoordinatesException: Coordinate [x=518.0, y=2140.0] is outside of element rect: [0,0][1080,2032]
+	at io.appium.uiautomator2.utils.PositionHelper.getAbsolutePosition(PositionHelper.java:71)
+	at io.appium.uiautomator2.utils.PositionHelper.getDeviceAbsPos(PositionHelper.java:83)
+	at io.appium.uiautomator2.handler.Swipe.safeHandle(Swipe.java:47)
+	at io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:37)
+	at io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)
+	at io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:243)
+	at io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:435)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:250)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1294)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:911)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:611)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:466)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:438)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:140)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:784)
+
+
+2019-09-24 11:22:34,554 - honor_9 - ERROR -   <-- CompleteArticle.complete_article_operate, WebDriverException, Error
+2019-09-24 11:22:35,576 - honor_9 - ERROR - WebDriverException, Message: IMAGE:CompleteArticle.complete_article_operate-20190924112234.png
+
+2019-09-24 11:22:35,577 - honor_9 - ERROR - 	<-- LibraryGamePage.play_book_games, WebDriverException, Error
+2019-09-24 11:22:35,577 - honor_9 - ERROR - WebDriverException, Message: Message: IMAGE:CompleteArticle.complete_article_operate-20190924112234.png
+
+
+2019-09-24 11:22:35,578 - honor_9 - ERROR - <-- PlayAllGame.test_all_game, WebDriverException, Error
+
+2019-09-24 11:22:35,578 - honor_9 - INFO - --> PlayAllGame.tearDown
+2019-09-24 11:22:35,578 - honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-24 11:22:35,592 - honor_9 - INFO - --> WKGame.setUp
+2019-09-24 11:22:35,592 - honor_9 - INFO -   --> LoginPage.app_status
+2019-09-24 11:22:35,650 - honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-09-24 11:22:41,582 - honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-24 11:22:41,583 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-24 11:22:56,645 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-24 11:22:56,647 - honor_9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-24 11:23:12,573 - honor_9 - INFO - 	--> LoginPage.close_app
+2019-09-24 11:23:12,755 - honor_9 - INFO - 	--> LoginPage.launch_app
+2019-09-24 11:23:20,230 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-24 11:23:30,062 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-24 11:23:30,062 - honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-24 11:23:30,063 - honor_9 - INFO - <-- WKGame.setUp, Success
+
+2019-09-24 11:23:30,063 - honor_9 - INFO - --> WKGame.test_wk_game
+2019-09-24 11:23:30,064 - honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-24 11:23:30,392 - honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-24 11:23:30,392 - honor_9 - INFO - 	--> HomePage.click_hk_tab
+2019-09-24 11:23:30,599 - honor_9 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-24 11:23:30,599 - honor_9 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-24 11:23:32,271 - honor_9 - INFO - 	--> LibraryGamePage.homework_list
+2019-09-24 11:23:32,540 - honor_9 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-24 11:23:33,633 - honor_9 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-24 11:23:33,633 - honor_9 - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-24 11:23:33,723 - honor_9 - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-24 11:23:33,816 - honor_9 - ERROR - Exception, list index out of range
+2019-09-24 11:23:33,817 - honor_9 - ERROR - <-- WKGame.test_wk_game, Exception, Error
+
+2019-09-24 11:23:34,634 - honor_9 - INFO - --> WKGame.tearDown
+2019-09-24 11:23:34,635 - honor_9 - INFO - <-- WKGame.tearDown, Success
+

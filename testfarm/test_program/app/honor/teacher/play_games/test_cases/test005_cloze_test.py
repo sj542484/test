@@ -4,14 +4,14 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ClozePage
-from app.honor.teacher.play_games.object_page import ResultPage
-from app.honor.teacher.play_games import GetVariable as gv
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.cloze_test_page import ClozePage
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
+from app.honor.teacher.play_games.test_data.homework_title_type import GetVariable as gv
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.test_bank.object_page import QuestionDetailPage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.toast_find import Toast
 
@@ -75,12 +75,12 @@ class Games(unittest.TestCase):
                                 self.game.start_button()  # 开始答题 按钮
 
                                 result = self.cloze.cloze_operation()  # 完形填空 游戏过程
-                                self.result.result_page_time(result[2])  # 结果页 -- 所用时间
+                                # self.result.result_page_time(result[2])  # 结果页 -- 所用时间
+                                #
+                                # result2 = self.cloze.study_again()  # 结果页 错题再练/再练一遍 按钮
+                                # self.result.result_page_time(result2[1][2], result2[0])  # 结果页 -- 所用时间
 
-                                result2 = self.cloze.study_again()  # 结果页 错题再练/再练一遍 按钮
-                                self.result.result_page_time(result2[1][2], result2[0])  # 结果页 -- 所用时间
-
-                                # self.cloze.check_detail_page(result2[1][1], result2[1][0])  # 结果页 查看答案
+                                self.cloze.check_detail_page(result[1], result[0])  # 结果页 查看答案
                                 # self.result.result_page_correct_rate(result[1] + result2[1][1], result[0])  # 结果页 -- 准确率
                                 print('####################################################')
                                 self.homework.back_operation()   # 从结果页返回 题单详情页

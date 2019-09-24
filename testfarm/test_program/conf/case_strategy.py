@@ -8,7 +8,11 @@ class CaseStrategy:
         self.test_side = tsst_side
         self.test_items = test_items
         self.phone_code = phone_code
-        self.start_dir = gv.CASE_PATH + self.phone_code + '/' + self.test_side + '/' + self.test_items
+        if 'user_center-' in self.test_items:
+            res = self.test_items.split('-')
+            self.start_dir = gv.CASE_PATH + self.phone_code + '/' + self.test_side + '/' + res[0] + '/' + res[1] + '/test_cases'
+        else:
+            self.start_dir = gv.CASE_PATH + self.phone_code + '/' + self.test_side + '/' + self.test_items + '/test_cases'
 
     """测试用例搜集"""
     def _collect_cases(self, cases, top_dir=None):
@@ -16,6 +20,7 @@ class CaseStrategy:
         suites = unittest\
             .defaultTestLoader.discover(start_dir=self.start_dir, pattern=gv.CASE_PATTERN, top_level_dir=top_dir)
         index = 0
+        print('测试用例：')
         for suite in suites:
             for case in suite:
                 index += 1

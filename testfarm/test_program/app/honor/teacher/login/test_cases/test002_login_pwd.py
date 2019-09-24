@@ -2,8 +2,8 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.login.test_data import pwd_data
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.login.test_data.mine_account import pwd_data
 from app.honor.teacher.user_center.setting_center.object_page.setting_page import SettingPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.toast_find import Toast
@@ -57,11 +57,11 @@ class Login(unittest.TestCase):
                     pwd = self.login.input_password()
 
                     phone.click()  # 激活phone输入框
-                    phone.send_keys(r'' + pwd_data[i]['username'])  # 输入手机号
+                    phone.send_keys(pwd_data[i]['username'])  # 输入手机号
                     print('账号:', phone.text)
 
                     pwd.click()  # 激活pwd输入框
-                    pwd.send_keys(r'' + pwd_data[i]['password'])  # 输入密码
+                    pwd.send_keys(pwd_data[i]['password'])  # 输入密码
                     print('密码:', pwd.text)
 
                     self.login.login_button()  # 登录按钮

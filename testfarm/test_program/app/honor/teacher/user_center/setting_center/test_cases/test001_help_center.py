@@ -2,9 +2,9 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.user_center.setting_center.object_page.setting_page import SettingPage
-from app.honor.teacher.user_center import TuserCenterPage, HelpCenter
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage, HelpCenter
 from conf.decorator import setup, teardown, testcase
 from utils.toast_find import Toast
 

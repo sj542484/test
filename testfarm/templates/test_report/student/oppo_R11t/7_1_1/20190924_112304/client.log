@@ -1,0 +1,142 @@
+2019-09-24 11:23:21,505 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-09-24 11:23:21,507 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-09-24 11:23:21,585 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-09-24 11:23:24,659 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-24 11:23:24,660 - oppo_R11t - INFO -   --> LoginPage.login_operate
+2019-09-24 11:23:26,661 - oppo_R11t - INFO - 	--> LoginPage.input_username
+2019-09-24 11:23:26,760 - oppo_R11t - INFO - 	--> LoginPage.input_password
+2019-09-24 11:23:29,332 - oppo_R11t - INFO - 	--> LoginPage.login_button
+2019-09-24 11:23:31,938 - oppo_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-09-24 11:23:31,938 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-09-24 11:23:31,939 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-24 11:23:31,940 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-09-24 11:23:31,940 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-24 11:23:32,505 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-24 11:23:32,505 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-09-24 11:23:32,506 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-09-24 11:23:32,706 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-24 11:23:36,076 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-09-24 11:23:38,504 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-09-24 11:23:38,654 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-24 11:23:40,865 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-09-24 11:23:42,188 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-24 11:23:44,183 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-09-24 11:23:44,313 - oppo_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-09-24 11:23:44,899 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-09-24 11:23:46,959 - oppo_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-09-24 11:23:50,700 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-24 11:23:51,290 - oppo_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-09-24 11:23:53,159 - oppo_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-09-24 11:23:53,498 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-24 11:23:54,824 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-24 11:23:54,824 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-09-24 11:23:55,039 - oppo_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-24 11:23:55,040 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-24 11:23:56,199 - oppo_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-09-24 11:23:56,609 - oppo_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-24 11:23:57,604 - oppo_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-24 11:23:57,605 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-24 11:23:57,919 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-24 11:23:58,200 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-24 11:23:59,198 - oppo_R11t - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-09-24 11:23:59,895 - oppo_R11t - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-09-24 11:24:00,217 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-09-24 11:24:03,222 - oppo_R11t - INFO - 	--> LibraryGamePage.play_book_games
+2019-09-24 11:24:03,223 - oppo_R11t - INFO - 	--> LibraryGamePage.game_name
+2019-09-24 11:24:03,491 - oppo_R11t - INFO -   --> CompleteArticle.complete_article_operate
+2019-09-24 11:24:03,492 - oppo_R11t - INFO - 	--> CompleteArticleGame.wait_check_complete_article_page
+2019-09-24 11:24:03,563 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-24 11:24:03,683 - oppo_R11t - INFO - 	--> PublicPage.rich_text
+2019-09-24 11:24:05,258 - oppo_R11t - INFO - 	--> PublicPage.drag_btn
+2019-09-24 11:24:06,588 - oppo_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-09-24 11:24:06,588 - oppo_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-09-24 11:24:06,704 - oppo_R11t - INFO - 	--> GetAttribute.enabled
+2019-09-24 11:24:08,249 - oppo_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-24 11:24:08,249 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-24 11:24:08,249 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-24 11:24:08,359 - oppo_R11t - INFO - 	--> PublicPage.opt_text
+2019-09-24 11:24:09,298 - oppo_R11t - INFO - 	--> PublicPage.opt_char
+2019-09-24 11:24:10,227 - oppo_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-24 11:24:11,321 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-24 11:24:11,322 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-24 11:24:11,429 - oppo_R11t - INFO - 	--> PublicPage.opt_text
+2019-09-24 11:24:11,550 - oppo_R11t - INFO - 	--> PublicPage.opt_char
+2019-09-24 11:24:12,468 - oppo_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-24 11:24:13,267 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-24 11:24:13,267 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-24 11:24:14,336 - oppo_R11t - INFO - 	--> PublicPage.opt_text
+2019-09-24 11:24:14,500 - oppo_R11t - INFO - 	--> PublicPage.opt_char
+2019-09-24 11:24:14,636 - oppo_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-24 11:24:15,515 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-24 11:24:15,515 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-24 11:24:15,685 - oppo_R11t - INFO - 	--> PublicPage.opt_text
+2019-09-24 11:24:16,308 - oppo_R11t - INFO - 	--> PublicPage.opt_char
+2019-09-24 11:24:17,427 - oppo_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-24 11:24:18,319 - oppo_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-24 11:24:18,322 - oppo_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-24 11:24:18,486 - oppo_R11t - INFO - 	--> PublicPage.opt_text
+2019-09-24 11:24:18,597 - oppo_R11t - INFO - 	--> PublicPage.opt_char
+2019-09-24 11:24:19,208 - oppo_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-24 11:24:20,393 - oppo_R11t - INFO -   --> LibraryPubicPage.judge_timer
+2019-09-24 11:24:20,394 - oppo_R11t - INFO -   <-- LibraryPubicPage.judge_timer, Success
+2019-09-24 11:24:20,394 - oppo_R11t - INFO - 	--> PublicPage.drag_btn
+2019-09-24 11:24:21,757 - oppo_R11t - INFO -   --> PublicPage.check_position_change
+2019-09-24 11:24:21,757 - oppo_R11t - INFO - 	--> PublicPage.wait_check_keyboard_page
+2019-09-24 11:24:37,738 - oppo_R11t - INFO - 	--> PublicPage.font_large
+2019-09-24 11:24:39,243 - oppo_R11t - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-09-24 11:24:39,244 - oppo_R11t - ERROR - 	<-- PublicPage.font_large, WebDriverException, Error
+2019-09-24 11:24:39,988 - oppo_R11t - ERROR - WebDriverException, Message: IMAGE:PublicPage.font_large-20190924112439.png
+
+2019-09-24 11:24:39,988 - oppo_R11t - ERROR -   <-- PublicPage.check_position_change, WebDriverException, Error
+2019-09-24 11:24:39,989 - oppo_R11t - ERROR - WebDriverException, Message: Message: IMAGE:PublicPage.font_large-20190924112439.png
+
+
+2019-09-24 11:24:39,989 - oppo_R11t - ERROR -   <-- CompleteArticle.complete_article_operate, WebDriverException, Error
+2019-09-24 11:24:39,990 - oppo_R11t - ERROR - WebDriverException, Message: Message: Message: IMAGE:PublicPage.font_large-20190924112439.png
+
+
+
+2019-09-24 11:24:39,990 - oppo_R11t - ERROR - 	<-- LibraryGamePage.play_book_games, WebDriverException, Error
+2019-09-24 11:24:39,990 - oppo_R11t - ERROR - WebDriverException, Message: Message: Message: Message: IMAGE:PublicPage.font_large-20190924112439.png
+
+
+
+
+2019-09-24 11:24:39,991 - oppo_R11t - ERROR - <-- PlayAllGame.test_all_game, WebDriverException, Error
+
+2019-09-24 11:24:39,991 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-09-24 11:24:39,991 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-24 11:24:40,005 - oppo_R11t - INFO - --> WKGame.setUp
+2019-09-24 11:24:40,005 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-09-24 11:24:40,099 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-09-24 11:24:45,735 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-24 11:24:45,735 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-24 11:25:00,823 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-24 11:25:00,825 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-24 11:25:16,746 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-09-24 11:25:17,483 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-09-24 11:25:25,329 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-24 11:25:25,712 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-24 11:25:25,713 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-09-24 11:25:25,713 - oppo_R11t - INFO - <-- WKGame.setUp, Success
+
+2019-09-24 11:25:25,714 - oppo_R11t - INFO - --> WKGame.test_wk_game
+2019-09-24 11:25:25,714 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-24 11:25:26,142 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-24 11:25:26,143 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-09-24 11:25:26,320 - oppo_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-24 11:25:26,320 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-24 11:25:27,497 - oppo_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-09-24 11:25:28,320 - oppo_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-24 11:25:29,319 - oppo_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-24 11:25:29,320 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-24 11:25:30,379 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-24 11:25:30,494 - oppo_R11t - ERROR - Exception, list index out of range
+2019-09-24 11:25:30,495 - oppo_R11t - ERROR - <-- WKGame.test_wk_game, Exception, Error
+
+2019-09-24 11:25:31,048 - oppo_R11t - INFO - --> WKGame.tearDown
+2019-09-24 11:25:31,048 - oppo_R11t - INFO - <-- WKGame.tearDown, Success
+

@@ -5,10 +5,11 @@ import re
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from app.honor.teacher.test_bank.object_page.question_basket_page import QuestionBasketPage
-from app.honor.teacher.test_bank.object_page import QuestionDetailPage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
+from app.honor.teacher.test_bank.object_page.test_bank_search_page import SearchPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
@@ -27,6 +28,7 @@ class QuestionBasket(unittest.TestCase):
         cls.question = TestBankPage()
         cls.basket = QuestionBasketPage()
         cls.detail = QuestionDetailPage()
+        cls.search = SearchPage()
         cls.get = GetAttribute()
 
     @classmethod
@@ -159,12 +161,12 @@ class QuestionBasket(unittest.TestCase):
             if search.text != '搜索':
                 search.click()  # 搜索框
                 if self.question.wait_check_page('上传者'):
-                    self.question.input_clear_button()  # 清空 按钮
-                    self.question.drop_down_button().click()  # 下拉按钮
+                    self.search.input_clear_button()  # 清空 按钮
+                    self.search.drop_down_button().click()  # 下拉按钮
 
-                    if self.question.judge_search_menu():
-                        var = self.question.search_criteria_menu()  # 搜索条件菜单
-                        self.question.choose_condition(var)
+                    if self.search.judge_search_menu():
+                        var = self.search.search_criteria_menu()  # 搜索条件菜单
+                        self.search.choose_condition(var)
                         var[0].click()  # 选择
 
-                    self.question.search_button()  # 搜索按钮
+                    self.search.search_button()  # 搜索按钮

@@ -3,10 +3,10 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.user_center import TuserCenterPage
-from app.honor.teacher.user_center import ChangeImage
-from app.honor.teacher.user_center import UserInfoPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
+from app.honor.teacher.user_center.user_information.object_page.change_image_page import ChangeImage
+from app.honor.teacher.user_center.user_information.object_page.user_Info_page import UserInfoPage
 from conf.decorator import setupclass, teardown, testcase
 from utils.screen_shot import ScreenShot
 from utils.toast_find import Toast

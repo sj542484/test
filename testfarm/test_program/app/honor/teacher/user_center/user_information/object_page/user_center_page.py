@@ -4,7 +4,7 @@
 import time
 from selenium.webdriver.common.by import By
 
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
@@ -83,8 +83,7 @@ class TuserCenterPage(BasePage):
             .find_element_by_id(gv.PACKAGE_ID + "setting") \
             .click()
 
-        # 筛选
-
+    # 筛选
     @teststep
     def filter_button(self):
         """以“筛选 按钮”的id为依据"""

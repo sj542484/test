@@ -3,8 +3,8 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.test_bank.object_page import SearchPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.test_bank.object_page.test_bank_search_page import SearchPage
 from app.honor.teacher.test_bank.test_data.search_content import search_data
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from conf.decorator import setup, teardown, testcase, teststeps

@@ -14,6 +14,8 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+    cmd = 'java -jar /Users/vanthink_test_ios/aa/testone/test_program/app_folder/selenium-server-standalone-3.11.0.jar -role hub'
+    os.popen(cmd)
     execute_from_command_line(sys.argv)
 
 

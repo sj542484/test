@@ -6,10 +6,10 @@ import time
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.play_games.object_page import ResultPage
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
-from app.honor.teacher.test_bank.object_page import QuestionDetailPage
-from conf.base_page import BasePage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
@@ -91,7 +91,7 @@ class Homework(BasePage):
                 ThomePage().back_up_button()  # 返回 题单详情页
 
     # 公共元素 及操作
-    @teststep
+    @teststeps
     def commit_button_judge(self, var):
         """‘提交’按钮 状态判断"""
         item = self.commit_button()  # ‘提交’按钮
@@ -109,7 +109,7 @@ class Homework(BasePage):
             .find_element_by_id(gv.PACKAGE_ID + "fab_commit")
         return item
 
-    @teststep
+    @teststeps
     def next_button_judge(self, var):
         """‘下一题’按钮 状态判断"""
         item = self.next_button()  # ‘下一题’按钮

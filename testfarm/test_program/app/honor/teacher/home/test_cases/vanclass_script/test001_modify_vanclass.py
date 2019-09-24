@@ -1,16 +1,18 @@
-#!/usr/bin/env python
-# encoding:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import re
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.home.object_page import VanclassPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.home.object_page.vanclass_page import VanclassPage
 from app.honor.teacher.home.test_data.modify_vanclass_data import class_data
 from app.honor.teacher.home.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
 
 
@@ -37,7 +39,7 @@ class ModifyVanclass(unittest.TestCase):
         self.login.app_status()  # 判断APP当前状态
 
         if self.home.wait_check_page():  # 页面检查点
-            self.home.into_vanclass_operation(gv.MODIFY_VAN)  # 进入 班级详情页
+            self.into_vanclass_operation(gv.MODIFY_VAN)  # 进入 班级详情页
             if self.van.wait_check_page(gv.MODIFY_VAN):  # 页面检查点
                 self.van.more_button()  # 右上角 更多 按钮
 
@@ -53,10 +55,25 @@ class ModifyVanclass(unittest.TestCase):
             print("未进入主界面")
 
     @teststeps
+    def into_vanclass_operation(self, var):
+        """进入 班级"""
+        if self.home.wait_check_list_page():
+            SwipeFun().swipe_vertical(0.5, 0.8, 0.2)
+            if self.home.wait_check_list_page():
+                name = self.home.item_detail()  # 班号+班级名
+                count = self.home.st_count()  # 学生数
+                for i in range(len(name)):
+                    van = self.home.vanclass_name(name[i].text)  # 班级名
+                    if van == var or int(count[i].text) == 0:  # var 或者 空班
+                        print('进入班级:', var)
+                        name[i].click()  # 进入班级
+                        break
+
+    @teststeps
     def modify_vanclass_operation(self):
         """修改班级名称 具体操作"""
         if self.home.wait_check_tips_page():  # 页面检查点
-            if self.get.enabled(self.home.commit()) is False:  # 确定按钮 enabled值
+            if self.get.enabled(self.home.commit_button()) == 'false':  # 确定按钮 enabled值
                 print('★★★ Error- 确定按钮不可点击')
 
             print('--------------------------------')
@@ -69,7 +86,7 @@ class ModifyVanclass(unittest.TestCase):
 
             for i in range(len(class_data)):
                 var = self.home.input()
-                var.send_keys(r'' + class_data[i]['name'])
+                var.send_keys(class_data[i]['name'])
 
                 if i == 0:
                     length = len(class_data[0]['name'])
@@ -87,7 +104,7 @@ class ModifyVanclass(unittest.TestCase):
                     if length != int(size1):
                         print('★★★ Error- 字符数展示有误', size2)
 
-                button = self.home.commit()  # 确定按钮 元素
+                button = self.home.commit_button()  # 确定按钮 元素
                 status = self.detail.button_enabled_judge(length, button, size1)
 
                 if status != class_data[i]['status']:
@@ -97,10 +114,7 @@ class ModifyVanclass(unittest.TestCase):
                     button.click()  # 点击 确定按钮  进入班级详情页
 
                     if len(class_data[i]) == 4:
-                        if not Toast().find_toast(class_data[i]['assert']):
-                            print('★★★ Error- 未弹toast', class_data[i]['assert'])
-                        else:
-                            print(class_data[i]['assert'])
+                        Toast().toast_operation(class_data[i]['assert'])  # 获取toast信息
 
                         if not self.van.wait_check_page(class_data[i]['name'],3):  # 页面检查点
                             van = self.detail.judge_van_modify()  # 班级名称 不能修改成功验证
@@ -122,7 +136,7 @@ class ModifyVanclass(unittest.TestCase):
                             self.van.modify_name(0)  # 班级名称 按钮 进入修改页面
 
                             if self.home.wait_check_tips_page():  # 页面检查点
-                                button = self.home.commit()  # 确定按钮
+                                button = self.home.commit_button()  # 确定按钮
                                 if self.get.enabled(button) != class_data[i]['status']:
                                     print('★★★ Error- 确定按钮不可点击')
                 print('--------------------------------')

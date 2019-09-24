@@ -4,11 +4,11 @@
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
-from app.honor.teacher.play_games import guess_word_operation
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
+from app.honor.teacher.play_games.test_data.guess_word_data import guess_word_operation
 from conf.base_config import GetVariable as gv
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststeps, teststep
 from utils.wait_element import WaitElement
 

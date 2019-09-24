@@ -1,0 +1,202 @@
+2019-09-24 09:26:17,014 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:26:17,015 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:26:17,016 - honor_9 - INFO - --> Login.test_login_phone
+2019-09-24 09:26:17,016 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:26:17,016 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:26:37,279 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:26:37,280 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:26:37,280 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:26:37,281 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:26:37,373 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:26:37,373 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:26:37,374 - honor_9 - INFO -   --> Login.login_operation_phone
+2019-09-24 09:26:37,374 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:26:37,374 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:26:37,424 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:26:37,425 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:26:37,425 - honor_9 - INFO - 	--> TloginPage.visible_password
+2019-09-24 09:26:37,426 - honor_9 - ERROR - Exception, 'TloginPage' object has no attribute 'driver'
+2019-09-24 09:26:37,426 - honor_9 - ERROR - 	<-- TloginPage.visible_password, Exception, Error
+2019-09-24 09:26:38,157 - honor_9 - ERROR - Exception, IMAGE:TloginPage.visible_password-20190924092637.png
+2019-09-24 09:26:38,158 - honor_9 - ERROR -   <-- Login.login_operation_phone, Exception, Error
+2019-09-24 09:26:38,158 - honor_9 - ERROR - Exception, IMAGE:TloginPage.visible_password-20190924092637.png
+2019-09-24 09:26:38,158 - honor_9 - ERROR - <-- Login.test_login_phone, Exception, Error
+
+2019-09-24 09:26:38,159 - honor_9 - INFO - --> Login.tearDown
+2019-09-24 09:26:38,159 - honor_9 - INFO - <-- Login.tearDown, Success
+
+2019-09-24 09:26:38,160 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:26:38,160 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:26:38,161 - honor_9 - INFO - --> Login.test_login_password
+2019-09-24 09:26:38,161 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:26:38,161 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:26:58,553 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:26:58,554 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:26:58,554 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:26:58,555 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:26:58,604 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:26:58,605 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:26:58,605 - honor_9 - INFO -   --> Login.login_operation_pwd
+2019-09-24 09:26:58,606 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:26:58,606 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:26:58,651 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:26:58,652 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:26:58,652 - honor_9 - INFO - 	--> TloginPage.visible_password
+2019-09-24 09:26:58,653 - honor_9 - ERROR - Exception, 'TloginPage' object has no attribute 'driver'
+2019-09-24 09:26:58,653 - honor_9 - ERROR - 	<-- TloginPage.visible_password, Exception, Error
+2019-09-24 09:26:59,337 - honor_9 - ERROR - Exception, IMAGE:TloginPage.visible_password-20190924092658.png
+2019-09-24 09:26:59,337 - honor_9 - ERROR -   <-- Login.login_operation_pwd, Exception, Error
+2019-09-24 09:26:59,338 - honor_9 - ERROR - Exception, IMAGE:TloginPage.visible_password-20190924092658.png
+2019-09-24 09:26:59,338 - honor_9 - ERROR - <-- Login.test_login_password, Exception, Error
+
+2019-09-24 09:26:59,338 - honor_9 - INFO - --> Login.tearDown
+2019-09-24 09:26:59,339 - honor_9 - INFO - <-- Login.tearDown, Success
+
+2019-09-24 09:26:59,340 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:26:59,340 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:26:59,340 - honor_9 - INFO - --> Login.test_forget_pwd
+2019-09-24 09:26:59,340 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:26:59,341 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:27:19,610 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:27:19,611 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:27:19,611 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:27:19,612 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:27:19,677 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:27:19,677 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:27:19,678 - honor_9 - INFO -   --> Login.forget_pwd_operation
+2019-09-24 09:27:19,678 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:27:19,678 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:27:19,724 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:27:19,724 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:27:19,725 - honor_9 - INFO - 	--> TloginPage.forget_password
+2019-09-24 09:27:19,725 - honor_9 - ERROR - Exception, 'TloginPage' object has no attribute 'driver'
+2019-09-24 09:27:19,725 - honor_9 - ERROR - 	<-- TloginPage.forget_password, Exception, Error
+2019-09-24 09:27:20,415 - honor_9 - ERROR - Exception, IMAGE:TloginPage.forget_password-20190924092719.png
+2019-09-24 09:27:20,415 - honor_9 - ERROR -   <-- Login.forget_pwd_operation, Exception, Error
+2019-09-24 09:27:20,415 - honor_9 - ERROR - Exception, IMAGE:TloginPage.forget_password-20190924092719.png
+2019-09-24 09:27:20,416 - honor_9 - ERROR - <-- Login.test_forget_pwd, Exception, Error
+
+2019-09-24 09:27:20,416 - honor_9 - INFO - --> Login.tearDown
+2019-09-24 09:27:20,416 - honor_9 - INFO - <-- Login.tearDown, Success
+
+2019-09-24 09:27:20,418 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:27:20,418 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:27:20,418 - honor_9 - INFO - --> Login.test_forget_pwd_password
+2019-09-24 09:27:20,419 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:27:20,419 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:27:21,644 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:27:21,646 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:27:21,647 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:27:21,648 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:27:31,751 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:27:31,751 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:27:31,752 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:27:31,752 - honor_9 - ERROR - Exception, 'TloginPage' object has no attribute 'driver'
+2019-09-24 09:27:31,752 - honor_9 - ERROR - 	<-- TloginPage.close_app, Exception, Error
+2019-09-24 09:27:31,794 - honor_9 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: java.lang.IllegalStateException: UiAutomation not connected!
+	at android.app.UiAutomation.throwIfNotConnectedLocked(UiAutomation.java:1043)
+	at android.app.UiAutomation.takeScreenshot(UiAutomation.java:687)
+	at io.appium.uiautomator2.utils.ScreenshotHelper.takeDeviceScreenshot(ScreenshotHelper.java:122)
+	at io.appium.uiautomator2.utils.ScreenshotHelper.takeScreenshot(ScreenshotHelper.java:60)
+	at io.appium.uiautomator2.utils.ScreenshotHelper.takeScreenshot(ScreenshotHelper.java:79)
+	at io.appium.uiautomator2.handler.CaptureScreenshot.safeHandle(CaptureScreenshot.java:19)
+	at io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:37)
+	at io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)
+	at io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:243)
+	at io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:435)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:250)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1294)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:911)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:611)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:466)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:438)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:140)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:784)
+
+
+2019-09-24 09:27:31,795 - honor_9 - ERROR - <-- Login.test_forget_pwd_password, WebDriverException, Error
+
+2019-09-24 09:27:31,839 - honor_9 - INFO - --> Login.tearDown
+2019-09-24 09:27:31,839 - honor_9 - INFO - <-- Login.tearDown, Success
+
+2019-09-24 09:27:31,843 - honor_9 - INFO - --> Register.setUp
+2019-09-24 09:27:31,844 - honor_9 - INFO - <-- Register.setUp, Success
+
+2019-09-24 09:27:31,844 - honor_9 - INFO - --> Register.test_register
+2019-09-24 09:27:31,844 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:27:31,844 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:27:41,891 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:27:41,891 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:27:41,892 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:27:41,892 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:27:51,937 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:27:51,937 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:27:51,938 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:27:51,938 - honor_9 - ERROR - Exception, 'TloginPage' object has no attribute 'driver'
+2019-09-24 09:27:51,938 - honor_9 - ERROR - 	<-- TloginPage.close_app, Exception, Error
+2019-09-24 09:27:51,987 - honor_9 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: java.lang.IllegalStateException: UiAutomation not connected!
+	at android.app.UiAutomation.throwIfNotConnectedLocked(UiAutomation.java:1043)
+	at android.app.UiAutomation.takeScreenshot(UiAutomation.java:687)
+	at io.appium.uiautomator2.utils.ScreenshotHelper.takeDeviceScreenshot(ScreenshotHelper.java:122)
+	at io.appium.uiautomator2.utils.ScreenshotHelper.takeScreenshot(ScreenshotHelper.java:60)
+	at io.appium.uiautomator2.utils.ScreenshotHelper.takeScreenshot(ScreenshotHelper.java:79)
+	at io.appium.uiautomator2.handler.CaptureScreenshot.safeHandle(CaptureScreenshot.java:19)
+	at io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:37)
+	at io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)
+	at io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:243)
+	at io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:435)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:250)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1294)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:911)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:611)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:466)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:438)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:140)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:784)
+
+
+2019-09-24 09:27:51,988 - honor_9 - ERROR - <-- Register.test_register, WebDriverException, Error
+
+2019-09-24 09:27:52,024 - honor_9 - INFO - --> Register.tearDown
+2019-09-24 09:27:52,024 - honor_9 - INFO - <-- Register.tearDown, Success
+

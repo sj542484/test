@@ -20,3 +20,4 @@ def sentence_transform_operation(key):
         return value
     else:   # 不在数据字典中的数据
         print('不在数据字典中的数据 ! !')
+        return None

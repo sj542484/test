@@ -91,8 +91,9 @@ class Utils:
         hubHost = gv.HUBHOST
         self.appium_node_info(hubHost=hubHost,port=port,device_name=dn,udid=udid,platversion=plv,systemPort=systemPort, side=side)
         CMD = 'appium -p {port} -bp {bp} -U {udid} --nodeconfig ./test_program/nodeconfig/{devicename}/{platformversion}/mobile.json > {portPath}appium_server.log'.format(port=port,bp=bp,udid=udid,devicename=dn,platformversion=plv,portPath=file_name)
-        res  = subprocess.Popen(CMD, shell=True)
+        res = subprocess.Popen(CMD, shell=True)
         print('\ncmd:',CMD)
+        # 将进程号存入数据库
         EquipmentList.objects.filter(equipment_uuid=udid).update(node_pid=res.pid)
         return int(port), systemPort
 

@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # code:UTF-8  
 # @Author  : SUN FEIFEI
+import time
+
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
 from app.honor.teacher.test_bank.object_page.test_bank_search_page import SearchPage
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
 from utils.get_attribute import GetAttribute
@@ -22,7 +24,7 @@ class TestBankPage(BasePage):
 
     lock_value = gv.PACKAGE_ID + "lock"  # 锁
 
-
+    @teststeps
     def __init__(self):
         self.sp = SwipeFun()
         self.home = ThomePage()
@@ -66,6 +68,7 @@ class TestBankPage(BasePage):
     @teststep
     def question_name(self):
         """以“题目名称”的id为依据"""
+        time.sleep(1)
         ele = self.driver \
             .find_elements_by_id(self.question_value)
         content = [x.text for x in ele]
@@ -123,7 +126,7 @@ class TestBankPage(BasePage):
                     item.append(ele[k].text)
                     if GetAttribute().resource_id(ele[k]) == self.num_value:  # 共X题
                         num.append(ele[k])
-                    elif  GetAttribute().resource_id(ele[k]) == self.question_value:  # 题目名称
+                    elif GetAttribute().resource_id(ele[k]) == self.question_value:  # 题目名称
                         name.append(ele[k].text)
 
                 content.append(item)
@@ -208,4 +211,3 @@ class TestBankPage(BasePage):
                     SearchPage().search_button()  # 点击搜索按钮
             else:
                 print('!!!未进入题库搜索页面')
-

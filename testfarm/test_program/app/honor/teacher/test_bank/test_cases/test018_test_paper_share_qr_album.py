@@ -4,13 +4,13 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
 from app.honor.teacher.test_bank.object_page.test_paper_detail_page import PaperDetailPage
-from app.honor.teacher.test_bank.object_page import PaperSharePage
-from app.honor.teacher.user_center import ChangeImage
+from app.honor.teacher.test_bank.object_page.test_paper_share_page import PaperSharePage
+from app.honor.teacher.user_center.user_information.object_page.change_image_page import ChangeImage
 from conf.decorator import setup, teardownclass, testcase
 from utils.screen_shot import ScreenShot
 

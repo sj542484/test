@@ -1,0 +1,85 @@
+2019-09-24 09:18:00,730 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:18:00,731 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:18:00,731 - honor_9 - INFO - --> Login.test_login_phone
+2019-09-24 09:18:00,732 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:18:00,732 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:21,050 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:21,051 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:18:21,051 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:18:21,052 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:21,126 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:21,127 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:18:21,128 - honor_9 - INFO -   --> Login.login_operation_phone
+2019-09-24 09:18:21,129 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:18:21,129 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:21,173 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:21,174 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:18:21,174 - honor_9 - INFO - 	--> TloginPage.visible_password
+2019-09-24 09:18:21,276 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:18:21,277 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:21,814 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:21,815 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:18:21,815 - honor_9 - INFO - 	--> TloginPage.input_username
+2019-09-24 09:18:21,858 - honor_9 - INFO - 	--> TloginPage.input_password
+2019-09-24 09:18:26,308 - honor_9 - INFO - 	--> TloginPage.login_button
+2019-09-24 09:18:26,451 - honor_9 - INFO -   --> Toast.find_toast
+2019-09-24 09:18:27,429 - honor_9 - INFO -   <-- Toast.find_toast, Success
+2019-09-24 09:18:27,429 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:18:27,430 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:27,522 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:27,523 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:18:27,523 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:18:27,523 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:27,568 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:27,568 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:18:27,569 - honor_9 - INFO - 	--> TloginPage.input_username
+2019-09-24 09:18:27,614 - honor_9 - INFO - 	--> TloginPage.input_password
+2019-09-24 09:18:31,863 - honor_9 - INFO - 	--> TloginPage.login_button
+2019-09-24 09:18:32,001 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:18:32,002 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:37,515 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:37,516 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:18:37,516 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:18:37,517 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:37,594 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:37,595 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:18:37,595 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:18:37,596 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:37,643 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:37,643 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:18:37,644 - honor_9 - INFO - 	--> TloginPage.input_username
+2019-09-24 09:18:37,690 - honor_9 - INFO - 	--> TloginPage.input_password
+2019-09-24 09:18:41,971 - honor_9 - INFO - 	--> TloginPage.login_button
+2019-09-24 09:18:42,121 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:18:42,122 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:47,511 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:47,512 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:18:47,513 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:18:47,513 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:47,584 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:47,584 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:18:47,585 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:18:47,585 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:47,642 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:47,643 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:18:47,643 - honor_9 - INFO - 	--> TloginPage.input_username
+2019-09-24 09:18:47,699 - honor_9 - INFO - 	--> TloginPage.input_password
+2019-09-24 09:18:52,114 - honor_9 - INFO - 	--> TloginPage.login_button
+2019-09-24 09:18:52,215 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:18:52,215 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:57,350 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:57,350 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:18:57,351 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:18:57,351 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:57,406 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:57,406 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:18:57,407 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:18:57,407 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:18:57,467 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:18:57,468 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:18:57,468 - honor_9 - INFO - 	--> TloginPage.input_username
+2019-09-24 09:18:57,529 - honor_9 - INFO - 	--> TloginPage.input_password
+2019-09-24 09:19:01,721 - honor_9 - INFO - 	--> TloginPage.login_button
+2019-09-24 09:19:01,838 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:19:01,839 - honor_9 - INFO -   --> WaitElement.wait_check_element

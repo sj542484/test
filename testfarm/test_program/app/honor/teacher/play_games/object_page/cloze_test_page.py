@@ -6,20 +6,20 @@ import re
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from conf.decorator import teststeps, teststep
 from conf.base_config import GetVariable as gv
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from utils.get_attribute import GetAttribute
-from utils.get_element_bounds import Element
+from utils.get_element_bounds import ElementBounds
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
 
 class ClozePage(BasePage):
     """完形填空"""
-    content_value = gv.PACKAGE_ID + "cl_content"  # 文章
+    content_value = gv.PACKAGE_ID + "rich_text"  # 文章
 
     def __init__(self):
         self.result = ResultPage()
@@ -119,15 +119,37 @@ class ClozePage(BasePage):
         return y
 
     @teststeps
-    def get_result(self):
-        """获取 输入框 的结果"""
-        content = self.get.description(self.article_content())
-        value = content.split(' ')
+    def get_answer(self):
+        """获取 答题结果"""
+        var = self.get.description(self.article_content())
+        content = ' '.join(var.split())  # 删除字符串中的连续空格只保留一个
+        value = content[6:].split(' ')  # answer
 
         answer = []
-        for i in range(2, len(value)):
+        for i in range(len(value)):
             if value[i] != '':
                 answer.append(value[i])  # 所有输入框值的列表
+        print('答题结果：', answer)
+
+        return answer
+
+    @teststeps
+    def get_result(self):
+        """获取 答题结果"""
+        var = self.get.description(self.article_content())
+        content = ' '.join(var.split())  # 删除字符串中的连续空格只保留一个
+        value = content[6:].split(' ')  # answer
+
+        answer = []
+        for i in range(len(value)):
+            if value[i] != '':
+                if "(" in value[i]:
+                    del answer[-1]
+                    answer.append(value[i][1:-1])  # 所有输入框值的列表
+                else:
+                    answer.append(value[i])  # 所有输入框值的列表
+        print('获取的答案：', answer)
+
         return answer
 
     @teststeps
@@ -174,7 +196,7 @@ class ClozePage(BasePage):
                             print('★★★ Error - 滑动页面进入了结果页')
 
                     time.sleep(1)
-                    content = self.get_result()  # 测试 是否答案已填入文章中
+                    content = self.get_answer()  # 测试 是否答案已填入文章中
                     print('--------------')
                     if len(content) != len(answer):
                         print('★★★ Error -答案未填入', answer, content)
@@ -197,7 +219,7 @@ class ClozePage(BasePage):
     def drag_operation(self, var='up'):
         """拖拽按钮 拖拽操作"""
         drag = self.dragger_button()  # 拖拽 拖动按钮
-        loc = Element().get_element_bounds(drag)  # 获取按钮坐标
+        loc = ElementBounds().get_element_bounds(drag)  # 获取按钮坐标
         size = self.options_view_size()  # 获取整个选项页面大小
         if var == 'up':
             y = loc[3] - size * 4 / 3
@@ -219,7 +241,10 @@ class ClozePage(BasePage):
 
     @teststeps
     def check_detail_page(self, result, rate):
-        """《完形填空》 查看答案 操作过程"""
+        """《完形填空》 查看答案 操作过程
+        :param result: 答题结果
+        :param rate: 题数
+        """
         if self.result.wait_check_result_page():  # 结果页检查点
             self.result.check_result_button()  # 结果页 查看答案 按钮
             if self.result.wait_check_detail_page():

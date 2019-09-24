@@ -5,14 +5,14 @@ import time
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from app.honor.teacher.play_games.test_data.form_sentence_data import form_sentence_operation
 from conf.decorator import teststep, teststeps
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from utils.get_attribute import GetAttribute
-from utils.get_element_bounds import Element
+from utils.get_element_bounds import ElementBounds
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
@@ -162,8 +162,8 @@ class FormSentencePage(BasePage):
     @teststeps
     def drag_operation(self, word2, word):
         """获取 单词button坐标 及拖拽"""
-        loc = Element().get_element_location(word2)
-        y2 = Element().get_element_location(word)[1] - 40
+        loc = ElementBounds().get_element_location(word2)
+        y2 = ElementBounds().get_element_location(word)[1] - 40
         self.button_swipe(loc[0], loc[1], loc[0], y2, 1000)
         time.sleep(1)
 

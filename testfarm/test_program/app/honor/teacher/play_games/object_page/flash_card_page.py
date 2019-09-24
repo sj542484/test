@@ -4,12 +4,12 @@
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
+from app.honor.teacher.play_games.object_page.homework_page import Homework
 from utils.games_keyboard import Keyboard
 from utils.click_bounds import ClickBounds
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
@@ -284,15 +284,15 @@ class FlashCard(BasePage):
                             else:
                                 if i == 1:  # 单词输入字母错误时
                                     print('---输入错误单词字母：q')
-                                    self.key.games_keyboard('q', 'keyboard_abc_view')  # 点击键盘 错误单词字母
+                                    self.key.games_keyboard('q')  # 点击键盘 错误单词字母
                                 else:
                                     if j == 5:
-                                        self.key.games_keyboard('capslock', 'keyboard_abc_view')  # 点击键盘 切换到 大写字母
-                                        self.key.games_keyboard(word[j].upper(), 'keyboard_abc_view')  # 点击键盘对应 大写字母
+                                        self.key.games_keyboard('capslock')  # 点击键盘 切换到 大写字母
+                                        self.key.games_keyboard(word[j].upper())  # 点击键盘对应 大写字母
                                     else:
                                         if j == 6:
-                                            self.key.games_keyboard('capslock', 'keyboard_abc_view')  # 点击键盘 切换到 小写字母
-                                        self.key.games_keyboard(word[j].lower(), 'keyboard_abc_view')  # 点击键盘对应字母
+                                            self.key.games_keyboard('capslock')  # 点击键盘 切换到 小写字母
+                                        self.key.games_keyboard(word[j].lower())  # 点击键盘对应字母
 
                         self.delete_incorrect_word(i, rate, word)  # 删除错误单词后重新输入
 
@@ -313,10 +313,10 @@ class FlashCard(BasePage):
                 print('----删除错误单词后重新输入-----')
                 self.hw.rate_judge(rate, i)  # 测试当前rate值显示是否正确
                 for z in range(len(word)):
-                    self.key.games_keyboard('backspace', 'keyboard_abc_view')  # 点击键盘对应 删除按钮
+                    self.key.games_keyboard('backspace')  # 点击键盘对应 删除按钮
 
                 for k in range(len(word)):
-                    self.key.games_keyboard(word[k].lower(), 'keyboard_abc_view')  # 点击键盘对应 大写字母
+                    self.key.games_keyboard(word[k].lower())  # 点击键盘对应 大写字母
 
     @teststeps
     def click_blank_operation(self):
@@ -324,7 +324,7 @@ class FlashCard(BasePage):
         j = 0
         print('多次点击空格键:')
         while j < 3:
-            self.key.games_keyboard('blank', 'keyboard_abc_view')  # 多次点击空格键
+            self.key.games_keyboard('blank')  # 多次点击空格键
             j += 1
         time.sleep(1)
 

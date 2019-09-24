@@ -2,14 +2,14 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.play_games.object_page import GrindingEars
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
-from app.honor.teacher.play_games import GetVariable as gv
-from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.play_games.object_page.grinding_ears_page import GrindingEars
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
+from app.honor.teacher.play_games.test_data.homework_title_type import GetVariable as gv
+from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.test_bank.object_page import QuestionDetailPage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.toast_find import Toast
 
@@ -71,14 +71,12 @@ class Games(unittest.TestCase):
                         if self.game.wait_check_page():
                             if self.game.wait_check_list_page():
                                 self.game.start_button()  # 开始答题 按钮
-                                result = self.ear.grinding_ears_operation()  # 游戏过程
+                                self.ear.grinding_ears_operation()  # 游戏过程
 
                                 self.ear.result_detail_page()  # 结果页
-                                self.result.result_page_time(result)  # 结果页 -- 所用时间
-                                self.ear.study_again()  # 再练一遍
-
+                                # self.ear.study_again()  # 再练一遍
                                 print('###################################################')
-                                self.homework.back_operation()  # 从结果页返回 题单详情页
+                                self.ear.back_operation()  # 从结果页返回 题单详情页
         else:
             print('no have磨耳朵小游戏')
 

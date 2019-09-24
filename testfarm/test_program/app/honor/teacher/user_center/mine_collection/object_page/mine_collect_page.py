@@ -6,10 +6,10 @@ from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.user_center import TuserCenterPage
-from conf.base_page import BasePage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.wait_element import WaitElement

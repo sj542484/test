@@ -4,19 +4,22 @@
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
-from app.honor.teacher.play_games import match_operation
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
+from app.honor.teacher.play_games.test_data.matching_exercise_data import match_operation
 from conf.base_config import GetVariable as gv
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
 from utils.judge_character_type import JudgeType
+from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
 
 class MatchingExercises(BasePage):
     """连连看"""
+    word_value = gv.PACKAGE_ID + "word"  # 查看答案页面
+
     def __init__(self):
         self.result = ResultPage()
         self.wait = WaitElement()
@@ -28,54 +31,99 @@ class MatchingExercises(BasePage):
         return self.wait.wait_check_element(locator)
 
     @teststep
-    def word(self):
+    def word_explain(self):
         """展示的Word"""
         ele = self.driver \
-            .find_elements_by_class_name("android.widget.TextView")
-        return ele
+            .find_elements_by_class_name("android.widget.TextView")[4:]
+
+        word = []  # 单词list
+        explain = []  # 解释list
+
+        for i in range(len(ele)):
+            if JudgeType().is_alphabet(ele[i].text[0]):  # 如果是字母
+                word.append(ele[i])
+            else:  # 如果是汉字
+                explain.append(ele[i])
+
+        return word, explain
+
+    @teststeps
+    def word_img(self):
+        """图文模式 - 展示的Word & img"""
+        view = self.driver.find_elements_by_xpath('//android.view.ViewGroup')
+        ele = self.driver \
+            .find_elements_by_xpath("//android.view.ViewGroup/android.widget.TextView")
+        word = []
+        word_text = []  # 单词list
+        img = []
+        for i in range(1, len(ele)):  # 去掉页面title
+            if ele[i].text != '':  # word
+                word.append(view[i])
+                word_text.append(ele[i].text)
+            else:  # 图片
+                img.append(view[i])
+
+        return word, img, word_text
 
     # 以下为答案详情页面元素
     @teststeps
     def wait_check_detail_page(self):
         """以“answer”的ID为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "tv_answer")
+        locator = (By.ID, self.word_value)
         return self.wait.wait_check_element(locator)
 
     @teststep
     def result_voice(self, index):
         """语音按钮"""
         self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID  + "iv_speak")[index] \
+            .find_elements_by_id(gv.PACKAGE_ID + "audio")[index] \
             .click()
 
     @teststep
-    def result_answer(self, index):
+    def result_img(self):
+        """图片"""
+        ele = self.driver \
+            .find_elements_by_id(gv.PACKAGE_ID + "img")
+        return ele
+
+    @teststep
+    def result_word(self):
         """单词"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID  + "tv_answer")[index].text
+            .find_elements_by_id(self.word_value)
         return ele
 
     @teststep
-    def result_explain(self, index):
+    def result_explain(self):
         """解释"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID  + "tv_hint")[index].text
+            .find_elements_by_id(gv.PACKAGE_ID + "explain")
         return ele
 
     @teststep
-    def result_mine(self, index):
+    def result_mine(self):
         """我的"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID  + "iv_mine")[index]
-        value = GetAttribute().selected(ele)
-        return value
+            .find_elements_by_id(gv.PACKAGE_ID + "result")
+
+        return ele
 
     @teststeps
-    def match_exercise(self):
-        """《连连看》 游戏过程"""
+    def diff_type(self, tpe):
+        """选择 不同模式小游戏的 游戏方法"""
+        if tpe == '图文模式':
+            result = self.match_exercise_picture()
+            return result
+        elif tpe == '文字模式':
+            result = self.match_exercise_word()
+            return result
+
+    @teststeps
+    def match_exercise_word(self):
+        """《连连看 文字模式》 游戏过程"""
         if self.wait_check_page():  # 页面检查点
             if Homework().wait_check_play_page():
-                answer = {} # 答题结果
+                answer = {}  # 答题结果
                 timestr = []  # 获取每小题的时间
                 rate = Homework().rate()
 
@@ -86,79 +134,183 @@ class MatchingExercises(BasePage):
                 print('页数:', page)
 
                 for j in range(page):  # 然后在不同页面做对应的题目
+                    print('===========================================')
                     print('第%s页：' % (j+1))
-                    word = []  # 单词list
-                    word_index = []  # 单词在所有button中的索引
-                    explain = []  # 解释list
-                    explain_index = []   # 解释在所有button中的索引
+                    var = j * 5  # 每页5个单词
 
-                    ele = self.word()  # 所有button
-                    for i in range(3, len(ele)):
-                        if JudgeType().is_alphabet(ele[i].text[0]):  # 如果是字母
-                            word.append(ele[i].text)
-                            word_index.append(i)
-                        else:  # 如果是汉字
-                            explain.append(ele[i].text)
-                            explain_index.append(i)
+                    ele = self.word_explain()
+                    word = ele[0]  # 单词list
+                    explain = ele[1]  # 解释list
 
                     for k in range(len(word)):  # 具体操作
-                        Homework().rate_judge(rate, k+j*4)  # 测试当前rate值显示是否正确
+                        print('---------------------------------')
+                        Homework().rate_judge(rate, k + var)  # 测试当前rate值显示是否正确
 
-                        value = match_operation(word[k])  # 数据字典
-                        ele[word_index[k]].click()  # 点击解释
+                        print('word:', word[k].text)
+                        value = match_operation(word[k].text)  # 数据字典
+                        word[k].click()  # 点击单词
                         for z in range(len(explain)):
-                            if explain[z] == value:
+                            if explain[z].text == value:
                                 timestr.append(Homework().time())  # 统计每小题的计时控件time信息
-                                answer[word[k]] = explain[z]
-                                ele[explain_index[z]].click()  # 点击对应word
+                                answer[word[k].text] = explain[z].text
+                                explain[z].click()  # 点击对应解释
+                                print('解释:', explain[z].text)
 
-                                if j ==0 and k == 0:  # 测试 配对成功后，不可再次点击
-                                    ele[word_index[k]].click()
-                                print('--------------------------')
+                                if j == 0 and k == 0:  # 测试 配对成功后，不可再次点击
+                                    word[k].click()
                                 break
                     time.sleep(1)
                 Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
-                print('=================================')
+                print('======================================================')
                 return rate, answer
 
     @teststeps
-    def result_detail_page(self, rate):
+    def match_exercise_picture(self):
+        """《连连看 图文模式》 游戏过程"""
+        if self.wait_check_page():  # 页面检查点
+            if Homework().wait_check_play_page():
+                answer = {}  # 答题结果
+                timestr = []  # 获取每小题的时间
+                rate = Homework().rate()
+
+                if int(rate) % 5 == 0:
+                    page = int(int(rate) / 5)
+                else:
+                    page = int(int(rate) / 5) + 1
+                print('页数:', page)
+
+                for i in range(page):  # 然后在不同页面做对应的题目
+                    print('===========================================')
+                    print('第%s页：' % (i + 1))
+                    var = i * 5  # 每页5个单词
+
+                    ele = self.word_img()  # ele[0]：word; ele[1]：图片
+                    word = ele[0]  # word元素
+                    img = ele[1]  # 图片元素
+                    text = ele[2]  # word
+                    for k in range(len(word)):  # 具体操作
+                        print('---------------------------------')
+                        time.sleep(1)  # 等待rate值改变
+                        Homework().rate_judge(rate, k + var)  # 验证 当前rate值显示是否正确
+
+                        print('word:', text[k])
+                        for z in range(len(img)):
+                            word[k].click()  # 点击单词
+
+                            value = GetAttribute().enabled(img[z])
+                            if value == 'true':
+                                img[z].click()  # 点击对应 图片
+                                time.sleep(1)
+
+                                if z != len(img)-1:
+                                    value = GetAttribute().enabled(img[z])
+                                    if value == 'false':  # 判断是否选对(false代表选对)
+                                        # if k != 0:  # 验证 点击已匹配成功的button
+                                        #     del img[z]
+                                        break
+
+                        timestr.append(Homework().time())  # 统计每小题的计时控件time信息
+                    time.sleep(3)  # 等待切换页面
+
+                print('==============================================')
+                Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
+                print('======================================================')
+                return rate, answer
+
+    @teststeps
+    def result_detail_page(self, mode):
         """《连连看》 查看答案 操作过程"""
         if self.result.wait_check_result_page():  # 结果页检查点
             self.result.check_result_button()  # 结果页 查看答案 按钮
             if self.result.wait_check_detail_page():
+                print('==============================================')
+                print('查看答案:')
+                if mode == "图文模式":
+                    self.get_list(self.img_ergodic_list, 9)
+                elif mode == '文字模式':
+                    self.get_list(self.explain_ergodic_list, 9)
+
                 if self.wait_check_detail_page():
-                    print('==============================================')
-                    print('查看答案:')
-                    self.error_sum(rate)
+                    self.result.back_up_button()  # 返回结果页
             else:
                 print('★★★ Error - 未进入查看答案页面')
 
     @teststeps
-    def error_sum(self, rate):
-        """查看答案 - 点击答错的题 对应的 听力按钮"""
-        print('题数:', int(rate))
-        print('-----------------------------------')
-        for i in range(0, int(rate)):
-            print('解释:', self.result_explain(i))  # 解释
-            print('单词:', self.result_answer(i))  # 正确word
-            mine = self.result_mine(i)  # 对错标识
-            if mine != 'true':
-                print('★★★ Error - 对错标识')
+    def get_list(self, func, length=6, content=None):
+        """单个content值
+        :param func: 遍历列表
+        :param length: # 一页内可以展示最大值
+        :param content: 用于滑屏翻页
+        """
+        if self.wait_check_detail_page():
+            if content is None:
+                content = []
+
+            var = self.result_word()  # 循环
+            if len(var) > length and not content:
+                func(len(var) - 1)  # 遍历
+
+                content = [var[-2].text]
+                SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
+                self.get_list(func, length, content)
             else:
-                print('对错标识:', mine)
+                index = 0
+                if content:
+                    for k in range(len(var)):
+                        if content[0] == var[k].text:
+                            index += k + 1
+                            break
+
+                func(len(var), index)  # 遍历
+
+    @teststeps
+    def explain_ergodic_list(self, length, var=0):
+        """文本模式 - 遍历整个列表"""
+        explain = self.result_explain()  # 解释
+        word = self.result_word()  # word
+        mine = self.result_mine()  # 对错标识
+
+        if len(explain) != len(word):
+            print('★★★ Error - word和解释数量不一致', len(explain), len(word))
+
+        for i in range(var, length):
             print('-----------------------------------')
+            print('解释:', explain[i].text)  # 解释
+            print('单词:', word[i].text)  # 正确word
+
+            mode = GetAttribute().selected(mine[i])
+            if mode != 'true':
+                print('★★★ Error - 对错标识', mode)
+            else:
+                print('对错标识: true')
+            self.result_voice(i)  # 点击发音按钮
+
+    @teststeps
+    def img_ergodic_list(self, length, var=0):
+        """图文模式 - 遍历整个列表"""
+        img = self.result_img()  # 图片
+        word = self.result_word()  # 答案
+        mine = self.result_mine()  # 对错标识
+
+        if len(img) != len(word):
+            print('★★★ Error - word和图片数量不一致', len(img), len(word))
+        for i in range(var, length):
+            print('-----------------------------------')
+            print('单词:', word[i].text)  # 正确word
+            mode = GetAttribute().selected(mine[i])
+            if mode != 'true':
+                print('★★★ Error - 对错标识', mode)
+            else:
+                print('对错标识: true')
 
             self.result_voice(i)  # 点击发音按钮
 
-        if self.wait_check_detail_page():
-            self.result.back_up_button()  # 返回结果页
-
     @teststeps
-    def study_again(self):
+    def study_again(self, game_type):
         """再练一遍 操作过程"""
         if self.result.wait_check_result_page():  # 结果页检查点
             print('==============================================')
-            self.result.again_button()[0].click()  # 结果页 错题再练/再练一遍 按钮
-            result = self.match_exercise()  # 游戏过程
+            self.result.again_button()[0].click()  # 结果页 再练一遍 按钮
+
+            result = self.diff_type(game_type)  # 不同模式小游戏的 游戏过程
             return result

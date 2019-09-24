@@ -3,11 +3,11 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.user_center import RecommendPage
-from app.honor.teacher.user_center import TuserCenterPage
+from app.honor.teacher.user_center.mine_recommend.object_page.mine_recommend_page import RecommendPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from conf.decorator import setup, teardown, testcase
 from utils.get_attribute import GetAttribute
 from utils.toast_find import Toast
@@ -45,7 +45,7 @@ class Recommend(unittest.TestCase):
                     self.user.filter_button()  # 筛选按钮
 
                     if self.filter.wait_check_page():  # 页面检查点
-                        game = self.filter.game_list()  # 大题
+                        game = self.user.game_list()  # 大题
                         if GetAttribute().selected(game) == 'false':  # 试卷
                             self.user.click_game_list()  # 点击 大题
 

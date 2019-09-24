@@ -5,9 +5,9 @@ import time
 import random
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
-from conf.base_page import BasePage
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststeps, teststep
 from utils.get_attribute import GetAttribute
@@ -17,13 +17,14 @@ from utils.wait_element import WaitElement
 
 class Listening(BasePage):
     """听后选择"""
-    submit_value = gv.PACKAGE_ID + "fab_submit"  # 提交按钮
     question_value = gv.PACKAGE_ID + "question"  # 题目
 
     def __init__(self):
         self.get = GetAttribute()
         self.swipe = SwipeFun()
         self.wait = WaitElement()
+        self.result = ResultPage()
+
 
     @teststeps
     def wait_check_page(self):
@@ -89,37 +90,6 @@ class Listening(BasePage):
             .find_elements_by_id(self.question_value)
         return num
 
-    @teststep
-    def submit_button(self):
-        """‘下一题’按钮"""
-        item = self.driver \
-            .find_element_by_id(self.submit_value)
-        return item
-
-    @teststep
-    def submit_button_judge(self, var):
-        """‘下一题’按钮 enabled状态判断"""
-        item = self.submit_button()  # ‘下一题’按钮
-        value = GetAttribute().enabled(item)
-
-        if value != var:  # 测试 下一步 按钮 状态
-            print('★★★ 下一步按钮 状态Error', value)
-            return False
-        else:
-            return True
-
-    @teststep
-    def judge_submit_button(self):
-        """‘提交’按钮 状态判断"""
-        locator = (By.ID, self.submit_value)
-        return self.wait.judge_is_exists(locator)
-
-    @teststeps
-    def submit_button_operation(self, var):
-        """下一步按钮 判断 加 点击操作"""
-        if self.submit_button_judge(var):  # 下一题 按钮 状态判断
-            self.submit_button().click()  # 点击 下一题 按钮
-
     @teststeps
     def get_last_element(self):
         """页面内最后一个class name为android.widget.TextView的元素"""
@@ -171,12 +141,14 @@ class Listening(BasePage):
                         self.swipe_operation(int(rate), timestr, answer)
 
                         while True:  # 由于下一步 按钮会在音频播放完成后可点击
-                            if self.judge_submit_button():
+                            if Homework().commit_button_judge('true'):
                                 Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
-                                self.submit_button_operation('true')  # 下一题 按钮 状态判断 加点击
-                                break
-                            else:
-                                time.sleep(3)
+                                Homework().commit_button_operation('true')  # 下一题 按钮 状态判断 加点击
+
+                                if self.result.wait_check_result_page(5):  # 结果页检查点
+                                    break
+                                else:
+                                    time.sleep(3)
                         print('==============================================')
                         return rate
 
@@ -258,7 +230,7 @@ class Listening(BasePage):
     @teststeps
     def study_again(self):
         """错题再练/再练一遍 操作过程"""
-        if ResultPage().wait_check_result_page():  # 结果页检查点
-            ResultPage().again_button()[0].click()  # 结果页 错题再练/再练一遍 按钮
+        if self.result.wait_check_result_page():  # 结果页检查点
+            self.result.again_button()[0].click()  # 结果页 错题再练/再练一遍 按钮
 
             self.listen_choice_operation()  # 游戏过程

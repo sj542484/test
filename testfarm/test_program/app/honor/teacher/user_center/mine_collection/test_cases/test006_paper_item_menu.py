@@ -4,15 +4,15 @@ import unittest
 import time
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.question_basket_page import QuestionBasketPage
-from app.honor.teacher.test_bank.object_page import QuestionDetailPage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
 from app.honor.teacher.test_bank.object_page.test_paper_detail_page import PaperDetailPage
-from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.user_center import CollectionPage
-from app.honor.teacher.user_center import RecommendPage
-from app.honor.teacher.user_center import TuserCenterPage
+from app.honor.teacher.user_center.mine_collection.object_page.mine_collect_page import CollectionPage
+from app.honor.teacher.user_center.mine_recommend.object_page.mine_recommend_page import RecommendPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
@@ -90,8 +90,9 @@ class Collection(unittest.TestCase):
         self.collect.menu_button(0)  # 右侧菜单按钮
         time.sleep(1)
         self.collect.recommend_to_school()  # 推荐到学校
+        self.filter.choose_school_label()
         print('推荐到学校:')
-        if Toast().find_toast('推荐成功'):
+        if Toast().find_toast('加入成功'):
             print(' 推荐成功')
         print('----------------')
 

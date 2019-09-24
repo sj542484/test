@@ -5,9 +5,9 @@ import random
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.user_center import VALID_IMAGE
+from app.honor.teacher.user_center.user_information.test_data.image import VALID_IMAGE
 from conf.decorator import teststep, teststeps
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from utils.click_bounds import ClickBounds
 from utils.wait_element import WaitElement
 

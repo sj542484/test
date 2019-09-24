@@ -1,14 +1,16 @@
-# coding=utf-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import time
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
-from app.honor.teacher.user_center import CreateTinyCourse
-from app.honor.teacher.user_center import VideoPage
-from app.honor.teacher.user_center import sheets
-from app.honor.teacher.user_center import TuserCenterPage
+from app.honor.teacher.user_center.tiny_course.object_page.create_tiny_course_page import CreateTinyCourse
+from app.honor.teacher.user_center.tiny_course.object_page.video_page import VideoPage
+from app.honor.teacher.user_center.tiny_course.test_data.upload_video_name import sheets
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from conf.decorator import testcase, teststeps, setup, teardown
 from utils.excel_read_write import ExcelUtil
 
@@ -17,7 +19,7 @@ from utils.toast_find import Toast
 
 
 class TinyCourse(unittest.TestCase):
-    """微课 本地视频"""
+    """微课 本地视频 MEIZU-M15"""
 
     @classmethod
     @setup
@@ -36,7 +38,7 @@ class TinyCourse(unittest.TestCase):
         pass
 
     @testcase
-    def test_uplload_local_video(self):
+    def test_upload_local_video(self):
         self.login.app_status()  # 判断APP当前状态
 
         if self.home.wait_check_page():  # 页面检查点
@@ -47,8 +49,9 @@ class TinyCourse(unittest.TestCase):
                 if self.tiny.wait_check_page():
                     if self.tiny.wait_check_list_page():
                         self.tiny.create_tiny_course()  # + 微课内容
-
-                        self.upload_local_video()  # 上传本地视频 具体操作
+                        if self.tiny.wait_check_menu_page():
+                            self.tiny.menu_item()[1].click()  # 点击 本地视频
+                            self.upload_local_video()  # 上传本地视频 具体操作
 
                 if self.user.wait_check_page():  # 页面检查点
                     self.home.click_tab_hw()  # 回首页
@@ -62,21 +65,26 @@ class TinyCourse(unittest.TestCase):
         for i in range(len(sheets)):
             name_data = ExcelUtil().data_read(sheets[i])  # 读取video data
 
-            if self.choose_album_operation(i):
-                index = 1
-                for key in name_data:
-                    print('=============================================================')
-                    print(key)
+            index = 1
+            for key in name_data:
+                print('=============================================================')
+                print(name_data[key], key)
 
+                if self.choose_album_operation(i):
                     if self.video.wait_check_video_file_page(sheets[i]):
-                        self.video.order_menu_button()  # 视频排序
-                        if self.video.wait_check_order_page():
-                            self.video.order_item_button()
+                        # self.video.order_menu_button()  # 视频排序
+                        # if self.video.wait_check_order_page():
+                        #     self.video.order_item_button()
 
                         if self.video.wait_check_local_list_page():
-                            self.choose_video_list_operation(name_data[key]) # 选择视频条目
+                            index = self.choose_video_list_operation(name_data[key]) # 选择视频条目
+                            # if index == 20:
+                            #     print("!!!!未找到该视频:", name_data[key])
+                            #     self.home.back_up_button()
+                            #     # self.album.cancel_button()
+                            #     break
 
-                            if self.video.wait_check_cut_page():
+                            if self.video.wait_check_cut_page(3):
                                 self.video.finish_button()
 
                             if self.tiny.wait_check_page():
@@ -85,10 +93,7 @@ class TinyCourse(unittest.TestCase):
                                     var.send_keys(key)
                                     print('输入微课名称：', var.text)  # 编辑课程名称
 
-                                    self.tiny.save_button()  # 点击 保存按钮
-
-                                    self.tiny.judge_upload_operation()  # 判断视频 是否 正在上传中
-                                    self.home.tips_content_commit()  # 提示 页面信息
+                                    self.tiny.save_operation()  # 保存 操作
 
                                     if self.game.wait_check_page():  # 游戏详情页
                                         self.home.back_up_button()
@@ -102,21 +107,28 @@ class TinyCourse(unittest.TestCase):
                                     if self.tiny.wait_check_page():
                                         if self.tiny.wait_check_list_page():
                                             self.tiny.create_tiny_course()  # + 微课内容
+                                            if self.tiny.wait_check_menu_page():
+                                                self.tiny.menu_item()[1].click()  # 点击 本地视频
 
                         index += 1
+                else:
+                    print('！！！未进入相册')
 
     @teststeps
     def choose_video_list_operation(self, name):
         """视频列表 具体操作
         :param name: 视频名
         """
+        k = 0
         while True:
             if self.video.wait_check_local_list_page():
-                video = self.video.video(name)  # 视频条目信息
+                video = self.video.choose_video_operation(name)  # 选择视频条目
                 if video[1] == 1:
                     break
                 else:
-                    SwipeFun().swipe_vertical(0.5, 0.9, 0.5)
+                    SwipeFun().swipe_vertical(0.5, 0.9, 0.4)
+                    k += 1
+        return k
 
     @teststeps
     def choose_album_operation(self, i):
@@ -140,6 +152,6 @@ class TinyCourse(unittest.TestCase):
                 if index == 0:
                     SwipeFun().swipe_vertical(0.5, 0.9, 0.2)
                 elif index == 1:
-                    break
-
-        return True
+                    return True
+        else:
+            return True

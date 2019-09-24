@@ -4,7 +4,7 @@
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
 from utils.wait_element import WaitElement
@@ -215,7 +215,7 @@ class PaperPage(BasePage):
             .find_elements_by_id(gv.PACKAGE_ID + "tv_score")
         return ele
 
-    # 个人答题结果页 -详情页面
+    # 答题结果页 -详情页面
     @teststeps
     def wait_check_per_answer_page(self):
         """以“游戏title”为依据"""
@@ -273,7 +273,7 @@ class PaperPage(BasePage):
 
             if self.wait_check_tips_page():
                 print('---------删除试卷---------')
-                ThomePage().commit_button()  # 确定按钮
+                ThomePage().commit_button().click()  # 确定按钮
                 print('确定删除')
 
     @teststeps

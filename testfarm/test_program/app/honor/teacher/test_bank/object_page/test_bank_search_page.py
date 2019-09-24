@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # code:UTF-8  
 # @Author  : SUN FEIFEI
+import time
+
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
 from utils.swipe_screen import SwipeFun
@@ -18,7 +20,7 @@ class SearchPage(BasePage):
     num_value = gv.PACKAGE_ID + "exercise_num"  # 共X题
     drop_down_value = gv.PACKAGE_ID + "title"  # 下拉菜单
 
-    lock_value = gv.PACKAGE_ID + "lock"  # 锁
+    lock_value = gv.PACKAGE_ID + "lock"  # 锁input_clear_button
 
 
     def __init__(self):
@@ -93,6 +95,7 @@ class SearchPage(BasePage):
     def delete_button(self, index):
         """以“删除 按钮”的id为依据"""
         print('点击删除按钮')
+        time.sleep(1)
         self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + "delete")[index] \
             .click()
@@ -118,7 +121,7 @@ class SearchPage(BasePage):
 
         name = self.history_word()  # 历史搜索词
 
-        if len(name) > 10 and not content:  # 有10个以上历史搜索词时
+        if len(name) > 9 and not content:  # 有9个以上历史搜索词时
             content = []
             for i in range(len(name) - 1):  # # 最后一个容易出现信息展示不全
                 item.append(name[i])
@@ -126,7 +129,7 @@ class SearchPage(BasePage):
 
             self.sp.swipe_vertical(0.5, 0.85, 0.1)
             return self.get_history_search_word(item, content)
-        else:  # <11 & 翻页
+        else:  # <10 & 翻页
             var = 0
             if content:
                 for k in range(len(name)):  # 判断翻页后，页面中是否存在已操作过的搜索词

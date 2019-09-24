@@ -6,10 +6,10 @@ import time
 import re
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from conf.base_config import GetVariable as gv
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststeps, teststep
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
@@ -48,7 +48,7 @@ class PictureDictation(BasePage):
     @teststeps
     def wait_check_detail_page(self):
         """以“progress”的ID为依据"""
-        locator = (By.ID, gv.PACKAGE_ID+ "tv_progress")
+        locator = (By.ID, gv.PACKAGE_ID + "tv_progress")
         return self.wait.wait_check_element(locator)
 
     @teststep
@@ -143,13 +143,16 @@ class PictureDictation(BasePage):
 
                 while True:
                     if Homework().commit_button_judge('true'):
-                        Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
                         Homework().commit_button_operation('true')  # 提交 按钮 状态判断 加点击
-                        if Toast().find_toast('请听完音频，再提交答案', 3):
+                        if Toast().find_toast('请听完音频，再提交答案'):
                             print('请听完音频，再提交答案')
-                        break
-                    else:
-                        time.sleep(3)
+
+                        if self.result.wait_check_result_page(5):  # 结果页检查点
+                            break
+                        else:
+                            time.sleep(3)
+
+                Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
                 print('==============================================')
                 return rate, answer
 
@@ -164,11 +167,12 @@ class PictureDictation(BasePage):
                     print('题数:', int(rate))
                     self.result_voice()  # 点击发音按钮
 
-                    self.swipe_operation(int(rate))  # 具体操作
-
                     progress = re.sub("\D", "", self.result_progress())  # 时间进度
                     if int(progress) == 00000000:
                         print('★★★ Error- 听力时间进度', int(progress))
+
+                    self.swipe_operation(int(rate))  # 具体操作
+
                     self.result.back_up_button()  # 返回结果页
             print('==============================================')
 
@@ -194,7 +198,6 @@ class PictureDictation(BasePage):
                             break
 
             last_one = self.get_last_element()  # 最后一个题目
-
             if int(rate) == ques_last_index:  # 最后一题
                 break
             else:
@@ -206,7 +209,9 @@ class PictureDictation(BasePage):
                         if current_index > ques_last_index:
                             print(question[j].text)
                             print('选项:', options[j])
-                    ques_last_index = int(question[- 2].text.split(".")[0])
+
+                    if len(question) > 1:
+                        ques_last_index = int(question[- 2].text.split(".")[0])
                 else:  # 判断最后一题为选项
                     options = self.result_img()  # 选项
                     for k in range(len(question)):

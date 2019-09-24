@@ -3,13 +3,14 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from app.honor.teacher.test_bank.object_page.question_basket_page import QuestionBasketPage
-from app.honor.teacher.test_bank.object_page import QuestionDetailPage
-from app.honor.teacher.user_center import RecommendPage
-from app.honor.teacher.user_center import TuserCenterPage
-from app.honor.teacher.user_center import CollectionPage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
+from app.honor.teacher.user_center.mine_recommend.object_page.mine_recommend_page import RecommendPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
+from app.honor.teacher.user_center.mine_collection.object_page.mine_collect_page import CollectionPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
@@ -29,7 +30,7 @@ class Collection(unittest.TestCase):
         cls.collect = CollectionPage()
         cls.question = TestBankPage()
         cls.detail = QuestionDetailPage()
-
+        cls.filter = FilterPage()
         cls.recommend = RecommendPage()
         cls.basket = QuestionBasketPage()
 
@@ -54,7 +55,15 @@ class Collection(unittest.TestCase):
                         self.add_collection_operation()  # 添加收藏- 题单 else:
                         print('未进入 我的收藏 页面')
 
-                    self.collect_list_operation()  # 收藏列表 & 进入题单详情页
+                    var = self.collect_list_operation()  # 收藏列表 & 进入题单详情页
+
+                    if self.collect.wait_check_page():
+                        self.judge_collect_result(var[0])  # 验证 - 取消收藏结果
+                        self.judge_basket_result(var[1])  # 验证 - 加入题筐结果
+
+                        if self.collect.wait_check_page():
+                            self.home.back_up_button()
+                            self.recommend.verify_recommend_result(var[0])  # 验证 - 推荐结果
 
                     if self.user.wait_check_page():  # 页面检查点
                         self.home.click_tab_hw()  # 回首页
@@ -78,7 +87,9 @@ class Collection(unittest.TestCase):
                 print(mode, '\n', name[1][i], '\n', num, '\n', author[i].text)
                 print('------------------------------------')
 
-            self.detail_page_operation(name)  # 题单详情页 具体操作
+            var = self.detail_page_operation(name)  # 题单详情页 具体操作
+
+            return name[1][0], var
 
     @teststeps
     def add_collection_operation(self):
@@ -124,19 +135,16 @@ class Collection(unittest.TestCase):
                 if self.detail.wait_check_list_page():
                     self.detail.recommend_button()  # 加入推荐 按钮
                     print(' 点击 推荐按钮')
+                    self.filter.choose_school_label()  # 选择本校标签
+
                     if self.detail.wait_check_list_page():
                         self.detail.put_to_basket_button()  # 加入题筐按钮
                         print(' 点击 加入题筐按钮')
 
                         if self.detail.wait_check_page():  # 页面检查点
                             self.home.back_up_button()  # 返回 我的收藏页面
-                            if self.collect.wait_check_page():
-                                self.judge_collect_result(name[1][0])  # 验证 - 取消收藏结果
-                                self.judge_basket_result(var)  # 验证 - 加入题筐结果
 
-                                if self.collect.wait_check_page():
-                                    self.home.back_up_button()
-                                    self.recommend.verify_recommend_result(name[1][0])  # 验证 - 推荐结果
+                            return var
 
     @teststeps
     def judge_collect_result(self, name):

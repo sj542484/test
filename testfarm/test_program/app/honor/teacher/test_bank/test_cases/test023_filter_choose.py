@@ -4,10 +4,10 @@ import random
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.user_center import TuserCenterPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from conf.decorator import setup, teardown, testcase
 from utils.get_attribute import GetAttribute
 from utils.toast_find import Toast

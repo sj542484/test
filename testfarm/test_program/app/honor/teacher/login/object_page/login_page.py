@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import time
-import os
 from selenium.webdriver.common.by import By
-from app.honor.teacher.login.test_data.account import VALID_ACCOUNT
+
 from app.honor.teacher.home.object_page.home_page import ThomePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
-from conf.base_page import BasePage
-from conf.report_path import ReportPath
+from testfarm.test_program.conf.base_page import BasePage
+from utils.screen_shot import ScreenShot
 from utils.wait_element import WaitElement
 
 
@@ -74,12 +76,17 @@ class TloginPage(BasePage):
     @teststeps
     def login_operation(self):
         """登录 操作"""
-        print('在登录界面')
-        account = self.input_username()  # 账号输入框
-        account.send_keys(VALID_ACCOUNT.account())
+        import os, yaml
+        f = open('./testfarm/test_program/conf/user_info.yaml', 'r', encoding='utf8')
+        res = f.read()
+        res = yaml.full_load(res)
+        stu_info = res['userinfo'][self.deviceName]
+        user = stu_info['teacher']['teacher']
 
-        pwd = self.input_password()  # 密码输入框
-        pwd.send_keys(VALID_ACCOUNT.password())
+        pwd = stu_info['pwd']
+
+        self.input_username().send_keys(user)  # 账号输入框
+        self.input_password().send_keys(pwd)  # 密码输入框
 
         self.login_button()  # 登录按钮
 
@@ -98,8 +105,8 @@ class TloginPage(BasePage):
                 print('在主界面')
             elif self.wait_check_page():  # 在登录界面
                 self.login_operation() # 登录 操作
-            # else:
-            #     self.screen_shot()  # 截屏
+            else:
+                self.screen_shot()  # 截屏
 
     # 忘记密码
     @teststeps
@@ -175,10 +182,10 @@ class TloginPage(BasePage):
     def wait_check_register_page(self, var=10):
         """以title:老师注册 的TEXT为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'老师注册')]")
-        return self.wait.wait_check_element(locator)
+        return self.wait.wait_check_element(locator, var)
 
     @teststeps
-    def wait_check_register_nick_page(self, var=20):
+    def wait_check_register_nick_page(self, var=10):
         """以设置昵称 的TEXT为依据"""
         locator = (By.ID, gv.PACKAGE_ID + "nick_name")
         return self.wait.wait_check_element(locator, var)
@@ -202,28 +209,20 @@ class TloginPage(BasePage):
         """
         self.driver.close_app()
 
-    @teststep
-    def more_launch_app(self):
-        """Start on the device the application specified in the desired capabilities.
-        """
-        os.system("adb shell am start -n com.vanthink.vanthinkteacher.debug"
-                  "/com.vanthink.vanthinkteacher.v2.ui.splash.SplashActivity")
-        time.sleep(5)
-
-    @teststep
-    def more_close_app(self):
-        """Close on the device.
-        """
-        os.system('adb shell am force-stop com.vanthink.vanthinkteacher.debug')
-
     @teststeps
     def screen_shot(self, name='重启app'):
         """截屏"""
+        import os
+        import tempfile
+        from PIL import Image
+        PATH = lambda p: os.path.abspath(p)
+        TEMP_FILE = PATH(tempfile.gettempdir() + "/temp_screen.png")
+
+        self.driver.get_screenshot_as_file(TEMP_FILE)
         date_time = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
-        screenshot = name + '-' + date_time + '.png'
-        path = ReportPath().get_path() + '/' + screenshot
+        img_name = name + '_' + date_time + '.png'
 
-        driver = self.get_driver()
-        driver.save_screenshot(path)
-
-        return screenshot
+        image = Image.open(TEMP_FILE)
+        image.save(TEMP_FILE)
+        ScreenShot().write_to_file(gv.SCREENSHOT_ROOT, img_name)
+        os.path.isfile(gv.SCREENSHOT_ROOT + img_name)

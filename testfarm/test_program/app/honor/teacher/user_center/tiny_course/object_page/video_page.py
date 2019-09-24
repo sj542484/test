@@ -1,28 +1,34 @@
 #!/usr/bin/env python
 # code:UTF-8  
 # @Author  : SUN FEIFEI
+import time
 
+from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.user_center import CreateTinyCourse
+from app.honor.teacher.user_center.tiny_course.object_page.create_tiny_course_page import CreateTinyCourse
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from utils.click_bounds import ClickBounds
-from utils.get_element_bounds import Element
+from utils.get_element_bounds import ElementBounds
 from utils.wait_element import WaitElement
 
 
 class VideoPage(BasePage):
     """视频"""
     video_button_value = gv.PACKAGE_ID + 'video'  # 拍摄按钮
+    close_button_value = gv.PACKAGE_ID + 'close'  # close按钮
     time_value = gv.PACKAGE_ID + 'time'  # 拍摄时长
     delete_button_value = gv.PACKAGE_ID + 'delete'  # 删除按钮
 
     permission_title_value = "com.android.packageinstaller:id/permission_message"  # 权限问询 title
 
     video_item_value = 'com.android.documentsui:id/mz_text_container'  # 视频条目
+    rule_value = gv.PACKAGE_ID + "rule"  # 裁剪规则
+    slider_value = gv.PACKAGE_ID + 'slider'  # 视频裁剪按钮所在Group
 
+    @teststeps
     def __init__(self):
         self.wait = WaitElement()
         self.tiny = CreateTinyCourse()
@@ -59,8 +65,8 @@ class VideoPage(BasePage):
     # 拍摄
     @teststeps
     def wait_check_shoot_page(self):
-        """拍摄视频 的为依据"""
-        locator = (By.ID, self.video_button_value)
+        """左上角close按钮 的为依据"""
+        locator = (By.ID, self.close_button_value)
         return self.wait.wait_check_element(locator)
 
     # 第一页面
@@ -84,7 +90,7 @@ class VideoPage(BasePage):
         """'拍摄 按钮坐标"""
         ele = self.driver\
             .find_element_by_id(self.video_button_value)
-        return Element().get_element_location(ele)
+        return ElementBounds().get_element_location(ele)
 
     # 第二页面
     @teststeps
@@ -96,7 +102,7 @@ class VideoPage(BasePage):
     @teststeps
     def suspend_button(self, loc):
         """'暂停'按钮  由于拿不到元素信息，因为暂停 和 开始 是同一个view，故用坐标点击"""
-        print('点击暂停按钮')
+        print('点击暂停按钮', loc)
         ClickBounds().click_bounds(loc[0], loc[1])
 
     # 第三页面
@@ -144,11 +150,10 @@ class VideoPage(BasePage):
             .click()
 
     # 本地视频 有视频/无视频
-
     @teststeps
     def wait_check_local_page(self, var=10):
         """title:最近 为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'最近')]")
+        locator = (By.ID, "com.android.documentsui:id/mz_toolbar_nav_button")
         return self.wait.wait_check_element(locator, var)
 
     @teststeps
@@ -159,14 +164,21 @@ class VideoPage(BasePage):
             .click()
 
     @teststeps
-    def wait_check_video_file_page(self, item, var=10):
+    def wait_check_video_file_page(self, item, var=20):
         """title:下载 为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'%s')]" % item)
         return self.wait.wait_check_element(locator, var)
 
     @teststeps
-    def order_menu_button(self):
+    def album_order_menu_button(self):
         """视频排序"""
+        self.driver \
+            .find_element_by_id("com.android.documentsui:id/menu_grid") \
+            .click()
+
+    @teststeps
+    def order_menu_button(self):
+        """MEIZU M15 - 右上 视频排序"""
         self.driver \
             .find_element_by_id("com.android.documentsui:id/menu_sort") \
             .click()
@@ -188,7 +200,6 @@ class VideoPage(BasePage):
     def album_button(self):
         """视频"""
         ele = self.driver.find_elements_by_id("android:id/text1")
-        print(len(ele))
         return ele
 
     @teststeps
@@ -213,15 +224,15 @@ class VideoPage(BasePage):
             .find_elements_by_id(self.video_item_value)[index].click()
 
     @teststeps
-    def video(self, name):
+    def choose_video_operation(self, name):
         """选择视频"""
-        ele = self.driver \
-            .find_elements_by_id("android:id/text1")
+        time.sleep(1)
+        ele = self.album_button()  # 视频条目
 
         content = []
         index = 0
         for i in range(len(ele)):
-           if ele[i].text == name:
+           if name in ele[i].text:
                content.append(ele[i])
                ele[i].click()
                index += 1
@@ -260,7 +271,7 @@ class VideoPage(BasePage):
     @teststeps
     def control_button(self):
         """control按钮"""
-        print('点击 完成按钮')
+        print('点击 control按钮')
         self.driver \
             .find_element_by_id(gv.PACKAGE_ID + "control") \
             .click()
@@ -269,50 +280,86 @@ class VideoPage(BasePage):
     def rule_hint(self):
         """裁剪视频规则"""
         ele = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "rule").text
+            .find_element_by_id(self.rule_value).text
         print(ele)
 
-    # @teststeps
-    # def play_video_operation(self):
-    #     """视频播放 操作"""
-    #     if self.tiny.wait_check_page():
-    #         print('---------视频播放 操作--------')
-    #         self.tiny.play_button()  # 播放 按钮
-    #
-    #         if self.tiny.wait_check_play_page():
-    #             time.sleep(3)
-    #             if self.tiny.wait_check_play_page():
-    #                 time_str = self.tiny.exo_position()
-    #                 var = self.tiny.exo_progress()  # 进度条
-    #
-    #                 if time_str != GetAttribute().description(var):
-    #                     print('★★★ Error - 视频时长展示有误', time_str, var)
-    #                 else:
-    #                     print('--播放视频时长展示无误--')
-    #
-    #                 if self.tiny.wait_check_play_page():
-    #                     location = Element().get_element_location(self.tiny.exo_progress())
-    #
-    #                     self.tiny.screen_switch_button()  # 横竖屏切换 按钮  竖屏切横屏
-    #                     if self.tiny.wait_check_play_page():
-    #
-    #                         location1 = Element().get_element_location(self.tiny.exo_progress())
-    #                         if location[0] <= location1[0] or location[1] >= location1[1]:
-    #                             print('★★★ Error - 竖屏切横屏有误', location, location1)
-    #                         else:
-    #                             print('--横竖屏切换 按钮  竖屏切横屏--')
-    #
-    #                         self.tiny.screen_switch_button()  # 横竖屏切换 按钮 横屏切竖屏
-    #                         if self.tiny.wait_check_play_page():
-    #                             self.tiny.exo_play_button()  # 再次点击播放键
-    #                             location2 = Element().get_element_location(self.tiny.exo_progress())
-    #
-    #                             if location1[0] >= location2[0] or location1[1] <= location2[1]:
-    #                                 print('★★★ Error - 横屏切竖屏有误', location1, location2)
-    #                             else:
-    #                                 print('--横竖屏切换 按钮 横屏切竖屏--')
-    #         else:
-    #             print('!!!未进入视频播放页面')
-    #
-    #         if self.tiny.wait_check_play_page():
-    #             self.tiny.back_up_button()  # 返回按钮
+    @teststeps
+    def video_time(self):
+        """视频时长"""
+        ele = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "time").text
+        print('视频时长:', ele)
+        return ele
+
+    @teststeps
+    def video_duration_deal(self, length):
+        """视频时长"""
+        item = int(length.split(':')[0]) * 60 + int(length.split(':')[1])
+        return item
+
+    @teststeps
+    def video_cut_operation(self, var, sign):
+        """视频 裁剪"""
+        if sign == 'after':
+            button = self.after_cut_button()  # 后裁剪按钮
+        else:
+            button = self.font_cut_button()  # 前裁剪按钮
+        bound = ElementBounds().get_element_location(button)  # 前裁剪按钮 坐标值
+
+        length = self.video_time()  # 视频时长
+        item = self.video_duration_deal(length)
+
+        ele = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "rv")  # 移动的元素
+        loc = ElementBounds().get_element_bounds(ele)  # 可移动的范围
+
+        remainder = (loc[4]-loc[0]) % item
+        if remainder >= 5:
+            remainder = 1
+        else:
+            remainder = 0
+        dur = int((loc[4]-loc[0])/ item) + remainder  # 一秒钟的距离
+
+        duration = (var+2) * dur  # 需要剪掉的长度 * 一秒钟的距离 == 需移动的距离 (因为滑动操作的误差，故+2)
+        print('裁剪：', duration, bound)
+        if sign == 'after':
+            TouchAction(self.driver).long_press(x=bound[0], y=loc[3]) \
+                .move_to(x=bound[0] - duration, y=loc[3]).release().perform()
+        else:
+            TouchAction(self.driver).long_press(x=bound[0], y=loc[3]) \
+                .move_to(x=bound[0] + duration, y=loc[3]).release().perform()
+
+        return item
+
+    @teststeps
+    def font_cut_button(self):
+        """裁剪 视频开始"""
+        ele = self.driver \
+            .find_elements_by_xpath("//android.view.ViewGroup[contains(@resource-id, '{}')]/child::android.view.View"
+                                   .format(self.slider_value))
+        print(len(ele))
+        return ele[2]
+
+    @teststeps
+    def after_cut_button(self):
+        """裁剪 视频最后"""
+        ele = self.driver \
+            .find_elements_by_xpath("//android.view.ViewGroup[contains(@resource-id, '{}')]/child::android.view.View"
+                                   .format(self.slider_value))[1]
+        return ele
+    
+    @teststeps
+    def play_video_operation(self):
+        """视频播放 操作"""
+        if self.tiny.wait_check_page():
+            print('---------视频播放 操作--------')
+            self.tiny.play_video()  # 播放 按钮
+
+            if self.wait_check_cut_page():
+                self.rule_hint()
+                self.control_button()  # 播放 按钮
+                self.control_button()  # 再次点击播放键
+                self.video_time()  # 视频时长
+                self.finish_button()
+            else:
+                print('!!!未进入视频裁剪页面')

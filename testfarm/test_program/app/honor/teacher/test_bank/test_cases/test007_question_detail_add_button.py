@@ -5,10 +5,10 @@ import re
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from app.honor.teacher.test_bank.object_page.question_basket_page import QuestionBasketPage
-from app.honor.teacher.test_bank.object_page import QuestionDetailPage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
@@ -67,17 +67,18 @@ class QuestionBasket(unittest.TestCase):
                                     item[0][2].click()  # 点击第X道题
 
                                     if self.detail.wait_check_page():  # 页面检查点
-                                        print('-----------------题单详情页-------------------')
-                                        self.detail.put_to_basket_button()  # 点击 加入题筐按钮
-                                        if Toast().find_toast('添加题筐成功'):
-                                            print('再次添加题筐成功')
-                                        else:
-                                            print('★★★ Error- 再次添加题筐失败')
-                                        if self.detail.wait_check_list_page():
-                                            self.home.back_up_button()  # 返回 题库 主界面
+                                        if self.detail.wait_check_list_page():  # 页面检查点
+                                            print('-----------------题单详情页-------------------')
+                                            self.detail.put_to_basket_button()  # 点击 加入题筐按钮
+                                            if Toast().find_toast('添加题筐成功'):
+                                                print('再次添加题筐成功')
+                                            else:
+                                                print('★★★ Error- 再次添加题筐失败')
+                                            if self.detail.wait_check_list_page():
+                                                self.home.back_up_button()  # 返回 题库 主界面
 
-                                            if self.question.wait_check_page('题单'):  # 页面检查点
-                                                self.home.click_tab_hw()  # 返回首页
+                                                if self.question.wait_check_page('题单'):  # 页面检查点
+                                                    self.home.click_tab_hw()  # 返回首页
         else:
             Toast().get_toast()  # 获取toast
             print("未进入主界面")

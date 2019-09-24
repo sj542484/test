@@ -4,7 +4,7 @@
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
 
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.wait_element import WaitElement
@@ -60,14 +60,14 @@ class AdjustVanOrderPage(BasePage):
 
             content = []
             icon = self.drag_icon()  # 拖拽 icon
-            if len(num) > 5:
+            if len(icon) > 5:
                 for i in range(len(num) - 1):
                     print(num[i].text, name[i].text)
                     content.append(num[i].text)
                     content.append(name[i].text)
 
                 self.drag_ele_operation(icon[1], icon[5])  # 向下拖拽
-                self.drag_ele_operation(icon[4], icon[1])  # 向上拖拽
+                self.drag_ele_operation(icon[4], icon[0])  # 向上拖拽
 
                 self.judge_hw_adjust(content)  # 验证
             elif 1 < len(num) < 6:
@@ -75,8 +75,8 @@ class AdjustVanOrderPage(BasePage):
                     print(num[i].text, name[i].text)
                     content.append(num[i].text)
                     content.append(name[i].text)
-                self.drag_ele_operation(icon[1], icon[len(num)-1])  # 向下拖拽
-                self.drag_ele_operation(icon[len(num)-2], icon[0])  # 向上拖拽
+                self.drag_ele_operation(icon[1], icon[-1])  # 向下拖拽
+                self.drag_ele_operation(icon[-2], icon[0])  # 向上拖拽
 
                 self.judge_hw_adjust(content)  # 验证
             else:
@@ -115,6 +115,7 @@ class AdjustVanOrderPage(BasePage):
             print('-----------------------------------------')
 
     @teststeps
-    def drag_ele_operation(self, origin, destination):
+    def drag_ele_operation(self, origin, target):
         """拖拽元素"""
-        TouchAction(self.driver).long_press(origin).move_to(destination).release().perform()
+        print(origin.location, target.location)
+        TouchAction(self.driver).long_press(origin).move_to(target).release().perform()

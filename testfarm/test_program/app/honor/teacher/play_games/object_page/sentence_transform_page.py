@@ -4,11 +4,11 @@
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
-from app.honor.teacher.play_games import sentence_transform_operation
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
+from app.honor.teacher.play_games.test_data.sentence_transform_data import sentence_transform_operation
 from conf.decorator import teststep, teststeps
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
@@ -133,12 +133,11 @@ class SentenceTrans(BasePage):
         return words, word
 
     @teststeps
-    def result_mine_state(self, index):
+    def result_mine_state(self):
         """我的答案对错标识 selected属性"""
         word = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "iv_mine")[index]
-        value = GetAttribute().selected(word)
-        return value
+            .find_elements_by_id(gv.PACKAGE_ID + "iv_mine")
+        return word
 
     @teststeps
     def sentence_transform(self):
@@ -257,6 +256,7 @@ class SentenceTrans(BasePage):
         explain = self.result_question()  # 题目
         word = self.result_mine()  # 我的答案
         answer = self.result_answer()  # 正确答案
+        mine = self.result_mine()
         for i in range(index, len(explain)):
             count = []
             value = sentence_transform_operation(explain[i]).split(' ')
@@ -267,11 +267,12 @@ class SentenceTrans(BasePage):
                             count.append(j)
                             break
 
+                    value = GetAttribute().selected(mine[i])
                     if count == 0:
-                        if self.result_mine_state() != 'true':
+                        if value != 'true':
                             print('★★★ Error - 我的答案:%s 与 正确答案:%s 对错标识:%s' % (word[0], value, 'false'))
                     else:
-                        if self.result_mine_state() != 'false':
+                        if value != 'false':
                             print('★★★ Error - 我的答案:%s 与 正确答案:%s 对错标识:%s' % (word[0], value, 'true'))
                 else:
                     print('★★★ Error - 正确答案:', answer[i], value)

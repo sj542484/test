@@ -13,5 +13,5 @@ group_data = (
     {'name': '2VANTHNKvan1ink以数字studeVANTH7INKr', 'count': '34', 'status': 'false'},   # 多于30个字符 - 34个
     {'name': '8VANTH7INK4v     nkstu在线', 'count': '20', 'status': 'true'},   # 24个字符  5个连续空格
     {'name': '180q azws1werQA ZWS XEUY19在线教育', 'count': '30', 'status': 'true'},  # 30个字符  空格
-    {'name': 'D', 'count': '4', 'status': 'true', 'assert': '同一班级 组名不能重复'}  # 不可重名
+    {'name': 'D', 'count': '4', 'status': 'true', 'assert': '同一班级, 组名不能重复'}  # 不可重名
 )

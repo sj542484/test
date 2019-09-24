@@ -6,11 +6,12 @@ from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from conf.base_page import BasePage
+from app.honor.teacher.home.test_data.vanclass_data import GetVariable
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
 from conf.base_config import GetVariable as gv
-from utils.get_element_bounds import Element
+from utils.get_element_bounds import ElementBounds
 from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
 from utils.wait_element import WaitElement
@@ -31,10 +32,10 @@ class ReleasePage(BasePage):
         return self.wait.wait_check_element(locator)
 
     @teststeps
-    def wait_check_release_list_page(self):
+    def wait_check_release_list_page(self, var=15):
         """以“”为依据"""
         locator = (By.ID, gv.PACKAGE_ID + "class_name")
-        return self.wait.wait_check_element(locator)
+        return self.wait.wait_check_element(locator, var)
 
     @teststep
     def hw_title(self):
@@ -137,17 +138,31 @@ class ReleasePage(BasePage):
 
     @teststep
     def number_input(self):
-        """选择 时间"""
+        """选择 时间 eg:'2019', '09', '04', '17', '42'五个元素"""
         ele = self.driver \
             .find_elements_by_id("android:id/numberpicker_input")
         return ele
 
     @teststep
-    def get_assign_date(self, index=2):
+    def get_assign_date(self, index=2, direction='up'):
         """调整发布时间"""
-        ele = self.number_input()  # 获取当前展示的时间
-        loc = Element().get_element_bounds(ele[index])
-        self.driver.swipe(loc[2], loc[3], loc[2], loc[3]-200, 1000)  # 调整发布时间
+        ele = self.number_input()  # 获取当前展示的时间  5个可调元素
+        loc = ElementBounds().get_element_bounds(ele[index])
+
+        if direction == 'down':
+            while True:
+                self.driver.swipe(loc[2], loc[3], loc[2], loc[3] + 200, 1000)  # 调整发布时间
+                if index == 0:
+                    break
+                else:
+                    index -= 1
+        else:
+            while True:
+                self.driver.swipe(loc[2], loc[3], loc[2], loc[3] - 200, 1000)  # 调整发布时间
+                if index == 0:
+                    break
+                else:
+                    index -= 1
 
         if self.wait_check_time_list_page():
             item = self.number_input()  # 获取当前展示的时间
@@ -287,7 +302,7 @@ class ReleasePage(BasePage):
 
             self.assign_button()  # 发布作业 按钮
             time.sleep(1)
-            self.home.commit_button()  # 确定按钮
+            self.home.commit_button().click()  # 确定按钮
 
     @teststeps
     def hw_mode_operation(self, var='reach'):
@@ -296,7 +311,12 @@ class ReleasePage(BasePage):
 
         free = self.hw_mode_free()  # 自由模式
         reach = self.hw_mode_reach()  # 达标模式
-        print('  ', free.text, reach.text, self.hw_mode_tips())
+        reach_tips = self.hw_mode_tips()
+        if free.text == '自由模式' and reach.text == '达标模式' and reach_tips == '(默认达标标准为80%)':
+            print('  ', free.text, reach.text, reach_tips)
+        else:
+            print('★★★ Error- 作业模式展示有误', free.text, reach.text, reach_tips)
+
         if self.get.checked(free) is False:
             print('★★★ Error- 默认选择的作业模式有误')
         else:
@@ -313,12 +333,23 @@ class ReleasePage(BasePage):
         return free, reach
 
     @teststeps
+    def judge_hw_mode_operation(self, var='reach'):
+        """验证发布作业 - 作业模式"""
+        if var == 'free':
+            mode = self.hw_mode_free()  # 自由模式
+        else:
+            mode = self.hw_mode_reach()  # 达标模式
+
+        if self.get.checked(mode) is False:
+            print('★★★ Error- 选择的作业模式: %s 有误' % var)
+
+    @teststeps
     def hw_vanclass_list(self):
         """发布作业 - 班级列表"""
         self.publish_hw()  # 打印元素 发布作业到
 
         button = self.choose_button()  # 班级单选框
-        loc = Element().get_element_location( button[-1])  # 获取当前页面中最后一个单选框坐标
+        loc = ElementBounds().get_element_location(button[-1])  # 获取当前页面中最后一个单选框坐标
         self.driver.swipe(loc[0], loc[1], loc[0], 100, 1000)
 
         van = self.van_name()  # 班级 元素
@@ -329,13 +360,11 @@ class ReleasePage(BasePage):
         if len(button) != len(van):
             print('★★★ Error- 单选框的个数与班级个数不同', len(button), len(van))
         else:
+            print('班级列表')
             for i in range(len(count)):
-                print('-------')
-                print(van[i].text, '\n', count[i].text)
+                # print(van[i].text, '\n', count[i].text)
                 vanclass.append(van[i].text)
 
-        # loc1 = self.get_element_location(button[0])  # 获取当前页面中最后一个单选框坐标
-        # self.driver.swipe(loc1[0], loc1[1], loc1[0], loc[1], 1000)
         return van, vanclass
 
     @teststeps
@@ -359,13 +388,16 @@ class ReleasePage(BasePage):
 
             choose = 0
             for k in range(len(button)):
-                if GetAttribute().selected(button[k]) == 'false' and k != count:
+                if GetAttribute().selected(button[k]) == 'false' and k != count and van[k].text != GetVariable().VANCLASS:
                     print('所选择的班级:', van[k].text)
                     choose = van[k].text
                     button[k].click()  # 选择 一个班
                     van[k].click()  # 进入该班级
 
-                    if self.wait_check_vanclass_page(choose):
+                    if self.home.wait_check_empty_tips_page():
+                        print('  本班级 暂无学生')
+                        self.home.back_up_button()  # 返回 编辑 页面
+                    elif self.wait_check_vanclass_page(choose):
                         if self.wait_check_st_list_page():
                             st = self.st_title()  # 学生
                             phone = self.st_phone()  # 手机号
@@ -373,22 +405,19 @@ class ReleasePage(BasePage):
                                 print('  ', st[i].text, phone[i].text)
                             print('------------------')
 
-                            if len(phone)>1:
-                                button = self.choose_button()
-                                print('  取消选择学生:', phone[0].text)
-                                button[0].click()  # 取消选择一个学生
+                            print('  取消选择学生:', phone[0].text)
+                            self.choose_button()[0].click()  # 取消选择一个学生
 
-                                self.confirm_button()  # 确定按钮
-                            elif len(phone) == 1:
-                                self.confirm_button()  # 确定按钮
-                                if  Toast().find_toast('还未选择学生！'):
-                                    print('还未选择学生！')
-                                    button[0].click()  # 选择一个学生
+                            if self.wait_check_st_list_page():
+                                if len(phone) == 1:
+                                    self.confirm_button()  # 确定按钮
+                                    self.home.page_source()
+                                    if not Toast().find_toast('还未选择学生！'):
+                                        print('★★★ Error-  未弹toast: 还未选择学生！')
+                                    self.choose_button()[0].click()  # 选择一个学生
 
+                            if self.wait_check_st_list_page():
                                 self.confirm_button()  # 确定按钮
-                        elif self.home.wait_check_empty_tips_page():
-                            print('  本班级 暂无学生')
-                            self.home.back_up_button()  # 返回 编辑 页面
 
                         print('-----------------------------')
                     break
@@ -410,15 +439,17 @@ class ReleasePage(BasePage):
             name = self.game_name()  # 游戏name
 
             content = []
+
             icon = self.drag_icon()  # 拖拽 icon
             if len(mode) > 5:  # 多于5个
                 for i in range(len(mode) - 1):
                     print(mode[i].text, name[i].text)
                     content.append(mode[i].text)
                     content.append(name[i].text)
-                self.drag_ele_operation(icon[1], icon[5])  # 向下拖拽
+                self.drag_ele_operation(icon[0], icon[6])  # 向下拖拽
                 time.sleep(2)
-                self.drag_ele_operation(icon[4], icon[1])  # 向上拖拽
+                icon = self.drag_icon()  # 拖拽 icon
+                self.drag_ele_operation(icon[5], icon[0], 'up')  # 向上拖拽
 
                 self.judge_hw_adjust(content)  # 判断 调整题目顺序
             elif 2 < len(mode) < 6:
@@ -426,9 +457,10 @@ class ReleasePage(BasePage):
                     print(mode[i].text, name[i].text)
                     content.append(mode[i].text)
                     content.append(name[i].text)
-                self.drag_ele_operation(icon[0], icon[len(mode) - 1])  # 向下拖拽
+                self.drag_ele_operation(icon[0], icon[-1])  # 向下拖拽
                 time.sleep(2)
-                self.drag_ele_operation(icon[len(mode) - 2], icon[0])  # 向上拖拽
+                icon = self.drag_icon()  # 拖拽 icon
+                self.drag_ele_operation(icon[-1], icon[1], 'up')  # 向上拖拽
 
                 self.judge_hw_adjust(content)  # 判断 调整题目顺序
             else:  # 1个
@@ -449,10 +481,6 @@ class ReleasePage(BasePage):
             for i in range(len(mode) - 1):
                 content.append(mode[i].text)
                 content.append(name[i].text)
-        elif 2 < len(mode) < 6:
-            for i in range(len(mode)):
-                content.append(mode[i].text)
-                content.append(name[i].text)
         else:
             for i in range(len(mode)):
                 content.append(mode[i].text)
@@ -466,14 +494,19 @@ class ReleasePage(BasePage):
         if count == 0:
             print('★★★ Error- 题目顺序未调整', '\n',
                   '----------------------------')
+        else:
+            print('题目顺序已调整', content)
 
     @teststeps
-    def drag_ele_operation(self, origin, destination):
-        """拖拽元素"""
-        orig_x = origin.location['x']
-        orig_y = origin.location['y']
+    def drag_ele_operation(self, origin, destination, type='down'):
+        """拖拽元素
+        :param origin: 起始
+        :param destination: 目标"""
         dest_x = destination.location['x']
-        dest_y = destination.location['y']+50
+        if type == 'down':
+            dest_y = destination.location['y']+50
+        else:
+            dest_y = destination.location['y']-50
+        print(origin.location, dest_x, dest_y)
 
-        TouchAction(self.driver).long_press(x=orig_x, y=orig_y)\
-            .move_to(x=dest_x, y=dest_y).release().perform()
+        TouchAction(self.driver).long_press(origin).move_to(x=dest_x, y=dest_y).release().perform()

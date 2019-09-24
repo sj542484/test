@@ -4,10 +4,10 @@
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from conf.decorator import teststep, teststeps
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from utils.click_bounds import ClickBounds
 from utils.games_keyboard import Keyboard
@@ -19,7 +19,7 @@ class BankedCloze(BasePage):
     """选词填空"""
     prompt_value = gv.PACKAGE_ID + "prompt"  # 提示词
     prompt_locator = (By.ID, prompt_value)  # 提示词locator
-    tb_content_value = gv.PACKAGE_ID + "tb_content"  # 文章
+    tb_content_value = gv.PACKAGE_ID + "rich_text"  # 文章
 
     def __init__(self):
         self.bounds = ClickBounds()
@@ -97,22 +97,43 @@ class BankedCloze(BasePage):
     def content_desc(self):
         """点击输入框，激活小键盘"""
         content = self.get.description(self.content_value())
-        item = content.split(' ') # y值
+        item = content.split(' ')  # y值
         return item[0]
+
+    @teststeps
+    def get_answer(self):
+        """获取 答题结果"""
+        var = self.get.description(self.content_value())
+        content = ' '.join(var.split())  # 删除字符串中的连续空格只保留一个
+        value = content[6:].split(' ')  # answer
+
+        answer = []
+        for i in range(len(value)):
+            if value[i] != '':
+                answer.append(value[i])   # 所有输入框值的列表
+        print('答题结果：', answer)
+
+        return answer
 
     @teststeps
     def get_result(self):
         """获取 答题结果"""
-        content = self.get.description(self.content_value())
-        value = content.split(' ')  # answer
+        var = self.get.description(self.content_value())
+        content = ' '.join(var.split('  '))  # 删除字符串中的连续空格只保留一个
+        value = content[6:].split(' ')  # answer
 
         answer = []
-        for i in range(2, len(value)):
+        result = []  # 答题结果
+        for i in range(len(value)):
             if value[i] != '':
-                answer.append(value[i])   # 所有输入框值的列表
-        print('获取的答案：', answer)
+                if "(" in value[i]:
+                    del result[-1]
+                    result.append(value[i][1:-1])  # 答错的题
+                else:
+                    result.append(value[i])
+                    answer.append(value[i])  # 正确答案
 
-        return answer
+        return answer, result
 
     @teststeps
     def banked_cloze_operation(self, word_list):
@@ -124,29 +145,30 @@ class BankedCloze(BasePage):
 
                 rate = Homework().rate()
                 for i in range(int(rate)):
+                    print('选词填空 - 游戏过程')
                     Homework().rate_judge(rate, i)  # 测试当前rate值显示是否正确
                     Homework().commit_button_operation('false')  # 提交 按钮 状态判断 加点击
 
-                    if i !=0:
-                        self.key.games_keyboard('enter',"keyboard_abc_view")  # 点击回车键 激活输入框 或者进入下一题
+                    if i != 0:
+                        self.key.games_keyboard('enter')  # 点击回车键 激活输入框 或者进入下一题
 
                     if len(word_list) > i:  # 提示词足够
                         word = word_list[i]  # 提示词 单词
                     else:  # 提示词过少 或者 无提示词
                         word = 'qwe'
-                    print('word:', word)
+                    # print('word:', word)
 
                     for y in range(len(word)):
                         if y == 4:
-                            self.key.games_keyboard('capslock', "keyboard_abc_view")  # 点击键盘 切换到 大写字母
-                            self.key.games_keyboard(word[y].upper(), "keyboard_abc_view")  # 点击键盘对应 大写字母
-                            self.key.games_keyboard('capslock', "keyboard_abc_view")  # 点击键盘 切换到 小写字母
+                            self.key.games_keyboard('capslock')  # 点击键盘 切换到 大写字母
+                            self.key.games_keyboard(word[y].upper())  # 点击键盘对应 大写字母
+                            self.key.games_keyboard('capslock')  # 点击键盘 切换到 小写字母
                         else:
-                            self.key.games_keyboard(word[y], "keyboard_abc_view")  # 点击键盘对应字母
+                            self.key.games_keyboard(word[y])  # 点击键盘对应字母
                     timestr.append(Homework().time())  # 统计每小题的计时控件time信息
-                    print('-----------------------------------')
+                print('-----------------------------------')
 
-                answer = self.get_result()  # 获取 答题结果
+                answer = self.get_answer()  # 获取 答题结果
                 Homework().commit_button_operation('true')  # 提交 按钮 状态判断 加点击
                 Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
 
@@ -167,12 +189,18 @@ class BankedCloze(BasePage):
                 print('查看答案页面:')
                 count = []  # 回答正确题
                 answer = self.get_result()  # 获取 答题结果
+
                 for i in range(int(rate)):
-                    if answer[i] != result[i]:
-                        print('回答错误:', answer[i], result[i])
+                    if result[i] not in answer[1]:
+                        print('★★★ Error - 答题结果错误:', answer[1], result[i])
+
+                print('---------答题情况--------')
+                for i in range(int(rate)):
+                    if result[i] not in answer[0]:
+                        print('回答错误:', answer[0], result[i])
                     else:
-                        print('回答正确:', answer[i])
-                        count.append(answer[i])
+                        print('回答正确:', result[i])
+                        count.append(result[i])
 
                 if self.result.wait_check_detail_page():  # 页面检查点
                     self.result.back_up_button()  # 返回结果页

@@ -5,12 +5,12 @@ import re
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststeps, teststep
 from utils.click_bounds import ClickBounds
 from utils.get_attribute import GetAttribute
-from utils.get_element_bounds import Element
+from utils.get_element_bounds import ElementBounds
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
@@ -86,7 +86,7 @@ class PictureDictation(BasePage):
     @teststep
     def drop_down_button(self, var):
         """正确选项后答对率 下拉按钮"""
-        loc = Element().get_element_bounds(var)
+        loc = ElementBounds().get_element_bounds(var)
         self.driver.tap([(loc[2], loc[3])])
 
     @teststeps

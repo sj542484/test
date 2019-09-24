@@ -5,9 +5,10 @@ import time
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.play_games.object_page import ResultPage
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
+from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
 from conf.base_config import GetVariable as gv
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststeps, teststep
 from utils.click_bounds import ClickBounds
 from utils.get_attribute import GetAttribute
@@ -18,7 +19,7 @@ from utils.wait_element import WaitElement
 class GrindingEars(BasePage):
     """磨耳朵"""
     video_img_value = gv.PACKAGE_ID + "subtitle"  # 视频图片
-    spend_time_value = gv.PACKAGE_ID+ "spend_time"  # 总时长
+    spend_time_value = gv.PACKAGE_ID + "spend_time"  # 总时长
 
     def __init__(self):
         self.result = ResultPage()
@@ -73,12 +74,12 @@ class GrindingEars(BasePage):
             .find_elements_by_id(gv.PACKAGE_ID + "sentence")
         return ele
 
-    @teststeps
-    def wait_check_explain_page(self, var=10):
-        """以“解释”的ID为依据"""
-        locator = (By.XPATH, gv.PACKAGE_ID + "explain")
-        return self.wait.wait_check_element(locator, var)
-
+    # @teststeps
+    # def wait_check_explain_page(self, var=10):
+    #     """以“解释”的ID为依据"""
+    #     locator = (By.ID, gv.PACKAGE_ID + "explain")
+    #     return self.wait.wait_check_element(locator, var)
+    #
     @teststep
     def explain(self):
         """解释"""
@@ -138,15 +139,15 @@ class GrindingEars(BasePage):
 
     # 以下为结果页面元素
     @teststeps
-    def wait_check_detail_page(self):
+    def wait_check_detail_page(self, var=15):
         """以“spend_time”的ID为依据"""
         locator = (By.ID, self.spend_time_value)
-        return self.wait.wait_check_element(locator)
+        return self.wait.wait_check_element(locator, var)
 
     @teststep
     def judge_img(self):
         """图片"""
-        locator = (By.CLASS_NAME, "//android.widget.ImageView")
+        locator = (By.CLASS_NAME, "android.widget.ImageView")
         return self.wait.judge_is_exists(locator)
 
     @teststep
@@ -169,42 +170,56 @@ class GrindingEars(BasePage):
         if self.wait_check_page():  # 页面检查点
             if self.wait_check_play_page():
                 question = self.sentence()  # 展示的句子
-
-                self.start_button()  # 播放按钮
-
+                audio = self.audio_button()  # 语音按钮
                 for i in range(len(question)):
+                    time.sleep(5)
                     if self.wait_check_play_page():
-                        self.audio_button()[i].click()  # 语音按钮
+                        audio[i].click()  # 点击语音按钮
+                        word = self.sentence()[i].text  # 题目
+                        print('题目:%s' % word)
+                        print('----------------')
+                time.sleep(5)
+                ThomePage().tips_content_commit()
 
-                        if i in (2, 5):  # 第3、6题  进入全英模式
-                            print('---切换到 英汉模式:')
-                            self.pattern_switch()  # 切换到 英汉模式
-                            if self.wait_check_explain_page(5):
-                                word = self.sentence()[i].text  # 题目
-                                explain = self.explain()[i].text  # 解释
-                                print('题目:%s \n 解释:%s' % (word, explain))
+                if self.wait_check_play_page():
+                    self.start_button()  # 播放按钮
 
-                                self.pattern_switch()  # 切换到 全英模式
-                        else:
+                    print('---------------------------------------')
+                    print('---切换到 英汉模式:')
+                    self.click_blank()  # 点击页面 空白处
+                    self.pattern_switch()  # 切换到 英汉模式
+                    question = self.sentence()  # 展示的句子
+                    audio = self.audio_button()  # 语音按钮
+
+                    for i in range(len(question)):
+                        if self.wait_check_play_page():
+                            audio[i].click()  # 语音按钮
                             word = self.sentence()[i].text  # 题目
-                            print('题目:%s' % word)
+                            print('题目 解释:%s' % word)
+                            print('-------------------------------')
 
-                        if i == len(question)-1:
-                            self.click_blank()  # 点击页面 空白处
-                            self.full_button()  # 全屏 按钮
-                            if self.wait_check_full_page():
-                                print(self.english().text)  #
-                                self.click_blank()  # 点击页面 空白处
-                                ThomePage().back_up_button()  # 返回 按钮
-                        print('---------------------------------------')
+                            time.sleep(5)
+                            ThomePage().tips_content_commit(5)
+
+                    if self.wait_check_play_page():
+                        self.start_button()  # 播放按钮
+                    print('---------------------------------------')
+                # self.click_blank()  # 点击页面 空白处
+                # self.full_button()  # 全屏 按钮
+                # if self.wait_check_full_page():
+                #     self.pattern_switch()  # 切换到 全英模式
+                #     print(self.english().text)  #
+                #     self.click_blank()  # 点击页面 空白处
+                #     ThomePage().back_up_button()  # 返回 按钮
+                # print('---------------------------------------')
 
                 while True:
-                    ThomePage().tips_content_commit()
                     if self.commit_button_judge('true'):
                         self.commit_button_operation('true')  # 提交 按钮 状态判断 加点击
-                        break
-                    else:
-                        time.sleep(3)
+                        if self.wait_check_detail_page(5):  # 结果页检查点
+                            break
+                        else:
+                            time.sleep(3)
 
                 print('==============================================')
 
@@ -222,3 +237,11 @@ class GrindingEars(BasePage):
         if self.wait_check_detail_page():  # 结果页检查点
             self.result.again_button()[0].click()  # 结果页 再听一遍 按钮
             self.grinding_ears_operation()  # 游戏过程
+
+    @teststeps
+    def back_operation(self):
+        """从结果页返回小游戏list"""
+        if self.wait_check_detail_page():
+            ThomePage().back_up_button()  # 返回小游戏界面
+            if GamesPage().wait_check_page():
+                ThomePage().back_up_button()  # 返回 题单详情页

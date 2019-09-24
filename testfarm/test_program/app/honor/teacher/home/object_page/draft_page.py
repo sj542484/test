@@ -2,6 +2,7 @@
 # encoding:UTF-8  
 # @Author  : SUN FEIFEI
 from selenium.webdriver.common.by import By
+
 from app.honor.teacher.home.object_page.home_page import ThomePage
 from app.honor.teacher.home.object_page.release_hw_page import ReleasePage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
@@ -9,12 +10,17 @@ from app.honor.teacher.test_bank.object_page.question_basket_page import Questio
 from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
+from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
 
 class DraftPage(BasePage):
     """定时作业+草稿箱 页面"""
+    draft_name_value =  gv.PACKAGE_ID + "name"  # 名称
+    draft_time_value = gv.PACKAGE_ID + "time"  # 发布时间
+
     def __init__(self):
         self.home = ThomePage()
         self.release = ReleasePage()
@@ -31,8 +37,8 @@ class DraftPage(BasePage):
 
     @teststeps
     def wait_check_hw_list_page(self, var=20):
-        """以“全部班级 元素”为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "name")
+        """以“作业name 元素”为依据"""
+        locator = (By.ID, self.draft_name_value)
         return self.wait.wait_check_element(locator, var)
 
     @teststep
@@ -77,7 +83,7 @@ class DraftPage(BasePage):
     @teststeps
     def wait_check_draft_list_page(self):
         """以“草稿list 名称”为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "name")
+        locator = (By.ID, self.draft_name_value)
         return self.wait.wait_check_element(locator)
 
     @teststep
@@ -102,8 +108,66 @@ class DraftPage(BasePage):
         return ele
 
     @teststeps
+    def hw_item(self):
+        """作业条目"""
+        ele = self.driver \
+            .find_elements_by_xpath("//android.support.v7.widget.RecyclerView/android.widget.LinearLayout/android.widget.LinearLayout/child::android.widget.TextView")
+        hw = []
+        date_list = []
+        for i in range(len(ele)):
+            if i != len(ele)-1:
+                if GetAttribute().resource_id(ele[i]) == self.draft_name_value:
+                    if GetAttribute().resource_id(ele[i+1]) == self.draft_time_value:
+                        hw.append(ele[i].text)
+                        date_list.append(ele[i+1].text)
+        return hw, date_list
+
+    @teststeps
+    def get_hw_list(self, var, date_list, content=None):
+        """获取定时作业列表
+        :param var:定时作业名
+        :param date_list:发布日期
+        """
+        if content is None:
+            content = []
+
+        hw = self.hw_item()  # 作业条目
+        if len(hw[0]) > 5 and not content:  # 多于5个
+            self.hw_list(var, date_list, hw, len(hw[0]) - 1)
+            content = [hw[0][-2], hw[1][-2]]
+
+            SwipeFun().swipe_vertical(0.5, 0.9, 0.2)
+            self.get_hw_list(var, date_list, content)
+        else:
+            index = 0
+
+            if content:
+                for k in range(len(hw[0])-1, 0, -1):  # 滑屏后 页面中是否有已操作过的元素
+                    if hw[0][k] == content[0] and hw[1][k] == content[1]:
+                        index = k + 1
+                        break
+            self.hw_list(var, date_list, hw, len(hw[0]), index)
+
+    @teststeps
+    def hw_list(self, var, date_list, hw, length, index=0):
+        """定时作业列表"""
+        for i in range(index, length):
+            # print(hw[0][i], '\n',
+            #       hw[1][i])
+            # print('----------------------')
+
+            content = []
+            var.append(hw[0][i][5:-5])  # name
+            item = hw[1][i][7:].split()  # 发布时间
+            content.extend([item[0].split('/')[0], item[0].split('/')[1],
+                            item[2].split(':')[0], item[2].split(':')[1]])
+
+            date_list.append(content)
+
+    @teststeps
     def add_to_basket(self):
-        """加入题筐"""
+        """加题进题筐"""
+        print('=========加题进题筐=========')
         self.home.back_up_button()  # 返回按钮
         if self.home.wait_check_page():  # 页面检查点
             self.question.judge_into_tab_question()  # 进入题库tab
@@ -114,9 +178,9 @@ class DraftPage(BasePage):
 
                 if self.detail.wait_check_page():  # 页面检查点
                     if self.detail.wait_check_list_page():
-                        print('----------题单详情页----------')
+                        # print('----------题单详情页----------')
                         self.detail.put_to_basket_button()  # 点击加入题筐按钮
-                        print('加题进题筐')
+                        # print('加题进题筐')
                         self.home.back_up_button()  # 返回按钮
 
                         if self.question.wait_check_page('题单'):  # 页面检查点
@@ -138,12 +202,17 @@ class DraftPage(BasePage):
 
     @teststeps
     def question_bank_operation(self):
-        """获取题筐所有题"""
+        """获取题筐所有题 并选择布置"""
         var = self.basket.question_name()  # 所有题
         if len(var) > 1:
             for i in range(2):
                 check = self.basket.check_button()  # 单选按钮
                 check[i].click()
+        elif len(var) == 1:
+            self.basket.check_button()[0].click()
+        else:
+            print('题筐无题')
+            return False
 
         self.basket.assign_button().click()  # 点击 布置作业 按钮
         self.home.tips_content_commit()  # 提示 页面
@@ -155,4 +224,3 @@ class DraftPage(BasePage):
             print('★★★ Error- 未进入 发布作业 页面')
             self.home.back_up_button()
             return False
-

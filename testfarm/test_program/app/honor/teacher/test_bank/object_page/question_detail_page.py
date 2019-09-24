@@ -5,7 +5,7 @@ import re
 import time
 from selenium.webdriver.common.by import By
 
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
 from utils.get_attribute import GetAttribute
@@ -75,7 +75,8 @@ class QuestionDetailPage(BasePage):
         """小游戏条目"""
         ele = self.driver \
             .find_elements_by_xpath("//android.widget.TextView[contains(@resource-id, %s)]"
-                                    "/parent::android.widget.LinearLayout/parent::android.widget.LinearLayout/parent::android.widget.LinearLayout"
+                                    "/parent::android.widget.LinearLayout"
+                                    "/parent::android.widget.LinearLayout/parent::android.widget.LinearLayout"
                                     "/descendant::android.widget.TextView" % self.game_value)
         count = []  # 名称
         game_type = []
@@ -110,4 +111,3 @@ class QuestionDetailPage(BasePage):
         """
         m = re.match(".*\（(.*)\）.*", var)  # title中有一个括号
         return m.group(1)
-

@@ -4,9 +4,9 @@
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.user_center import TuserCenterPage
-from conf.base_page import BasePage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.wait_element import WaitElement

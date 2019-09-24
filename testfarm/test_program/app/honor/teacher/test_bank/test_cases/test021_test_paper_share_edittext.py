@@ -4,13 +4,13 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
 from app.honor.teacher.test_bank.object_page.test_paper_detail_page import PaperDetailPage
-from app.honor.teacher.test_bank.object_page import PaperSharePage
-from app.honor.teacher.user_center import ChangeImage
+from app.honor.teacher.test_bank.object_page.test_paper_share_page import PaperSharePage
+from app.honor.teacher.user_center.user_information.object_page.change_image_page import ChangeImage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
@@ -98,7 +98,7 @@ class PaperShare(unittest.TestCase):
                 if self.share.wait_check_toast_page(5):  # 该校分享额度已用完 or 非合作校
                     self.home.tips_title()  # 提示
                     self.home.tips_content()  # 提示的内容
-                    self.home.commit_button()  # 确定按钮
+                    self.home.commit_button().click()  # 确定按钮
 
                     if self.share.wait_check_share_list_page():
                         print('------------------')
@@ -107,7 +107,7 @@ class PaperShare(unittest.TestCase):
                         if self.share.wait_check_toast_page(5):  # 该校分享额度已用完 or 非合作校
                             self.home.tips_title()  # 提示
                             self.home.tips_content()  # 提示的内容
-                            self.home.commit_button()  # 确定按钮
+                            self.home.commit_button().click()  # 确定按钮
                 else:  # 可分享
                     if self.share.wait_check_share_wechat_page(5):  # 说明 手机安装了微信且未登录
                         self.share.wechat_back_button()
@@ -150,4 +150,4 @@ class PaperShare(unittest.TestCase):
                 elif self.share.wait_check_toast_page(5):  # 该校分享额度已用完 or 非合作校
                         self.home.tips_title()  # 提示
                         self.home.tips_content()  # 提示的内容
-                        self.home.commit_button()  # 确定按钮
+                        self.home.commit_button().click()  # 确定按钮

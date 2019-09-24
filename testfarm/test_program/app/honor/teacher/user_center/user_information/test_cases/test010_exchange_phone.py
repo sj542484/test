@@ -3,11 +3,11 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.user_center import TuserCenterPage
-from app.honor.teacher.user_center import PhoneReset
-from app.honor.teacher.user_center import UserInfoPage
-from app.honor.teacher.user_center import reset_phone_data
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
+from app.honor.teacher.user_center.user_information.object_page.reset_phone_page import PhoneReset
+from app.honor.teacher.user_center.user_information.object_page.user_Info_page import UserInfoPage
+from app.honor.teacher.user_center.user_information.test_data.reset_phone import reset_phone_data
 from conf.decorator import setup, teardown, testcase
 from utils.reset_phone_toast import get_verify
 from utils.toast_find import Toast

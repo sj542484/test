@@ -5,10 +5,10 @@ import time
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.user_center import TuserCenterPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from utils.click_bounds import ClickBounds
 from utils.wait_element import WaitElement
 

@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 # code:UTF-8  
 # @Author  : SUN FEIFEI
+import random
+
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
 
-from conf.base_page import BasePage
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.object_page.vanclass_page import VanclassPage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
@@ -14,13 +18,17 @@ from utils.wait_element import WaitElement
 
 class VanclassDetailPage(BasePage):
     """ 班级详情页 修改、查询页面元素信息"""
+    no_data_value = gv.PACKAGE_ID + "no_data_hint"  # 暂无数据
     goto_pool_value = gv.PACKAGE_ID + "tv_topool"  # 去题库
+
     st_icon_value = gv.PACKAGE_ID + "head"  # 学生头像
     st_order_value = gv.PACKAGE_ID + "tv_order"  # 序号
 
     def __init__(self):
         self.get = GetAttribute()
         self.wait = WaitElement()
+        self.home = ThomePage()
+        self.van = VanclassPage()
 
     @teststep
     def judge_van_modify(self):
@@ -41,6 +49,19 @@ class VanclassDetailPage(BasePage):
         """以完成进度 的id为依据"""
         locator = (By.ID, gv.PACKAGE_ID + "status")
         return self.wait.wait_check_element(locator)
+
+    @teststep
+    def wait_check_empty_tips_page(self, var=3):
+        """暂无口语/作业/试卷，去题库看看吧"""
+        locator = (By.ID, self.no_data_value)
+        return self.wait.wait_check_element(locator, var)
+
+    @teststeps
+    def no_data(self):
+        """暂无数据元素"""
+        locator = (By.ID, self.no_data_value)
+        ele = self.wait.wait_find_element(locator)
+        print(ele.text)
 
     @teststep
     def best_tab(self):
@@ -81,7 +102,7 @@ class VanclassDetailPage(BasePage):
 
     @teststep
     def hw_name(self):
-        """作业name"""
+        """作业name + 类型 eg:作业详情(习题)"""
         ele = self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + "name")
         return ele
@@ -134,15 +155,6 @@ class VanclassDetailPage(BasePage):
         """无试卷时 --去题库按钮"""
         self.driver \
             .find_elements_by_id(self.goto_pool_value).click()
-
-    @teststep
-    def first_item(self):
-        """第一个元素 index = 1"""
-        ele = self.driver.find_elements_by_xpath("//android.widget.TextView")[1]
-        if GetAttribute().resource_id(ele) == gv.PACKAGE_ID + 'name':
-            return True
-        else:
-            return False
 
     # 积分排行榜
     @teststeps
@@ -244,7 +256,7 @@ class VanclassDetailPage(BasePage):
     @teststep
     def st_remark(self):
         """学生 备注名"""
-        item = self.driver \
+        item = self.driver\
             .find_elements_by_id(gv.PACKAGE_ID + "sub_title")
         return item
 
@@ -268,13 +280,14 @@ class VanclassDetailPage(BasePage):
             .click()
 
     @teststeps
-    def button_enabled_judge(self, length, button, size, max=10):
+    def button_enabled_judge(self, length, button, size, max_length=10):
         """按钮enabled状态 与 字符数
         :param length:展示的字符数
         :param button:按钮
         :param size:实际输入的字符数
+        :param max_length: 最大字符数
         """
-        if 0 < length <= max:
+        if 0 < length <= max_length:
             if length != int(size):
                 print('★★★ Error- 字符数展示有误', length, size)
             else:
@@ -286,7 +299,7 @@ class VanclassDetailPage(BasePage):
             else:
                 if self.get.enabled(button) == 'true':
                     print('★★★ Error- 确定按钮未置灰可点击')
-        elif length > max:
+        elif length > max_length:
             if length != int(size):
                 print('★★★ Error- 字符数展示有误', length, size)
             else:
@@ -296,7 +309,7 @@ class VanclassDetailPage(BasePage):
 
     @teststep
     def into_operation(self, var, check):
-        """进入列表中 某个口语/作业/卷子 具体操作
+        """进入列表中 指定口语/作业/卷子 具体操作
         :param var:作业包name
         :param check: 页面检查点
         """
@@ -318,3 +331,63 @@ class VanclassDetailPage(BasePage):
             else:
                 if self.wait_check_page(check):  # 页面检查点
                     SwipeFun().swipe_vertical(0.5, 0.75, 0.25)
+
+    @teststeps
+    def edit_into_operation(self, vanclass, title, func, hw):
+        """进入  有作业的班级
+        :param vanclass: 不进行编辑的班级
+        :param title:  本班作业/口语/试卷title
+        :param func: 进入本班作业/口语/试卷 tab的函数
+        :param hw: 不进行编辑的作业/试卷
+        """
+        if self.home.wait_check_list_page():
+            SwipeFun().swipe_vertical(0.5, 0.8, 0.2)
+            if self.home.wait_check_list_page():
+                name = self.home.item_detail()  # 班号+班级名
+                var = 0
+                for i in range(len(name)):
+                    if self.home.wait_check_list_page():
+                        name = self.home.item_detail()  # 班号+班级名
+                        van = self.home.vanclass_name(name[i].text)  # 班级名
+                        if van != vanclass:
+                            name[i].click()  # 进入班级
+                            if self.wait_check_page(van):  # 页面检查点
+                                if self.van.wait_check_list_page():  # 加载完成
+                                    func()  # 点击进入 本班作业/试卷 tab
+                                    if self.wait_check_empty_tips_page():
+                                        if self.wait_check_page(title.format(van)):  # 页面检查点
+                                            self.home.back_up_button()  # 返回 答题详情页面
+                                            if self.wait_check_page(van):  # 班级详情 页面检查点
+                                                self.home.back_up_button()
+                                    else:
+                                        print('班级:', van)
+                                        var = self.random_into_operation(hw)  # 随机进入某个作业 游戏列表
+                                        break
+                print('=====================================')
+                return var
+
+    @teststeps
+    def random_into_operation(self, var):
+        """随机进入列表中 某个口语/作业/卷子 具体操作
+        :param var: 作业
+        """
+        count = 0
+        hw = self.hw_name()  # 口语/作业/卷子 name
+        name = 0
+        for i in range(len(hw)):
+            index = 0
+            if len(hw) != 1:
+                index = random.randint(0, len(hw)-1)
+
+            name = hw[index].text
+            if name not in var:
+                print("口语/作业/卷子:", name)
+                hw[index].click()  # 进入口语/作业/卷子
+                count += 1
+                break
+
+        if count == 0:
+            print('★★★ Error- 没有可测试的数据')
+            return None
+        else:
+            return name

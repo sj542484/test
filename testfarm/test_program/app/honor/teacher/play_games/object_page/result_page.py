@@ -5,7 +5,7 @@ import re
 import time
 from selenium.webdriver.common.by import By
 
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
 from utils.get_attribute import GetAttribute
@@ -142,7 +142,6 @@ class ResultPage(BasePage):
     @teststeps
     def back_up(self):
         """返回到作业list"""
-        time.sleep(1)
         j = 0
         while j < 2:
             self.back_up_button()  # 结果页 返回按钮

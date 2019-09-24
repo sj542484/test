@@ -1,0 +1,140 @@
+2019-09-24 09:05:06,463 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:05:06,464 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:05:06,465 - honor_9 - INFO - --> Login.test_login_phone
+2019-09-24 09:05:06,465 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:05:06,465 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:05:26,541 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:05:26,541 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:05:26,542 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:05:26,543 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:05:26,964 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:05:26,965 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:05:26,965 - honor_9 - INFO -   --> Login.login_operation_phone
+2019-09-24 09:05:26,966 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:05:26,966 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:05:27,038 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:05:27,039 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:05:27,039 - honor_9 - INFO - 	--> TloginPage.visible_password
+2019-09-24 09:05:27,040 - honor_9 - ERROR - Exception, 'TloginPage' object has no attribute 'driver'
+2019-09-24 09:05:27,041 - honor_9 - ERROR - 	<-- TloginPage.visible_password, Exception, Error
+2019-09-24 09:05:27,722 - honor_9 - ERROR - Exception, IMAGE:TloginPage.visible_password-20190924090527.png
+2019-09-24 09:05:27,723 - honor_9 - ERROR -   <-- Login.login_operation_phone, Exception, Error
+2019-09-24 09:05:27,723 - honor_9 - ERROR - Exception, IMAGE:TloginPage.visible_password-20190924090527.png
+2019-09-24 09:05:27,723 - honor_9 - ERROR - <-- Login.test_login_phone, Exception, Error
+
+2019-09-24 09:05:27,724 - honor_9 - INFO - --> Login.tearDown
+2019-09-24 09:05:27,724 - honor_9 - INFO - <-- Login.tearDown, Success
+
+2019-09-24 09:05:27,727 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:05:27,727 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:05:27,728 - honor_9 - INFO - --> Login.test_login_password
+2019-09-24 09:05:27,728 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:05:27,728 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:05:48,088 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:05:48,089 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:05:48,090 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:05:48,090 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:05:48,141 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:05:48,141 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:05:48,142 - honor_9 - INFO -   --> Login.login_operation_pwd
+2019-09-24 09:05:48,142 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:05:48,142 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:05:48,196 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:05:48,197 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:05:48,197 - honor_9 - INFO - 	--> TloginPage.visible_password
+2019-09-24 09:05:48,197 - honor_9 - ERROR - Exception, 'TloginPage' object has no attribute 'driver'
+2019-09-24 09:05:48,198 - honor_9 - ERROR - 	<-- TloginPage.visible_password, Exception, Error
+2019-09-24 09:05:48,870 - honor_9 - ERROR - Exception, IMAGE:TloginPage.visible_password-20190924090548.png
+2019-09-24 09:05:48,870 - honor_9 - ERROR -   <-- Login.login_operation_pwd, Exception, Error
+2019-09-24 09:05:48,870 - honor_9 - ERROR - Exception, IMAGE:TloginPage.visible_password-20190924090548.png
+2019-09-24 09:05:48,871 - honor_9 - ERROR - <-- Login.test_login_password, Exception, Error
+
+2019-09-24 09:05:48,871 - honor_9 - INFO - --> Login.tearDown
+2019-09-24 09:05:48,871 - honor_9 - INFO - <-- Login.tearDown, Success
+
+2019-09-24 09:05:48,873 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:05:48,873 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:05:48,874 - honor_9 - INFO - --> Login.test_forget_pwd
+2019-09-24 09:05:48,874 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:05:48,874 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:06:09,248 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:06:09,248 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:06:09,249 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:06:09,249 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:06:09,316 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:06:09,316 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:06:09,317 - honor_9 - INFO -   --> Login.forget_pwd_operation
+2019-09-24 09:06:09,317 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:06:09,317 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:06:09,369 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:06:09,369 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:06:09,370 - honor_9 - INFO - 	--> TloginPage.forget_password
+2019-09-24 09:06:09,370 - honor_9 - ERROR - Exception, 'TloginPage' object has no attribute 'driver'
+2019-09-24 09:06:09,371 - honor_9 - ERROR - 	<-- TloginPage.forget_password, Exception, Error
+2019-09-24 09:06:10,077 - honor_9 - ERROR - Exception, IMAGE:TloginPage.forget_password-20190924090609.png
+2019-09-24 09:06:10,077 - honor_9 - ERROR -   <-- Login.forget_pwd_operation, Exception, Error
+2019-09-24 09:06:10,078 - honor_9 - ERROR - Exception, IMAGE:TloginPage.forget_password-20190924090609.png
+2019-09-24 09:06:10,078 - honor_9 - ERROR - <-- Login.test_forget_pwd, Exception, Error
+
+2019-09-24 09:06:10,079 - honor_9 - INFO - --> Login.tearDown
+2019-09-24 09:06:10,079 - honor_9 - INFO - <-- Login.tearDown, Success
+
+2019-09-24 09:06:10,081 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:06:10,081 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:06:10,082 - honor_9 - INFO - --> Login.test_forget_pwd_password
+2019-09-24 09:06:10,082 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:06:10,082 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:06:30,592 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:06:30,593 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:06:30,594 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:06:30,594 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:06:30,658 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:06:30,659 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:06:30,660 - honor_9 - INFO -   --> Login.forget_pwd_operation
+2019-09-24 09:06:30,661 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:06:30,662 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:06:30,706 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:06:30,706 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:06:30,707 - honor_9 - INFO - 	--> TloginPage.forget_password
+2019-09-24 09:06:30,707 - honor_9 - ERROR - Exception, 'TloginPage' object has no attribute 'driver'
+2019-09-24 09:06:30,707 - honor_9 - ERROR - 	<-- TloginPage.forget_password, Exception, Error
+2019-09-24 09:06:31,575 - honor_9 - ERROR - Exception, IMAGE:TloginPage.forget_password-20190924090630.png
+2019-09-24 09:06:31,575 - honor_9 - ERROR -   <-- Login.forget_pwd_operation, Exception, Error
+2019-09-24 09:06:31,576 - honor_9 - ERROR - Exception, IMAGE:TloginPage.forget_password-20190924090630.png
+2019-09-24 09:06:31,576 - honor_9 - ERROR - <-- Login.test_forget_pwd_password, Exception, Error
+
+2019-09-24 09:06:31,577 - honor_9 - INFO - --> Login.tearDown
+2019-09-24 09:06:31,577 - honor_9 - INFO - <-- Login.tearDown, Success
+
+2019-09-24 09:06:31,578 - honor_9 - INFO - --> Register.setUp
+2019-09-24 09:06:31,579 - honor_9 - INFO - <-- Register.setUp, Success
+
+2019-09-24 09:06:31,579 - honor_9 - INFO - --> Register.test_register
+2019-09-24 09:06:31,579 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:06:31,580 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:06:51,848 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:06:51,849 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:06:51,850 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:06:51,850 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:06:51,921 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:06:51,922 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:06:51,923 - honor_9 - INFO -   --> Register.register_operation
+2019-09-24 09:06:51,924 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:06:51,924 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:06:51,968 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:06:51,969 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:06:51,969 - honor_9 - INFO - 	--> TloginPage.register_button
+2019-09-24 09:06:51,969 - honor_9 - ERROR - Exception, 'TloginPage' object has no attribute 'driver'
+2019-09-24 09:06:51,969 - honor_9 - ERROR - 	<-- TloginPage.register_button, Exception, Error
+2019-09-24 09:06:52,685 - honor_9 - ERROR - Exception, IMAGE:TloginPage.register_button-20190924090651.png
+2019-09-24 09:06:52,686 - honor_9 - ERROR -   <-- Register.register_operation, Exception, Error
+2019-09-24 09:06:52,686 - honor_9 - ERROR - Exception, IMAGE:TloginPage.register_button-20190924090651.png
+2019-09-24 09:06:52,686 - honor_9 - ERROR - <-- Register.test_register, Exception, Error
+
+2019-09-24 09:06:52,687 - honor_9 - INFO - --> Register.tearDown
+2019-09-24 09:06:52,687 - honor_9 - INFO - <-- Register.tearDown, Success
+

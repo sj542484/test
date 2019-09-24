@@ -5,13 +5,13 @@ import re
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from conf.decorator import teststeps, teststep
 from conf.base_config import GetVariable as gv
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from utils.get_attribute import GetAttribute
-from utils.get_element_bounds import Element
+from utils.get_element_bounds import ElementBounds
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
@@ -99,15 +99,14 @@ class CompleteArticle(BasePage):
     @teststeps
     def wait_check_detail_page(self):
         """以“answer”的ID为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "tb_content")
+        locator = (By.ID, gv.PACKAGE_ID + "rich_text")
         return self.wait.wait_check_element(locator)
 
     @teststeps
     def get_result(self):
         """获取 输入框 的结果"""
-        var = self.get.description(self.input_text())
-        content = re.match(".* ## (.*)",var).group(1)
-        answer = content.split('  ')  # answer
+        content = self.get.description(self.input_text())
+        answer = content[6:].split('  ')  # answer
         return answer
 
     @teststeps
@@ -158,7 +157,7 @@ class CompleteArticle(BasePage):
     def drag_operation(self, var='up'):
         """拖拽按钮 拖拽操作"""
         drag = self.dragger_button()  # 拖拽 拖动按钮
-        loc = Element().get_element_bounds(drag)  # 获取按钮坐标
+        loc = ElementBounds().get_element_bounds(drag)  # 获取按钮坐标
         size = self.options_view_size()  # 获取整个选项页面大小
         if var == 'up':
             self.driver.swipe(loc[2], loc[3], loc[2], loc[3] - size, 1000)  # 向上拖拽
@@ -173,8 +172,20 @@ class CompleteArticle(BasePage):
             if self.result.wait_check_detail_page():  # 页面检查点
                 if self.wait_check_detail_page():
                     item = self.get_result()
-                    print("正确答案:", item)
-                    self.result.back_up_button()  # 返回结果页
+                    print("填入的答案:", item)
+                    self.drag_operation()  # 向上拖拽按钮操作
+
+                    content = []  # 答题情况
+                    count = 0  # 小题数
+                    options = self.option_button()  # 选项ABCD
+                    for i in range(len(options)):
+                        if self.get.selected(options[i]) == 'true':
+                            count += 1
+                            content.append(self.get.description(options[i]))
+
+                    if self.wait_check_detail_page():
+                        self.result.back_up_button()  # 返回结果页
+
 
     @teststeps
     def font_operation(self):

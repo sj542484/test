@@ -1,21 +1,21 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
+from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.user_center import CollectionPage
-from app.honor.teacher.user_center import MineTestBankPage
-from app.honor.teacher.user_center import name_data
-from app.honor.teacher.user_center import TuserCenterPage
-from conf.base_page import BasePage
+from app.honor.teacher.user_center.mine_collection.object_page.mine_collect_page import CollectionPage
+from app.honor.teacher.user_center.mine_test_bank.object_page.mine_test_bank_page import MineTestBankPage
+from app.honor.teacher.user_center.tiny_course.test_data.video_name import name_data
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.connect_db import ConnectDB
-from utils.toast_find import Toast
 from utils.wait_element import WaitElement
 
 
@@ -25,6 +25,7 @@ class CreateTinyCourse(BasePage):
     video_value = gv.PACKAGE_ID + 'video'  # 添加视频后，微课主页面 视频 按钮
 
     menu_value = gv.PACKAGE_ID + "md_title"  # 菜单条目
+    upload_locator = (By.ID, "android:id/progress")  # 上传进度条 元素
 
     def __init__(self):
         self.wait = WaitElement()
@@ -100,7 +101,7 @@ class CreateTinyCourse(BasePage):
     def judge_video_exist(self):
         """以“删除按钮删除后页面”的id为依据"""
         locator = (By.ID, self.video_value)
-        return self.wait.judge_is_exists(locator)
+        return self.wait.wait_check_element(locator)
 
     @teststeps
     def play_video(self):
@@ -113,8 +114,7 @@ class CreateTinyCourse(BasePage):
     @teststeps
     def wait_check_upload_page(self, var=10):
         """以“上传中  进度条”的id为依据"""
-        locator = (By.ID, "android:id/progress")
-        return self.wait.wait_check_element(locator, var)
+        return self.wait.wait_check_element(self.upload_locator, var)
 
     @teststeps
     def upload_rate(self):
@@ -131,18 +131,11 @@ class CreateTinyCourse(BasePage):
         return ele
 
     @teststeps
-    def edit_course_name(self, name=None):
+    def edit_course_name(self):
         """编辑课程名称 操作"""
         print('---编辑课程名称---')
-        if name is None:
-            var = 0
-            length = len(name_data)
-            name = name_data[var]['name']
-        else:
-            length = 1
-
-        item = 0  # 微课名称
-        for i in range(length):
+        while True:
+            name = name_data[0]['name']
             if self.wait_check_list_page():
                 var = self.course_name()  # 微课名称
                 var.send_keys(name)
@@ -150,12 +143,8 @@ class CreateTinyCourse(BasePage):
                 print('输入微课名称：', item)
                 self.save_button()  # 点击保存按钮
 
-                if self.wait_check_upload_page(3):  # 上传中....
-                    self.judge_upload_operation()  # 判断视频 是否 正在上传中
-                    ThomePage().tips_content_commit()  # 提示 页面信息
-
-                if not Toast().find_toast('加入成功'):
-                    print('★★★ Error - 未弹toast：加入成功')
+                self.judge_upload_operation(2)  # 判断视频 是否 正在上传中
+                if GamesPage().wait_check_page():
                     break
                 else:
                     continue
@@ -163,23 +152,28 @@ class CreateTinyCourse(BasePage):
         return item
 
     @teststeps
-    def judge_upload_operation(self, var=5):
-        """判断视频 是否 正在上传中"""
-        if self.wait_check_upload_page(var):  # 上传中....
+    def check_upload_progress(self, var=5):
+        """上传中..."""
+        return self.wait.wait_check_element(self.upload_locator, var)
+
+    @teststeps
+    def judge_upload_operation(self, var=2):
+        """判断视频 是否 正在上传中 及加入公共题库"""
+        if self.wait_check_upload_page():  # 上传中....
             # self.upload_rate()  # 上传百分率
             # self.upload_num()  # 上传数量
 
             while True:
-                locator = (By.ID, "android:id/progress")
-                if self.wait.judge_is_exists(locator):  # 上传中....
+                if self.wait_check_upload_page(var):  # 上传中....
                     time.sleep(1)
-                else:
+                elif ThomePage().wait_check_tips_page(var):
+                    ThomePage().tips_content_commit(5)  # 提示 页面信息
+                    ThomePage().tips_content_commit(5)  # 提示 页面信息
                     break
 
     @teststeps
     def judge_save_result(self, video):
-        """
-        验证视频保存结果
+        """验证视频保存结果
         :param video: 视频名称
         """
         if self.user.wait_check_page():
@@ -197,40 +191,38 @@ class CreateTinyCourse(BasePage):
                 if self.mine.wait_check_page():  # 页面检查点
                     if self.mine.wait_check_list_page():
                         name = self.question.question_name()  # 名称
-                        type = self.question.question_type(0)  # 类型
+                        mode = self.question.question_type(0)  # 类型
                         author = self.question.question_author()  # 创建人
-                        print(name[1][0], type, author[0].text)
+                        print(name[1][0], mode, author[0].text)
 
-                        if type != '微课':
-                            print('★★★ Error - 视频保存失败，我的题库题型有误', type)
+                        if mode != '微课':
+                            print('★★★ Error - 视频保存失败，我的题库 -题型有误', mode)
                         else:
                             if name[1][0] != video:
-                                print('★★★ Error - 视频保存失败，我的题库视频名称有误', name[1][0], video)
+                                print('★★★ Error - 视频保存失败，我的题库 -视频名称有误', name[1][0], video)
                             else:
                                 if author[0].text != nick:
-                                    print('★★★ Error - 视频保存失败，我的题库视频作者有误', author[0].text, nick)
+                                    print('★★★ Error - 视频保存失败，我的题库 -视频作者有误', author[0].text, nick)
                                 else:
                                     print('视频拍摄保存成功')
 
-                        # self.recovery_data(video)  # 恢复测试数据
+                        self.recovery_data(video)  # 恢复测试数据
 
             ThomePage().back_up_button()  # 返回个人中心页面
 
     @teststeps
-    def recovery_data(self, name, number=None):
+    def recovery_data(self, name):
         """ 恢复测试数据
-        :param number: limit 取值数量
-        :param name:   视频名称
-        :param created_date:  创建日期
+        :param name:  视频名称
         """
         print('------恢复测试数据-----')
-        if number is None:
-            number = 1000
-
-        if name.find('&') != -1:
-            name = name.replace('&', '&amp;')
-
-        sql = "DELETE FROM `testbank` WHERE (`account_id` = '51869' AND `name`='{}') LIMIT {}" \
-            .format(name, number)
+        sql = "DELETE FROM `testbank` WHERE `account_id` = '51869' AND `name`= '{}'" \
+            .format(name)
         print(sql)
-        ConnectDB().operate_mysql(sql)
+        ConnectDB().execute_sql(sql)
+
+    @teststeps
+    def save_operation(self):
+        """保存 操作"""
+        self.save_button()  # 点击 保存按钮
+        self.judge_upload_operation()  # 判断视频是否 正在上传中...  及 加入公共题库tips

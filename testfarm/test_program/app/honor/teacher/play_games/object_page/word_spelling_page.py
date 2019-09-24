@@ -1,25 +1,26 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
-from app.honor.teacher.play_games import word_spelling_operation
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
+from app.honor.teacher.play_games.test_data.word_spelling_data import word_spelling_operation
 from utils.get_attribute import GetAttribute
 from utils.games_keyboard import Keyboard
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.judge_character_type import JudgeType
+from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
 
 class WordSpelling(BasePage):
     """单词拼写"""
     word_value = gv.PACKAGE_ID + "tv_word"  # 单词
-    correct_value = gv.PACKAGE_ID + "tv_answer"  # 提交 按钮之后 答案页展示的答案
+    correct_value = gv.PACKAGE_ID + "word"  # 提交 按钮之后 答案页展示的答案
 
     def __init__(self):
         self.result = ResultPage()
@@ -135,30 +136,43 @@ class WordSpelling(BasePage):
     def result_voice(self, index):
         """语音按钮"""
         self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "iv_speak")[index] \
+            .find_elements_by_id(gv.PACKAGE_ID + "audio")[index] \
             .click()
 
     @teststep
-    def result_answer(self, index):
+    def result_item(self):
+        """题目条目"""
+        ele = self.driver \
+            .find_elements_by_class_name("android.view.ViewGroup")
+        return ele
+
+    @teststep
+    def result_answer(self):
         """单词"""
         ele = self.driver \
-            .find_elements_by_id(self.correct_value)[index].text
+            .find_elements_by_id(self.correct_value)
         return ele
 
     @teststep
-    def result_explain(self, index):
+    def result_explain(self):
         """解释"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "tv_hint")[index].text
+            .find_elements_by_id(gv.PACKAGE_ID + "explain")
         return ele
 
     @teststep
-    def result_mine(self, index):
+    def result_remove(self):
+        """去除"""
+        ele = self.driver \
+            .find_elements_by_id(gv.PACKAGE_ID + "remove")
+        return ele
+
+    @teststep
+    def result_mine(self):
         """我的"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "iv_mine")[index]
-        value = self.get.selected(ele)
-        return value
+            .find_elements_by_id(gv.PACKAGE_ID + "result")
+        return ele
 
     @teststeps
     def diff_type(self, tpe):
@@ -289,7 +303,7 @@ class WordSpelling(BasePage):
                     mine.append(self.dictation_finish_word())  # 我的答案
                     Homework().commit_button_operation('true')  # 提交 按钮 状态判断 加点击
 
-                    self.result_operation(mine, i, self.dictation_mine_answer(), timestr, answer)# 答案页面 测试
+                    self.result_operation(mine, i, self.dictation_mine_answer(), timestr, answer)  # 答案页面 测试
 
                 Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
                 print('==================================================')
@@ -298,6 +312,7 @@ class WordSpelling(BasePage):
     @teststeps
     def keyboard_operation(self, j, value):
         """点击键盘 具体操作
+        :param j: 索引值
         :param value: 单词
         """
         if j == 4:
@@ -313,6 +328,7 @@ class WordSpelling(BasePage):
         :param content：我的答案
         :param i: 第X小题
         :param mine: 为 答案页面展示的 我的答题结果
+        :param timestr:统计时间
         :param answer: 作对的题
         """
         print('----------------------')
@@ -366,21 +382,67 @@ class WordSpelling(BasePage):
         print('--------')
 
     @teststeps
-    def result_detail_page(self, rate):
+    def result_detail_page(self):
         """查看答案 操作过程"""
         if self.result.wait_check_result_page():  # 结果页检查点
             self.result.check_result_button()  # 结果页 查看答案 按钮
-            if self.result.wait_check_detail_page():
-                print('查看答案:')
-                print('题数:', int(rate))
-                for i in range(0, int(rate)):
-                    print('解释:', self.result_explain(i))  # 解释
-                    print('单词:', self.result_answer(i))  # 正确word
-                    print('对错标识:', self.result_mine(i))  # 对错标识
-                    print('-----------------------------------')
-                    self.result_voice(i)  # 点击发音按钮
-                self.result.back_up_button()  # 返回结果页
+            print('查看答案:')
+            self.swipe_operation()
+            self.result.back_up_button()  # 返回结果页
             print('==============================================')
+
+    @teststeps
+    def swipe_operation(self, content=None):
+        """查看答案 - 点击听力按钮
+        :param content: 翻页
+        """
+        if self.result.wait_check_detail_page():
+            if content is None:
+                content = []
+
+            ques = self.result_answer()
+            if len(ques) > 4 and not content:
+                self.ergodic_list(len(ques) - 1)
+                content = [ques[-2].text]
+
+                SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
+                self.swipe_operation(content)
+            else:
+                var = 0
+                if content:
+                    for k in range(len(ques)):
+                        if content[0] == ques[k].text:
+                            var += k + 1
+                            break
+
+                self.ergodic_list(len(ques), var)
+
+    @teststeps
+    def ergodic_list(self, length, var=1):
+        """遍历列表
+        :param length: 遍历的最大值
+        :param var:遍历的最小值
+        """
+        explain = self.result_explain()  # 解释
+        answer = self.result_answer()  # 答案
+        remove = self.result_remove()  # 去除
+        mine = self.result_mine()  # 对错标识
+
+        content = []  # 答对的小题数
+        count = 0  # 小题数
+        for i in range(var, length):
+            count += 1
+            print('单词:', answer[i].text)  # 正确word
+            print('解释:', explain[i].text)  # 解释
+            print(remove[i].text)  # 去除
+            mode = GetAttribute().selected(mine[i])
+            print('对错标识:', mode)
+
+            if mode == 'true':
+                content.append(i)
+
+            print('-----------------------------------------')
+            self.result_voice(i)  # 点击发音按钮
 
     @teststeps
     def study_again(self, tpe):

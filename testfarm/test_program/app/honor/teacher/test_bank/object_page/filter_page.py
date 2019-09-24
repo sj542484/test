@@ -3,7 +3,9 @@
 # @Author  : SUN FEIFEI
 from selenium.webdriver.common.by import By
 
-from conf.base_page import BasePage
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
@@ -18,12 +20,27 @@ class FilterPage(BasePage):
     def __init__(self):
         self.get = GetAttribute()
         self.wait = WaitElement()
+        self.question = TestBankPage()
 
     @teststeps
     def wait_check_page(self):
         """以“”为依据"""
         locator = (By.ID, self.label_name_value)
         return self.wait.wait_check_element(locator)
+
+    @teststep
+    def click_public(self):
+        """以“公共”的text为依据"""
+        self.driver \
+            .find_element_by_id(self.label_name_value)\
+            .click()
+
+    @teststep
+    def click_school(self):
+        """以“本校”的text为依据"""
+        self.driver \
+            .find_elements_by_id(self.label_name_value)[1] \
+            .click()
 
     @teststep
     def question_menu(self):
@@ -94,9 +111,8 @@ class FilterPage(BasePage):
         """以“标签 title”的id为依据"""
         ele = self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + "tv_title")
-        content = []
-        for i in range(len(ele)):
-            content.append(ele[i].text)
+
+        content = [i.text for i in ele]
         return content
 
     @teststep
@@ -120,6 +136,40 @@ class FilterPage(BasePage):
             .find_elements_by_xpath("//android.widget.LinearLayout/android.support.v7.widget.RecyclerView"
                                     "/android.widget.LinearLayout/"
                                     "descendant::*/android.widget.TextView")
+        return ele
+
+    # 本校标签
+    @teststeps
+    def wait_check_school_label_page(self):
+        """以“title:学校标签”的text为依据"""
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'学校标签')]")
+        return self.wait.wait_check_element(locator)
+
+    @teststeps
+    def wait_check_label_list_page(self):
+        """以“存在 标签列表”的text为依据"""
+        locator = (By.ID, gv.PACKAGE_ID + "label_name")
+        return self.wait.wait_check_element(locator)
+
+    @teststep
+    def check_button(self):
+        """以“单选 按钮”的class name为依据"""
+        ele = self.driver \
+            .find_elements_by_id(gv.PACKAGE_ID + "check")
+        return ele
+
+    @teststep
+    def school_label_name(self):
+        """以“本校标签 name”的id为依据"""
+        ele = self.driver \
+            .find_elements_by_id(gv.PACKAGE_ID + "label_name")
+        return ele
+
+    @teststep
+    def confirm_button(self):
+        """确定 按钮"""
+        ele = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "confirm")
         return ele
 
     @teststeps
@@ -152,14 +202,16 @@ class FilterPage(BasePage):
     def label_content(self, var, content):
         """筛选 每个标题下的所有label"""
         count = []
-        if var == 2:  # 试卷
+        if var == 3:  # 试卷
             for i in range(len(content)):
                 if content[i] == '题库':
                     count.append(i)
                 elif content[i] == '资源类型':
                     count.append(i)
+                elif content[i] == '本校标签':
+                    count.append(i)
                     break
-        elif var == 3:  # 题单
+        elif var == 4:  # 题单
             for i in range(len(content)):
                 if content[i] == '题库':
                     count.append(i)
@@ -167,8 +219,10 @@ class FilterPage(BasePage):
                     count.append(i)
                 elif content[i] == '系统标签':
                     count.append(i)
+                elif content[i] == '本校标签':
+                    count.append(i)
                     break
-        elif var == 4:  # 大题
+        elif var == 5:  # 大题
             for i in range(len(content)):
                 if content[i] == '题库':
                     count.append(i)
@@ -177,6 +231,8 @@ class FilterPage(BasePage):
                 elif content[i] == '活动类型':
                     count.append(i)
                 elif content[i] == '系统标签':
+                    count.append(i)
+                elif content[i] == '本校标签':
                     count.append(i)
                     break
 
@@ -197,13 +253,91 @@ class FilterPage(BasePage):
         """选中的资源类型"""
         if self.get.selected(self.question_menu()) == 'true':  # 题单
             print('======================选择题单======================')
-            self.filter_all_element(3)  # 所有label title+小标签
+            self.filter_all_element(4)  # 所有label title+小标签
         else:
             if self.get.selected(self.game_list()) == 'true':  # 大题
                 print('======================选择大题======================')
-                self.filter_all_element(4)  # 所有label title+小标签
+                self.filter_all_element(5)  # 所有label title+小标签
             else:
                 if self.get.selected(self.test_paper()) == 'true':  # 试卷
                     print('======================选择试卷======================')
-                    self.filter_all_element(2)  # 所有label title+小标签
+                    self.filter_all_element(3)  # 所有label title+小标签
         print('============================================')
+
+    @teststeps
+    def choose_school_label(self):
+        """选择本校标签"""
+        if self.wait_check_school_label_page():
+            print('--------')
+
+            cancel = ''
+            choose = ''
+            if self.wait_check_label_list_page():
+                button = self.check_button()  # 单选框
+                label = self.school_label_name()  # 本校标签名
+
+                for i in range(len(button)):
+                    if GetAttribute().checked(button[i]) == 'true':
+                        cancel = label[i].text
+                        print('取消选择标签:', cancel)
+                        button[i].click()  # 取消选择 一个标签
+                    else:
+                        print('所选择的标签:', label[i].text)
+                        choose = label[i].text
+                        button[i].click()  # 选择 一个班
+                        print('-----------')
+                        break
+            elif ThomePage().wait_check_empty_tips_page():
+                print('本校暂无标签')
+
+            self.confirm_button().click()  # 确定按钮
+            return cancel, choose
+
+    @teststeps
+    def judge_school_label_result(self, name, label, mode='大题'):
+        """ 验证 - 选择本校标签 结果
+        :param name: 题名
+        :param label:标签名
+        :param mode:类型
+        """
+        print('------------验证 -选择本校标签 结果-----------')
+        if self.question.wait_check_page('搜索'):  # 页面检查点
+            self.question.filter_button()  # 筛选按钮
+
+            if self.wait_check_page():  # 页面检查点
+                self.click_school()  # 选择本校
+
+                if self.wait_check_page():  # 页面检查点
+                    if mode == '大题':
+                        if GetAttribute().selected(self.game_list()) == 'false':  # 大题
+                            self.click_game_list()  # 选择大题
+                    elif mode == '试卷':
+                        if GetAttribute().selected(self.test_paper()) == 'false':  # 试卷
+                            self.click_test_paper()  # 选择试卷
+                    elif mode == '题单':
+                        if GetAttribute().selected(self.question_menu()) == 'false':  # 题单
+                            self.click_question_menu()  # 选择题单
+
+                if self.wait_check_page():  # 页面检查点
+                    all_label = self.label_name()  # 所有标签
+                    for k in range(len(all_label)):
+                        if all_label[k].text == label:   # 标签名
+                            print('选择的标签为:', all_label[k].text)
+                            all_label[k].click()  # 选择一个标签
+                            break
+                    self.commit_button()  # 确定按钮
+
+                if not self.question.wait_check_page(mode):  # 页面检查点
+                    print('★★★ Error- 选择 {} 标签不成功'.format(mode))
+
+                item = self.question.question_name()  # 获取题目
+                name1 = item[1][0]
+                if name != name1:
+                    print('★★★ Error- 选择本校标签失败', name, name1)
+                else:
+                    print('选择本校标签成功')
+
+                self.question.filter_button()  # 筛选按钮
+                if self.wait_check_page():  # 页面检查点
+                    self.click_public()  # 选择公共
+                    self.commit_button()  # 确定按钮

@@ -5,12 +5,12 @@ import re
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
-from app.honor.teacher.play_games import strength_sentence_operation
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
+from app.honor.teacher.play_games.test_data.strength_sentence_data import strength_sentence_operation
 from utils.click_bounds import ClickBounds
 from utils.games_keyboard import Keyboard
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
 from utils.get_attribute import GetAttribute
@@ -40,7 +40,7 @@ class StrengthenSentencePage(BasePage):
     def content_value(self):
         """获取整个 外框元素"""
         ele = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID  + "input")
+            .find_element_by_id(gv.PACKAGE_ID  + "rich_text")
         return ele
 
     @teststeps
@@ -58,18 +58,11 @@ class StrengthenSentencePage(BasePage):
         answer = content.split('  ')  # answer
         return answer
 
-    @teststep
-    def click_voice(self):
-        """页面内音量按钮"""
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID  + "play_voice") \
-            .click()
-
     @teststeps
     def sentence(self):
         """展示的句子"""
         word = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID  + "input").text
+            .find_element_by_id(gv.PACKAGE_ID  + "rich_text").text
         return word
 
     @teststep
@@ -254,21 +247,21 @@ class StrengthenSentencePage(BasePage):
 
         for j in range(len(word)):
             if j !=0:
-                self.key.games_keyboard('enter', 'keyboard_abc_view')  # 点击键盘 下一步按钮
+                self.key.games_keyboard('enter')  # 点击键盘 下一步按钮
 
             for z in range(len(word[j])):
                 if j == len(word)-1:
                     if word[j][z] in ['.', '?', '!']:  # 去掉最后的标点符号
                         break
                 if z == 4 and z != len(word[j])-1:
-                    self.key.games_keyboard('capslock', 'keyboard_abc_view')  # 点击键盘 切换到 大写字母
-                    self.key.games_keyboard(word[j][z].upper(), 'keyboard_abc_view')  # 点击键盘对应 大写字母
-                    self.key.games_keyboard('capslock', 'keyboard_abc_view')  # 点击键盘 切换到 小写字母
+                    self.key.games_keyboard('capslock')  # 点击键盘 切换到 大写字母
+                    self.key.games_keyboard(word[j][z].upper())  # 点击键盘对应 大写字母
+                    self.key.games_keyboard('capslock')  # 点击键盘 切换到 小写字母
                 else:
                     if j == 2 and word[j][z] == "'":
-                        self.key.games_keyboard(',', 'keyboard_abc_view')  # 第二小题  点击键盘 逗号
+                        self.key.games_keyboard(',')  # 第二小题  点击键盘 逗号
                     else:
-                        self.key.games_keyboard(word[j][z], 'keyboard_abc_view')  # 点击键盘对应字母
+                        self.key.games_keyboard(word[j][z])  # 点击键盘对应字母
         return value
 
     @teststeps

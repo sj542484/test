@@ -2,8 +2,8 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.login.test_data import phone_data, pwd_data
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.login.test_data.register_data import phone_data, pwd_data
 from app.honor.teacher.user_center.setting_center.object_page.setting_page import SettingPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.reset_phone_toast import get_verify
@@ -57,7 +57,7 @@ class Register(unittest.TestCase):
                     phone = self.login.input_phone()
                     code = self.login.input_code()
 
-                    phone.send_keys(r'' + phone_data[i]['account'])  # 输入手机号
+                    phone.send_keys(phone_data[i]['account'])  # 输入手机号
 
                     self.login.get_code_button().click()  # 获取验证码 按钮
                     value = get_verify(phone_data[i]['account'], 'register')  # 获取验证码
@@ -79,13 +79,13 @@ class Register(unittest.TestCase):
                             pwd = self.login.new_pwd()  # 设置密码
                             confirm = self.login.new_pwd_confirm()  # 密码再次确认
 
-                            nick.send_keys(r'' + pwd_data[-1]['nick'])  # 输入昵称
+                            nick.send_keys(pwd_data[-1]['nick'])  # 输入昵称
                             print('昵称:', nick.text)
 
-                            pwd.send_keys(r'' + pwd_data[-1]['password'])  # 输入密码
+                            pwd.send_keys(pwd_data[-1]['password'])  # 输入密码
                             print('密码:', pwd.text)
 
-                            confirm.send_keys(r'' + pwd_data[-1]['confirm'])  # 密码确认
+                            confirm.send_keys(pwd_data[-1]['confirm'])  # 密码确认
                             print('密码确认:', confirm.text)
 
                             self.login.register_button()  # 注册 按钮

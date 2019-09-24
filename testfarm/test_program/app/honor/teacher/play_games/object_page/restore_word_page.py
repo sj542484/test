@@ -4,20 +4,21 @@
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
-from app.honor.teacher.play_games import restore_word_operation
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
+from app.honor.teacher.play_games.test_data.restore_word_data import restore_word_operation
 from conf.decorator import teststep, teststeps
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from utils.get_attribute import GetAttribute
-from utils.get_element_bounds import Element
+from utils.get_element_bounds import ElementBounds
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
 
 class RestoreWord(BasePage):
     """还原单词"""
+    word_value = gv.PACKAGE_ID + "word"  # 查看答案
 
     def __init__(self):
         self.result = ResultPage()
@@ -34,7 +35,7 @@ class RestoreWord(BasePage):
     def click_voice(self):
         """页面内音量按钮"""
         self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "fab_sound") \
+            .find_element_by_id(gv.PACKAGE_ID + "sound") \
             .click()
         time.sleep(1)
 
@@ -57,35 +58,35 @@ class RestoreWord(BasePage):
     @teststeps
     def wait_check_detail_page(self):
         """以“answer”的ID为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "tv_answer")
+        locator = (By.ID, self.word_value)
         return self.wait.wait_check_element(locator)
 
     @teststep
     def answer(self):
         """展示的提示词"""
         word = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "tv_answer")
+            .find_elements_by_id(self.word_value)
         return word
 
     @teststep
     def hint(self):
         """展示的 解释"""
         word = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "tv_hint")
+            .find_elements_by_id(gv.PACKAGE_ID + "explain")
         return word
 
     @teststep
     def voice_button(self, index):
         """页面内音量按钮"""
         self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "iv_speak")[index] \
+            .find_elements_by_id(gv.PACKAGE_ID + "audio")[index] \
             .click()
 
     @teststep
     def result_mine(self, index):
         """我的"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "iv_mine")[index]
+            .find_elements_by_id(gv.PACKAGE_ID + "result")[index]
         value = GetAttribute().selected(ele)
         return value
 
@@ -122,17 +123,21 @@ class RestoreWord(BasePage):
 
                     timestr.append(Homework().time())  # 统计每小题的计时控件time信息
 
-                    # if int(self.rate())+1 == int(rate) - i and len(var) == len(word)+1:  # todo 判断 是否进入答案页
+                    #if len(var) == len(word)+1:  # todo 判断 是否进入答案页
                     text = []  # 元素 tv_word的text
                     var = self.word()  # 元素 tv_word
                     for z in range(len(var)):
                         text.append(var[z].text)
-
-                    Homework().next_button_judge('true')  # 提交 按钮 判断
+                    answer.append(text[0])
                     print('我的答案:', text[1:])
                     print('正确答案：', text[0])
-                    answer.append(text[0])
                     print('----------------------------------------')
+
+                    if i == int(rate)-1:
+                        if self.result.wait_check_result_page():
+                            break
+
+                    Homework().next_button_judge('true')  # 下一步 按钮 判断
                     time.sleep(2)
 
                 Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
@@ -142,8 +147,8 @@ class RestoreWord(BasePage):
     @teststeps
     def drag_operation(self, word2, word):
         """获取单词button坐标 及拖拽"""
-        loc = Element().get_element_location(word2)
-        y2 = Element().get_element_location(word)[1] - 40
+        loc = ElementBounds().get_element_location(word2)
+        y2 = ElementBounds().get_element_location(word)[1] - 40
         self.button_swipe(loc[0], loc[1], loc[0], y2, 1000)
         time.sleep(1)
 

@@ -1,0 +1,85 @@
+2019-09-24 09:01:49,486 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:01:49,488 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:01:49,488 - honor_9 - INFO - --> Login.test_login_phone
+2019-09-24 09:01:49,489 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:01:49,489 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:02:10,073 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:02:10,075 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:02:10,075 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:02:10,076 - honor_9 - ERROR - Exception, name 'gv' is not defined
+2019-09-24 09:02:10,076 - honor_9 - ERROR -   <-- TloginPage.wait_check_page, Exception, Error
+2019-09-24 09:02:10,862 - honor_9 - ERROR - Exception, IMAGE:TloginPage.wait_check_page-20190924090210.png
+2019-09-24 09:02:10,862 - honor_9 - ERROR - <-- Login.test_login_phone, Exception, Error
+
+2019-09-24 09:02:10,863 - honor_9 - INFO - --> Login.tearDown
+2019-09-24 09:02:10,863 - honor_9 - INFO - <-- Login.tearDown, Success
+
+2019-09-24 09:02:10,866 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:02:10,867 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:02:10,867 - honor_9 - INFO - --> Login.test_login_password
+2019-09-24 09:02:10,867 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:02:10,868 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:02:31,172 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:02:31,172 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:02:31,173 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:02:31,173 - honor_9 - ERROR - Exception, name 'gv' is not defined
+2019-09-24 09:02:31,174 - honor_9 - ERROR -   <-- TloginPage.wait_check_page, Exception, Error
+2019-09-24 09:02:31,926 - honor_9 - ERROR - Exception, IMAGE:TloginPage.wait_check_page-20190924090231.png
+2019-09-24 09:02:31,927 - honor_9 - ERROR - <-- Login.test_login_password, Exception, Error
+
+2019-09-24 09:02:31,927 - honor_9 - INFO - --> Login.tearDown
+2019-09-24 09:02:31,927 - honor_9 - INFO - <-- Login.tearDown, Success
+
+2019-09-24 09:02:31,929 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:02:31,929 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:02:31,930 - honor_9 - INFO - --> Login.test_forget_pwd
+2019-09-24 09:02:31,930 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:02:31,930 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:02:52,452 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:02:52,454 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:02:52,455 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:02:52,455 - honor_9 - ERROR - Exception, name 'gv' is not defined
+2019-09-24 09:02:52,456 - honor_9 - ERROR -   <-- TloginPage.wait_check_page, Exception, Error
+2019-09-24 09:02:53,201 - honor_9 - ERROR - Exception, IMAGE:TloginPage.wait_check_page-20190924090252.png
+2019-09-24 09:02:53,202 - honor_9 - ERROR - <-- Login.test_forget_pwd, Exception, Error
+
+2019-09-24 09:02:53,202 - honor_9 - INFO - --> Login.tearDown
+2019-09-24 09:02:53,203 - honor_9 - INFO - <-- Login.tearDown, Success
+
+2019-09-24 09:02:53,204 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:02:53,204 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:02:53,205 - honor_9 - INFO - --> Login.test_forget_pwd_password
+2019-09-24 09:02:53,205 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:02:53,206 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:03:13,482 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:03:13,483 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:03:13,484 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:03:13,484 - honor_9 - ERROR - Exception, name 'gv' is not defined
+2019-09-24 09:03:13,485 - honor_9 - ERROR -   <-- TloginPage.wait_check_page, Exception, Error
+2019-09-24 09:03:14,220 - honor_9 - ERROR - Exception, IMAGE:TloginPage.wait_check_page-20190924090313.png
+2019-09-24 09:03:14,221 - honor_9 - ERROR - <-- Login.test_forget_pwd_password, Exception, Error
+
+2019-09-24 09:03:14,221 - honor_9 - INFO - --> Login.tearDown
+2019-09-24 09:03:14,221 - honor_9 - INFO - <-- Login.tearDown, Success
+
+2019-09-24 09:03:14,223 - honor_9 - INFO - --> Register.setUp
+2019-09-24 09:03:14,223 - honor_9 - INFO - <-- Register.setUp, Success
+
+2019-09-24 09:03:14,223 - honor_9 - INFO - --> Register.test_register
+2019-09-24 09:03:14,223 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:03:14,224 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:03:34,235 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:03:34,236 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:03:34,236 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:03:34,237 - honor_9 - ERROR - Exception, name 'gv' is not defined
+2019-09-24 09:03:34,237 - honor_9 - ERROR -   <-- TloginPage.wait_check_page, Exception, Error
+2019-09-24 09:03:34,975 - honor_9 - ERROR - Exception, IMAGE:TloginPage.wait_check_page-20190924090334.png
+2019-09-24 09:03:34,976 - honor_9 - ERROR - <-- Register.test_register, Exception, Error
+
+2019-09-24 09:03:34,976 - honor_9 - INFO - --> Register.tearDown
+2019-09-24 09:03:34,976 - honor_9 - INFO - <-- Register.tearDown, Success
+

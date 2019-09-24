@@ -2,13 +2,13 @@
 # encoding:UTF-8  
 # @Author  : SUN FEIFEI
 import re
+
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from utils.click_bounds import ClickBounds
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
@@ -16,6 +16,13 @@ from utils.wait_element import WaitElement
 
 class ThomePage(BasePage):
     """app主页面元素信息"""
+    img_locator = (By.ID, gv.PACKAGE_ID + "notice_img")  # 轮播图
+
+    tab_icon_locator = (By.ID, gv.PACKAGE_ID + "notice")  # 各tab icon
+    tab_locator = (By.ID, gv.PACKAGE_ID + "type_text")  # 各tab
+
+    vanclass_locator = (By.ID, gv.PACKAGE_ID + "class_info")  # 班级条目
+
     def __init__(self):
         self.wait = WaitElement()
 
@@ -28,14 +35,12 @@ class ThomePage(BasePage):
     @teststeps
     def wait_check_list_page(self):
         """以“有无班级”为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "class_info")
-        return self.wait.wait_check_element(locator)
+        return self.wait.wait_check_element(self.vanclass_locator)
 
     @teststeps
     def wait_check_image_page(self):
         """班级列表数据过多时，滑屏后是否在第一页，以轮播图为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "notice_img")
-        return self.wait.wait_check_element(locator, 3)
+        return self.wait.wait_check_element(self.img_locator, 3)
 
     @teststep
     def wait_check_empty_tips_page(self, var=3):
@@ -43,75 +48,81 @@ class ThomePage(BasePage):
         locator = (By.ID, gv.PACKAGE_ID + "load_empty")
         return self.wait.wait_check_element(locator, var)
 
+    # 轮播图
+    @teststeps
+    def wait_check_poll_img_page(self, var=20):
+        """以“title:班级年报”为依据"""
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'班级年报')]")
+        return self.wait.wait_check_element(locator, var)
+
+    @teststep
+    def poll_img(self):
+        """轮播图"""
+        self.wait\
+            .wait_find_element(self.img_locator).click()
+
+    @teststep
+    def poll_button(self):
+        """轮播按钮"""
+        ele = self.driver\
+            .find_elements_by_id(gv.PACKAGE_ID + "indicator")
+        return ele
+
     # 菜单栏
     @teststep
-    def spoken_icon(self):
-        """口语icon"""
-        self.driver\
-            .find_elements_by_id(gv.PACKAGE_ID + "notice")[0]\
-            .click()
-
-    @teststep
-    def spoken_text(self):
-        """口语"""
-        ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "type_text")[0].text
-        print(ele)
-
-    @teststep
     def hw_icon(self):
-        """习题icon"""
-        self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "notice")[1]\
+        """作业icon"""
+        self.wait. \
+            wait_find_elements(self.tab_icon_locator)[0]\
             .click()
 
     @teststep
     def hw_text(self):
-        """习题"""
-        ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "type_text")[1].text
+        """作业"""
+        ele = self.wait \
+            .wait_find_elements(self.tab_locator)[0].text
         print(ele)
 
     @teststep
     def paper_icon(self):
         """试卷icon"""
-        self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "notice")[2] \
+        self.wait. \
+            wait_find_elements(self.tab_icon_locator)[1] \
             .click()
 
     @teststep
     def paper_text(self):
         """试卷"""
-        ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "type_text")[2].text
+        ele = self.wait \
+            .wait_find_elements(self.tab_locator)[1].text
         print(ele)
 
     @teststep
     def word_icon(self):
         """单词本icon"""
-        self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "notice")[3] \
+        self.wait. \
+            wait_find_elements(self.tab_icon_locator)[2] \
             .click()
 
     @teststep
     def word_text(self):
         """单词本"""
-        ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "type_text")[3].text
+        ele = self.wait \
+            .wait_find_elements(self.tab_locator)[2].text
         print(ele)
 
     @teststep
     def listen_icon(self):
         """每日一听icon"""
-        self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "notice")[4] \
+        self.wait. \
+            wait_find_elements(self.tab_icon_locator)[3] \
             .click()
 
     @teststep
     def listen_text(self):
         """每日一听"""
-        ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "type_text")[4].text
+        ele = self.wait \
+            .wait_find_elements(self.tab_locator)[3].text
         print(ele)
 
     @teststep
@@ -129,18 +140,10 @@ class ThomePage(BasePage):
             .click()
 
     # 班级列表
-    @teststeps
-    def wait_check_van_page(self):
-        """以“有无班级”为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "class_info")
-        return self.wait.wait_check_element(locator)
-
     @teststep
     def item_detail(self):
         """首页 条目名称  班号+班级名"""
-        item = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "class_info")
-        return item
+        return self.wait.wait_find_elements(self.vanclass_locator)
 
     @teststep
     def vanclass_name(self, var):
@@ -148,10 +151,10 @@ class ThomePage(BasePage):
         value = re.sub(r'\[.*?\]', '', var)
         return value
 
-    @teststep
+    @teststeps
     def vanclass_no(self, var):
         """班号"""
-        m = re.match(".*\[(.*)\].*", var)  # title中有一个括号
+        m = re.match(r".*\[(.*)\].*", var)  # title中有一个中括号
         value = re.findall(r'\d+(?#\D)', m.group(1))
         return value[0]
 
@@ -187,24 +190,8 @@ class ThomePage(BasePage):
     def back_up_button(self):
         """返回按钮"""
         locator = (By.CLASS_NAME, "android.widget.ImageButton")
-        try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
-            self.driver \
-                .find_element_by_class_name("android.widget.ImageButton").click()
-        except:
-            raise
-
-    @teststeps
-    def all_element(self):
-        """页面内所有class name为android.widget.TextView的元素"""
-        ele = self.driver \
-            .find_elements_by_class_name("android.widget.TextView")
-        #
-        # print('===========')
-        # for i in range(len(ele)):
-        #     print(ele[i].text)
-        # print('==========')
-        return ele
+        self.wait\
+            .wait_find_element(locator).click()
 
     # 公共元素- 底部三个tab元素：首页、题库、个人中心
     @teststep
@@ -294,13 +281,6 @@ class ThomePage(BasePage):
     @teststep
     def commit_button(self):
         """确定 按钮"""
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "md_buttonDefaultPositive") \
-            .click()
-
-    @teststep
-    def commit(self):
-        """确定 按钮"""
         ele = self.driver \
             .find_element_by_id(gv.PACKAGE_ID + "md_buttonDefaultPositive")
         return ele
@@ -318,19 +298,19 @@ class ThomePage(BasePage):
             .click()
 
     @teststeps
-    def tips_content_commit(self, var=10):
+    def tips_content_commit(self, var=5):
         """温馨提示 页面信息  -- 确定"""
         if self.wait_check_tips_page(var):  # 温馨提示 页面
             print('--------------------------')
             self.tips_title()
             self.tips_content()
-            self.commit_button()  # 确定按钮
+            self.commit_button().click()  # 确定按钮
             print('--------------------------')
 
     @teststeps
-    def tips_content_cancel(self):
+    def tips_content_cancel(self, var=5):
         """温馨提示 页面信息  -- 取消"""
-        if self.wait_check_tips_page():  # 温馨提示 页面
+        if self.wait_check_tips_page(var):  # 温馨提示 页面
             print('--------------------------')
             self.tips_title()
             self.tips_content()
@@ -341,7 +321,7 @@ class ThomePage(BasePage):
     def tips_commit(self):
         """温馨提示 -- 确定"""
         if self.wait_check_tips_page():  # 温馨提示 页面
-            self.commit_button()  # 确定按钮
+            self.commit_button().click()  # 确定按钮
 
     @teststeps
     def tips_cancel(self):
@@ -349,16 +329,32 @@ class ThomePage(BasePage):
         if self.wait_check_tips_page():  # 温馨提示 页面
             self.cancel_button()  # 取消按钮
 
+    @teststep
+    def brackets_text_out(self, var):
+        """去掉作业title的 括号及text """
+        value = re.sub(r"\(.*?\)$|\\（.*?\\）$", "", var)
+
+        return value
+
+    @teststep
+    def brackets_text_in(self, var):
+        """取出 作业title的 括号中的text"""
+        if '(' in var:
+            m = re.compile(r'[(](.*?)[)]', re.S)
+            var = re.findall(m, var)[0]  # title中有一个括号
+
+        return var
+
     @teststeps
     def into_vanclass_operation(self, var):
-        """进入班级"""
+        """进入 班级"""
         if self.wait_check_list_page():
             SwipeFun().swipe_vertical(0.5, 0.8, 0.2)
-            name = self.item_detail()  # 班号+班级名
-            for i in range(len(name)):
-                van = self.vanclass_name(name[i].text)  # 班级名
-                if van == var:
-                    print('进入班级:', var)
-                    name[i].click()  # 进入班级
-                    break
-
+            if self.wait_check_list_page():
+                name = self.item_detail()  # 班号+班级名
+                for i in range(len(name)):
+                    van = self.vanclass_name(name[i].text)  # 班级名
+                    if van == var:
+                        print('进入班级:', var)
+                        name[i].click()  # 进入班级
+                        break

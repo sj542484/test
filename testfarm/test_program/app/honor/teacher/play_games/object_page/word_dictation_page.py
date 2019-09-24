@@ -4,19 +4,23 @@
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
-from app.honor.teacher.play_games import dictation_operation
-from conf.base_page import BasePage
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
+from app.honor.teacher.play_games.test_data.word_dictation_data import dictation_operation
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststeps, teststep
 from utils.games_keyboard import Keyboard
+from utils.get_attribute import GetAttribute
 from utils.judge_character_type import JudgeType
+from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
 
 class WordDictation(BasePage):
     """单词听写"""
+    word_value = gv.PACKAGE_ID + "word"  # 查看答案
+
     def __init__(self):
         self.result = ResultPage()
         self.key = Keyboard()
@@ -80,35 +84,35 @@ class WordDictation(BasePage):
     @teststeps
     def wait_check_detail_page(self):
         """以“answer”的ID为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "tv_answer")
+        locator = (By.ID, self.word_value)
         return self.wait.wait_check_element(locator)
 
     @teststep
     def result_voice(self, index):
         """语音按钮"""
         self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "iv_speak")[index] \
+            .find_elements_by_id(gv.PACKAGE_ID + "audio")[index] \
             .click()
 
     @teststep
-    def result_answer(self, index):
+    def result_answer(self):
         """单词"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "tv_answer")[index].text
+            .find_elements_by_id(self.word_value)
         return ele
 
     @teststep
-    def result_explain(self, index):
+    def result_explain(self):
         """解释"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "tv_hint")[index].text
+            .find_elements_by_id(gv.PACKAGE_ID + "explain")
         return ele
 
     @teststep
-    def result_mine(self, index):
+    def result_mine(self):
         """我的"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "iv_mine")[index].get_attribute("selected")
+            .find_elements_by_id(gv.PACKAGE_ID + "result")
         return ele
 
     @teststeps
@@ -188,23 +192,68 @@ class WordDictation(BasePage):
         timestr.append(Homework().time())  # 统计每小题的计时控件time信息
 
     @teststeps
-    def result_detail_page(self, rate):
+    def result_detail_page(self, answer):
         """《单词听写》 查看答案 操作过程"""
         if self.result.wait_check_result_page():  # 结果页检查点
             self.result.check_result_button()  # 结果页 查看答案 按钮
             if self.result.wait_check_detail_page():
                 if self.wait_check_detail_page():
                     print('查看答案:')
-                    print('题数:', int(rate))
-                    for i in range(int(rate)):
-                        print('-----------------------------------')
-                        print('解释:', self.result_explain(i))  # 解释
-                        print('单词:', self.result_answer(i))  # 正确word
-                        print('对错标识:', self.result_mine(i))  # 对错标识
-                        self.result_voice(i)  # 点击发音按钮
+                    self.answer_explain(answer)
                     self.result.back_up_button()  # 返回结果页
                     time.sleep(2)
             print('==============================================')
+
+    @teststeps
+    def answer_explain(self, result, content=None):
+        """答案/解释类型
+        :param result:答题结果
+        :param content: 翻页
+        """
+        if content is None:
+            content = []
+
+        hint = self.result_answer()  # 解释
+        if len(hint) > 4 and not content:
+            self.ergodic_list(result, len(hint) - 1)
+
+            content = [hint[-2].text]
+            SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
+            self.answer_explain(result, content)
+        else:
+            var = 0
+            if content:
+                for k in range(len(hint)):
+                    if content[0] == hint[k].text:
+                        var += k + 1
+                        break
+
+            self.ergodic_list(result, len(hint), var)
+
+    @teststeps
+    def ergodic_list(self, result, length, var=0):
+        """遍历列表
+        :param result:答题结果
+        :param length: 遍历的最大值
+        :param var:遍历的最小值
+        """
+        explain = self.result_explain()  # 解释
+        answer = self.result_answer()  # 答案
+        mine = self.result_mine()  # 对错标识
+
+        count = 0  # 小题数
+        for i in range(var, length):
+            count += 1
+            word = answer[i].text
+            print('解释:', explain[i].text)  # 解释
+            print('单词:', word)  # 正确word
+            mode = GetAttribute().selected(mine[i])
+            print(mode)
+            if mode == 'true':
+                if word != result[i].lower():
+                    print('★★★ Error - 与答题结果不一致', answer[i].text, result[i])
+            self.result_voice(i)  # 点击发音按钮
+            print('-----------------------------------------')
 
     @teststeps
     def study_again(self):

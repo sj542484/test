@@ -3,14 +3,14 @@ import time
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
-from app.honor.teacher.play_games import GetVariable as gv
-from app.honor.teacher.play_games.object_page import Listening
-from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
+from app.honor.teacher.play_games.test_data.homework_title_type import GetVariable as gv
+from app.honor.teacher.play_games.object_page.listening_choice_page import Listening
+from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.test_bank.object_page import QuestionDetailPage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.toast_find import Toast
 
@@ -77,7 +77,6 @@ class Games(unittest.TestCase):
 
                                 self.result.result_page_star(result)  # 结果页 -- 星星
                                 self.listening.study_again()  # 错题再练/再练一遍
-
                                 print('################################################')
                                 self.homework.back_operation()  # 从结果页返回 题单详情页
         else:

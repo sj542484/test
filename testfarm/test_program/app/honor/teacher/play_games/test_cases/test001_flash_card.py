@@ -1,14 +1,14 @@
 # coding=utf-8
 import unittest
 
-from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.home.object_page.home_page import  ThomePage
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import FlashCard
-from app.honor.teacher.play_games import GetVariable as gv
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.flash_card_page import FlashCard
+from app.honor.teacher.play_games.test_data.homework_title_type import GetVariable as gv
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.test_bank.object_page import QuestionDetailPage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.toast_find import Toast
 
@@ -92,13 +92,13 @@ class Games(unittest.TestCase):
                 self.game.start_button()  # 开始答题 按钮
                 result = self.flash_card.study_pattern()  # 闪卡练习 学习游戏过程
 
-                # 结果页 标星内容再练一遍
-                if self.flash_card.wait_check_result_page():  # 结果页检查点
-                    print('标星内容再练一遍:')
-                    self.flash_card.selected_sum()  # 标星内容统计
-                    self.flash_card.star_again_button()  # 点击 标星内容再练一遍 按钮
-                    self.flash_card.study_pattern()  # 闪卡练习 学习模式游戏过程
-
+                # # 结果页 标星内容再练一遍
+                # if self.flash_card.wait_check_result_page():  # 结果页检查点
+                #     print('标星内容再练一遍:')
+                #     self.flash_card.selected_sum()  # 标星内容统计
+                #     self.flash_card.star_again_button()  # 点击 标星内容再练一遍 按钮
+                #     self.flash_card.study_pattern()  # 闪卡练习 学习模式游戏过程
+                #
                 # 结果页 再练一遍
                 if self.flash_card.wait_check_result_page():  # 结果页检查点
                     print('再练一遍:')
@@ -124,11 +124,11 @@ class Games(unittest.TestCase):
                     self.flash_card.star_again_button()  # 点击 标星内容再练一遍 按钮
                     self.flash_card.copy_pattern()  # 闪卡练习 抄写模式游戏过程
 
-                # 结果页 再练一遍
-                if self.flash_card.wait_check_result_page():  # 结果页检查点
-                    print('再练一遍:')
-                    self.flash_card.study_again_button()  # 点击 再练一遍 按钮
-                    self.flash_card.copy_pattern()  # 闪卡练习 游戏过程
-
-                if self.flash_card.wait_check_result_page():  # 结果页检查点
-                    self.flash_card.result_page(result[0], result[1])  # 点击结果页听力按钮 和 star按钮
+                # # 结果页 再练一遍
+                # if self.flash_card.wait_check_result_page():  # 结果页检查点
+                #     print('再练一遍:')
+                #     self.flash_card.study_again_button()  # 点击 再练一遍 按钮
+                #     self.flash_card.copy_pattern()  # 闪卡练习 游戏过程
+                #
+                # if self.flash_card.wait_check_result_page():  # 结果页检查点
+                #     self.flash_card.result_page(result[0], result[1])  # 点击结果页听力按钮 和 star按钮

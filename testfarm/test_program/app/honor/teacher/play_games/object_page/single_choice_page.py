@@ -5,10 +5,10 @@ import random
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
@@ -68,7 +68,7 @@ class SingleChoice(BasePage):
     @teststeps
     def wait_check_detail_page(self):
         """以“answer”的ID为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "tv_answer")
+        locator = (By.ID, gv.PACKAGE_ID + "question")
         return self.wait.wait_check_element(locator)
 
     @teststeps
@@ -133,58 +133,59 @@ class SingleChoice(BasePage):
         ques_last_index = 0
 
         for i in range(swipe_num):
-            if ques_last_index < swipe_num:
-                ques_first_index = self.game.get_num()  # 当前页面中第一题 题号
+            if self.wait_check_detail_page():
+                if ques_last_index < swipe_num:
+                    ques_first_index = self.game.get_num()  # 当前页面中第一题 题号
 
-                if ques_first_index - ques_last_index > 1:  # 判断页面是否滑过，若当前题比上一页做的题不大于1，则下拉直至题目等于上一题的加1
-                    for step in range(0, 10):
-                        self.swipe.swipe_vertical(0.5, 0.5, 0.62)
-                        if self.game.get_num() == ques_last_index + 1:  # 正好
-                            break
-                        elif self.game.get_num() < ques_last_index + 1:  # 下拉拉过了
-                            self.swipe.swipe_vertical(0.5, 0.6, 0.27)  # 滑屏
+                    if ques_first_index - ques_last_index > 1:  # 判断页面是否滑过，若当前题比上一页做的题不大于1，则下拉直至题目等于上一题的加1
+                        for step in range(0, 10):
+                            self.swipe.swipe_vertical(0.5, 0.5, 0.62)
                             if self.game.get_num() == ques_last_index + 1:  # 正好
                                 break
+                            elif self.game.get_num() < ques_last_index + 1:  # 下拉拉过了
+                                self.swipe.swipe_vertical(0.5, 0.6, 0.27)  # 滑屏
+                                if self.game.get_num() == ques_last_index + 1:  # 正好
+                                    break
 
-                last_one = self.game.get_last_element()  # 页面最后一个元素
-                ques_num = self.game.single_question()  # 题目
+                    last_one = self.game.get_last_element()  # 页面最后一个元素
+                    ques_num = self.game.single_question()  # 题目
 
-                if self.game.question_judge(last_one):  # 判断最后一项是否为题目
-                    for j in range(len(ques_num) - 1):
-                        current_index = self.game.get_num(j)  # 当前页面中题号
+                    if self.game.question_judge(last_one):  # 判断最后一项是否为题目
+                        for j in range(len(ques_num) - 1):
+                            current_index = self.game.get_num(j)  # 当前页面中题号
 
-                        if current_index > ques_last_index or (current_index == 0 and ques_last_index != 0):  # 判断当前题号是否是已完成的；以及题目无题号时
-                            print('-----------------------------')
-                            print(ques_num[j].text)
-                            options = self.option_button()  # 选项
-                            print('选项:', options[j].text)
-                            ques_last_index = self.game.get_num(j)  # 当前页面中 做过的最后一题 题号
-                else:  # 判断最后一题是否为选项
-                    for k in range(len(ques_num)):
-                        if k < len(ques_num) - 1:  # 前面的题目照常点击
-                            current_index = self.game.get_num(k)  # 当前页面中题号
-
-                            if current_index > ques_last_index or (current_index == 0 and ques_last_index != 0):
+                            if current_index > ques_last_index or (current_index == 0 and ques_last_index != 0):  # 判断当前题号是否是已完成的；以及题目无题号时
                                 print('-----------------------------')
-                                print(ques_num[k].text)
+                                print(ques_num[j].text)
                                 options = self.option_button()  # 选项
-                                print('选项:', options[k].text)
-                                ques_last_index = self.game.get_num(k)  # 当前页面中 做过的最后一题 题号
-                        elif k == len(ques_num) - 1:  # 最后一个题目上滑一部分再进行选择
-                            self.swipe.swipe_vertical(0.5, 0.8, 0.55)
-                            ques_num = self.game.single_question()  # 题目
-                            for z in range(len(ques_num)):
-                                current_index = self.game.get_num(z)  # 当前页面中题号
+                                print('选项:', options[j].text)
+                                ques_last_index = self.game.get_num(j)  # 当前页面中 做过的最后一题 题号
+                    else:  # 判断最后一题是否为选项
+                        for k in range(len(ques_num)):
+                            if k < len(ques_num) - 1:  # 前面的题目照常点击
+                                current_index = self.game.get_num(k)  # 当前页面中题号
 
                                 if current_index > ques_last_index or (current_index == 0 and ques_last_index != 0):
                                     print('-----------------------------')
-                                    print(ques_num[z].text)
+                                    print(ques_num[k].text)
                                     options = self.option_button()  # 选项
-                                    print('选项:', options[z].text)
-                                    ques_last_index = self.game.get_num(z)  # 当前页面中 做过的最后一题 题号
-                                    break
+                                    print('选项:', options[k].text)
+                                    ques_last_index = self.game.get_num(k)  # 当前页面中 做过的最后一题 题号
+                            elif k == len(ques_num) - 1:  # 最后一个题目上滑一部分再进行选择
+                                self.swipe.swipe_vertical(0.5, 0.8, 0.55)
+                                ques_num = self.game.single_question()  # 题目
+                                for z in range(len(ques_num)):
+                                    current_index = self.game.get_num(z)  # 当前页面中题号
 
-                if i != swipe_num - 1:
-                    self.swipe.swipe_vertical(0.5, 0.9, 0.27)  # 滑屏
-            else:
-                break
+                                    if current_index > ques_last_index or (current_index == 0 and ques_last_index != 0):
+                                        print('-----------------------------')
+                                        print(ques_num[z].text)
+                                        options = self.option_button()  # 选项
+                                        print('选项:', options[z].text)
+                                        ques_last_index = self.game.get_num(z)  # 当前页面中 做过的最后一题 题号
+                                        break
+
+                    if i != swipe_num - 1:
+                        self.swipe.swipe_vertical(0.5, 0.9, 0.27)  # 滑屏
+                else:
+                    break

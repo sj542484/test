@@ -22,4 +22,4 @@ def guess_word_operation(key):
         return value.lower()
     else:   # 不在数据字典中的数据
         print('不在数据字典中的数据!!!')
-        return ''
+        return None

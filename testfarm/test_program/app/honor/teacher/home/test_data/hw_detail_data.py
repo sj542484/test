@@ -22,7 +22,11 @@ game_dict = {"听后选择": "1",
              "连连看": "16",
 
              "微课": "17",
-             "磨耳朵": "18"
+             "磨耳朵": "18",
+             "连词成句":"19",
+             "还原单词":"20",
+             "口语跟读":"21",
+             "口语看读":"22"
              }
 
 @teststeps
@@ -33,3 +37,4 @@ def game_type_operation(key):
         return int(value)
     else:
         print('!!数据中不包含该游戏类型:', key)
+        return None

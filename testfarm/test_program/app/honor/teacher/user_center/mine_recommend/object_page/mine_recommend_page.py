@@ -4,10 +4,10 @@
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.user_center import TuserCenterPage
-from conf.base_page import BasePage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
@@ -167,6 +167,33 @@ class RecommendPage(BasePage):
         """以“收起 icon”的id为依据"""
         ele = self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + "iv_expand")
+        return ele
+
+    # 本校标签
+    @teststeps
+    def wait_check_school_label_page(self):
+        """以“title:学校标签”的text为依据"""
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'学校标签')]")
+        return self.wait.wait_check_element(locator)
+
+    @teststeps
+    def wait_check_label_list_page(self):
+        """以“存在 标签列表”的text为依据"""
+        locator = (By.ID, gv.PACKAGE_ID + "label_name")
+        return self.wait.wait_check_element(locator)
+
+    @teststep
+    def check_button(self):
+        """以“单选 按钮”的class name为依据"""
+        ele = self.driver \
+            .find_elements_by_id(gv.PACKAGE_ID + "check")
+        return ele
+
+    @teststep
+    def commit_button(self):
+        """确定 按钮"""
+        ele = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "confirm")
         return ele
 
     @teststeps

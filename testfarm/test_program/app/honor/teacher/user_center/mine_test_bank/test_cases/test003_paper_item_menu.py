@@ -4,14 +4,18 @@ import unittest
 import time
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.test_bank.object_page import QuestionDetailPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.test_bank.object_page.question_basket_page import QuestionBasketPage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
 from app.honor.teacher.test_bank.object_page.test_paper_detail_page import PaperDetailPage
-from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.user_center import MineTestBankPage
-from app.honor.teacher.user_center import TuserCenterPage
+from app.honor.teacher.user_center.mine_collection.object_page.mine_collect_page import CollectionPage
+from app.honor.teacher.user_center.mine_recommend.object_page.mine_recommend_page import RecommendPage
+from app.honor.teacher.user_center.mine_test_bank.object_page.mine_test_bank_page import MineTestBankPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from conf.decorator import setup, teardown, testcase, teststeps
+from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
 
 
@@ -59,8 +63,9 @@ class MineTestBank(unittest.TestCase):
                             elif self.mine.wait_check_list_page():  # 是否有题库
                                 print('-----------------我的题库 试卷-------------------')
                                 var = self.item_operation()  # 具体操作
+                                self.home.back_up_button()
 
-                                self.judge_add_public_test_bank_result(var)  # 加入公共题库结果 验证
+                                # self.judge_add_public_test_bank_result(var)  # 加入公共题库结果 验证
                 else:
                     print('未进入 我的题库 页面')
             else:
@@ -80,12 +85,7 @@ class MineTestBank(unittest.TestCase):
         print(name[1][0], '  ', item)
 
         self.mine.menu_button(0)  # 右侧菜单按钮
-        time.sleep(1)
-        self.mine.recommend_to_school()  # 推荐到学校
         self.home.tips_content_commit()  # 提示 页面信息
-        if Toast().find_toast('推荐成功'):
-            print(' 推荐成功')
-        print('----------------')
 
         return name[1][0], item
 

@@ -5,20 +5,20 @@ import random
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.play_games.object_page import Homework
-from app.honor.teacher.play_games.object_page import ResultPage
+from app.honor.teacher.play_games.object_page.homework_page import Homework
+from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from conf.decorator import teststeps, teststep
 from conf.base_config import GetVariable as gv
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from utils.get_attribute import GetAttribute
-from utils.get_element_bounds import Element
+from utils.get_element_bounds import ElementBounds
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
 
 class ReadComprehension(BasePage):
     """阅读理解"""
-    content_value = gv.PACKAGE_ID + "ss_view"  # 文章
+    content_value = gv.PACKAGE_ID + "rich_text"  # 文章
 
     def __init__(self):
         self.get = GetAttribute()
@@ -93,24 +93,50 @@ class ReadComprehension(BasePage):
         return item[0]
 
     @teststeps
-    def get_result(self):
+    def get_result(self, rate):
         """获取 答题结果"""
-        content = self.get.description(self.article_view())
-        value = content.split(' ')  # answer
+        answer = {}
+        for i in range(int(rate)):
+            question = self.question_num().text  # 题目
+            if i != 0:
+                for step in range(0, 5):
+                    if int(self.get_first_num()) == i + 1:  # 正好
+                        question = self.question_num().text
+                        break
+                    elif int(self.get_first_num()) > i + 1:  # 上拉 拉过了
+                        self.swipe.swipe_vertical(0.5, 0.7, 0.9)
+                        if int(self.get_first_num()) == i + 1:  # 正好
+                            question = self.question_num().text
+                            break
+                        elif int(self.get_first_num()) < i + 1:  # 下拉 拉过了
+                            self.swipe.swipe_vertical(0.5, 0.9, 0.8)  # 滑屏
 
-        answer = []
-        for i in range(2, len(value)):
-            if value[i] != '':
-                answer.append(value[i])  # 所有输入框值的列表
-        print('正确答案：', answer)
+            correct = []
+            error = []
+            options = self.option_button(question)
+            for j in range(len(options[0])):
+                print('------')
+                var = GetAttribute().description(options[0][j])
+                print(var)
+                if var == 'right':
+                    correct.append(options[1][j].text)  # 获取 答题结果
+                elif var == 'error':
+                    error.append(options[1][j].text)  # 获取 答题结果
+
+            if correct:
+                answer[i].append(correct[0])
+            else:
+                answer[i].append(error[0])
+
+        print('获取到的答案：', answer)
         return answer
 
     @teststeps
     def options_view_size(self):
         """获取整个选项页面大小"""
         num = self.driver.find_element_by_id(gv.PACKAGE_ID + "optionlist")
-        var = num.size
-        return var['height']
+        var = num.size['height']
+        return var
 
     @teststeps
     def option_button(self, var):
@@ -137,35 +163,11 @@ class ReadComprehension(BasePage):
             .find_elements_by_id(gv.PACKAGE_ID + "tv_item")[index].text
         return ele
 
-    @teststep
-    def commit_button_judge(self, var):
-        """‘提交’按钮 状态判断"""
-        item = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "commit")  # ‘提交’按钮
-        value = GetAttribute().enabled(item)
-
-        if value != var:  # 测试 提交 按钮 状态
-            print('★★★ 提交按钮 状态Error', value)
-        else:
-            return True
-
-    @teststep
-    def commit_button(self):
-        """点击‘提交’按钮"""
-        time.sleep(1)
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "commit") \
-            .click()
-
-    @teststeps
-    def commit_button_operation(self, var):
-        """提交 按钮 判断 加 点击操作"""
-        self.commit_button_judge(var)  # 提交 按钮 状态判断
-        self.commit_button()  # 点击 提交 按钮
-
     @teststeps
     def reading_operation(self):
-        """《阅读理解》 游戏过程"""
+        """《阅读理解》 游戏过程
+        :return:
+        """
         if self.wait_check_page():
             if Homework().wait_check_play_page():
                 answer = []  # return 答案
@@ -176,7 +178,7 @@ class ReadComprehension(BasePage):
                 rate = Homework().rate()
                 for i in range(int(rate)):
                     Homework().rate_judge(rate, i)  # 测试当前rate值显示是否正确
-                    self.commit_button_operation('false')  # 提交 按钮 状态判断 加点击
+                    Homework().commit_button_operation('false')  # 提交 按钮 状态判断 加点击
 
                     question = self.question_num().text  # 题目
                     if i != 0:
@@ -197,7 +199,7 @@ class ReadComprehension(BasePage):
                     time.sleep(1)
                     for j in range(len(options[0])):
                         if GetAttribute().selected(options[1][j]) == 'true':
-                            answer.append(options[1][j].text)
+                            answer.append(options[1][j].text)  # 获取 答题结果
                             print('我的答案：', options[1][j].text)
                             break
 
@@ -207,7 +209,7 @@ class ReadComprehension(BasePage):
                     timestr.append(Homework().time())  # 统计每小题的计时控件time信息
                     print('---------------------------')
 
-                self.commit_button_operation('true')  # 提交 按钮 状态判断 加点击
+                Homework().commit_button_operation('true')  # 提交 按钮 状态判断 加点击
                 Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
                 final_time = self.result.get_time(timestr[-1])  # 最后一个小题的时间
                 print('=======================================================')
@@ -217,13 +219,13 @@ class ReadComprehension(BasePage):
     def drag_operation(self):
         """拖拽按钮、Aa判断"""
         drag = self.dragger_button()  # 拖动按钮
-        loc = Element().get_element_bounds(drag)  # 获取按钮坐标
+        loc = ElementBounds().get_element_bounds(drag)  # 获取按钮坐标
         size = self.options_view_size()  # 获取整个选项页面大小
         self.driver.swipe(loc[2], loc[3], loc[2], loc[3] + size - 10, 1000)  # 拖拽按钮到最底部，以便测试Aa
 
         # self.font_operation()  # Aa文字大小切换按钮 状态判断 及 切换操作
 
-        loc = Element().get_element_bounds(drag)  # 获取按钮坐标
+        loc = ElementBounds().get_element_bounds(drag)  # 获取按钮坐标
         y = loc[3] - size * 4 / 3
         if loc[3] - size * 4 / 3 < 0:
             y = 0
@@ -246,7 +248,8 @@ class ReadComprehension(BasePage):
             if self.result.wait_check_detail_page():
                 print('查看答案页面:')
                 count = []  # 回答正确题
-                answer = self.get_result()  # 获取 答题结果
+
+                answer = self.get_result(rate)  # 获取 答题结果
                 for i in range(int(rate)):
                     if answer[i] != result[i]:
                         print('回答错误:', answer[i], result[i])

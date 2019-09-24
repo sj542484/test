@@ -3,14 +3,14 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
 from app.honor.teacher.test_bank.object_page.question_basket_page import QuestionBasketPage
-from app.honor.teacher.test_bank.object_page import QuestionDetailPage
-from app.honor.teacher.user_center import RecommendPage
-from app.honor.teacher.user_center import TuserCenterPage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
+from app.honor.teacher.user_center.mine_recommend.object_page.mine_recommend_page import RecommendPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
@@ -103,7 +103,7 @@ class Recommend(unittest.TestCase):
                                 if self.game.wait_check_page():  # 页面检查点
                                     if self.game.wait_check_list_page():  # 信息加载完成
                                         self.detail.recommend_button()  # 推荐按钮
-
+                                        self.filter.choose_school_label()  # 选择本校标签
                                         if self.game.wait_check_list_page():  # 页面检查点
                                             self.home.back_up_button()
 
@@ -125,7 +125,7 @@ class Recommend(unittest.TestCase):
                                         self.user.click_mine_recommend()  # 点击 我的推荐
 
                                         if self.recommend.wait_check_page():  # 页面检查点
-                                            self.recommend.filter_button()  # 筛选按钮
+                                            self.user.filter_button()  # 筛选按钮
 
                                             if self.filter.wait_check_page():
                                                 self.user.click_game_list()  # 点击 大题
@@ -181,7 +181,7 @@ class Recommend(unittest.TestCase):
         if self.recommend.wait_check_list_page():
             name = self.question.question_name()  # 题单
             if len(name[0]) != len(item[0]) - var:
-                print('★★★ Error- 取消推荐失败', item[1][0],len(name[0]), len(item[0]))
+                print('★★★ Error- 取消推荐失败', item[1][0], len(name[0]), len(item[0]))
             else:
                 print('取消推荐成功')
         elif self.home.wait_check_empty_tips_page():

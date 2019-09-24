@@ -5,7 +5,7 @@
 import unittest
 from ddt import ddt, data, unpack
 
-from testfarm.test_program.app.honor.student.homework_rebuild.object_pages.homework_data_handle import HomeworkDataHandle
+from app.honor.student.homework_rebuild.object_pages.homework_data_handle import HomeworkDataHandle
 from testfarm.test_program.app.honor.student.library.object_pages.game_page import LibraryGamePage
 from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
 from testfarm.test_program.app.honor.student.library.object_pages.usercenter_page import UserCenterPage

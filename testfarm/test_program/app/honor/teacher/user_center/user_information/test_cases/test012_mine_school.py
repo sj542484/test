@@ -1,12 +1,14 @@
 # coding=utf-8
+import time
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.user_center.setting_center.object_page.setting_page import SettingPage
-from app.honor.teacher.user_center import TuserCenterPage
-from app.honor.teacher.user_center import UserInfoPage
-from app.honor.teacher.user_center import school_data
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
+from app.honor.teacher.user_center.user_information.object_page.user_Info_page import UserInfoPage
+from app.honor.teacher.user_center.user_information.test_data.modify_school import school_data
+from app.honor.teacher.home.test_data.vanclass_data import GetVariable as gv
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.screen_shot import ScreenShot
 from utils.toast_find import Toast
@@ -43,8 +45,8 @@ class School(unittest.TestCase):
                 if self.user_info.wait_check_page():  # 页面检查点
                     self.user_info.click_school()  # 点击学校条目，进入设置页面
 
-                    school = self.school_teacher()  # 在校老师
-                    self.free_teacher(school)  # 自由老师
+                    self.school_teacher()  # 在校老师
+                    self.free_teacher()  # 自由老师
 
                     self.restore_test_data()
                 else:
@@ -64,16 +66,8 @@ class School(unittest.TestCase):
                 self.set.logout_operation()  # 退出登录 操作
 
                 if self.login.wait_check_page():  # 页面检查点
-                    phone = self.login.input_username()
-                    pwd = self.login.input_password()
+                    self.login.login_operation(gv.FREE_TEACHER, gv.FREE_PWD)
 
-                    phone.click()  # 激活phone输入框
-                    phone.send_keys('18711111134')  # 输入手机号
-
-                    pwd.click()  # 激活pwd输入框
-                    pwd.send_keys('456789')  # 输入密码
-
-                    self.login.login_button()  # 登录按钮
                     if self.home.wait_check_page():
                         self.home.click_tab_profile()  # 进入首页后点击‘个人中心’按钮
                         if self.user.wait_check_page():  # 页面检查点
@@ -83,34 +77,50 @@ class School(unittest.TestCase):
                                 school = self.user_info.school().text  # 目前学校信息
                                 self.user_info.click_school()  # 点击学校条目，进入设置页面
 
-                                return school
-
     @teststeps
-    def free_teacher(self, school):
+    def free_teacher(self):
         """自由老师"""
         print('=========================自由老师==========================')
         for i in range(len(school_data)):
             if self.home.wait_check_tips_page():  # 页面检查点
                 print('-------------------------------------')
                 name = self.user_info.input()  # 找到要修改的EditText元素
-                name.send_keys(r'' + school_data[i]['sch'])  # 输入
+                school = name.text
+                print('原学校：', school)
+                name.send_keys(school_data[i]['sch'])  # 输入
                 if i == 0:
                     print('修改为:', school_data[i]['sch'])
                 else:
                     print('修改为:', name.text)
                 self.home.character_num()  # 字符数
-                self.user_info.click_positive_button()  # 确定 按钮
+                button = self.user_info.positive_button()  # 确定 按钮
+                if button == "true":  #  and school_data[i]['status'] == 'true'
+                    self.user_info.click_positive_button()  # 确定 按钮
 
-                if self.user_info.wait_check_page():  # 页面检查点
-                    school2 = self.user_info.school().text  # 修改手机号
-                    self.user_info.click_school()  # 点击学校条目，进入设置页面
+                    if self.user_info.wait_check_page():  # 页面检查点
+                        school2 = self.user_info.school().text  # 修改学校
 
-                    if school2 == school:
-                        print('我的学校修改成功')
-                    else:
-                        print('★★★ Error - 我的学校修改失败')
-                elif self.home.wait_check_tips_page():
-                    self.user_info.click_negative_button()  # 取消 按钮 返回个人信息页面
+                        if i != len(school_data) - 1:
+                            self.user_info.click_school()  # 点击学校条目，进入设置页面
+
+                        if school2 != school:
+                            print('我的学校修改成功')
+                        else:
+                            print('★★★ Error - 我的学校修改失败', school2, school)
+                    elif self.home.wait_check_tips_page():
+                        if i != len(school_data) - 1:
+                            self.user_info.click_negative_button()  # 取消 按钮 返回个人信息页面
+                else:
+                    self.user_info.click_negative_button()  # 取消按钮
+                    if self.user_info.wait_check_page():  # 页面检查点
+                        school2 = self.user_info.school().text  # 修改学校
+                        if i != len(school_data) - 1:
+                            self.user_info.click_school()  # 点击学校条目，进入设置页面
+
+                        if school2 == school:
+                            print('我的学校修改不成功')
+                        else:
+                            print('★★★ Error - 我的学校修改成功', school2, school)
 
     @teststeps
     def restore_test_data(self):
@@ -120,15 +130,6 @@ class School(unittest.TestCase):
             if self.user.wait_check_page():  # 页面检查点
                 self.set.logout_operation()  # 退出登录 操作
                 if self.login.wait_check_page():  # 页面检查点
-                    phone = self.login.input_username()
-                    pwd = self.login.input_password()
-
-                    phone.click()  # 激活phone输入框
-                    phone.send_keys('18711111234')  # 输入手机号
-
-                    pwd.click()  # 激活pwd输入框
-                    pwd.send_keys('456789')  # 输入密码
-
-                    self.login.login_button()  # 登录按钮
+                    self.login.login_operation()
                     if not self.home.wait_check_page():  # 页面检查点
-                        print('★★★ Error- 18711111234 登录失败')
+                        print('★★★ Error- 登录失败')

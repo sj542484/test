@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
 from utils.get_attribute import GetAttribute
@@ -207,9 +207,11 @@ class HwDetailPage(BasePage):
         locator = (By.ID, gv.PACKAGE_ID + "tv_testbank_status")
         return self.wait.wait_check_element(locator, var)
 
-    @teststep
+    @teststeps
     def per_game_item(self):
-        """个人答题情况页面 -游戏 条目"""
+        """个人答题情况页面 -游戏 条目
+        :returns:  游戏类型 & 页面内所有game
+        """
         ele = self.driver \
             .find_elements_by_xpath("//android.widget.LinearLayout/"
                                     "child::*/android.widget.TextView")
@@ -294,5 +296,5 @@ class HwDetailPage(BasePage):
 
             if self.wait_check_tips_page():
                 print('---------删除作业---------')
-                ThomePage().commit_button()  # 确定按钮
+                ThomePage().commit_button().click()  # 确定按钮
                 print('确定删除')

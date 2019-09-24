@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # encoding:UTF-8  
 # @Author  : SUN FEIFEI
-import random
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
 from app.honor.teacher.home.object_page.vanclass_hw_detail_page import HwDetailPage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
-from conf.base_page import BasePage
+from app.honor.teacher.home.test_data.vanclass_data import GetVariable as ge
+from testfarm.test_program.conf.base_page import BasePage
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
@@ -25,32 +25,26 @@ class DynamicPage(BasePage):
 
     @teststeps
     def wait_check_page(self, var):
-        """以xpath为依据"""
+        """以 xpath为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'%s')]" % var)
         return self.wait.wait_check_element(locator)
 
     @teststeps
     def wait_check_list_page(self):
-        """以xpath为依据"""
-        locator = (By.ID,gv.PACKAGE_ID + "status")
-        return self.wait.wait_check_element(locator)
-
-    @teststeps
-    def wait_check_spoken_page(self):
-        """以“title:近期口语作业”为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'近期口语作业')]")
+        """以 完成情况 为依据"""
+        locator = (By.ID, gv.PACKAGE_ID + "status")
         return self.wait.wait_check_element(locator)
 
     @teststeps
     def wait_check_hw_page(self):
-        """以“title:近期习题作业”为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'近期习题作业')]")
+        """以“title:近期作业”为依据"""
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'{}')]".format(ge.DY_HW_TITLE))
         return self.wait.wait_check_element(locator)
 
     @teststeps
     def wait_check_paper_page(self):
         """以“title:近期卷子作业”为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'近期卷子作业')]")
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'{}')]".format(ge.DY_PAPER_TITLE))
         return self.wait.wait_check_element(locator)
 
     @teststeps
@@ -75,7 +69,8 @@ class DynamicPage(BasePage):
                                     "child::*")
 
         count = []
-        for i in range(0, len(ele), 5):
+        for i in range(len(ele)):
+
             if GetAttribute().resource_id(ele[i]) == self.hw_name_value:
                 count.append(i)
         count.append(len(ele))
@@ -143,65 +138,65 @@ class DynamicPage(BasePage):
         ThomePage().tips_content_commit()
 
     @teststeps
-    def into_hw(self, title):
+    def into_hw(self, title, var, vanclass):
         """进入作业/卷子/口语列表中的该作业/卷子/口语
         :param title:  近期卷子/口语/习题作业
+        :param var: 作业/试卷 （近期作业中 不能进行编辑的）
+        :param vanclass: 班级 （近期作业中 不能进行编辑的）
         """
+        # var = self.home.brackets_text_out(var)
         if self.wait_check_page(title):
-            item = self.hw_item()  # 作业条目
+            hw = self.hw_item()  # 作业条目
+            van = self.hw_vanclass()  # 班级名
 
-            length = len(item[1])  # 循环max
-            if len(item[1]) > 7:
-                length = len(item[1]) - 1
+            count = 0
+            for i in range(len(hw)):
+                name = hw[1][i][0]
 
-            # count = 0
-            # for i in range(length):
-            #     var = re.sub("\D", "",  item[1][i][2])[0]  # 已完成x/x
-            #     if int(var) == 0:  # 有学生未完成的作业包
-            #         count += i
-            #         break
-            count = random.randint(0, length)-1
-            item[0][count][0].click()  # 进入作业
-            print(item[1][count][0])
-            return item[1][count][0]
+                if name not in var or (name == var and van[i].text != vanclass):
+                    print("进入作业/试卷:", hw[1][i])
+                    hw[0][i][0].click()  # 进入作业
+                    count = name
+                    break
+
+            if count == 0:
+                print('★★★ Error- 没有可测试的数据')
+            else:
+                return count
 
     @teststeps
-    def hw_list_operation(self, index=0):
-        """获取作业/试卷/口语列表 及 页面内最后一个name
-        :return 最后一个作业
+    def hw_list_operation(self, content=None):
+        """近期作业 列表"""
+        if self.wait_check_list_page():
+            if content is None:
+                content = []
+
+            item = self.hw_item()  # 作业条目
+            if len(item[1]) > 6 and not content:
+                self.hw_list(item[1], len(item[1])-1)  # 获取作业/试卷/口语列表
+            else:
+                var = 0
+                if content:
+                    for k in range(len(item[1])):
+                        if content[0] == item[1][k][0]:
+                            var = k + 1
+                            break
+
+                if (not content) or (var != 0):
+                    self.hw_list(item[1], len(item[1]), var)  # 获取作业/试卷/口语列表
+
+    @teststeps
+    def hw_list(self, item, length, index=0):
+        """获取作业/试卷/口语列表
         """
-        item = self.hw_item()  # 作业条目
-        for i in range(index, len(item[1])):
-            print(item[1][i][0], '\n',
-                  item[1][i][1], '  ', item[1][i][2], '  ', item[1][i][3])
+        for i in range(index, length):
+            print(item[i][0], '\n',
+                  item[i][1], '  ', item[i][2], '  ', item[i][3])
             print('----------------------')
 
-        return item[1][-1]  # 最后一个作业
-
-    @teststeps
-    def swipe_operation(self, k=0):
-        """滑屏 操作"""
-        print('----------------------近期作业列表----------------------')
-        var = self.hw_list_operation(k)  # 获取列表信息
-        SwipeFun().swipe_vertical(0.5, 0.75, 0.25)
-        item = self.hw_item()  # 作业条目
-        if len(item[1]) > 9:
-            last = item[1][-1]  # 最后一个作业
-            if var in item[1] and last != var:   # 滑动了# todo 列表中可能有多个相同作业/卷子/口语名
-                # print('滑动后到底部')
-                for i in range(len(item[1]), 0):
-                    if item[1][i] == var:
-                        self.swipe_operation(i+1)
-                        break
-        else:
-            last = item[1][-1]  # 最后一个作业
-            # print('滑动后未到底部')
-            if var in item[1] and last != var:  # 未滑够一页
-                # print('未滑够一页')
-                for i in range(len(item[1]), 0):
-                    if item[1][i] == var[0]:
-                        self.swipe_operation(i+1)
-                        break
+        content = [item[-1]]  # 最后一个作业的name
+        SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
+        self.hw_list_operation(content)
 
     @teststep
     def delete_recent_hw_operation(self):

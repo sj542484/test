@@ -1,0 +1,399 @@
+2019-09-24 11:27:20,847 - oppo_R11t - INFO - --> Collection.setUp
+2019-09-24 11:27:20,849 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:27:20,849 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:27:20,850 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:27:20,850 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:27:20,851 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:27:20,851 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:27:20,851 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:27:20,852 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:27:20,852 - oppo_R11t - INFO - <-- Collection.setUp, Success
+
+2019-09-24 11:27:20,853 - oppo_R11t - INFO - --> Collection.test_collection_list_detail
+2019-09-24 11:27:20,854 - oppo_R11t - INFO -   --> TloginPage.app_status
+2019-09-24 11:27:20,855 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:27:20,855 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:27:41,545 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:27:41,545 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:27:41,546 - oppo_R11t - INFO -   --> TloginPage.wait_check_page
+2019-09-24 11:27:41,547 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:27:41,844 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:27:41,845 - oppo_R11t - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 11:27:41,845 - oppo_R11t - INFO -   --> TloginPage.login_operation
+2019-09-24 11:27:41,873 - oppo_R11t - INFO - 	--> TloginPage.input_username
+2019-09-24 11:27:42,840 - oppo_R11t - INFO - 	--> TloginPage.input_password
+2019-09-24 11:27:44,561 - oppo_R11t - INFO - 	--> TloginPage.login_button
+2019-09-24 11:27:45,143 - oppo_R11t - INFO -   <-- TloginPage.login_operation, Success
+2019-09-24 11:27:45,144 - oppo_R11t - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 11:27:45,144 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:27:45,144 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:27:47,205 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:27:47,205 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:27:47,205 - oppo_R11t - INFO - 	--> ThomePage.click_tab_profile
+2019-09-24 11:27:47,406 - oppo_R11t - INFO -   --> TuserCenterPage.wait_check_page
+2019-09-24 11:27:47,407 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:27:48,333 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:27:48,334 - oppo_R11t - INFO -   <-- TuserCenterPage.wait_check_page, Success
+2019-09-24 11:27:48,334 - oppo_R11t - INFO - 	--> TuserCenterPage.click_mine_collection
+2019-09-24 11:27:48,446 - oppo_R11t - INFO -   --> CollectionPage.wait_check_page
+2019-09-24 11:27:48,447 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:27:50,088 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:27:50,088 - oppo_R11t - INFO -   <-- CollectionPage.wait_check_page, Success
+2019-09-24 11:27:50,089 - oppo_R11t - INFO - 	--> ThomePage.wait_check_empty_tips_page
+2019-09-24 11:27:50,089 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:27:50,124 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:27:50,125 - oppo_R11t - INFO -   --> Collection.add_collection_operation
+2019-09-24 11:27:50,126 - oppo_R11t - INFO - 	--> ThomePage.back_up_button
+2019-09-24 11:27:50,127 - oppo_R11t - INFO -   --> WaitElement.wait_find_element
+2019-09-24 11:27:50,172 - oppo_R11t - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 11:27:50,173 - oppo_R11t - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 11:27:50,176 - oppo_R11t - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 11:27:50,739 - oppo_R11t - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924112750.png
+2019-09-24 11:27:50,740 - oppo_R11t - ERROR -   <-- Collection.add_collection_operation, Exception, Error
+2019-09-24 11:27:50,740 - oppo_R11t - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924112750.png
+2019-09-24 11:27:50,741 - oppo_R11t - ERROR - <-- Collection.test_collection_list_detail, Exception, Error
+
+2019-09-24 11:27:50,741 - oppo_R11t - INFO - --> Collection.tearDown
+2019-09-24 11:27:50,741 - oppo_R11t - INFO - <-- Collection.tearDown, Success
+
+2019-09-24 11:27:50,745 - oppo_R11t - INFO - --> Collection.setUp
+2019-09-24 11:27:50,746 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:27:50,746 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:27:50,746 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:27:50,747 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:27:50,747 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:27:50,747 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:27:50,747 - oppo_R11t - INFO - <-- Collection.setUp, Success
+
+2019-09-24 11:27:50,748 - oppo_R11t - INFO - --> Collection.test_collection_filter
+2019-09-24 11:27:50,748 - oppo_R11t - INFO -   --> TloginPage.app_status
+2019-09-24 11:27:50,748 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:27:50,749 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:28:11,914 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:28:11,916 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:28:11,916 - oppo_R11t - INFO -   --> TloginPage.wait_check_page
+2019-09-24 11:28:11,916 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:28:22,111 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:28:22,112 - oppo_R11t - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 11:28:22,113 - oppo_R11t - INFO - 	--> TloginPage.close_app
+2019-09-24 11:28:22,814 - oppo_R11t - INFO - 	--> TloginPage.launch_app
+2019-09-24 11:28:25,491 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:28:25,492 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:28:29,608 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:28:29,608 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:28:29,609 - oppo_R11t - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 11:28:29,609 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:28:29,609 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:28:29,723 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:28:29,724 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:28:29,724 - oppo_R11t - INFO - 	--> ThomePage.click_tab_profile
+2019-09-24 11:28:29,787 - oppo_R11t - INFO -   --> TuserCenterPage.wait_check_page
+2019-09-24 11:28:29,787 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:28:30,459 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:28:30,459 - oppo_R11t - INFO -   <-- TuserCenterPage.wait_check_page, Success
+2019-09-24 11:28:30,460 - oppo_R11t - INFO - 	--> TuserCenterPage.click_mine_collection
+2019-09-24 11:28:31,007 - oppo_R11t - INFO -   --> CollectionPage.wait_check_page
+2019-09-24 11:28:31,007 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:28:32,622 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:28:32,623 - oppo_R11t - INFO -   <-- CollectionPage.wait_check_page, Success
+2019-09-24 11:28:32,623 - oppo_R11t - INFO - 	--> TuserCenterPage.filter_button
+2019-09-24 11:28:32,738 - oppo_R11t - INFO -   --> FilterPage.wait_check_page
+2019-09-24 11:28:32,738 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:28:33,975 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:28:33,976 - oppo_R11t - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 11:28:33,977 - oppo_R11t - INFO -   --> TuserCenterPage.source_type_selected
+2019-09-24 11:28:33,977 - oppo_R11t - INFO - 	--> TuserCenterPage.question_menu
+2019-09-24 11:28:34,029 - oppo_R11t - INFO - 	--> GetAttribute.selected
+2019-09-24 11:28:34,058 - oppo_R11t - INFO -   --> TuserCenterPage.filter_operation
+2019-09-24 11:28:34,059 - oppo_R11t - INFO -   --> TuserCenterPage.filter_all_element
+2019-09-24 11:28:34,229 - oppo_R11t - INFO -   <-- TuserCenterPage.filter_all_element, Success
+2019-09-24 11:28:35,888 - oppo_R11t - INFO -   --> SwipeFun.swipe_vertical
+2019-09-24 11:28:37,241 - oppo_R11t - INFO -   <-- SwipeFun.swipe_vertical, Success
+2019-09-24 11:28:37,242 - oppo_R11t - INFO -   --> TuserCenterPage.wait_check_page
+2019-09-24 11:28:37,242 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:28:48,909 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:28:48,910 - oppo_R11t - INFO -   <-- TuserCenterPage.wait_check_page, Success
+2019-09-24 11:28:48,910 - oppo_R11t - INFO -   --> TuserCenterPage.label_content
+2019-09-24 11:28:48,911 - oppo_R11t - INFO -   <-- TuserCenterPage.label_content, Success
+2019-09-24 11:28:48,911 - oppo_R11t - INFO -   <-- TuserCenterPage.filter_operation, Success
+2019-09-24 11:28:48,912 - oppo_R11t - INFO -   <-- TuserCenterPage.source_type_selected, Success
+2019-09-24 11:28:48,912 - oppo_R11t - INFO - 	--> TuserCenterPage.label_title
+2019-09-24 11:28:48,980 - oppo_R11t - ERROR - Exception, list index out of range
+2019-09-24 11:28:48,981 - oppo_R11t - ERROR - <-- Collection.test_collection_filter, Exception, Error
+
+2019-09-24 11:28:49,506 - oppo_R11t - INFO - --> Collection.tearDown
+2019-09-24 11:28:49,506 - oppo_R11t - INFO - <-- Collection.tearDown, Success
+
+2019-09-24 11:28:49,508 - oppo_R11t - INFO - --> Collection.setUp
+2019-09-24 11:28:49,508 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:28:49,509 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:28:49,509 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:28:49,509 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:28:49,510 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:28:49,510 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:28:49,510 - oppo_R11t - INFO - <-- Collection.setUp, Success
+
+2019-09-24 11:28:49,511 - oppo_R11t - INFO - --> Collection.test_collection_label_manage
+2019-09-24 11:28:49,511 - oppo_R11t - INFO -   --> TloginPage.app_status
+2019-09-24 11:28:49,511 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:28:49,512 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:29:09,881 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:29:09,882 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:29:09,885 - oppo_R11t - INFO -   --> TloginPage.wait_check_page
+2019-09-24 11:29:09,886 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:29:20,426 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:29:20,427 - oppo_R11t - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 11:29:20,427 - oppo_R11t - INFO - 	--> TloginPage.close_app
+2019-09-24 11:29:21,080 - oppo_R11t - INFO - 	--> TloginPage.launch_app
+2019-09-24 11:29:23,785 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:29:23,786 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:29:27,512 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:29:27,512 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:29:27,513 - oppo_R11t - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 11:29:27,513 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:29:27,513 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:29:27,626 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:29:27,627 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:29:27,627 - oppo_R11t - INFO - 	--> ThomePage.click_tab_profile
+2019-09-24 11:29:27,691 - oppo_R11t - INFO -   --> TuserCenterPage.wait_check_page
+2019-09-24 11:29:27,692 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:29:28,313 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:29:28,314 - oppo_R11t - INFO -   <-- TuserCenterPage.wait_check_page, Success
+2019-09-24 11:29:28,314 - oppo_R11t - INFO - 	--> TuserCenterPage.click_mine_collection
+2019-09-24 11:29:28,369 - oppo_R11t - INFO -   --> CollectionPage.wait_check_page
+2019-09-24 11:29:28,370 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:29:30,461 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:29:30,462 - oppo_R11t - INFO -   <-- CollectionPage.wait_check_page, Success
+2019-09-24 11:29:30,462 - oppo_R11t - INFO -   --> Collection.create_label_operation
+2019-09-24 11:29:30,463 - oppo_R11t - INFO - 	--> CollectionPage.more_button
+2019-09-24 11:29:31,585 - oppo_R11t - INFO - 	--> CollectionPage.label_manage_button
+2019-09-24 11:29:31,728 - oppo_R11t - INFO -   --> CollectionPage.wait_check_manage_page
+2019-09-24 11:29:31,729 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:29:33,480 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:29:33,481 - oppo_R11t - INFO -   <-- CollectionPage.wait_check_manage_page, Success
+2019-09-24 11:29:33,481 - oppo_R11t - INFO -   --> CollectionPage.wait_check_manage_list_page
+2019-09-24 11:29:33,482 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:29:49,161 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:29:49,162 - oppo_R11t - INFO -   <-- CollectionPage.wait_check_manage_list_page, Success
+2019-09-24 11:29:49,163 - oppo_R11t - INFO - 	--> ThomePage.wait_check_empty_tips_page
+2019-09-24 11:29:49,163 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:29:49,211 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:29:49,212 - oppo_R11t - INFO - 	--> CollectionPage.add_label
+2019-09-24 11:29:49,311 - oppo_R11t - INFO -   --> ThomePage.wait_check_tips_page
+2019-09-24 11:29:49,312 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:29:52,669 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:29:52,670 - oppo_R11t - INFO -   <-- ThomePage.wait_check_tips_page, Success
+2019-09-24 11:29:52,670 - oppo_R11t - INFO - 	--> CollectionPage.add_label
+2019-09-24 11:29:52,729 - oppo_R11t - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-09-24 11:29:52,730 - oppo_R11t - ERROR - 	<-- CollectionPage.add_label, WebDriverException, Error
+2019-09-24 11:29:53,361 - oppo_R11t - ERROR - WebDriverException, Message: IMAGE:CollectionPage.add_label-20190924112952.png
+
+2019-09-24 11:29:53,362 - oppo_R11t - ERROR -   <-- Collection.create_label_operation, WebDriverException, Error
+2019-09-24 11:29:53,362 - oppo_R11t - ERROR - WebDriverException, Message: Message: IMAGE:CollectionPage.add_label-20190924112952.png
+
+
+2019-09-24 11:29:53,362 - oppo_R11t - ERROR - <-- Collection.test_collection_label_manage, WebDriverException, Error
+
+2019-09-24 11:29:53,363 - oppo_R11t - INFO - --> Collection.tearDown
+2019-09-24 11:29:53,363 - oppo_R11t - INFO - <-- Collection.tearDown, Success
+
+2019-09-24 11:29:53,369 - oppo_R11t - INFO - --> Collection.setUp
+2019-09-24 11:29:53,369 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:29:53,370 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:29:53,370 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:29:53,370 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:29:53,371 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:29:53,371 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:29:53,371 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:29:53,372 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:29:53,372 - oppo_R11t - INFO - <-- Collection.setUp, Success
+
+2019-09-24 11:29:53,373 - oppo_R11t - INFO - --> Collection.test_collection_menu_operation
+2019-09-24 11:29:53,373 - oppo_R11t - INFO -   --> TloginPage.app_status
+2019-09-24 11:29:53,374 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:29:53,374 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:30:13,569 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:30:13,570 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:30:13,570 - oppo_R11t - INFO -   --> TloginPage.wait_check_page
+2019-09-24 11:30:13,571 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:30:23,821 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:30:23,822 - oppo_R11t - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 11:30:23,822 - oppo_R11t - INFO - 	--> TloginPage.close_app
+2019-09-24 11:30:24,584 - oppo_R11t - INFO - 	--> TloginPage.launch_app
+2019-09-24 11:30:27,273 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:30:27,273 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:30:31,303 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:30:31,303 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:30:31,304 - oppo_R11t - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 11:30:31,304 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:30:31,305 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:30:31,441 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:30:31,441 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:30:31,442 - oppo_R11t - INFO - 	--> ThomePage.click_tab_profile
+2019-09-24 11:30:31,533 - oppo_R11t - INFO -   --> TuserCenterPage.wait_check_page
+2019-09-24 11:30:31,534 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:30:32,307 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:30:32,308 - oppo_R11t - INFO -   <-- TuserCenterPage.wait_check_page, Success
+2019-09-24 11:30:32,308 - oppo_R11t - INFO - 	--> TuserCenterPage.click_mine_collection
+2019-09-24 11:30:32,407 - oppo_R11t - INFO -   --> CollectionPage.wait_check_page
+2019-09-24 11:30:32,407 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:30:34,252 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:30:34,253 - oppo_R11t - INFO -   <-- CollectionPage.wait_check_page, Success
+2019-09-24 11:30:34,253 - oppo_R11t - INFO - 	--> ThomePage.wait_check_empty_tips_page
+2019-09-24 11:30:34,253 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:30:34,307 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:30:34,308 - oppo_R11t - INFO -   --> Collection.add_collection_operation
+2019-09-24 11:30:34,308 - oppo_R11t - INFO - 	--> ThomePage.back_up_button
+2019-09-24 11:30:34,308 - oppo_R11t - INFO -   --> WaitElement.wait_find_element
+2019-09-24 11:30:34,354 - oppo_R11t - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 11:30:34,355 - oppo_R11t - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 11:30:34,355 - oppo_R11t - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 11:30:34,882 - oppo_R11t - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924113034.png
+2019-09-24 11:30:34,882 - oppo_R11t - ERROR -   <-- Collection.add_collection_operation, Exception, Error
+2019-09-24 11:30:34,883 - oppo_R11t - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924113034.png
+2019-09-24 11:30:34,883 - oppo_R11t - ERROR - <-- Collection.test_collection_menu_operation, Exception, Error
+
+2019-09-24 11:30:34,884 - oppo_R11t - INFO - --> Collection.tearDown
+2019-09-24 11:30:34,884 - oppo_R11t - INFO - <-- Collection.tearDown, Success
+
+2019-09-24 11:30:34,886 - oppo_R11t - INFO - --> Collection.setUp
+2019-09-24 11:30:34,886 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:30:34,887 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:30:34,887 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:30:34,887 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:30:34,888 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:30:34,888 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:30:34,888 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:30:34,889 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:30:34,889 - oppo_R11t - INFO - <-- Collection.setUp, Success
+
+2019-09-24 11:30:34,889 - oppo_R11t - INFO - --> Collection.test_collection_game_list_menu
+2019-09-24 11:30:34,889 - oppo_R11t - INFO -   --> TloginPage.app_status
+2019-09-24 11:30:34,890 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:30:34,890 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:30:54,975 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:30:54,976 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:30:54,977 - oppo_R11t - INFO -   --> TloginPage.wait_check_page
+2019-09-24 11:30:54,977 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:31:05,241 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:31:05,241 - oppo_R11t - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 11:31:05,242 - oppo_R11t - INFO - 	--> TloginPage.close_app
+2019-09-24 11:31:05,877 - oppo_R11t - INFO - 	--> TloginPage.launch_app
+2019-09-24 11:31:08,478 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:31:08,478 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:31:12,120 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:31:12,120 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:31:12,121 - oppo_R11t - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 11:31:12,121 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:31:12,122 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:31:12,237 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:31:12,237 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:31:12,237 - oppo_R11t - INFO - 	--> ThomePage.click_tab_profile
+2019-09-24 11:31:12,296 - oppo_R11t - INFO -   --> TuserCenterPage.wait_check_page
+2019-09-24 11:31:12,297 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:31:13,848 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:31:13,849 - oppo_R11t - INFO -   <-- TuserCenterPage.wait_check_page, Success
+2019-09-24 11:31:13,849 - oppo_R11t - INFO - 	--> TuserCenterPage.click_mine_collection
+2019-09-24 11:31:13,967 - oppo_R11t - INFO -   --> CollectionPage.wait_check_page
+2019-09-24 11:31:13,967 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:31:15,495 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:31:15,496 - oppo_R11t - INFO -   <-- CollectionPage.wait_check_page, Success
+2019-09-24 11:31:15,496 - oppo_R11t - INFO - 	--> TuserCenterPage.filter_button
+2019-09-24 11:31:15,572 - oppo_R11t - INFO -   --> FilterPage.wait_check_page
+2019-09-24 11:31:15,572 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:31:16,895 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:31:16,896 - oppo_R11t - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 11:31:16,896 - oppo_R11t - INFO - 	--> TuserCenterPage.click_game_list
+2019-09-24 11:31:17,010 - oppo_R11t - INFO - 	--> FilterPage.commit_button
+2019-09-24 11:31:18,658 - oppo_R11t - INFO -   --> CollectionPage.wait_check_page
+2019-09-24 11:31:18,659 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:31:19,907 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:31:19,908 - oppo_R11t - INFO -   <-- CollectionPage.wait_check_page, Success
+2019-09-24 11:31:19,908 - oppo_R11t - INFO - 	--> ThomePage.wait_check_empty_tips_page
+2019-09-24 11:31:19,909 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:31:19,960 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:31:19,960 - oppo_R11t - INFO -   --> Collection.add_collection_operation
+2019-09-24 11:31:19,961 - oppo_R11t - INFO - 	--> ThomePage.back_up_button
+2019-09-24 11:31:19,961 - oppo_R11t - INFO -   --> WaitElement.wait_find_element
+2019-09-24 11:31:20,018 - oppo_R11t - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 11:31:20,019 - oppo_R11t - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 11:31:20,019 - oppo_R11t - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 11:31:20,541 - oppo_R11t - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924113120.png
+2019-09-24 11:31:20,542 - oppo_R11t - ERROR -   <-- Collection.add_collection_operation, Exception, Error
+2019-09-24 11:31:20,542 - oppo_R11t - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924113120.png
+2019-09-24 11:31:20,542 - oppo_R11t - ERROR - <-- Collection.test_collection_game_list_menu, Exception, Error
+
+2019-09-24 11:31:20,543 - oppo_R11t - INFO - --> Collection.tearDown
+2019-09-24 11:31:20,543 - oppo_R11t - INFO - <-- Collection.tearDown, Success
+
+2019-09-24 11:31:20,544 - oppo_R11t - INFO - --> Collection.setUp
+2019-09-24 11:31:20,545 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:31:20,545 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:31:20,545 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:31:20,546 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:31:20,546 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:31:20,546 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:31:20,546 - oppo_R11t - INFO -   --> TestBankPage.__init__
+2019-09-24 11:31:20,547 - oppo_R11t - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 11:31:20,547 - oppo_R11t - INFO - <-- Collection.setUp, Success
+
+2019-09-24 11:31:20,547 - oppo_R11t - INFO - --> Collection.test_collection_paper_menu
+2019-09-24 11:31:20,547 - oppo_R11t - INFO -   --> TloginPage.app_status
+2019-09-24 11:31:20,548 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:31:20,548 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:31:40,609 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:31:40,610 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:31:40,611 - oppo_R11t - INFO -   --> TloginPage.wait_check_page
+2019-09-24 11:31:40,611 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:31:50,914 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:31:50,914 - oppo_R11t - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 11:31:50,915 - oppo_R11t - INFO - 	--> TloginPage.close_app
+2019-09-24 11:31:51,621 - oppo_R11t - INFO - 	--> TloginPage.launch_app
+2019-09-24 11:31:54,234 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:31:54,235 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:31:57,835 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:31:57,836 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:31:57,836 - oppo_R11t - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 11:31:57,836 - oppo_R11t - INFO -   --> ThomePage.wait_check_page
+2019-09-24 11:31:57,837 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:31:57,943 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:31:57,944 - oppo_R11t - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 11:31:57,944 - oppo_R11t - INFO - 	--> ThomePage.click_tab_profile
+2019-09-24 11:31:58,000 - oppo_R11t - INFO -   --> TuserCenterPage.wait_check_page
+2019-09-24 11:31:58,001 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:31:59,569 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:31:59,570 - oppo_R11t - INFO -   <-- TuserCenterPage.wait_check_page, Success
+2019-09-24 11:31:59,570 - oppo_R11t - INFO - 	--> TuserCenterPage.click_mine_collection
+2019-09-24 11:31:59,677 - oppo_R11t - INFO -   --> CollectionPage.wait_check_page
+2019-09-24 11:31:59,678 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:32:00,689 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:32:00,689 - oppo_R11t - INFO -   <-- CollectionPage.wait_check_page, Success
+2019-09-24 11:32:00,690 - oppo_R11t - INFO - 	--> TuserCenterPage.filter_button
+2019-09-24 11:32:00,807 - oppo_R11t - INFO -   --> FilterPage.wait_check_page
+2019-09-24 11:32:00,808 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:32:02,573 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:32:02,573 - oppo_R11t - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 11:32:02,574 - oppo_R11t - INFO - 	--> TuserCenterPage.click_test_paper
+2019-09-24 11:32:02,670 - oppo_R11t - INFO - 	--> FilterPage.commit_button
+2019-09-24 11:32:03,861 - oppo_R11t - INFO -   --> CollectionPage.wait_check_page
+2019-09-24 11:32:03,861 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:32:05,699 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:32:05,700 - oppo_R11t - INFO -   <-- CollectionPage.wait_check_page, Success
+2019-09-24 11:32:05,700 - oppo_R11t - INFO - 	--> ThomePage.wait_check_empty_tips_page
+2019-09-24 11:32:05,701 - oppo_R11t - INFO -   --> WaitElement.wait_check_element
+2019-09-24 11:32:05,750 - oppo_R11t - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 11:32:05,750 - oppo_R11t - INFO -   --> Collection.add_collection_operation
+2019-09-24 11:32:05,751 - oppo_R11t - INFO - 	--> ThomePage.back_up_button
+2019-09-24 11:32:05,751 - oppo_R11t - INFO -   --> WaitElement.wait_find_element
+2019-09-24 11:32:05,798 - oppo_R11t - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 11:32:05,799 - oppo_R11t - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 11:32:05,799 - oppo_R11t - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 11:32:06,382 - oppo_R11t - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924113205.png
+2019-09-24 11:32:06,382 - oppo_R11t - ERROR -   <-- Collection.add_collection_operation, Exception, Error
+2019-09-24 11:32:06,382 - oppo_R11t - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924113205.png
+2019-09-24 11:32:06,383 - oppo_R11t - ERROR - <-- Collection.test_collection_paper_menu, Exception, Error
+
+2019-09-24 11:32:06,383 - oppo_R11t - INFO - --> Collection.tearDown
+2019-09-24 11:32:06,383 - oppo_R11t - INFO - <-- Collection.tearDown, Success
+

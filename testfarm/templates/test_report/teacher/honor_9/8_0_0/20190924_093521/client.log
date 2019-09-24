@@ -1,0 +1,2476 @@
+2019-09-24 09:35:38,185 - honor_9 - INFO - --> BankSearch.setUp
+2019-09-24 09:35:38,186 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:35:38,186 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:35:38,187 - honor_9 - INFO - <-- BankSearch.setUp, Success
+
+2019-09-24 09:35:38,187 - honor_9 - INFO - --> BankSearch.test_history_search_word
+2019-09-24 09:35:38,187 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:35:38,188 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:35:38,188 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:35:58,241 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:35:58,242 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:35:58,242 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:35:58,243 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:35:58,310 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:35:58,310 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:35:58,311 - honor_9 - INFO -   --> TloginPage.login_operation
+2019-09-24 09:35:58,337 - honor_9 - INFO - 	--> TloginPage.input_username
+2019-09-24 09:35:59,033 - honor_9 - INFO - 	--> TloginPage.input_password
+2019-09-24 09:36:00,193 - honor_9 - INFO - 	--> TloginPage.login_button
+2019-09-24 09:36:00,823 - honor_9 - INFO -   <-- TloginPage.login_operation, Success
+2019-09-24 09:36:00,824 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:36:00,824 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:36:00,825 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:05,524 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:05,524 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:36:05,525 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:36:05,525 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:36:05,705 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:36:05,705 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:07,481 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:07,481 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:36:07,481 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:36:07,482 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:36:07,482 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:07,756 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:07,757 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:36:07,757 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:36:07,758 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:08,058 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:08,058 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:36:08,059 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:08,148 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:36:08,149 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:09,784 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:09,784 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:36:09,785 - honor_9 - INFO -   --> SearchPage.get_history_search_word
+2019-09-24 09:36:09,785 - honor_9 - INFO - 	--> SearchPage.history_word
+2019-09-24 09:36:10,059 - honor_9 - INFO -   <-- SearchPage.get_history_search_word, Success
+2019-09-24 09:36:10,060 - honor_9 - INFO -   --> BankSearch.get_word_operation
+2019-09-24 09:36:10,060 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:36:10,061 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:10,188 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:10,189 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:36:10,189 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:11,419 - honor_9 - INFO - 	--> SearchPage.search_button
+2019-09-24 09:36:11,571 - honor_9 - INFO -   --> TestBankPage.wait_check_game_type_page
+2019-09-24 09:36:11,572 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:12,860 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:12,861 - honor_9 - INFO -   <-- TestBankPage.wait_check_game_type_page, Success
+2019-09-24 09:36:12,861 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:12,967 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:36:12,968 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:14,597 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:14,597 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:36:14,598 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:15,820 - honor_9 - INFO - 	--> SearchPage.search_button
+2019-09-24 09:36:15,992 - honor_9 - INFO -   --> TestBankPage.wait_check_game_type_page
+2019-09-24 09:36:15,993 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:17,270 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:17,271 - honor_9 - INFO -   <-- TestBankPage.wait_check_game_type_page, Success
+2019-09-24 09:36:17,271 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:17,378 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:36:17,379 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:19,006 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:19,007 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:36:19,007 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:20,209 - honor_9 - INFO - 	--> SearchPage.search_button
+2019-09-24 09:36:20,340 - honor_9 - INFO -   --> TestBankPage.wait_check_game_type_page
+2019-09-24 09:36:20,340 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:21,454 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:21,454 - honor_9 - INFO -   <-- TestBankPage.wait_check_game_type_page, Success
+2019-09-24 09:36:21,455 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:21,595 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:36:21,596 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:23,247 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:23,247 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:36:23,248 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:24,479 - honor_9 - INFO - 	--> SearchPage.search_button
+2019-09-24 09:36:24,620 - honor_9 - INFO -   --> TestBankPage.wait_check_game_type_page
+2019-09-24 09:36:24,620 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:26,425 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:26,426 - honor_9 - INFO -   <-- TestBankPage.wait_check_game_type_page, Success
+2019-09-24 09:36:26,426 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:26,538 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:36:26,538 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:28,197 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:28,198 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:36:28,198 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:29,405 - honor_9 - INFO - 	--> SearchPage.search_button
+2019-09-24 09:36:29,551 - honor_9 - INFO -   --> TestBankPage.wait_check_game_type_page
+2019-09-24 09:36:29,552 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:30,811 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:30,812 - honor_9 - INFO -   <-- TestBankPage.wait_check_game_type_page, Success
+2019-09-24 09:36:30,813 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:30,956 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:36:30,956 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:32,648 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:32,649 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:36:32,650 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:33,840 - honor_9 - INFO - 	--> SearchPage.search_button
+2019-09-24 09:36:33,981 - honor_9 - INFO -   --> TestBankPage.wait_check_game_type_page
+2019-09-24 09:36:33,981 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:35,116 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:35,117 - honor_9 - INFO -   <-- TestBankPage.wait_check_game_type_page, Success
+2019-09-24 09:36:35,117 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:35,240 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:36:35,240 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:36,927 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:36,928 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:36:36,928 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:38,137 - honor_9 - INFO - 	--> SearchPage.search_button
+2019-09-24 09:36:38,263 - honor_9 - INFO -   --> TestBankPage.wait_check_game_type_page
+2019-09-24 09:36:38,264 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:39,960 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:39,961 - honor_9 - INFO -   <-- TestBankPage.wait_check_game_type_page, Success
+2019-09-24 09:36:39,962 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:36:40,067 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:36:40,068 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:36:41,831 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:36:41,831 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:36:41,832 - honor_9 - INFO - 	--> ThomePage.back_up_button
+2019-09-24 09:36:41,832 - honor_9 - INFO -   --> WaitElement.wait_find_element
+2019-09-24 09:36:41,937 - honor_9 - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 09:36:41,938 - honor_9 - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 09:36:41,938 - honor_9 - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 09:36:42,758 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924093641.png
+2019-09-24 09:36:42,759 - honor_9 - ERROR -   <-- BankSearch.get_word_operation, Exception, Error
+2019-09-24 09:36:42,759 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924093641.png
+2019-09-24 09:36:42,759 - honor_9 - ERROR - <-- BankSearch.test_history_search_word, Exception, Error
+
+2019-09-24 09:36:42,760 - honor_9 - INFO - --> BankSearch.tearDown
+2019-09-24 09:36:42,760 - honor_9 - INFO - <-- BankSearch.tearDown, Success
+
+2019-09-24 09:36:42,762 - honor_9 - INFO - --> BankSearch.setUp
+2019-09-24 09:36:42,763 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:36:42,763 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:36:42,764 - honor_9 - INFO - <-- BankSearch.setUp, Success
+
+2019-09-24 09:36:42,764 - honor_9 - INFO - --> BankSearch.test_search_resource
+2019-09-24 09:36:42,764 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:36:42,765 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:36:42,765 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:37:03,334 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:37:03,335 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:37:03,335 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:37:03,336 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:37:13,793 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:37:13,795 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:37:13,796 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:37:13,995 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:37:16,301 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:37:16,302 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:37:21,192 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:37:21,192 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:37:21,193 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:37:21,193 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:37:21,193 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:37:21,515 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:37:21,516 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:37:21,516 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:37:21,517 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:37:21,688 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:37:21,689 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:37:23,284 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:37:23,285 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:37:23,286 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:37:23,286 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:37:23,286 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:37:23,529 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:37:23,529 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:37:23,530 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:37:23,652 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:37:23,653 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:37:25,943 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:37:25,944 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:37:25,944 - honor_9 - INFO -   --> BankSearch.search_operation
+2019-09-24 09:37:25,945 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:37:27,168 - honor_9 - INFO - 	--> SearchPage.search_button
+2019-09-24 09:37:27,323 - honor_9 - INFO -   --> TestBankPage.wait_check_game_type_page
+2019-09-24 09:37:27,323 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:37:28,691 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:37:28,691 - honor_9 - INFO -   <-- TestBankPage.wait_check_game_type_page, Success
+2019-09-24 09:37:28,692 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:37:29,964 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:37:30,098 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:37:30,098 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:37:32,182 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:37:32,183 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:37:32,183 - honor_9 - INFO - 	--> ThomePage.back_up_button
+2019-09-24 09:37:32,184 - honor_9 - INFO -   --> WaitElement.wait_find_element
+2019-09-24 09:37:32,292 - honor_9 - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 09:37:32,293 - honor_9 - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 09:37:32,293 - honor_9 - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 09:37:33,106 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924093732.png
+2019-09-24 09:37:33,106 - honor_9 - ERROR -   <-- BankSearch.search_operation, Exception, Error
+2019-09-24 09:37:33,107 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924093732.png
+2019-09-24 09:37:33,107 - honor_9 - ERROR - <-- BankSearch.test_search_resource, Exception, Error
+
+2019-09-24 09:37:33,107 - honor_9 - INFO - --> BankSearch.tearDown
+2019-09-24 09:37:33,107 - honor_9 - INFO - <-- BankSearch.tearDown, Success
+
+2019-09-24 09:37:33,110 - honor_9 - INFO - --> BankSearch.setUp
+2019-09-24 09:37:33,110 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:37:33,111 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:37:33,111 - honor_9 - INFO - <-- BankSearch.setUp, Success
+
+2019-09-24 09:37:33,111 - honor_9 - INFO - --> BankSearch.test_search_uploader
+2019-09-24 09:37:33,112 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:37:33,112 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:37:33,112 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:37:53,741 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:37:53,741 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:37:53,742 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:37:53,743 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:38:04,256 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:38:04,257 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:38:04,258 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:38:04,442 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:38:06,755 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:38:06,757 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:38:11,587 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:38:11,587 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:38:11,588 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:38:11,588 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:38:11,588 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:38:11,875 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:38:11,876 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:38:11,876 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:38:11,877 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:38:12,031 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:38:12,031 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:38:13,766 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:38:13,767 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:38:13,767 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:38:13,768 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:38:13,768 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:38:13,971 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:38:13,972 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:38:13,972 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:38:14,064 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:38:14,065 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:38:16,453 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:38:16,453 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:38:16,454 - honor_9 - INFO - 	--> SearchPage.drop_down_button
+2019-09-24 09:38:16,569 - honor_9 - INFO -   --> SearchPage.judge_search_menu
+2019-09-24 09:38:16,569 - honor_9 - INFO -   --> WaitElement.judge_is_exists
+2019-09-24 09:38:18,040 - honor_9 - INFO -   <-- WaitElement.judge_is_exists, Success
+2019-09-24 09:38:18,040 - honor_9 - INFO -   <-- SearchPage.judge_search_menu, Success
+2019-09-24 09:38:18,041 - honor_9 - INFO - 	--> SearchPage.search_criteria_menu
+2019-09-24 09:38:18,078 - honor_9 - INFO -   --> SearchPage.choose_condition
+2019-09-24 09:38:18,148 - honor_9 - INFO -   <-- SearchPage.choose_condition, Success
+2019-09-24 09:38:18,898 - honor_9 - INFO -   --> SearchPage.wait_check_search_page
+2019-09-24 09:38:18,899 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:38:18,964 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:38:18,965 - honor_9 - INFO -   <-- SearchPage.wait_check_search_page, Success
+2019-09-24 09:38:18,966 - honor_9 - INFO - 	--> SearchPage.drop_down_button
+2019-09-24 09:38:19,053 - honor_9 - INFO -   --> BankSearch.search_operation
+2019-09-24 09:38:19,053 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:38:20,276 - honor_9 - INFO - 	--> SearchPage.search_button
+2019-09-24 09:38:20,407 - honor_9 - INFO -   --> TestBankPage.wait_check_game_type_page
+2019-09-24 09:38:20,407 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:38:21,645 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:38:21,646 - honor_9 - INFO -   <-- TestBankPage.wait_check_game_type_page, Success
+2019-09-24 09:38:21,646 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:38:22,942 - honor_9 - INFO - 	--> TestBankPage.search_input
+2019-09-24 09:38:23,083 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:38:23,083 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:38:24,821 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:38:24,822 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:38:24,822 - honor_9 - INFO - 	--> ThomePage.back_up_button
+2019-09-24 09:38:24,823 - honor_9 - INFO -   --> WaitElement.wait_find_element
+2019-09-24 09:38:24,934 - honor_9 - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 09:38:24,934 - honor_9 - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 09:38:24,935 - honor_9 - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 09:38:25,731 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924093824.png
+2019-09-24 09:38:25,731 - honor_9 - ERROR -   <-- BankSearch.search_operation, Exception, Error
+2019-09-24 09:38:25,731 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924093824.png
+2019-09-24 09:38:25,732 - honor_9 - ERROR - <-- BankSearch.test_search_uploader, Exception, Error
+
+2019-09-24 09:38:25,732 - honor_9 - INFO - --> BankSearch.tearDown
+2019-09-24 09:38:25,733 - honor_9 - INFO - <-- BankSearch.tearDown, Success
+
+2019-09-24 09:38:25,735 - honor_9 - INFO - --> QuestionBasket.setUp
+2019-09-24 09:38:25,735 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:38:25,735 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:38:25,736 - honor_9 - INFO - <-- QuestionBasket.setUp, Success
+
+2019-09-24 09:38:25,736 - honor_9 - INFO - --> QuestionBasket.test_question_basket_add
+2019-09-24 09:38:25,736 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:38:25,736 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:38:25,737 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:38:45,833 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:38:45,834 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:38:45,835 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:38:45,835 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:38:56,154 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:38:56,154 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:38:56,155 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:38:56,347 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:38:58,667 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:38:58,669 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:03,851 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:03,852 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:39:03,852 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:39:03,852 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:39:03,853 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:04,093 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:04,094 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:39:04,094 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:39:04,095 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:39:04,265 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:39:04,265 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:06,295 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:06,295 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:39:06,296 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:39:06,296 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:39:06,296 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:06,602 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:06,602 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:39:06,603 - honor_9 - INFO - 	--> TestBankPage.question_basket
+2019-09-24 09:39:06,726 - honor_9 - INFO -   --> QuestionBasketPage.wait_check_page
+2019-09-24 09:39:06,727 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:08,540 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:08,541 - honor_9 - INFO -   <-- QuestionBasketPage.wait_check_page, Success
+2019-09-24 09:39:08,541 - honor_9 - INFO -   --> QuestionBasketPage.wait_check_list_page
+2019-09-24 09:39:08,541 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:08,608 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:08,609 - honor_9 - INFO -   <-- QuestionBasketPage.wait_check_list_page, Success
+2019-09-24 09:39:08,610 - honor_9 - INFO - 	--> QuestionBasketPage.all_check_button
+2019-09-24 09:39:08,718 - honor_9 - INFO - 	--> QuestionBasketPage.assign_button
+2019-09-24 09:39:09,599 - honor_9 - INFO - 	--> QuestionBasketPage.assign_button
+2019-09-24 09:39:09,730 - honor_9 - INFO -   --> Toast.find_toast
+2019-09-24 09:39:10,295 - honor_9 - INFO -   <-- Toast.find_toast, Success
+2019-09-24 09:39:10,295 - honor_9 - INFO -   --> QuestionBasketPage.wait_check_list_page
+2019-09-24 09:39:10,296 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:10,356 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:10,356 - honor_9 - INFO -   <-- QuestionBasketPage.wait_check_list_page, Success
+2019-09-24 09:39:10,357 - honor_9 - INFO - 	--> ThomePage.back_up_button
+2019-09-24 09:39:10,357 - honor_9 - INFO -   --> WaitElement.wait_find_element
+2019-09-24 09:39:10,431 - honor_9 - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 09:39:10,431 - honor_9 - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 09:39:10,432 - honor_9 - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 09:39:11,305 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924093910.png
+2019-09-24 09:39:11,305 - honor_9 - ERROR - <-- QuestionBasket.test_question_basket_add, Exception, Error
+
+2019-09-24 09:39:11,306 - honor_9 - INFO - --> QuestionBasket.tearDown
+2019-09-24 09:39:11,306 - honor_9 - INFO - <-- QuestionBasket.tearDown, Success
+
+2019-09-24 09:39:11,307 - honor_9 - INFO - --> QuestionBasket.setUp
+2019-09-24 09:39:11,308 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:39:11,308 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:39:11,308 - honor_9 - INFO - <-- QuestionBasket.setUp, Success
+
+2019-09-24 09:39:11,309 - honor_9 - INFO - --> QuestionBasket.test_question_max_num
+2019-09-24 09:39:11,309 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:39:11,309 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:39:11,309 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:31,745 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:31,746 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:39:31,746 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:39:31,747 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:42,122 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:42,123 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:39:42,123 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:39:42,302 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:39:44,568 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:39:44,569 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:49,460 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:49,460 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:39:49,461 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:39:49,461 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:39:49,461 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:49,743 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:49,744 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:39:49,744 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:39:49,745 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:39:49,900 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:39:49,900 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:51,814 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:51,814 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:39:51,815 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:39:51,815 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:39:51,816 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:52,038 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:52,039 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:39:52,039 - honor_9 - INFO -   --> TestBankPage.question_item
+2019-09-24 09:39:52,292 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,336 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,380 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,423 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,472 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,508 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,541 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,574 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,618 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,655 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,691 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,730 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,765 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,800 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,840 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,888 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,919 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,946 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,973 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:52,998 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:53,020 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:53,043 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:53,067 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:53,091 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:53,117 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:53,141 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:53,941 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:53,990 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,078 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,109 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,181 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,240 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,270 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,357 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,390 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,455 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,485 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,547 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,577 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,650 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,720 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,757 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,889 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:54,933 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,019 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,059 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,150 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,190 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,264 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,323 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,359 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,449 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,487 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,572 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,616 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,699 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,741 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,819 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,905 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:55,946 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:56,036 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:56,062 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:56,129 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:56,155 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:56,201 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:56,225 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:56,323 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:56,378 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:56,409 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:39:56,478 - honor_9 - INFO -   <-- TestBankPage.question_item, Success
+2019-09-24 09:39:56,479 - honor_9 - INFO -   --> QuestionBasket.basket_ready_operation
+2019-09-24 09:39:56,479 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:39:56,480 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:56,681 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:56,681 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:39:56,682 - honor_9 - INFO - 	--> TestBankPage.question_basket
+2019-09-24 09:39:56,813 - honor_9 - INFO -   --> QuestionBasketPage.wait_check_page
+2019-09-24 09:39:56,814 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:59,118 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:59,119 - honor_9 - INFO -   <-- QuestionBasketPage.wait_check_page, Success
+2019-09-24 09:39:59,119 - honor_9 - INFO -   --> QuestionBasketPage.wait_check_list_page
+2019-09-24 09:39:59,119 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:39:59,181 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:39:59,181 - honor_9 - INFO -   <-- QuestionBasketPage.wait_check_list_page, Success
+2019-09-24 09:39:59,182 - honor_9 - INFO - 	--> QuestionBasketPage.all_check_button
+2019-09-24 09:39:59,277 - honor_9 - INFO - 	--> QuestionBasketPage.assign_button
+2019-09-24 09:40:00,121 - honor_9 - INFO - 	--> ThomePage.back_up_button
+2019-09-24 09:40:00,122 - honor_9 - INFO -   --> WaitElement.wait_find_element
+2019-09-24 09:40:00,239 - honor_9 - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 09:40:00,239 - honor_9 - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 09:40:00,240 - honor_9 - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 09:40:01,080 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924094000.png
+2019-09-24 09:40:01,080 - honor_9 - ERROR -   <-- QuestionBasket.basket_ready_operation, Exception, Error
+2019-09-24 09:40:01,080 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924094000.png
+2019-09-24 09:40:01,081 - honor_9 - ERROR - <-- QuestionBasket.test_question_max_num, Exception, Error
+
+2019-09-24 09:40:01,081 - honor_9 - INFO - --> QuestionBasket.tearDown
+2019-09-24 09:40:01,081 - honor_9 - INFO - <-- QuestionBasket.tearDown, Success
+
+2019-09-24 09:40:01,083 - honor_9 - INFO - --> QuestionBasket.setUp
+2019-09-24 09:40:01,083 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:40:01,083 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:40:01,084 - honor_9 - INFO - <-- QuestionBasket.setUp, Success
+
+2019-09-24 09:40:01,084 - honor_9 - INFO - --> QuestionBasket.test_question_basket_remove
+2019-09-24 09:40:01,084 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:40:01,085 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:40:01,085 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:40:21,757 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:40:21,758 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:40:21,759 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:40:21,759 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:40:32,107 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:40:32,108 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:40:32,109 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:40:32,281 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:40:34,538 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:40:34,540 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:40:39,328 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:40:39,328 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:40:39,329 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:40:39,329 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:40:39,330 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:40:39,621 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:40:39,621 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:40:39,622 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:40:39,622 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:40:39,811 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:40:39,812 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:40:41,580 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:40:41,580 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:40:41,581 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:40:41,581 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:40:41,582 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:40:41,796 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:40:41,797 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:40:41,797 - honor_9 - INFO - 	--> TestBankPage.question_basket
+2019-09-24 09:40:41,976 - honor_9 - INFO -   --> QuestionBasketPage.wait_check_page
+2019-09-24 09:40:41,977 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:40:43,711 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:40:43,712 - honor_9 - INFO -   <-- QuestionBasketPage.wait_check_page, Success
+2019-09-24 09:40:43,712 - honor_9 - INFO -   --> QuestionBasketPage.wait_check_list_page
+2019-09-24 09:40:43,712 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:40:43,777 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:40:43,778 - honor_9 - INFO -   <-- QuestionBasketPage.wait_check_list_page, Success
+2019-09-24 09:40:43,778 - honor_9 - INFO -   --> QuestionBasket.basket_operation
+2019-09-24 09:40:43,779 - honor_9 - INFO - 	--> QuestionBasketPage.out_basket_button
+2019-09-24 09:40:43,927 - honor_9 - INFO -   --> Toast.find_toast
+2019-09-24 09:40:44,474 - honor_9 - INFO -   <-- Toast.find_toast, Success
+2019-09-24 09:40:44,474 - honor_9 - INFO -   --> QuestionBasketPage.wait_check_list_page
+2019-09-24 09:40:44,475 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:40:44,564 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:40:44,565 - honor_9 - INFO -   <-- QuestionBasketPage.wait_check_list_page, Success
+2019-09-24 09:40:44,566 - honor_9 - INFO - 	--> QuestionBasketPage.all_check_button
+2019-09-24 09:40:44,685 - honor_9 - INFO - 	--> QuestionBasketPage.assign_button
+2019-09-24 09:40:45,551 - honor_9 - INFO - 	--> QuestionBasketPage.out_basket_button
+2019-09-24 09:40:45,680 - honor_9 - INFO -   --> QuestionBasketPage.wait_check_page
+2019-09-24 09:40:45,681 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:40:46,834 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:40:46,834 - honor_9 - INFO -   <-- QuestionBasketPage.wait_check_page, Success
+2019-09-24 09:40:46,835 - honor_9 - INFO - 	--> ThomePage.wait_check_empty_tips_page
+2019-09-24 09:40:46,835 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:40:46,879 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:40:46,880 - honor_9 - INFO -   --> QuestionBasketPage.wait_check_page
+2019-09-24 09:40:46,880 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:40:46,945 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:40:46,946 - honor_9 - INFO -   <-- QuestionBasketPage.wait_check_page, Success
+2019-09-24 09:40:46,946 - honor_9 - INFO - 	--> ThomePage.back_up_button
+2019-09-24 09:40:46,947 - honor_9 - INFO -   --> WaitElement.wait_find_element
+2019-09-24 09:40:46,992 - honor_9 - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 09:40:46,993 - honor_9 - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 09:40:46,993 - honor_9 - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 09:40:47,747 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924094046.png
+2019-09-24 09:40:47,747 - honor_9 - ERROR -   <-- QuestionBasket.basket_operation, Exception, Error
+2019-09-24 09:40:47,747 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924094046.png
+2019-09-24 09:40:47,748 - honor_9 - ERROR - <-- QuestionBasket.test_question_basket_remove, Exception, Error
+
+2019-09-24 09:40:47,748 - honor_9 - INFO - --> QuestionBasket.tearDown
+2019-09-24 09:40:47,748 - honor_9 - INFO - <-- QuestionBasket.tearDown, Success
+
+2019-09-24 09:40:47,749 - honor_9 - INFO - --> QuestionBasket.setUp
+2019-09-24 09:40:47,750 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:40:47,750 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:40:47,750 - honor_9 - INFO - <-- QuestionBasket.setUp, Success
+
+2019-09-24 09:40:47,751 - honor_9 - INFO - --> QuestionBasket.test_question_add_button
+2019-09-24 09:40:47,751 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:40:47,751 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:40:47,752 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:41:07,990 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:41:07,991 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:41:07,991 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:41:07,992 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:41:18,505 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:41:18,506 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:41:18,506 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:41:18,689 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:41:20,934 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:41:20,935 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:41:28,167 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:41:28,167 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:41:28,168 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:41:28,168 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:41:28,169 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:41:28,500 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:41:28,500 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:41:28,500 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:41:28,501 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:41:28,663 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:41:28,664 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:41:32,632 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:41:32,633 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:41:32,633 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:41:32,634 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:41:32,634 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:41:32,863 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:41:32,864 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:41:32,864 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:41:34,177 - honor_9 - INFO - 	--> TestBankPage.question_num
+2019-09-24 09:41:34,424 - honor_9 - INFO -   --> QuestionDetailPage.wait_check_page
+2019-09-24 09:41:34,424 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:41:36,641 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:41:36,642 - honor_9 - INFO -   <-- QuestionDetailPage.wait_check_page, Success
+2019-09-24 09:41:36,642 - honor_9 - INFO -   --> QuestionBasketPage.wait_check_list_page
+2019-09-24 09:41:36,643 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:41:36,697 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:41:36,698 - honor_9 - INFO -   <-- QuestionBasketPage.wait_check_list_page, Success
+2019-09-24 09:41:36,698 - honor_9 - INFO - 	--> QuestionDetailPage.put_to_basket_button
+2019-09-24 09:41:36,797 - honor_9 - INFO -   --> Toast.find_toast
+2019-09-24 09:41:41,313 - honor_9 - INFO -   <-- Toast.find_toast, Success
+2019-09-24 09:41:41,314 - honor_9 - INFO -   --> QuestionDetailPage.wait_check_list_page
+2019-09-24 09:41:41,314 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:41:41,351 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:41:41,352 - honor_9 - INFO -   <-- QuestionDetailPage.wait_check_list_page, Success
+2019-09-24 09:41:41,352 - honor_9 - INFO - 	--> QuestionDetailPage.put_to_basket_button
+2019-09-24 09:41:41,435 - honor_9 - INFO -   --> Toast.find_toast
+2019-09-24 09:41:47,071 - honor_9 - INFO -   <-- Toast.find_toast, Success
+2019-09-24 09:41:47,072 - honor_9 - INFO -   --> QuestionDetailPage.wait_check_list_page
+2019-09-24 09:41:47,072 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:41:47,145 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:41:47,146 - honor_9 - INFO -   <-- QuestionDetailPage.wait_check_list_page, Success
+2019-09-24 09:41:47,146 - honor_9 - INFO - 	--> ThomePage.back_up_button
+2019-09-24 09:41:47,147 - honor_9 - INFO -   --> WaitElement.wait_find_element
+2019-09-24 09:41:47,207 - honor_9 - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 09:41:47,207 - honor_9 - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 09:41:47,208 - honor_9 - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 09:41:47,965 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924094147.png
+2019-09-24 09:41:47,965 - honor_9 - ERROR - <-- QuestionBasket.test_question_add_button, Exception, Error
+
+2019-09-24 09:41:47,965 - honor_9 - INFO - --> QuestionBasket.tearDown
+2019-09-24 09:41:47,966 - honor_9 - INFO - <-- QuestionBasket.tearDown, Success
+
+2019-09-24 09:41:47,967 - honor_9 - INFO - --> QuestionDetail.setUp
+2019-09-24 09:41:47,968 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:41:47,968 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:41:47,969 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:41:47,969 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:41:47,970 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:41:47,970 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:41:47,970 - honor_9 - INFO - <-- QuestionDetail.setUp, Success
+
+2019-09-24 09:41:47,970 - honor_9 - INFO - --> QuestionDetail.test_question_detail
+2019-09-24 09:41:47,971 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:41:47,971 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:41:47,971 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:08,135 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:08,136 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:42:08,136 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:42:08,137 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:18,275 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:18,276 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:42:18,277 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:42:18,466 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:42:20,724 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:42:20,725 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:26,203 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:26,203 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:42:26,204 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:42:26,204 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:42:26,205 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:26,489 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:26,489 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:42:26,490 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:42:26,490 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:42:26,680 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:42:26,681 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:28,221 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:28,221 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:42:28,222 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:42:28,222 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:42:28,223 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:28,456 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:28,457 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:42:28,457 - honor_9 - INFO -   --> SwipeFun.swipe_vertical
+2019-09-24 09:42:29,806 - honor_9 - INFO -   <-- SwipeFun.swipe_vertical, Success
+2019-09-24 09:42:29,807 - honor_9 - INFO -   --> TestBankPage.question_item
+2019-09-24 09:42:30,843 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:30,882 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:30,923 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:30,973 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,004 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,035 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,071 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,103 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,135 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,166 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,203 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,245 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,290 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,332 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,378 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,427 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,469 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,506 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,554 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,587 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,623 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,650 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,686 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,718 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,753 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,788 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,826 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,887 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,914 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:31,978 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:32,009 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:32,068 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:32,125 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:32,159 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:32,262 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:32,298 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:32,862 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:32,908 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,006 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,049 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,133 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,219 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,243 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,318 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,341 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,400 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,426 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,477 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,505 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,564 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,638 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,680 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,802 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,840 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,960 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:33,999 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,060 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,091 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,165 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,238 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,272 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,366 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,395 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,450 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,480 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,542 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,581 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,645 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,713 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,748 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:42:34,833 - honor_9 - INFO -   <-- TestBankPage.question_item, Success
+2019-09-24 09:42:34,947 - honor_9 - INFO -   --> QuestionDetail.detail_operation
+2019-09-24 09:42:34,948 - honor_9 - INFO -   --> QuestionDetailPage.wait_check_page
+2019-09-24 09:42:34,948 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:37,121 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:37,122 - honor_9 - INFO -   <-- QuestionDetailPage.wait_check_page, Success
+2019-09-24 09:42:37,122 - honor_9 - INFO -   --> QuestionDetailPage.wait_check_list_page
+2019-09-24 09:42:37,123 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:37,160 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:37,161 - honor_9 - INFO -   <-- QuestionDetailPage.wait_check_list_page, Success
+2019-09-24 09:42:37,162 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:42:38,284 - honor_9 - INFO - 	--> QuestionDetailPage.check_button
+2019-09-24 09:42:38,322 - honor_9 - INFO - 	--> GetAttribute.checked
+2019-09-24 09:42:38,353 - honor_9 - INFO - 	--> GetAttribute.checked
+2019-09-24 09:42:38,383 - honor_9 - INFO - 	--> QuestionDetailPage.recommend_button
+2019-09-24 09:42:40,475 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:42:40,475 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:42:40,476 - honor_9 - INFO -   --> FilterPage.choose_school_label
+2019-09-24 09:42:40,476 - honor_9 - INFO -   --> FilterPage.wait_check_school_label_page
+2019-09-24 09:42:40,477 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:40,577 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:40,578 - honor_9 - INFO -   <-- FilterPage.wait_check_school_label_page, Success
+2019-09-24 09:42:40,578 - honor_9 - INFO -   --> FilterPage.wait_check_label_list_page
+2019-09-24 09:42:40,579 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:40,626 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:40,626 - honor_9 - INFO -   <-- FilterPage.wait_check_label_list_page, Success
+2019-09-24 09:42:40,626 - honor_9 - INFO - 	--> FilterPage.check_button
+2019-09-24 09:42:40,678 - honor_9 - INFO - 	--> FilterPage.school_label_name
+2019-09-24 09:42:40,719 - honor_9 - INFO - 	--> GetAttribute.checked
+2019-09-24 09:42:40,837 - honor_9 - INFO - 	--> FilterPage.confirm_button
+2019-09-24 09:42:41,403 - honor_9 - INFO -   <-- FilterPage.choose_school_label, Success
+2019-09-24 09:42:41,404 - honor_9 - INFO -   --> Toast.find_toast
+2019-09-24 09:42:43,090 - honor_9 - INFO -   <-- Toast.find_toast, Success
+2019-09-24 09:42:43,090 - honor_9 - INFO -   --> QuestionDetailPage.wait_check_list_page
+2019-09-24 09:42:43,091 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:43,123 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:43,123 - honor_9 - INFO -   <-- QuestionDetailPage.wait_check_list_page, Success
+2019-09-24 09:42:43,124 - honor_9 - INFO - 	--> QuestionDetailPage.collect_button
+2019-09-24 09:42:44,196 - honor_9 - INFO -   --> QuestionDetailPage.wait_check_list_page
+2019-09-24 09:42:44,197 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:44,549 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:44,550 - honor_9 - INFO -   <-- QuestionDetailPage.wait_check_list_page, Success
+2019-09-24 09:42:44,550 - honor_9 - INFO - 	--> QuestionDetailPage.all_check_button
+2019-09-24 09:42:44,642 - honor_9 - INFO -   --> QuestionDetailPage.wait_check_list_page
+2019-09-24 09:42:44,642 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:45,275 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:45,276 - honor_9 - INFO -   <-- QuestionDetailPage.wait_check_list_page, Success
+2019-09-24 09:42:45,276 - honor_9 - INFO - 	--> QuestionDetailPage.check_button
+2019-09-24 09:42:45,311 - honor_9 - INFO - 	--> GetAttribute.checked
+2019-09-24 09:42:45,382 - honor_9 - INFO - 	--> QuestionDetailPage.put_to_basket_button
+2019-09-24 09:42:45,951 - honor_9 - INFO -   --> Toast.find_toast
+2019-09-24 09:42:47,017 - honor_9 - INFO -   <-- Toast.find_toast, Success
+2019-09-24 09:42:47,018 - honor_9 - INFO -   --> QuestionDetailPage.wait_check_list_page
+2019-09-24 09:42:47,018 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:47,067 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:47,068 - honor_9 - INFO -   <-- QuestionDetailPage.wait_check_list_page, Success
+2019-09-24 09:42:47,068 - honor_9 - INFO - 	--> QuestionDetailPage.check_button
+2019-09-24 09:42:47,110 - honor_9 - INFO - 	--> GetAttribute.enabled
+2019-09-24 09:42:48,641 - honor_9 - INFO -   --> QuestionDetailPage.wait_check_page
+2019-09-24 09:42:48,641 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:42:48,728 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:42:48,728 - honor_9 - INFO -   <-- QuestionDetailPage.wait_check_page, Success
+2019-09-24 09:42:48,728 - honor_9 - INFO - 	--> ThomePage.back_up_button
+2019-09-24 09:42:48,729 - honor_9 - INFO -   --> WaitElement.wait_find_element
+2019-09-24 09:42:48,763 - honor_9 - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 09:42:48,764 - honor_9 - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 09:42:48,765 - honor_9 - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 09:42:49,539 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924094248.png
+2019-09-24 09:42:49,539 - honor_9 - ERROR -   <-- QuestionDetail.detail_operation, Exception, Error
+2019-09-24 09:42:49,540 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924094248.png
+2019-09-24 09:42:49,540 - honor_9 - ERROR - <-- QuestionDetail.test_question_detail, Exception, Error
+
+2019-09-24 09:42:49,541 - honor_9 - INFO - --> QuestionDetail.tearDown
+2019-09-24 09:42:49,541 - honor_9 - INFO - <-- QuestionDetail.tearDown, Success
+
+2019-09-24 09:42:49,542 - honor_9 - INFO - --> QuestionDetail.setUp
+2019-09-24 09:42:49,543 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:42:49,543 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:42:49,544 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:42:49,544 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:42:49,544 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:42:49,545 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:42:49,545 - honor_9 - INFO - <-- QuestionDetail.setUp, Success
+
+2019-09-24 09:42:49,545 - honor_9 - INFO - --> QuestionDetail.test_question_detail_again
+2019-09-24 09:42:49,546 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:42:49,546 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:42:49,546 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:43:09,975 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:43:09,976 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:43:09,976 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:43:09,977 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:43:20,053 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:43:20,053 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:43:20,054 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:43:20,260 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:43:22,583 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:43:22,583 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:43:26,941 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:43:26,942 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:43:26,942 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:43:26,942 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:43:26,943 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:43:27,287 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:43:27,287 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:43:27,288 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:43:27,288 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:43:27,497 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:43:27,498 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:43:29,268 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:43:29,268 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:43:29,269 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:43:29,269 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:43:29,270 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:43:29,478 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:43:29,479 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:43:29,479 - honor_9 - INFO -   --> TestBankPage.question_item
+2019-09-24 09:43:29,703 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:29,736 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:29,766 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:29,795 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:29,824 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:29,867 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:29,907 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:29,948 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:29,981 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,020 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,049 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,073 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,101 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,135 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,167 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,199 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,226 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,252 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,281 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,313 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,341 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,370 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,403 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,426 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,449 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,472 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,524 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,554 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,631 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,662 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,720 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,790 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:30,823 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:31,569 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:31,610 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:31,687 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:31,728 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:31,810 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:31,842 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:31,900 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:31,974 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:32,013 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:32,120 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:32,151 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:32,214 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:32,242 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:32,309 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:32,336 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:32,398 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:32,499 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:32,976 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,072 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,100 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,161 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,185 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,243 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,270 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,321 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,374 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,401 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,491 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,561 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,633 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,672 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,744 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,781 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,854 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,924 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:33,963 - honor_9 - INFO - 	--> GetAttribute.resource_id
+2019-09-24 09:43:34,019 - honor_9 - INFO -   <-- TestBankPage.question_item, Success
+2019-09-24 09:43:34,143 - honor_9 - INFO -   --> QuestionDetailPage.wait_check_page
+2019-09-24 09:43:34,144 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:43:36,328 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:43:36,329 - honor_9 - INFO -   <-- QuestionDetailPage.wait_check_page, Success
+2019-09-24 09:43:36,329 - honor_9 - INFO -   --> QuestionDetailPage.wait_check_list_page
+2019-09-24 09:43:36,330 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:43:36,383 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:43:36,383 - honor_9 - INFO -   <-- QuestionDetailPage.wait_check_list_page, Success
+2019-09-24 09:43:36,384 - honor_9 - INFO - 	--> QuestionDetailPage.recommend_button
+2019-09-24 09:43:38,507 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:43:38,508 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:43:38,508 - honor_9 - INFO -   --> FilterPage.choose_school_label
+2019-09-24 09:43:38,509 - honor_9 - INFO -   --> FilterPage.wait_check_school_label_page
+2019-09-24 09:43:38,509 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:43:38,599 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:43:38,599 - honor_9 - INFO -   <-- FilterPage.wait_check_school_label_page, Success
+2019-09-24 09:43:38,600 - honor_9 - INFO -   --> FilterPage.wait_check_label_list_page
+2019-09-24 09:43:38,600 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:43:38,639 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:43:38,640 - honor_9 - INFO -   <-- FilterPage.wait_check_label_list_page, Success
+2019-09-24 09:43:38,640 - honor_9 - INFO - 	--> FilterPage.check_button
+2019-09-24 09:43:38,689 - honor_9 - INFO - 	--> FilterPage.school_label_name
+2019-09-24 09:43:38,734 - honor_9 - INFO - 	--> GetAttribute.checked
+2019-09-24 09:43:38,898 - honor_9 - INFO - 	--> FilterPage.confirm_button
+2019-09-24 09:43:39,481 - honor_9 - INFO -   <-- FilterPage.choose_school_label, Success
+2019-09-24 09:43:40,483 - honor_9 - INFO - 	--> QuestionDetailPage.recommend_button
+2019-09-24 09:43:43,063 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:43:43,064 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:43:43,065 - honor_9 - INFO -   --> FilterPage.choose_school_label
+2019-09-24 09:43:43,065 - honor_9 - INFO -   --> FilterPage.wait_check_school_label_page
+2019-09-24 09:43:43,066 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:43:43,160 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:43:43,161 - honor_9 - INFO -   <-- FilterPage.wait_check_school_label_page, Success
+2019-09-24 09:43:43,161 - honor_9 - INFO -   --> FilterPage.wait_check_label_list_page
+2019-09-24 09:43:43,162 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:43:43,203 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:43:43,203 - honor_9 - INFO -   <-- FilterPage.wait_check_label_list_page, Success
+2019-09-24 09:43:43,204 - honor_9 - INFO - 	--> FilterPage.check_button
+2019-09-24 09:43:43,246 - honor_9 - INFO - 	--> FilterPage.school_label_name
+2019-09-24 09:43:43,286 - honor_9 - INFO - 	--> GetAttribute.checked
+2019-09-24 09:43:43,426 - honor_9 - INFO - 	--> FilterPage.confirm_button
+2019-09-24 09:43:44,006 - honor_9 - INFO -   <-- FilterPage.choose_school_label, Success
+2019-09-24 09:43:44,007 - honor_9 - INFO -   --> Toast.find_toast
+2019-09-24 09:43:45,419 - honor_9 - INFO -   <-- Toast.find_toast, Success
+2019-09-24 09:43:47,421 - honor_9 - INFO - 	--> QuestionDetailPage.collect_button
+2019-09-24 09:43:49,529 - honor_9 - INFO - 	--> QuestionDetailPage.collect_button
+2019-09-24 09:43:50,649 - honor_9 - INFO -   --> QuestionDetailPage.wait_check_page
+2019-09-24 09:43:50,650 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:43:50,944 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:43:50,945 - honor_9 - INFO -   <-- QuestionDetailPage.wait_check_page, Success
+2019-09-24 09:43:50,946 - honor_9 - INFO - 	--> ThomePage.back_up_button
+2019-09-24 09:43:50,946 - honor_9 - INFO -   --> WaitElement.wait_find_element
+2019-09-24 09:43:50,991 - honor_9 - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 09:43:50,991 - honor_9 - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 09:43:50,992 - honor_9 - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 09:43:51,693 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924094350.png
+2019-09-24 09:43:51,693 - honor_9 - ERROR - <-- QuestionDetail.test_question_detail_again, Exception, Error
+
+2019-09-24 09:43:51,694 - honor_9 - INFO - --> QuestionDetail.tearDown
+2019-09-24 09:43:51,694 - honor_9 - INFO - <-- QuestionDetail.tearDown, Success
+
+2019-09-24 09:43:51,696 - honor_9 - INFO - --> PaperShare.setUp
+2019-09-24 09:43:51,696 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:43:51,696 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:43:51,697 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:43:51,697 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:43:51,697 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:43:51,698 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:43:51,698 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:43:51,698 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:43:51,698 - honor_9 - INFO - <-- PaperShare.setUp, Success
+
+2019-09-24 09:43:51,699 - honor_9 - INFO - --> PaperShare.test_paper_share_school_photo
+2019-09-24 09:43:51,699 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:43:51,699 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:43:51,699 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:11,834 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:11,835 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:44:11,835 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:44:11,836 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:21,855 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:21,855 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:44:21,856 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:44:22,042 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:44:24,270 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:44:24,271 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:30,906 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:30,907 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:44:30,907 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:44:30,907 - honor_9 - INFO -   --> PaperSharePage.into_paper_share_page
+2019-09-24 09:44:30,908 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:44:30,908 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:31,182 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:31,183 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:44:31,183 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:44:31,184 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:44:31,393 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:44:31,394 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:33,850 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:33,850 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:44:33,851 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:44:33,851 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:44:33,851 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:34,073 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:34,074 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:44:34,075 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 09:44:34,178 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 09:44:34,178 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:35,733 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:35,733 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 09:44:35,734 - honor_9 - INFO - 	--> FilterPage.test_paper
+2019-09-24 09:44:36,048 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 09:44:36,073 - honor_9 - INFO - 	--> FilterPage.click_test_paper
+2019-09-24 09:44:36,321 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 09:44:37,586 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:44:37,587 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:41,789 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:41,790 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:44:41,790 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:44:43,193 - honor_9 - INFO -   --> PaperDetailPage.wait_check_page
+2019-09-24 09:44:43,193 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:44,989 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:44,989 - honor_9 - INFO -   <-- PaperDetailPage.wait_check_page, Success
+2019-09-24 09:44:44,990 - honor_9 - INFO - 	--> PaperDetailPage.share_button
+2019-09-24 09:44:45,092 - honor_9 - INFO -   <-- PaperSharePage.into_paper_share_page, Success
+2019-09-24 09:44:45,093 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:44:45,093 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:46,285 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:46,286 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:44:46,286 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:44:46,287 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:46,379 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:46,379 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:44:46,380 - honor_9 - INFO -   --> PaperSharePage.share_page_info
+2019-09-24 09:44:46,380 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:44:46,381 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:46,483 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:46,483 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:44:46,484 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:44:46,484 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:46,592 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:46,593 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:44:46,593 - honor_9 - INFO -   --> PaperSharePage.share_name_edit
+2019-09-24 09:44:46,631 - honor_9 - INFO -   <-- PaperSharePage.share_name_edit, Success
+2019-09-24 09:44:46,632 - honor_9 - INFO -   --> PaperSharePage.share_school_edit
+2019-09-24 09:44:46,673 - honor_9 - INFO -   <-- PaperSharePage.share_school_edit, Success
+2019-09-24 09:44:46,674 - honor_9 - INFO -   --> PaperSharePage.share_contact_edit
+2019-09-24 09:44:46,721 - honor_9 - INFO -   <-- PaperSharePage.share_contact_edit, Success
+2019-09-24 09:44:46,722 - honor_9 - INFO -   --> PaperSharePage.defined_school_info
+2019-09-24 09:44:46,848 - honor_9 - INFO -   <-- PaperSharePage.defined_school_info, Success
+2019-09-24 09:44:46,849 - honor_9 - INFO -   --> PaperSharePage.school_upload_title
+2019-09-24 09:44:47,009 - honor_9 - INFO -   <-- PaperSharePage.school_upload_title, Success
+2019-09-24 09:44:47,010 - honor_9 - INFO -   --> PaperSharePage.qr_upload_title
+2019-09-24 09:44:47,173 - honor_9 - INFO -   <-- PaperSharePage.qr_upload_title, Success
+2019-09-24 09:44:47,173 - honor_9 - INFO -   --> PaperSharePage.share_name
+2019-09-24 09:44:47,225 - honor_9 - INFO -   <-- PaperSharePage.share_name, Success
+2019-09-24 09:44:47,254 - honor_9 - INFO -   --> PaperSharePage.share_school
+2019-09-24 09:44:47,303 - honor_9 - INFO -   <-- PaperSharePage.share_school, Success
+2019-09-24 09:44:47,322 - honor_9 - INFO -   --> PaperSharePage.share_contact
+2019-09-24 09:44:47,367 - honor_9 - INFO -   <-- PaperSharePage.share_contact, Success
+2019-09-24 09:44:47,387 - honor_9 - INFO -   --> PaperSharePage.send_title
+2019-09-24 09:44:47,513 - honor_9 - INFO -   <-- PaperSharePage.send_title, Success
+2019-09-24 09:44:47,513 - honor_9 - INFO - 	--> PaperSharePage.wechat_friend
+2019-09-24 09:44:47,576 - honor_9 - INFO - 	--> PaperSharePage.wechat_circle
+2019-09-24 09:44:47,647 - honor_9 - INFO - 	--> PaperSharePage.copy_link
+2019-09-24 09:44:47,713 - honor_9 - INFO -   <-- PaperSharePage.share_page_info, Success
+2019-09-24 09:44:47,714 - honor_9 - INFO - 	--> PaperSharePage.help_button
+2019-09-24 09:44:47,784 - honor_9 - INFO -   --> PaperSharePage.wait_check_help_page
+2019-09-24 09:44:47,785 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:44:50,017 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:44:50,018 - honor_9 - INFO -   <-- PaperSharePage.wait_check_help_page, Success
+2019-09-24 09:44:50,018 - honor_9 - INFO -   --> SwipeFun.swipe_vertical
+2019-09-24 09:44:53,734 - honor_9 - INFO -   <-- SwipeFun.swipe_vertical, Success
+2019-09-24 09:44:53,735 - honor_9 - INFO -   --> SwipeFun.swipe_vertical
+2019-09-24 09:44:59,223 - honor_9 - INFO -   <-- SwipeFun.swipe_vertical, Success
+2019-09-24 09:44:59,223 - honor_9 - INFO -   --> SwipeFun.swipe_vertical
+2019-09-24 09:45:03,152 - honor_9 - INFO -   <-- SwipeFun.swipe_vertical, Success
+2019-09-24 09:45:03,153 - honor_9 - INFO - 	--> ThomePage.back_up_button
+2019-09-24 09:45:03,153 - honor_9 - INFO -   --> WaitElement.wait_find_element
+2019-09-24 09:45:03,241 - honor_9 - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 09:45:03,241 - honor_9 - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 09:45:03,242 - honor_9 - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 09:45:04,142 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924094503.png
+2019-09-24 09:45:04,142 - honor_9 - ERROR - <-- PaperShare.test_paper_share_school_photo, Exception, Error
+
+2019-09-24 09:45:04,142 - honor_9 - INFO - --> PaperShare.tearDown
+2019-09-24 09:45:04,143 - honor_9 - INFO - <-- PaperShare.tearDown, Success
+
+2019-09-24 09:45:04,143 - honor_9 - INFO - --> PaperShare.setUp
+2019-09-24 09:45:04,144 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:45:04,144 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:45:04,145 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:45:04,145 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:45:04,145 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:45:04,145 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:45:04,146 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:45:04,146 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:45:04,146 - honor_9 - INFO - <-- PaperShare.setUp, Success
+
+2019-09-24 09:45:04,146 - honor_9 - INFO - --> PaperShare.test_001_paper_share_school_photo_cancel
+2019-09-24 09:45:04,146 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:45:04,147 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:45:04,147 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:45:24,589 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:45:24,590 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:45:24,590 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:45:24,591 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:45:34,952 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:45:34,953 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:45:34,954 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:45:35,165 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:45:37,388 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:45:37,388 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:45:43,463 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:45:43,463 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:45:43,464 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:45:43,464 - honor_9 - INFO -   --> PaperSharePage.into_paper_share_page
+2019-09-24 09:45:43,465 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:45:43,465 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:45:43,745 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:45:43,745 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:45:43,746 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:45:43,746 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:45:43,890 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:45:43,890 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:45:46,049 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:45:46,050 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:45:46,050 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:45:46,050 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:45:46,051 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:45:46,307 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:45:46,307 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:45:46,308 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 09:45:46,443 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 09:45:46,443 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:45:47,940 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:45:47,940 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 09:45:47,941 - honor_9 - INFO - 	--> FilterPage.test_paper
+2019-09-24 09:45:48,204 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 09:45:48,227 - honor_9 - INFO - 	--> FilterPage.click_test_paper
+2019-09-24 09:45:48,488 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 09:45:50,099 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:45:50,100 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:45:51,066 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:45:51,067 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:45:51,067 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:45:52,847 - honor_9 - INFO -   --> PaperDetailPage.wait_check_page
+2019-09-24 09:45:52,848 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:45:54,461 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:45:54,461 - honor_9 - INFO -   <-- PaperDetailPage.wait_check_page, Success
+2019-09-24 09:45:54,461 - honor_9 - INFO - 	--> PaperDetailPage.share_button
+2019-09-24 09:45:54,552 - honor_9 - INFO -   <-- PaperSharePage.into_paper_share_page, Success
+2019-09-24 09:45:54,553 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:45:54,553 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:45:55,732 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:45:55,732 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:45:55,733 - honor_9 - INFO - 	--> PaperSharePage.school_upload_img
+2019-09-24 09:45:55,765 - honor_9 - INFO -   --> ScreenShot.get_screenshot
+2019-09-24 09:45:55,766 - honor_9 - INFO -   --> ScreenShot.get_screenshot_by_element
+2019-09-24 09:45:56,800 - honor_9 - INFO -   <-- ScreenShot.get_screenshot_by_element, Success
+2019-09-24 09:45:56,800 - honor_9 - INFO -   --> ScreenShot.write_to_file
+2019-09-24 09:45:56,801 - honor_9 - INFO -   <-- ScreenShot.write_to_file, Success
+2019-09-24 09:45:56,802 - honor_9 - INFO -   <-- ScreenShot.get_screenshot, Success
+2019-09-24 09:45:56,864 - honor_9 - INFO -   --> PaperSharePage.wait_check_change_page
+2019-09-24 09:45:56,865 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:45:57,627 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:45:57,628 - honor_9 - INFO -   <-- PaperSharePage.wait_check_change_page, Success
+2019-09-24 09:45:57,629 - honor_9 - INFO - 	--> PaperSharePage.click_photograph
+2019-09-24 09:45:57,725 - honor_9 - INFO -   --> PaperSharePage.upload_img_cancel_operation
+2019-09-24 09:45:57,725 - honor_9 - INFO -   --> ChangeImage.permission_allow
+2019-09-24 09:45:57,726 - honor_9 - INFO -   --> PixelPage.wait_check_permission_page
+2019-09-24 09:45:57,726 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:45:59,323 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:45:59,324 - honor_9 - INFO -   <-- PixelPage.wait_check_permission_page, Success
+2019-09-24 09:45:59,324 - honor_9 - INFO -   --> PixelPage.permission_allow_button
+2019-09-24 09:45:59,398 - honor_9 - INFO -   <-- PixelPage.permission_allow_button, Success
+2019-09-24 09:45:59,399 - honor_9 - INFO -   <-- ChangeImage.permission_allow, Success
+2019-09-24 09:45:59,400 - honor_9 - INFO -   --> ChangeImage.photo_upload_cancel
+2019-09-24 09:45:59,401 - honor_9 - INFO -   --> MeiZuMPage.wait_check_camera_page
+2019-09-24 09:45:59,401 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:46:09,487 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:46:09,488 - honor_9 - INFO -   <-- MeiZuMPage.wait_check_camera_page, Success
+2019-09-24 09:46:09,489 - honor_9 - INFO -   <-- ChangeImage.photo_upload_cancel, Success
+2019-09-24 09:46:09,489 - honor_9 - INFO -   <-- PaperSharePage.upload_img_cancel_operation, Success
+2019-09-24 09:46:09,490 - honor_9 - INFO - <-- PaperShare.test_001_paper_share_school_photo_cancel, Success
+
+2019-09-24 09:46:09,491 - honor_9 - INFO - --> PaperShare.tearDown
+2019-09-24 09:46:09,491 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:46:09,492 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:46:24,543 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:46:24,543 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:46:24,544 - honor_9 - INFO - <-- PaperShare.tearDown, Success
+
+2019-09-24 09:46:24,545 - honor_9 - INFO - --> PaperShare.setUp
+2019-09-24 09:46:24,545 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:46:24,545 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:46:24,546 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:46:24,546 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:46:24,547 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:46:24,547 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:46:24,547 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:46:24,548 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:46:24,548 - honor_9 - INFO - <-- PaperShare.setUp, Success
+
+2019-09-24 09:46:24,549 - honor_9 - INFO - --> PaperShare.test_002_paper_share_school_photo_retake
+2019-09-24 09:46:24,549 - honor_9 - INFO -   --> PaperSharePage.judge_app_status
+2019-09-24 09:46:24,549 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:46:24,550 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:46:45,006 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:46:45,007 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:46:45,008 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:46:45,008 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:00,117 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:00,118 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:47:00,119 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:47:00,252 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:47:02,579 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:47:02,580 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:07,344 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:07,345 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:47:07,345 - honor_9 - INFO -   --> PaperSharePage.into_paper_share_page
+2019-09-24 09:47:07,346 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:47:07,346 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:07,691 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:07,691 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:47:07,692 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:47:07,692 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:47:07,901 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:47:07,901 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:09,780 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:09,780 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:47:09,781 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:47:09,781 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:47:09,782 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:09,992 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:09,993 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:47:09,993 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 09:47:10,085 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 09:47:10,085 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:11,698 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:11,698 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 09:47:11,699 - honor_9 - INFO - 	--> FilterPage.test_paper
+2019-09-24 09:47:11,936 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 09:47:11,971 - honor_9 - INFO - 	--> FilterPage.click_test_paper
+2019-09-24 09:47:12,336 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 09:47:13,752 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:47:13,753 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:14,729 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:14,730 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:47:14,731 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:47:16,543 - honor_9 - INFO -   --> PaperDetailPage.wait_check_page
+2019-09-24 09:47:16,544 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:18,712 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:18,712 - honor_9 - INFO -   <-- PaperDetailPage.wait_check_page, Success
+2019-09-24 09:47:18,713 - honor_9 - INFO - 	--> PaperDetailPage.share_button
+2019-09-24 09:47:18,805 - honor_9 - INFO -   <-- PaperSharePage.into_paper_share_page, Success
+2019-09-24 09:47:18,806 - honor_9 - INFO -   <-- PaperSharePage.judge_app_status, Success
+2019-09-24 09:47:18,806 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:47:18,807 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:20,436 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:20,437 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:47:20,437 - honor_9 - INFO - 	--> PaperSharePage.school_upload_img
+2019-09-24 09:47:20,485 - honor_9 - INFO -   --> ScreenShot.get_screenshot
+2019-09-24 09:47:20,486 - honor_9 - INFO -   --> ScreenShot.get_screenshot_by_element
+2019-09-24 09:47:21,414 - honor_9 - INFO -   <-- ScreenShot.get_screenshot_by_element, Success
+2019-09-24 09:47:21,414 - honor_9 - INFO -   --> ScreenShot.write_to_file
+2019-09-24 09:47:21,415 - honor_9 - INFO -   <-- ScreenShot.write_to_file, Success
+2019-09-24 09:47:21,415 - honor_9 - INFO -   <-- ScreenShot.get_screenshot, Success
+2019-09-24 09:47:21,454 - honor_9 - INFO -   --> PaperSharePage.wait_check_change_page
+2019-09-24 09:47:21,455 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:22,236 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:22,236 - honor_9 - INFO -   <-- PaperSharePage.wait_check_change_page, Success
+2019-09-24 09:47:22,237 - honor_9 - INFO - 	--> PaperSharePage.click_photograph
+2019-09-24 09:47:22,326 - honor_9 - INFO -   --> PaperSharePage.upload_img_retake_operation
+2019-09-24 09:47:22,327 - honor_9 - INFO -   --> ChangeImage.permission_allow
+2019-09-24 09:47:22,328 - honor_9 - INFO -   --> PixelPage.wait_check_permission_page
+2019-09-24 09:47:22,329 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:25,676 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:25,677 - honor_9 - INFO -   <-- PixelPage.wait_check_permission_page, Success
+2019-09-24 09:47:25,677 - honor_9 - INFO -   <-- ChangeImage.permission_allow, Success
+2019-09-24 09:47:25,678 - honor_9 - INFO -   --> ChangeImage.photo_upload_retake
+2019-09-24 09:47:25,678 - honor_9 - INFO -   --> MeiZuMPage.wait_check_camera_page
+2019-09-24 09:47:25,679 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:35,925 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:35,926 - honor_9 - INFO -   <-- MeiZuMPage.wait_check_camera_page, Success
+2019-09-24 09:47:35,926 - honor_9 - INFO -   <-- ChangeImage.photo_upload_retake, Success
+2019-09-24 09:47:35,927 - honor_9 - INFO -   <-- PaperSharePage.upload_img_retake_operation, Success
+2019-09-24 09:47:35,927 - honor_9 - INFO - <-- PaperShare.test_002_paper_share_school_photo_retake, Success
+
+2019-09-24 09:47:35,928 - honor_9 - INFO - --> PaperShare.tearDown
+2019-09-24 09:47:35,928 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:47:35,929 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:36,060 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:36,060 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:47:36,061 - honor_9 - INFO - 	--> ThomePage.back_up_button
+2019-09-24 09:47:36,061 - honor_9 - INFO -   --> WaitElement.wait_find_element
+2019-09-24 09:47:36,098 - honor_9 - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 09:47:36,099 - honor_9 - ERROR - Exception, 'list' object has no attribute 'click'
+2019-09-24 09:47:36,099 - honor_9 - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 09:47:36,957 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924094736.png
+2019-09-24 09:47:36,957 - honor_9 - ERROR - <-- PaperShare.tearDown, Exception, Error
+
+2019-09-24 09:47:36,959 - honor_9 - INFO - --> PaperShare.setUp
+2019-09-24 09:47:36,959 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:47:36,960 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:47:36,960 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:47:36,960 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:47:36,961 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:47:36,961 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:47:36,961 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:47:36,961 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:47:36,962 - honor_9 - INFO - <-- PaperShare.setUp, Success
+
+2019-09-24 09:47:36,962 - honor_9 - INFO - --> PaperShare.test_001_paper_share_school_album
+2019-09-24 09:47:36,962 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:47:36,963 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:47:36,963 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:47:57,485 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:47:57,485 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:47:57,486 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:47:57,486 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:48:07,948 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:48:07,949 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:48:07,949 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:48:08,141 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:48:10,454 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:48:10,455 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:48:15,227 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:48:15,228 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:48:15,228 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:48:15,228 - honor_9 - INFO -   --> PaperSharePage.into_paper_share_page
+2019-09-24 09:48:15,229 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:48:15,229 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:48:15,528 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:48:15,529 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:48:15,529 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:48:15,530 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:48:15,715 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:48:15,715 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:48:17,599 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:48:17,599 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:48:17,600 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:48:17,601 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:48:17,601 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:48:17,849 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:48:17,850 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:48:17,850 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 09:48:17,956 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 09:48:17,956 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:48:19,564 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:48:19,565 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 09:48:19,565 - honor_9 - INFO - 	--> FilterPage.test_paper
+2019-09-24 09:48:19,788 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 09:48:19,816 - honor_9 - INFO - 	--> FilterPage.click_test_paper
+2019-09-24 09:48:20,136 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 09:48:21,467 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:48:21,467 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:48:22,432 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:48:22,432 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:48:22,433 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:48:23,757 - honor_9 - INFO -   --> PaperDetailPage.wait_check_page
+2019-09-24 09:48:23,757 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:48:25,918 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:48:25,919 - honor_9 - INFO -   <-- PaperDetailPage.wait_check_page, Success
+2019-09-24 09:48:25,919 - honor_9 - INFO - 	--> PaperDetailPage.share_button
+2019-09-24 09:48:26,018 - honor_9 - INFO -   <-- PaperSharePage.into_paper_share_page, Success
+2019-09-24 09:48:26,018 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:48:26,019 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:48:28,249 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:48:28,249 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:48:28,250 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:48:28,250 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:48:28,347 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:48:28,348 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:48:28,348 - honor_9 - INFO - 	--> PaperSharePage.school_upload_img
+2019-09-24 09:48:28,391 - honor_9 - INFO -   --> ScreenShot.get_screenshot
+2019-09-24 09:48:28,392 - honor_9 - INFO -   --> ScreenShot.get_screenshot_by_element
+2019-09-24 09:48:29,396 - honor_9 - INFO -   <-- ScreenShot.get_screenshot_by_element, Success
+2019-09-24 09:48:29,396 - honor_9 - INFO -   --> ScreenShot.write_to_file
+2019-09-24 09:48:29,397 - honor_9 - INFO -   <-- ScreenShot.write_to_file, Success
+2019-09-24 09:48:29,397 - honor_9 - INFO -   <-- ScreenShot.get_screenshot, Success
+2019-09-24 09:48:29,443 - honor_9 - INFO -   --> PaperSharePage.wait_check_change_page
+2019-09-24 09:48:29,443 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:48:30,226 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:48:30,227 - honor_9 - INFO -   <-- PaperSharePage.wait_check_change_page, Success
+2019-09-24 09:48:30,227 - honor_9 - INFO - 	--> PaperSharePage.click_album
+2019-09-24 09:48:32,339 - honor_9 - INFO -   --> PaperSharePage.album_save_operation
+2019-09-24 09:48:32,340 - honor_9 - INFO -   --> ChangeImage.album_upload_save
+2019-09-24 09:48:32,340 - honor_9 - INFO -   --> MeiZuMPage.wait_check_picture_page
+2019-09-24 09:48:32,341 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:48:47,592 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:48:47,594 - honor_9 - INFO -   <-- MeiZuMPage.wait_check_picture_page, Success
+2019-09-24 09:48:47,595 - honor_9 - INFO -   <-- ChangeImage.album_upload_save, Success
+2019-09-24 09:48:47,595 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:48:47,596 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:49:02,879 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:49:02,881 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:49:02,881 - honor_9 - INFO -   <-- PaperSharePage.album_save_operation, Success
+2019-09-24 09:49:02,883 - honor_9 - INFO - <-- PaperShare.test_001_paper_share_school_album, Success
+
+2019-09-24 09:49:02,883 - honor_9 - INFO - --> PaperShare.tearDown
+2019-09-24 09:49:02,884 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:49:02,884 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:49:18,111 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:49:18,112 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:49:18,113 - honor_9 - INFO - <-- PaperShare.tearDown, Success
+
+2019-09-24 09:49:18,113 - honor_9 - INFO - --> PaperShare.setUp
+2019-09-24 09:49:18,114 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:49:18,114 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:49:18,115 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:49:18,116 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:49:18,116 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:49:18,117 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:49:18,117 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:49:18,118 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:49:18,118 - honor_9 - INFO - <-- PaperShare.setUp, Success
+
+2019-09-24 09:49:18,118 - honor_9 - INFO - --> PaperShare.test_002_paper_share_school_album_cancel
+2019-09-24 09:49:18,119 - honor_9 - INFO -   --> PaperSharePage.judge_app_status
+2019-09-24 09:49:18,119 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:49:18,119 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:49:38,502 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:49:38,503 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:49:38,503 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:49:38,504 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:49:53,739 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:49:53,740 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:49:53,740 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:49:53,976 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:49:56,270 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:49:56,270 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:50:01,073 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:50:01,074 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:50:01,074 - honor_9 - INFO -   --> PaperSharePage.into_paper_share_page
+2019-09-24 09:50:01,075 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:50:01,075 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:50:01,398 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:50:01,399 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:50:01,399 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:50:01,400 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:50:01,575 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:50:01,575 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:50:05,304 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:50:05,304 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:50:05,304 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:50:05,305 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:50:05,305 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:50:05,560 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:50:05,561 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:50:05,561 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 09:50:05,681 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 09:50:05,681 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:50:06,764 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:50:06,764 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 09:50:06,765 - honor_9 - INFO - 	--> FilterPage.test_paper
+2019-09-24 09:50:07,051 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 09:50:07,082 - honor_9 - INFO - 	--> FilterPage.click_test_paper
+2019-09-24 09:50:07,425 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 09:50:08,762 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:50:08,763 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:50:10,185 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:50:10,186 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:50:10,186 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:50:11,532 - honor_9 - INFO -   --> PaperDetailPage.wait_check_page
+2019-09-24 09:50:11,533 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:50:13,686 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:50:13,687 - honor_9 - INFO -   <-- PaperDetailPage.wait_check_page, Success
+2019-09-24 09:50:13,687 - honor_9 - INFO - 	--> PaperDetailPage.share_button
+2019-09-24 09:50:13,775 - honor_9 - INFO -   <-- PaperSharePage.into_paper_share_page, Success
+2019-09-24 09:50:13,776 - honor_9 - INFO -   <-- PaperSharePage.judge_app_status, Success
+2019-09-24 09:50:13,776 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:50:13,776 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:50:15,387 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:50:15,387 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:50:15,388 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:50:15,388 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:50:15,476 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:50:15,476 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:50:15,477 - honor_9 - INFO - 	--> PaperSharePage.school_upload_img
+2019-09-24 09:50:15,518 - honor_9 - INFO -   --> ScreenShot.get_screenshot
+2019-09-24 09:50:15,519 - honor_9 - INFO -   --> ScreenShot.get_screenshot_by_element
+2019-09-24 09:50:16,454 - honor_9 - INFO -   <-- ScreenShot.get_screenshot_by_element, Success
+2019-09-24 09:50:16,454 - honor_9 - INFO -   --> ScreenShot.write_to_file
+2019-09-24 09:50:16,455 - honor_9 - INFO -   <-- ScreenShot.write_to_file, Success
+2019-09-24 09:50:16,456 - honor_9 - INFO -   <-- ScreenShot.get_screenshot, Success
+2019-09-24 09:50:16,505 - honor_9 - INFO -   --> PaperSharePage.wait_check_change_page
+2019-09-24 09:50:16,506 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:50:17,258 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:50:17,258 - honor_9 - INFO -   <-- PaperSharePage.wait_check_change_page, Success
+2019-09-24 09:50:17,259 - honor_9 - INFO - 	--> PaperSharePage.click_album
+2019-09-24 09:50:19,369 - honor_9 - INFO -   --> PaperSharePage.album_cancel_operation
+2019-09-24 09:50:19,370 - honor_9 - INFO -   --> ChangeImage.album_upload_cancel
+2019-09-24 09:50:19,370 - honor_9 - INFO -   --> MeiZuMPage.wait_check_picture_page
+2019-09-24 09:50:19,371 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:50:34,544 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:50:34,545 - honor_9 - INFO -   <-- MeiZuMPage.wait_check_picture_page, Success
+2019-09-24 09:50:34,545 - honor_9 - INFO -   <-- ChangeImage.album_upload_cancel, Success
+2019-09-24 09:50:34,546 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:50:34,546 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:50:49,753 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:50:49,754 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:50:49,755 - honor_9 - INFO -   <-- PaperSharePage.album_cancel_operation, Success
+2019-09-24 09:50:49,755 - honor_9 - INFO - <-- PaperShare.test_002_paper_share_school_album_cancel, Success
+
+2019-09-24 09:50:49,755 - honor_9 - INFO - --> PaperShare.tearDown
+2019-09-24 09:50:49,756 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:50:49,756 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:51:04,869 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:51:04,870 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:51:04,871 - honor_9 - INFO - <-- PaperShare.tearDown, Success
+
+2019-09-24 09:51:04,871 - honor_9 - INFO - --> PaperShare.setUp
+2019-09-24 09:51:04,872 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:51:04,872 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:51:04,872 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:51:04,873 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:51:04,873 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:51:04,873 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:51:04,874 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:51:04,874 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:51:04,874 - honor_9 - INFO - <-- PaperShare.setUp, Success
+
+2019-09-24 09:51:04,875 - honor_9 - INFO - --> PaperShare.test_paper_share_qr_photo
+2019-09-24 09:51:04,875 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:51:04,875 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:51:04,876 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:51:25,325 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:51:25,326 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:51:25,327 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:51:25,327 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:51:35,704 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:51:35,705 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:51:35,706 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:51:35,948 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:51:38,331 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:51:38,332 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:51:43,064 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:51:43,065 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:51:43,065 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:51:43,065 - honor_9 - INFO -   --> PaperSharePage.into_paper_share_page
+2019-09-24 09:51:43,066 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:51:43,066 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:51:43,342 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:51:43,343 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:51:43,343 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:51:43,343 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:51:43,511 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:51:43,511 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:51:45,111 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:51:45,111 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:51:45,112 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:51:45,112 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:51:45,113 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:51:45,319 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:51:45,321 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:51:45,323 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 09:51:45,438 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 09:51:45,438 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:51:46,554 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:51:46,554 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 09:51:46,554 - honor_9 - INFO - 	--> FilterPage.test_paper
+2019-09-24 09:51:46,892 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 09:51:47,323 - honor_9 - INFO - 	--> FilterPage.click_test_paper
+2019-09-24 09:51:47,664 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 09:51:49,024 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:51:49,025 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:51:50,012 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:51:50,012 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:51:50,012 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:51:51,329 - honor_9 - INFO -   --> PaperDetailPage.wait_check_page
+2019-09-24 09:51:51,330 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:51:53,777 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:51:53,778 - honor_9 - INFO -   <-- PaperDetailPage.wait_check_page, Success
+2019-09-24 09:51:53,778 - honor_9 - INFO - 	--> PaperDetailPage.share_button
+2019-09-24 09:51:53,868 - honor_9 - INFO -   <-- PaperSharePage.into_paper_share_page, Success
+2019-09-24 09:51:53,869 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:51:53,870 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:51:56,084 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:51:56,085 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:51:56,085 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:51:56,086 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:51:56,179 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:51:56,179 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:51:56,180 - honor_9 - INFO - 	--> PaperSharePage.qr_upload_img
+2019-09-24 09:51:56,220 - honor_9 - INFO -   --> ScreenShot.get_screenshot
+2019-09-24 09:51:56,221 - honor_9 - INFO -   --> ScreenShot.get_screenshot_by_element
+2019-09-24 09:51:57,120 - honor_9 - INFO -   <-- ScreenShot.get_screenshot_by_element, Success
+2019-09-24 09:51:57,120 - honor_9 - INFO -   --> ScreenShot.write_to_file
+2019-09-24 09:51:57,121 - honor_9 - INFO -   <-- ScreenShot.write_to_file, Success
+2019-09-24 09:51:57,121 - honor_9 - INFO -   <-- ScreenShot.get_screenshot, Success
+2019-09-24 09:51:57,186 - honor_9 - INFO -   --> PaperSharePage.wait_check_exchange_page
+2019-09-24 09:51:57,186 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:51:57,937 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:51:57,938 - honor_9 - INFO -   <-- PaperSharePage.wait_check_exchange_page, Success
+2019-09-24 09:51:57,938 - honor_9 - INFO - 	--> PaperSharePage.click_photograph
+2019-09-24 09:51:58,032 - honor_9 - INFO -   --> PaperSharePage.upload_img_save_operation
+2019-09-24 09:51:58,033 - honor_9 - INFO -   --> ChangeImage.permission_allow
+2019-09-24 09:51:58,034 - honor_9 - INFO -   --> PixelPage.wait_check_permission_page
+2019-09-24 09:51:58,034 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:52:01,334 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:52:01,334 - honor_9 - INFO -   <-- PixelPage.wait_check_permission_page, Success
+2019-09-24 09:52:01,335 - honor_9 - INFO -   <-- ChangeImage.permission_allow, Success
+2019-09-24 09:52:01,335 - honor_9 - INFO -   --> ChangeImage.photo_upload_save
+2019-09-24 09:52:01,336 - honor_9 - INFO -   --> MeiZuMPage.wait_check_camera_page
+2019-09-24 09:52:01,337 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:52:11,534 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:52:11,535 - honor_9 - INFO -   <-- MeiZuMPage.wait_check_camera_page, Success
+2019-09-24 09:52:11,536 - honor_9 - INFO -   <-- ChangeImage.photo_upload_save, Success
+2019-09-24 09:52:11,536 - honor_9 - INFO -   <-- PaperSharePage.upload_img_save_operation, Success
+2019-09-24 09:52:11,536 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:52:11,537 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:52:26,662 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:52:26,663 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:52:26,663 - honor_9 - INFO - <-- PaperShare.test_paper_share_qr_photo, Success
+
+2019-09-24 09:52:26,664 - honor_9 - INFO - --> PaperShare.tearDown
+2019-09-24 09:52:26,664 - honor_9 - INFO - <-- PaperShare.tearDown, Success
+
+2019-09-24 09:52:26,665 - honor_9 - INFO - --> PaperShare.setUp
+2019-09-24 09:52:26,665 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:52:26,666 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:52:26,666 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:52:26,666 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:52:26,667 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:52:26,667 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:52:26,667 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:52:26,667 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:52:26,668 - honor_9 - INFO - <-- PaperShare.setUp, Success
+
+2019-09-24 09:52:26,668 - honor_9 - INFO - --> PaperShare.test_001_paper_share_qr_photo_cancel
+2019-09-24 09:52:26,668 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:52:26,669 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:52:26,669 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:52:46,970 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:52:46,971 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:52:46,971 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:52:46,971 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:52:57,176 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:52:57,177 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:52:57,177 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:52:57,305 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:52:59,540 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:52:59,540 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:53:05,031 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:53:05,032 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:53:05,032 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:53:05,033 - honor_9 - INFO -   --> PaperSharePage.into_paper_share_page
+2019-09-24 09:53:05,033 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:53:05,033 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:53:05,294 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:53:05,295 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:53:05,295 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:53:05,296 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:53:05,473 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:53:05,473 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:53:07,336 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:53:07,337 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:53:07,337 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:53:07,338 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:53:07,338 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:53:07,562 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:53:07,562 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:53:07,563 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 09:53:07,657 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 09:53:07,658 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:53:08,803 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:53:08,803 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 09:53:08,803 - honor_9 - INFO - 	--> FilterPage.test_paper
+2019-09-24 09:53:09,134 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 09:53:09,696 - honor_9 - INFO - 	--> FilterPage.click_test_paper
+2019-09-24 09:53:10,037 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 09:53:11,431 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:53:11,432 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:53:12,422 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:53:12,422 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:53:12,423 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:53:13,754 - honor_9 - INFO -   --> PaperDetailPage.wait_check_page
+2019-09-24 09:53:13,754 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:53:15,342 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:53:15,343 - honor_9 - INFO -   <-- PaperDetailPage.wait_check_page, Success
+2019-09-24 09:53:15,343 - honor_9 - INFO - 	--> PaperDetailPage.share_button
+2019-09-24 09:53:15,422 - honor_9 - INFO -   <-- PaperSharePage.into_paper_share_page, Success
+2019-09-24 09:53:15,423 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:53:15,423 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:53:16,598 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:53:16,598 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:53:16,599 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:53:16,599 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:53:16,699 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:53:16,700 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:53:16,700 - honor_9 - INFO - 	--> PaperSharePage.qr_upload_img
+2019-09-24 09:53:16,738 - honor_9 - INFO -   --> ScreenShot.get_screenshot
+2019-09-24 09:53:16,739 - honor_9 - INFO -   --> ScreenShot.get_screenshot_by_element
+2019-09-24 09:53:17,704 - honor_9 - INFO -   <-- ScreenShot.get_screenshot_by_element, Success
+2019-09-24 09:53:17,704 - honor_9 - INFO -   --> ScreenShot.write_to_file
+2019-09-24 09:53:17,705 - honor_9 - INFO -   <-- ScreenShot.write_to_file, Success
+2019-09-24 09:53:17,705 - honor_9 - INFO -   <-- ScreenShot.get_screenshot, Success
+2019-09-24 09:53:17,760 - honor_9 - INFO -   --> PaperSharePage.wait_check_exchange_page
+2019-09-24 09:53:17,761 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:53:18,536 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:53:18,537 - honor_9 - INFO -   <-- PaperSharePage.wait_check_exchange_page, Success
+2019-09-24 09:53:18,537 - honor_9 - INFO - 	--> PaperSharePage.click_photograph
+2019-09-24 09:53:18,631 - honor_9 - INFO -   --> PaperSharePage.upload_img_cancel_operation
+2019-09-24 09:53:18,632 - honor_9 - INFO -   --> ChangeImage.permission_allow
+2019-09-24 09:53:18,632 - honor_9 - INFO -   --> PixelPage.wait_check_permission_page
+2019-09-24 09:53:18,632 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:53:21,903 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:53:21,904 - honor_9 - INFO -   <-- PixelPage.wait_check_permission_page, Success
+2019-09-24 09:53:21,905 - honor_9 - INFO -   <-- ChangeImage.permission_allow, Success
+2019-09-24 09:53:21,905 - honor_9 - INFO -   --> ChangeImage.photo_upload_cancel
+2019-09-24 09:53:21,906 - honor_9 - INFO -   --> MeiZuMPage.wait_check_camera_page
+2019-09-24 09:53:21,906 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:53:32,124 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:53:32,125 - honor_9 - INFO -   <-- MeiZuMPage.wait_check_camera_page, Success
+2019-09-24 09:53:32,125 - honor_9 - INFO -   <-- ChangeImage.photo_upload_cancel, Success
+2019-09-24 09:53:32,126 - honor_9 - INFO -   <-- PaperSharePage.upload_img_cancel_operation, Success
+2019-09-24 09:53:32,126 - honor_9 - INFO - <-- PaperShare.test_001_paper_share_qr_photo_cancel, Success
+
+2019-09-24 09:53:32,127 - honor_9 - INFO - --> PaperShare.tearDown
+2019-09-24 09:53:32,127 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:53:32,128 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:53:47,179 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:53:47,180 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:53:47,181 - honor_9 - INFO - <-- PaperShare.tearDown, Success
+
+2019-09-24 09:53:47,181 - honor_9 - INFO - --> PaperShare.setUp
+2019-09-24 09:53:47,182 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:53:47,182 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:53:47,183 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:53:47,183 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:53:47,183 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:53:47,184 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:53:47,184 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:53:47,184 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:53:47,185 - honor_9 - INFO - <-- PaperShare.setUp, Success
+
+2019-09-24 09:53:47,185 - honor_9 - INFO - --> PaperShare.test_002_paper_share_qr_photo_retake
+2019-09-24 09:53:47,185 - honor_9 - INFO -   --> PaperSharePage.judge_app_status
+2019-09-24 09:53:47,186 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:53:47,186 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:54:07,539 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:54:07,539 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:54:07,540 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:54:07,540 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:54:22,661 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:54:22,661 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:54:22,662 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:54:22,783 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:54:24,998 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:54:24,998 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:54:29,965 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:54:29,965 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:54:29,965 - honor_9 - INFO -   --> PaperSharePage.into_paper_share_page
+2019-09-24 09:54:29,966 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:54:29,966 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:54:30,224 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:54:30,225 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:54:30,225 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:54:30,226 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:54:30,362 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:54:30,362 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:54:32,453 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:54:32,453 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:54:32,454 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:54:32,454 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:54:32,454 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:54:32,699 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:54:32,699 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:54:32,700 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 09:54:32,808 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 09:54:32,809 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:54:33,888 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:54:33,888 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 09:54:33,889 - honor_9 - INFO - 	--> FilterPage.test_paper
+2019-09-24 09:54:34,967 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 09:54:34,990 - honor_9 - INFO - 	--> FilterPage.click_test_paper
+2019-09-24 09:54:35,276 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 09:54:36,909 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:54:36,910 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:54:37,880 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:54:37,881 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:54:37,881 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:54:39,663 - honor_9 - INFO -   --> PaperDetailPage.wait_check_page
+2019-09-24 09:54:39,664 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:54:41,839 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:54:41,840 - honor_9 - INFO -   <-- PaperDetailPage.wait_check_page, Success
+2019-09-24 09:54:41,841 - honor_9 - INFO - 	--> PaperDetailPage.share_button
+2019-09-24 09:54:41,940 - honor_9 - INFO -   <-- PaperSharePage.into_paper_share_page, Success
+2019-09-24 09:54:41,941 - honor_9 - INFO -   <-- PaperSharePage.judge_app_status, Success
+2019-09-24 09:54:41,941 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:54:41,942 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:54:43,561 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:54:43,561 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:54:43,562 - honor_9 - INFO - 	--> PaperSharePage.qr_upload_img
+2019-09-24 09:54:43,605 - honor_9 - INFO -   --> ScreenShot.get_screenshot
+2019-09-24 09:54:43,606 - honor_9 - INFO -   --> ScreenShot.get_screenshot_by_element
+2019-09-24 09:54:44,627 - honor_9 - INFO -   <-- ScreenShot.get_screenshot_by_element, Success
+2019-09-24 09:54:44,627 - honor_9 - INFO -   --> ScreenShot.write_to_file
+2019-09-24 09:54:44,628 - honor_9 - INFO -   <-- ScreenShot.write_to_file, Success
+2019-09-24 09:54:44,628 - honor_9 - INFO -   <-- ScreenShot.get_screenshot, Success
+2019-09-24 09:54:44,676 - honor_9 - INFO -   --> PaperSharePage.wait_check_exchange_page
+2019-09-24 09:54:44,676 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:54:45,458 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:54:45,458 - honor_9 - INFO -   <-- PaperSharePage.wait_check_exchange_page, Success
+2019-09-24 09:54:45,459 - honor_9 - INFO - 	--> PaperSharePage.click_photograph
+2019-09-24 09:54:45,545 - honor_9 - INFO -   --> PaperSharePage.upload_img_retake_operation
+2019-09-24 09:54:45,546 - honor_9 - INFO -   --> ChangeImage.permission_allow
+2019-09-24 09:54:45,546 - honor_9 - INFO -   --> PixelPage.wait_check_permission_page
+2019-09-24 09:54:45,546 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:54:48,720 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:54:48,721 - honor_9 - INFO -   <-- PixelPage.wait_check_permission_page, Success
+2019-09-24 09:54:48,722 - honor_9 - INFO -   <-- ChangeImage.permission_allow, Success
+2019-09-24 09:54:48,722 - honor_9 - INFO -   --> ChangeImage.photo_upload_retake
+2019-09-24 09:54:48,723 - honor_9 - INFO -   --> MeiZuMPage.wait_check_camera_page
+2019-09-24 09:54:48,723 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:54:58,936 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:54:58,937 - honor_9 - INFO -   <-- MeiZuMPage.wait_check_camera_page, Success
+2019-09-24 09:54:58,937 - honor_9 - INFO -   <-- ChangeImage.photo_upload_retake, Success
+2019-09-24 09:54:58,938 - honor_9 - INFO -   <-- PaperSharePage.upload_img_retake_operation, Success
+2019-09-24 09:54:58,938 - honor_9 - INFO - <-- PaperShare.test_002_paper_share_qr_photo_retake, Success
+
+2019-09-24 09:54:58,939 - honor_9 - INFO - --> PaperShare.tearDown
+2019-09-24 09:54:58,939 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:54:58,940 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:55:14,050 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:55:14,051 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:55:14,051 - honor_9 - INFO - <-- PaperShare.tearDown, Success
+
+2019-09-24 09:55:14,051 - honor_9 - INFO - --> PaperShare.setUp
+2019-09-24 09:55:14,052 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:55:14,052 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:55:14,052 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:55:14,053 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:55:14,053 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:55:14,053 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:55:14,054 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:55:14,054 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:55:14,055 - honor_9 - INFO - <-- PaperShare.setUp, Success
+
+2019-09-24 09:55:14,056 - honor_9 - INFO - --> PaperShare.test_001_paper_share_qr_album
+2019-09-24 09:55:14,059 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:55:14,060 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:55:14,060 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:55:34,438 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:55:34,439 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:55:34,439 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:55:34,440 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:55:44,678 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:55:44,679 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:55:44,680 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:55:44,810 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:55:47,166 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:55:47,167 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:55:51,978 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:55:51,978 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:55:51,979 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:55:51,979 - honor_9 - INFO -   --> PaperSharePage.into_paper_share_page
+2019-09-24 09:55:51,979 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:55:51,980 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:55:52,279 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:55:52,279 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:55:52,280 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:55:52,280 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:55:52,436 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:55:52,437 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:55:54,326 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:55:54,327 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:55:54,328 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:55:54,328 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:55:54,328 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:55:54,543 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:55:54,543 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:55:54,544 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 09:55:54,685 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 09:55:54,686 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:55:56,298 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:55:56,298 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 09:55:56,299 - honor_9 - INFO - 	--> FilterPage.test_paper
+2019-09-24 09:55:56,532 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 09:55:56,559 - honor_9 - INFO - 	--> FilterPage.click_test_paper
+2019-09-24 09:55:56,857 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 09:55:58,255 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:55:58,256 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:55:59,243 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:55:59,243 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:55:59,244 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:56:01,114 - honor_9 - INFO -   --> PaperDetailPage.wait_check_page
+2019-09-24 09:56:01,114 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:56:03,296 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:56:03,297 - honor_9 - INFO -   <-- PaperDetailPage.wait_check_page, Success
+2019-09-24 09:56:03,297 - honor_9 - INFO - 	--> PaperDetailPage.share_button
+2019-09-24 09:56:03,389 - honor_9 - INFO -   <-- PaperSharePage.into_paper_share_page, Success
+2019-09-24 09:56:03,390 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:56:03,390 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:56:05,232 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:56:05,233 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:56:05,233 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:56:05,234 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:56:05,361 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:56:05,362 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:56:05,362 - honor_9 - INFO - 	--> PaperSharePage.qr_upload_img
+2019-09-24 09:56:05,408 - honor_9 - INFO -   --> ScreenShot.get_screenshot
+2019-09-24 09:56:05,408 - honor_9 - INFO -   --> ScreenShot.get_screenshot_by_element
+2019-09-24 09:56:06,491 - honor_9 - INFO -   <-- ScreenShot.get_screenshot_by_element, Success
+2019-09-24 09:56:06,492 - honor_9 - INFO -   --> ScreenShot.write_to_file
+2019-09-24 09:56:06,492 - honor_9 - INFO -   <-- ScreenShot.write_to_file, Success
+2019-09-24 09:56:06,493 - honor_9 - INFO -   <-- ScreenShot.get_screenshot, Success
+2019-09-24 09:56:06,545 - honor_9 - INFO -   --> PaperSharePage.wait_check_exchange_page
+2019-09-24 09:56:06,545 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:56:07,323 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:56:07,323 - honor_9 - INFO -   <-- PaperSharePage.wait_check_exchange_page, Success
+2019-09-24 09:56:07,324 - honor_9 - INFO - 	--> PaperSharePage.click_album
+2019-09-24 09:56:09,433 - honor_9 - INFO -   --> PaperSharePage.album_save_operation
+2019-09-24 09:56:09,434 - honor_9 - INFO -   --> ChangeImage.album_upload_save
+2019-09-24 09:56:09,434 - honor_9 - INFO -   --> MeiZuMPage.wait_check_picture_page
+2019-09-24 09:56:09,434 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:56:24,620 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:56:24,621 - honor_9 - INFO -   <-- MeiZuMPage.wait_check_picture_page, Success
+2019-09-24 09:56:24,621 - honor_9 - INFO -   <-- ChangeImage.album_upload_save, Success
+2019-09-24 09:56:24,622 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:56:24,622 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:56:39,772 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:56:39,773 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:56:39,773 - honor_9 - INFO -   <-- PaperSharePage.album_save_operation, Success
+2019-09-24 09:56:39,774 - honor_9 - INFO - <-- PaperShare.test_001_paper_share_qr_album, Success
+
+2019-09-24 09:56:39,774 - honor_9 - INFO - --> PaperShare.tearDown
+2019-09-24 09:56:39,775 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:56:39,775 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:56:54,927 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:56:54,928 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:56:54,929 - honor_9 - INFO - <-- PaperShare.tearDown, Success
+
+2019-09-24 09:56:54,929 - honor_9 - INFO - --> PaperShare.setUp
+2019-09-24 09:56:54,930 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:56:54,930 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:56:54,930 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:56:54,931 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:56:54,931 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:56:54,932 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:56:54,932 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:56:54,932 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:56:54,933 - honor_9 - INFO - <-- PaperShare.setUp, Success
+
+2019-09-24 09:56:54,933 - honor_9 - INFO - --> PaperShare.test_002_paper_share_qr_album_cancel
+2019-09-24 09:56:54,934 - honor_9 - INFO -   --> PaperSharePage.judge_app_status
+2019-09-24 09:56:54,934 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:56:54,934 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:57:15,350 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:57:15,351 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:57:15,352 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:57:15,353 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:57:30,514 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:57:30,516 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:57:30,517 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:57:30,788 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:57:33,086 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:57:33,086 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:57:37,523 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:57:37,524 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:57:37,525 - honor_9 - INFO -   --> PaperSharePage.into_paper_share_page
+2019-09-24 09:57:37,525 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:57:37,525 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:57:37,818 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:57:37,818 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:57:37,819 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:57:37,819 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:57:37,991 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:57:37,991 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:57:39,855 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:57:39,855 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:57:39,856 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:57:39,856 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:57:39,857 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:57:40,068 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:57:40,068 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:57:40,069 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 09:57:40,161 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 09:57:40,162 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:57:41,239 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:57:41,240 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 09:57:41,240 - honor_9 - INFO - 	--> FilterPage.test_paper
+2019-09-24 09:57:41,474 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 09:57:41,495 - honor_9 - INFO - 	--> FilterPage.click_test_paper
+2019-09-24 09:57:42,371 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 09:57:43,730 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:57:43,730 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:57:44,696 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:57:44,696 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:57:44,697 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:57:45,952 - honor_9 - INFO -   --> PaperDetailPage.wait_check_page
+2019-09-24 09:57:45,953 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:57:48,119 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:57:48,120 - honor_9 - INFO -   <-- PaperDetailPage.wait_check_page, Success
+2019-09-24 09:57:48,120 - honor_9 - INFO - 	--> PaperDetailPage.share_button
+2019-09-24 09:57:48,210 - honor_9 - INFO -   <-- PaperSharePage.into_paper_share_page, Success
+2019-09-24 09:57:48,211 - honor_9 - INFO -   <-- PaperSharePage.judge_app_status, Success
+2019-09-24 09:57:48,212 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:57:48,212 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:57:49,826 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:57:49,827 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:57:49,827 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:57:49,828 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:57:49,932 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:57:49,933 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:57:49,933 - honor_9 - INFO - 	--> PaperSharePage.qr_upload_img
+2019-09-24 09:57:49,967 - honor_9 - INFO -   --> ScreenShot.get_screenshot
+2019-09-24 09:57:49,967 - honor_9 - INFO -   --> ScreenShot.get_screenshot_by_element
+2019-09-24 09:57:50,879 - honor_9 - INFO -   <-- ScreenShot.get_screenshot_by_element, Success
+2019-09-24 09:57:50,880 - honor_9 - INFO -   --> ScreenShot.write_to_file
+2019-09-24 09:57:50,880 - honor_9 - INFO -   <-- ScreenShot.write_to_file, Success
+2019-09-24 09:57:50,881 - honor_9 - INFO -   <-- ScreenShot.get_screenshot, Success
+2019-09-24 09:57:50,924 - honor_9 - INFO -   --> PaperSharePage.wait_check_exchange_page
+2019-09-24 09:57:50,925 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:57:51,700 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:57:51,701 - honor_9 - INFO -   <-- PaperSharePage.wait_check_exchange_page, Success
+2019-09-24 09:57:51,701 - honor_9 - INFO - 	--> PaperSharePage.click_album
+2019-09-24 09:57:53,812 - honor_9 - INFO -   --> PaperSharePage.album_cancel_operation
+2019-09-24 09:57:53,813 - honor_9 - INFO -   --> ChangeImage.album_upload_cancel
+2019-09-24 09:57:53,814 - honor_9 - INFO -   --> MeiZuMPage.wait_check_picture_page
+2019-09-24 09:57:53,814 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:58:08,934 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:58:08,937 - honor_9 - INFO -   <-- MeiZuMPage.wait_check_picture_page, Success
+2019-09-24 09:58:08,937 - honor_9 - INFO -   <-- ChangeImage.album_upload_cancel, Success
+2019-09-24 09:58:08,938 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:58:08,938 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:58:24,083 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:58:24,084 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:58:24,084 - honor_9 - INFO -   <-- PaperSharePage.album_cancel_operation, Success
+2019-09-24 09:58:24,085 - honor_9 - INFO - <-- PaperShare.test_002_paper_share_qr_album_cancel, Success
+
+2019-09-24 09:58:24,085 - honor_9 - INFO - --> PaperShare.tearDown
+2019-09-24 09:58:24,086 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:58:24,086 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:58:39,228 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:58:39,229 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:58:39,230 - honor_9 - INFO - <-- PaperShare.tearDown, Success
+
+2019-09-24 09:58:39,231 - honor_9 - INFO - --> PaperShare.setUp
+2019-09-24 09:58:39,231 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:58:39,231 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:58:39,232 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:58:39,233 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:58:39,233 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:58:39,233 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:58:39,234 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 09:58:39,234 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 09:58:39,235 - honor_9 - INFO - <-- PaperShare.setUp, Success
+
+2019-09-24 09:58:39,235 - honor_9 - INFO - --> PaperShare.test_paper_share_edittext
+2019-09-24 09:58:39,235 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 09:58:39,236 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:58:39,236 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:58:59,563 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:58:59,564 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:58:59,564 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:58:59,565 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:10,047 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:10,048 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:59:10,048 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 09:59:10,164 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 09:59:12,462 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:59:12,464 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:17,261 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:17,261 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:59:17,262 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 09:59:17,262 - honor_9 - INFO -   --> PaperSharePage.into_paper_share_page
+2019-09-24 09:59:17,262 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:59:17,263 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:17,577 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:17,578 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:59:17,578 - honor_9 - INFO -   --> TestBankPage.judge_into_tab_question
+2019-09-24 09:59:17,578 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 09:59:17,743 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:59:17,743 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:19,750 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:19,751 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:59:19,751 - honor_9 - INFO -   <-- TestBankPage.judge_into_tab_question, Success
+2019-09-24 09:59:19,751 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:59:19,752 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:20,004 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:20,004 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:59:20,005 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 09:59:20,162 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 09:59:20,162 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:21,725 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:21,725 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 09:59:21,726 - honor_9 - INFO - 	--> FilterPage.test_paper
+2019-09-24 09:59:21,965 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 09:59:21,995 - honor_9 - INFO - 	--> FilterPage.click_test_paper
+2019-09-24 09:59:22,256 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 09:59:23,579 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 09:59:23,580 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:24,553 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:24,554 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 09:59:24,554 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 09:59:25,875 - honor_9 - INFO -   --> PaperDetailPage.wait_check_page
+2019-09-24 09:59:25,875 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:28,033 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:28,034 - honor_9 - INFO -   <-- PaperDetailPage.wait_check_page, Success
+2019-09-24 09:59:28,034 - honor_9 - INFO - 	--> PaperDetailPage.share_button
+2019-09-24 09:59:28,110 - honor_9 - INFO -   <-- PaperSharePage.into_paper_share_page, Success
+2019-09-24 09:59:28,111 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_page
+2019-09-24 09:59:28,111 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:29,725 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:29,725 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_page, Success
+2019-09-24 09:59:29,726 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:59:29,726 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:29,831 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:29,831 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:59:29,832 - honor_9 - INFO -   --> PaperSharePage.share_name_edit
+2019-09-24 09:59:29,881 - honor_9 - INFO -   <-- PaperSharePage.share_name_edit, Success
+2019-09-24 09:59:30,591 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:59:30,592 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:31,199 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:31,200 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:59:31,200 - honor_9 - INFO -   --> PaperSharePage.share_school_edit
+2019-09-24 09:59:31,238 - honor_9 - INFO -   <-- PaperSharePage.share_school_edit, Success
+2019-09-24 09:59:31,841 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:59:31,842 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:32,432 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:32,432 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:59:32,433 - honor_9 - INFO -   --> PaperSharePage.share_contact_edit
+2019-09-24 09:59:32,479 - honor_9 - INFO -   <-- PaperSharePage.share_contact_edit, Success
+2019-09-24 09:59:33,115 - honor_9 - INFO -   --> PaperShare.share_control_operation
+2019-09-24 09:59:33,115 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:59:33,116 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:33,717 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:33,718 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:59:33,718 - honor_9 - INFO -   --> SwipeFun.swipe_vertical
+2019-09-24 09:59:35,010 - honor_9 - INFO -   <-- SwipeFun.swipe_vertical, Success
+2019-09-24 09:59:35,011 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:59:35,012 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:35,109 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:35,110 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:59:35,110 - honor_9 - INFO - 	--> PaperSharePage.wechat_friend
+2019-09-24 09:59:35,197 - honor_9 - INFO -   --> PaperSharePage.wait_check_toast_page
+2019-09-24 09:59:35,197 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:36,284 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:36,284 - honor_9 - INFO -   <-- PaperSharePage.wait_check_toast_page, Success
+2019-09-24 09:59:36,285 - honor_9 - INFO - 	--> ThomePage.tips_title
+2019-09-24 09:59:36,339 - honor_9 - INFO - 	--> ThomePage.tips_content
+2019-09-24 09:59:36,394 - honor_9 - INFO - 	--> ThomePage.commit_button
+2019-09-24 09:59:36,466 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:59:36,466 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:37,025 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:37,026 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:59:37,026 - honor_9 - INFO - 	--> PaperSharePage.wechat_circle
+2019-09-24 09:59:37,107 - honor_9 - INFO -   --> PaperSharePage.wait_check_toast_page
+2019-09-24 09:59:37,108 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:37,944 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:37,945 - honor_9 - INFO -   <-- PaperSharePage.wait_check_toast_page, Success
+2019-09-24 09:59:37,945 - honor_9 - INFO - 	--> ThomePage.tips_title
+2019-09-24 09:59:38,011 - honor_9 - INFO - 	--> ThomePage.tips_content
+2019-09-24 09:59:38,075 - honor_9 - INFO - 	--> ThomePage.commit_button
+2019-09-24 09:59:38,157 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:59:38,157 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:38,709 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:38,709 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:59:38,710 - honor_9 - INFO - 	--> PaperSharePage.copy_link
+2019-09-24 09:59:38,810 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:59:38,810 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:39,771 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:39,772 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:59:39,772 - honor_9 - INFO -   --> Toast.find_toast
+2019-09-24 09:59:44,797 - honor_9 - INFO -   <-- Toast.find_toast, Success
+2019-09-24 09:59:44,798 - honor_9 - INFO -   <-- PaperShare.share_control_operation, Success
+2019-09-24 09:59:44,798 - honor_9 - INFO -   --> PaperSharePage.wait_check_share_list_page
+2019-09-24 09:59:44,799 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:59:44,846 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:59:44,847 - honor_9 - INFO -   <-- PaperSharePage.wait_check_share_list_page, Success
+2019-09-24 09:59:44,847 - honor_9 - INFO - 	--> ThomePage.back_up_button
+2019-09-24 09:59:44,848 - honor_9 - INFO -   --> WaitElement.wait_find_element
+2019-09-24 10:00:00,123 - honor_9 - INFO -   <-- WaitElement.wait_find_element, Success
+2019-09-24 10:00:00,124 - honor_9 - ERROR - Exception, 'NoneType' object has no attribute 'click'
+2019-09-24 10:00:00,125 - honor_9 - ERROR - 	<-- ThomePage.back_up_button, Exception, Error
+2019-09-24 10:00:01,091 - honor_9 - ERROR - Exception, IMAGE:ThomePage.back_up_button-20190924100000.png
+2019-09-24 10:00:01,091 - honor_9 - ERROR - <-- PaperShare.test_paper_share_edittext, Exception, Error
+
+2019-09-24 10:00:01,092 - honor_9 - INFO - --> PaperShare.tearDown
+2019-09-24 10:00:01,092 - honor_9 - INFO - <-- PaperShare.tearDown, Success
+
+2019-09-24 10:00:01,094 - honor_9 - INFO - --> QuestionFilter.setUp
+2019-09-24 10:00:01,095 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 10:00:01,095 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 10:00:01,096 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 10:00:01,096 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 10:00:01,096 - honor_9 - INFO - <-- QuestionFilter.setUp, Success
+
+2019-09-24 10:00:01,096 - honor_9 - INFO - --> QuestionFilter.test_filter
+2019-09-24 10:00:01,097 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 10:00:01,097 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 10:00:01,097 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:21,463 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:21,464 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 10:00:21,465 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 10:00:21,465 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:31,677 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:31,678 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 10:00:31,678 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 10:00:32,018 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 10:00:34,374 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 10:00:34,376 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:39,104 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:39,105 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 10:00:39,105 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 10:00:39,106 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 10:00:39,106 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:39,437 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:39,437 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 10:00:39,437 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 10:00:39,586 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 10:00:39,587 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:40,337 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:40,338 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 10:00:40,338 - honor_9 - INFO -   --> QuestionFilter.paper_operation
+2019-09-24 10:00:40,339 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 10:00:40,339 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:41,802 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:41,803 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 10:00:41,804 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 10:00:41,948 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 10:00:41,948 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:43,060 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:43,060 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 10:00:43,061 - honor_9 - INFO - 	--> FilterPage.test_paper
+2019-09-24 10:00:43,380 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 10:00:43,840 - honor_9 - INFO - 	--> FilterPage.click_test_paper
+2019-09-24 10:00:44,132 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 10:00:44,132 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:45,611 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:45,612 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 10:00:45,612 - honor_9 - INFO -   --> FilterPage.source_type_selected
+2019-09-24 10:00:45,613 - honor_9 - INFO - 	--> FilterPage.question_menu
+2019-09-24 10:00:45,717 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 10:00:45,740 - honor_9 - INFO - 	--> FilterPage.game_list
+2019-09-24 10:00:45,830 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 10:00:45,853 - honor_9 - INFO - 	--> FilterPage.test_paper
+2019-09-24 10:00:45,937 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 10:00:45,958 - honor_9 - INFO -   --> FilterPage.filter_all_element
+2019-09-24 10:00:45,958 - honor_9 - INFO -   --> FilterPage.all_element
+2019-09-24 10:00:46,216 - honor_9 - INFO -   <-- FilterPage.all_element, Success
+2019-09-24 10:00:46,557 - honor_9 - INFO -   --> SwipeFun.swipe_vertical
+2019-09-24 10:00:48,089 - honor_9 - INFO -   <-- SwipeFun.swipe_vertical, Success
+2019-09-24 10:00:48,090 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 10:00:48,090 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:48,201 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:48,202 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 10:00:48,202 - honor_9 - INFO -   --> FilterPage.all_element
+2019-09-24 10:00:48,995 - honor_9 - INFO -   <-- FilterPage.all_element, Success
+2019-09-24 10:00:49,227 - honor_9 - INFO -   --> FilterPage.label_content
+2019-09-24 10:00:49,227 - honor_9 - INFO -   <-- FilterPage.label_content, Success
+2019-09-24 10:00:49,228 - honor_9 - INFO -   <-- FilterPage.filter_all_element, Success
+2019-09-24 10:00:49,228 - honor_9 - INFO -   <-- FilterPage.source_type_selected, Success
+2019-09-24 10:00:49,229 - honor_9 - INFO - 	--> FilterPage.label_name
+2019-09-24 10:00:49,449 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 10:00:50,097 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 10:00:50,098 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:51,281 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:51,282 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 10:00:51,282 - honor_9 - INFO -   <-- QuestionFilter.paper_operation, Success
+2019-09-24 10:00:51,283 - honor_9 - INFO -   --> QuestionFilter.question_menu_operation
+2019-09-24 10:00:51,283 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 10:00:51,284 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:51,484 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:51,485 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 10:00:51,486 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 10:00:51,589 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 10:00:51,590 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:52,634 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:52,634 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 10:00:52,635 - honor_9 - INFO - 	--> FilterPage.question_menu
+2019-09-24 10:00:52,724 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 10:00:52,748 - honor_9 - INFO - 	--> FilterPage.click_question_menu
+2019-09-24 10:00:52,883 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 10:00:52,883 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:54,795 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:54,795 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 10:00:54,796 - honor_9 - INFO -   --> FilterPage.source_type_selected
+2019-09-24 10:00:54,796 - honor_9 - INFO - 	--> FilterPage.question_menu
+2019-09-24 10:00:55,003 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 10:00:55,030 - honor_9 - INFO -   --> FilterPage.filter_all_element
+2019-09-24 10:00:55,031 - honor_9 - INFO -   --> FilterPage.all_element
+2019-09-24 10:00:55,581 - honor_9 - INFO -   <-- FilterPage.all_element, Success
+2019-09-24 10:00:57,571 - honor_9 - INFO -   --> SwipeFun.swipe_vertical
+2019-09-24 10:00:58,885 - honor_9 - INFO -   <-- SwipeFun.swipe_vertical, Success
+2019-09-24 10:00:58,885 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 10:00:58,886 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:00:59,020 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:00:59,020 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 10:00:59,021 - honor_9 - INFO -   --> FilterPage.all_element
+2019-09-24 10:00:59,534 - honor_9 - INFO -   <-- FilterPage.all_element, Success
+2019-09-24 10:01:00,854 - honor_9 - INFO -   --> FilterPage.label_content
+2019-09-24 10:01:00,855 - honor_9 - INFO -   <-- FilterPage.label_content, Success
+2019-09-24 10:01:00,855 - honor_9 - INFO -   <-- FilterPage.filter_all_element, Success
+2019-09-24 10:01:00,856 - honor_9 - INFO -   <-- FilterPage.source_type_selected, Success
+2019-09-24 10:01:00,856 - honor_9 - INFO - 	--> FilterPage.label_name
+2019-09-24 10:01:01,142 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 10:01:01,882 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 10:01:01,882 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:01:02,857 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:01:02,858 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 10:01:02,858 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 10:01:02,989 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 10:01:02,990 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:01:04,061 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:01:04,061 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 10:01:04,062 - honor_9 - INFO - 	--> FilterPage.reset_button
+2019-09-24 10:01:04,282 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 10:01:04,897 - honor_9 - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-09-24 10:01:04,898 - honor_9 - ERROR - 	<-- FilterPage.commit_button, WebDriverException, Error
+2019-09-24 10:01:05,603 - honor_9 - ERROR - WebDriverException, Message: IMAGE:FilterPage.commit_button-20190924100104.png
+
+2019-09-24 10:01:05,604 - honor_9 - ERROR -   <-- QuestionFilter.question_menu_operation, WebDriverException, Error
+2019-09-24 10:01:05,604 - honor_9 - ERROR - WebDriverException, Message: Message: IMAGE:FilterPage.commit_button-20190924100104.png
+
+
+2019-09-24 10:01:05,604 - honor_9 - ERROR - <-- QuestionFilter.test_filter, WebDriverException, Error
+
+2019-09-24 10:01:05,604 - honor_9 - INFO - --> QuestionFilter.tearDown
+2019-09-24 10:01:05,605 - honor_9 - INFO - <-- QuestionFilter.tearDown, Success
+
+2019-09-24 10:01:05,611 - honor_9 - INFO - --> QuestionFilter.setUp
+2019-09-24 10:01:05,611 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 10:01:05,612 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 10:01:05,612 - honor_9 - INFO -   --> TestBankPage.__init__
+2019-09-24 10:01:05,613 - honor_9 - INFO -   <-- TestBankPage.__init__, Success
+2019-09-24 10:01:05,613 - honor_9 - INFO - <-- QuestionFilter.setUp, Success
+
+2019-09-24 10:01:05,613 - honor_9 - INFO - --> QuestionFilter.test_filter_choose
+2019-09-24 10:01:05,613 - honor_9 - INFO -   --> TloginPage.app_status
+2019-09-24 10:01:05,614 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 10:01:05,614 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:01:26,093 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:01:26,094 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 10:01:26,094 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 10:01:26,095 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:01:36,600 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:01:36,600 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 10:01:36,601 - honor_9 - INFO - 	--> TloginPage.close_app
+2019-09-24 10:01:36,738 - honor_9 - INFO - 	--> TloginPage.launch_app
+2019-09-24 10:01:38,981 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 10:01:38,982 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:01:59,491 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:01:59,493 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 10:01:59,495 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 10:01:59,495 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:01:59,553 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:01:59,554 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 10:01:59,554 - honor_9 - INFO -   --> TloginPage.login_operation
+2019-09-24 10:01:59,620 - honor_9 - INFO - 	--> TloginPage.input_username
+2019-09-24 10:02:00,312 - honor_9 - INFO - 	--> TloginPage.input_password
+2019-09-24 10:02:01,502 - honor_9 - INFO - 	--> TloginPage.login_button
+2019-09-24 10:02:02,095 - honor_9 - INFO -   <-- TloginPage.login_operation, Success
+2019-09-24 10:02:02,095 - honor_9 - INFO -   <-- TloginPage.app_status, Success
+2019-09-24 10:02:02,096 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 10:02:02,096 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:02:08,100 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:02:08,100 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 10:02:08,101 - honor_9 - INFO - 	--> ThomePage.click_tab_test_bank
+2019-09-24 10:02:08,295 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 10:02:08,295 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:02:09,051 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:02:09,052 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 10:02:09,052 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 10:02:10,205 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 10:02:10,206 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:02:11,323 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:02:11,323 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 10:02:11,323 - honor_9 - INFO - 	--> FilterPage.game_list
+2019-09-24 10:02:11,501 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 10:02:11,524 - honor_9 - INFO - 	--> FilterPage.click_game_list
+2019-09-24 10:02:11,789 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 10:02:11,789 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:02:13,605 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:02:13,606 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 10:02:13,606 - honor_9 - INFO -   --> FilterPage.source_type_selected
+2019-09-24 10:02:13,607 - honor_9 - INFO - 	--> FilterPage.question_menu
+2019-09-24 10:02:13,775 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 10:02:13,803 - honor_9 - INFO - 	--> FilterPage.game_list
+2019-09-24 10:02:13,959 - honor_9 - INFO - 	--> GetAttribute.selected
+2019-09-24 10:02:13,984 - honor_9 - INFO -   --> FilterPage.filter_all_element
+2019-09-24 10:02:13,985 - honor_9 - INFO -   --> FilterPage.all_element
+2019-09-24 10:02:14,424 - honor_9 - INFO -   <-- FilterPage.all_element, Success
+2019-09-24 10:02:16,230 - honor_9 - INFO -   --> SwipeFun.swipe_vertical
+2019-09-24 10:02:19,219 - honor_9 - INFO -   <-- SwipeFun.swipe_vertical, Success
+2019-09-24 10:02:19,219 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 10:02:19,220 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:02:19,605 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:02:19,606 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 10:02:19,606 - honor_9 - INFO -   --> FilterPage.all_element
+2019-09-24 10:02:20,167 - honor_9 - INFO -   <-- FilterPage.all_element, Success
+2019-09-24 10:02:21,254 - honor_9 - INFO -   --> FilterPage.label_content
+2019-09-24 10:02:21,254 - honor_9 - INFO -   <-- FilterPage.label_content, Success
+2019-09-24 10:02:21,255 - honor_9 - INFO -   <-- FilterPage.filter_all_element, Success
+2019-09-24 10:02:21,255 - honor_9 - INFO -   <-- FilterPage.source_type_selected, Success
+2019-09-24 10:02:21,256 - honor_9 - INFO - 	--> FilterPage.label_name
+2019-09-24 10:02:21,589 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 10:02:23,423 - honor_9 - INFO -   --> TestBankPage.wait_check_game_type_page
+2019-09-24 10:02:23,424 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:02:24,448 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:02:24,448 - honor_9 - INFO -   <-- TestBankPage.wait_check_game_type_page, Success
+2019-09-24 10:02:24,449 - honor_9 - INFO - 	--> TestBankPage.question_name
+2019-09-24 10:02:25,658 - honor_9 - INFO - 	--> TestBankPage.question_type
+2019-09-24 10:02:25,748 - honor_9 - INFO - 	--> TestBankPage.filter_button
+2019-09-24 10:02:25,846 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 10:02:25,847 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:02:26,935 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:02:26,936 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 10:02:26,936 - honor_9 - INFO - 	--> FilterPage.reset_button
+2019-09-24 10:02:27,171 - honor_9 - INFO -   --> FilterPage.wait_check_page
+2019-09-24 10:02:27,172 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:02:28,435 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:02:28,435 - honor_9 - INFO -   <-- FilterPage.wait_check_page, Success
+2019-09-24 10:02:28,436 - honor_9 - INFO - 	--> FilterPage.commit_button
+2019-09-24 10:02:28,642 - honor_9 - INFO -   --> TestBankPage.wait_check_page
+2019-09-24 10:02:28,643 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 10:02:29,631 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 10:02:29,632 - honor_9 - INFO -   <-- TestBankPage.wait_check_page, Success
+2019-09-24 10:02:29,632 - honor_9 - INFO - 	--> ThomePage.click_tab_hw
+2019-09-24 10:02:29,770 - honor_9 - INFO - <-- QuestionFilter.test_filter_choose, Success
+
+2019-09-24 10:02:29,770 - honor_9 - INFO - --> QuestionFilter.tearDown
+2019-09-24 10:02:29,771 - honor_9 - INFO - <-- QuestionFilter.tearDown, Success
+

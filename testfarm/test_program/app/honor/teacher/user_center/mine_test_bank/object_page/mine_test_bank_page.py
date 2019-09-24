@@ -5,7 +5,7 @@ import time
 
 from selenium.webdriver.common.by import By
 
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststeps, teststep
 from utils.wait_element import WaitElement
@@ -42,3 +42,11 @@ class MineTestBankPage(BasePage):
             .find_elements_by_id(gv.PACKAGE_ID + "iv_eg")[index] \
             .click()
         time.sleep(1)
+
+    @teststep
+    def recommend_to_school(self):
+        """推荐到学校 按钮"""
+        self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "recommend") \
+            .click()
+        time.sleep(2)

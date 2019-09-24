@@ -5,18 +5,18 @@ import re
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.play_games.object_page import BankedCloze
-from app.honor.teacher.play_games.object_page import ClozePage
-from app.honor.teacher.play_games.object_page import PictureDictation
-from app.honor.teacher.play_games.object_page import SingleChoice
-from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.play_games.object_page.banked_cloze_page import BankedCloze
+from app.honor.teacher.play_games.object_page.cloze_test_page import ClozePage
+from app.honor.teacher.play_games.object_page.picture_dictation_page import PictureDictation
+from app.honor.teacher.play_games.object_page.single_choice_page import SingleChoice
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.test_bank.object_page import QuestionDetailPage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
-from app.honor.teacher.test_bank import game_type_operation
-from app.honor.teacher.user_center import CreateTinyCourse
-from app.honor.teacher.user_center import VideoPage
+from app.honor.teacher.test_bank.test_data.game_type_data import game_type_operation
+from app.honor.teacher.user_center.tiny_course.object_page.create_tiny_course_page import CreateTinyCourse
+from app.honor.teacher.user_center.tiny_course.object_page.video_page import VideoPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
@@ -103,7 +103,8 @@ class GameDetail(unittest.TestCase):
                 self.game.game_title()  # title
                 print(self.game.game_info())
                 self.game.teacher_nickname()  # 老师昵称
-                count = self.game.game_num()  # 小题数
+                count = self.game.game_num()  # 小题数/日期
+                print('-----------------------')
 
                 if value in (3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 19, 20):  # 句子/单词 + 解释类
                     content = []
@@ -122,7 +123,7 @@ class GameDetail(unittest.TestCase):
                                 self.sentence_hint_operation(value, sentence, hint, content, z)
                 elif value in (1, 2):  # 单选 ('单项选择', '听后选择')
                     if self.game.verify_options():  # 有选项
-                        SingleChoice().swipe_operation(int(count))  # 单选题 滑屏及具体操作
+                        SingleChoice().swipe_operation(count[0])  # 单选题 滑屏及具体操作
                 elif value == 6:  # 阅读理解
                     if self.game.verify_content_text():
                         self.game.content()
@@ -139,9 +140,9 @@ class GameDetail(unittest.TestCase):
                         print('-----------------------------------')
                 elif value == 15:  # ('听音选图')
                     if self.game.verify_img():  # 有 图片选项
-                        print('题数:', int(count))
+                        print('题数:', count[0])
                         PictureDictation().result_voice()  # 点击发音按钮
-                        PictureDictation().swipe_operation(int(count))  # 具体操作
+                        PictureDictation().swipe_operation(count[0])  # 具体操作
 
                         progress = re.sub("\D", "", PictureDictation().result_progress())  # 时间进度
                         if int(progress) == 00000000:

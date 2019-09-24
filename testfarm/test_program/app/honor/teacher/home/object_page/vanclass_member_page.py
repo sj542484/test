@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # code:UTF-8  
 # @Author  : SUN FEIFEI
+import time
+
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
 
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.wait_element import WaitElement
@@ -54,6 +56,7 @@ class VanMemberPage(BasePage):
     @teststeps
     def group_name(self):
         """小组名"""
+        time.sleep(2)
         item = self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + "group_name")
         return item
@@ -192,14 +195,20 @@ class VanMemberPage(BasePage):
             .click()
 
     @teststeps
-    def judge_phone(self, var):
-        """验证 手机号格式 （中间4位显示成*）"""
-        var1 = var[:3] + var[7:]
+    def judge_phone_digit(self, var):
+        """验证 手机号格式 中间4位不显示成*  -- 根据校长端设置！！！"""
+        if not self.isDigit(var):
+            print('★★★ Error- 不为数字：', var)
 
-        if not self.isDigit(var1):
-            print('★★★ Error- 其他部分不为数字：', var)
-        if var[3:7] != '****':
-            print('★★★ Error- 中间4位未显示成*：', var)
+    @teststeps
+    def judge_phone(self, phone):
+        """验证 手机号格式 （中间4位显示成*）-- 根据校长端设置！！！"""
+        var = phone[:3] + phone[7:]
+
+        if not self.isDigit(var):
+            print('★★★ Error- 其他部分不为数字：', phone)
+        if phone[3:7] != '****':
+            print('★★★ Error- 中间4位未显示成*：', phone)
 
     @teststeps
     def isDigit(self, var):

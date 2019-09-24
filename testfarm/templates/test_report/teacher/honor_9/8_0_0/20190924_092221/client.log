@@ -1,0 +1,34 @@
+2019-09-24 09:22:36,267 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:22:36,268 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:22:36,269 - honor_9 - INFO - --> Login.test_login_phone
+2019-09-24 09:22:36,269 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:22:36,269 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:22:56,843 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:22:56,843 - honor_9 - INFO -   <-- ThomePage.wait_check_page, Success
+2019-09-24 09:22:56,844 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:22:56,844 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:22:56,924 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:22:56,925 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:22:56,925 - honor_9 - INFO -   --> Login.login_operation_phone
+2019-09-24 09:22:56,926 - honor_9 - INFO -   --> TloginPage.wait_check_page
+2019-09-24 09:22:56,926 - honor_9 - INFO -   --> WaitElement.wait_check_element
+2019-09-24 09:22:56,969 - honor_9 - INFO -   <-- WaitElement.wait_check_element, Success
+2019-09-24 09:22:56,970 - honor_9 - INFO -   <-- TloginPage.wait_check_page, Success
+2019-09-24 09:22:56,970 - honor_9 - INFO - 	--> TloginPage.visible_password
+2019-09-24 09:22:56,970 - honor_9 - ERROR - Exception, 'TloginPage' object has no attribute 'driver'
+2019-09-24 09:22:56,971 - honor_9 - ERROR - 	<-- TloginPage.visible_password, Exception, Error
+2019-09-24 09:22:57,746 - honor_9 - ERROR - Exception, IMAGE:TloginPage.visible_password-20190924092256.png
+2019-09-24 09:22:57,747 - honor_9 - ERROR -   <-- Login.login_operation_phone, Exception, Error
+2019-09-24 09:22:57,748 - honor_9 - ERROR - Exception, IMAGE:TloginPage.visible_password-20190924092256.png
+2019-09-24 09:22:57,748 - honor_9 - ERROR - <-- Login.test_login_phone, Exception, Error
+
+2019-09-24 09:22:57,748 - honor_9 - INFO - --> Login.tearDown
+2019-09-24 09:22:57,749 - honor_9 - INFO - <-- Login.tearDown, Success
+
+2019-09-24 09:22:57,750 - honor_9 - INFO - --> Login.setUp
+2019-09-24 09:22:57,750 - honor_9 - INFO - <-- Login.setUp, Success
+
+2019-09-24 09:22:57,750 - honor_9 - INFO - --> Login.test_login_password
+2019-09-24 09:22:57,751 - honor_9 - INFO -   --> ThomePage.wait_check_page
+2019-09-24 09:22:57,751 - honor_9 - INFO -   --> WaitElement.wait_check_element

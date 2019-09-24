@@ -4,12 +4,12 @@ import unittest
 import time
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.test_bank.object_page import FilterPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.user_center.mine_collection.test_data import label_data
-from app.honor.teacher.user_center import CollectionPage
-from app.honor.teacher.user_center import TuserCenterPage
+from app.honor.teacher.user_center.mine_collection.test_data.add_label import label_data
+from app.honor.teacher.user_center.mine_collection.object_page.mine_collect_page import CollectionPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.get_attribute import GetAttribute
 from utils.toast_find import Toast
@@ -93,8 +93,8 @@ class Collection(unittest.TestCase):
                         var = label_data[j]['label']
                         item.send_keys(r'' + var)
                         print('标签：', item.text)
-                        if self.get.enabled(self.home.commit()):
-                            self.home.commit_button()  # 点击 确定按钮
+                        if self.get.enabled(self.home.commit_button()):
+                            self.home.commit_button().click()  # 点击 确定按钮
 
                             if self.collect.wait_check_manage_list_page():
                                 # print('-----------验证 创建标签结果-----------')
@@ -127,7 +127,7 @@ class Collection(unittest.TestCase):
             name = self.home.input()
             name.send_keys(r'' + content[-1])
             print('重命名为：', name.text)
-            self.home.commit_button()  # 确定 按钮
+            self.home.commit_button().click()  # 确定 按钮
             if Toast().find_toast("自定义标签名重复"):
                 print('  自定义标签名重复')
                 print('--------------------')
@@ -144,7 +144,7 @@ class Collection(unittest.TestCase):
                         name.send_keys(r'' + label_data[i]['label'])
                         print('重命名为：', name.text)
                         item = label_data[i]['label']
-                        self.home.commit_button()  # 确定 按钮
+                        self.home.commit_button().click()  # 确定 按钮
 
                         if self.collect.wait_check_manage_page():
                             print('--------------------')

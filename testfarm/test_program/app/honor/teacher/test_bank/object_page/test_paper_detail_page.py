@@ -5,8 +5,8 @@ import time
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.user_center import ChangeImage
-from conf.base_page import BasePage
+from app.honor.teacher.user_center.user_information.object_page.change_image_page import ChangeImage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.wait_element import WaitElement
@@ -181,7 +181,7 @@ class PaperDetailPage(BasePage):
 
     # 题型
     @teststep
-    def game_list_tile(self):
+    def game_list_title(self):
         """题型"""
         item = self.driver \
             .find_element_by_xpath("//android.widget.TextView[contains(@text,'题型')]") \
@@ -245,52 +245,9 @@ class PaperDetailPage(BasePage):
         print(item.text)
 
     @teststeps
-    def paper_detail_operation(self):
-        """试卷 详情页"""
-        if not self.paper_type():
-            print('★★★ Error- 试卷详情页的试卷类型')
-        var = self.paper_title()  # 返回值
-        print('---------------------试卷详情页---------------------')
-
-        if self.score() in ('100', '120'):
-            title = self.score_type()
-            score = self.score()  # 分值
-            unit = self.score_unit()
-            print(title, score, unit)
-        else:  # A/B制
-            print()
-
-        # 考试时间
-        title = self.time_title()
-        timestr = self.time_str()
-        unit = self.time_unit()
-        print(title, timestr, unit)
-
-        # 小题数
-        title = self.num_title()
-        num = self.game_num()
-        unit = self.num_unit()
-        print(title, num, unit)
-
-        if self.limit_judge():  # 限制
-            print(self.limit_type(), self.limit_hand(), self.limit_unit())
-        else:
-            print(self.limit_type(), self.limit_hand())
-
-        print('----------------')
-        self.game_list_tile()
-        name = self.question_name()  # 小游戏名
-        for i in range(len(name)):
-            num = self.num(i)  # 每个小游戏 题数
-            print(name[i].text, num.text)
-        print('------------------------------------------')
-        return var
-
-    @teststeps
     def tips_page_info(self):
         """温馨提示 页面信息"""
-        print('------------------------------------------', '\n',
-              '温馨提示 页面:')
+        print('------------------------------------------')
 
         if ThomePage().wait_check_tips_page():
             ThomePage().tips_title()
@@ -300,6 +257,6 @@ class PaperDetailPage(BasePage):
 
             self.assign_button()  # 布置试卷 按钮
             if ThomePage().wait_check_tips_page():
-                ThomePage().commit_button()
+                ThomePage().commit_button().click()
         else:
             print('★★★ Error- 无icon')

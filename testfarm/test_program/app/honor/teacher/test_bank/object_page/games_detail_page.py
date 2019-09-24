@@ -5,7 +5,7 @@ import time
 import re
 from selenium.webdriver.common.by import By
 
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
@@ -94,9 +94,11 @@ class GamesPage(BasePage):
 
         if len(ele) == 2:
             num = re.sub("\D", "", ele[0])  # 共5题    2018-02-28
+            current_date = ele[1]
         else:
             num = re.sub("\D", "", ele[1])  # 自定义模式    共8题    2018-02-28
-        return int(num)
+            current_date = ele[2]
+        return int(num), current_date
 
     @teststeps
     def teacher_nickname(self):
@@ -105,22 +107,8 @@ class GamesPage(BasePage):
             .find_element_by_id(gv.PACKAGE_ID + "name") \
             .text
         print(item)
-        print('--------------------')
         return item
 
-    # #
-    # @teststep
-    # def question_index(self):
-    #     """题号"""
-    #     item = self.driver \
-    #         .find_elements_by_id(self.question_index_value)
-    #     return item
-    #
-    # @teststeps
-    # def verify_question_index(self):
-    #     """验证  题号是否存在"""
-    #     locator = (By.ID, self.question_index_value)
-    #     return self.wait.judge_is_exists(locator)
 
     @teststep
     def word(self):
@@ -230,7 +218,7 @@ class GamesPage(BasePage):
 
     @teststep
     def option_char(self):
-        """选项 ABCD"""
+        """选项 A BCD"""
         item = self.driver \
             .find_elements_by_id(self.char_value)
         return item

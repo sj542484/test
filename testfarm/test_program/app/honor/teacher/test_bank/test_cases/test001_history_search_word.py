@@ -3,8 +3,8 @@
 import unittest
 
 from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page import TloginPage
-from app.honor.teacher.test_bank.object_page import SearchPage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.test_bank.object_page.test_bank_search_page import SearchPage
 from app.honor.teacher.test_bank.test_data.search_content import search_data
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from conf.decorator import setup, teardown, testcase, teststeps
@@ -62,9 +62,10 @@ class BankSearch(unittest.TestCase):
                         print('★★★ Error - 历史搜索最多15条', len(word[0]))
 
                     for i in range(len(word[0])-1, 0, -1):
-                        print('----------------')
-                        self.search.delete_button(i)  # 删除按钮
-                        print('删除：', word[0][i])
+                        if self.search.wait_check_search_page():
+                            print('----------------')
+                            self.search.delete_button(i)  # 删除按钮
+                            print('删除：', word[0][i])
 
                     self.home.back_up_button()  # 返回 题库 界面
                     if self.question.wait_check_game_type_page():  # 页面检查点

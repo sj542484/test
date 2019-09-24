@@ -3,8 +3,8 @@
 # @Author  : SUN FEIFEI
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.home.object_page import ThomePage
-from conf.base_page import BasePage
+from app.honor.teacher.home.object_page.home_page import ThomePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
@@ -249,7 +249,8 @@ class SpokenDetailPage(BasePage):
     @teststep
     def judge_element(self, index=3):
         """判断滑屏后页面中第一个/最后一个元素 是不是 完成率"""
-        item = self.home.all_element()
+        item = self.driver \
+            .find_elements_by_class_name("android.widget.TextView")
         if item[index] == self.finish_ratio_value:
             return True
         else:

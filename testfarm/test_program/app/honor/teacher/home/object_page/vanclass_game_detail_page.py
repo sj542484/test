@@ -7,11 +7,11 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
-from conf.base_page import BasePage
+from testfarm.test_program.conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
 from utils.click_bounds import ClickBounds
-from utils.get_element_bounds import Element
+from utils.get_element_bounds import ElementBounds
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
@@ -105,6 +105,7 @@ class VanclassGameDetailPage(BasePage):
         self.driver \
             .find_element_by_id(self.voice_button_value) \
             .click()
+
     # 选词填空
     @teststeps
     def verify_hint_word(self):
@@ -126,6 +127,8 @@ class VanclassGameDetailPage(BasePage):
             .find_element_by_id(gv.PACKAGE_ID + "prompt").text
         print(item)
         print('-----------------------------------')
+    # 磨耳朵
+
 
     # 补全文章
     @teststep
@@ -145,18 +148,14 @@ class VanclassGameDetailPage(BasePage):
     @teststep
     def drop_down_button(self, var):
         """正确选项后答对率 下拉按钮"""
-        loc = Element().get_element_bounds(var)
+        loc = ElementBounds().get_element_bounds(var)
         self.driver.tap([(loc[2], loc[5] - 10)])
 
     @teststeps
     def verify_drop_down_content(self, var=5):
         """验证 正确选项后答对率 下拉菜单 是否存在"""
         locator = (By.ID, self.drop_down_menu_value)
-        try:
-            WebDriverWait(self.driver, var, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.wait.wait_check_element(locator, var)
 
     @teststep
     def drop_down_content(self):
