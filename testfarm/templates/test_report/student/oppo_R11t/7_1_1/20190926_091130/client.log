@@ -1,0 +1,76 @@
+2019-09-26 09:11:47,276 - oppo_R11t - INFO - --> PlayAllGame.setUp
+2019-09-26 09:11:47,278 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-09-26 09:11:47,336 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-09-26 09:11:50,373 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-26 09:11:50,374 - oppo_R11t - INFO -   --> LoginPage.login_operate
+2019-09-26 09:11:52,376 - oppo_R11t - INFO - 	--> LoginPage.input_username
+2019-09-26 09:11:52,510 - oppo_R11t - INFO - 	--> LoginPage.input_password
+2019-09-26 09:11:55,547 - oppo_R11t - INFO - 	--> LoginPage.login_button
+2019-09-26 09:11:58,457 - oppo_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-09-26 09:11:58,457 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-09-26 09:11:58,458 - oppo_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-26 09:11:58,459 - oppo_R11t - INFO - --> PlayAllGame.test_all_game
+2019-09-26 09:11:58,459 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-26 09:11:59,392 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-26 09:11:59,393 - oppo_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-09-26 09:11:59,393 - oppo_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-09-26 09:12:01,580 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-26 09:12:04,615 - oppo_R11t - INFO - 	--> UserCenterPage.nickname
+2019-09-26 09:12:07,056 - oppo_R11t - INFO - 	--> UserCenterPage.purchase
+2019-09-26 09:12:09,114 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-26 09:12:11,574 - oppo_R11t - INFO - 	--> UserCenterPage.phone
+2019-09-26 09:12:14,267 - oppo_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-26 09:12:15,243 - oppo_R11t - INFO - 	--> UserCenterPage.school_name
+2019-09-26 09:12:16,432 - oppo_R11t - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-09-26 09:12:16,432 - oppo_R11t - ERROR - 	<-- UserCenterPage.school_name, WebDriverException, Error
+2019-09-26 09:12:17,210 - oppo_R11t - ERROR - WebDriverException, Message: IMAGE:UserCenterPage.school_name-20190926091216.png
+
+2019-09-26 09:12:17,211 - oppo_R11t - ERROR - 	<-- UserCenterPage.get_user_info, WebDriverException, Error
+2019-09-26 09:12:17,211 - oppo_R11t - ERROR - WebDriverException, Message: Message: IMAGE:UserCenterPage.school_name-20190926091216.png
+
+
+2019-09-26 09:12:17,212 - oppo_R11t - ERROR - <-- PlayAllGame.test_all_game, WebDriverException, Error
+
+2019-09-26 09:12:17,212 - oppo_R11t - INFO - --> PlayAllGame.tearDown
+2019-09-26 09:12:17,213 - oppo_R11t - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-26 09:12:17,221 - oppo_R11t - INFO - --> WKGame.setUp
+2019-09-26 09:12:17,222 - oppo_R11t - INFO -   --> LoginPage.app_status
+2019-09-26 09:12:17,293 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-09-26 09:12:22,503 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-26 09:12:22,504 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-26 09:12:25,086 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-26 09:12:25,086 - oppo_R11t - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-26 09:12:25,098 - oppo_R11t - INFO - 	--> LoginPage.close_app
+2019-09-26 09:12:25,559 - oppo_R11t - INFO - 	--> LoginPage.launch_app
+2019-09-26 09:12:33,300 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-26 09:12:48,575 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-26 09:12:48,576 - oppo_R11t - INFO -   --> LoginPage.wait_check_page
+2019-09-26 09:12:48,651 - oppo_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-26 09:12:48,652 - oppo_R11t - INFO -   --> LoginPage.login_operate
+2019-09-26 09:12:50,653 - oppo_R11t - INFO - 	--> LoginPage.input_username
+2019-09-26 09:12:50,711 - oppo_R11t - INFO - 	--> LoginPage.input_password
+2019-09-26 09:12:53,343 - oppo_R11t - INFO - 	--> LoginPage.login_button
+2019-09-26 09:12:55,946 - oppo_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-09-26 09:12:55,946 - oppo_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-09-26 09:12:55,947 - oppo_R11t - INFO - <-- WKGame.setUp, Success
+
+2019-09-26 09:12:55,948 - oppo_R11t - INFO - --> WKGame.test_wk_game
+2019-09-26 09:12:55,949 - oppo_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-09-26 09:12:57,080 - oppo_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-26 09:12:57,081 - oppo_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-09-26 09:12:57,286 - oppo_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-26 09:12:57,287 - oppo_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-26 09:12:59,502 - oppo_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-09-26 09:12:59,797 - oppo_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-26 09:13:01,196 - oppo_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-26 09:13:01,196 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-26 09:13:01,271 - oppo_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-26 09:13:01,400 - oppo_R11t - ERROR - Exception, list index out of range
+2019-09-26 09:13:01,401 - oppo_R11t - ERROR - <-- WKGame.test_wk_game, Exception, Error
+
+2019-09-26 09:13:01,940 - oppo_R11t - INFO - --> WKGame.tearDown
+2019-09-26 09:13:01,941 - oppo_R11t - INFO - <-- WKGame.tearDown, Success
+

@@ -63,8 +63,7 @@ class Driver:
 
         # 清楚应用缓存
         cmd = 'adb -s {} shell pm clear com.vanthink.student.debug'.format(self.udid)
-        subprocess.Popen(cmd, shell=True)
-
+        res = subprocess.Popen(cmd, shell=True)
         # 取保端口已经启动apiumm服务
         while True:
             res = Utils(port=self.ports).is_using(appium_port)

@@ -37,12 +37,12 @@ class GetVariable(object):
 
     # 安装包
     # 教师端
-    TEA_PACKAGE = "./test_program/app_folder/teacher_env_devDebug_1.2.5.apk"
+    TEA_PACKAGE = "/Users/vanthink_test_ios/Desktop/teacher_env_devDebug_1.2.5.apk"
     # 学生端
-    STU_PACKAGE = "./test_program/app_folder/student_env_devMasterDebug_1.4.2-1.apk"
+    STU_PACKAGE = "/Users/vanthink_test_ios/Desktop/student_env_devMasterDebug_1.4.2-1.apk"
 
     # hub地址
-    HUBHOST = '192.168.8.135'
+    HUBHOST = '192.168.222.67'
 
     # 学生的ID
     STU_ID = 0

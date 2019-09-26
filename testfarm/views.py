@@ -137,16 +137,17 @@ def startservice(request):
     # _port.append(sysport)
     t = Process(target=st, args=(e_uuid, _port, test_side, test_items))
     t.start()
+    # t.join()
     time.sleep(0.3)
     content = get_show_phone()
     return render(request, 'testproject/show_devices.html', content)
-
 
 # @login_required
 def st(e_uuid, ports, test_side, test_items):
     # 获取进程 id
     gid = os.getpid()
-    print('gid:', gid)
+    print('pid:', gid)
+    print('ppid',os.getppid())
     # 变更该设备的 运行状态
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=1, statue_statue=1, gid=gid)
 
@@ -197,10 +198,6 @@ def stopservice(request, gid, e_uuid):
     device = EquipmentList.objects.get(equipment_uuid=e_uuid)
     node_pid = device.node_pid
 
-    CMD = 'kill -9 {}'.format(gid)
-    os.popen(CMD)
-    print('kill进程:', CMD)
-
     CMD = 'kill -9 {}'.format(node_pid)
     os.popen(CMD)
     print('kill进程:', CMD)
@@ -208,6 +205,11 @@ def stopservice(request, gid, e_uuid):
     CMD = 'kill -9 {}'.format(int(node_pid)+1)
     os.popen(CMD)
     print('kill进程:', CMD)
+
+    CMD = 'kill -9 {}'.format(gid)
+    os.popen(CMD)
+    print('kill进程:', CMD)
+
     close_old_connections()
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=0, statue_statue=0,
                                                                gid=None, node_pid=None, report=None)
