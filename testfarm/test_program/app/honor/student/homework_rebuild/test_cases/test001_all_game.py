@@ -41,7 +41,7 @@ class PlayAllGame(unittest.TestCase):
         # [ht.HW1, '连连看'],
         # [ht.HW2, '单项选择'],
         # [ht.HW2, '单词听写'],
-        [ht.HW2, '连词成句'],
+        # [ht.HW2, '连词成句'],
         # [ht.HW2, '单词拼写'],
         [ht.HW2, '选词填空'],
         # [ht.HW3, '词汇选择'],

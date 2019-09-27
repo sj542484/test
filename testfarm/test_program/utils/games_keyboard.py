@@ -45,6 +45,9 @@ class Keyboard(BasePage):
                 else:
                     x = 0.08888 * screen[0] * (i - 28 + 0.5) + 0.00925 * screen[0] * (i - 27)  # i-28
                     y = loc[1] + (height/8)*(1+3*2)
+            print('需要点击的尺寸：', x, '\t', y)
+            y = y + 20
+            print(y)
             self.driver.tap([(x, y)])
 
     """小键盘

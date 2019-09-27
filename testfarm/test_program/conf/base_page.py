@@ -45,7 +45,7 @@ class BasePage(object):
     @classmethod
     def set_window_size(cls,uuid):
         """获取当前窗口大小"""
-        res = subprocess.Popen('adb -s %s shell dumpsys window displays'%(uuid), shell=True, stdout=subprocess.PIPE,
+        res = subprocess.Popen('adb -s %s shell dumpsys window displays' % (uuid), shell=True, stdout=subprocess.PIPE,
                                stderr=subprocess.PIPE, close_fds=True)
         result, err = res.communicate()
         a = str(result, 'utf-8')
@@ -55,9 +55,9 @@ class BasePage(object):
         cls.window_size = [int(i) for i in res[0]]
 
     def get_window_size(self):
-        print('尺寸：',self.driver.get_window_size())
-        print(self.window_size)
-        return self.window_size
+        print('获取尺寸：', self.driver.get_window_size())
+        print('adb尺寸', self.window_size)
+        return [self.driver.get_window_size()['width'], self.driver.get_window_size()['height']]
 
     def click_back_up_button(self):
         """以“返回按钮”的class name为依据"""

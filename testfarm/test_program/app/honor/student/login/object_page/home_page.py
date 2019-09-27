@@ -223,7 +223,7 @@ class HomePage(BasePage):
 
     @teststeps
     def click_blank(self):
-        self.driver.tap([(20, 1800), ])
+        self.driver.tap([(20, 100), ])
 
     @teststeps
     def homework_count(self):

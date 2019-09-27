@@ -3,6 +3,8 @@
 # Author:   Vector
 # Date:     2019/4/9 13:38
 # -------------------------------------------
+import time
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -54,6 +56,7 @@ class LinkToSentence(LinkWordToSentenceGame):
         mine_answer = {}
         total_num = self.public.rest_bank_num()
         for i in range(0, total_num):
+            time.sleep(0.5)
             if self.wait_check_link_sentence_page():
                 self.next_btn_judge('false', self.fab_commit_btn)             # 判断下一步状态
                 self.public.rate_judge(total_num, i)
