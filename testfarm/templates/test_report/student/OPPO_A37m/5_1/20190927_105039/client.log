@@ -1,0 +1,203 @@
+2019-09-27 10:50:57,705 - OPPO_A37m - INFO - --> PlayAllGame.setUp
+2019-09-27 10:50:57,708 - OPPO_A37m - INFO -   --> LoginPage.app_status
+2019-09-27 10:50:57,838 - OPPO_A37m - INFO -   --> LoginPage.wait_check_page
+2019-09-27 10:51:02,164 - OPPO_A37m - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-27 10:51:02,165 - OPPO_A37m - INFO -   --> LoginPage.login_operate
+2019-09-27 10:51:04,166 - OPPO_A37m - INFO - 	--> LoginPage.input_username
+2019-09-27 10:51:06,229 - OPPO_A37m - INFO - 	--> LoginPage.input_password
+2019-09-27 10:51:18,386 - OPPO_A37m - INFO - 	--> LoginPage.login_button
+2019-09-27 10:51:26,618 - OPPO_A37m - INFO -   <-- LoginPage.login_operate, Success
+2019-09-27 10:51:26,619 - OPPO_A37m - INFO -   <-- LoginPage.app_status, Success
+2019-09-27 10:51:26,620 - OPPO_A37m - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-27 10:51:26,620 - OPPO_A37m - INFO - --> PlayAllGame.test_all_game
+2019-09-27 10:51:26,621 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 10:51:30,466 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 10:51:30,466 - OPPO_A37m - INFO - 	--> UserCenterPage.get_user_info
+2019-09-27 10:51:30,467 - OPPO_A37m - INFO - 	--> HomePage.click_tab_profile
+2019-09-27 10:51:35,637 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 10:51:39,828 - OPPO_A37m - INFO - 	--> UserCenterPage.nickname
+2019-09-27 10:51:44,971 - OPPO_A37m - INFO - 	--> UserCenterPage.purchase
+2019-09-27 10:51:49,319 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-27 10:51:52,344 - OPPO_A37m - INFO - 	--> UserCenterPage.phone
+2019-09-27 10:52:02,783 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 10:52:05,308 - OPPO_A37m - INFO - 	--> UserCenterPage.school_name
+2019-09-27 10:52:09,555 - OPPO_A37m - INFO - 	--> UserCenterPage.setting_up
+2019-09-27 10:52:14,844 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-09-27 10:52:17,002 - OPPO_A37m - INFO - 	--> UserCenterPage.clear_cache
+2019-09-27 10:52:29,934 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 10:52:33,005 - OPPO_A37m - INFO - 	--> HomePage.click_tab_hw
+2019-09-27 10:52:37,626 - OPPO_A37m - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-09-27 10:52:37,858 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 10:52:41,189 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 10:52:41,190 - OPPO_A37m - INFO - 	--> HomePage.click_hk_tab
+2019-09-27 10:52:45,934 - OPPO_A37m - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-27 10:52:45,934 - OPPO_A37m - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-27 10:52:49,033 - OPPO_A37m - INFO - 	--> LibraryGamePage.homework_list
+2019-09-27 10:53:19,552 - OPPO_A37m - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-27 10:53:22,025 - OPPO_A37m - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-27 10:53:22,026 - OPPO_A37m - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-27 10:53:33,749 - OPPO_A37m - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-27 10:53:37,157 - OPPO_A37m - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-27 10:53:41,325 - OPPO_A37m - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-09-27 10:53:45,367 - OPPO_A37m - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-09-27 10:53:50,506 - OPPO_A37m - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-09-27 10:53:54,265 - OPPO_A37m - INFO - 	--> LibraryGamePage.play_book_games
+2019-09-27 10:53:54,266 - OPPO_A37m - INFO - 	--> LibraryGamePage.game_name
+2019-09-27 10:54:01,261 - OPPO_A37m - INFO -   --> LinkToSentence.link_sentence_operate
+2019-09-27 10:54:01,262 - OPPO_A37m - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 10:54:06,798 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.wait_check_link_sentence_page
+2019-09-27 10:54:10,262 - OPPO_A37m - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 10:54:10,263 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 10:54:14,253 - OPPO_A37m - INFO - 	--> GetAttribute.enabled
+2019-09-27 10:54:17,781 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 10:54:17,782 - OPPO_A37m - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 10:54:17,782 - OPPO_A37m - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 10:54:22,773 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.sentence_explain
+2019-09-27 10:54:29,788 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:54:30,824 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:54:34,297 - OPPO_A37m - INFO -   --> RestoreWordGame.drag_operate
+2019-09-27 10:54:34,297 - OPPO_A37m - INFO - 	--> RestoreWordGame.get_element_location
+2019-09-27 10:54:38,791 - OPPO_A37m - INFO - 	--> RestoreWordGame.get_element_location
+2019-09-27 10:54:42,797 - OPPO_A37m - INFO - 	--> RestoreWordGame.button_swipe
+2019-09-27 10:54:45,204 - OPPO_A37m - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-09-27 10:54:45,205 - OPPO_A37m - INFO -   --> PublicPage.next_btn_operate
+2019-09-27 10:54:45,206 - OPPO_A37m - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 10:54:45,206 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 10:54:47,262 - OPPO_A37m - INFO - 	--> GetAttribute.enabled
+2019-09-27 10:54:50,257 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 10:54:50,257 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 10:54:57,908 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-09-27 10:54:57,909 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.wait_check_right_answer_page
+2019-09-27 10:54:59,258 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.right_answer
+2019-09-27 10:55:04,463 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:55:18,259 - OPPO_A37m - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 10:55:22,760 - OPPO_A37m - INFO - 	--> PublicPage.fab_next_btn
+2019-09-27 10:55:28,730 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.wait_check_link_sentence_page
+2019-09-27 10:55:31,264 - OPPO_A37m - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 10:55:31,264 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 10:55:35,258 - OPPO_A37m - INFO - 	--> GetAttribute.enabled
+2019-09-27 10:55:38,767 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 10:55:38,768 - OPPO_A37m - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 10:55:38,768 - OPPO_A37m - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 10:55:43,264 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.sentence_explain
+2019-09-27 10:55:50,261 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:55:51,310 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:55:54,827 - OPPO_A37m - INFO -   --> RestoreWordGame.drag_operate
+2019-09-27 10:55:54,827 - OPPO_A37m - INFO - 	--> RestoreWordGame.get_element_location
+2019-09-27 10:55:58,773 - OPPO_A37m - INFO - 	--> RestoreWordGame.get_element_location
+2019-09-27 10:56:02,755 - OPPO_A37m - INFO - 	--> RestoreWordGame.button_swipe
+2019-09-27 10:56:05,120 - OPPO_A37m - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-09-27 10:56:05,121 - OPPO_A37m - INFO -   --> PublicPage.next_btn_operate
+2019-09-27 10:56:05,122 - OPPO_A37m - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 10:56:05,122 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 10:56:07,251 - OPPO_A37m - INFO - 	--> GetAttribute.enabled
+2019-09-27 10:56:10,761 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 10:56:10,761 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 10:56:17,068 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-09-27 10:56:17,069 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.wait_check_right_answer_page
+2019-09-27 10:56:19,262 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.right_answer
+2019-09-27 10:56:25,295 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:56:35,757 - OPPO_A37m - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 10:56:39,753 - OPPO_A37m - INFO - 	--> PublicPage.fab_next_btn
+2019-09-27 10:56:45,531 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.wait_check_link_sentence_page
+2019-09-27 10:56:47,802 - OPPO_A37m - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 10:56:47,803 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 10:56:50,671 - OPPO_A37m - INFO - 	--> GetAttribute.enabled
+2019-09-27 10:56:53,606 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 10:56:53,606 - OPPO_A37m - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 10:56:53,607 - OPPO_A37m - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 10:56:59,247 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.sentence_explain
+2019-09-27 10:57:03,744 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:57:05,923 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:57:07,821 - OPPO_A37m - INFO -   --> RestoreWordGame.drag_operate
+2019-09-27 10:57:07,822 - OPPO_A37m - INFO - 	--> RestoreWordGame.get_element_location
+2019-09-27 10:57:11,786 - OPPO_A37m - INFO - 	--> RestoreWordGame.get_element_location
+2019-09-27 10:57:15,753 - OPPO_A37m - INFO - 	--> RestoreWordGame.button_swipe
+2019-09-27 10:57:18,104 - OPPO_A37m - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-09-27 10:57:18,105 - OPPO_A37m - INFO -   --> PublicPage.next_btn_operate
+2019-09-27 10:57:18,105 - OPPO_A37m - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 10:57:18,106 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 10:57:20,289 - OPPO_A37m - INFO - 	--> GetAttribute.enabled
+2019-09-27 10:57:23,787 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 10:57:23,788 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 10:57:32,759 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-09-27 10:57:32,760 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.wait_check_right_answer_page
+2019-09-27 10:57:36,263 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.right_answer
+2019-09-27 10:57:43,799 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:58:00,257 - OPPO_A37m - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 10:58:05,260 - OPPO_A37m - INFO - 	--> PublicPage.fab_next_btn
+2019-09-27 10:58:11,487 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.wait_check_link_sentence_page
+2019-09-27 10:58:13,247 - OPPO_A37m - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 10:58:13,250 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 10:58:16,263 - OPPO_A37m - INFO - 	--> GetAttribute.enabled
+2019-09-27 10:58:19,547 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 10:58:19,548 - OPPO_A37m - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 10:58:19,550 - OPPO_A37m - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 10:58:23,630 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.sentence_explain
+2019-09-27 10:58:27,725 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:58:28,821 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:58:30,657 - OPPO_A37m - INFO -   --> RestoreWordGame.drag_operate
+2019-09-27 10:58:30,658 - OPPO_A37m - INFO - 	--> RestoreWordGame.get_element_location
+2019-09-27 10:58:33,274 - OPPO_A37m - INFO - 	--> RestoreWordGame.get_element_location
+2019-09-27 10:58:36,762 - OPPO_A37m - INFO - 	--> RestoreWordGame.button_swipe
+2019-09-27 10:58:39,051 - OPPO_A37m - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-09-27 10:58:39,051 - OPPO_A37m - INFO -   --> PublicPage.next_btn_operate
+2019-09-27 10:58:39,052 - OPPO_A37m - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 10:58:39,053 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 10:58:41,275 - OPPO_A37m - INFO - 	--> GetAttribute.enabled
+2019-09-27 10:58:44,786 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 10:58:44,787 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 10:58:53,749 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-09-27 10:58:53,750 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.wait_check_right_answer_page
+2019-09-27 10:58:56,801 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.right_answer
+2019-09-27 10:59:01,758 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:59:13,260 - OPPO_A37m - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 10:59:20,253 - OPPO_A37m - INFO - 	--> PublicPage.fab_next_btn
+2019-09-27 10:59:25,523 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.wait_check_link_sentence_page
+2019-09-27 10:59:29,270 - OPPO_A37m - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 10:59:29,271 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 10:59:33,264 - OPPO_A37m - INFO - 	--> GetAttribute.enabled
+2019-09-27 10:59:36,349 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 10:59:36,351 - OPPO_A37m - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 10:59:36,352 - OPPO_A37m - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 10:59:41,263 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.sentence_explain
+2019-09-27 10:59:45,766 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:59:47,397 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 10:59:49,287 - OPPO_A37m - INFO -   --> RestoreWordGame.drag_operate
+2019-09-27 10:59:49,288 - OPPO_A37m - INFO - 	--> RestoreWordGame.get_element_location
+2019-09-27 10:59:53,260 - OPPO_A37m - INFO - 	--> RestoreWordGame.get_element_location
+2019-09-27 10:59:56,548 - OPPO_A37m - INFO - 	--> RestoreWordGame.button_swipe
+2019-09-27 10:59:58,886 - OPPO_A37m - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-09-27 10:59:58,887 - OPPO_A37m - INFO -   --> PublicPage.next_btn_operate
+2019-09-27 10:59:58,887 - OPPO_A37m - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 10:59:58,888 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 11:00:02,253 - OPPO_A37m - INFO - 	--> GetAttribute.enabled
+2019-09-27 11:00:05,259 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 11:00:05,259 - OPPO_A37m - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 11:00:11,873 - OPPO_A37m - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-09-27 11:00:11,875 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.wait_check_right_answer_page
+2019-09-27 11:00:13,809 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.right_answer
+2019-09-27 11:00:17,788 - OPPO_A37m - INFO - 	--> LinkWordToSentenceGame.word_alpha
+2019-09-27 11:00:21,803 - OPPO_A37m - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy. Proxy error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-09-27 11:00:21,804 - OPPO_A37m - ERROR -   <-- LinkToSentence.link_sentence_operate, WebDriverException, Error
+2019-09-27 11:00:21,817 - OPPO_A37m - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8200
+
+2019-09-27 11:00:21,818 - OPPO_A37m - ERROR - 	<-- LibraryGamePage.play_book_games, WebDriverException, Error
+2019-09-27 11:00:21,826 - OPPO_A37m - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8200
+
+2019-09-27 11:00:21,826 - OPPO_A37m - ERROR - <-- PlayAllGame.test_all_game, WebDriverException, Error
+
+2019-09-27 11:00:21,833 - OPPO_A37m - INFO - --> PlayAllGame.tearDown
+2019-09-27 11:00:21,833 - OPPO_A37m - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-27 11:00:21,843 - OPPO_A37m - INFO - --> PlayAllGame.setUp
+2019-09-27 11:00:21,843 - OPPO_A37m - INFO -   --> LoginPage.app_status
+2019-09-27 11:00:32,900 - OPPO_A37m - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not get focusPackageAndActivity. Original error: Error executing adbExec. Original error: 'Command '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s A6BERSWW99999999 shell dumpsys window windows' exited with code 1'; Stderr: 'error: device 'A6BERSWW99999999' not found'; Code: '1'
+
+2019-09-27 11:00:32,900 - OPPO_A37m - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-09-27 11:00:32,907 - OPPO_A37m - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: connect ECONNREFUSED 127.0.0.1:8200
+
+2019-09-27 11:00:32,908 - OPPO_A37m - ERROR - <-- PlayAllGame.setUp, WebDriverException, Error
+

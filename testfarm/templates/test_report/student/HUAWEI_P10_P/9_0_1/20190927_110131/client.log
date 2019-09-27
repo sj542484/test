@@ -1,0 +1,75 @@
+2019-09-27 11:01:51,281 - HUAWEI_P10_P - INFO - --> PlayAllGame.setUp
+2019-09-27 11:01:51,283 - HUAWEI_P10_P - INFO -   --> LoginPage.app_status
+2019-09-27 11:01:51,479 - HUAWEI_P10_P - INFO -   --> LoginPage.wait_check_page
+2019-09-27 11:01:53,499 - HUAWEI_P10_P - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-27 11:01:53,499 - HUAWEI_P10_P - INFO -   --> LoginPage.login_operate
+2019-09-27 11:01:55,501 - HUAWEI_P10_P - INFO - 	--> LoginPage.input_username
+2019-09-27 11:01:55,664 - HUAWEI_P10_P - INFO - 	--> LoginPage.input_password
+2019-09-27 11:01:58,268 - HUAWEI_P10_P - INFO - 	--> LoginPage.login_button
+2019-09-27 11:02:01,966 - HUAWEI_P10_P - INFO -   <-- LoginPage.login_operate, Success
+2019-09-27 11:02:01,967 - HUAWEI_P10_P - INFO -   <-- LoginPage.app_status, Success
+2019-09-27 11:02:01,968 - HUAWEI_P10_P - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-27 11:02:01,968 - HUAWEI_P10_P - INFO - --> PlayAllGame.test_all_game
+2019-09-27 11:02:01,969 - HUAWEI_P10_P - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 11:02:04,181 - HUAWEI_P10_P - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 11:02:04,182 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.get_user_info
+2019-09-27 11:02:04,182 - HUAWEI_P10_P - INFO - 	--> HomePage.click_tab_profile
+2019-09-27 11:02:04,612 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 11:02:07,921 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.nickname
+2019-09-27 11:02:10,525 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.purchase
+2019-09-27 11:02:10,712 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-27 11:02:13,235 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.phone
+2019-09-27 11:02:14,737 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 11:02:16,178 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.school_name
+2019-09-27 11:02:16,406 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.setting_up
+2019-09-27 11:02:17,068 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-09-27 11:02:19,234 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.clear_cache
+2019-09-27 11:02:22,596 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 11:02:24,139 - HUAWEI_P10_P - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-09-27 11:02:24,595 - HUAWEI_P10_P - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 11:02:25,822 - HUAWEI_P10_P - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 11:02:25,822 - HUAWEI_P10_P - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-27 11:02:25,823 - HUAWEI_P10_P - INFO - --> PlayAllGame.tearDown
+2019-09-27 11:02:25,823 - HUAWEI_P10_P - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-27 11:02:25,824 - HUAWEI_P10_P - INFO - --> PlayAllGame.setUp
+2019-09-27 11:02:25,824 - HUAWEI_P10_P - INFO -   --> LoginPage.app_status
+2019-09-27 11:02:25,977 - HUAWEI_P10_P - INFO -   --> LoginPage.wait_check_page
+2019-09-27 11:02:31,771 - HUAWEI_P10_P - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-27 11:02:31,772 - HUAWEI_P10_P - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 11:02:46,982 - HUAWEI_P10_P - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 11:02:46,982 - HUAWEI_P10_P - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-27 11:03:02,414 - HUAWEI_P10_P - INFO - 	--> LoginPage.close_app
+2019-09-27 11:03:02,760 - HUAWEI_P10_P - INFO - 	--> LoginPage.launch_app
+2019-09-27 11:03:09,986 - HUAWEI_P10_P - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 11:03:10,609 - HUAWEI_P10_P - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 11:03:10,610 - HUAWEI_P10_P - INFO -   <-- LoginPage.app_status, Success
+2019-09-27 11:03:10,610 - HUAWEI_P10_P - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-27 11:03:10,611 - HUAWEI_P10_P - INFO - --> PlayAllGame.test_all_game
+2019-09-27 11:03:10,611 - HUAWEI_P10_P - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 11:03:11,204 - HUAWEI_P10_P - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 11:03:11,205 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.get_user_info
+2019-09-27 11:03:11,205 - HUAWEI_P10_P - INFO - 	--> HomePage.click_tab_profile
+2019-09-27 11:03:11,520 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 11:03:14,771 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.nickname
+2019-09-27 11:03:17,448 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.purchase
+2019-09-27 11:03:17,628 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-27 11:03:19,828 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.phone
+2019-09-27 11:03:21,227 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 11:03:22,208 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.school_name
+2019-09-27 11:03:22,415 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.setting_up
+2019-09-27 11:03:22,587 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-09-27 11:03:24,241 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.clear_cache
+2019-09-27 11:03:27,552 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 11:03:28,533 - HUAWEI_P10_P - INFO - 	--> HomePage.click_tab_hw
+2019-09-27 11:03:29,377 - HUAWEI_P10_P - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-09-27 11:03:29,525 - HUAWEI_P10_P - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 11:03:29,543 - HUAWEI_P10_P - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 11:03:29,544 - HUAWEI_P10_P - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-27 11:03:29,545 - HUAWEI_P10_P - INFO - --> PlayAllGame.tearDown
+2019-09-27 11:03:29,546 - HUAWEI_P10_P - INFO - <-- PlayAllGame.tearDown, Success
+

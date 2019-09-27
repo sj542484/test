@@ -2,15 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="046d4bba-38b3-4962-b62f-77df2872793f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/oppo_R11t/7.1.1/mobile.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_program/nodeconfig/oppo_R11t/7.1.1/mobile.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfarm/test_program/conf/base_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/conf/base_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfarm/test_program/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/kill_pid.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/kill_pid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfarm/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/testone/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/MI_5/7.0/mobile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/RedMi_7/9.0/mobile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/google/8.0/mobile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/honor_9/8.0.0/mobile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/oppo_R11t/7.1.1/mobile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/vivo_X20/8.1.0/mobile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/migrations/0002_auto_20190701_1123.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/migrations/0003_equipmentlist_node_pid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_090159/TestReport_20190926_090159.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_090159/appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_090159/client.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_090316/TestReport_20190926_090316.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_090316/appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_090316/client.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_090935/appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_091130/TestReport_20190926_091130.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_091130/UserCenterPage.school_name-20190926091216.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_091130/WKGame.test_wk_game-20190926091301.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_091130/appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_091130/client.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_091214/appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_091528/TestReport_20190926_091528.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_091528/appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_091528/client.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_091944/TestReport_20190926_091944.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_091944/appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_091944/client.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_092118/TestReport_20190926_092118.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_092118/appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_092118/client.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_094819/TestReport_20190926_094819.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_094819/appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_094819/client.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_095100/PublicPage.font_large-20190926095247.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_095100/TestReport_20190926_095100.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_095100/appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/oppo_R11t/7_1_1/20190926_095100/client.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/testproject/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/templates/testproject/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/testproject/show_all_devices.html" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/templates/testproject/show_all_devices.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/testproject/show_devices.html" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/templates/testproject/show_devices.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test002_wk_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/est002_wk_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/conf/user_info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/conf/user_info.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,8 +89,8 @@
           <entry key="appium_server_port_4727" value="2" />
           <entry key="css" value="17" />
           <entry key="gif" value="1" />
-          <entry key="gitignore" value="7" />
-          <entry key="html" value="207" />
+          <entry key="gitignore" value="8" />
+          <entry key="html" value="211" />
           <entry key="ico" value="1" />
           <entry key="jpg" value="1" />
           <entry key="js" value="16" />
@@ -62,22 +98,22 @@
           <entry key="log" value="20" />
           <entry key="md" value="3" />
           <entry key="png" value="14" />
-          <entry key="py" value="3090" />
+          <entry key="py" value="3095" />
           <entry key="txt" value="3" />
-          <entry key="yaml" value="29" />
+          <entry key="yaml" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="17" />
-          <entry key="HTML" value="207" />
+          <entry key="HTML" value="211" />
           <entry key="Image" value="17" />
           <entry key="JSON" value="26" />
           <entry key="JavaScript" value="16" />
           <entry key="Markdown" value="3" />
-          <entry key="PLAIN_TEXT" value="35" />
-          <entry key="Python" value="3090" />
-          <entry key="YAML" value="29" />
+          <entry key="PLAIN_TEXT" value="36" />
+          <entry key="Python" value="3095" />
+          <entry key="YAML" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -86,30 +122,84 @@
           <entry key="css" value="198" />
           <entry key="dummy" value="36" />
           <entry key="gitignore" value="130" />
-          <entry key="html" value="12691" />
+          <entry key="html" value="12760" />
           <entry key="json" value="27" />
           <entry key="log" value="10" />
           <entry key="md" value="840" />
-          <entry key="py" value="31894" />
+          <entry key="py" value="31902" />
           <entry key="txt" value="39" />
-          <entry key="yaml" value="957" />
+          <entry key="yaml" value="1172" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="198" />
-          <entry key="HTML" value="12691" />
+          <entry key="HTML" value="12760" />
           <entry key="JSON" value="27" />
           <entry key="Markdown" value="840" />
           <entry key="PLAIN_TEXT" value="232" />
-          <entry key="Python" value="31894" />
-          <entry key="YAML" value="957" />
+          <entry key="Python" value="31902" />
+          <entry key="YAML" value="1172" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testfarm/templates/testproject/show_devices.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="106" column="119" selection-start-line="106" selection-start-column="119" selection-end-line="106" selection-end-column="119" />
+              <folding>
+                <element signature="e#6482#6500#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testfarm/test_program/run.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#76#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/case_strategy.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testfarm/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="411">
+              <caret line="155" column="85" selection-start-line="155" selection-start-column="85" selection-end-line="155" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/base_page.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -122,71 +212,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-              <folding>
-                <element signature="e#84#93#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testfarm/test_program/run.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="66" selection-start-line="66" selection-end-line="66" />
-              <folding>
-                <element signature="e#0#76#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="913">
-              <caret line="93" column="47" selection-start-line="93" selection-start-column="47" selection-end-line="93" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testfarm/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="174" column="29" selection-start-line="174" selection-start-column="29" selection-end-line="174" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-648" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/kill_pid.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/base_config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
+            <state relative-caret-position="351">
               <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/user_info.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4512">
+              <caret line="188" column="15" selection-start-line="188" selection-start-column="15" selection-end-line="188" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testfarm/templates/testproject/show_all_devices.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -229,7 +276,6 @@
       <find>7229</find>
       <find>install</find>
       <find>/student_env_testDebug_1.3.7.apk</find>
-      <find>goo</find>
       <find>spell_right_word_operate</find>
       <find>\ app.</find>
       <find>\ app.honor</find>
@@ -239,9 +285,10 @@
       <find>systemPort</find>
       <find>timer</find>
       <find>_port</find>
-      <find>app</find>
       <find>app\.</find>
       <find>from conf.base_page import BasePage</find>
+      <find>k3</find>
+      <find>goo</find>
     </findStrings>
     <replaceStrings>
       <replace>testfarm.test_program.app.weixin</replace>
@@ -263,9 +310,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/grinding_ears_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/guess_word_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/listening_choice_page.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/listening_form_sentence.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/matching_exercises_page.py" />
@@ -303,17 +347,20 @@
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/reset_phone_page.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/user_center_page.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/user_Info_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/templates/testproject/show_devices.html" />
         <option value="$PROJECT_DIR$/testfarm/test_program/conf/case_strategy.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/conf/user_info.yaml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/utils/kill_pid.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/conf/base_config.py" />
-        <option value="$PROJECT_DIR$/testone/settings.py" />
-        <option value="$PROJECT_DIR$/testfarm/views.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/run.py" />
+        <option value="$PROJECT_DIR$/testfarm/templates/testproject/login.html" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/conf/base_config.py" />
+        <option value="$PROJECT_DIR$/testone/settings.py" />
+        <option value="$PROJECT_DIR$/testfarm/templates/testproject/show_all_devices.html" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/conf/user_info.yaml" />
+        <option value="$PROJECT_DIR$/testfarm/templates/testproject/show_devices.html" />
+        <option value="$PROJECT_DIR$/testfarm/views.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py" />
       </list>
     </option>
   </component>
@@ -340,6 +387,11 @@
             <path>
               <item name="testone" type="b2602c69:ProjectViewProjectNode" />
               <item name="testone" type="462c0819:PsiDirectoryNode" />
+              <item name="test_program" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testone" type="462c0819:PsiDirectoryNode" />
               <item name="testfarm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -353,12 +405,45 @@
               <item name="testone" type="462c0819:PsiDirectoryNode" />
               <item name="testfarm" type="462c0819:PsiDirectoryNode" />
               <item name="test_program" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="testone" type="b2602c69:ProjectViewProjectNode" />
               <item name="testone" type="462c0819:PsiDirectoryNode" />
+              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
+              <item name="test_program" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="honor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
               <item name="testone" type="462c0819:PsiDirectoryNode" />
+              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
+              <item name="test_program" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="honor" type="462c0819:PsiDirectoryNode" />
+              <item name="student" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testone" type="462c0819:PsiDirectoryNode" />
+              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
+              <item name="test_program" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="honor" type="462c0819:PsiDirectoryNode" />
+              <item name="student" type="462c0819:PsiDirectoryNode" />
+              <item name="homework_rebuild" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testone" type="462c0819:PsiDirectoryNode" />
+              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
+              <item name="test_program" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="honor" type="462c0819:PsiDirectoryNode" />
+              <item name="student" type="462c0819:PsiDirectoryNode" />
+              <item name="homework_rebuild" type="462c0819:PsiDirectoryNode" />
+              <item name="test_cases" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -599,27 +684,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/sentence_transform_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/single_choice_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/strengthen_sentence_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/tiny_course_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -828,50 +892,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/templates/testproject/show_devices.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3816">
-          <caret line="159" column="27" selection-start-line="159" selection-start-column="27" selection-end-line="159" selection-end-column="27" />
-          <folding>
-            <element signature="e#6482#6500#0" expanded="true" />
-            <element signature="e#6666#6698#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/user_info.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1488">
-          <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirement/dev.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/templates/testproject/show_all_devices.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/case_strategy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test004_shoot_video_max_and_delete.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -880,34 +902,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-648" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/base_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/base_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testone/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -931,20 +925,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/views.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="174" column="29" selection-start-line="174" selection-start-column="29" selection-end-line="174" selection-end-column="29" />
+        <state relative-caret-position="24">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/templates/testproject/register.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/templates/testproject/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="85" column="23" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testfarm/test_program/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        <state relative-caret-position="232">
+          <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
           <folding>
             <element signature="e#0#76#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/case_strategy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/base_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/base_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testone/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/templates/testproject/show_all_devices.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/user_info.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4512">
+          <caret line="188" column="15" selection-start-line="188" selection-start-column="15" selection-end-line="188" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/templates/testproject/show_devices.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="106" column="119" selection-start-line="106" selection-start-column="119" selection-end-line="106" selection-end-column="119" />
+          <folding>
+            <element signature="e#6482#6500#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="155" column="85" selection-start-line="155" selection-start-column="85" selection-end-line="155" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
         </state>
       </provider>
     </entry>

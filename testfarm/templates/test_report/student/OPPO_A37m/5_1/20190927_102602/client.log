@@ -1,0 +1,178 @@
+2019-09-27 10:26:24,711 - OPPO_A37m - INFO - --> BookGame.setUp
+2019-09-27 10:26:24,713 - OPPO_A37m - INFO -   --> LoginPage.app_status
+2019-09-27 10:26:24,846 - OPPO_A37m - INFO -   --> LoginPage.wait_check_page
+2019-09-27 10:26:30,392 - OPPO_A37m - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-27 10:26:30,392 - OPPO_A37m - INFO -   --> LoginPage.login_operate
+2019-09-27 10:26:32,394 - OPPO_A37m - INFO - 	--> LoginPage.input_username
+2019-09-27 10:26:34,412 - OPPO_A37m - INFO - 	--> LoginPage.input_password
+2019-09-27 10:26:46,502 - OPPO_A37m - INFO - 	--> LoginPage.login_button
+2019-09-27 10:26:55,542 - OPPO_A37m - INFO -   <-- LoginPage.login_operate, Success
+2019-09-27 10:26:55,548 - OPPO_A37m - INFO -   <-- LoginPage.app_status, Success
+2019-09-27 10:26:55,549 - OPPO_A37m - INFO - <-- BookGame.setUp, Success
+
+2019-09-27 10:26:55,550 - OPPO_A37m - INFO -   --> BookGame.test_book_game
+2019-09-27 10:26:55,550 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 10:26:58,843 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 10:26:58,843 - OPPO_A37m - INFO - 	--> UserCenterPage.get_user_info
+2019-09-27 10:26:58,844 - OPPO_A37m - INFO - 	--> HomePage.click_tab_profile
+2019-09-27 10:27:05,700 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 10:27:11,020 - OPPO_A37m - INFO - 	--> UserCenterPage.nickname
+2019-09-27 10:27:16,683 - OPPO_A37m - INFO - 	--> UserCenterPage.purchase
+2019-09-27 10:27:20,782 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-27 10:27:22,932 - OPPO_A37m - INFO - 	--> UserCenterPage.phone
+2019-09-27 10:27:32,902 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 10:27:35,329 - OPPO_A37m - INFO - 	--> UserCenterPage.school_name
+2019-09-27 10:27:39,163 - OPPO_A37m - INFO - 	--> UserCenterPage.setting_up
+2019-09-27 10:27:45,023 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-09-27 10:27:47,134 - OPPO_A37m - INFO - 	--> UserCenterPage.clear_cache
+2019-09-27 10:27:58,948 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 10:28:01,143 - OPPO_A37m - INFO - 	--> HomePage.click_tab_hw
+2019-09-27 10:28:06,708 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 10:28:09,228 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 10:28:11,602 - OPPO_A37m - INFO - 	--> HomePage.check_more
+2019-09-27 10:28:15,239 - OPPO_A37m - INFO - 	--> LibraryGamePage.wait_check_test_label_page
+2019-09-27 10:28:18,411 - OPPO_A37m - INFO - 	--> LibraryPage.course_more_btn
+2019-09-27 10:28:25,517 - OPPO_A37m - INFO - 	--> LibraryPage.book_names
+2019-09-27 10:28:37,674 - OPPO_A37m - INFO - 	--> LibraryPage.book_names
+2019-09-27 10:28:39,157 - OPPO_A37m - INFO - 	--> LibraryPage.book_progress
+2019-09-27 10:28:53,669 - OPPO_A37m - INFO -   --> BookGame.game_operate
+2019-09-27 10:28:53,670 - OPPO_A37m - INFO - 	--> LibraryPage.wait_check_book_punch_page
+2019-09-27 10:28:55,976 - OPPO_A37m - INFO - 	--> LibraryPage.wait_check_no_bank_page
+2019-09-27 10:28:58,823 - OPPO_A37m - INFO - 	--> LibraryGamePage.start_game_btn
+2019-09-27 10:29:04,552 - OPPO_A37m - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-27 10:29:07,444 - OPPO_A37m - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-27 10:29:08,520 - OPPO_A37m - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-27 10:29:11,459 - OPPO_A37m - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-27 10:29:17,913 - OPPO_A37m - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-27 10:29:19,686 - OPPO_A37m - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-27 10:29:23,551 - OPPO_A37m - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-09-27 10:29:35,167 - OPPO_A37m - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-09-27 10:29:39,251 - OPPO_A37m - INFO - 	--> LibraryGamePage.play_book_games
+2019-09-27 10:29:39,251 - OPPO_A37m - INFO - 	--> LibraryGamePage.game_name
+2019-09-27 10:29:43,255 - OPPO_A37m - INFO -   --> SelectWordBlank.select_word_blank_operate
+2019-09-27 10:29:43,256 - OPPO_A37m - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 10:29:45,103 - OPPO_A37m - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 10:29:48,096 - OPPO_A37m - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 10:29:54,310 - OPPO_A37m - INFO - 	--> SelectBlankGame.hint_btn
+2019-09-27 10:30:00,230 - OPPO_A37m - INFO - 	--> SelectBlankGame.wait_check_hint_content_page
+2019-09-27 10:30:03,484 - OPPO_A37m - INFO - 	--> SelectBlankGame.hint_answer
+2019-09-27 10:30:07,480 - OPPO_A37m - INFO -   --> HomePage.click_blank
+2019-09-27 10:30:07,592 - OPPO_A37m - ERROR - WebDriverException, Message: io.appium.uiautomator2.common.exceptions.InvalidCoordinatesException: Coordinate [x=20.0, y=1800.0] is outside of element rect: [0,0][720,1280]
+	at io.appium.uiautomator2.utils.PositionHelper.getAbsolutePosition(PositionHelper.java:71)
+	at io.appium.uiautomator2.utils.PositionHelper.getDeviceAbsPos(PositionHelper.java:83)
+	at io.appium.uiautomator2.handler.Click.safeHandle(Click.java:44)
+	at io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:37)
+	at io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)
+	at io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:243)
+	at io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:435)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:250)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1294)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:911)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:611)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:514)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:438)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:140)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:818)
+
+
+2019-09-27 10:30:07,621 - OPPO_A37m - ERROR -   <-- HomePage.click_blank, WebDriverException, Error
+2019-09-27 10:30:08,067 - OPPO_A37m - ERROR - WebDriverException, Message: IMAGE:HomePage.click_blank-20190927103007.png
+
+2019-09-27 10:30:08,070 - OPPO_A37m - ERROR -   <-- SelectWordBlank.select_word_blank_operate, WebDriverException, Error
+2019-09-27 10:30:08,071 - OPPO_A37m - ERROR - WebDriverException, Message: Message: IMAGE:HomePage.click_blank-20190927103007.png
+
+
+2019-09-27 10:30:08,071 - OPPO_A37m - ERROR - 	<-- LibraryGamePage.play_book_games, WebDriverException, Error
+2019-09-27 10:30:08,072 - OPPO_A37m - ERROR - WebDriverException, Message: Message: Message: IMAGE:HomePage.click_blank-20190927103007.png
+
+
+
+2019-09-27 10:30:08,072 - OPPO_A37m - ERROR -   <-- BookGame.game_operate, WebDriverException, Error
+2019-09-27 10:30:08,072 - OPPO_A37m - ERROR - WebDriverException, Message: Message: Message: Message: IMAGE:HomePage.click_blank-20190927103007.png
+
+
+
+
+2019-09-27 10:30:08,074 - OPPO_A37m - ERROR -   <-- BookGame.test_book_game, WebDriverException, Error
+2019-09-27 10:30:08,078 - OPPO_A37m - INFO - --> BookGame.tearDown
+2019-09-27 10:30:08,081 - OPPO_A37m - INFO - <-- BookGame.tearDown, Success
+
+2019-09-27 10:30:08,097 - OPPO_A37m - INFO - --> Medal.setUp
+2019-09-27 10:30:08,098 - OPPO_A37m - INFO -   --> LoginPage.app_status
+2019-09-27 10:30:08,182 - OPPO_A37m - INFO -   --> LoginPage.wait_check_page
+2019-09-27 10:30:16,614 - OPPO_A37m - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-27 10:30:16,617 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 10:30:32,834 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 10:30:32,835 - OPPO_A37m - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-27 10:30:48,415 - OPPO_A37m - INFO - 	--> LoginPage.close_app
+2019-09-27 10:30:49,593 - OPPO_A37m - INFO - 	--> LoginPage.launch_app
+2019-09-27 10:30:58,237 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 10:31:01,551 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 10:31:01,551 - OPPO_A37m - INFO -   <-- LoginPage.app_status, Success
+2019-09-27 10:31:01,552 - OPPO_A37m - INFO - <-- Medal.setUp, Success
+
+2019-09-27 10:31:01,552 - OPPO_A37m - INFO - --> Medal.test_medal_tip
+2019-09-27 10:31:01,552 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 10:31:05,006 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 10:31:07,382 - OPPO_A37m - INFO - 	--> HomePage.check_more
+2019-09-27 10:31:08,899 - OPPO_A37m - ERROR - Exception, list index out of range
+2019-09-27 10:31:08,900 - OPPO_A37m - ERROR - <-- Medal.test_medal_tip, Exception, Error
+
+2019-09-27 10:31:09,383 - OPPO_A37m - INFO - --> Medal.tearDown
+2019-09-27 10:31:09,383 - OPPO_A37m - INFO - <-- Medal.tearDown, Success
+
+2019-09-27 10:31:09,385 - OPPO_A37m - INFO - --> Medal.setUp
+2019-09-27 10:31:09,385 - OPPO_A37m - INFO -   --> LoginPage.app_status
+2019-09-27 10:31:09,489 - OPPO_A37m - INFO -   --> LoginPage.wait_check_page
+2019-09-27 10:31:16,788 - OPPO_A37m - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-27 10:31:16,788 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 10:31:19,113 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 10:31:19,114 - OPPO_A37m - INFO -   <-- LoginPage.app_status, Success
+2019-09-27 10:31:19,114 - OPPO_A37m - INFO - <-- Medal.setUp, Success
+
+2019-09-27 10:31:19,115 - OPPO_A37m - INFO - --> Medal.test_compare_page_data
+2019-09-27 10:31:19,115 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 10:31:21,616 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 10:31:21,617 - OPPO_A37m - INFO - 	--> UserCenterPage.get_user_info
+2019-09-27 10:31:21,619 - OPPO_A37m - INFO - 	--> HomePage.click_tab_profile
+2019-09-27 10:31:27,218 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 10:31:32,080 - OPPO_A37m - INFO - 	--> UserCenterPage.nickname
+2019-09-27 10:31:37,601 - OPPO_A37m - INFO - 	--> UserCenterPage.purchase
+2019-09-27 10:31:42,093 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-27 10:31:45,134 - OPPO_A37m - INFO - 	--> UserCenterPage.phone
+2019-09-27 10:31:54,442 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 10:31:57,524 - OPPO_A37m - INFO - 	--> UserCenterPage.school_name
+2019-09-27 10:32:01,983 - OPPO_A37m - INFO - 	--> UserCenterPage.setting_up
+2019-09-27 10:32:07,704 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-09-27 10:32:10,326 - OPPO_A37m - INFO - 	--> UserCenterPage.clear_cache
+2019-09-27 10:32:22,750 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 10:32:25,873 - OPPO_A37m - INFO - 	--> HomePage.click_tab_hw
+2019-09-27 10:32:31,986 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 10:32:34,506 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 10:32:34,506 - OPPO_A37m - INFO - 	--> HomePage.check_more
+2019-09-27 10:32:40,108 - OPPO_A37m - INFO - 	--> LibraryPage.wait_check_library_page
+2019-09-27 10:32:42,436 - OPPO_A37m - INFO - 	--> LibraryPage.course_type
+2019-09-27 10:32:44,350 - OPPO_A37m - ERROR - Exception, list index out of range
+2019-09-27 10:32:44,350 - OPPO_A37m - ERROR - <-- Medal.test_compare_page_data, Exception, Error
+
+2019-09-27 10:32:44,762 - OPPO_A37m - INFO - --> Medal.tearDown
+2019-09-27 10:32:44,763 - OPPO_A37m - INFO - <-- Medal.tearDown, Success
+

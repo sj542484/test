@@ -1,0 +1,48 @@
+2019-09-27 11:01:51,596 - OPPO_A37m - INFO - --> PlayAllGame.setUp
+2019-09-27 11:01:51,598 - OPPO_A37m - INFO -   --> LoginPage.app_status
+2019-09-27 11:01:51,689 - OPPO_A37m - INFO -   --> LoginPage.wait_check_page
+2019-09-27 11:01:53,527 - OPPO_A37m - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-27 11:01:53,528 - OPPO_A37m - INFO -   --> LoginPage.login_operate
+2019-09-27 11:01:55,529 - OPPO_A37m - INFO - 	--> LoginPage.input_username
+2019-09-27 11:01:55,704 - OPPO_A37m - INFO - 	--> LoginPage.input_password
+2019-09-27 11:01:58,233 - OPPO_A37m - INFO - 	--> LoginPage.login_button
+2019-09-27 11:02:00,999 - OPPO_A37m - INFO -   <-- LoginPage.login_operate, Success
+2019-09-27 11:02:01,000 - OPPO_A37m - INFO -   <-- LoginPage.app_status, Success
+2019-09-27 11:02:01,001 - OPPO_A37m - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-27 11:02:01,001 - OPPO_A37m - INFO - --> PlayAllGame.test_all_game
+2019-09-27 11:02:01,002 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 11:02:04,182 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 11:02:04,183 - OPPO_A37m - INFO - 	--> UserCenterPage.get_user_info
+2019-09-27 11:02:04,183 - OPPO_A37m - INFO - 	--> HomePage.click_tab_profile
+2019-09-27 11:02:04,618 - OPPO_A37m - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 11:02:05,343 - OPPO_A37m - ERROR - Exception, 'NoneType' object is not subscriptable
+2019-09-27 11:02:05,344 - OPPO_A37m - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-09-27 11:02:06,785 - OPPO_A37m - INFO - --> PlayAllGame.tearDown
+2019-09-27 11:02:06,785 - OPPO_A37m - INFO - <-- PlayAllGame.tearDown, Success
+
+2019-09-27 11:02:06,788 - OPPO_A37m - INFO - --> PlayAllGame.setUp
+2019-09-27 11:02:06,788 - OPPO_A37m - INFO -   --> LoginPage.app_status
+2019-09-27 11:02:06,920 - OPPO_A37m - INFO -   --> LoginPage.wait_check_page
+2019-09-27 11:02:12,950 - OPPO_A37m - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-27 11:02:12,951 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 11:02:28,031 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 11:02:28,032 - OPPO_A37m - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-27 11:02:43,767 - OPPO_A37m - INFO - 	--> LoginPage.close_app
+2019-09-27 11:02:45,062 - OPPO_A37m - INFO - 	--> LoginPage.launch_app
+2019-09-27 11:02:53,345 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 11:03:08,422 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 11:03:08,423 - OPPO_A37m - INFO -   --> LoginPage.wait_check_page
+2019-09-27 11:03:13,779 - OPPO_A37m - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-27 11:03:13,780 - OPPO_A37m - INFO -   <-- LoginPage.app_status, Success
+2019-09-27 11:03:13,780 - OPPO_A37m - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-27 11:03:13,780 - OPPO_A37m - INFO - --> PlayAllGame.test_all_game
+2019-09-27 11:03:13,780 - OPPO_A37m - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 11:03:29,468 - OPPO_A37m - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 11:03:29,469 - OPPO_A37m - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-27 11:03:29,469 - OPPO_A37m - INFO - --> PlayAllGame.tearDown
+2019-09-27 11:03:29,470 - OPPO_A37m - INFO - <-- PlayAllGame.tearDown, Success
+
