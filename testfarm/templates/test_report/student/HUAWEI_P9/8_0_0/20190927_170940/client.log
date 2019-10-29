@@ -1,0 +1,22 @@
+2019-09-27 17:09:54,774 - HUAWEI_P9 - INFO - --> PlayAllGame.setUp
+2019-09-27 17:09:54,776 - HUAWEI_P9 - INFO -   --> LoginPage.app_status
+2019-09-27 17:09:54,840 - HUAWEI_P9 - INFO -   --> LoginPage.wait_check_page
+2019-09-27 17:09:56,765 - HUAWEI_P9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-27 17:09:56,766 - HUAWEI_P9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 17:09:56,784 - HUAWEI_P9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 17:09:56,785 - HUAWEI_P9 - INFO - 	--> WorldBookPublicPage.wait_check_game_title_page
+2019-09-27 17:09:56,799 - HUAWEI_P9 - INFO - 	--> LoginPage.close_app
+2019-09-27 17:09:56,906 - HUAWEI_P9 - INFO - 	--> LoginPage.launch_app
+2019-09-27 17:10:03,812 - HUAWEI_P9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 17:10:13,154 - HUAWEI_P9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 17:10:13,154 - HUAWEI_P9 - INFO -   <-- LoginPage.app_status, Success
+2019-09-27 17:10:13,154 - HUAWEI_P9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-27 17:10:13,155 - HUAWEI_P9 - INFO - --> PlayAllGame.test_all_game
+2019-09-27 17:10:13,155 - HUAWEI_P9 - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 17:10:13,939 - HUAWEI_P9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 17:10:13,939 - HUAWEI_P9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-27 17:10:13,940 - HUAWEI_P9 - INFO - --> PlayAllGame.tearDown
+2019-09-27 17:10:13,940 - HUAWEI_P9 - INFO - <-- PlayAllGame.tearDown, Success
+

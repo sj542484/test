@@ -1,0 +1,638 @@
+2019-10-08 15:09:14,874 - OPPO_R11t - INFO - --> PlayAllGame.setUp
+2019-10-08 15:09:14,876 - OPPO_R11t - INFO -   --> LoginPage.app_status
+2019-10-08 15:09:14,959 - OPPO_R11t - INFO -   --> LoginPage.wait_check_page
+2019-10-08 15:09:18,630 - OPPO_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-10-08 15:09:18,630 - OPPO_R11t - INFO -   --> LoginPage.login_operate
+2019-10-08 15:09:20,632 - OPPO_R11t - INFO - 	--> LoginPage.input_username
+2019-10-08 15:09:21,193 - OPPO_R11t - INFO - 	--> LoginPage.input_password
+2019-10-08 15:09:22,997 - OPPO_R11t - INFO - 	--> LoginPage.login_button
+2019-10-08 15:09:25,666 - OPPO_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-10-08 15:09:25,667 - OPPO_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-10-08 15:09:25,668 - OPPO_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-10-08 15:09:25,668 - OPPO_R11t - INFO - --> PlayAllGame.test_all_game
+2019-10-08 15:09:25,669 - OPPO_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-10-08 15:09:26,437 - OPPO_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-08 15:09:26,438 - OPPO_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-10-08 15:09:26,438 - OPPO_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-10-08 15:09:26,678 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-08 15:09:30,439 - OPPO_R11t - INFO - 	--> UserCenterPage.nickname
+2019-10-08 15:09:33,262 - OPPO_R11t - INFO - 	--> UserCenterPage.purchase
+2019-10-08 15:09:33,952 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-10-08 15:09:35,617 - OPPO_R11t - INFO - 	--> UserCenterPage.phone
+2019-10-08 15:09:37,035 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-08 15:09:38,059 - OPPO_R11t - INFO - 	--> UserCenterPage.school_name
+2019-10-08 15:09:38,205 - OPPO_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-10-08 15:09:38,334 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-10-08 15:09:40,488 - OPPO_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-10-08 15:09:43,687 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-08 15:09:44,750 - OPPO_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-10-08 15:09:44,898 - OPPO_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-10-08 15:09:44,940 - OPPO_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-10-08 15:09:46,472 - OPPO_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-08 15:09:46,472 - OPPO_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-10-08 15:09:46,681 - OPPO_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-10-08 15:09:46,682 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-10-08 15:09:47,893 - OPPO_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-10-08 15:09:49,285 - OPPO_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-10-08 15:09:50,347 - OPPO_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-10-08 15:09:50,347 - OPPO_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-10-08 15:09:50,594 - OPPO_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-10-08 15:09:50,885 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-10-08 15:09:52,502 - OPPO_R11t - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-10-08 15:09:52,763 - OPPO_R11t - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-10-08 15:09:53,044 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-10-08 15:09:56,260 - OPPO_R11t - INFO - 	--> LibraryGamePage.play_book_games
+2019-10-08 15:09:56,261 - OPPO_R11t - INFO - 	--> LibraryGamePage.game_name
+2019-10-08 15:09:56,439 - OPPO_R11t - INFO -   --> SentenceStrengthen.sentence_strengthen_operate
+2019-10-08 15:09:56,439 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 15:09:56,525 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_sentence_page
+2019-10-08 15:09:56,570 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-08 15:09:56,570 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-08 15:09:56,619 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-08 15:09:58,254 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-08 15:09:58,254 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 15:09:58,255 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 15:09:58,350 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.sentence_explain
+2019-10-08 15:09:58,458 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:09:58,540 - OPPO_R11t - INFO -   --> PublicPage.get_rich_text_input_count
+2019-10-08 15:09:58,541 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:09:58,636 - OPPO_R11t - INFO -   <-- PublicPage.get_rich_text_input_count, Success
+2019-10-08 15:09:58,637 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:09:58,725 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:09:59,580 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:09:59,581 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:09:59,663 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:01,581 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:01,581 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:01,651 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:02,595 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:03,097 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:03,184 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:04,769 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:04,770 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:04,850 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:05,869 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:05,869 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:05,949 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:07,737 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:07,739 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:07,825 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:08,721 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:08,721 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:08,801 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:10,571 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:11,072 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:11,170 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:11,619 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:11,620 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:11,690 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:13,568 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:13,568 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:13,636 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:14,602 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:15,104 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:15,194 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:15,613 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:15,613 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:15,688 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:16,741 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:16,741 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:16,828 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:18,417 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:18,918 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:19,013 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:20,480 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:20,480 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_correct_answer_page
+2019-10-08 15:10:21,270 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:10:21,353 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:10:21,435 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.right_answer
+2019-10-08 15:10:22,513 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 15:10:22,592 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-08 15:10:24,692 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_sentence_page
+2019-10-08 15:10:25,690 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-08 15:10:25,691 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-08 15:10:26,570 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-08 15:10:28,606 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-08 15:10:28,607 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 15:10:28,607 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 15:10:28,700 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.sentence_explain
+2019-10-08 15:10:29,273 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:10:29,366 - OPPO_R11t - INFO -   --> PublicPage.get_rich_text_input_count
+2019-10-08 15:10:29,367 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:10:29,460 - OPPO_R11t - INFO -   <-- PublicPage.get_rich_text_input_count, Success
+2019-10-08 15:10:29,460 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:29,526 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:29,916 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:29,916 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:29,999 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:30,802 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:30,803 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:30,875 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:32,493 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:32,994 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:33,088 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:33,614 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:33,615 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:33,694 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:35,471 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:35,471 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:35,540 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:36,605 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:37,106 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:37,200 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:38,544 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:38,545 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:38,622 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:39,581 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:39,582 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:39,667 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:41,625 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:41,626 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:41,692 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:42,600 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:42,600 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:42,668 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:47,437 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:47,938 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:48,023 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:48,666 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:48,667 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_correct_answer_page
+2019-10-08 15:10:50,260 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:10:50,339 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:10:50,422 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.right_answer
+2019-10-08 15:10:50,506 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 15:10:50,598 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-08 15:10:52,702 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_sentence_page
+2019-10-08 15:10:53,659 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-08 15:10:53,659 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-08 15:10:53,706 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-08 15:10:56,241 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-08 15:10:56,243 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 15:10:56,244 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 15:10:56,333 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.sentence_explain
+2019-10-08 15:10:56,460 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:10:56,563 - OPPO_R11t - INFO -   --> PublicPage.get_rich_text_input_count
+2019-10-08 15:10:56,563 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:10:56,656 - OPPO_R11t - INFO -   <-- PublicPage.get_rich_text_input_count, Success
+2019-10-08 15:10:56,657 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:56,750 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:57,649 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:10:57,650 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:10:57,713 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:10:59,585 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:00,087 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:00,170 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:02,500 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:02,501 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:02,578 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:03,623 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:03,624 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:03,688 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:05,474 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:05,975 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:06,059 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:06,626 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:06,627 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_correct_answer_page
+2019-10-08 15:11:08,269 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:11:08,357 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:11:08,436 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.right_answer
+2019-10-08 15:11:08,525 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 15:11:08,627 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-08 15:11:10,722 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_sentence_page
+2019-10-08 15:11:11,278 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-08 15:11:11,278 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-08 15:11:11,334 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-08 15:11:13,249 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-08 15:11:13,250 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 15:11:13,250 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 15:11:14,328 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.sentence_explain
+2019-10-08 15:11:14,412 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:11:14,504 - OPPO_R11t - INFO -   --> PublicPage.get_rich_text_input_count
+2019-10-08 15:11:14,504 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:11:14,587 - OPPO_R11t - INFO -   <-- PublicPage.get_rich_text_input_count, Success
+2019-10-08 15:11:14,588 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:14,668 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:15,487 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:15,487 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:15,565 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:17,559 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:17,560 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:17,622 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:18,586 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:18,586 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:18,657 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:20,587 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:21,088 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:21,177 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:21,600 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:21,601 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:21,673 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:23,578 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:23,578 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:23,639 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:24,595 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:25,095 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:25,167 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:25,611 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:25,612 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_correct_answer_page
+2019-10-08 15:11:26,481 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:11:26,558 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:11:26,611 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.right_answer
+2019-10-08 15:11:26,676 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 15:11:27,235 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-08 15:11:29,331 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_sentence_page
+2019-10-08 15:11:29,513 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-08 15:11:29,514 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-08 15:11:29,549 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-08 15:11:31,250 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-08 15:11:31,250 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 15:11:31,251 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 15:11:31,350 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.sentence_explain
+2019-10-08 15:11:31,427 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:11:31,504 - OPPO_R11t - INFO -   --> PublicPage.get_rich_text_input_count
+2019-10-08 15:11:31,504 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:11:32,578 - OPPO_R11t - INFO -   <-- PublicPage.get_rich_text_input_count, Success
+2019-10-08 15:11:32,579 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:32,656 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:33,504 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:33,505 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:33,573 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:34,580 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:35,081 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:35,155 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:35,906 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:35,907 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:35,976 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:36,756 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:36,757 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:36,819 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:37,674 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:38,176 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:11:38,246 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:11:39,463 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:11:39,463 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_correct_answer_page
+2019-10-08 15:11:40,261 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:11:40,336 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:11:40,407 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.right_answer
+2019-10-08 15:11:40,481 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 15:11:40,564 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-08 15:11:42,655 - OPPO_R11t - INFO -   --> LibraryPubicPage.judge_timer
+2019-10-08 15:11:42,656 - OPPO_R11t - INFO -   <-- LibraryPubicPage.judge_timer, Success
+2019-10-08 15:11:42,656 - OPPO_R11t - INFO -   <-- SentenceStrengthen.sentence_strengthen_operate, Success
+2019-10-08 15:11:42,657 - OPPO_R11t - INFO - 	--> ResultPage.wait_check_medal_page
+2019-10-08 15:11:52,992 - OPPO_R11t - INFO - 	--> LibraryGamePage.check_bank_result
+2019-10-08 15:11:52,993 - OPPO_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-10-08 15:11:53,859 - OPPO_R11t - INFO - 	--> ResultPage.check_result_btn
+2019-10-08 15:11:55,971 - OPPO_R11t - INFO -   --> SentenceStrengthen.sentence_strengthen_result_operate
+2019-10-08 15:11:55,971 - OPPO_R11t - INFO - 	--> ResultPage.wait_check_answer_page
+2019-10-08 15:11:57,002 - OPPO_R11t - INFO - 	--> SentenceStrengthen.result_explains
+2019-10-08 15:11:57,129 - OPPO_R11t - INFO - 	--> SentenceStrengthen.result_answers
+2019-10-08 15:11:57,314 - OPPO_R11t - INFO - 	--> SentenceStrengthen.get_right_and_mine_answer
+2019-10-08 15:11:57,315 - OPPO_R11t - INFO - 	--> SentenceStrengthen.mine_icon
+2019-10-08 15:11:57,481 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-08 15:11:57,545 - OPPO_R11t - INFO - 	--> SentenceStrengthen.result_answers
+2019-10-08 15:11:57,732 - OPPO_R11t - INFO - 	--> SentenceStrengthen.get_right_and_mine_answer
+2019-10-08 15:11:57,733 - OPPO_R11t - INFO - 	--> SentenceStrengthen.mine_icon
+2019-10-08 15:11:57,893 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-08 15:11:57,960 - OPPO_R11t - INFO - 	--> SentenceStrengthen.result_answers
+2019-10-08 15:11:58,153 - OPPO_R11t - INFO - 	--> SentenceStrengthen.get_right_and_mine_answer
+2019-10-08 15:11:58,154 - OPPO_R11t - INFO - 	--> SentenceStrengthen.mine_icon
+2019-10-08 15:11:58,294 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-08 15:11:58,344 - OPPO_R11t - INFO - 	--> SentenceStrengthen.result_answers
+2019-10-08 15:11:58,530 - OPPO_R11t - INFO - 	--> SentenceStrengthen.get_right_and_mine_answer
+2019-10-08 15:11:58,531 - OPPO_R11t - INFO - 	--> SentenceStrengthen.mine_icon
+2019-10-08 15:11:58,684 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-08 15:11:58,741 - OPPO_R11t - INFO - 	--> SentenceStrengthen.result_answers
+2019-10-08 15:11:59,920 - OPPO_R11t - INFO - 	--> SentenceStrengthen.get_right_and_mine_answer
+2019-10-08 15:11:59,921 - OPPO_R11t - INFO - 	--> SentenceStrengthen.mine_icon
+2019-10-08 15:12:00,067 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-08 15:12:01,200 - OPPO_R11t - INFO -   <-- SentenceStrengthen.sentence_strengthen_result_operate, Success
+2019-10-08 15:12:01,201 - OPPO_R11t - INFO - 	--> ResultPage.result_multi_data_check
+2019-10-08 15:12:01,202 - OPPO_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-10-08 15:12:02,973 - OPPO_R11t - INFO - 	--> ResultPage.correct_rate
+2019-10-08 15:12:03,068 - OPPO_R11t - INFO - 	--> ResultPage.score
+2019-10-08 15:12:03,141 - OPPO_R11t - INFO - 	--> ResultPage.star
+2019-10-08 15:12:03,231 - OPPO_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-10-08 15:12:03,288 - OPPO_R11t - INFO - 	--> ResultPage.again_btn
+2019-10-08 15:12:03,406 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-10-08 15:12:06,679 - OPPO_R11t - INFO - 	--> LibraryGamePage.play_book_games
+2019-10-08 15:12:06,679 - OPPO_R11t - INFO - 	--> LibraryGamePage.game_name
+2019-10-08 15:12:06,848 - OPPO_R11t - INFO -   --> SentenceStrengthen.sentence_strengthen_operate
+2019-10-08 15:12:06,849 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 15:12:07,453 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_sentence_page
+2019-10-08 15:12:07,506 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-08 15:12:07,507 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-08 15:12:07,565 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-08 15:12:09,406 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-08 15:12:09,407 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 15:12:09,407 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 15:12:09,502 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.sentence_explain
+2019-10-08 15:12:09,581 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:12:09,665 - OPPO_R11t - INFO -   --> PublicPage.get_rich_text_input_count
+2019-10-08 15:12:09,665 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:12:09,758 - OPPO_R11t - INFO -   <-- PublicPage.get_rich_text_input_count, Success
+2019-10-08 15:12:09,759 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:09,830 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:12,583 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:13,084 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:13,171 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:13,766 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:13,766 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:13,830 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:15,723 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:15,723 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:15,802 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:16,779 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:16,779 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:16,850 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:18,759 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:18,759 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:18,831 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:21,619 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:22,121 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:22,209 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:22,779 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:22,779 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:22,845 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:24,714 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:25,214 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:25,293 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:27,663 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:27,663 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:27,737 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:28,766 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:28,766 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:28,828 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:30,665 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:30,665 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:30,725 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:31,772 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:31,772 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:31,846 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:33,658 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:33,658 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:33,722 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:34,756 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:35,258 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:35,333 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:38,592 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:38,593 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_correct_answer_page
+2019-10-08 15:12:39,518 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:12:39,597 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:12:39,685 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.right_answer
+2019-10-08 15:12:39,753 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 15:12:39,843 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-08 15:12:42,444 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_sentence_page
+2019-10-08 15:12:42,596 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-08 15:12:42,597 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-08 15:12:42,647 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-08 15:12:44,400 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-08 15:12:44,401 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 15:12:44,401 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 15:12:45,635 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.sentence_explain
+2019-10-08 15:12:45,720 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:12:45,801 - OPPO_R11t - INFO -   --> PublicPage.get_rich_text_input_count
+2019-10-08 15:12:45,802 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:12:46,394 - OPPO_R11t - INFO -   <-- PublicPage.get_rich_text_input_count, Success
+2019-10-08 15:12:46,395 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:46,478 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:46,895 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:47,397 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:47,480 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:48,863 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:48,863 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:48,928 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:49,739 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:49,740 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:49,803 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:50,757 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:50,758 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:50,822 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:52,057 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:52,057 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:52,161 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:52,899 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:53,400 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:53,463 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:53,842 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:53,843 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:53,913 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:55,584 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:55,585 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:55,640 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:56,773 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:56,774 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:56,845 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:58,670 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:58,670 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:58,740 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:12:59,790 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:12:59,790 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:12:59,853 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:02,674 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:02,674 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:02,739 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:04,658 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:04,658 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:04,735 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:05,781 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:06,283 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:06,374 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:07,744 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:07,745 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_correct_answer_page
+2019-10-08 15:13:08,495 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:13:10,427 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:13:10,514 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.right_answer
+2019-10-08 15:13:11,424 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 15:13:11,501 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-08 15:13:13,617 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_sentence_page
+2019-10-08 15:13:14,416 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-08 15:13:14,416 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-08 15:13:14,454 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-08 15:13:16,418 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-08 15:13:16,419 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 15:13:16,419 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 15:13:16,513 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.sentence_explain
+2019-10-08 15:13:16,594 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:13:16,685 - OPPO_R11t - INFO -   --> PublicPage.get_rich_text_input_count
+2019-10-08 15:13:16,685 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:13:16,765 - OPPO_R11t - INFO -   <-- PublicPage.get_rich_text_input_count, Success
+2019-10-08 15:13:16,766 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:16,838 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:17,676 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:17,676 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:17,742 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:19,744 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:19,744 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:19,810 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:20,756 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:21,257 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:21,340 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:22,694 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:22,694 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:22,767 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:23,766 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:23,766 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:23,826 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:25,733 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:25,734 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:25,799 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:26,740 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:26,741 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:26,801 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:28,722 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:29,224 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:29,310 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:29,761 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:29,761 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_correct_answer_page
+2019-10-08 15:13:31,419 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:13:31,499 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:13:31,564 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.right_answer
+2019-10-08 15:13:31,637 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 15:13:31,709 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-08 15:13:33,802 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_sentence_page
+2019-10-08 15:13:34,420 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-08 15:13:34,421 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-08 15:13:34,465 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-08 15:13:37,395 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-08 15:13:37,395 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 15:13:37,396 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 15:13:37,480 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.sentence_explain
+2019-10-08 15:13:37,567 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:13:37,643 - OPPO_R11t - INFO -   --> PublicPage.get_rich_text_input_count
+2019-10-08 15:13:37,643 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:13:37,730 - OPPO_R11t - INFO -   <-- PublicPage.get_rich_text_input_count, Success
+2019-10-08 15:13:37,730 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:37,806 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:38,652 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:38,652 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:38,720 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:40,634 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:40,635 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:40,693 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:41,760 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:41,761 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:41,822 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:43,679 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:43,679 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:43,741 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:44,769 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:44,769 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:44,839 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:46,724 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:47,226 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:47,321 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:47,776 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:47,777 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:47,845 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:49,735 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:49,735 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:49,800 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:50,743 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:51,244 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:51,316 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:51,780 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:51,781 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_correct_answer_page
+2019-10-08 15:13:52,582 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:13:52,659 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:13:52,725 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.right_answer
+2019-10-08 15:13:52,784 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 15:13:52,884 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-08 15:13:55,476 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_sentence_page
+2019-10-08 15:13:55,641 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-08 15:13:55,641 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-08 15:13:55,684 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-08 15:13:57,408 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-08 15:13:57,409 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 15:13:57,409 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 15:13:57,489 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.sentence_explain
+2019-10-08 15:13:57,568 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:13:57,641 - OPPO_R11t - INFO -   --> PublicPage.get_rich_text_input_count
+2019-10-08 15:13:57,642 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:13:58,716 - OPPO_R11t - INFO -   <-- PublicPage.get_rich_text_input_count, Success
+2019-10-08 15:13:58,716 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:58,796 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:13:59,675 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:13:59,676 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:13:59,748 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:14:02,038 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:14:02,038 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:14:02,098 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:14:02,899 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:14:02,899 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:14:02,964 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:14:03,802 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:14:03,802 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:14:03,869 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:14:05,596 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:14:06,098 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:14:06,180 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:14:06,799 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:14:06,799 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:14:06,867 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:14:08,652 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:14:08,653 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:14:08,704 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:14:09,718 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:14:09,719 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:14:09,784 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:14:11,630 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:14:11,630 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:14:11,701 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:14:12,746 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:14:12,746 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:14:12,815 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:14:14,649 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:14:15,151 - OPPO_R11t - INFO -   --> Keyboard.games_keyboard
+2019-10-08 15:14:15,234 - OPPO_R11t - INFO - 	--> Keyboard.keyboard_view
+2019-10-08 15:14:15,818 - OPPO_R11t - INFO -   <-- Keyboard.games_keyboard, Success
+2019-10-08 15:14:15,819 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.wait_check_correct_answer_page
+2019-10-08 15:14:17,422 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:14:17,503 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 15:14:17,576 - OPPO_R11t - INFO - 	--> SentenceStrengthenGame.right_answer
+2019-10-08 15:14:17,651 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 15:14:17,714 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-08 15:14:19,822 - OPPO_R11t - INFO -   --> LibraryPubicPage.judge_timer
+2019-10-08 15:14:19,826 - OPPO_R11t - INFO -   <-- LibraryPubicPage.judge_timer, Success
+2019-10-08 15:14:19,827 - OPPO_R11t - INFO -   <-- SentenceStrengthen.sentence_strengthen_operate, Success
+2019-10-08 15:14:19,829 - OPPO_R11t - INFO - 	--> ResultPage.wait_check_medal_page
+2019-10-08 15:14:30,227 - OPPO_R11t - INFO - 	--> LibraryGamePage.check_bank_result
+2019-10-08 15:14:30,228 - OPPO_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-10-08 15:14:30,285 - OPPO_R11t - INFO - 	--> ResultPage.check_result_btn
+2019-10-08 15:14:32,389 - OPPO_R11t - INFO -   --> SentenceStrengthen.sentence_strengthen_result_operate
+2019-10-08 15:14:32,390 - OPPO_R11t - INFO - 	--> ResultPage.wait_check_answer_page
+2019-10-08 15:14:32,538 - OPPO_R11t - INFO - 	--> SentenceStrengthen.result_explains
+2019-10-08 15:14:32,612 - OPPO_R11t - INFO - 	--> SentenceStrengthen.result_answers
+2019-10-08 15:14:32,772 - OPPO_R11t - INFO - 	--> SentenceStrengthen.get_right_and_mine_answer
+2019-10-08 15:14:32,772 - OPPO_R11t - INFO - 	--> SentenceStrengthen.mine_icon
+2019-10-08 15:14:32,937 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-08 15:14:32,994 - OPPO_R11t - INFO - 	--> SentenceStrengthen.result_answers
+2019-10-08 15:14:33,190 - OPPO_R11t - INFO - 	--> SentenceStrengthen.get_right_and_mine_answer
+2019-10-08 15:14:33,191 - OPPO_R11t - INFO - 	--> SentenceStrengthen.mine_icon
+2019-10-08 15:14:33,336 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-08 15:14:33,389 - OPPO_R11t - INFO - 	--> SentenceStrengthen.result_answers
+2019-10-08 15:14:33,552 - OPPO_R11t - INFO - 	--> SentenceStrengthen.get_right_and_mine_answer
+2019-10-08 15:14:33,553 - OPPO_R11t - INFO - 	--> SentenceStrengthen.mine_icon
+2019-10-08 15:14:33,716 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-08 15:14:33,767 - OPPO_R11t - INFO - 	--> SentenceStrengthen.result_answers
+2019-10-08 15:14:33,964 - OPPO_R11t - INFO - 	--> SentenceStrengthen.get_right_and_mine_answer
+2019-10-08 15:14:33,965 - OPPO_R11t - INFO - 	--> SentenceStrengthen.mine_icon
+2019-10-08 15:14:34,124 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-08 15:14:34,168 - OPPO_R11t - INFO - 	--> SentenceStrengthen.result_answers
+2019-10-08 15:14:35,218 - OPPO_R11t - INFO - 	--> SentenceStrengthen.get_right_and_mine_answer
+2019-10-08 15:14:35,218 - OPPO_R11t - INFO - 	--> SentenceStrengthen.mine_icon
+2019-10-08 15:14:35,365 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-08 15:14:36,488 - OPPO_R11t - INFO -   <-- SentenceStrengthen.sentence_strengthen_result_operate, Success
+2019-10-08 15:14:36,489 - OPPO_R11t - INFO - 	--> ResultPage.result_multi_data_check
+2019-10-08 15:14:36,489 - OPPO_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-10-08 15:14:38,343 - OPPO_R11t - INFO - 	--> ResultPage.correct_rate
+2019-10-08 15:14:38,430 - OPPO_R11t - INFO - 	--> ResultPage.score
+2019-10-08 15:14:38,527 - OPPO_R11t - INFO - 	--> ResultPage.star
+2019-10-08 15:14:39,712 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-10-08 15:14:44,344 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-10-08 15:14:46,263 - OPPO_R11t - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-10-08 15:14:46,263 - OPPO_R11t - INFO - --> PlayAllGame.tearDown
+2019-10-08 15:14:46,264 - OPPO_R11t - INFO - <-- PlayAllGame.tearDown, Success
+

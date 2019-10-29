@@ -1,0 +1,27 @@
+2019-10-10 14:40:22,272 - OPPO_R11t - INFO - --> PlayAllGame.setUp
+2019-10-10 14:40:22,273 - OPPO_R11t - INFO -   --> LoginPage.app_status
+2019-10-10 14:40:22,371 - OPPO_R11t - INFO -   --> LoginPage.wait_check_page
+2019-10-10 14:40:25,376 - OPPO_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-10-10 14:40:25,376 - OPPO_R11t - INFO -   --> LoginPage.login_operate
+2019-10-10 14:40:27,378 - OPPO_R11t - INFO - 	--> LoginPage.input_username
+2019-10-10 14:40:27,448 - OPPO_R11t - INFO - 	--> LoginPage.input_password
+2019-10-10 14:40:30,010 - OPPO_R11t - INFO - 	--> LoginPage.login_button
+2019-10-10 14:40:32,661 - OPPO_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-10-10 14:40:32,662 - OPPO_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-10-10 14:40:32,662 - OPPO_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-10-10 14:40:32,663 - OPPO_R11t - INFO - --> PlayAllGame.test_all_game
+2019-10-10 14:40:32,663 - OPPO_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-10-10 14:40:34,105 - OPPO_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-10 14:40:34,105 - OPPO_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-10-10 14:40:34,105 - OPPO_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-10-10 14:40:34,338 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-10 14:40:37,313 - OPPO_R11t - INFO - 	--> UserCenterPage.nickname
+2019-10-10 14:40:39,897 - OPPO_R11t - INFO - 	--> UserCenterPage.purchase
+2019-10-10 14:40:40,509 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-10-10 14:40:42,105 - OPPO_R11t - ERROR - Exception, 'NoneType' object is not subscriptable
+2019-10-10 14:40:42,106 - OPPO_R11t - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-10-10 14:40:42,116 - OPPO_R11t - INFO - --> PlayAllGame.tearDown
+2019-10-10 14:40:42,116 - OPPO_R11t - INFO - <-- PlayAllGame.tearDown, Success
+

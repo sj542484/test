@@ -4,7 +4,6 @@
 # -----------------------------------------
 import unittest
 from ddt import ddt, data, unpack
-
 from app.honor.student.homework_rebuild.object_pages.homework_data_handle import HomeworkDataHandle
 from testfarm.test_program.app.honor.student.library.object_pages.game_page import LibraryGamePage
 from testfarm.test_program.app.honor.student.library.object_pages.result_page import ResultPage
@@ -35,24 +34,24 @@ class PlayAllGame(unittest.TestCase):
         pass
 
     @data(
-        # [ht.HW1, '闪卡练习'],
+        [ht.HW1, '闪卡练习'],
         # [ht.HW1, '猜词游戏'],
-        # [ht.HW1, '还原单词'],
-        # [ht.HW1, '连连看'],
-        # [ht.HW2, '单项选择'],
+        # [ht.HW1, '还原单词'],  # 最后一组 aa
+        # [ht.HW1, '连连看'],  # print('只有一道题，时间为:', timer[0], '\n')
+        # [ht.HW2, '单项选择'],  # 查看答案 一直滑动
         # [ht.HW2, '单词听写'],
         # [ht.HW2, '连词成句'],
-        # [ht.HW2, '单词拼写'],
-        [ht.HW2, '选词填空'],
+        # [ht.HW2, '单词拼写'],  # 查看答案 一直滑动
+        # [ht.HW2, '选词填空'],
         # [ht.HW3, '词汇选择'],
         # [ht.HW3, '听音选图'],
         # [ht.HW3, '句型转换'],
-        # [ht.HW3, '听后选择'],
+        # [ht.HW3, '听后选择'],  # 页面不滑
         # [ht.HW4, '强化炼句'],
-        # [ht.HW4, '听音连句'],
+        # [ht.HW4, '听音连句'],  # 一直滑
         # [ht.HW4, '完形填空'],
         # [ht.HW4, '阅读理解'],
-        # [ht.HW4, '补全文章'],
+        # [ht.HW4, '补全文章'],  # 失败 （游戏结束后不能够获取字体大小切换钮，向下滑一下）
     )
     @unpack
     @testcase

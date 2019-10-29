@@ -1,0 +1,20 @@
+2019-09-27 17:10:02,166 - HUAWEI_P10_P - INFO - --> PlayAllGame.setUp
+2019-09-27 17:10:02,169 - HUAWEI_P10_P - INFO -   --> LoginPage.app_status
+2019-09-27 17:10:02,331 - HUAWEI_P10_P - INFO -   --> LoginPage.wait_check_page
+2019-09-27 17:10:04,511 - HUAWEI_P10_P - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-27 17:10:04,511 - HUAWEI_P10_P - INFO -   --> LoginPage.login_operate
+2019-09-27 17:10:06,512 - HUAWEI_P10_P - INFO - 	--> LoginPage.input_username
+2019-09-27 17:10:06,621 - HUAWEI_P10_P - INFO - 	--> LoginPage.input_password
+2019-09-27 17:10:08,754 - HUAWEI_P10_P - INFO - 	--> LoginPage.login_button
+2019-09-27 17:10:11,420 - HUAWEI_P10_P - INFO -   <-- LoginPage.login_operate, Success
+2019-09-27 17:10:11,421 - HUAWEI_P10_P - INFO -   <-- LoginPage.app_status, Success
+2019-09-27 17:10:11,422 - HUAWEI_P10_P - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-27 17:10:11,422 - HUAWEI_P10_P - INFO - --> PlayAllGame.test_all_game
+2019-09-27 17:10:11,423 - HUAWEI_P10_P - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 17:10:13,161 - HUAWEI_P10_P - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 17:10:13,161 - HUAWEI_P10_P - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-27 17:10:13,161 - HUAWEI_P10_P - INFO - --> PlayAllGame.tearDown
+2019-09-27 17:10:13,162 - HUAWEI_P10_P - INFO - <-- PlayAllGame.tearDown, Success
+

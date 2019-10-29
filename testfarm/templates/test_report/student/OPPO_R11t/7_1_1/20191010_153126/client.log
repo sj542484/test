@@ -1,0 +1,209 @@
+2019-10-10 15:31:43,420 - OPPO_R11t - INFO - --> PlayAllGame.setUp
+2019-10-10 15:31:43,422 - OPPO_R11t - INFO -   --> LoginPage.app_status
+2019-10-10 15:31:43,482 - OPPO_R11t - INFO -   --> LoginPage.wait_check_page
+2019-10-10 15:31:46,538 - OPPO_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-10-10 15:31:46,539 - OPPO_R11t - INFO -   --> LoginPage.login_operate
+2019-10-10 15:31:48,541 - OPPO_R11t - INFO - 	--> LoginPage.input_username
+2019-10-10 15:31:48,623 - OPPO_R11t - INFO - 	--> LoginPage.input_password
+2019-10-10 15:31:51,840 - OPPO_R11t - INFO - 	--> LoginPage.login_button
+2019-10-10 15:31:54,427 - OPPO_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-10-10 15:31:54,428 - OPPO_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-10-10 15:31:54,428 - OPPO_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-10-10 15:31:54,428 - OPPO_R11t - INFO - --> PlayAllGame.test_all_game
+2019-10-10 15:31:54,429 - OPPO_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-10-10 15:31:55,077 - OPPO_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-10 15:31:55,077 - OPPO_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-10-10 15:31:55,078 - OPPO_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-10-10 15:31:55,175 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-10 15:31:58,642 - OPPO_R11t - INFO - 	--> UserCenterPage.nickname
+2019-10-10 15:32:01,164 - OPPO_R11t - INFO - 	--> UserCenterPage.purchase
+2019-10-10 15:32:01,303 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-10-10 15:32:03,397 - OPPO_R11t - INFO - 	--> UserCenterPage.phone
+2019-10-10 15:32:04,657 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-10 15:32:06,583 - OPPO_R11t - INFO - 	--> UserCenterPage.school_name
+2019-10-10 15:32:07,251 - OPPO_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-10-10 15:32:07,395 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-10-10 15:32:09,492 - OPPO_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-10-10 15:32:12,715 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-10 15:32:13,709 - OPPO_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-10-10 15:32:15,328 - OPPO_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-10-10 15:32:15,814 - OPPO_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-10-10 15:32:16,770 - OPPO_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-10 15:32:16,770 - OPPO_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-10-10 15:32:16,969 - OPPO_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-10-10 15:32:16,970 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-10-10 15:32:18,488 - OPPO_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-10-10 15:32:22,123 - OPPO_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-10-10 15:32:22,696 - OPPO_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-10-10 15:32:24,264 - OPPO_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-10-10 15:32:24,265 - OPPO_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-10-10 15:32:24,593 - OPPO_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-10-10 15:32:24,957 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-10-10 15:32:25,343 - OPPO_R11t - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-10-10 15:32:25,721 - OPPO_R11t - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-10-10 15:32:27,266 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-10-10 15:32:27,323 - OPPO_R11t - INFO - 	--> LibraryGamePage.play_book_games
+2019-10-10 15:32:27,324 - OPPO_R11t - INFO - 	--> LibraryGamePage.game_name
+2019-10-10 15:32:27,538 - OPPO_R11t - INFO - 	--> FlashCard.play_flash_game
+2019-10-10 15:32:27,539 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 15:32:27,582 - OPPO_R11t - INFO -   --> FlashCard.flash_study_operate
+2019-10-10 15:32:27,582 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 15:32:27,637 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 15:32:27,722 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 15:32:27,779 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 15:32:27,780 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 15:32:27,884 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 15:32:27,885 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 15:32:27,946 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 15:32:30,166 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 15:32:30,167 - OPPO_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-10-10 15:32:30,278 - OPPO_R11t - INFO - 	--> FlashCardGame.study_word
+2019-10-10 15:32:31,328 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 15:32:31,392 - OPPO_R11t - INFO - 	--> FlashCardGame.study_word_explain
+2019-10-10 15:32:31,478 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_sentence_page
+2019-10-10 15:32:41,527 - OPPO_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 15:32:42,421 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 15:32:43,079 - OPPO_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 15:32:43,176 - OPPO_R11t - INFO - 	--> FlashCardGame.star_button
+2019-10-10 15:32:43,891 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 15:32:45,486 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 15:32:46,348 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 15:32:46,348 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 15:32:46,456 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 15:32:46,457 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 15:32:46,556 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 15:32:48,887 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 15:32:48,888 - OPPO_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-10-10 15:32:49,033 - OPPO_R11t - INFO - 	--> FlashCardGame.study_word
+2019-10-10 15:32:49,647 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 15:32:49,748 - OPPO_R11t - INFO - 	--> FlashCardGame.study_word_explain
+2019-10-10 15:32:49,865 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_sentence_page
+2019-10-10 15:32:59,926 - OPPO_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 15:33:01,493 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 15:33:02,175 - OPPO_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 15:33:02,308 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 15:33:03,780 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 15:33:04,656 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 15:33:04,656 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 15:33:04,762 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 15:33:04,762 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 15:33:04,870 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 15:33:06,733 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 15:33:06,733 - OPPO_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-10-10 15:33:06,897 - OPPO_R11t - INFO - 	--> FlashCardGame.study_word
+2019-10-10 15:33:07,526 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 15:33:07,630 - OPPO_R11t - INFO - 	--> FlashCardGame.study_word_explain
+2019-10-10 15:33:07,760 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_sentence_page
+2019-10-10 15:33:07,856 - OPPO_R11t - INFO - 	--> FlashCardGame.study_sentence
+2019-10-10 15:33:07,976 - OPPO_R11t - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-10-10 15:33:08,096 - OPPO_R11t - INFO - 	--> FlashCardGame.author
+2019-10-10 15:33:08,212 - OPPO_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 15:33:08,344 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 15:33:09,834 - OPPO_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 15:33:09,953 - OPPO_R11t - INFO - 	--> FlashCardGame.star_button
+2019-10-10 15:33:10,678 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 15:33:12,958 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 15:33:13,821 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 15:33:13,821 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 15:33:14,451 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 15:33:14,451 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 15:33:14,548 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 15:33:16,429 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 15:33:16,429 - OPPO_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-10-10 15:33:16,590 - OPPO_R11t - INFO - 	--> FlashCardGame.study_word
+2019-10-10 15:33:17,194 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 15:33:17,277 - OPPO_R11t - INFO - 	--> FlashCardGame.study_word_explain
+2019-10-10 15:33:17,415 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_sentence_page
+2019-10-10 15:33:17,507 - OPPO_R11t - INFO - 	--> FlashCardGame.study_sentence
+2019-10-10 15:33:17,624 - OPPO_R11t - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-10-10 15:33:17,745 - OPPO_R11t - INFO - 	--> FlashCardGame.author
+2019-10-10 15:33:17,842 - OPPO_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 15:33:19,532 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 15:33:19,609 - OPPO_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 15:33:19,748 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 15:33:20,547 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 15:33:21,943 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 15:33:21,944 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 15:33:22,548 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 15:33:22,548 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 15:33:22,659 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 15:33:24,982 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 15:33:24,982 - OPPO_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-10-10 15:33:25,135 - OPPO_R11t - INFO - 	--> FlashCardGame.study_word
+2019-10-10 15:33:25,993 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 15:33:26,084 - OPPO_R11t - INFO - 	--> FlashCardGame.study_word_explain
+2019-10-10 15:33:26,182 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_sentence_page
+2019-10-10 15:33:26,258 - OPPO_R11t - INFO - 	--> FlashCardGame.study_sentence
+2019-10-10 15:33:26,389 - OPPO_R11t - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-10-10 15:33:26,518 - OPPO_R11t - INFO - 	--> FlashCardGame.author
+2019-10-10 15:33:26,645 - OPPO_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 15:33:28,222 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 15:33:28,875 - OPPO_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 15:33:28,972 - OPPO_R11t - INFO - 	--> FlashCardGame.star_button
+2019-10-10 15:33:29,691 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 15:33:34,186 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 15:33:34,834 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 15:33:34,834 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 15:33:34,927 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 15:33:34,928 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 15:33:34,982 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 15:33:37,291 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 15:33:37,291 - OPPO_R11t - INFO - 	--> FlashCardGame.click_voice
+2019-10-10 15:33:37,426 - OPPO_R11t - INFO - 	--> FlashCardGame.study_word
+2019-10-10 15:33:38,010 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 15:33:38,064 - OPPO_R11t - INFO - 	--> FlashCardGame.study_word_explain
+2019-10-10 15:33:38,145 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_sentence_page
+2019-10-10 15:33:48,489 - OPPO_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 15:33:49,405 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 15:33:50,058 - OPPO_R11t - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 15:33:50,161 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 15:33:50,890 - OPPO_R11t - INFO -   <-- FlashCard.flash_study_operate, Success
+2019-10-10 15:33:50,891 - OPPO_R11t - INFO -   --> FlashCard.flash_card_result_operate
+2019-10-10 15:33:50,892 - OPPO_R11t - INFO - 	--> ResultPage.wait_check_medal_page
+2019-10-10 15:34:00,952 - OPPO_R11t - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-10-10 15:34:01,810 - OPPO_R11t - INFO - 	--> FlashCard.study_sum
+2019-10-10 15:34:01,910 - OPPO_R11t - INFO - 	--> FlashCard.get_start_sum
+2019-10-10 15:34:01,911 - OPPO_R11t - INFO - 	--> FlashCard.study_sum
+2019-10-10 15:34:02,051 - OPPO_R11t - INFO - 	--> FlashCard.cancel_or_add_star
+2019-10-10 15:34:02,052 - OPPO_R11t - INFO - 	--> FlashCard.result_words
+2019-10-10 15:34:02,252 - OPPO_R11t - INFO - 	--> FlashCard.word_voice
+2019-10-10 15:34:02,583 - OPPO_R11t - INFO - 	--> FlashCard.word_explain
+2019-10-10 15:34:02,964 - OPPO_R11t - INFO - 	--> FlashCard.word_star
+2019-10-10 15:34:04,694 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-10 15:34:06,242 - OPPO_R11t - INFO - 	--> FlashCard.word_voice
+2019-10-10 15:34:07,578 - OPPO_R11t - INFO - 	--> FlashCard.word_explain
+2019-10-10 15:34:07,953 - OPPO_R11t - INFO - 	--> FlashCard.word_star
+2019-10-10 15:34:08,366 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-10 15:34:11,273 - OPPO_R11t - INFO - 	--> FlashCard.word_voice
+2019-10-10 15:34:11,586 - OPPO_R11t - INFO - 	--> FlashCard.word_explain
+2019-10-10 15:34:11,874 - OPPO_R11t - INFO - 	--> FlashCard.word_star
+2019-10-10 15:34:12,218 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-10 15:34:16,097 - OPPO_R11t - INFO - 	--> FlashCard.result_words
+2019-10-10 15:34:16,880 - OPPO_R11t - INFO - 	--> FlashCard.word_voice
+2019-10-10 15:34:17,283 - OPPO_R11t - INFO - 	--> FlashCard.word_explain
+2019-10-10 15:34:17,687 - OPPO_R11t - INFO - 	--> FlashCard.word_star
+2019-10-10 15:34:18,031 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-10 15:34:20,894 - OPPO_R11t - INFO - 	--> FlashCard.word_voice
+2019-10-10 15:34:21,256 - OPPO_R11t - INFO - 	--> FlashCard.word_explain
+2019-10-10 15:34:21,652 - OPPO_R11t - INFO - 	--> FlashCard.word_star
+2019-10-10 15:34:22,893 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-10 15:34:25,242 - OPPO_R11t - INFO - 	--> FlashCard.result_words
+2019-10-10 15:34:29,270 - OPPO_R11t - INFO - 	--> FlashCard.word_voice
+2019-10-10 15:34:29,610 - OPPO_R11t - INFO - 	--> FlashCard.word_explain
+2019-10-10 15:34:29,976 - OPPO_R11t - INFO - 	--> FlashCard.word_star
+2019-10-10 15:34:30,330 - OPPO_R11t - INFO - 	--> GetAttribute.selected
+2019-10-10 15:34:32,302 - OPPO_R11t - ERROR - Exception, list.remove(x): x not in list
+2019-10-10 15:34:32,303 - OPPO_R11t - ERROR - 	<-- FlashCard.cancel_or_add_star, Exception, Error
+2019-10-10 15:34:32,996 - OPPO_R11t - ERROR - Exception, IMAGE:FlashCard.cancel_or_add_star-20191010153432.png
+2019-10-10 15:34:32,996 - OPPO_R11t - ERROR -   <-- FlashCard.flash_card_result_operate, Exception, Error
+2019-10-10 15:34:32,997 - OPPO_R11t - ERROR - Exception, IMAGE:FlashCard.cancel_or_add_star-20191010153432.png
+2019-10-10 15:34:32,997 - OPPO_R11t - ERROR - 	<-- FlashCard.play_flash_game, Exception, Error
+2019-10-10 15:34:32,998 - OPPO_R11t - ERROR - Exception, IMAGE:FlashCard.cancel_or_add_star-20191010153432.png
+2019-10-10 15:34:32,998 - OPPO_R11t - ERROR - 	<-- LibraryGamePage.play_book_games, Exception, Error
+2019-10-10 15:34:32,999 - OPPO_R11t - ERROR - Exception, IMAGE:FlashCard.cancel_or_add_star-20191010153432.png
+2019-10-10 15:34:32,999 - OPPO_R11t - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-10-10 15:34:32,999 - OPPO_R11t - INFO - --> PlayAllGame.tearDown
+2019-10-10 15:34:33,000 - OPPO_R11t - INFO - <-- PlayAllGame.tearDown, Success
+

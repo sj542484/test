@@ -1,0 +1,216 @@
+2019-10-10 13:24:28,661 - OPPO_R11t - INFO - --> PlayAllGame.setUp
+2019-10-10 13:24:28,663 - OPPO_R11t - INFO -   --> LoginPage.app_status
+2019-10-10 13:24:28,748 - OPPO_R11t - INFO -   --> LoginPage.wait_check_page
+2019-10-10 13:24:32,587 - OPPO_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-10-10 13:24:32,588 - OPPO_R11t - INFO -   --> LoginPage.login_operate
+2019-10-10 13:24:34,590 - OPPO_R11t - INFO - 	--> LoginPage.input_username
+2019-10-10 13:24:35,618 - OPPO_R11t - INFO - 	--> LoginPage.input_password
+2019-10-10 13:24:38,178 - OPPO_R11t - INFO - 	--> LoginPage.login_button
+2019-10-10 13:24:40,813 - OPPO_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-10-10 13:24:40,816 - OPPO_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-10-10 13:24:40,817 - OPPO_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-10-10 13:24:40,817 - OPPO_R11t - INFO - --> PlayAllGame.test_all_game
+2019-10-10 13:24:40,818 - OPPO_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-10-10 13:24:42,337 - OPPO_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-10 13:24:42,338 - OPPO_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-10-10 13:24:42,338 - OPPO_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-10-10 13:24:42,540 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-10 13:24:45,701 - OPPO_R11t - INFO - 	--> UserCenterPage.nickname
+2019-10-10 13:24:48,238 - OPPO_R11t - INFO - 	--> UserCenterPage.purchase
+2019-10-10 13:24:48,478 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-10-10 13:24:51,371 - OPPO_R11t - INFO - 	--> UserCenterPage.phone
+2019-10-10 13:24:52,699 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-10 13:24:54,349 - OPPO_R11t - INFO - 	--> UserCenterPage.school_name
+2019-10-10 13:24:54,494 - OPPO_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-10-10 13:24:54,704 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-10-10 13:24:56,962 - OPPO_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-10-10 13:25:00,186 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-10 13:25:01,831 - OPPO_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-10-10 13:25:03,522 - OPPO_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-10-10 13:25:03,609 - OPPO_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-10-10 13:25:04,864 - OPPO_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-10 13:25:04,865 - OPPO_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-10-10 13:25:05,063 - OPPO_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-10-10 13:25:05,064 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-10-10 13:25:06,311 - OPPO_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-10-10 13:25:10,047 - OPPO_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-10-10 13:25:12,183 - OPPO_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-10-10 13:25:13,389 - OPPO_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-10-10 13:25:13,390 - OPPO_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-10-10 13:25:16,138 - OPPO_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-10-10 13:25:16,644 - OPPO_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-10-10 13:25:17,028 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-10-10 13:25:17,119 - OPPO_R11t - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-10-10 13:25:18,246 - OPPO_R11t - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-10-10 13:25:18,586 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-10-10 13:25:21,983 - OPPO_R11t - INFO - 	--> LibraryGamePage.play_book_games
+2019-10-10 13:25:21,984 - OPPO_R11t - INFO - 	--> LibraryGamePage.game_name
+2019-10-10 13:25:22,187 - OPPO_R11t - INFO -   --> RestoreWord.restore_word_operate
+2019-10-10 13:25:22,187 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 13:25:22,278 - OPPO_R11t - INFO - 	--> RestoreWordGame.wait_restore_word_explain_page
+2019-10-10 13:25:22,335 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 13:25:22,335 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 13:25:22,432 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_explain
+2019-10-10 13:25:24,384 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 13:25:24,385 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:25:24,441 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 13:25:26,014 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 13:25:26,014 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:25:26,239 - OPPO_R11t - INFO -   --> RestoreWordGame.drag_operate
+2019-10-10 13:25:26,240 - OPPO_R11t - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-10 13:25:26,323 - OPPO_R11t - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-10 13:25:28,433 - OPPO_R11t - INFO - 	--> RestoreWordGame.button_swipe
+2019-10-10 13:25:30,700 - OPPO_R11t - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-10-10 13:25:30,701 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:25:34,082 - OPPO_R11t - INFO -   --> PublicPage.next_btn_operate
+2019-10-10 13:25:34,082 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 13:25:34,083 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:25:34,143 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 13:25:36,977 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 13:25:36,978 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:25:39,556 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-10-10 13:25:39,561 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:25:40,025 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 13:25:40,149 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-10 13:25:42,991 - OPPO_R11t - INFO - 	--> RestoreWordGame.wait_restore_word_explain_page
+2019-10-10 13:25:43,063 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 13:25:43,064 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 13:25:43,145 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_explain
+2019-10-10 13:25:43,235 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 13:25:43,236 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:25:43,292 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 13:25:45,974 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 13:25:45,974 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:25:49,081 - OPPO_R11t - INFO -   --> RestoreWordGame.drag_operate
+2019-10-10 13:25:49,082 - OPPO_R11t - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-10 13:25:50,001 - OPPO_R11t - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-10 13:25:50,080 - OPPO_R11t - INFO - 	--> RestoreWordGame.button_swipe
+2019-10-10 13:25:52,377 - OPPO_R11t - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-10-10 13:25:52,378 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:25:53,165 - OPPO_R11t - INFO -   --> PublicPage.next_btn_operate
+2019-10-10 13:25:53,166 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 13:25:53,166 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:25:53,225 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 13:25:54,969 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 13:25:54,969 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:25:56,603 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-10-10 13:25:56,604 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:25:57,967 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 13:25:58,082 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-10 13:26:00,990 - OPPO_R11t - INFO - 	--> RestoreWordGame.wait_restore_word_explain_page
+2019-10-10 13:26:01,981 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 13:26:01,982 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 13:26:02,071 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_explain
+2019-10-10 13:26:02,166 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 13:26:02,167 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:26:02,219 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 13:26:03,959 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 13:26:03,960 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:26:04,176 - OPPO_R11t - INFO -   --> RestoreWordGame.drag_operate
+2019-10-10 13:26:04,177 - OPPO_R11t - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-10 13:26:04,264 - OPPO_R11t - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-10 13:26:04,345 - OPPO_R11t - INFO - 	--> RestoreWordGame.button_swipe
+2019-10-10 13:26:06,636 - OPPO_R11t - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-10-10 13:26:06,637 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:26:08,305 - OPPO_R11t - INFO -   --> PublicPage.next_btn_operate
+2019-10-10 13:26:08,305 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 13:26:08,306 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:26:08,365 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 13:26:10,013 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 13:26:10,014 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:26:12,492 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-10-10 13:26:12,493 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:26:13,221 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 13:26:13,340 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-10 13:26:16,091 - OPPO_R11t - INFO - 	--> RestoreWordGame.wait_restore_word_explain_page
+2019-10-10 13:26:16,160 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 13:26:16,161 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 13:26:16,254 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_explain
+2019-10-10 13:26:16,342 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 13:26:16,343 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:26:16,400 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 13:26:17,950 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 13:26:17,950 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:26:19,976 - OPPO_R11t - INFO -   --> RestoreWordGame.drag_operate
+2019-10-10 13:26:19,976 - OPPO_R11t - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-10 13:26:20,042 - OPPO_R11t - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-10 13:26:20,108 - OPPO_R11t - INFO - 	--> RestoreWordGame.button_swipe
+2019-10-10 13:26:22,392 - OPPO_R11t - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-10-10 13:26:22,392 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:26:23,089 - OPPO_R11t - INFO -   --> PublicPage.next_btn_operate
+2019-10-10 13:26:23,089 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 13:26:23,090 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:26:23,147 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 13:26:25,969 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 13:26:25,969 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:26:27,588 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-10-10 13:26:27,589 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:26:28,327 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 13:26:28,440 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-10 13:26:31,974 - OPPO_R11t - INFO - 	--> RestoreWordGame.wait_restore_word_explain_page
+2019-10-10 13:26:32,108 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 13:26:32,108 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 13:26:33,017 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_explain
+2019-10-10 13:26:33,095 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 13:26:33,096 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:26:33,144 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 13:26:34,956 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 13:26:34,956 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:26:35,116 - OPPO_R11t - INFO -   --> RestoreWordGame.drag_operate
+2019-10-10 13:26:35,116 - OPPO_R11t - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-10 13:26:35,186 - OPPO_R11t - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-10 13:26:35,264 - OPPO_R11t - INFO - 	--> RestoreWordGame.button_swipe
+2019-10-10 13:26:37,559 - OPPO_R11t - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-10-10 13:26:37,560 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:26:38,079 - OPPO_R11t - INFO -   --> PublicPage.next_btn_operate
+2019-10-10 13:26:38,079 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 13:26:38,080 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:26:38,139 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 13:26:40,436 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 13:26:40,437 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:26:43,538 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-10-10 13:26:43,539 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:26:44,016 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 13:26:44,145 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-10 13:26:46,981 - OPPO_R11t - INFO - 	--> RestoreWordGame.wait_restore_word_explain_page
+2019-10-10 13:26:47,042 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 13:26:47,042 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 13:26:47,126 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_explain
+2019-10-10 13:26:47,205 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 13:26:47,205 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:26:47,258 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 13:26:49,961 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 13:26:49,961 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:26:51,050 - OPPO_R11t - INFO -   --> RestoreWordGame.drag_operate
+2019-10-10 13:26:51,051 - OPPO_R11t - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-10 13:26:51,124 - OPPO_R11t - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-10 13:26:52,967 - OPPO_R11t - INFO - 	--> RestoreWordGame.button_swipe
+2019-10-10 13:26:55,236 - OPPO_R11t - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-10-10 13:26:55,237 - OPPO_R11t - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-10 13:26:56,057 - OPPO_R11t - INFO -   --> PublicPage.next_btn_operate
+2019-10-10 13:26:56,057 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 13:26:56,058 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:26:56,109 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-10 13:26:58,999 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 13:26:58,999 - OPPO_R11t - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-10 13:27:00,619 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-10-10 13:27:00,620 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 13:27:04,341 - OPPO_R11t - INFO -   --> LibraryPubicPage.judge_timer
+2019-10-10 13:27:04,342 - OPPO_R11t - INFO -   <-- LibraryPubicPage.judge_timer, Success
+2019-10-10 13:27:04,342 - OPPO_R11t - INFO -   <-- RestoreWord.restore_word_operate, Success
+2019-10-10 13:27:04,342 - OPPO_R11t - INFO - 	--> ResultPage.wait_check_medal_page
+2019-10-10 13:27:14,469 - OPPO_R11t - INFO - 	--> LibraryGamePage.check_bank_result
+2019-10-10 13:27:14,470 - OPPO_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-10-10 13:27:24,513 - OPPO_R11t - INFO - 	--> ResultPage.result_multi_data_check
+2019-10-10 13:27:24,514 - OPPO_R11t - INFO - 	--> ResultPage.wait_check_result_page
+2019-10-10 13:27:29,941 - OPPO_R11t - ERROR - Exception, 'int' object is not subscriptable
+2019-10-10 13:27:29,942 - OPPO_R11t - ERROR - 	<-- ResultPage.result_multi_data_check, Exception, Error
+2019-10-10 13:27:30,629 - OPPO_R11t - ERROR - Exception, IMAGE:ResultPage.result_multi_data_check-20191010132729.png
+2019-10-10 13:27:30,630 - OPPO_R11t - ERROR - 	<-- LibraryGamePage.play_book_games, Exception, Error
+2019-10-10 13:27:30,630 - OPPO_R11t - ERROR - Exception, IMAGE:ResultPage.result_multi_data_check-20191010132729.png
+2019-10-10 13:27:30,630 - OPPO_R11t - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-10-10 13:27:30,631 - OPPO_R11t - INFO - --> PlayAllGame.tearDown
+2019-10-10 13:27:30,631 - OPPO_R11t - INFO - <-- PlayAllGame.tearDown, Success
+

@@ -1,0 +1,111 @@
+2019-10-08 16:17:30,403 - OPPO_R11t - INFO - --> PlayAllGame.setUp
+2019-10-08 16:17:30,404 - OPPO_R11t - INFO -   --> LoginPage.app_status
+2019-10-08 16:17:30,470 - OPPO_R11t - INFO -   --> LoginPage.wait_check_page
+2019-10-08 16:17:33,515 - OPPO_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-10-08 16:17:33,515 - OPPO_R11t - INFO -   --> LoginPage.login_operate
+2019-10-08 16:17:35,517 - OPPO_R11t - INFO - 	--> LoginPage.input_username
+2019-10-08 16:17:36,132 - OPPO_R11t - INFO - 	--> LoginPage.input_password
+2019-10-08 16:17:37,984 - OPPO_R11t - INFO - 	--> LoginPage.login_button
+2019-10-08 16:17:41,261 - OPPO_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-10-08 16:17:41,262 - OPPO_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-10-08 16:17:41,262 - OPPO_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-10-08 16:17:41,263 - OPPO_R11t - INFO - --> PlayAllGame.test_all_game
+2019-10-08 16:17:41,263 - OPPO_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-10-08 16:17:42,816 - OPPO_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-08 16:17:42,816 - OPPO_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-10-08 16:17:42,817 - OPPO_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-10-08 16:17:43,031 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-08 16:17:46,014 - OPPO_R11t - INFO - 	--> UserCenterPage.nickname
+2019-10-08 16:17:48,566 - OPPO_R11t - INFO - 	--> UserCenterPage.purchase
+2019-10-08 16:17:48,721 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-10-08 16:17:50,277 - OPPO_R11t - INFO - 	--> UserCenterPage.phone
+2019-10-08 16:17:52,601 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-08 16:17:54,361 - OPPO_R11t - INFO - 	--> UserCenterPage.school_name
+2019-10-08 16:17:54,505 - OPPO_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-10-08 16:17:54,640 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-10-08 16:17:56,171 - OPPO_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-10-08 16:17:59,391 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-08 16:18:01,246 - OPPO_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-10-08 16:18:01,406 - OPPO_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-10-08 16:18:01,669 - OPPO_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-10-08 16:18:03,960 - OPPO_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-08 16:18:03,960 - OPPO_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-10-08 16:18:04,176 - OPPO_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-10-08 16:18:04,177 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-10-08 16:18:05,307 - OPPO_R11t - INFO - 	--> LibraryGamePage.homework_list
+2019-10-08 16:18:06,707 - OPPO_R11t - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-10-08 16:18:07,699 - OPPO_R11t - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-10-08 16:18:07,700 - OPPO_R11t - INFO - 	--> LibraryGamePage.testbank_type
+2019-10-08 16:18:08,473 - OPPO_R11t - INFO - 	--> LibraryGamePage.testbank_name
+2019-10-08 16:18:08,722 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-10-08 16:18:09,639 - OPPO_R11t - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-10-08 16:18:09,914 - OPPO_R11t - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-10-08 16:18:10,199 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-10-08 16:18:13,141 - OPPO_R11t - INFO - 	--> LibraryGamePage.play_book_games
+2019-10-08 16:18:13,142 - OPPO_R11t - INFO - 	--> LibraryGamePage.game_name
+2019-10-08 16:18:13,425 - OPPO_R11t - INFO -   --> CompleteArticle.complete_article_operate
+2019-10-08 16:18:13,426 - OPPO_R11t - INFO - 	--> CompleteArticleGame.wait_check_complete_article_page
+2019-10-08 16:18:13,522 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 16:18:14,113 - OPPO_R11t - INFO - 	--> PublicPage.rich_text
+2019-10-08 16:18:14,298 - OPPO_R11t - INFO - 	--> PublicPage.drag_btn
+2019-10-08 16:18:15,627 - OPPO_R11t - INFO -   --> PublicPage.next_btn_judge
+2019-10-08 16:18:15,630 - OPPO_R11t - INFO - 	--> PublicPage.fab_next_btn
+2019-10-08 16:18:16,162 - OPPO_R11t - INFO - 	--> GetAttribute.enabled
+2019-10-08 16:18:19,105 - OPPO_R11t - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-08 16:18:19,105 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 16:18:19,106 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 16:18:19,224 - OPPO_R11t - INFO - 	--> PublicPage.opt_text
+2019-10-08 16:18:19,370 - OPPO_R11t - INFO - 	--> PublicPage.opt_char
+2019-10-08 16:18:19,524 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 16:18:20,502 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 16:18:20,502 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 16:18:22,103 - OPPO_R11t - INFO - 	--> PublicPage.opt_text
+2019-10-08 16:18:22,250 - OPPO_R11t - INFO - 	--> PublicPage.opt_char
+2019-10-08 16:18:22,394 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 16:18:23,319 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 16:18:23,320 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 16:18:23,486 - OPPO_R11t - INFO - 	--> PublicPage.opt_text
+2019-10-08 16:18:25,102 - OPPO_R11t - INFO - 	--> PublicPage.opt_char
+2019-10-08 16:18:25,252 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 16:18:26,316 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 16:18:26,317 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 16:18:26,421 - OPPO_R11t - INFO - 	--> PublicPage.opt_text
+2019-10-08 16:18:26,553 - OPPO_R11t - INFO - 	--> PublicPage.opt_char
+2019-10-08 16:18:28,135 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 16:18:29,236 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-08 16:18:29,237 - OPPO_R11t - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-08 16:18:29,352 - OPPO_R11t - INFO - 	--> PublicPage.opt_text
+2019-10-08 16:18:29,498 - OPPO_R11t - INFO - 	--> PublicPage.opt_char
+2019-10-08 16:18:31,123 - OPPO_R11t - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-08 16:18:32,197 - OPPO_R11t - INFO -   --> LibraryPubicPage.judge_timer
+2019-10-08 16:18:32,198 - OPPO_R11t - INFO -   <-- LibraryPubicPage.judge_timer, Success
+2019-10-08 16:18:32,198 - OPPO_R11t - INFO - 	--> PublicPage.drag_btn
+2019-10-08 16:18:33,651 - OPPO_R11t - INFO -   --> PublicPage.check_position_change
+2019-10-08 16:18:33,651 - OPPO_R11t - INFO - 	--> PublicPage.wait_check_keyboard_page
+2019-10-08 16:18:48,674 - OPPO_R11t - INFO - 	--> PublicPage.font_large
+2019-10-08 16:18:49,217 - OPPO_R11t - ERROR - WebDriverException, Message: An element could not be located on the page using the given search parameters.
+
+2019-10-08 16:18:49,218 - OPPO_R11t - ERROR - 	<-- PublicPage.font_large, WebDriverException, Error
+2019-10-08 16:18:49,974 - OPPO_R11t - ERROR - WebDriverException, Message: IMAGE:PublicPage.font_large-20191008161849.png
+
+2019-10-08 16:18:49,975 - OPPO_R11t - ERROR -   <-- PublicPage.check_position_change, WebDriverException, Error
+2019-10-08 16:18:49,975 - OPPO_R11t - ERROR - WebDriverException, Message: Message: IMAGE:PublicPage.font_large-20191008161849.png
+
+
+2019-10-08 16:18:49,976 - OPPO_R11t - ERROR -   <-- CompleteArticle.complete_article_operate, WebDriverException, Error
+2019-10-08 16:18:49,976 - OPPO_R11t - ERROR - WebDriverException, Message: Message: Message: IMAGE:PublicPage.font_large-20191008161849.png
+
+
+
+2019-10-08 16:18:49,976 - OPPO_R11t - ERROR - 	<-- LibraryGamePage.play_book_games, WebDriverException, Error
+2019-10-08 16:18:49,976 - OPPO_R11t - ERROR - WebDriverException, Message: Message: Message: Message: IMAGE:PublicPage.font_large-20191008161849.png
+
+
+
+
+2019-10-08 16:18:49,977 - OPPO_R11t - ERROR - <-- PlayAllGame.test_all_game, WebDriverException, Error
+
+2019-10-08 16:18:49,977 - OPPO_R11t - INFO - --> PlayAllGame.tearDown
+2019-10-08 16:18:49,977 - OPPO_R11t - INFO - <-- PlayAllGame.tearDown, Success
+

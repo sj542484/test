@@ -4,7 +4,7 @@
         td {border:1px solid green;border-radius:3px;height:40px;width:200px;text-align:center;text-valign:middle;font-size:16px;color:#444;}
         button {border:none;font-size:16px;}
         select {width:180px;height:40px;border:0;font-size:16px;color:#808080;background-color:#fff;}
-        input {width:180px;height:40px;text-align:center;font-size:16px;color:#808080;}
+        input {width:80px;height:40px;text-align:center;font-size:16px;color:#808080;}
 {% endblock %}
 {% block head %}
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,6 +67,7 @@
 								<th class="column100 column8" data-column="column8">运行状态</th>
 								<th class="column100 column9" data-column="column9">设备状态</th>
 								<th class="column100 column10" data-column="column10">报告文件</th>
+								<th class="column100 column11" data-column="column11">显示手机</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -93,21 +94,21 @@
                                             </select>
                                         </div>
                                     </td>
-                                    <td class="column100 column6" data-column="column7">
+                                    <td class="column100 column7" data-column="column7">
                                         <div>
                                             <select id="child" name="child">
                                                 <option value="0">请选择</option>
                                             </select>
                                         </div>
                                     </td>
-                                    <td class="column100 column6" data-column="column8">
+                                    <td class="column100 column8" data-column="column8">
                                         {% if i.start_but_statue == 0 %}
                                             <button type="submit" style="color:#3b3">开始运行</button>
                                         {% else %}
                                             <a href="{% url 'stopserver' i.gid i.equipment_uuid %}" style="font-size:14px;color:red">终止运行</a>
                                         {% endif %}
                                     </td>
-                                    <td class="column100 column6" data-column="column9">
+                                    <td class="column100 column9" data-column="column9">
                                         {% if i.statue_statue == 0 %}
                                             <span name="statue" style="color:#39f">等待运行</span>
                                         {% elif i.statue_statue == 2 %}
@@ -116,12 +117,15 @@
                                         <span name="statue" style="color:#3b3">运行中</span>
                                         {% endif %}
                                     </td>
-                                    <td class="column100 column6" data-column="column10">
+                                    <td class="column100 column10" data-column="column10">
                                         {% if i.report != None %}
                                         <a target="_blank" href="{% url 'showreport' i.report  %}" style="color:#3b3;">查看报告</a>
                                         {% elif i.report == None %}
                                         <span style="color:red">暂无报告</span>
                                         {% endif %}
+                                    </td>
+                                    <td class="column100 column11" data-column="column11">
+                                        <a target="_blank" href="http://localhost:7100/#!/control/{{ i.equipment_uuid }}" style="color:#3b3;">显示手机</a>
                                     </td>
                                 </tr>
                             </form>
@@ -157,9 +161,6 @@
     var pro=["学生端","教师端","校长端","家长端"];
     var city=[["全部","登录","习题","每日一听","单词本","试卷","个人中心","图书馆","班级"],["全部","班级","登陆","游戏","题库","个人中心-全部","个人中心-消息","个人中心-我的收藏","个人中心-我的推荐","个人中心-我的题库","个人中心-设置","个人中心-微课","个人中心-用户信息"],["全部","数据报告","功能介绍","我的账号","我的学校","老师管理"],["全部","学习报告","购买","账号管理"]];
 
-    <!--var pro=["学生端"];-->
-    <!--var city=[["单词本"]];-->
-
     function readyLoad() {
         var list = document.getElementsByName('parent');
         <!--console.log(list);-->
@@ -173,7 +174,6 @@
 
     function choose(e){
         var index=$(e).val()-1;//获取当前省的下标
-        <!--console.log(index)-->
         $(e.parentNode.parentNode.parentNode.childNodes[11].firstChild.nextSibling.firstChild.nextSibling).prop("length",1);//清空原有的数据
         for(var i=0;i<city[index].length;i++){//重新为市赋值
             $(e.parentNode.parentNode.parentNode.childNodes[11].firstChild.nextSibling.firstChild.nextSibling).append($("<option>").val(i+1).html(city[index][i]));
@@ -181,26 +181,6 @@
     };
 
     <!--setTimeout("location.href='/devices'",10000)-->
-
-    <!--function st(uuid){-->
-        <!--console.log(uuid,'uuid')-->
-        <!--$.ajax({-->
-            <!--type: "POST",-->
-            <!--url:'/startservices',-->
-            <!--contentType: "application/x-www-form-urlencoded",-->
-            <!--data:{uuid:uuid},-->
-            <!--async: false,-->
-            <!--success: function(msg){-->
-                <!--alert('ok!!!');-->
-            <!--},-->
-            <!--error: function(msg){-->
-                <!--console.log(JSON.stringify(msg));-->
-            <!--}-->
-    <!--});-->
-    <!--}-->
-
-
-
 
 </script>
 {% endblock %}

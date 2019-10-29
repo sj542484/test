@@ -1,0 +1,19 @@
+2019-10-10 14:41:41,204 - Honor_9 - INFO - --> PlayAllGame.setUp
+2019-10-10 14:41:41,206 - Honor_9 - INFO -   --> LoginPage.app_status
+2019-10-10 14:41:41,314 - Honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-10-10 14:41:44,073 - Honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-10-10 14:41:44,073 - Honor_9 - INFO -   --> LoginPage.login_operate
+2019-10-10 14:41:46,074 - Honor_9 - INFO - 	--> LoginPage.input_username
+2019-10-10 14:41:46,103 - Honor_9 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-10-10 14:41:46,104 - Honor_9 - ERROR - 	<-- LoginPage.input_username, WebDriverException, Error
+2019-10-10 14:41:46,116 - Honor_9 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-10-10 14:41:46,117 - Honor_9 - ERROR -   <-- LoginPage.login_operate, WebDriverException, Error
+2019-10-10 14:41:46,130 - Honor_9 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-10-10 14:41:46,130 - Honor_9 - ERROR -   <-- LoginPage.app_status, WebDriverException, Error
+2019-10-10 14:41:46,141 - Honor_9 - ERROR - WebDriverException, Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-10-10 14:41:46,141 - Honor_9 - ERROR - <-- PlayAllGame.setUp, WebDriverException, Error
+

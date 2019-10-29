@@ -1,0 +1,41 @@
+2019-10-10 15:44:55,558 - OPPO_R11t - INFO - --> PlayAllGame.setUp
+2019-10-10 15:44:55,561 - OPPO_R11t - INFO -   --> LoginPage.app_status
+2019-10-10 15:44:55,650 - OPPO_R11t - INFO -   --> LoginPage.wait_check_page
+2019-10-10 15:44:58,703 - OPPO_R11t - INFO -   <-- LoginPage.wait_check_page, Success
+2019-10-10 15:44:58,705 - OPPO_R11t - INFO -   --> LoginPage.login_operate
+2019-10-10 15:45:00,706 - OPPO_R11t - INFO - 	--> LoginPage.input_username
+2019-10-10 15:45:01,751 - OPPO_R11t - INFO - 	--> LoginPage.input_password
+2019-10-10 15:45:03,581 - OPPO_R11t - INFO - 	--> LoginPage.login_button
+2019-10-10 15:45:06,873 - OPPO_R11t - INFO -   <-- LoginPage.login_operate, Success
+2019-10-10 15:45:06,874 - OPPO_R11t - INFO -   <-- LoginPage.app_status, Success
+2019-10-10 15:45:06,874 - OPPO_R11t - INFO - <-- PlayAllGame.setUp, Success
+
+2019-10-10 15:45:06,875 - OPPO_R11t - INFO - --> PlayAllGame.test_all_game
+2019-10-10 15:45:06,875 - OPPO_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-10-10 15:45:08,480 - OPPO_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-10 15:45:08,480 - OPPO_R11t - INFO - 	--> UserCenterPage.get_user_info
+2019-10-10 15:45:08,481 - OPPO_R11t - INFO - 	--> HomePage.click_tab_profile
+2019-10-10 15:45:08,719 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-10 15:45:11,638 - OPPO_R11t - INFO - 	--> UserCenterPage.nickname
+2019-10-10 15:45:14,138 - OPPO_R11t - INFO - 	--> UserCenterPage.purchase
+2019-10-10 15:45:14,513 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-10-10 15:45:17,473 - OPPO_R11t - INFO - 	--> UserCenterPage.phone
+2019-10-10 15:45:18,802 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-10 15:45:20,829 - OPPO_R11t - INFO - 	--> UserCenterPage.school_name
+2019-10-10 15:45:20,949 - OPPO_R11t - INFO - 	--> UserCenterPage.setting_up
+2019-10-10 15:45:21,105 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-10-10 15:45:23,543 - OPPO_R11t - INFO - 	--> UserCenterPage.clear_cache
+2019-10-10 15:45:26,769 - OPPO_R11t - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-10 15:45:28,565 - OPPO_R11t - INFO - 	--> HomePage.click_tab_hw
+2019-10-10 15:45:30,020 - OPPO_R11t - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-10-10 15:45:30,226 - OPPO_R11t - INFO -   --> HomePage.wait_check_home_page
+2019-10-10 15:45:32,442 - OPPO_R11t - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-10 15:45:32,442 - OPPO_R11t - INFO - 	--> HomePage.click_hk_tab
+2019-10-10 15:45:32,670 - OPPO_R11t - INFO - 	--> LibraryGamePage.enter_into_game
+2019-10-10 15:45:32,671 - OPPO_R11t - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-10-10 15:45:43,354 - OPPO_R11t - ERROR - Exception, object of type 'int' has no len()
+2019-10-10 15:45:43,358 - OPPO_R11t - ERROR - <-- PlayAllGame.test_all_game, Exception, Error
+
+2019-10-10 15:45:44,320 - OPPO_R11t - INFO - --> PlayAllGame.tearDown
+2019-10-10 15:45:44,321 - OPPO_R11t - INFO - <-- PlayAllGame.tearDown, Success
+

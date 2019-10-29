@@ -24,7 +24,7 @@ class CaseStrategy:
         for suite in suites:
             for case in suite:
                 index += 1
-                print(index,' case:',case)
+                print('\t', index, ' case:', case)
                 cases.addTest(case)
 
     def collect_cases(self, suite=False):

@@ -142,12 +142,13 @@ def startservice(request):
     content = get_show_phone()
     return render(request, 'testproject/show_devices.html', content)
 
+
 # @login_required
 def st(e_uuid, ports, test_side, test_items):
     # 获取进程 id
     gid = os.getpid()
     print('pid:', gid)
-    print('ppid',os.getppid())
+    print('ppid', os.getppid())
     # 变更该设备的 运行状态
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=1, statue_statue=1, gid=gid)
 
@@ -202,7 +203,7 @@ def stopservice(request, gid, e_uuid):
     os.popen(CMD)
     print('kill进程:', CMD)
 
-    CMD = 'kill -9 {}'.format(int(node_pid)+1)
+    CMD = 'kill -9 {}'.format(int(node_pid) + 1)
     os.popen(CMD)
     print('kill进程:', CMD)
 

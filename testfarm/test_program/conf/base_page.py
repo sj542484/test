@@ -8,7 +8,7 @@ class BasePage(object):
         cls.driver = dri
 
     @classmethod
-    def set_user(cls,deviceName):
+    def set_user(cls, deviceName):
         '''获取用户'''
         cls.deviceName = deviceName
 

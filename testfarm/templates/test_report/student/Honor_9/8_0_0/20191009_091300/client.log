@@ -1,0 +1,212 @@
+2019-10-09 09:13:17,086 - Honor_9 - INFO - --> PlayAllGame.setUp
+2019-10-09 09:13:17,089 - Honor_9 - INFO -   --> LoginPage.app_status
+2019-10-09 09:13:17,179 - Honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-10-09 09:13:19,801 - Honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-10-09 09:13:19,802 - Honor_9 - INFO -   --> LoginPage.login_operate
+2019-10-09 09:13:21,804 - Honor_9 - INFO - 	--> LoginPage.input_username
+2019-10-09 09:13:21,928 - Honor_9 - INFO - 	--> LoginPage.input_password
+2019-10-09 09:13:23,853 - Honor_9 - INFO - 	--> LoginPage.login_button
+2019-10-09 09:13:26,487 - Honor_9 - INFO -   <-- LoginPage.login_operate, Success
+2019-10-09 09:13:26,488 - Honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-10-09 09:13:26,488 - Honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-10-09 09:13:26,488 - Honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-10-09 09:13:26,489 - Honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-10-09 09:13:27,836 - Honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-09 09:13:27,837 - Honor_9 - INFO - 	--> UserCenterPage.get_user_info
+2019-10-09 09:13:27,837 - Honor_9 - INFO - 	--> HomePage.click_tab_profile
+2019-10-09 09:13:28,078 - Honor_9 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-09 09:13:31,628 - Honor_9 - INFO - 	--> UserCenterPage.nickname
+2019-10-09 09:13:34,136 - Honor_9 - INFO - 	--> UserCenterPage.purchase
+2019-10-09 09:13:34,326 - Honor_9 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-10-09 09:13:36,567 - Honor_9 - INFO - 	--> UserCenterPage.phone
+2019-10-09 09:13:38,014 - Honor_9 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-09 09:13:38,788 - Honor_9 - INFO - 	--> UserCenterPage.school_name
+2019-10-09 09:13:39,071 - Honor_9 - INFO - 	--> UserCenterPage.setting_up
+2019-10-09 09:13:39,300 - Honor_9 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-10-09 09:13:40,885 - Honor_9 - INFO - 	--> UserCenterPage.clear_cache
+2019-10-09 09:13:44,129 - Honor_9 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-09 09:13:44,859 - Honor_9 - INFO - 	--> HomePage.click_tab_hw
+2019-10-09 09:13:45,031 - Honor_9 - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-10-09 09:13:45,154 - Honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-10-09 09:13:46,265 - Honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-09 09:13:46,265 - Honor_9 - INFO - 	--> HomePage.click_hk_tab
+2019-10-09 09:13:46,404 - Honor_9 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-10-09 09:13:46,405 - Honor_9 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-10-09 09:13:48,067 - Honor_9 - INFO - 	--> LibraryGamePage.homework_list
+2019-10-09 09:13:48,959 - Honor_9 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-10-09 09:13:51,383 - Honor_9 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-10-09 09:13:51,383 - Honor_9 - INFO - 	--> LibraryGamePage.testbank_type
+2019-10-09 09:13:54,065 - Honor_9 - INFO - 	--> LibraryGamePage.testbank_type
+2019-10-09 09:13:54,400 - Honor_9 - INFO - 	--> LibraryGamePage.testbank_name
+2019-10-09 09:13:54,656 - Honor_9 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-10-09 09:13:54,728 - Honor_9 - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-10-09 09:13:54,974 - Honor_9 - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-10-09 09:13:55,250 - Honor_9 - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-10-09 09:13:56,823 - Honor_9 - INFO - 	--> LibraryGamePage.play_book_games
+2019-10-09 09:13:56,823 - Honor_9 - INFO - 	--> LibraryGamePage.game_name
+2019-10-09 09:13:57,478 - Honor_9 - INFO -   --> RestoreWord.restore_word_operate
+2019-10-09 09:13:57,478 - Honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-09 09:13:57,583 - Honor_9 - INFO - 	--> RestoreWordGame.wait_restore_word_explain_page
+2019-10-09 09:13:57,629 - Honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-09 09:13:57,630 - Honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-09 09:13:57,708 - Honor_9 - INFO - 	--> RestoreWordGame.word_explain
+2019-10-09 09:13:57,781 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-09 09:13:57,781 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:13:57,822 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-09 09:13:59,445 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-09 09:13:59,446 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:13:59,712 - Honor_9 - INFO -   --> RestoreWordGame.drag_operate
+2019-10-09 09:13:59,712 - Honor_9 - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-09 09:13:59,800 - Honor_9 - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-09 09:13:59,869 - Honor_9 - INFO - 	--> RestoreWordGame.button_swipe
+2019-10-09 09:14:02,196 - Honor_9 - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-10-09 09:14:02,199 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:02,685 - Honor_9 - INFO -   --> PublicPage.next_btn_operate
+2019-10-09 09:14:02,685 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-09 09:14:02,686 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:02,753 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-09 09:14:04,441 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-09 09:14:04,442 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:06,039 - Honor_9 - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-10-09 09:14:06,040 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:06,514 - Honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-10-09 09:14:06,633 - Honor_9 - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-09 09:14:09,483 - Honor_9 - INFO - 	--> RestoreWordGame.wait_restore_word_explain_page
+2019-10-09 09:14:09,568 - Honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-09 09:14:09,569 - Honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-09 09:14:09,663 - Honor_9 - INFO - 	--> RestoreWordGame.word_explain
+2019-10-09 09:14:09,734 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-09 09:14:09,734 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:09,779 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-09 09:14:11,449 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-09 09:14:11,450 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:11,669 - Honor_9 - INFO -   --> RestoreWordGame.drag_operate
+2019-10-09 09:14:11,670 - Honor_9 - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-09 09:14:11,737 - Honor_9 - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-09 09:14:11,822 - Honor_9 - INFO - 	--> RestoreWordGame.button_swipe
+2019-10-09 09:14:14,138 - Honor_9 - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-10-09 09:14:14,139 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:14,699 - Honor_9 - INFO -   --> PublicPage.next_btn_operate
+2019-10-09 09:14:14,699 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-09 09:14:14,699 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:14,763 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-09 09:14:16,456 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-09 09:14:16,457 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:18,085 - Honor_9 - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-10-09 09:14:18,086 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:18,515 - Honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-10-09 09:14:18,607 - Honor_9 - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-09 09:14:21,469 - Honor_9 - INFO - 	--> RestoreWordGame.wait_restore_word_explain_page
+2019-10-09 09:14:21,543 - Honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-09 09:14:21,543 - Honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-09 09:14:21,612 - Honor_9 - INFO - 	--> RestoreWordGame.word_explain
+2019-10-09 09:14:21,683 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-09 09:14:21,683 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:21,724 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-09 09:14:23,452 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-09 09:14:23,452 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:23,653 - Honor_9 - INFO -   --> RestoreWordGame.drag_operate
+2019-10-09 09:14:23,654 - Honor_9 - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-09 09:14:23,730 - Honor_9 - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-09 09:14:23,804 - Honor_9 - INFO - 	--> RestoreWordGame.button_swipe
+2019-10-09 09:14:26,161 - Honor_9 - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-10-09 09:14:26,163 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:26,649 - Honor_9 - INFO -   --> PublicPage.next_btn_operate
+2019-10-09 09:14:26,650 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-09 09:14:26,651 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:26,715 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-09 09:14:28,451 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-09 09:14:28,452 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:30,068 - Honor_9 - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-10-09 09:14:30,069 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:30,505 - Honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-10-09 09:14:30,596 - Honor_9 - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-09 09:14:33,478 - Honor_9 - INFO - 	--> RestoreWordGame.wait_restore_word_explain_page
+2019-10-09 09:14:33,561 - Honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-09 09:14:33,561 - Honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-09 09:14:33,648 - Honor_9 - INFO - 	--> RestoreWordGame.word_explain
+2019-10-09 09:14:33,745 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-09 09:14:33,746 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:33,805 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-09 09:14:35,449 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-09 09:14:35,450 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:35,665 - Honor_9 - INFO -   --> RestoreWordGame.drag_operate
+2019-10-09 09:14:35,666 - Honor_9 - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-09 09:14:35,739 - Honor_9 - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-09 09:14:35,814 - Honor_9 - INFO - 	--> RestoreWordGame.button_swipe
+2019-10-09 09:14:38,100 - Honor_9 - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-10-09 09:14:38,101 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:38,563 - Honor_9 - INFO -   --> PublicPage.next_btn_operate
+2019-10-09 09:14:38,563 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-09 09:14:38,564 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:38,607 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-09 09:14:40,452 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-09 09:14:40,452 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:42,046 - Honor_9 - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-10-09 09:14:42,047 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:42,530 - Honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-10-09 09:14:42,631 - Honor_9 - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-09 09:14:45,480 - Honor_9 - INFO - 	--> RestoreWordGame.wait_restore_word_explain_page
+2019-10-09 09:14:45,550 - Honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-09 09:14:45,551 - Honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-09 09:14:45,641 - Honor_9 - INFO - 	--> RestoreWordGame.word_explain
+2019-10-09 09:14:45,718 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-09 09:14:45,718 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:45,759 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-09 09:14:47,441 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-09 09:14:47,441 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:47,619 - Honor_9 - INFO -   --> RestoreWordGame.drag_operate
+2019-10-09 09:14:47,620 - Honor_9 - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-09 09:14:47,690 - Honor_9 - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-09 09:14:47,757 - Honor_9 - INFO - 	--> RestoreWordGame.button_swipe
+2019-10-09 09:14:50,022 - Honor_9 - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-10-09 09:14:50,022 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:50,562 - Honor_9 - INFO -   --> PublicPage.next_btn_operate
+2019-10-09 09:14:50,562 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-09 09:14:50,563 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:50,605 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-09 09:14:52,455 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-09 09:14:52,456 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:54,084 - Honor_9 - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-10-09 09:14:54,085 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:54,531 - Honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-10-09 09:14:54,637 - Honor_9 - INFO - 	--> LibraryPubicPage.bank_time
+2019-10-09 09:14:57,468 - Honor_9 - INFO - 	--> RestoreWordGame.wait_restore_word_explain_page
+2019-10-09 09:14:57,535 - Honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-09 09:14:57,536 - Honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-09 09:14:57,634 - Honor_9 - INFO - 	--> RestoreWordGame.word_explain
+2019-10-09 09:14:57,730 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-09 09:14:57,730 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:14:57,785 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-09 09:14:59,454 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-09 09:14:59,454 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:14:59,607 - Honor_9 - INFO -   --> RestoreWordGame.drag_operate
+2019-10-09 09:14:59,608 - Honor_9 - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-09 09:14:59,699 - Honor_9 - INFO - 	--> RestoreWordGame.get_element_location
+2019-10-09 09:14:59,777 - Honor_9 - INFO - 	--> RestoreWordGame.button_swipe
+2019-10-09 09:15:02,031 - Honor_9 - INFO -   <-- RestoreWordGame.drag_operate, Success
+2019-10-09 09:15:02,032 - Honor_9 - INFO - 	--> RestoreWordGame.word_alpha
+2019-10-09 09:15:02,551 - Honor_9 - INFO -   --> PublicPage.next_btn_operate
+2019-10-09 09:15:02,551 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-09 09:15:02,552 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:15:02,610 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-09 09:15:04,445 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-09 09:15:04,445 - Honor_9 - INFO - 	--> PublicPage.fab_commit_btn
+2019-10-09 09:15:06,050 - Honor_9 - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-10-09 09:15:06,051 - Honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-10-09 09:15:08,505 - Honor_9 - INFO -   --> LibraryPubicPage.judge_timer
+2019-10-09 09:15:08,506 - Honor_9 - INFO -   <-- LibraryPubicPage.judge_timer, Success
+2019-10-09 09:15:08,506 - Honor_9 - INFO -   <-- RestoreWord.restore_word_operate, Success
+2019-10-09 09:15:08,506 - Honor_9 - INFO - 	--> ResultPage.wait_check_medal_page
+2019-10-09 09:15:18,966 - Honor_9 - INFO - 	--> LibraryGamePage.check_bank_result
+2019-10-09 09:15:18,967 - Honor_9 - INFO - 	--> ResultPage.wait_check_result_page
+2019-10-09 09:15:29,973 - Honor_9 - INFO - 	--> ResultPage.result_multi_data_check
+2019-10-09 09:15:29,974 - Honor_9 - INFO - 	--> ResultPage.wait_check_result_page
+2019-10-09 09:15:40,969 - Honor_9 - INFO - 	--> ResultPage.wait_check_result_page
+2019-10-09 09:15:51,958 - Honor_9 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-10-09 09:16:01,965 - Honor_9 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-10-09 09:16:01,966 - Honor_9 - INFO - --> PlayAllGame.tearDown
+2019-10-09 09:16:01,967 - Honor_9 - INFO - <-- PlayAllGame.tearDown, Success
+

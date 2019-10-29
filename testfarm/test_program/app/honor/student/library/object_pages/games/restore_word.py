@@ -51,7 +51,6 @@ class RestoreWord(RestoreWordGame):
         done_answer = mine_answer if fq == 1 else sec_answer
         return done_answer, total_num
 
-
     @teststeps
     def right_restore_word_core(self, english):
         """还原单词主要步骤"""
@@ -76,5 +75,3 @@ class RestoreWord(RestoreWordGame):
             if english.strip() == sort_word:
                 print('还原后单词', sort_word)
                 break
-
-

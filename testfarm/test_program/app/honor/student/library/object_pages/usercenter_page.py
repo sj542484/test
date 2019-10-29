@@ -19,7 +19,7 @@ class UserCenterPage(BasePage):
     @teststep
     def wait_check_user_center_page(self):
         """以“设置”业务的xpath @index为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'设置')]")
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'学校')]")
         try:
             WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
             return True
@@ -62,6 +62,7 @@ class UserCenterPage(BasePage):
     def purchase(self):
         """购买"""
         ele = self.driver.find_element_by_id(self.id_type() + 'study_card')
+        print('点击 购买')
         return ele
 
     @teststep

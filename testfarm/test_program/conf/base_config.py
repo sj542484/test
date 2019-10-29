@@ -42,7 +42,7 @@ class GetVariable(object):
     STU_PACKAGE = "/Users/vanthink_test_ios/Desktop/student_env_devMasterDebug_1.4.2-1.apk"
 
     # hub地址
-    HUBHOST = '192.168.8.98'
+    HUBHOST = '192.168.222.67'
 
     # 学生的ID
     STU_ID = 0

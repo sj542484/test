@@ -16,7 +16,7 @@ from testfarm.test_program.conf.report_path import ReportPath
 
 class Driver:
 
-    def __init__(self,udid,platformVersion,deviceName,ports,test_side,test_items):
+    def __init__(self, udid, platformVersion, deviceName, ports, test_side, test_items):
         self.udid = udid
         self.platformVersion = platformVersion
         self.deviceName = deviceName
@@ -25,7 +25,7 @@ class Driver:
         print(self.test_side,'-=-=-=-=-=-=')
         self.test_items = test_items
 
-    def remote_info(self,systemport=8200):
+    def remote_info(self, systemport=8200):
         desired_caps = {
              "platformName": "Android",
              "platformVersion": self.platformVersion,
@@ -50,7 +50,7 @@ class Driver:
         cs = CaseStrategy(self.test_side,self.test_items)
         cases = cs.collect_cases(suite=False)
         # 返回 存放报告的文件夹路径
-        run_case = RunCases(self.remote_info(),self.test_side)
+        run_case = RunCases(self.remote_info(), self.test_side)
         file_name = run_case.file_name
         file_path = run_case.get_path()
         # 设置报告路径
@@ -59,7 +59,7 @@ class Driver:
         # 开启appium服务
         Utils(port=self.ports).start_appium(dn=self.deviceName, udid=self.udid, plv=self.platformVersion, file_name=file_path, port=appium_port, bp=int(appium_port)+1000, systemPort=sysport, side=self.test_side)
         # hub地址
-        addr = 'http://%s:4444/wd/hub'%gv.HUBHOST
+        addr = 'http://%s:4444/wd/hub' % gv.HUBHOST
 
         # 清楚应用缓存
         cmd = 'adb -s {} shell pm clear com.vanthink.student.debug'.format(self.udid)
@@ -71,9 +71,10 @@ class Driver:
                 if 'node' in str(res):
                     print('节点启动成功')
                     time.sleep(5)
-                    driver = webdriver.Remote(addr,self.remote_info(sysport))
+                    driver = webdriver.Remote(addr, self.remote_info(sysport))
                     break
             time.sleep(0.3)
+
 
 
         # 实例化log

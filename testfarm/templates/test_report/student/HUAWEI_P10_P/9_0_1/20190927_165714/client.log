@@ -1,0 +1,367 @@
+2019-09-27 16:57:30,566 - HUAWEI_P10_P - INFO - --> PlayAllGame.setUp
+2019-09-27 16:57:30,568 - HUAWEI_P10_P - INFO -   --> LoginPage.app_status
+2019-09-27 16:57:30,670 - HUAWEI_P10_P - INFO -   --> LoginPage.wait_check_page
+2019-09-27 16:57:33,123 - HUAWEI_P10_P - INFO -   <-- LoginPage.wait_check_page, Success
+2019-09-27 16:57:33,123 - HUAWEI_P10_P - INFO -   --> LoginPage.login_operate
+2019-09-27 16:57:35,125 - HUAWEI_P10_P - INFO - 	--> LoginPage.input_username
+2019-09-27 16:57:35,265 - HUAWEI_P10_P - INFO - 	--> LoginPage.input_password
+2019-09-27 16:57:36,709 - HUAWEI_P10_P - INFO - 	--> LoginPage.login_button
+2019-09-27 16:57:39,977 - HUAWEI_P10_P - INFO -   <-- LoginPage.login_operate, Success
+2019-09-27 16:57:39,978 - HUAWEI_P10_P - INFO -   <-- LoginPage.app_status, Success
+2019-09-27 16:57:39,979 - HUAWEI_P10_P - INFO - <-- PlayAllGame.setUp, Success
+
+2019-09-27 16:57:39,979 - HUAWEI_P10_P - INFO - --> PlayAllGame.test_all_game
+2019-09-27 16:57:39,979 - HUAWEI_P10_P - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 16:57:42,338 - HUAWEI_P10_P - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 16:57:42,338 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.get_user_info
+2019-09-27 16:57:42,339 - HUAWEI_P10_P - INFO - 	--> HomePage.click_tab_profile
+2019-09-27 16:57:42,576 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 16:57:47,473 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.nickname
+2019-09-27 16:57:50,364 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.purchase
+2019-09-27 16:57:50,623 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-09-27 16:57:52,919 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.phone
+2019-09-27 16:57:54,311 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 16:57:55,841 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.school_name
+2019-09-27 16:57:56,541 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.setting_up
+2019-09-27 16:57:56,773 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-09-27 16:57:58,958 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.clear_cache
+2019-09-27 16:58:02,293 - HUAWEI_P10_P - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-09-27 16:58:03,264 - HUAWEI_P10_P - INFO - 	--> HomePage.click_tab_hw
+2019-09-27 16:58:03,505 - HUAWEI_P10_P - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-09-27 16:58:03,754 - HUAWEI_P10_P - INFO -   --> HomePage.wait_check_home_page
+2019-09-27 16:58:05,486 - HUAWEI_P10_P - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-09-27 16:58:05,486 - HUAWEI_P10_P - INFO - 	--> HomePage.click_hk_tab
+2019-09-27 16:58:05,804 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.enter_into_game
+2019-09-27 16:58:05,804 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-27 16:58:08,246 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.homework_list
+2019-09-27 16:58:09,133 - HUAWEI_P10_P - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-09-27 16:58:10,955 - HUAWEI_P10_P - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-09-27 16:58:10,955 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.testbank_type
+2019-09-27 16:58:11,380 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.testbank_name
+2019-09-27 16:58:11,890 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-27 16:58:12,015 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-09-27 16:58:12,568 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-09-27 16:58:13,147 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-09-27 16:58:15,371 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.play_book_games
+2019-09-27 16:58:15,372 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.game_name
+2019-09-27 16:58:15,637 - HUAWEI_P10_P - INFO -   --> SelectWordBlank.select_word_blank_operate
+2019-09-27 16:58:15,637 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:58:15,704 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:58:16,241 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 16:58:17,320 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.hint_btn
+2019-09-27 16:58:17,455 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_hint_content_page
+2019-09-27 16:58:18,747 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.hint_answer
+2019-09-27 16:58:18,939 - HUAWEI_P10_P - INFO -   --> HomePage.click_blank
+2019-09-27 16:58:19,134 - HUAWEI_P10_P - INFO -   <-- HomePage.click_blank, Success
+2019-09-27 16:58:19,134 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:58:20,220 - HUAWEI_P10_P - INFO - 	--> PublicPage.rich_text
+2019-09-27 16:58:20,326 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:58:20,387 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 16:58:20,388 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 16:58:20,448 - HUAWEI_P10_P - INFO - 	--> GetAttribute.enabled
+2019-09-27 16:58:22,202 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 16:58:22,202 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 16:58:22,202 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 16:58:23,257 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:23,375 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:23,897 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:23,898 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:24,030 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:26,390 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:26,391 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:58:27,273 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:27,386 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:27,912 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:27,912 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:58:29,263 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:58:29,322 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 16:58:29,323 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 16:58:29,378 - HUAWEI_P10_P - INFO - 	--> GetAttribute.enabled
+2019-09-27 16:58:31,198 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 16:58:31,199 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 16:58:31,199 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 16:58:32,208 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:32,287 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:32,647 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:32,648 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:32,720 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:33,816 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:33,816 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:58:35,238 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:35,344 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:35,868 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:35,869 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:58:36,435 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:58:36,490 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 16:58:36,491 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 16:58:36,548 - HUAWEI_P10_P - INFO - 	--> GetAttribute.enabled
+2019-09-27 16:58:38,192 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 16:58:38,193 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 16:58:38,193 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 16:58:38,294 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:38,403 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:38,880 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:38,881 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:39,003 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:41,395 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:41,395 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:58:42,252 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:42,355 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:42,879 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:42,880 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:58:44,265 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:58:44,327 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 16:58:44,327 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 16:58:44,382 - HUAWEI_P10_P - INFO - 	--> GetAttribute.enabled
+2019-09-27 16:58:46,193 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 16:58:46,193 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 16:58:46,194 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 16:58:47,243 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:47,351 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:47,830 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:47,830 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:47,960 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:50,397 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:50,397 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:58:51,248 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:51,346 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:51,840 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:51,841 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:58:53,271 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:58:53,326 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 16:58:53,326 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 16:58:53,381 - HUAWEI_P10_P - INFO - 	--> GetAttribute.enabled
+2019-09-27 16:58:55,197 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 16:58:55,197 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 16:58:55,198 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 16:58:56,243 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:56,346 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:56,811 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:56,812 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:58:56,939 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:58:58,437 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:58:58,438 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:58:59,248 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:58:59,358 - HUAWEI_P10_P - INFO -   --> LibraryPubicPage.judge_timer
+2019-09-27 16:58:59,359 - HUAWEI_P10_P - INFO -   <-- LibraryPubicPage.judge_timer, Success
+2019-09-27 16:58:59,359 - HUAWEI_P10_P - INFO -   --> PublicPage.check_position_change
+2019-09-27 16:58:59,360 - HUAWEI_P10_P - INFO - 	--> PublicPage.wait_check_keyboard_page
+2019-09-27 16:58:59,415 - HUAWEI_P10_P - INFO - 	--> PublicPage.hide_keyboard_btn
+2019-09-27 16:58:59,540 - HUAWEI_P10_P - INFO - 	--> PublicPage.font_large
+2019-09-27 16:59:01,211 - HUAWEI_P10_P - INFO - 	--> GetAttribute.checked
+2019-09-27 16:59:01,264 - HUAWEI_P10_P - INFO - 	--> PublicPage.rich_text
+2019-09-27 16:59:02,272 - HUAWEI_P10_P - INFO - 	--> PublicPage.font_middle
+2019-09-27 16:59:03,445 - HUAWEI_P10_P - INFO - 	--> PublicPage.rich_text
+2019-09-27 16:59:03,559 - HUAWEI_P10_P - INFO - 	--> PublicPage.font_great
+2019-09-27 16:59:04,704 - HUAWEI_P10_P - INFO - 	--> PublicPage.rich_text
+2019-09-27 16:59:05,278 - HUAWEI_P10_P - INFO -   <-- PublicPage.check_position_change, Success
+2019-09-27 16:59:05,279 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_operate
+2019-09-27 16:59:05,280 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 16:59:05,280 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 16:59:05,334 - HUAWEI_P10_P - INFO - 	--> GetAttribute.enabled
+2019-09-27 16:59:07,197 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 16:59:07,197 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 16:59:09,755 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-09-27 16:59:09,756 - HUAWEI_P10_P - INFO -   <-- SelectWordBlank.select_word_blank_operate, Success
+2019-09-27 16:59:09,756 - HUAWEI_P10_P - INFO - 	--> ResultPage.wait_check_medal_page
+2019-09-27 16:59:20,484 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.check_bank_result
+2019-09-27 16:59:20,485 - HUAWEI_P10_P - INFO - 	--> ResultPage.wait_check_result_page
+2019-09-27 16:59:20,642 - HUAWEI_P10_P - INFO - 	--> ResultPage.check_result_btn
+2019-09-27 16:59:22,886 - HUAWEI_P10_P - INFO - 	--> SelectWordBlank.select_word_blank_result_operate
+2019-09-27 16:59:22,887 - HUAWEI_P10_P - INFO - 	--> ResultPage.wait_check_answer_page
+2019-09-27 16:59:23,070 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.hint_btn
+2019-09-27 16:59:23,188 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_hint_content_page
+2019-09-27 16:59:24,432 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.hint_answer
+2019-09-27 16:59:24,602 - HUAWEI_P10_P - INFO -   --> HomePage.click_blank
+2019-09-27 16:59:24,773 - HUAWEI_P10_P - INFO -   <-- HomePage.click_blank, Success
+2019-09-27 16:59:24,774 - HUAWEI_P10_P - INFO - 	--> PublicPage.rich_text
+2019-09-27 16:59:27,026 - HUAWEI_P10_P - INFO - 	--> ResultPage.result_multi_data_check
+2019-09-27 16:59:27,026 - HUAWEI_P10_P - INFO - 	--> ResultPage.wait_check_result_page
+2019-09-27 16:59:28,095 - HUAWEI_P10_P - INFO - 	--> ResultPage.correct_rate
+2019-09-27 16:59:28,206 - HUAWEI_P10_P - INFO - 	--> ResultPage.score
+2019-09-27 16:59:28,906 - HUAWEI_P10_P - INFO - 	--> ResultPage.star
+2019-09-27 16:59:29,012 - HUAWEI_P10_P - INFO - 	--> ResultPage.wait_check_result_page
+2019-09-27 16:59:29,163 - HUAWEI_P10_P - INFO - 	--> ResultPage.again_btn
+2019-09-27 16:59:29,383 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-09-27 16:59:32,132 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.play_book_games
+2019-09-27 16:59:32,133 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.game_name
+2019-09-27 16:59:32,376 - HUAWEI_P10_P - INFO -   --> SelectWordBlank.select_word_blank_operate
+2019-09-27 16:59:32,377 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:59:32,428 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:59:32,483 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 16:59:33,125 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.hint_btn
+2019-09-27 16:59:33,251 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_hint_content_page
+2019-09-27 16:59:34,873 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.hint_answer
+2019-09-27 16:59:35,091 - HUAWEI_P10_P - INFO -   --> HomePage.click_blank
+2019-09-27 16:59:35,272 - HUAWEI_P10_P - INFO -   <-- HomePage.click_blank, Success
+2019-09-27 16:59:35,273 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:59:36,126 - HUAWEI_P10_P - INFO - 	--> PublicPage.rich_text
+2019-09-27 16:59:36,222 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:59:36,273 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 16:59:36,273 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 16:59:36,326 - HUAWEI_P10_P - INFO - 	--> GetAttribute.enabled
+2019-09-27 16:59:38,107 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 16:59:38,108 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 16:59:38,108 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 16:59:38,212 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:59:38,315 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:59:38,776 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:59:38,777 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:59:38,894 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:59:40,374 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:59:40,375 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:59:40,492 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:59:41,516 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:59:41,516 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:59:42,171 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:59:42,272 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:59:42,733 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:59:42,734 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:59:44,118 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:59:44,180 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 16:59:44,181 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 16:59:44,230 - HUAWEI_P10_P - INFO - 	--> GetAttribute.enabled
+2019-09-27 16:59:46,112 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 16:59:46,112 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 16:59:46,113 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 16:59:46,224 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:59:46,328 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:59:47,571 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:59:47,572 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:59:47,687 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:59:48,676 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:59:48,677 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:59:48,775 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:59:50,370 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:59:50,370 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:59:51,160 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:59:51,258 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:59:51,670 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:59:51,671 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 16:59:52,230 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 16:59:53,133 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 16:59:53,134 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 16:59:53,195 - HUAWEI_P10_P - INFO - 	--> GetAttribute.enabled
+2019-09-27 16:59:55,123 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 16:59:55,123 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 16:59:55,123 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 16:59:56,103 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:59:56,164 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:59:56,571 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:59:56,572 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:59:56,689 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:59:57,750 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:59:57,751 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:59:57,854 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 16:59:59,362 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 16:59:59,362 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 16:59:59,459 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:02,323 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:02,324 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:02,434 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:03,511 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:03,512 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:03,626 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:03,627 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:03,726 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:05,335 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:05,335 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:05,438 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:06,561 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:06,562 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 17:00:07,151 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:07,248 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:08,517 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:08,518 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 17:00:09,176 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 17:00:09,226 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 17:00:09,227 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 17:00:09,276 - HUAWEI_P10_P - INFO - 	--> GetAttribute.enabled
+2019-09-27 17:00:11,119 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 17:00:11,119 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 17:00:11,120 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 17:00:11,211 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:11,298 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:11,715 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:11,715 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:11,827 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:13,298 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:13,299 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:13,391 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:14,462 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:14,463 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:14,561 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:15,486 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:15,487 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 17:00:16,169 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:16,272 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:17,533 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:17,534 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 17:00:18,179 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_select_blank_page
+2019-09-27 17:00:18,264 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 17:00:18,264 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 17:00:18,317 - HUAWEI_P10_P - INFO - 	--> GetAttribute.enabled
+2019-09-27 17:00:20,105 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 17:00:20,106 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rate_judge
+2019-09-27 17:00:20,106 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-09-27 17:00:20,197 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:20,290 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:20,730 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:20,730 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:20,825 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:22,364 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:22,364 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:22,451 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:23,492 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:23,493 - HUAWEI_P10_P - INFO -   --> Keyboard.games_keyboard
+2019-09-27 17:00:23,594 - HUAWEI_P10_P - INFO - 	--> Keyboard.keyboard_view
+2019-09-27 17:00:24,483 - HUAWEI_P10_P - INFO -   <-- Keyboard.games_keyboard, Success
+2019-09-27 17:00:24,483 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 17:00:25,160 - HUAWEI_P10_P - INFO - 	--> LibraryPubicPage.bank_time
+2019-09-27 17:00:25,258 - HUAWEI_P10_P - INFO -   --> LibraryPubicPage.judge_timer
+2019-09-27 17:00:25,258 - HUAWEI_P10_P - INFO -   <-- LibraryPubicPage.judge_timer, Success
+2019-09-27 17:00:25,259 - HUAWEI_P10_P - INFO -   --> PublicPage.check_position_change
+2019-09-27 17:00:25,259 - HUAWEI_P10_P - INFO - 	--> PublicPage.wait_check_keyboard_page
+2019-09-27 17:00:26,120 - HUAWEI_P10_P - INFO - 	--> PublicPage.hide_keyboard_btn
+2019-09-27 17:00:26,258 - HUAWEI_P10_P - INFO - 	--> PublicPage.font_large
+2019-09-27 17:00:27,131 - HUAWEI_P10_P - INFO - 	--> GetAttribute.checked
+2019-09-27 17:00:27,168 - HUAWEI_P10_P - INFO - 	--> PublicPage.rich_text
+2019-09-27 17:00:27,264 - HUAWEI_P10_P - INFO - 	--> PublicPage.font_middle
+2019-09-27 17:00:28,383 - HUAWEI_P10_P - INFO - 	--> PublicPage.rich_text
+2019-09-27 17:00:29,182 - HUAWEI_P10_P - INFO - 	--> PublicPage.font_great
+2019-09-27 17:00:30,304 - HUAWEI_P10_P - INFO - 	--> PublicPage.rich_text
+2019-09-27 17:00:30,417 - HUAWEI_P10_P - INFO -   <-- PublicPage.check_position_change, Success
+2019-09-27 17:00:30,418 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_operate
+2019-09-27 17:00:30,418 - HUAWEI_P10_P - INFO -   --> PublicPage.next_btn_judge
+2019-09-27 17:00:30,419 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 17:00:30,472 - HUAWEI_P10_P - INFO - 	--> GetAttribute.enabled
+2019-09-27 17:00:32,115 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-09-27 17:00:32,116 - HUAWEI_P10_P - INFO - 	--> PublicPage.fab_commit_btn
+2019-09-27 17:00:33,733 - HUAWEI_P10_P - INFO -   <-- PublicPage.next_btn_operate, Success
+2019-09-27 17:00:33,734 - HUAWEI_P10_P - INFO -   <-- SelectWordBlank.select_word_blank_operate, Success
+2019-09-27 17:00:33,734 - HUAWEI_P10_P - INFO - 	--> ResultPage.wait_check_medal_page
+2019-09-27 17:00:44,493 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.check_bank_result
+2019-09-27 17:00:44,493 - HUAWEI_P10_P - INFO - 	--> ResultPage.wait_check_result_page
+2019-09-27 17:00:44,713 - HUAWEI_P10_P - INFO - 	--> ResultPage.check_result_btn
+2019-09-27 17:00:46,916 - HUAWEI_P10_P - INFO - 	--> SelectWordBlank.select_word_blank_result_operate
+2019-09-27 17:00:46,917 - HUAWEI_P10_P - INFO - 	--> ResultPage.wait_check_answer_page
+2019-09-27 17:00:47,133 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.hint_btn
+2019-09-27 17:00:47,253 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.wait_check_hint_content_page
+2019-09-27 17:00:48,499 - HUAWEI_P10_P - INFO - 	--> SelectBlankGame.hint_answer
+2019-09-27 17:00:48,627 - HUAWEI_P10_P - INFO -   --> HomePage.click_blank
+2019-09-27 17:00:48,786 - HUAWEI_P10_P - INFO -   <-- HomePage.click_blank, Success
+2019-09-27 17:00:48,786 - HUAWEI_P10_P - INFO - 	--> PublicPage.rich_text
+2019-09-27 17:00:51,250 - HUAWEI_P10_P - INFO - 	--> ResultPage.result_multi_data_check
+2019-09-27 17:00:51,251 - HUAWEI_P10_P - INFO - 	--> ResultPage.wait_check_result_page
+2019-09-27 17:00:52,285 - HUAWEI_P10_P - INFO - 	--> ResultPage.correct_rate
+2019-09-27 17:00:52,973 - HUAWEI_P10_P - INFO - 	--> ResultPage.correct_rate
+2019-09-27 17:00:53,082 - HUAWEI_P10_P - INFO - 	--> ResultPage.score
+2019-09-27 17:00:53,183 - HUAWEI_P10_P - INFO - 	--> ResultPage.score
+2019-09-27 17:00:53,281 - HUAWEI_P10_P - INFO - 	--> ResultPage.star
+2019-09-27 17:00:54,615 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-09-27 17:00:57,109 - HUAWEI_P10_P - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-09-27 17:00:59,187 - HUAWEI_P10_P - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-09-27 17:00:59,189 - HUAWEI_P10_P - INFO - --> PlayAllGame.tearDown
+2019-09-27 17:00:59,190 - HUAWEI_P10_P - INFO - <-- PlayAllGame.tearDown, Success
+

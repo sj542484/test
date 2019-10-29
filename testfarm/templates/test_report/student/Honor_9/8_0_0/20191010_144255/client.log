@@ -1,0 +1,111 @@
+2019-10-10 14:43:12,607 - Honor_9 - INFO - --> PlayAllGame.setUp
+2019-10-10 14:43:12,610 - Honor_9 - INFO -   --> LoginPage.app_status
+2019-10-10 14:43:12,702 - Honor_9 - INFO -   --> LoginPage.wait_check_page
+2019-10-10 14:43:15,260 - Honor_9 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-10-10 14:43:15,261 - Honor_9 - INFO -   --> LoginPage.login_operate
+2019-10-10 14:43:17,263 - Honor_9 - INFO - 	--> LoginPage.input_username
+2019-10-10 14:43:17,399 - Honor_9 - INFO - 	--> LoginPage.input_password
+2019-10-10 14:43:19,321 - Honor_9 - INFO - 	--> LoginPage.login_button
+2019-10-10 14:43:21,958 - Honor_9 - INFO -   <-- LoginPage.login_operate, Success
+2019-10-10 14:43:21,960 - Honor_9 - INFO -   <-- LoginPage.app_status, Success
+2019-10-10 14:43:21,961 - Honor_9 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-10-10 14:43:21,961 - Honor_9 - INFO - --> PlayAllGame.test_all_game
+2019-10-10 14:43:21,961 - Honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-10-10 14:43:23,497 - Honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-10 14:43:23,497 - Honor_9 - INFO - 	--> UserCenterPage.get_user_info
+2019-10-10 14:43:23,498 - Honor_9 - INFO - 	--> HomePage.click_tab_profile
+2019-10-10 14:43:23,777 - Honor_9 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-10 14:43:26,788 - Honor_9 - INFO - 	--> UserCenterPage.nickname
+2019-10-10 14:43:29,300 - Honor_9 - INFO - 	--> UserCenterPage.purchase
+2019-10-10 14:43:29,495 - Honor_9 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-10-10 14:43:31,089 - Honor_9 - INFO - 	--> UserCenterPage.phone
+2019-10-10 14:43:32,378 - Honor_9 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-10 14:43:33,503 - Honor_9 - INFO - 	--> UserCenterPage.school_name
+2019-10-10 14:43:33,630 - Honor_9 - INFO - 	--> UserCenterPage.setting_up
+2019-10-10 14:43:33,748 - Honor_9 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-10-10 14:43:35,336 - Honor_9 - INFO - 	--> UserCenterPage.clear_cache
+2019-10-10 14:43:38,595 - Honor_9 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-10-10 14:43:39,658 - Honor_9 - INFO - 	--> HomePage.click_tab_hw
+2019-10-10 14:43:39,817 - Honor_9 - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-10-10 14:43:39,867 - Honor_9 - INFO -   --> HomePage.wait_check_home_page
+2019-10-10 14:43:41,002 - Honor_9 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-10-10 14:43:41,005 - Honor_9 - INFO - 	--> HomePage.click_hk_tab
+2019-10-10 14:43:41,187 - Honor_9 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-10-10 14:43:41,187 - Honor_9 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-10-10 14:43:43,484 - Honor_9 - INFO - 	--> LibraryGamePage.homework_list
+2019-10-10 14:43:46,615 - Honor_9 - INFO - 	--> LibraryGamePage.homework_list
+2019-10-10 14:43:47,138 - Honor_9 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-10-10 14:43:49,517 - Honor_9 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-10-10 14:43:49,517 - Honor_9 - INFO - 	--> LibraryGamePage.testbank_type
+2019-10-10 14:43:49,752 - Honor_9 - INFO - 	--> LibraryGamePage.testbank_name
+2019-10-10 14:43:49,989 - Honor_9 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-10-10 14:43:50,057 - Honor_9 - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-10-10 14:43:50,302 - Honor_9 - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-10-10 14:43:50,600 - Honor_9 - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-10-10 14:43:52,729 - Honor_9 - INFO - 	--> LibraryGamePage.play_book_games
+2019-10-10 14:43:52,730 - Honor_9 - INFO - 	--> LibraryGamePage.game_name
+2019-10-10 14:43:52,863 - Honor_9 - INFO - 	--> FlashCard.play_flash_game
+2019-10-10 14:43:52,864 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 14:43:52,903 - Honor_9 - INFO -   --> FlashCard.flash_study_operate
+2019-10-10 14:43:52,904 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 14:43:52,948 - Honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 14:43:53,023 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 14:43:53,070 - Honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 14:43:53,070 - Honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 14:43:53,141 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 14:43:53,141 - Honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 14:43:53,183 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-10 14:43:54,735 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 14:43:54,736 - Honor_9 - INFO - 	--> FlashCardGame.click_voice
+2019-10-10 14:43:54,853 - Honor_9 - INFO - 	--> FlashCardGame.study_word
+2019-10-10 14:43:55,458 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 14:43:55,530 - Honor_9 - INFO - 	--> FlashCardGame.study_word_explain
+2019-10-10 14:43:55,602 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_sentence_page
+2019-10-10 14:44:05,841 - Honor_9 - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 14:44:05,984 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 14:44:06,636 - Honor_9 - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 14:44:06,771 - Honor_9 - INFO - 	--> FlashCardGame.star_button
+2019-10-10 14:44:07,485 - Honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 14:44:08,094 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 14:44:08,971 - Honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 14:44:08,972 - Honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 14:44:09,096 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 14:44:09,097 - Honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 14:44:09,195 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-10 14:44:10,755 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 14:44:10,755 - Honor_9 - INFO - 	--> FlashCardGame.click_voice
+2019-10-10 14:44:10,882 - Honor_9 - INFO - 	--> FlashCardGame.study_word
+2019-10-10 14:44:11,508 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 14:44:11,604 - Honor_9 - INFO - 	--> FlashCardGame.study_word_explain
+2019-10-10 14:44:11,720 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_sentence_page
+2019-10-10 14:44:22,655 - Honor_9 - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 14:44:22,807 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 14:44:23,474 - Honor_9 - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 14:44:23,590 - Honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 14:44:24,319 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 14:44:25,174 - Honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 14:44:25,174 - Honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 14:44:25,277 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 14:44:25,279 - Honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 14:44:25,341 - Honor_9 - INFO - 	--> GetAttribute.enabled
+2019-10-10 14:44:26,898 - Honor_9 - INFO -   <-- PublicPage.next_btn_judge, Success
+2019-10-10 14:44:26,898 - Honor_9 - INFO - 	--> FlashCardGame.click_voice
+2019-10-10 14:44:27,010 - Honor_9 - INFO - 	--> FlashCardGame.study_word
+2019-10-10 14:44:27,637 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 14:44:27,735 - Honor_9 - INFO - 	--> FlashCardGame.study_word_explain
+2019-10-10 14:44:27,854 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_sentence_page
+2019-10-10 14:44:27,916 - Honor_9 - INFO - 	--> FlashCardGame.study_sentence
+2019-10-10 14:44:27,985 - Honor_9 - INFO - 	--> FlashCardGame.study_sentence_explain
+2019-10-10 14:44:28,062 - Honor_9 - INFO - 	--> FlashCardGame.author
+2019-10-10 14:44:28,137 - Honor_9 - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 14:44:28,257 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_explain_page
+2019-10-10 14:44:28,933 - Honor_9 - INFO - 	--> FlashCardGame.change_model_btn
+2019-10-10 14:44:29,071 - Honor_9 - INFO - 	--> FlashCardGame.star_button
+2019-10-10 14:44:29,778 - Honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 14:44:30,376 - Honor_9 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-10-10 14:44:31,230 - Honor_9 - INFO - 	--> LibraryPubicPage.rate_judge
+2019-10-10 14:44:31,230 - Honor_9 - INFO - 	--> LibraryPubicPage.rest_bank_num
+2019-10-10 14:44:31,308 - Honor_9 - INFO -   --> PublicPage.next_btn_judge
+2019-10-10 14:44:31,308 - Honor_9 - INFO - 	--> PublicPage.fab_next_btn
+2019-10-10 14:44:31,354 - Honor_9 - INFO - 	--> GetAttribute.enabled
