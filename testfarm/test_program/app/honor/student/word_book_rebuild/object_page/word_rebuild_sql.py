@@ -2,10 +2,10 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/6/27 16:41
 # -----------------------------------------
-from app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
+from utils.sql import SqlDb
 
 
-class WordRebuildSql(WordBookSql):
+class WordRebuildSql(SqlDb):
 
     def find_sys_words_trans_id(self, stu_id):
         """获取系统的解释的id"""
@@ -25,9 +25,14 @@ class WordRebuildSql(WordBookSql):
               'deleted_at = NULL WHERE student_id = {}'.format(stu_id)
         return self.execute_sql_only(sql)
 
+    def update_student_finish_date(self, stu_id):
+        """更新学生完成单词的时间， 全部设置为null"""
+        sql = "UPDATE word_student_fluency SET last_finish_at = NULL where student_id ={}".format(stu_id)
+        return self.execute_sql_only(sql)
+
     def update_student_word_data(self, stu_id):
         """更改学生单词数据value为0"""
-        sql = 'UPDATE `user_word_data` SET `value` = "0" WHERE `account_id` = {}'.format(stu_id)
+        sql = 'UPDATE `user_word_data` SET `value` = 0 WHERE `account_id` = {}'.format(stu_id)
         return self.execute_sql_only(sql)
 
     def delete_student_word_wrong_data(self, stu_id):
@@ -48,7 +53,7 @@ class WordRebuildSql(WordBookSql):
 
     def update_has_studied_word_date(self, stu_id, update_date, fluency_level):
         """更改F值》=1的最后完成时间"""
-        sql = 'UPDATE `word_student_fluency` SET `last_finish_at` = "{}" WHERE ' \
+        sql = 'UPDATE `word_student_fluency` SET `last_finish_at` = {} WHERE ' \
               '`student_id` = {} and fluency_level = {}'.format(str(update_date), stu_id, fluency_level)
         return self.execute_sql_only(sql)
 
@@ -101,8 +106,7 @@ class WordRebuildSql(WordBookSql):
 
     def find_student_study_words(self, stu_id):
         """查询学生已背单词"""
-        sql = 'SELECT wordbank_id FROM word_student_fluency where student_id = {} and last_finish_at ' \
-              'is not null GROUP BY wordbank_id'.format(stu_id)
+        sql = 'SELECT count_level_gt_0 FROM word_student_fluency_overview where student_id = {}'.format(stu_id)
         return self.execute_sql_return_result(sql)
 
     def find_student_words_have_explains(self, stu_id):
@@ -121,14 +125,12 @@ class WordRebuildSql(WordBookSql):
             .format(stu_id, stu_id, level, level, interval)
         return self.execute_sql_return_result(sql)
 
-
     def find_flash_new_explain_words(self, stu_id, translation_id):
         """根据新词解释id查询对应其他解释F>=1 的单词"""
         sql = 'SELECT translation_id FROM word_student_fluency WHERE student_id = {} AND ' \
               'wordbank_id = ( SELECT wordbank_id FROM word_student_fluency WHERE student_id = {} AND ' \
               'translation_id ={}) and fluency_level >= 1'.format(stu_id, stu_id, translation_id)
         return self.execute_sql_return_result(sql)
-
 
     def update_less_level_date(self, stu_id, level):
         """更改小于指定level的完成时间"""
@@ -145,7 +147,7 @@ class WordRebuildSql(WordBookSql):
     def find_student_new_right_words(self, stu_id):
         """查询学生新词做对的单词"""
         sql = 'SELECT translation_id FROM word_student_fluency_flag where `flag`= "review_game_to_b3"' \
-              ' and student_id = "{}"'.format(stu_id)
+              ' and student_id = {}'.format(stu_id)
         return self.execute_sql_return_result(sql)
 
     def update_student_study_rule_value(self, stu_id):

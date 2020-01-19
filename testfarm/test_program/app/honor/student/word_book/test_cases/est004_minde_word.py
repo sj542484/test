@@ -1,6 +1,6 @@
 import unittest
 
-from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.word_book.object_page.data_action import WordBookDataHandle
 from conf.decorator import setup, teardown, teststeps

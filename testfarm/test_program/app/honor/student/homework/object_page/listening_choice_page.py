@@ -126,10 +126,10 @@ class Listening(BasePage):
         """‘下一题’按钮 状态判断"""
         item = self.driver \
             .find_element_by_id(self.id_type() + "fab_submit")  # ‘下一题’按钮
-        value = GetAttribute().enabled(item)
+        value = GetAttribute().get_enabled(item)
 
         if value != var:  # 测试 下一步 按钮 状态
-            print('★★★ 下一步按钮 状态Error', value)
+            print('❌❌❌ 下一步按钮 状态Error', value)
 
     @teststeps
     def next_button_operate(self, var):
@@ -153,7 +153,7 @@ class Listening(BasePage):
     @teststep
     def question_judge(self, var):
         """元素 resource-id属性值是否为题目"""
-        value = GetAttribute().resource_id(var)
+        value = GetAttribute().get_resource_id(var)
         if value == self.id_type() + "question":
             return True
         else:
@@ -181,7 +181,7 @@ class Listening(BasePage):
                     print("----没有红色标识------")
 
                 horn = self.play_voice()
-                if not self.get.enabled(horn):  # 播放按钮检查
+                if not self.get.get_enabled(horn):  # 播放按钮检查
                     print("出现错误：喇叭不可点-------")
                 else:
                     horn.click()  # 点击发音按钮

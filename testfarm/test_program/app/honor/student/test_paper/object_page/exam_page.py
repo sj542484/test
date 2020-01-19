@@ -3,6 +3,8 @@ import re
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
+from app.honor.student.games.all_game_init import AllGameClass
+from app.honor.student.games.word_match_new import LinkWordGame
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.test_paper.object_page.answer_page import AnswerPage
 from app.honor.student.test_paper.object_page.games.blank_cloze import BlankCloze
@@ -16,12 +18,12 @@ from app.honor.student.test_paper.object_page.games.listen_to_sentence import Li
 from app.honor.student.test_paper.object_page.games.read_understand import ReadUnderstand
 from app.honor.student.test_paper.object_page.games.word_restore import RestoreWord
 from app.honor.student.test_paper.object_page.games.sentence_enhance import SentenceEnhance
-from app.honor.student.test_paper.object_page.games.sentence_exchange import SentenceExchange
+from app.honor.student.test_paper.object_page.games.sentence_exchange import ExamSentenceExchange
 from app.honor.student.test_paper.object_page.games.single_choice import SingleChoice
 from app.honor.student.test_paper.object_page.games.vocab_select import VocabSelect
 from app.honor.student.test_paper.object_page.games.word_match import WordMatch
 from app.honor.student.test_paper.object_page.games.word_spell import WordSpell
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 
 
@@ -32,46 +34,31 @@ class ExamPage(BasePage):
         self.home = HomePage()
         self.game = VocabSelect()
         self.answer = AnswerPage()
+        self.all_game = AllGameClass()
 
     @teststep
     def wait_check_exam_title_page(self):
         """以 试卷的标题作为 页面检查点"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'试卷')]")
-        try:
-            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def wait_check_exam_counter_page(self):
         """以 做试卷时的计时作为 页面检查点"""
         locator = (By.ID, self.id_type() + "time_container")
-        try:
-            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def wait_check_exam_confirm_page(self):
         """以 试卷确认的标题作为 页面检查点"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'试卷确认')]")
-        try:
-            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def wait_check_rank_page(self):
         """以 炫耀一下的text作为 页面检查点"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'炫耀一下')]")
-        try:
-            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def wait_check_end_page(self):
@@ -192,14 +179,14 @@ class ExamPage(BasePage):
                             continue
                         else:
                             if i == len(titles) - 1:
-                                self.home.screen_swipe_up(0.5, 0.878, 0.7, 1000)
+                                self.home.screen_swipe_up(0.5, 0.87, 0.7, 1000)
                             ques_num = self.answer.ques_num(x.text)
-                            num = int(re.findall(r'\d', ques_num)[0])
+                            num = int(re.findall(r'\d+', ques_num)[0])
                             tips.append(x.text)
                             print(x.text, ' ', ques_num)
                             tip_num.append(num)
                     if sum(tip_num) < total:
-                        self.home.screen_swipe_up(0.5, 0.9, 0.3, 2000)
+                        self.home.screen_swipe_up(0.5, 0.9, 0.4, 1000)
                     else:
                         break
 
@@ -247,45 +234,44 @@ class ExamPage(BasePage):
         elif '单项选择' in title:
             SingleChoice().play_single_choice_game(num, exam_json)
 
-        elif '连词成句' in title:
-            Conjunctions().play_conjunctions_game(num, exam_json)
-
-        elif '连连看' in title:
-            WordMatch().play_word_match_game(num, exam_json)
-
-        elif '句型转换' in title:
-            SentenceExchange().play_sentence_exchange_game(num, exam_json)
-
-        elif '完形填空' in title:
-            ClozeTest().play_cloze_test_game(num, exam_json)
-
-        elif '还原单词' in title:
-            RestoreWord().play_restore_word_game(num, exam_json)
-
-        elif '选词填空' in title:
-            BlankCloze().play_bank_cloze_game(num, exam_json)
-
-        elif '强化炼句' in title:
-            SentenceEnhance().play_sentence_enhance_game(num, exam_json)
-
-        elif '补全文章' in title:
-            CompleteText().play_complete_article_game(num, exam_json)
-
-        elif '听音连句' in title:
-            ListenSentence().play_listen_sentence_game(num, exam_json)
-
         elif '词汇选择' in title:
             VocabSelect().play_vocab_select_game(num, exam_json)
-
-        elif '阅读理解' in title:
-            ReadUnderstand().play_read_understand_game(num, exam_json)
 
         elif '单词拼写' in title:
             WordSpell().play_word_spell_game(num, exam_json)
 
-
         elif '单词听写' in title:
             ListenSpell().play_listen_spell_game(num, exam_json)
+
+        elif '连词成句' in title:
+            Conjunctions().play_conjunctions_game(num, exam_json)
+
+        elif '还原单词' in title:
+            RestoreWord().play_restore_word_game(num, exam_json)
+
+        elif '连连看' in title:
+            WordMatch().play_word_match_game(num, exam_json)
+
+        elif '强化炼句' in title:
+            SentenceEnhance().play_sentence_enhance_game(num, exam_json)
+
+        elif '听音连句' in title:
+            ListenSentence().play_listen_sentence_game(num, exam_json)
+
+        elif '句型转换' in title:
+            ExamSentenceExchange().play_sentence_exchange_game(num, exam_json)
+
+        elif '完形填空' in title:
+            ClozeTest().play_cloze_test_game(num, exam_json)
+
+        elif '选词填空' in title:
+            BlankCloze().play_bank_cloze_game(num, exam_json)
+
+        elif '补全文章' in title:
+            CompleteText().play_complete_article_game(num, exam_json)
+
+        elif '阅读理解' in title:
+            ReadUnderstand().play_read_understand_game(num, exam_json)
 
         else:
             pass

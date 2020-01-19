@@ -85,7 +85,7 @@ class ListenFormCent(BasePage):
     def next_button_judge(self,var):
         item = self.driver.find_element_by_id(self.id_type() + "fab_submit").get_attribute("enabled")  # ‘下一题’按钮
         if item != var:  # 测试 下一步 按钮 状态
-            print('★★★ 下一步按钮 状态Error', item)
+            print('❌❌❌ 下一步按钮 状态Error', item)
 
     @teststep
     def next_button(self):

@@ -70,7 +70,7 @@ class StrengthenSentence(BasePage):
     @teststeps
     def content_desc(self):
         """点击输入框，激活小键盘"""
-        content = self.get.description(self.content_value())
+        content = self.get.get_description(self.content_value())
         item_x = re.match(".*\[(.*)\].*\[", content)  # x值
         item_y = re.match(".*\[(.*)\].*", content)  # y值
         x = item_x.group(1).split(',')  # 所有输入框y值的列表
@@ -80,7 +80,7 @@ class StrengthenSentence(BasePage):
     @teststeps
     def get_result(self):
         """点击输入框，激活小键盘"""
-        content = self.get.description(self.content_value())
+        content = self.get.get_description(self.content_value())
         value = re.match("\\[(.+?)\\]", content)  # answer
         answer = value.group(1).split(',')  # 所有输入框值的列表
         return answer
@@ -407,13 +407,13 @@ class StrengthenSentence(BasePage):
                         if var[j] != value[j]:  # 答案不正确 count+1
                             count.append(j)
                             if self.result_mine_state() != 'false':
-                                print('★★★ Error - 我的答案:%s 与 正确答案:%s 对错标识:%s' % (var[j], value[j], 'true'))
+                                print('❌❌❌ Error - 我的答案:%s 与 正确答案:%s 对错标识:%s' % (var[j], value[j], 'true'))
                         else:
                             if self.result_mine_state() != 'true':
-                                print('★★★ Error - 我的答案:%s 与 正确答案:%s 对错标识:%s' % (var[j], value[j], 'false'))
+                                print('❌❌❌ Error - 我的答案:%s 与 正确答案:%s 对错标识:%s' % (var[j], value[j], 'false'))
                         break
                 else:
-                    print('★★★ Error - 正确答案:', answer[i], value)
+                    print('❌❌❌ Error - 正确答案:', answer[i], value)
             print('------------------------------------')
         return var[1][len(var[1]) - 1]
 

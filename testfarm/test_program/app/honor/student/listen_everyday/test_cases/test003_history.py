@@ -8,23 +8,33 @@ import unittest
 from app.honor.student.listen_everyday.object_page.history_page import HistoryPage
 from app.honor.student.listen_everyday.object_page.listen_home_page import ListenHomePage
 from app.honor.student.login.object_page.login_page import LoginPage
+from conf.base_page import BasePage
 from conf.decorator import setup, teardown, teststeps
+from utils.assert_func import ExpectingTest
 
 
-class SelectLevel(unittest.TestCase):
+class History(unittest.TestCase):
+    """听力历史"""
 
     @classmethod
     @setup
     def setUp(cls):
+        cls.result = unittest.TestResult()
+        cls.base_assert = ExpectingTest(cls, cls.result)
         cls.listen = ListenHomePage()
         cls.history = HistoryPage()
         cls.login = LoginPage()
         cls.login.app_status()
+        BasePage().set_assert(cls.base_assert)
 
-    @classmethod
     @teardown
-    def tearDown(cls):
-        pass
+    def tearDown(self):
+        for x in self.base_assert.get_error():
+            self.result.addFailure(self, x)
+
+    def run(self, result=None):
+        self.result = result
+        super(History, self).run(result)
 
     @teststeps
     def test_history_log(self):

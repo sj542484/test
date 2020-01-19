@@ -8,11 +8,11 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.honor.student.listen_everyday.object_page.listen_result_page import ListenResultPage
+from app.honor.student.games.all_game_common_element import GameCommonEle
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
 from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep
 
 
@@ -100,14 +100,6 @@ class RankPage(BasePage):
                                                 '"{1}tv_score")]'.format(stu_name, self.id_type()))
         return ele.text
 
-    @teststep
-    def get_user_name(self):
-        name = 0
-        self.home.click_tab_profile()
-        if UserCenterPage().wait_check_page():
-            name = UserInfoPage().nickname()
-        self.home.click_tab_hw()
-        return name
 
     @teststep
     def rank_ele_operate(self, name):
@@ -126,7 +118,7 @@ class RankPage(BasePage):
                 user_name = self.user_name().text
                 print(user_name)
                 if user_name != name:
-                    print('★★★ Error-- 名称与用户名不符')
+                    self.base_assert.except_error('Error-- 名称与用户名不符')
 
                 print(user_name, ' ', self.user_rank().text)
                 print(self.cover_title().text + self.day_num().text, '\n')
@@ -140,9 +132,5 @@ class RankPage(BasePage):
                 print('-' * 30, '\n', '\n')
 
         self.show_button().click()
-        if ListenResultPage().wait_check_punch_page():
-            print('进入分享页面')
-            ListenResultPage().share_page_operate()
-            if self.wait_check_rank_page():
-                self.home.click_back_up_button()
+        GameCommonEle().share_page_operate()
 

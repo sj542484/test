@@ -136,7 +136,7 @@ class VocabularyChoice(BasePage):
         """我的"""
         ele = self.driver \
             .find_elements_by_id(self.id_type() + "iv_mine")[index]
-        value = GetAttribute().selected(ele)
+        value = GetAttribute().get_selected(ele)
         return value
 
     @teststeps
@@ -252,9 +252,9 @@ class VocabularyChoice(BasePage):
 
         options = self.option_button()  # 四个选项
         for j in range(len(options)):  # 统计答案正确与否
-            if GetAttribute().selected(options[j]) == 'true':   # 错误答案
+            if GetAttribute().get_selected(options[j]) == 'true':   # 错误答案
                 ele.append(j)
-            if GetAttribute().description(options[j]) == 'true':  # 正确答案
+            if GetAttribute().get_description(options[j]) == 'true':  # 正确答案
                 ele.append(j)
 
         if ele[0] == ele[1]:  # 如果选项的selected属性为true的作业数为1,说明答对了，则+1

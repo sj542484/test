@@ -4,7 +4,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
 
@@ -12,6 +12,7 @@ from utils.get_attribute import GetAttribute
 class VanclassDetailPage(BasePage):
     """ 班级详情页 修改、查询页面元素信息"""
     def __init__(self):
+        super().__init__()
         self.get = GetAttribute()
 
     # 积分排行榜
@@ -91,7 +92,7 @@ class VanclassDetailPage(BasePage):
     @teststep
     def exit_wechat_login_page(self):
         """退出微信登录页面"""
-        self.driver.find_element_by_id('com.tencent.mm:id/kx').click()
+        self.driver.find_element_by_id('com.tencent.mm:id/m1').click()
 
     @teststeps
     def all_tab(self):
@@ -325,21 +326,22 @@ class VanclassDetailPage(BasePage):
         """确定按钮enabled状态"""
         if 0 < length <= 30:
             if length != int(size1):
-                print('★★★ Error- 字符数展示有误', length, size1)
+                print('❌❌❌ Error- 字符数展示有误', length, size1)
             else:
-                if self.get.enabled(button) == 'false':
-                    print('★★★ Error- 确定按钮不可点击')
+                if self.get.get_enabled(button) == 'false':
+                    print('❌❌❌ Error- 确定按钮不可点击')
 
         elif length == 0:
             if length != int(size1):
-                print('★★★ Error- 字符数展示有误', length, size1)
+                print('❌❌❌ Error- 字符数展示有误', length, size1)
             else:
-                if self.get.enabled(button) == 'true':
-                    print('★★★ Error- 确定按钮未置灰可点击')
+                if self.get.get_enabled(button) == 'true':
+                    print('❌❌❌ Error- 确定按钮未置灰可点击')
         elif length > 30:
             if length != int(size1):
-                print('★★★ Error- 字符数展示有误', length, size1)
+                print('❌❌❌ Error- 字符数展示有误', length, size1)
             else:
-                if self.get.enabled(button) == 'true':
-                    print('★★★ Error- 确定按钮未置灰可点击')
-        return self.get.enabled(button)
+                if self.get.get_enabled(button) == 'true':
+                    print('❌❌❌ Error- 确定按钮未置灰可点击')
+        return self.get.get_enabled(button)
+

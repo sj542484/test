@@ -11,27 +11,36 @@ from app.honor.student.user_center.object_page.user_center_page import UserCente
 from app.honor.student.vanclass.object_page.vanclass_page import VanclassPage
 from app.honor.student.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.student.vanclass.test_data.vanclass_data import GetVariable as gv
+from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase, teststeps
+from utils.assert_func import ExpectingTest
 from utils.toast_find import Toast
 
 
-class VanclassHw(unittest.TestCase):
+class VanclassHwRank(unittest.TestCase):
     """本班作业 - 排行榜"""
 
     @classmethod
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.result = unittest.TestResult()
+        cls.base_assert = ExpectingTest(cls, cls.result)
         cls.login = LoginPage()
         cls.home = HomePage()
         cls.detail = VanclassDetailPage()
         cls.van = VanclassPage()
         cls.homework = Homework()
+        BasePage().set_assert(cls.base_assert)
 
-    @classmethod
     @teardown
-    def tearDown(cls):
-        pass
+    def tearDown(self):
+        for x in self.base_assert.get_error():
+            self.result.addFailure(self, x)
+
+    def run(self, result=None):
+        self.result = result
+        super(VanclassHwRank, self).run(result)
 
     @testcase
     def test_homework_ranking(self):
@@ -42,7 +51,7 @@ class VanclassHw(unittest.TestCase):
             if UserInfoPage().wait_check_page():
                 nickname = UserInfoPage().nickname()  # 获取昵称
                 self.homework.back_up_button()  # 返回个人中心页面
-                if UserCenterPage().wait_check_page():
+                if UserCenterPage().wait_check_user_center_page():
                     self.home.click_tab_hw()  # 进入主界面
 
                     if self.home.wait_check_home_page():  # 页面检查点
@@ -55,7 +64,6 @@ class VanclassHw(unittest.TestCase):
                                     van[i].click()  # 进入班级详情页
                                     break
                             if self.van.wait_check_vanclass_page(gv.CLASS_NAME):  # 页面检查点
-
                                 self.van.vanclass_hw()  # 点击 本班作业 tab
                                 if self.detail.wait_check_page(gv.CLASS_NAME):  # 页面检查点
                                     print('%s 本班作业:' % gv.CLASS_NAME)
@@ -64,24 +72,24 @@ class VanclassHw(unittest.TestCase):
                                     else:
                                         all_hw = self.detail.all_tab()  # 全部 tab
                                         if self.detail.selected(all_hw) is False:
-                                            print('★★★ Error- 未默认在 全部页面')
+                                            self.base_assert.except_error('Error- 未默认在 全部页面')
                                         else:
                                             print('--------------全部tab-------------------')
                                             if self.van.empty_tips():
                                                 print('暂无数据')
                                             else:
                                                 self.hw_operate(nickname)  # 具体操作
-
-                                        self.home.click_back_up_button()  # 返回 本班作业页面
                                         if self.detail.wait_check_page(gv.HW_NAME):  # 页面检查点
                                             self.home.click_back_up_button()  # 返回 班级详情页面
+                                            if self.detail.wait_check_page(gv.CLASS_NAME):
+                                                self.home.click_back_up_button()
+                                            if self.van.wait_check_quit_vanclass(gv.CLASS_NAME):
+                                                self.home.click_back_up_button()
+                                            if self.van.wait_check_page():
+                                                self.home.click_tab_hw()
+
                                         else:
                                             print('未返回 本班作业页面')
-
-                                    if self.detail.wait_check_page(gv.VAN_LIST):  # 页面检查点
-                                        self.home.click_back_up_button()  # 返回 班级
-                                        if self.van.wait_check_page():  # 班级 页面检查点
-                                            self.home.click_tab_hw()  # 返回主界面
                                 else:
                                     print('未进入班级 -本班作业tab')
                                     self.home.click_back_up_button()
@@ -102,8 +110,6 @@ class VanclassHw(unittest.TestCase):
                 break
 
         if self.detail.wait_check_page(gv.HW_NAME):  # 页面检查点
-            print('---------------------------------')
-            print('第0道小游戏:')
             self.homework.ranking(0, nickname)
         else:
             print('未进入作业 %s 页面' % gv.HW_NAME)

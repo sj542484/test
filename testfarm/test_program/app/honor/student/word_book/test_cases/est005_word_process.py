@@ -1,12 +1,12 @@
 import unittest
 
-from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.login.object_page.login_page import LoginPage
 from app.honor.student.word_book.object_page.data_action import WordBookDataHandle
 from app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
-from app.honor.student.word_book_rebuild.object_page.word_progress import ProgressPage
-from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
+from app.honor.student.word_book_rebuild.object_page.word_progress_page import ProgressPage
+from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild_page import WordBookRebuildPage
 from conf.decorator import setup, teardown
 
 

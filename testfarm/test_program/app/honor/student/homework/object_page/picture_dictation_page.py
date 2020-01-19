@@ -122,7 +122,7 @@ class PictureDictation(BasePage):
         count = []
         option = []
         for i in range(len(ele)):
-            if GetAttribute().class_name(ele[i]) == 'android.widget.LinearLayout':
+            if GetAttribute().get_class_name(ele[i]) == 'android.widget.LinearLayout':
                 count.append(i)
 
         count.append(len(ele))
@@ -208,7 +208,7 @@ class PictureDictation(BasePage):
 
                     progress = re.sub("\D", "", self.result_progress())  # 时间进度
                     if int(progress) == 00000000:
-                        print('★★★ Error- 听力时间进度', int(progress))
+                        print('❌❌❌ Error- 听力时间进度', int(progress))
                     self.result.back_up_button()  # 返回结果页
                     time.sleep(2)
             print('==============================================')

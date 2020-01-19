@@ -132,7 +132,7 @@ class FormSentence(BasePage):
         """我的答案对错标识 selected属性"""
         word = self.driver \
             .find_elements_by_id(self.id_type() + "iv_mine")[index]
-        value = GetAttribute().selected(word)
+        value = GetAttribute().get_selected(word)
         return value
 
     @teststep
@@ -245,22 +245,22 @@ class FormSentence(BasePage):
         for i in range(index, len(explain)):
             value = form_sentence_operate(explain[i].text)
             if answer[i] != value:  # 测试 正确答案
-                print('★★★ 正确答案展示Error:', answer[i], value)
+                print('❌❌❌ 正确答案展示Error:', answer[i], value)
             else:
                 if len(var) != 0:  # 存在做错的题
                     if i in var:
                         if self.result_mine_state(i) != 'false':
-                            print('★★★ Error - 对错标识:%s' % self.result_mine_state(i))
+                            print('❌❌❌ Error - 对错标识:%s' % self.result_mine_state(i))
                         else:
                             print('对错标识:', self.result_mine_state(i))
                     else:
                         if self.result_mine_state(i) != 'true':
-                            print('★★★ Error - 对错标识:%s' % self.result_mine_state(i))
+                            print('❌❌❌ Error - 对错标识:%s' % self.result_mine_state(i))
                         else:
                             print('对错标识:', self.result_mine_state(i))
                 else:
                     if self.result_mine_state(i) != 'true':
-                        print('★★★ Error - 对错标识:%s' % self.result_mine_state(i))
+                        print('❌❌❌ Error - 对错标识:%s' % self.result_mine_state(i))
                     else:
                         print('对错标识:', self.result_mine_state(i))
             print('-----------------------------')

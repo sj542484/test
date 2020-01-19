@@ -8,34 +8,43 @@ import unittest
 
 from ddt import ddt, data
 
-from app.honor.student.library.object_pages.library_page import LibraryGamePage
-from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.games.all_game_common_element import GameCommonEle
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from app.honor.student.listen_everyday.object_page.level_page import LevelPage
 from app.honor.student.listen_everyday.object_page.listen_data_handle import ListenDataHandle
 from app.honor.student.listen_everyday.object_page.listen_game_page import ListenGamePage
 from app.honor.student.listen_everyday.object_page.listen_home_page import ListenHomePage
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.login.object_page.login_page import LoginPage
+from conf.base_page import BasePage
 from conf.decorator import setup, teardown, teststeps
+from utils.assert_func import ExpectingTest
 
 
 @ddt
-class SelectLevel(unittest.TestCase):
+class PlayListeningGame(unittest.TestCase):
+    """每日一听游戏"""
 
     @classmethod
     @setup
     def setUp(cls):
+        cls.result = unittest.TestResult()
+        cls.base_assert = ExpectingTest(cls, cls.result)
         cls.listen = ListenHomePage()
         cls.game = ListenGamePage()
         cls.login = LoginPage()
         cls.level = LevelPage()
         cls.login.app_status()
+        BasePage().set_assert(cls.base_assert)
 
-    @classmethod
     @teardown
-    def tearDown(cls):
-        pass
+    def tearDown(self):
+        for x in self.base_assert.get_error():
+            self.result.addFailure(self, x)
 
+    def run(self, result=None):
+        self.result = result
+        super(PlayListeningGame, self).run(result)
 
     @data('2A')
     @teststeps
@@ -66,7 +75,10 @@ class SelectLevel(unittest.TestCase):
                             self.listen.start_button().click()
 
                         if self.game.wait_check_gaming_page():
-                            self.game.play_listen_game_process()
+                            bank_type, bank_info = self.game.play_listen_game_process()
+                            self.game.answer_page_operate(bank_type, bank_info)
+                            if self.game.wait_check_result_page():
+                                self.game.click_back_up_button()
 
                         elif self.listen.wait_check_degrade_page():
                             print('是否感觉题太难了，需要切换到稍简单级别的练习吗？', '\n')
@@ -74,17 +86,16 @@ class SelectLevel(unittest.TestCase):
 
                         elif self.listen.wait_check_certificate_page():
                             print('该等级已学习完毕（没有题目）')
-                            LibraryGamePage().share_page_operate()
+                            GameCommonEle().share_page_operate()
                             if self.listen.wait_check_certificate_page():
                                 self.listen.start_excise_button().click()
-
 
                         if i == exercise_count:
                             if self.listen.wait_today_limit_img_page():
                                 print('今天你已练完{}道听力，保持适度才能事半公倍哦！'.format(exercise_count), '\n')
                                 self.listen.commit_button().click()
                             else:
-                                print('★★★ Error-- 未发现题数限制提示页面！')
+                                self.base_assert.except_error(' Error-- 未发现题数限制提示页面！')
 
 
 

@@ -2,9 +2,9 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/7/9 15:45
 # -----------------------------------------
-from testfarm.test_program.app.honor.student.homework_rebuild.object_pages.homework_sql import HomeworkSql
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep
+from app.honor.student.homework_rebuild.object_pages.homework_sql import HomeworkSql
+from conf.base_page import BasePage
+from conf.decorator import teststep
 
 
 class HomeworkDataHandle(BasePage):

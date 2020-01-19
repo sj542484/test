@@ -7,11 +7,13 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_sql_handler import WordDataHandlePage
 from app.honor.student.word_book_rebuild.object_page.games.flash_card_page import FlashCard
 from app.honor.student.word_book_rebuild.object_page.games.word_spelling_page import SpellingWord
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststeps, teststep
+from utils.assert_func import AssertAction
+from utils.games_keyboard import Keyboard
 
 
 class MineWordsPage(BasePage):
@@ -20,6 +22,7 @@ class MineWordsPage(BasePage):
         self.flash = FlashCard()
         self.spell = SpellingWord()
         self.data = WordDataHandlePage()
+        self.assert_act = AssertAction()
 
     @teststeps
     def wait_check_mine_word_page(self):
@@ -130,7 +133,7 @@ class MineWordsPage(BasePage):
             self.screen_swipe_up(0.5, 0.8, 0.9 - swipe_scale, 1100)
         print('我的单词：', word_list)
         error_words = [x for x in word_list if x not in studied_words]
-        print('数据库未统计但是在我的单词中出现的单词：', error_words)
+        self.assert_act.assertFalse(error_words, '数据库未统计但是在我的单词中出现的单词：' + str(error_words))
         self.screen_swipe_up(0.5, 0.9, 0.9 - swipe_scale, 1000)
 
     @teststeps
@@ -142,7 +145,7 @@ class MineWordsPage(BasePage):
         print('标熟', familiar_explains)
 
         for x in range(count):
-            if self.flash.wait_check_study_page():
+            if self.flash.wait_check_flash_study_page():
                 explain = self.flash.study_word_explain()
                 explain_id = explain.get_attribute('contentDescription')
                 print(explain_id)
@@ -154,23 +157,23 @@ class MineWordsPage(BasePage):
                       )
                 if self.flash.star_button().get_attribute('selected') == 'true':
                     if explain_id not in star_explains:
-                        print('★★★ 标星按钮已被点击， 但是该单词不是标星单词')
+                        print('❌❌❌ 标星按钮已被点击， 但是该单词不是标星单词')
                 else:
                     if explain_id in star_explains:
-                        print('★★★ 标星按钮未被点击， 但是该单词是标星单词')
+                        print('❌❌❌ 标星按钮未被点击， 但是该单词是标星单词')
                     self.flash.star_button().click()
                     if x == 0:
                         self.flash.tips_operate()
 
                 if self.flash.familiar_button().get_attribute('enabled') == 'true':
                     if explain_id not in familiar_explains:
-                        print('★★★ 标熟按钮未被点击， 但是该单词是标熟单词')
+                        print('❌❌❌ 标熟按钮未被点击， 但是该单词是标熟单词')
                     self.flash.familiar_button().click()
                     if x == 0:
                         self.flash.tips_operate()
                 else:
                     if explain_id in familiar_explains:
-                        print('★★★ 标熟按钮已被点击， 但是该单词不是标熟单词')
+                        print('❌❌❌ 标熟按钮已被点击， 但是该单词不是标熟单词')
                 self.flash.fab_next_btn().click()
                 print('-'*30, '\n')
 
@@ -182,9 +185,9 @@ class MineWordsPage(BasePage):
             if self.flash.wait_check_copy_page():
                 word = self.flash.copy_word()
                 print('单词：', word)
-                print('解释：', self.flash.copy_explain())
+                print('解释：', self.flash.copy_explain().text)
                 for i, alpha in enumerate(word):
-                    self.flash.keyboard_operate(i, alpha)
+                    Keyboard().keyboard_operate(i, alpha)
                 print('-' * 30, '\n')
                 time.sleep(3)
 

@@ -5,7 +5,7 @@ import string
 import time
 
 from app.honor.student.games.word_listen_spell import ListenSpellGame
-from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_sql_handler import WordDataHandlePage
 from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
 from conf.decorator import teststeps, teststep
 from utils.games_keyboard import Keyboard
@@ -31,7 +31,7 @@ class ListenSpellWordPage(ListenSpellGame):
             self.next_btn_operate('true', self.fab_commit_btn)  # 下一题 按钮 判断加 点击操作
             explain = self.word_explain()
             if explain_id in new_explain_words:
-                print('★★★ 此单词为新释义，不应出现单词听写游戏')
+                print('❌❌❌ 此单词为新释义，不应出现单词听写游戏')
             print('解释：', explain.text)
             print('我输入的：', right_answer)
             self.next_btn_operate('true', self.fab_next_btn)  # 下一题
@@ -50,7 +50,7 @@ class ListenSpellWordPage(ListenSpellGame):
                 self.next_btn_judge('false', self.fab_commit_btn)  # 下一题 按钮 判断加 点击操作
                 explain_id = self.word_public.get_explain_id(self.input_wrap_side())
                 if explain_id in new_explain_words:
-                    print('★★★ 此单词为新释义，不应出现单词听写游戏')
+                    print('❌❌❌ 此单词为新释义，不应出现单词听写游戏')
 
                 if not answer_word:    # 数组为空，说明上一题已回答正确，本题需随机填入字母以获取正确答案
                     self.key.games_keyboard(random.choice(string.ascii_lowercase))  # 随机输入一个小写字母
@@ -64,7 +64,7 @@ class ListenSpellWordPage(ListenSpellGame):
                         print('我输入的答案：', mine_input)
                         print('正确答案为:', correct_ans)
                     else:
-                        print("★★★ Error - 未显示正确答案")
+                        print("❌❌❌ Error - 未显示正确答案")
 
                 else:   # 数组长度为1，说明已获取正确答案，直接输入正确答案即可
                     for alpha in list(answer_word[0]):
@@ -73,10 +73,10 @@ class ListenSpellWordPage(ListenSpellGame):
                     print('我输入的单词：', answer_word[0].upper())
                     self.next_btn_operate('true', self.fab_commit_btn)      # 提交 判断加 点击操作
                     if self.input_word() != answer_word[0].lower():
-                        print('★★★ 输入单词大写后，点击确定，单词未变为小写字母')
+                        print('❌❌❌ 输入单词大写后，点击确定，单词未变为小写字母')
 
                     if self.wait_check_answer_word_page():  # 判断正确答案是否出现
-                        print("★★★ Error -听写正确却显示正确答案")
+                        print("❌❌❌ Error -听写正确却显示正确答案")
                     explain = self.word_explain()
                     print('解释：', explain.text)
                     print('回答正确！')

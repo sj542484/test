@@ -3,17 +3,17 @@
 #  @Time   : 2019/7/2 9:09
 # -----------------------------------------
 import unittest
-from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.login.object_page.login_page import LoginPage
-from app.honor.student.web.object_pages.assign_word import AssignWord
-from app.honor.student.web.object_pages.driver import Driver
-from app.honor.student.web.object_pages.login_page import LoginWebPage
+from app.honor.web.object_pages.assign_word import AssignWord
+from app.honor.web import Driver
+from app.honor.web.object_pages.login_page import LoginWebPage
 from app.honor.student.word_book_rebuild.object_page.class_operate import QuitAddClass
-from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_sql_handler import WordDataHandlePage
 from app.honor.student.word_book_rebuild.object_page.games.flash_card_page import FlashCard
 from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
-from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
+from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild_page import WordBookRebuildPage
 from app.honor.student.word_book_rebuild.test_data.account import VANCLASS_ID, TEACHER_ACCOUNT, STU_PASSWORD
 from conf.decorator import setup, teardown, testcase
 

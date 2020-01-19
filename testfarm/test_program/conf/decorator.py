@@ -1,27 +1,25 @@
 import time
+from HTMLTestReportCN2 import DirAndFiles
 from functools import wraps
 from selenium.common.exceptions import WebDriverException
 
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.report_path import ReportPath
-from testfarm.test_program.conf.log import Log
+from conf.base_page import BasePage
+from conf.report_path import ReportPath
+from conf.log import Log
 
 flag = 'IMAGE:'
 log = Log()
 
 
-def _screenshot(name):
-    date_time = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
-    screenshot = name + '-' + date_time + '.png'
-    path = ReportPath().get_path() + '/' + screenshot
-
+def screenshot(error_type):
+    report_path = ReportPath().get_path()
     driver = BasePage().get_driver()
-    driver.save_screenshot(path)
+    img_name = DirAndFiles(report_path).get_screenshot(driver, error_type)
+    print('screen_shot[' + error_type + "--" + img_name + ']screen_shot\n')
+    return img_name
 
-    return screenshot
 
-
-def teststep(func):
+def teststep(func: object) -> object:
     @wraps(func)
     def wrapper(*args, **kwargs):
         try:
@@ -35,7 +33,7 @@ def teststep(func):
             if flag in str(e):
                 raise WebDriverException(e)
             else:
-                raise WebDriverException(flag + _screenshot(func.__qualname__))
+                raise WebDriverException(flag + screenshot('Error'))
         except AssertionError as e:
             log.e('AssertionError, %s', e)
             log.e('\t<-- %s, %s, %s', func.__qualname__, 'AssertionError', 'Error')
@@ -43,7 +41,7 @@ def teststep(func):
             if flag in str(e):
                 raise AssertionError(e)
             else:
-                raise AssertionError(flag + _screenshot(func.__qualname__))
+                raise AssertionError(flag + screenshot('Error'))
         except Exception as e:
             log.e('Exception, %s', e)
             log.e('\t<-- %s, %s, %s', func.__qualname__, 'Exception', 'Error')
@@ -51,7 +49,7 @@ def teststep(func):
             if flag in str(e):
                 raise Exception(e)
             else:
-                raise Exception(flag + _screenshot(func.__qualname__))
+                raise Exception(flag + screenshot('Error'))
 
     return wrapper
 
@@ -71,7 +69,7 @@ def teststeps(func):
             if flag in str(e):
                 raise WebDriverException(e)
             else:
-                raise WebDriverException(flag + _screenshot(func.__qualname__))
+                raise WebDriverException(flag + screenshot('Error'))
         except AssertionError as e:
             log.e('AssertionError, %s', e)
             log.e('  <-- %s, %s, %s', func.__qualname__, 'AssertionError', 'Error')
@@ -79,7 +77,7 @@ def teststeps(func):
             if flag in str(e):
                 raise AssertionError(e)
             else:
-                raise AssertionError(flag + _screenshot(func.__qualname__))
+                raise AssertionError(flag + screenshot('Error'))
         except Exception as e:
             log.e('Exception, %s', e)
             log.e('  <-- %s, %s, %s', func.__qualname__, 'Exception', 'Error')
@@ -87,7 +85,7 @@ def teststeps(func):
             if flag in str(e):
                 raise Exception(e)
             else:
-                raise Exception(flag + _screenshot(func.__qualname__))
+                raise Exception(flag + screenshot('Error'))
 
     return wrapper
 
@@ -107,7 +105,7 @@ def _wrapper(func):
             if flag in str(e):
                 raise WebDriverException(e)
             else:
-                raise WebDriverException(flag + _screenshot(func.__qualname__))
+                raise WebDriverException(flag + screenshot('Error'))
         except AssertionError as e:
             log.e('AssertionError, %s', e)
             log.e('<-- %s, %s, %s\n', func.__qualname__, 'AssertionError', 'Fail')
@@ -115,7 +113,7 @@ def _wrapper(func):
             if flag in str(e):
                 raise AssertionError(e)
             else:
-                raise AssertionError(flag + _screenshot(func.__qualname__))
+                raise AssertionError(flag + screenshot('Error'))
         except Exception as e:
             log.e('Exception, %s', e)
             log.e('<-- %s, %s, %s\n', func.__qualname__, 'Exception', 'Error')
@@ -123,7 +121,7 @@ def _wrapper(func):
             if flag in str(e):
                 raise Exception(e)
             else:
-                raise Exception(flag + _screenshot(func.__qualname__))
+                raise Exception(flag + screenshot('Error'))
 
     return wrapper
 

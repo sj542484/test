@@ -6,7 +6,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
 from app.honor.student.homework.object_page.homework_page import Homework
-from app.honor.student.homework import guess_word_operate
 from conf.base_page import BasePage
 from conf.decorator import teststeps, teststep
 
@@ -158,7 +157,7 @@ class GuessWord(BasePage):
                     if len(item) != 1:  # 词组
                         var = value.replace(' ', '')   # 删除空格
                         if len(word[:-1]) != len(var):  # 测试空格数是否与单词长度一致
-                            print('★★★ Error - 空格数:%s,应为：%s ' % (len(word[:-1]), len(var)))
+                            print('❌❌❌ Error - 空格数:%s,应为：%s ' % (len(word[:-1]), len(var)))
                         else:
                             print('空格数无误：', len(var))
 
@@ -212,6 +211,6 @@ class GuessWord(BasePage):
         if var <= 6:
             print('No Error - 错误次数为：%s 次' % var)
         else:
-            print('★★★ Error - 错误次数为：%s' % var)
+            print('❌❌❌ Error - 错误次数为：%s' % var)
             # MyError(self.driver).my_error(var > 6)
         print('==============')

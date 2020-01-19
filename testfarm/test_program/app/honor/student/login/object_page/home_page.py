@@ -2,12 +2,12 @@
 # encoding:UTF-8  
 # @Author  : SUN FEIFEI
 import time
-from testfarm.test_program.app.honor.student.homework.object_page.homework_page import Homework
+from app.honor.student.homework.object_page.homework_page import Homework
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from conf.base_page import BasePage
 
 
 class HomePage(BasePage):
@@ -17,10 +17,21 @@ class HomePage(BasePage):
         """以“做试卷”为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'做试卷')]")
         try:
+            WebDriverWait(self.driver, 20, 0.5).until(lambda x: x.find_element(*locator))
+            return True
+        except:
+            return False
+
+    @teststeps
+    def wait_check_expert_page(self):
+        """以“做试卷”为依据"""
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'通知')]")
+        try:
             WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False
+
 
     @teststeps
     def wait_check_word_title(self):
@@ -31,6 +42,10 @@ class HomePage(BasePage):
             return True
         except:
             return False
+
+    @classmethod
+    def add_base_assert(cls, base_assert):
+        super().set_assert(base_assert)
 
     @teststep
     def click_hk_tab(self, index):
@@ -223,7 +238,7 @@ class HomePage(BasePage):
 
     @teststeps
     def click_blank(self):
-        self.driver.tap([(20, 100), ])
+        self.driver.tap([(self.get_window_size()[0] * 0.5, 100), ])
 
     @teststeps
     def homework_count(self):

@@ -428,21 +428,21 @@ class BuyTipsPage(BasePage):
             if self.wait_check_pay_page():
                 check = self.check_button()  # 单选框
                 for i in range(len(check)):
-                    if GetAttribute().checked(check[i]) == 'true':
+                    if GetAttribute().get_checked(check[i]) == 'true':
                         if i != 3:
-                            print('★★★ Error - 未默认选中 年卡')
+                            print('❌❌❌ Error - 未默认选中 年卡')
                         else:
                             check[0].click()  # 选择季卡
-                            if GetAttribute().checked(self.check_button()[0]) == 'true':
+                            if GetAttribute().get_checked(self.check_button()[0]) == 'true':
                                 self.current_card()  # 左下角 目前选中的卡
                             else:
-                                print('★★★ Error - 未选中 月卡')
+                                print('❌❌❌ Error - 未选中 月卡')
 
                 card = self.card_name()  # 卡的类型
                 price = self.card_price()  # 卡的价格
 
                 if len(check) != len(card) != len(price) != 4:
-                    print('★★★ Error - 卡的个数有误', len(check), len(card), len(price))
+                    print('❌❌❌ Error - 卡的个数有误', len(check), len(card), len(price))
                 else:
                     print('--------------------')
                     for j in range(len(card)):
@@ -457,7 +457,7 @@ class BuyTipsPage(BasePage):
     def pay_confirm_operate(self):
         """支付确认页 操作"""
         direct = self.direct_buy_button()  # 直接购买 按钮
-        if GetAttribute().enabled(direct) == 'true':
+        if GetAttribute().get_enabled(direct) == 'true':
             direct.click()  # 点击 直接购买 按钮
 
             if self.wait_check_pay_confirm_page():  # 支付确认 页面检查点
@@ -478,8 +478,8 @@ class BuyTipsPage(BasePage):
                 icon = self.pay_icon()  # icon
 
                 wechat_check = self.wechat_pay_check()  # 微信单选框
-                if GetAttribute().checked(wechat_check) == 'false':
-                    print('★★★ Error - 未默认选中 微信支付')
+                if GetAttribute().get_checked(wechat_check) == 'false':
+                    print('❌❌❌ Error - 未默认选中 微信支付')
 
                 for k in range(1, len(icon)):
                     self.pay_mode(k)  # 支付方式
@@ -500,14 +500,14 @@ class BuyTipsPage(BasePage):
             print('家长代付页:')
 
             wechat_tab = self.wechat_replace_pay()  # 微信代付
-            if GetAttribute().selected(wechat_tab) == 'false':
-                print('★★★ Error - 未默认选中 微信代付')
+            if GetAttribute().get_selected(wechat_tab) == 'false':
+                print('❌❌❌ Error - 未默认选中 微信代付')
             else:
                 ali_tab = self.ali_replace_pay()  # 支付宝代付
                 print(ali_tab.text)
                 ali_tab.click()  # 切换到 支付宝代付
-                if GetAttribute().selected(self.ali_replace_pay()) == 'false':
-                    print('★★★ Error - 未选中 支付宝代付')
+                if GetAttribute().get_selected(self.ali_replace_pay()) == 'false':
+                    print('❌❌❌ Error - 未选中 支付宝代付')
 
             self.card_type()  # 卡的类型
             unit = self.price_unit(2)  # 货币单位
@@ -517,7 +517,7 @@ class BuyTipsPage(BasePage):
                 self.qr_code_hint()  # xx扫描二维码付款
 
             if not self.pay_finish_tips():  # 支付完成 提示
-                print("★★★ Error - 无支付完成 提示")
+                print("❌❌❌ Error - 无支付完成 提示")
             self.pay_statement()  # 收款公司说明
 
             self.pay_finish_operate()  # 支付结果页
@@ -534,7 +534,7 @@ class BuyTipsPage(BasePage):
                 self.contact_services_tips()  # 联系客服的提示
                 if self.img_judge():
                     if not self.qr_code_tips():  # "在线助教"客服二维码
-                        print('★★★ Error - 无文案："在线助教"客服二维码')
+                        print('❌❌❌ Error - 无文案："在线助教"客服二维码')
 
     @teststeps
     def online_services_operate(self):

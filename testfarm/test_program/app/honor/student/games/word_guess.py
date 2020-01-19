@@ -2,24 +2,21 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/8/1 11:38
 # -----------------------------------------
+import time
+
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.games.game_public_element import PublicPage
-from testfarm.test_program.conf.decorator import teststep
+from app.honor.student.games.all_game_common_element import GameCommonEle
+from conf.decorator import teststep
 
 
-class GuessWordGame(PublicPage):
+class GuessWordGame(GameCommonEle):
     """猜词游戏"""
     @teststep
     def wait_check_guess_word_page(self):
         """"""
         locator = (By.ID, 'level')
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def keyboard(self):
@@ -44,3 +41,74 @@ class GuessWordGame(PublicPage):
         """单词"""
         ele = self.driver.find_element_by_id(self.id_type() + 'english')
         return ele.text
+
+    @teststep
+    def word_guess_play_process(self, do_right=False, right_answer=None):
+        """猜词游戏对错过程"""
+        if do_right:
+            print('正确答案：', right_answer, '\n')
+            for x in right_answer:
+                for k in self.keyboard_key():
+                    if x == k.text:
+                        k.click()
+                        break
+            input_answer = right_answer
+        else:
+            mine_input = []
+            index = 0
+            while True:
+                select_alpha = self.keyboard_key()[index]
+                mine_input.append(select_alpha.text)
+                select_alpha.click()
+                if '_' not in self.guess_word():
+                    break
+                index += 1
+            # if self.rest_bank_num() != 1:
+            #     before_count = self.rest_bank_num()
+            #     while self.rest_bank_num() == before_count:
+            #         select_alpha = self.keyboard_key()[index]
+            #         mine_input.append(select_alpha.text)
+            #         select_alpha.click()
+            #         time.sleep(0.5)
+            #         index += 1
+            # else:
+            #     while self.wait_check_guess_word_page():
+            #         select_alpha = self.keyboard_key()[index]
+            #         mine_input.append(select_alpha.text)
+            #         select_alpha.click()
+            #         time.sleep(0.5)
+            #         index += 1
+            input_answer = ''.join(mine_input)
+        return input_answer
+
+    @teststep
+    def guess_word_lib_hw_operate(self, fq, half_exit, sec_answer=None, ):
+        """猜词游戏过程"""
+        mine_answer = {}
+        timer = []
+        total_count = self.rest_bank_num()
+        for x in range(total_count):
+            self.rate_judge(total_count, x)
+            explain = self.word_explain()
+            print('解释：', explain)
+            if half_exit:
+                if x == 1:
+                    self.click_back_up_button()
+                    self.tips_operate()
+                    break
+
+            if fq == 1:
+                answer = self.word_guess_play_process()
+            else:
+                right_answer = sec_answer[str(x)].lower()
+                answer = self.word_guess_play_process(do_right=True, right_answer=right_answer)
+            print('我的答案：', answer)
+            mine_answer[str(x)] = answer
+            if x != total_count - 1:
+                timer.append(self.bank_time())
+            time.sleep(3)
+            print('-' * 30, '\n')
+        self.judge_timer(timer)
+        print('本次做题答案：', mine_answer)
+        return mine_answer
+

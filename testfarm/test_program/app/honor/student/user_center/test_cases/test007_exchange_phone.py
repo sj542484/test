@@ -9,7 +9,9 @@ from app.honor.student.user_center.object_page.reset_phone_page import PhoneRese
 from app.honor.student.user_center.test_data.reset_phone import reset_phone_data
 from app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
 from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
+from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase
+from utils.assert_func import ExpectingTest
 from utils.reset_phone_find_toast import verify_find
 from utils.toast_find import Toast
 
@@ -21,16 +23,24 @@ class ExchangePhone(unittest.TestCase):
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.result = unittest.TestResult()
+        cls.base_assert = ExpectingTest(cls, cls.result)
         cls.login = LoginPage()
         cls.home = HomePage()
         cls.user_center = UserCenterPage()
         cls.user_info = UserInfoPage()
         cls.phone = PhoneReset()
+        BasePage().set_assert(cls.base_assert)
 
-    @classmethod
     @teardown
-    def tearDown(cls):
-        pass
+    def tearDown(self):
+        for x in self.base_assert.get_error():
+            self.result.addFailure(self, x)
+
+    def run(self, result=None):
+        self.result = result
+        super(ExchangePhone, self).run(result)
+
 
     @testcase
     def test_exchange_phone(self):
@@ -39,7 +49,7 @@ class ExchangePhone(unittest.TestCase):
         if self.home.wait_check_home_page():
             self.home.click_tab_profile()  # 进入首页后点击‘个人中心’按钮
 
-            if self.user_center.wait_check_page():  # 页面检查点
+            if self.user_center.wait_check_user_center_page():  # 页面检查点
                 self.user_center.click_avatar_profile()  # 点击登录头像按钮，进行个人信息操作
 
                 for i in range(len(reset_phone_data)):
@@ -77,7 +87,7 @@ class ExchangePhone(unittest.TestCase):
 
                                     if self.user_info.wait_check_page():
                                         self.home.click_back_up_button()  # 数据更新需要刷新页面
-                                        if self.user_center.wait_check_page():  # 页面检查点
+                                        if self.user_center.wait_check_user_center_page():  # 页面检查点
                                             self.user_center.click_avatar_profile()  # 点击登录头像按钮，进行个人信息操作
                                             if self.user_info.wait_check_page():
                                                 phone2 = self.user_info.phone()  # 获取修改后的手机号

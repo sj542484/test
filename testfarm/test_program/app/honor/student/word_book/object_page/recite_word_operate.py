@@ -2,7 +2,7 @@
 #  @Email  : vectorztt@163.com
 #  @Time   : 2019/7/26 13:34
 # -----------------------------------------
-from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
+from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild_page import WordBookRebuildPage
 from app.honor.student.word_book.object_page.vocab_game import VocabGamePage
 from app.honor.student.word_book.object_page.word_spell_game import WordSpellGamePage
 from conf.decorator import teststep

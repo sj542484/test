@@ -2,7 +2,7 @@ import random
 import time
 
 from app.honor.student.games.choice_vocab import VocabChoiceGame
-from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_sql_handler import WordDataHandlePage
 from conf.decorator import teststeps
 
 
@@ -19,7 +19,6 @@ class VocabularyChoose(VocabChoiceGame):
         answer_word, all_words = [], []
 
         while len(all_words) < bank_count:
-            print()
             self.next_btn_judge('false', self.fab_next_btn)
             self.listen_choice_speak_icon().click()  # 点击发音按钮
             options = self.vocab_options()  # 获取当前页面所有选项
@@ -35,10 +34,10 @@ class VocabularyChoose(VocabChoiceGame):
                     explain_id = explain.get_attribute('contentDescription')
 
                     if explain_id in new_explain_words:
-                        print('★★★ 此单词为新释义，不应出现词汇选择游戏')
+                        print('❌❌❌ 此单词为新释义，不应出现词汇选择游戏')
                     print('解释:', explain.text)
                 else:
-                    print('★★★ Error-- 解释文本未出现')
+                    print('❌❌❌ Error-- 解释文本未出现')
 
                 right_answer = self.vocab_right_answer()  # 正确答案
                 if right_answer == opt_text:
@@ -56,16 +55,16 @@ class VocabularyChoose(VocabChoiceGame):
                             explain = self.vocab_word_explain()
                             explain_id = explain.get_attribute('contentDescription')
                             if explain_id in new_explain_words:
-                                print('★★★ 此单词为新释义，不应出现词汇选择游戏')
+                                print('❌❌❌ 此单词为新释义，不应出现词汇选择游戏')
                             all_words.append(y.text)
                             print('答案正确：%s' % answer_word[0])
                             print('解释：%s' % explain.text)
                         else:
-                            print('★★★ Error-- 解释文本未出现')
+                            print('❌❌❌ Error-- 解释文本未出现')
                         break
                 answer_word.clear()
             self.sound_icon().click()
-            self.next_btn_operate("true", self.fab_next_btn)  # 下一题 按钮 状态判断 加点击
+            self.fab_next_btn().click()   # 下一题 按钮 状态判断 加点击
             time.sleep(2)
             print('-' * 30, '\n')
 
@@ -77,26 +76,29 @@ class VocabularyChoose(VocabChoiceGame):
             voice_btn = self.listen_choice_speak_icon()
             explain_id = voice_btn.get_attribute('contentDescription')
             if explain_id in new_explain_words:
-                print('★★★ 此单词为新释义，不应出现词汇选择游戏')
+                print('❌❌❌ 此单词为新释义，不应出现词汇选择游戏')
             right_word = self.data.get_word_by_explain_id(stu_id, explain_id)
             for y in self.vocab_options():
                 if y.text == right_word:
                     print('选择选项：', y.text)
                     y.click()
                     if not self.wait_check_explain_page():
-                        print('★★★ 点击选项未出现解释文本！')
+                        print('❌❌❌ 点击选项未出现解释文本！')
                     else:
                         print("解释：", self.vocab_word_explain().text)
                     break
             self.sound_icon().click()
-            self.next_btn_operate("true", self.fab_next_btn)  # 下一题 按钮 状态判断 加点击
-            self.driver.implicitly_wait(2)
+            self.fab_next_btn().click()   # 下一题 按钮 状态判断 加点击
+            time.sleep(2)
             print('-' * 30, '\n')
 
 
     @teststeps
     def vocab_select_choice_explain(self, bank_count, wrong_again_words):
-        """《词汇选择》 - 选解释模式"""
+        """《词汇选择》 - 选解释模式
+        :param bank_count: 题目个数
+        :param wrong_again_words: 错题再练单词
+        """
         print('====== 🌟🌟 词汇选择 - 根据单词选解释模式（复习）🌟🌟 =====\n')
         recite_words = []
         for x in range(bank_count + 2):
@@ -108,7 +110,7 @@ class VocabularyChoose(VocabChoiceGame):
             explain_id = word.get_attribute('contentDescription')     # 获取正确解释id
 
             if explain_id in recite_words:
-                print('★★★ 单词已选过， 再次出现')
+                print('❌❌❌ 单词已选过， 再次出现')
 
             right_explain = self.data.get_explain_by_id(explain_id)      # 根据id获取正确解释文本
             options = self.vocab_options()      # 遍历选项，点击和正确答案一样的解释
@@ -128,7 +130,8 @@ class VocabularyChoose(VocabChoiceGame):
                     break
 
             print('正确答案：', right_explain)
-            self.next_btn_operate('true', self.fab_next_btn)  # 下一题 按钮 状态判断 加点击
+            self.fab_next_btn().click()  # 下一题 按钮 状态判断 加点击
+            time.sleep(2)
             print('-'*30, '\n')
 
     @teststeps
@@ -143,10 +146,10 @@ class VocabularyChoose(VocabChoiceGame):
             explain_id = item.get_attribute('contentDescription')
 
             if explain_id in recite_words:
-                print('★★★ 单词已选过， 再次出现')
+                print('❌❌❌ 单词已选过， 再次出现')
 
             right_word = self.data.get_word_by_explain_id(stu_id, explain_id)   # 根据解释id获取正确单词
-            options = self.vocab_question()  # 遍历选项，点击和word一样的单词
+            options = self.vocab_options()  # 遍历选项，点击和word一样的单词
             for y in options:
                 if x in [2, 3]:                 # 次序为【2,3】连续选择错误
                     if y.text != right_word:
@@ -164,8 +167,9 @@ class VocabularyChoose(VocabChoiceGame):
             if self.wait_check_voice_page():
                 self.sound_icon().click()
             else:
-                print('★★★ Error-- 声音按钮未出现')
-            self.next_btn_operate('true', self.fab_next_btn)  # 下一题 按钮 状态判断 加点击
+                print('❌❌❌ Error-- 声音按钮未出现')
+            self.fab_next_btn().click()  # 下一题 按钮 状态判断 加点击
+            time.sleep(2)
             print('-'*30, '\n')
 
     @teststeps
@@ -179,19 +183,19 @@ class VocabularyChoose(VocabChoiceGame):
             print('题目：%s' % item.text)
             explain_id = item.get_attribute('contentDescription')           # 根据题目获取explain——id
             if explain_id in recite_words:
-                print('★★★ 单词已复习过， 单词未去重!')
+                self.base_assert.except_error('❌❌❌ 单词已复习过， 单词未去重!')
 
             if explain_id in right_words and explain_id not in recite_new_explain_words:
-                print('★★★ 单词新词时做全对， 复习时不为新释义单词， 不应出现词汇运用游戏')
+                self.base_assert.except_error('❌❌❌ 单词新词时做全对， 复习时不为新释义单词， 不应出现词汇运用游戏')
 
             right_answer = self.data.get_word_by_explain_id(stu_id, explain_id)     # 根据解释id获取正确单词
             self.apply_hint_button().click()  # 点击提示按钮
             self.next_btn_judge('false', self.apply_hint_button)  # 提示按钮 状态判断
             if not self.wait_vocab_apply_explain_page():
-                print('★★★ 点击提示后未发现句子解释文本')
+                self.base_assert.except_error('❌❌❌ 点击提示后未发现句子解释文本')
             else:
                 sentence_explain = self.apply_sentence_explain()
-                print('句子解释：', sentence_explain)
+                self.base_assert.except_error('句子解释：', sentence_explain)
 
             for y in self.vocab_options():
                 if y.text == right_answer:
@@ -203,8 +207,9 @@ class VocabularyChoose(VocabChoiceGame):
             if self.wait_check_voice_page():
                 self.sound_icon().click()
             else:
-                print('★★★ Error-- 声音按钮未出现')
-            self.next_btn_operate('true', self.fab_next_btn)  # 下一题 按钮 状态判断 加点击
+                print('❌❌❌ Error-- 声音按钮未出现')
+            self.fab_next_btn().click()   # 下一题 按钮 状态判断 加点击
+            time.sleep(2)
             print('-'*30, '\n')
 
 

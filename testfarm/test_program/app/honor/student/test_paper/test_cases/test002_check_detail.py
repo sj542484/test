@@ -1,27 +1,41 @@
 # coding=utf-8
 import unittest
 
-from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.login.object_page.login_page import LoginPage
-from app.honor.student.test_paper.object_page.exam_data_handle import DataPage
+from app.honor.student.test_paper.object_page.exam_sql_handle import DataPage
 from app.honor.student.test_paper.object_page.exam_detail import DetailPage
 from app.honor.student.test_paper.object_page.exam_page import ExamPage
-from conf.decorator import setup, teststeps
+from conf.base_page import BasePage
+from conf.decorator import setup, teststeps, teardown
+from utils.assert_func import ExpectingTest
 
 
-class Exam(unittest.TestCase):
+class ExamDetail(unittest.TestCase):
     """试卷"""
     @classmethod
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.result = unittest.TestResult()
+        cls.base_assert = ExpectingTest(cls, cls.result)
         cls.home = HomePage()
         cls.login = LoginPage()
         cls.exam = ExamPage()
         cls.detail = DetailPage()
         cls.login.app_status()  # 判断APP当前状态
         cls.common = DataPage()
+        BasePage().set_assert(cls.base_assert)
+
+    @teardown
+    def tearDown(self):
+        for x in self.base_assert.get_error():
+            self.result.addFailure(self, x)
+
+    def run(self, result=None):
+        self.result = result
+        super(ExamDetail, self).run(result)
 
     @teststeps
     def test_check_exam_detail(self):

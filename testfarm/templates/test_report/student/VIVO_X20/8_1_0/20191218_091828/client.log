@@ -1,0 +1,61 @@
+2019-12-18 09:18:44,998 - VIVO_X20 - INFO - --> PlayAllGame.setUp
+2019-12-18 09:18:45,000 - VIVO_X20 - INFO -   --> LoginPage.app_status
+2019-12-18 09:18:45,075 - VIVO_X20 - INFO -   --> LoginPage.wait_check_page
+2019-12-18 09:18:47,779 - VIVO_X20 - INFO -   <-- LoginPage.wait_check_page, Success
+2019-12-18 09:18:47,780 - VIVO_X20 - INFO -   --> LoginPage.login_operate
+2019-12-18 09:18:49,781 - VIVO_X20 - INFO - 	--> LoginPage.input_username
+2019-12-18 09:18:49,892 - VIVO_X20 - INFO - 	--> LoginPage.input_password
+2019-12-18 09:18:51,882 - VIVO_X20 - INFO - 	--> LoginPage.login_button
+2019-12-18 09:18:54,972 - VIVO_X20 - INFO -   <-- LoginPage.login_operate, Success
+2019-12-18 09:18:54,973 - VIVO_X20 - INFO -   <-- LoginPage.app_status, Success
+2019-12-18 09:18:54,974 - VIVO_X20 - INFO - <-- PlayAllGame.setUp, Success
+
+2019-12-18 09:18:54,974 - VIVO_X20 - INFO - --> PlayAllGame.test_all_game
+2019-12-18 09:18:54,975 - VIVO_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-12-18 09:18:56,540 - VIVO_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-12-18 09:18:56,541 - VIVO_X20 - INFO - 	--> UserCenterPage.get_user_info
+2019-12-18 09:18:56,542 - VIVO_X20 - INFO - 	--> HomePage.click_tab_profile
+2019-12-18 09:18:56,814 - VIVO_X20 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-12-18 09:18:59,997 - VIVO_X20 - INFO - 	--> UserCenterPage.nickname
+2019-12-18 09:19:02,597 - VIVO_X20 - INFO - 	--> UserCenterPage.purchase
+2019-12-18 09:19:02,819 - VIVO_X20 - INFO - 	--> UserCenterPage.wait_check_buy_page
+2019-12-18 09:19:04,059 - VIVO_X20 - INFO - 	--> UserCenterPage.phone
+2019-12-18 09:19:05,477 - VIVO_X20 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-12-18 09:19:07,128 - VIVO_X20 - INFO - 	--> UserCenterPage.school_name
+2019-12-18 09:19:08,004 - VIVO_X20 - INFO - 	--> UserCenterPage.setting_up
+2019-12-18 09:19:08,743 - VIVO_X20 - INFO - 	--> UserCenterPage.wait_check_logout_page
+2019-12-18 09:19:09,945 - VIVO_X20 - INFO - 	--> UserCenterPage.clear_cache
+2019-12-18 09:19:14,714 - VIVO_X20 - INFO - 	--> UserCenterPage.wait_check_user_center_page
+2019-12-18 09:19:15,536 - VIVO_X20 - INFO - 	--> HomePage.click_tab_hw
+2019-12-18 09:19:15,919 - VIVO_X20 - INFO - 	--> HomeworkDataHandle.delete_student_homework_data
+2019-12-18 09:19:15,958 - VIVO_X20 - INFO -   --> HomePage.wait_check_home_page
+2019-12-18 09:19:17,714 - VIVO_X20 - INFO -   <-- HomePage.wait_check_home_page, Success
+2019-12-18 09:19:17,714 - VIVO_X20 - INFO - 	--> HomePage.click_hk_tab
+2019-12-18 09:19:17,910 - VIVO_X20 - INFO - 	--> LibraryGamePage.enter_into_game
+2019-12-18 09:19:17,911 - VIVO_X20 - INFO - 	--> LibraryGamePage.wait_check_homework_list_page
+2019-12-18 09:19:19,372 - VIVO_X20 - INFO - 	--> LibraryGamePage.homework_list
+2019-12-18 09:19:23,648 - VIVO_X20 - INFO - 	--> LibraryGamePage.homework_list
+2019-12-18 09:19:24,193 - VIVO_X20 - INFO -   --> LibraryGamePage.wait_check_game_list_page
+2019-12-18 09:19:24,430 - VIVO_X20 - INFO -   <-- LibraryGamePage.wait_check_game_list_page, Success
+2019-12-18 09:19:24,431 - VIVO_X20 - INFO - 	--> LibraryGamePage.testbank_type
+2019-12-18 09:19:26,907 - VIVO_X20 - INFO - 	--> LibraryGamePage.testbank_name
+2019-12-18 09:19:27,404 - VIVO_X20 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-12-18 09:19:27,489 - VIVO_X20 - INFO - 	--> LibraryGamePage.bank_progress_by_name
+2019-12-18 09:19:27,969 - VIVO_X20 - INFO - 	--> LibraryGamePage.click_bank_by_name
+2019-12-18 09:19:28,445 - VIVO_X20 - INFO - 	--> LibraryGamePage.wait_check_game_page
+2019-12-18 09:19:29,979 - VIVO_X20 - INFO - 	--> LibraryGamePage.play_book_games
+2019-12-18 09:19:29,980 - VIVO_X20 - INFO - 	--> LibraryGamePage.game_name
+2019-12-18 09:19:30,266 - VIVO_X20 - INFO - 	--> FlashCard.play_flash_game
+2019-12-18 09:19:30,267 - VIVO_X20 - INFO - 	--> FlashCardGame.wait_check_study_page
+2019-12-18 09:19:45,356 - VIVO_X20 - INFO - 	--> FlashCardGame.wait_check_copy_page
+2019-12-18 09:20:00,367 - VIVO_X20 - INFO - 	--> FlashCardGame.wait_check_flash_result_page
+2019-12-18 09:20:15,569 - VIVO_X20 - INFO - 	--> ResultPage.wait_check_medal_page
+2019-12-18 09:20:25,579 - VIVO_X20 - INFO - 	--> ResultPage.wait_check_result_page
+2019-12-18 09:20:36,443 - VIVO_X20 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-12-18 09:20:46,643 - VIVO_X20 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-12-18 09:20:56,916 - VIVO_X20 - INFO - 	--> LibraryGamePage.wait_check_bank_list_page
+2019-12-18 09:21:07,206 - VIVO_X20 - INFO - <-- PlayAllGame.test_all_game, Success
+
+2019-12-18 09:21:07,206 - VIVO_X20 - INFO - --> PlayAllGame.tearDown
+2019-12-18 09:21:07,207 - VIVO_X20 - INFO - <-- PlayAllGame.tearDown, Success
+

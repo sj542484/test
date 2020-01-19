@@ -8,29 +8,38 @@ from app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOA
 from app.honor.student.user_center.object_page.change_image_page import ChangeImage
 from app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
 from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
+from conf.base_page import BasePage
 from conf.decorator import setup, teardown
+from utils.assert_func import ExpectingTest
 from utils.screen_shot import ScreenShot
 from utils.toast_find import Toast
 
 
-class ImageChange(unittest.TestCase):
+class TakePhotoChangeAvatar(unittest.TestCase):
     """拍照修改头像 -- 重拍后保存"""
 
     @classmethod
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.result = unittest.TestResult()
+        cls.base_assert = ExpectingTest(cls, cls.result)
         cls.login_page = LoginPage()
         cls.home = HomePage()
         cls.user_center = UserCenterPage()
         cls.user_info = UserInfoPage()
         cls.change_image = ChangeImage()
         cls.screen_shot = ScreenShot()
+        BasePage().set_assert(cls.base_assert)
 
-    @classmethod
     @teardown
-    def tearDown(cls):
-        pass
+    def tearDown(self):
+        for x in self.base_assert.get_error():
+            self.result.addFailure(self, x)
+
+    def run(self, result=None):
+        self.result = result
+        super(TakePhotoChangeAvatar, self).run(result)
 
     def test_change_image(self):
         self.login_page.app_status()  # 判断APP当前状态
@@ -38,7 +47,7 @@ class ImageChange(unittest.TestCase):
         if self.home.wait_check_home_page():
             self.home.click_tab_profile()  # 进入首页后点击‘个人中心’按钮
 
-            if self.user_center.wait_check_page():  # 页面检查点
+            if self.user_center.wait_check_user_center_page():  # 页面检查点
                 self.user_center.click_avatar_profile()  # 点击登录头像按钮，进行个人信息操作
                 if self.user_info.wait_check_page():  # 页面检查点
 

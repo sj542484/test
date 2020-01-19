@@ -12,7 +12,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep
 
 
@@ -213,10 +213,10 @@ class PurchasePage(BasePage):
             card.click()
             check_radio = self.check_radio(card.text)
             if check_radio.get_attribute('checked') != 'true':
-                print('★★★ Error-- 选项按钮状态未发生变化')
+                print('❌❌❌ Error-- 选项按钮状态未发生变化')
             current_card = self.selected_card()
             if card.text.split(' ')[0] != current_card.text:
-                print('★★★ Error-- 当前卡的类型与所选类型不一致')
+                print('❌❌❌ Error-- 当前卡的类型与所选类型不一致')
             else:
                 print('已选择', current_card.text, '\n')
 
@@ -225,10 +225,10 @@ class PurchasePage(BasePage):
                 discount_button = self.discount_buy_button()
                 if '优惠价' in card_price.text:
                     if discount_button.get_attribute('enabled') != 'true':
-                        print('★★★ Error-- 有优惠价，但是优惠购买按钮置灰', card.text)
+                        print('❌❌❌ Error-- 有优惠价，但是优惠购买按钮置灰', card.text)
                 else:
                     if discount_button.get_attribute('enabled') != 'false':
-                        print('★★★ Error-- 无优惠价，但是优惠购买按钮未置灰', card.text)
+                        print('❌❌❌ Error-- 无优惠价，但是优惠购买按钮未置灰', card.text)
 
     @teststep
     def check_agreement(self):
@@ -262,7 +262,7 @@ class PurchasePage(BasePage):
         """法宝页面元素信息"""
         text = self.get_all_text_view()
         if len(text) != 16:
-            print('★★★ Error-- 页面元素缺失', text)
+            print('❌❌❌ Error-- 页面元素缺失', text)
         else:
             magic_types = numpy.reshape(text[6:-1], (3, 3))
             print("<" + text[0] + '页面>', '\n',
@@ -277,7 +277,7 @@ class PurchasePage(BasePage):
         text = self.get_all_text_view()
         print(len(text))
         if len(text) not in range(18, 21):
-            print('★★★ Error-- 页面元素缺失', text)
+            print('❌❌❌ Error-- 页面元素缺失', text)
         else:
             print('<选择优惠卡页面>\n'
                   '学生:', text[1], '\n',
@@ -310,7 +310,7 @@ class PurchasePage(BasePage):
     def pay_confirm_page_ele_operate(self):
         text = self.get_all_text_view()
         if len(text) != 12:
-            print('★★★ Error-- 页面元素缺失', text)
+            print('❌❌❌ Error-- 页面元素缺失', text)
         else:
             print('<支付确认页面>\n'
                   '学生:', text[1], '\n',
@@ -326,7 +326,7 @@ class PurchasePage(BasePage):
     def parent_page_ele_operate(self):
         text = self.get_all_text_view()
         if len(text) != 9:
-            print('★★★ Error-- 页面元素缺失', text)
+            print('❌❌❌ Error-- 页面元素缺失', text)
         else:
             print(
                 '<'+text[0]+"页面>", '\n',
@@ -347,7 +347,7 @@ class PurchasePage(BasePage):
                 self.home.click_back_up_button()
                 if self.wait_check_buy_page():
                     self.home.click_back_up_button()
-                    if self.user_center.wait_check_page():
+                    if self.user_center.wait_check_user_center_page():
                         self.home.click_tab_hw()
                         if self.home.wait_check_home_page():
                             print('返回主界面')

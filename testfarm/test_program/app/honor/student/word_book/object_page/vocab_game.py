@@ -85,7 +85,7 @@ class VocabGamePage(VocabularyChoose):
         self.click_hint_button()  # 点击提示按钮
         self.hint_button_judge('false')  # 提示按钮 状态判断
         if not self.wait_vocab_apply_explain_page():
-            print('★★★ 点击提示后未发现句子解释文本')
+            print('❌❌❌ 点击提示后未发现句子解释文本')
         else:
             sentence_explain = self.sentence_explain()
             print('句子解释：', sentence_explain)

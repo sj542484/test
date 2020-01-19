@@ -192,7 +192,7 @@ class WordDictation(BasePage):
         if self.correct_judge():  # 展示的答案元素存在说明回答错误
             correct = self.correct()  # 正确答案
             if mine.lower() != result.lower():  # 展示的答题结果与我填入的答案不一致
-                print('★★★ Error - 展示的答题结果:%s 与我填入的答案:%s 不一致' % (mine, result))
+                print('❌❌❌ Error - 展示的答题结果:%s 与我填入的答案:%s 不一致' % (mine, result))
 
             for k in range(len(correct)):  # 测试 答案判断是否正确
                 if result[k] not in correct:
@@ -200,7 +200,7 @@ class WordDictation(BasePage):
                     break
         else:  # 回答正确
             if mine.lower() != result.lower():  # 展示的 我的答题结果 是否与我填入的一致
-                print('★★★ Error - 展示的答题结果 与我填入的不一致:', mine, result)
+                print('❌❌❌ Error - 展示的答题结果 与我填入的不一致:', mine, result)
 
         if i == 1:  # 第2题
             j = 0

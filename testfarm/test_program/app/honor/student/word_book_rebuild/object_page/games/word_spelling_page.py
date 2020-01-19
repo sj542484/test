@@ -1,7 +1,7 @@
 import time
 
 from app.honor.student.games.word_spell import SpellWordGame
-from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_sql_handler import WordDataHandlePage
 from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
 from conf.decorator import teststeps, teststep
 from utils.games_keyboard import Keyboard
@@ -11,6 +11,7 @@ from utils.get_attribute import GetAttribute
 class SpellingWord(SpellWordGame):
     """单词拼写"""
     def __init__(self):
+        super().__init__()
         self.data = WordDataHandlePage()
         self.key = Keyboard()
         self.word_public = WorldBookPublicPage()
@@ -33,38 +34,40 @@ class SpellingWord(SpellWordGame):
         print('标熟单词：', familiar_word, '\n')
         all_words = []
         value = 0
-        for x in range(len(familiar_word)):
-            if self.wait_check_normal_spell_page():
-                explain_ele = self.word_explain()        # 解释
-                explain = explain_ele.text
-                explain_id = self.word_public.get_explain_id(explain_ele)
-                self.next_btn_judge('false', self.fab_commit_btn)  # 下一题 按钮 状态判断
+        index = 0
+        while self.wait_check_normal_spell_page():
+            explain_ele = self.word_explain()        # 解释
+            explain = explain_ele.text
+            explain_id = self.word_public.get_explain_id(explain_ele)
+            self.next_btn_judge('false', self.fab_commit_btn)  # 下一题 按钮 状态判断
 
-                if explain_id in new_explain_words:
-                    if '新释义' not in self.game_title().text:
-                        print('★★★ 该单词为新释义，但是标题没有显示新释义字样')
+            if explain_id in new_explain_words:
+                if '新释义' not in self.game_title().text:
+                    print('❌❌❌ 该单词为新释义，但是标题没有显示新释义字样')
 
-                print('解释：', explain)
-                if explain in all_words:
-                    print('★★★ 该单词在拼写单词中已经出现过！')
-                else:
-                    all_words.append(explain)
+            print('解释：', explain)
+            if explain in all_words:
+                print('❌❌❌ 该单词在拼写单词中已经出现过！')
+            else:
+                all_words.append(explain)
 
-                if explain_id not in list(familiar_word.keys()):
-                    print('★★★ 单词未标熟，但是出现拼写', explain)
-                else:
-                    value = familiar_word[explain_id]
-                    self.spell_right_word_operate(value)
+            if explain_id not in list(familiar_word.keys()):
+                print('❌❌❌ 单词未标熟，但是出现拼写', explain)
+            else:
+                value = familiar_word[explain_id]
+                self.spell_right_word_operate(value)
 
-                self.next_btn_operate('true', self.fab_commit_btn)         # 下一题 按钮 状态判断 加点击
-                answer = self.spell_word()[::2]  # 最终答案
-                if answer != value.lower():
-                    print('★★★ 大写字母未自动变为小写字母')
-                # self.result_operate(answer, self.mine_answer())   # 下一步按钮后的答案页面 测试
-                self.click_voice()
-                self.next_btn_operate('true', self.fab_next_btn)
-                time.sleep(2)
-                print('-'*30, '\n')
+            self.next_btn_operate('true', self.fab_commit_btn)         # 下一题 按钮 状态判断 加点击
+            answer = self.spell_word().text[::2]  # 最终答案
+            if answer != value.lower():
+                print('❌❌❌ 大写字母未自动变为小写字母')
+            # self.result_operate(answer, self.mine_answer())   # 下一步按钮后的答案页面 测试
+            self.click_voice()
+            self.next_btn_operate('true', self.fab_next_btn)
+            time.sleep(2)
+            index += 1
+            print('-'*30, '\n')
+        return index
 
 
     @teststeps
@@ -76,10 +79,10 @@ class SpellingWord(SpellWordGame):
             print('解释：', explain.text)
             explain_id = explain.get_attribute('contentDescription')
             if explain_id in recite_new_explain_words:
-                print('★★★ 此单词为新释义单词，不应出现单词拼写游戏')
+                print('❌❌❌ 此单词为新释义单词，不应出现单词拼写游戏')
 
             if explain_id in only_apply_explains:
-                print('★★★ 此单词为只有词汇运用单词， 不应出现在单词拼写中')
+                print('❌❌❌ 此单词为只有词汇运用单词， 不应出现在单词拼写中')
 
             self.next_btn_judge('false', self.fab_commit_btn)  # 下一题 按钮 状态判断
             right_word = self.data.get_word_by_explain_id(stu_id, explain_id)
@@ -88,7 +91,7 @@ class SpellingWord(SpellWordGame):
             print('我输入的：', right_word)
 
             if not self.wait_check_play_voice_page():
-                print('★★★ 点击提交按钮后未发现喇叭按钮')
+                print('❌❌❌ 点击提交按钮后未发现喇叭按钮')
             self.next_btn_operate('true', self.fab_next_btn)
             print('-'*30, '\n')
 
@@ -105,36 +108,36 @@ class SpellingWord(SpellWordGame):
     #     if i in range(0, 5):
     #         self.dictation_pattern_core(spell_word, word_type=1)
     #         if len(intersect_list) == 0:
-    #             print('★★★ Error-- 单词未被标熟却出现默写模式')
+    #             print('❌❌❌ Error-- 单词未被标熟却出现默写模式')
     #     else:
     #         FlashCard().tips_operate()
     #         for i in familiar_add:
     #             level = self.data.get_word_level(i)
     #             if level < 3:
-    #                 print("★★★ Error--提交未成功，单词熟练度未更改")
+    #                 print("❌❌❌ Error--提交未成功，单词熟练度未更改")
 
     @teststeps
     def hint_ele_operate(self, value):
         self.next_btn_judge('false', self.fab_commit_btn)  # 下一题 按钮 判断加 点击操作
         if self.wait_check_tv_word_or_random_page():  # 默写模式 - 字母未全部消除
-            print('★★★ Error - 单词拼写 默写模式 - 字母未全部消除')
+            print('❌❌❌ Error - 单词拼写 默写模式 - 字母未全部消除')
 
         hint = self.hint_btn()  # 提示按钮
-        if GetAttribute().enabled(hint) == 'true':
+        if GetAttribute().get_enabled(hint) == 'true':
             hint.click()  # 点击 提示按钮
-            if GetAttribute().enabled(self.hint_btn()) != 'false':
-                print('★★★ Error - 点击后提示按钮enabled属性错误')
+            if GetAttribute().get_enabled(self.hint_btn()) != 'false':
+                print('❌❌❌ Error - 点击后提示按钮enabled属性错误')
 
             if self.wait_check_tv_word_or_random_page():  # 出现首字母提示
-                first_word = self.spell_word()
+                first_word = self.spell_word().text[::2]
                 if first_word == value[0]:
                     print('点击提示出现首字母提示', first_word)
                 else:
                     print('点击提示出现首字母提示', first_word)
             else:
-                print("★★★ Error - 首字母提示未出现")
+                print("❌❌❌ Error - 首字母提示未出现")
         else:
-            print('★★★ Error - 提示按钮enabled属性错误')
+            print('❌❌❌ Error - 提示按钮enabled属性错误')
 
     @teststeps
     def result_operate(self, answer, mine):
@@ -146,15 +149,15 @@ class SpellingWord(SpellWordGame):
             print('填写错误，正确答案:', correct)
             if len(mine) <= len(correct):  # 输入少于或等于单词字母数的字符
                 if mine.lower() != answer.lower():  # 展示的 我的答题结果 是否与我填入的一致
-                    print('★★★ Error - 字符数少于或等于时:', mine.lower(), answer.lower())
+                    print('❌❌❌ Error - 字符数少于或等于时:', mine.lower(), answer.lower())
             else:  # 输入过多的字符
                 if correct + mine[len(correct):].lower() != correct + answer[len(correct):].lower():
                     # 展示的 我的答题结果 是否与我填入的一致
-                    print('★★★ Error - 字符输入过多时:', correct + mine[len(correct):].lower(), correct + answer[len(
+                    print('❌❌❌ Error - 字符输入过多时:', correct + mine[len(correct):].lower(), correct + answer[len(
                         correct):].lower())
         else:  # 回答正确
             if mine.lower() != answer.lower():  # 展示的 我的答题结果 是否与我填入的一致
-                print('★★★ Error - 展示的答题结果 与我填入的不一致:', mine.lower(), answer.lower())
+                print('❌❌❌ Error - 展示的答题结果 与我填入的不一致:', mine.lower(), answer.lower())
             else:
                 print('回答正确!')
         print('-'*30, '\n')
@@ -179,7 +182,7 @@ class SpellingWord(SpellWordGame):
             explain_id = explain.get_attribute('contentDescription')
             word = self.data.get_word_by_explain_id(stu_id, explain_id)
             print("正确单词：", word)
-            tip_word = self.spell_word()[1::2]
+            tip_word = self.spell_word().text[1::2]
             print('提示词：', tip_word)
 
             right_word = [x for x in word if len(x) == len(tip_word)]
@@ -187,12 +190,12 @@ class SpellingWord(SpellWordGame):
             print(alphas)
             for k in range(len(alphas)):
                 self.keyboard_operate(k, alphas[k])  # 点击键盘 具体操作
-            print('填充后单词为：', self.spell_word()[1::2])
+            print('填充后单词为：', self.spell_word().text[1::2])
             self.next_btn_operate('true', self.fab_commit_btn)
             if self.wait_check_play_voice_page():
                 self.sound_icon().click()
             else:
-                print('★★★ 未发现声音按钮')
+                print('❌❌❌ 未发现声音按钮')
             self.next_btn_operate('true', self.fab_next_btn)  # 下一题 按钮 判断加 点击操作
             time.sleep(2)
 

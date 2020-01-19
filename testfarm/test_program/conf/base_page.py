@@ -1,19 +1,32 @@
 import time,os,subprocess,re
+from selenium.webdriver.support.wait import WebDriverWait
 from testfarm.test_program.conf.base_config import GetVariable as gv
 import yaml
+from utils.get_attribute import GetAttribute
+
 
 class BasePage(object):
+
+    attr = GetAttribute()
+
+    @classmethod
+    def set_assert(cls, base_assert):
+        cls.base_assert = base_assert
+
+    def get_assert(self):
+        return self.base_assert
+
     @classmethod
     def set_driver(cls, dri):
         cls.driver = dri
 
     @classmethod
     def set_user(cls, deviceName):
-        '''获取用户'''
+        """获取用户"""
         cls.deviceName = deviceName
 
     def get_user_info(self):
-        '''获取改用户信息'''
+        """获取改用户信息"""
         print(os.getcwd())
         fp = open('./testfarm/test_program/conf/user_info.yaml','r', encoding='utf-8')
         res = fp.read()
@@ -22,7 +35,7 @@ class BasePage(object):
 
     @classmethod
     def set_path(cls,path):
-        '''报告路径'''
+        """报告路径"""
         cls.report_path = path
 
     def get_driver(self):
@@ -56,7 +69,7 @@ class BasePage(object):
 
     def get_window_size(self):
         print('获取尺寸：', self.driver.get_window_size())
-        print('adb尺寸', self.window_size)
+        # print('adb尺寸', self.window_size)
         return [self.driver.get_window_size()['width'], self.driver.get_window_size()['height']]
 
     def click_back_up_button(self):
@@ -249,6 +262,14 @@ class BasePage(object):
         try:
             self.driver \
                 .find_element_by_id(element)
+            return True
+        except:
+            return False
+
+    def get_wait_check_page_result(self, locator, timeout=15):
+        """页面检查点判断方法"""
+        try:
+            WebDriverWait(self.driver, timeout, 0.5).until(lambda x: x.find_element(*locator))
             return True
         except:
             return False

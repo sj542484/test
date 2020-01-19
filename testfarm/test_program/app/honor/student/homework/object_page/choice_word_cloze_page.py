@@ -128,7 +128,7 @@ class ChoiceWordCloze(BasePage):
     @teststeps
     def content_desc(self):
         """点击输入框，激活小键盘"""
-        content = self.get.description(self.content_value())
+        content = self.get.get_description(self.content_value())
         item_x = re.match(".*\[(.*)\].*\[", content)  # x值
         item_y = re.match(".*\[(.*)\].*", content)  # y值
         x = item_x.group(1).split(',')  # 所有输入框y值的列表
@@ -138,7 +138,7 @@ class ChoiceWordCloze(BasePage):
     @teststeps
     def get_result(self):
         """点击输入框，激活小键盘"""
-        content = self.get.description(self.content_value())
+        content = self.get.get_description(self.content_value())
         value = re.match("\\[(.+?)\\]", content)  # answer
         answer = value.group(1).split(',')  # 所有输入框值的列表
         print('正确答案：', answer)
@@ -222,16 +222,16 @@ class ChoiceWordCloze(BasePage):
         j = 0
         while i < 3:
             bounds = self.content_desc()  # 获取输入框坐标
-            print(self.get.checked(middle), self.get.checked(large), self.get.checked(great))
+            print(self.get.get_checked(middle), self.get.get_checked(large), self.get.get_checked(great))
 
-            if self.get.checked(middle) == 'false':
-                if self.get.checked(large) == 'false':
+            if self.get.get_checked(middle) == 'false':
+                if self.get.get_checked(large) == 'false':
                     x.insert(2, bounds[0][0])
                     y.insert(2, bounds[1][0])
                     print('当前选中的Aa按钮为第3个：', bounds[0][0], bounds[1][0])
                     j = 3
                 else:
-                    if self.get.checked(large) == 'true':
+                    if self.get.get_checked(large) == 'true':
                         x.insert(1, bounds[0][0])
                         y.insert(1, bounds[1][0])
                         print('当前选中的Aa按钮为第2个：', bounds[0][0], bounds[1][0])
@@ -253,5 +253,5 @@ class ChoiceWordCloze(BasePage):
             time.sleep(2)
 
         if not float(y[2]) > float(y[1]) > float(y[0]):
-            print('★★★ Error - Aa文字大小切换按钮:', y)
+            print('❌❌❌ Error - Aa文字大小切换按钮:', y)
         print('==============================================')

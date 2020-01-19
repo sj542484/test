@@ -5,7 +5,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from app.honor.student.login.object_page.home_page import HomePage
 from conf.decorator import teststep
 from utils.toast_find import Toast
@@ -57,14 +57,14 @@ class StudySettingPage(UserCenterPage):
                 if self.wait_check_wordbook_study_setting_page():
                     thirty_model = self.get_study_setting_side()[0]
                     if thirty_model.get_attribute('clickable') == 'false':
-                        print('★★★ 默认单词本学习设置不为每组30词')
+                        print('❌❌❌ 默认单词本学习设置不为每组30词')
                     if study_model == 2:
                         self.study_setting()[1].click()
                         self.study_setting()[0].click()
                         if Toast().find_toast('一天内规则不可重复设置'):
                             print('规则一天内不可重复设置')
                         else:
-                            print('★★★ 未发现不可重复设置提示')
+                            print('❌❌❌ 未发现不可重复设置提示')
                     self.click_back_up_button()
                     if self.wait_check_study_setting_page():
                         self.click_back_up_button()

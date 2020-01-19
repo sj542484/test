@@ -1,97 +1,58 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
+from app.honor.student.games.all_game_init import AllGameClass
 from app.honor.student.login.object_page.home_page import HomePage
-from app.honor.student.test_paper.object_page.games.blank_cloze import BlankCloze
-from app.honor.student.test_paper.object_page.games.complete_text import CompleteText
-from app.honor.student.test_paper.object_page.games.link_to_sentence import Conjunctions
-from app.honor.student.test_paper.object_page.exam_data_handle import DataPage
-from app.honor.student.test_paper.object_page.games.listen_select import ListenSelect
-from app.honor.student.test_paper.object_page.games.listen_to_sentence import ListenSentence
-from app.honor.student.test_paper.object_page.games.read_understand import ReadUnderstand
-from app.honor.student.test_paper.object_page.games.sentence_enhance import SentenceEnhance
-from app.honor.student.test_paper.object_page.games.sentence_exchange import SentenceExchange
-from app.honor.student.test_paper.object_page.games.vocab_select import VocabSelect
 from app.honor.student.word_book_rebuild.object_page.ranking_page import RankingPage
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 
 
 class DetailPage(BasePage):
     def __init__(self):
-        self.home = HomePage()
         self.rank = RankingPage()
-        self.common = DataPage()
+        self.home = HomePage()
+        self.all_game = AllGameClass()
 
     @teststep
     def wait_check_exam_title_page(self):
         """以 试卷的标题作为 页面检查点"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'试卷')]")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststeps
     def wait_check_van_class_list_page(self):
         """班级列表页面检查点"""
-        locator = (By.CLASS_NAME, "android.widget.ListView")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        locator = (By.XPATH, "//android.widget.ListView/android.widget.CheckedTextView")
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def wait_check_rank_page(self):
         """以 炫耀一下的text作为 页面检查点"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'炫耀一下')]")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def wait_check_share_page(self):
         """以 分享图片的id作为 页面检查点"""
         locator =(By.ID, "{}share_img".format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def wait_check_detail_page(self):
         """以 详情页的id作为 页面检查点"""
         locator =(By.ID, "{}status_content_view".format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def wait_check_again_btn_page(self):
         """以 再练一次的id 作为页面检查点"""
         locator = (By.ID, "{}again".format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def wait_check_qr_failed_page(self):
         """以 二维码生成失败页面检查点"""
         locator = (By.ID, "{}no_network_view".format(self.id_type()))
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def get_all_text(self):
@@ -195,7 +156,7 @@ class DetailPage(BasePage):
         if name == nickname:
             print('用户昵称核实正确')
         else:
-            print('★★★ 用户昵称与个人中心不一致！')
+            self.base_assert.except_error('用户昵称与个人中心不一致！')
         score = self.score_got()
         print('分数：', score)
 
@@ -204,17 +165,18 @@ class DetailPage(BasePage):
 
         class_tab = self.class_name()
         class_tab[0].click()
+        print('班级页面检查点：', self.wait_check_van_class_list_page())
         if self.wait_check_van_class_list_page():
             class_list = self.class_name()
-            self.home.click_blank()
+            self.class_name()[0].click()
             for i in range(len(class_list)):
                 if self.wait_check_rank_page():
                     class_tab = self.class_name()
                     class_tab[0].click()
+                    print('班级页面检查点：', self.wait_check_van_class_list_page())
                     if self.wait_check_van_class_list_page():
                         print('班级：', self.class_name()[i].text)
                         self.class_name()[i].click()
-
                         if self.wait_check_rank_page():
                             print('名称\t分数')
                             for j in range(len(self.class_students())):
@@ -222,13 +184,13 @@ class DetailPage(BasePage):
                                 student_score = self.class_students()[j].text
                                 print(student_name, '\t', student_score)
                             print('-'*20, '\n')
-
-        self.rank.share_button()
-        if self.wait_check_share_page():
-            print('<分享页面>')
-        elif self.wait_check_qr_failed_page():
-            print('分享二维码生成失败')
-        self.home.click_back_up_button()
+        if self.wait_check_rank_page():
+            self.rank.share_button()
+            if self.wait_check_share_page():
+                print('<分享页面>')
+            elif self.wait_check_qr_failed_page():
+                print('分享二维码生成失败')
+            self.home.click_back_up_button()
 
     @teststep
     def print_exam_info(self, ele):
@@ -274,7 +236,7 @@ class DetailPage(BasePage):
             bank_data = exam_data[quote_name]
             if quote_name in quote_list:
                 score = self.ques_score(quote_name)  # 分数
-                # desc = self.ques_desc(quote_name)   # 描述
+                desc = self.ques_desc(quote_name)   # 描述
                 score.click()  # 点击分数进入题目的详情页
                 print('\n-----', quote_name, '------\n')
                 if self.wait_check_again_btn_page():
@@ -292,53 +254,34 @@ class DetailPage(BasePage):
     @teststep
     def ques_detail(self, ques_type, bank_info):
         """不同题型的详情页处理方法"""
-        familiar_type = ['还原单词', '猜词游戏', '单词拼写', '词汇选择']
-        if ques_type in familiar_type:
-            VocabSelect().game_detail(bank_info)
-            # pass
+        if ques_type in ['还原单词', '猜词游戏', '单词拼写', '词汇选择', '单词听写']:
+            self.all_game.word_spell.word_game_result_check_operate(bank_info)
 
-        elif ques_type == "单词听写":
-            VocabSelect().game_detail(bank_info, game_type=0)
-            # pass
+        elif ques_type in ['完形填空', '单项选择', '阅读理解', '听后选择']:
+            self.all_game.listen_choice.single_choice_result_operate(bank_info, ques_type)
 
-        elif ques_type == '连连看':
-            VocabSelect().game_detail(bank_info, game_type=2)
-            # pass
-
-        elif ques_type in ['听后选择', '单项选择']:
-            if ques_type == '听后选择':
-                ListenSelect().voice_play()
-            ListenSelect().check_result_detail_operate(bank_info)
-            pass
-
-        elif ques_type in ['完形填空', '阅读理解']:
-            ReadUnderstand().read_understand_detail(bank_info)
-            # pass
+        elif ques_type in ['连连看']:
+            self.all_game.word_match.word_match_result_operate(bank_info)
 
         elif ques_type == '强化炼句':
-            SentenceEnhance().sentence_enhance_detail(bank_info)
-            # pass
+            self.all_game.sentence_strengthen.sentence_strengthen_result_operate(bank_info)
 
         elif ques_type == '补全文章':
-            CompleteText().complete_article_detail(bank_info)
-            # pass
+            self.all_game.complete_article.complete_article_result_operate(bank_info)
 
         elif ques_type == '选词填空':
-            BlankCloze().bank_cloze_detail(bank_info)
-            # pass
+            self.all_game.select_blank.select_bank_result_operate(bank_info)
 
         if ques_type == '听音连句':
-            ListenSentence().listen_form_sentence_detail(bank_info)
-            # pass
+            self.all_game.sentence_listen_link.sentence_listen_link_result_operate(bank_info)
 
         elif ques_type == '连词成句':
-            Conjunctions().conjunctions_detail(bank_info)
-            # pass
+            self.all_game.sentence_link.sentence_link_result_operate(bank_info)
 
         elif ques_type == '句型转换':
-            SentenceExchange().sentence_exchange_detail(bank_info)
-            # pass
+            self.all_game.sentence_change.sentence_change_result_operate(bank_info)
+
         else:
-            print('----------------------------------')
+            print('-'*30, '\n')
 
 

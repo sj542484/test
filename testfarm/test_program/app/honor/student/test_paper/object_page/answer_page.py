@@ -9,44 +9,29 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 from app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 
 
 class AnswerPage(BasePage):
     """小题页面"""
 
-    def __init__(self):
-        self.home = HomePage()
-
     @teststep
     def wait_check_answers_page(self):
         """以 答题卷 的标题 作为 页面检查点"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'提交并查看结果')]")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def wait_check_confirm_tip_page(self):
         """以 确认交卷 的text作为 页面检查点"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'确认交卷')]")
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def wait_check_tip_name(self, t_name):
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'%s')]" % t_name)
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def answer_check_button(self):
@@ -70,7 +55,7 @@ class AnswerPage(BasePage):
         """获取序号为1 的题"""
         ele = self.driver.find_elements_by_xpath('//android.widget.TextView[contains(@text,"%s")]/../'
                                                  'following-sibling::android.support.v7.widget.RecyclerView/'
-                                                 'android.widget.FrameLayout' % var)
+                                                 'android.widget.FrameLayout/android.widget.TextView' % var)
         return ele
 
     @teststep
@@ -115,39 +100,48 @@ class AnswerPage(BasePage):
         """查看题目跳转状态"""
         self.answer_check_button().click()     # 查看答案
         if self.wait_check_answers_page():
-            while True:
-                title_list = [x.text for x in self.question_titles()]  # 题型数组
-                if t_name in title_list:
-                    if len(self.tip_index(t_name)) < int(index):
-                        self.home.screen_swipe_up(0.5, 0.8, 0.6, 1000)
-                    else:
-                        self.tip_index(t_name)[index].click()
-                        break
-                else:
-                    self.home.screen_swipe_up(0.5, 0.8, 0.5, 1000)
+            while t_name not in [x.text for x in self.question_titles()]:
+                self.screen_swipe_up(0.5, 0.8, 0.5, 1000)
+
+            while int(self.tip_index(t_name)[-1].text) < index:
+                self.screen_swipe_up(0.5, 0.8, 0.6, 1000)
+
+            if t_name == '连连看':
+                undo_tip = [x for x in self.tip_index(t_name) if x.get_attribute('selected') == 'false']
+                undo_tip[0].click()
+            else:
+                self.tip_index(t_name)[index].click()
+
 
     @teststep
-    def skip_operator(self, i, num, game_type, page_func, status_func, *args, next_page=0):
+    def skip_operator(self, i, num, game_type, page_func, status_func, *args):
+        """
+        :param status_func: 跳转判断方法
+        :param page_func: 页面等待方法
+        :param game_type: 题目类型
+        :param num: 总题数
+        :param i:  题目索引
+        """
         if i != num - 1 and i % 2 == 0:
             time.sleep(1.5)
             self.check_skip_to_tip_status(game_type, i + 1)
-            if page_func():
-                self.check_skip_to_tip_status(game_type, i)
-                if page_func():
-                    print('查看答案跳转题目')
-                    status_func(*args)
-        else:
-            self.home.screen_swipe_left(0.9, 0.6, 0.2, 1000)
-            if next_page == 0:
-                flag = page_func()
-            else:
-                flag = not page_func()
+            if not page_func():
+                self.base_assert.except_error('从下一题题号进入游戏， 未进入游戏页面')
 
+            self.check_skip_to_tip_status(game_type, i)
+            if page_func():
+                print('查看答案跳转题目')
+                status_func(*args)
+        else:
+            self.screen_swipe_left(0.9, 0.6, 0.2, 1000)
+            flag = 1 if page_func() else 2
             if flag:
-                self.home.screen_swipe_right(0.2, 0.6, 0.9, 1000)
-                if page_func():
-                    print('左右滑动跳转题目')
-                    status_func(*args)
+                self.screen_swipe_right(0.2, 0.6, 0.9, 1000)
+            if page_func():
+                print('左右滑动跳转题目')
+                status_func(*args)
+            else:
+                self.base_assert.except_error('未返回做题页面')
         if i != num - 1:
             self.check_skip_to_tip_status(game_type, i + 1)
         print('-' * 20, '\n')

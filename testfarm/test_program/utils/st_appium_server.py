@@ -68,8 +68,8 @@ class Utils:
         return port_list
 
     def appium_node_info(self, hubHost, port, device_name, udid, platversion, systemPort, side):
-        self._con['configuration']['url'] = 'http://127.0.0.1:%s/wd/hub/'%port
-        self._con['configuration']['port'] = '%s'%port
+        self._con['configuration']['url'] = 'http://127.0.0.1:%s/wd/hub/' % port
+        self._con['configuration']['port'] = '%s' % port
         self._con['configuration']['hubHost'] = hubHost
         self._con['capabilities'][0]['platformVersion'] = platversion
         self._con['capabilities'][0]['deviceName'] = device_name

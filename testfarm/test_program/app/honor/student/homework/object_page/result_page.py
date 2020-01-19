@@ -125,7 +125,7 @@ class ResultPage(BasePage):
         """查看答案 页面每个小题后面 对错标识"""
         item = self.driver \
             .find_element_by_id(self.id_type() + "iv_mine")
-        value = GetAttribute().selected(item)
+        value = GetAttribute().get_selected(item)
         return value
 
     @teststep
@@ -174,7 +174,7 @@ class ResultPage(BasePage):
                 if int(correct_rate) == accuracy_rate:
                     print("准确率逻辑无误 - 答对%s题 准确率:%s" % (len(count), correct_rate + '%'))
                 else:
-                    print("★★★ Error 准确率逻辑有误 - 答对%s题 但准确率为:%s" % (len(count), correct_rate + '%'))
+                    print("❌❌❌ Error 准确率逻辑有误 - 答对%s题 但准确率为:%s" % (len(count), correct_rate + '%'))
                     # MyError(self.driver).my_error(int(correct_rate) != accuracy_rate)
             else:
                 print("答对0题 准确率为:0%")
@@ -190,7 +190,7 @@ class ResultPage(BasePage):
             if int(score) == questions:
                 print("积分逻辑无误 - 答对%s题 积分:%s" % (questions, score))
             else:
-                print("★★★ 积分逻辑有误 - 答对%s题 但积分为:%s" % (questions, score))
+                print("❌❌❌ 积分逻辑有误 - 答对%s题 但积分为:%s" % (questions, score))
                 # MyError(self.driver).my_error(int(score) != len(questions))
 
             print('==================================================')
@@ -206,7 +206,7 @@ class ResultPage(BasePage):
             if questions == int(star_count):
                 print("星星逻辑无误 - 做了%s题 星星数:%s" % (questions, star_count))
             else:
-                print("★★★ 星星逻辑有误 - 做了%s题 但星星数为:%s" % (questions, star_count))
+                print("❌❌❌ 星星逻辑有误 - 做了%s题 但星星数为:%s" % (questions, star_count))
                 # MyError(self.driver).my_error(int(rate) != int(star_count))
 
             print('==================================================')
@@ -225,7 +225,7 @@ class ResultPage(BasePage):
                 elif now < result_time:
                     print("本次答题所用时间:%s秒, 时间差为：%s秒" % (result_time, result_time - now))
                 else:
-                    print("★★★ 时间逻辑有误 - 做题页面时间为 %s 结果页统计时间为:%s" % (now, result_time))
+                    print("❌❌❌ 时间逻辑有误 - 做题页面时间为 %s 结果页统计时间为:%s" % (now, result_time))
                     # MyError(self.driver).my_error(now > result_time)
             else:  # 错题再练
                 if now == result_time:
@@ -233,7 +233,7 @@ class ResultPage(BasePage):
                 elif result_time - now <= 2:
                     print("本次答题所用时间：%s秒 时间差为:%s秒 " % (result_time, result_time - now))
                 else:
-                    print("★★★ 时间逻辑有误 - 做题页面时间为 %s 结果页统计时间为:%s" % (now, result_time))
+                    print("❌❌❌ 时间逻辑有误 - 做题页面时间为 %s 结果页统计时间为:%s" % (now, result_time))
                     # MyError(self.driver).my_error(now > result_time)
             print('==================================================')
             return result_time
@@ -275,7 +275,7 @@ class ResultPage(BasePage):
                         elif correct_rate < rank_rate:
                             print('本次成绩非最优 Fighting')
                         else:
-                            print('★★★ 排行榜逻辑有问题 - 成绩相等时,比较时间')
+                            print('❌❌❌ 排行榜逻辑有问题 - 成绩相等时,比较时间')
                             # MyError(self.driver).my_error(correct_rate > rank_rate)
                         print('排行榜成绩 - 排名、昵称、准确率、所用时间:', rank_index[i].text, rank_name[i].text, rank_rate+'%', mat.group(0))
                     elif len(rank_name) == 1:  # 排行榜只有自己

@@ -5,7 +5,9 @@ from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.login.object_page.login_page import LoginPage
 from app.honor.student.login.test_data.register_data import phone_data, pwd_data
 from app.honor.student.user_center.object_page.user_center_page import Setting
+from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase, teststeps
+from utils.assert_func import ExpectingTest
 from utils.reset_phone_find_toast import verify_find
 from utils.toast_find import Toast
 
@@ -17,15 +19,22 @@ class Register(unittest.TestCase):
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.result = unittest.TestResult()
+        cls.base_assert = ExpectingTest(cls, cls.result)
         cls.login = LoginPage()
         cls.home = HomePage()
         cls.set = Setting()
+        BasePage().set_assert(cls.base_assert)
 
-    @classmethod
     @teardown
-    def tearDown(cls):
-        """"""
-        pass
+    def tearDown(self):
+        for x in self.base_assert.get_error():
+            self.result.addFailure(self, x)
+
+    def run(self, result=None):
+        self.result = result
+        super(Register, self).run(result)
+
 
     @testcase
     def test_register_pwd_confirm(self):

@@ -4,14 +4,16 @@
 # -----------------------------------------
 import unittest
 
-from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.login.object_page.login_page import LoginPage
-from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_sql_handler import WordDataHandlePage
 from app.honor.student.word_book_rebuild.object_page.games.flash_card_page import FlashCard
-from app.honor.student.word_book_rebuild.object_page.word_result_page import ResultPage
-from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_result_page import ResultPage
+from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild_page import WordBookRebuildPage
+from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase
+from utils.assert_func import ExpectingTest
 
 
 class NewWord(unittest.TestCase):
@@ -19,17 +21,28 @@ class NewWord(unittest.TestCase):
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.result = unittest.TestResult()
+        cls.base_assert = ExpectingTest(cls, cls.result)
         cls.home = HomePage()
         cls.login = LoginPage()
         cls.word_rebuild = WordBookRebuildPage()
         cls.login.app_status()  # 判断APP当前状态
-        cls.word_info = {}  # 记录所有单词
+        BasePage().set_assert(cls.base_assert)
+        # cls.word_info = cls.word_rebuild.read_words_info_from_file('word.json')  # 记录所有单词
+        cls.word_info = {}
         cls.new_explain_words = []
 
     @teardown
     def tearDown(self):
         self.word_rebuild.write_words_to_file('new_explain_words.txt', self.new_explain_words)
         self.word_rebuild.write_words_to_file('word.json', self.word_info)
+        for x in self.base_assert.get_error():
+            self.result.addFailure(self, x)
+
+    def run(self, result=None):
+        self.result = result
+        super(NewWord, self).run(result)
+
 
     @testcase
     def test_new_word(self, do_right=False):
@@ -45,18 +58,17 @@ class NewWord(unittest.TestCase):
             stu_info = UserCenterPage().get_user_info()            # 获取学生信息
             stu_id = stu_info[0]
             WordDataHandlePage().clear_student_word_data(stu_id)   # 清除学生已学单词记录
+            self.word_info = {}
+            # WordDataHandlePage().clear_word_finish_date(stu_id)
+
             if self.home.wait_check_home_page():
                 self.home.click_hk_tab(1)                         # 点击 背单词
                 if self.word_rebuild.wait_check_start_page():     # 开始页面检查点
-                    studied_words = self.word_rebuild.total_word()  # 获取已学单词数
-                    if studied_words != 0:
-                        print('★★★ 单词记录未清空成功')
                     self.word_rebuild.word_start_button()          # 点击 Go按钮
 
                 elif self.word_rebuild.wait_check_continue_page():  # 若为继续页面，则说明未清除缓存
-                    print('★★★ 缓存未清除成功')
+                    self.base_assert.except_error('缓存未清除成功')
                     self.word_rebuild.word_continue_button()
-
 
                 recite_words, all_words = [], []  # 复习单词, 新词
                 for x in range(2):

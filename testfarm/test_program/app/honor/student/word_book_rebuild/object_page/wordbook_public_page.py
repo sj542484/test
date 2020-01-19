@@ -7,9 +7,12 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_sql_handler import WordDataHandlePage
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
+from utils.games_keyboard import Keyboard
+from utils.get_attribute import GetAttribute
+
 
 class WorldBookPublicPage(BasePage):
 
@@ -60,12 +63,12 @@ class WorldBookPublicPage(BasePage):
         if sys_only or len(study_words) >= 10:
             for x in record_page_ids:
                 if int(x) not in study_words:
-                    print('★★★ 此单词不在需要练习列表中！', word_info[x])
+                    print('❌❌❌ 此单词不在需要练习列表中！', word_info[x])
                     error_code.append(x)
         else:
             for x in study_words:
                 if str(x) not in record_page_ids:
-                    print('★★★ 此单词为老师布置，但是未在学习列表中！', word_info[x])
+                    print('❌❌❌ 此单词为老师布置，但是未在学习列表中！', word_info[x])
                     error_code.append(x)
 
         if not len(error_code):
@@ -81,4 +84,4 @@ class WorldBookPublicPage(BasePage):
             word_level = WordDataHandlePage().get_level_by_explain_id(explain_id, stu_id)
             lager_level_count = WordDataHandlePage().check_has_other_studied_explain(explain_id, stu_id, word_level)
             if lager_level_count:
-                print('★★★ 存在F值比此单词大的解释，单词复习只有词汇运用，不应在此游戏中出现')
+                print('❌❌❌ 存在F值比此单词大的解释，单词复习只有词汇运用，不应在此游戏中出现')

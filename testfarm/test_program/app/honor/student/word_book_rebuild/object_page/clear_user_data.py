@@ -7,10 +7,10 @@ from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.user_center.object_page.buy_card_page import PurchasePage
 from app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
 from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
-from app.honor.student.web.object_pages.assign_word import AssignWord
-from app.honor.student.web.object_pages.driver import Driver
+from app.honor.web.object_pages.assign_word import AssignWord
+from app.honor.web.object_pages.driver import Driver
 from app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep
 from utils.toast_find import Toast
 from conf.base_config import GetVariable as gv
@@ -102,11 +102,11 @@ class CleanDataPage(BasePage):
         self.grade_btn()   # 年级按钮
         if self.wait_check_grade_page():
             self.select_another_grade()  # 选择最后一个年级
-            if self.user_center.wait_check_page():
+            if self.user_center.wait_check_user_center_page():
                 self.grade_btn()
                 if self.wait_check_grade_page():
                     self.select_certain_grade()  # 重新选择三年级
-        if self.user_center.wait_check_page():
+        if self.user_center.wait_check_user_center_page():
             self.home.click_tab_hw()
 
     @teststep
@@ -118,7 +118,7 @@ class CleanDataPage(BasePage):
                 self.select_clear_cache()  # 清空缓存
                 Toast().find_toast("清除缓存成功")
             self.home.click_back_up_button()
-            if self.user_center.wait_check_page():
+            if self.user_center.wait_check_user_center_page():
                 pass
 
     @teststep
@@ -143,7 +143,7 @@ class CleanDataPage(BasePage):
     def get_user_phone(self):
         """获取用户手机号"""
         self.home.click_tab_profile()
-        if self.user_center.wait_check_page():
+        if self.user_center.wait_check_user_center_page():
             self.user_center.click_buy()
             if PurchasePage().wait_check_buy_page():
                 phone = self.user_info.phone()
@@ -159,7 +159,7 @@ class CleanDataPage(BasePage):
         self.home.click_back_up_button()
         self.clean_cache()
         if action == 1:
-            if self.user_center.wait_check_page():
+            if self.user_center.wait_check_user_center_page():
                 self.clear_user_all_data()  # 清空用户单词数据 重新练习
                 web_driver = Driver()
                 web_driver.set_driver()

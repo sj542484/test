@@ -174,7 +174,7 @@ class SentenceTrans(BasePage):
         """我的答案对错标识 selected属性"""
         word = self.driver \
             .find_elements_by_id(self.id_type() + "iv_mine")[index]
-        value = GetAttribute().selected(word)
+        value = GetAttribute().get_selected(word)
         return value
 
     @teststeps
@@ -190,7 +190,7 @@ class SentenceTrans(BasePage):
                     Homework().rate_judge(rate, i)  # 测试当前rate值显示是否正确
 
                     if not self.clear_button_judge():  # 判断清除按钮存在
-                        print('★★★ Error - 清除按钮不存在！！')
+                        print('❌❌❌ Error - 清除按钮不存在！！')
 
                     question = self.question_content()  # 展示的题目内容
                     value = sentence_transform_operate(question).split(' ')
@@ -304,12 +304,12 @@ class SentenceTrans(BasePage):
 
                     if count == 0:
                         if self.result_mine_state() != 'true':
-                            print('★★★ Error - 我的答案:%s 与 正确答案:%s 对错标识:%s' % (word[0], value, 'false'))
+                            print('❌❌❌ Error - 我的答案:%s 与 正确答案:%s 对错标识:%s' % (word[0], value, 'false'))
                     else:
                         if self.result_mine_state() != 'false':
-                            print('★★★ Error - 我的答案:%s 与 正确答案:%s 对错标识:%s' % (word[0], value, 'true'))
+                            print('❌❌❌ Error - 我的答案:%s 与 正确答案:%s 对错标识:%s' % (word[0], value, 'true'))
                 else:
-                    print('★★★ Error - 正确答案:', answer[i], value)
+                    print('❌❌❌ Error - 正确答案:', answer[i], value)
             print('--------------------------------')
         return word[1][len(word[1]) - 1]
 

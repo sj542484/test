@@ -1,12 +1,12 @@
 # coding=utf-8
 import unittest
 
-from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.homework.object_page.homework_page import Homework
 from app.honor.student.login.object_page.login_page import LoginPage
-from app.honor.student.word_book_rebuild.object_page.word_result_page import ResultPage
-from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_result_page import ResultPage
+from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild_page import WordBookRebuildPage
 from conf.decorator import setup, teardown, testcase
 
 

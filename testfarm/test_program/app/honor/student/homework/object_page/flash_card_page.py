@@ -272,7 +272,7 @@ class FlashCardPage(BasePage):
                     if i == int(rate) - 1:  # 最后一题 尝试滑屏进入结果页
                         self.screen_swipe_left(0.9, 0.5, 0.1, 1000)
                         if self.wait_check_result_page(5):
-                            print('★★★ Error - 滑动页面进入了结果页')
+                            print('❌❌❌ Error - 滑动页面进入了结果页')
 
                     Homework().next_button_operate('true')  # 下一题 按钮 状态判断 加点击
                     time.sleep(1)
@@ -368,7 +368,7 @@ class FlashCardPage(BasePage):
         for i in range(len(word)):
             print(word[i].text, answer[i])
             if word[i].text != answer[i]:  # 结果页 展示的word与题目中是否一致
-                print('★★★ Error 查看答案页 展示的word与题中不一致')
+                print('❌❌❌ Error 查看答案页 展示的word与题中不一致')
 
         for index in range(k, int(index), 3):  # 点击 结果页 听力按钮
             self.voice_button(index)  # 结果页 - 听力按钮
@@ -380,7 +380,7 @@ class FlashCardPage(BasePage):
         var = self.star_button()  # 结果页star按钮
         ele = []  # 结果页标星的作业数
         for i in range(len(var)):
-            if self.get.selected(var[i]) == 'true':
+            if self.get.get_selected(var[i]) == 'true':
                 ele.append(i)
 
         if len(ele) == 0:  # 结果页标星的作业数为0，则执行以下操作
@@ -390,7 +390,7 @@ class FlashCardPage(BasePage):
 
             ele = []  # 结果页标星的作业数
             for i in range(len(var)):
-                if self.get.selected(var[i]) == 'true':
+                if self.get.get_selected(var[i]) == 'true':
                     ele.append(i)
 
             self.study_sum()  # 学习情况

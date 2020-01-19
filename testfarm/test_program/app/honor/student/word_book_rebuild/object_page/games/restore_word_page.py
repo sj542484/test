@@ -1,6 +1,6 @@
 import time
 from app.honor.student.games.word_restore import RestoreWordGame
-from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_sql_handler import WordDataHandlePage
 from conf.decorator import teststeps, teststep
 
 
@@ -17,7 +17,7 @@ class WordRestore(RestoreWordGame):
             explain_id = explain.get_attribute('contentDescription')
             right_answer = WordDataHandlePage().get_word_by_explain_id(stu_id, explain_id)
             if explain_id in new_explain_words:
-                print('★★★ 此单词为新释义，不应出现还原游戏')
+                print('❌❌❌ 此单词为新释义，不应出现还原游戏')
             print("解释：%s" % explain.text)
             print("还原前单词为：", ''.join([x.text for x in self.word()]))
             self.restore_word_core(right_answer)
@@ -38,7 +38,7 @@ class WordRestore(RestoreWordGame):
             self.next_btn_judge('false', self.fab_commit_btn)
 
             if explain_id in new_explain_words:
-                print('★★★ 此单词为新释义，不应出现还原游戏')
+                print('❌❌❌ 此单词为新释义，不应出现还原游戏')
 
             print("英文解释：%s" % explain.text)
             print("还原前单词为：", ''.join([x.text for x in self.word()]))
@@ -58,12 +58,13 @@ class WordRestore(RestoreWordGame):
                         print('正确答案：', right_answer)
                         answer_word.append(right_answer)
                     else:
-                        print('★★★ 未发现正确答案')
+                        print('❌❌❌ 未发现正确答案')
+                    self.fab_next_btn().click()
             else:
                 self.restore_word_core(answer_word[0])
                 if len(all_words) != bank_count - 1:
                     print('还原后单词为：%s' % ''.join([x.text for x in self.word()]))
-                self.next_btn_judge('true', self.fab_next_btn)
+                self.next_btn_operate('true', self.fab_next_btn)
                 answer_word.clear()
                 all_words.append(explain)
             time.sleep(4)

@@ -4,8 +4,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 from app.honor.student.login.object_page.home_page import HomePage
-from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
-from testfarm.test_program.conf.base_page import BasePage
+from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild_page import WordBookRebuildPage
+from conf.base_page import BasePage
 from conf.decorator import teststeps, teststep
 
 
@@ -66,7 +66,7 @@ class RankingPage(BasePage):
     def share_button(self):
         """炫耀一下"""
         self.driver \
-            .find_element_by_id("{}share".format(self.id_type())) \
+            .find_element_by_id(self.id_type() + 'share') \
             .click()
 
     @teststep
@@ -154,7 +154,7 @@ class RankingPage(BasePage):
         score = self.st_score()[0].text
         print ('已背：', score + word_type)
         if int(score) != int(total_word):
-            print('★★★ Error - 次数与主页面单词数不一致！')
+            print('❌❌❌ Error - 次数与主页面单词数不一致！')
         else:
             print('单词数核实一致！')
 
@@ -174,7 +174,7 @@ class RankingPage(BasePage):
             if i == 0:
                 if j <= 2:
                     if order[i].text != '':
-                        print('★★★ Error - 名次位于第三名没有小皇冠标识')
+                        print('❌❌❌ Error - 名次位于第三名没有小皇冠标识')
             if student_names[j].text in students_info.keys():
                 continue
             else:

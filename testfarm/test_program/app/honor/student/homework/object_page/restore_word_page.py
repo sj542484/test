@@ -114,7 +114,7 @@ class RestoreWord(BasePage):
         """我的"""
         ele = self.driver \
             .find_elements_by_id(self.id_type() + "iv_mine")[index]
-        value = GetAttribute().selected(ele)
+        value = GetAttribute().get_selected(ele)
         return value
 
     @teststep
@@ -247,6 +247,6 @@ class RestoreWord(BasePage):
                 print('对错标识:', self.result_mine(i))  # 对错标识
                 self.voice_button(i)  # 结果页 - 听力按钮
             else:
-                print('★★★ Error -解释内容与题中不一致:', key, word[i].text, value)
+                print('❌❌❌ Error -解释内容与题中不一致:', key, word[i].text, value)
             print('----------------------------------')
         return explain[-1].text

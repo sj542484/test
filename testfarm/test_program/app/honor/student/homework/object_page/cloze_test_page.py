@@ -128,7 +128,7 @@ class Cloze(BasePage):
     def get_input_bounds(self):
         """获取 输入框坐标"""
         ele = self.input_text()  # 输入框
-        content = self.get.description(ele)
+        content = self.get.get_description(ele)
         item_x = re.match(".*\[(.*)\].*\[", content)  # x值
         item_y = re.match(".*\[(.*)\].*", content)  # y值
         x = item_x.group(1).split(',')  # 所有输入框y值的列表
@@ -140,7 +140,7 @@ class Cloze(BasePage):
     def get_result(self):
         """获取 输入框 的结果"""
         ele = self.input_text()  # 输入框
-        content = self.get.description(ele)
+        content = self.get.get_description(ele)
         value = re.match("\\[(.+?)\\]", content)  # answer
         answer = value.group(1).split(',')  # 所有输入框值的列表
         print(answer)
@@ -183,7 +183,7 @@ class Cloze(BasePage):
                     options[0][random.randint(0, len(options[0])) - 1].click()  # 随机点击选项
                     time.sleep(1)
                     for j in range(len(options[0])):
-                        if self.get.selected(options[0][j]) == 'true':
+                        if self.get.get_selected(options[0][j]) == 'true':
                             print('选择的答案:', options[1][j].text)
                             result.append(options[1][j].text)
                             break
@@ -197,7 +197,7 @@ class Cloze(BasePage):
                             loc = self.get_element_bounds(drag)
                             self.driver.swipe(loc[2], loc[3], loc[2], loc[3] + size - 10, 1000)  # 拖拽按钮到底部
                         else:
-                            print('★★★ Error - 滑动页面进入了结果页')
+                            print('❌❌❌ Error - 滑动页面进入了结果页')
 
                     time.sleep(1)
                     print('================')
@@ -205,13 +205,13 @@ class Cloze(BasePage):
                 time.sleep(1)
                 content = self.get_result()  # 测试 是否答案已填入文章中
                 if len(content) != len(result):
-                    print('★★★ Error -获取到的答案不一致', result, content)
+                    print('❌❌❌ Error -获取到的答案不一致', result, content)
                 else:
                     for k in range(len(result)):
                         if content[k][0] == ' ':  # 由于填入content-desc的数据会自动加一个空格，故去掉
                             content[k] = content[k][1:]
                         if content[k] != result[k]:
-                            print('★★★ Error - 填入的答案与选择的答案不一致', result[k], content[k])
+                            print('❌❌❌ Error - 填入的答案与选择的答案不一致', result[k], content[k])
 
                 Homework().next_button_operate('true')  # 下一题 按钮 状态判断 加点击
                 Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
@@ -229,16 +229,16 @@ class Cloze(BasePage):
         j = 0
         while i < 3:
             bounds = self.get_input_bounds()  # 获取输入框坐标
-            print(self.get.checked(middle), self.get.checked(large), self.get.checked(great))
+            print(self.get.get_checked(middle), self.get.get_checked(large), self.get.get_checked(great))
 
-            if self.get.checked(middle) == 'false':
-                if self.get.checked(large) == 'false':
+            if self.get.get_checked(middle) == 'false':
+                if self.get.get_checked(large) == 'false':
                     x.insert(2, bounds[0][0])
                     y.insert(2, bounds[1][0])
                     print('当前选中的Aa按钮为第3个:', bounds[0][0], bounds[1][0])
                     j = 3
                 else:
-                    if self.get.checked(large) == 'true':
+                    if self.get.get_checked(large) == 'true':
                         x.insert(1, bounds[0][0])
                         y.insert(1, bounds[1][0])
                         print('当前选中的Aa按钮为第2个:', bounds[0][0], bounds[1][0])
@@ -260,5 +260,5 @@ class Cloze(BasePage):
             time.sleep(2)
 
         if not float(y[2]) > float(y[1]) > float(y[0]):
-            print('★★★ Error - Aa文字大小切换按钮:', y)
+            print('❌❌❌ Error - Aa文字大小切换按钮:', y)
         print('==============================================')

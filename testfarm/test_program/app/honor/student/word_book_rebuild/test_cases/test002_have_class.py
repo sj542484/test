@@ -6,18 +6,20 @@ import unittest
 
 from ddt import ddt, data
 
-from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.login.object_page.login_page import LoginPage
-from app.honor.student.web.object_pages.assign_word import AssignWord
-from app.honor.student.web.object_pages.driver import Driver
+from app.honor.web.object_pages.assign_word import AssignWord
+from app.honor.web.object_pages.driver import Driver
 from app.honor.student.word_book_rebuild.object_page.class_operate import QuitAddClass
-from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_sql_handler import WordDataHandlePage
 from app.honor.student.word_book_rebuild.object_page.games.flash_card_page import FlashCard
 from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
-from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
+from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild_page import WordBookRebuildPage
 from app.honor.student.word_book_rebuild.test_data.account import *
+from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase
+from utils.assert_func import ExpectingTest
 
 
 @ddt
@@ -26,15 +28,22 @@ class HaveClass(unittest.TestCase):
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.result = unittest.TestResult()
+        cls.base_assert = ExpectingTest(cls, cls.result)
         cls.home = HomePage()
         cls.login = LoginPage()
         cls.word_rebuild = WordBookRebuildPage()
         cls.login.app_status()   # 判断APP当前状态
+        BasePage().set_assert(cls.base_assert)
 
-    @classmethod
     @teardown
-    def tearDown(cls):
-        pass
+    def tearDown(self):
+        for x in self.base_assert.get_error():
+            self.result.addFailure(self, x)
+
+    def run(self, result=None):
+        self.result = result
+        super(HaveClass, self).run(result)
 
     @data(
         ['10411'],

@@ -5,7 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
 from conf.decorator import teststep
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 
 
 class PhoneReset(BasePage):

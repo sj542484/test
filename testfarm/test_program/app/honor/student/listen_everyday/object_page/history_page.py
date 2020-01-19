@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 from app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep
 
 
@@ -105,7 +105,7 @@ class HistoryPage(BasePage):
                     if name == '听音连句':
                         game_names[i].click()
                         if not self.wait_check_clear_button_page():
-                            print('★★★ Error-- 未发现听音连句的清除按钮')
+                            self.base_assert.except_error('Error-- 未发现听音连句的清除按钮')
                         else:
                             print('进入听音连句游戏页面')
                         self.home.click_back_up_button()
@@ -114,7 +114,7 @@ class HistoryPage(BasePage):
                     if name == '听后选择':
                         game_names[i].click()
                         if not self.wait_check_red_hint_page():
-                            print('★★★ Error-- 未发现听后选择的红色提示')
+                            self.base_assert.except_error('Error-- 未发现听后选择的红色提示')
                         else:
                             print('进入听后选择游戏页面')
                         self.home.click_back_up_button()
@@ -123,7 +123,7 @@ class HistoryPage(BasePage):
                     if name == '听音选图':
                         game_names[i].click()
                         if not self.wait_check_img_page():
-                            print('★★★ Error-- 未发现听音选图的图片')
+                            self.base_assert.except_error('Error-- 未发现听音选图的图片')
                         else:
                             print('进入听音选图游戏页面')
                         self.home.click_back_up_button()

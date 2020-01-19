@@ -2,28 +2,23 @@
 # encoding:UTF-8  
 # @Author  : SUN FEIFEI
 import time
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from utils.click_bounds import ClickBounds
 from conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 
 
 class UserInfoPage(BasePage):
     """个人信息页面"""
 
     @teststep
-    def wait_check_page(self, var=20):
+    def wait_check_page(self):
         """以“title:个人信息”的xpath @text为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'个人信息')]")
-        try:
-            WebDriverWait(self.driver, var, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def image(self):
@@ -155,5 +150,5 @@ class UserInfoPage(BasePage):
         """从个人信息页 返回主界面"""
         if self.wait_check_page():
             self.back_up_button()  # 返回按钮
-            if UserCenterPage().wait_check_page():  # 页面检查点
+            if UserCenterPage().wait_check_user_center_page():  # 页面检查点
                 HomePage().click_tab_hw()

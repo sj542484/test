@@ -331,5 +331,4 @@ def tea_do_data(request):
     print(start_dir)
     print(start_num)
     print(start_tea_account)
-
     return HttpResponse('<script>alert("开始上传！！！");location.href="/"</script>')

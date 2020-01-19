@@ -21,7 +21,7 @@ class WordSpellGamePage(SpellingWord):
 
         print('我输入的：', right_word)
         if not self.wait_check_play_voice_page():
-            print('★★★ 点击提交按钮后未发现喇叭按钮')
+            print('❌❌❌ 点击提交按钮后未发现喇叭按钮')
         self.next_btn_operate('true', self.fab_next_btn)
         index += 1
         print('-' * 30, '\n')

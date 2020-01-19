@@ -33,7 +33,7 @@ class ProblemFeedback(unittest.TestCase):
         if self.home.wait_check_home_page():  # 页面检查点
             self.home.click_tab_profile()  # 进入首页后点击‘个人中心’按钮
 
-            if self.user_center.wait_check_page():  # 页面检查点
+            if self.user_center.wait_check_user_center_page():  # 页面检查点
                 self.user_center.click_setting()  # 进入设置页面
                 if self.setting.wait_check_page():
                     self.setting.question_feedback()  # 进入问题反馈页面

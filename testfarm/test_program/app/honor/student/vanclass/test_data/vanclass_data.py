@@ -10,7 +10,7 @@ class GetVariable(object):
     HW_NAME = '测试完成状态作业'
 
     CLASS_NAME = "MVP"
-    HW_ANALY_GAME = "测试作业3"
+    HW_ANALY_GAME = "测试作业2"
 
     FINISHED = "测试完成状态作业"
     DEL_VANCLASS = 'QUIT'

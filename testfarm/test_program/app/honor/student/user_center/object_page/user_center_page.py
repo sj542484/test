@@ -1,36 +1,32 @@
 #!/usr/bin/env python
 # encoding:UTF-8  
 # @Author  : SUN FEIFEI
+import time
+
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from app.honor.student.library.object_page.library_sql import LibrarySql
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
 
 
 class UserCenterPage(BasePage):
     """个人中心 页面"""
 
     @teststep
-    def wait_check_page(self):
+    def wait_check_user_center_page(self):
         """以“设置”业务的xpath @index为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'设置')]")
-        try:
-            WebDriverWait(self.driver, 10, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def wait_check_nickname_page(self):
         """以“设置”业务的xpath @index为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'昵称')]")
-        try:
-            WebDriverWait(self.driver, 20, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def click_avatar_profile(self):
@@ -73,6 +69,96 @@ class UserCenterPage(BasePage):
         self.driver.find_element_by_id(self.id_type() + 'study_card').click()
 
 
+    @teststep
+    def wait_check_buy_page(self):
+        """购买页面检查点"""
+        locator = (By.ID, self.id_type() + "goToCustomerService")
+        return self.get_wait_check_page_result(locator)
+
+    @teststep
+    def wait_check_logout_page(self):
+        """退出登录页面检查点"""
+        locator = (By.ID, self.id_type() + "logout")
+        return self.get_wait_check_page_result(locator)
+
+    @teststep
+    def nickname(self):
+        """昵称"""
+        ele = self.driver.find_element_by_id(self.id_type() + 'name')
+        return ele.text
+
+    @teststep
+    def school_name(self):
+        """学校名称"""
+        ele = self.driver.find_element_by_id(self.id_type() + 'school_name')
+        return ele.text
+
+    @teststep
+    def purchase(self):
+        """购买"""
+        ele = self.driver.find_element_by_id(self.id_type() + 'study_card')
+        return ele
+
+    @teststep
+    def phone(self):
+        """学生的手机号"""
+        ele = self.driver.find_element_by_id(self.id_type() + 'phone')
+        return ele.text
+
+    @teststep
+    def setting_up(self):
+        """设置"""
+        ele = self.driver.find_element_by_id(self.id_type() + 'setting')
+        return ele
+
+    @teststep
+    def clear_cache(self):
+        """清除缓存"""
+        ele = self.driver.find_element_by_id(self.id_type() + 'clear_cache')
+        return ele
+
+    @teststep
+    def get_user_info(self):
+        """:return 学生id、学校名称、学校id、昵称"""
+        HomePage().click_tab_profile()  # 点击个人中心
+        if self.wait_check_user_center_page():  # 个人中心页面检查点
+            self.screen_swipe_up(0.5, 0.2, 0.8, 1000)
+            nickname = self.nickname()  # 昵称
+            self.screen_swipe_up(0.5, 0.8, 0.2, 1000)
+            self.purchase().click()  # 点击购买
+            if self.wait_check_buy_page():  # 购买页面检查点
+                phone = self.phone()  # 手机号
+                stu_id = WordBookSql().find_student_id(phone)  # 根据手机号获取学生ID
+                self.click_back_up_button()
+                if self.wait_check_user_center_page():
+                    school_name = self.school_name()  # 学习名称
+                    school_id = 0
+                    if school_name:
+                        id1 = LibrarySql().find_school_id(school_name)
+                        id2 = LibrarySql().find_school_id_by_short_name(school_name)
+                        if id1:
+                            school_id = id1[0][0]
+                        else:
+                            school_id = id2[0][0]
+
+                    self.setting_up().click()
+                    if self.wait_check_logout_page():  # 清除缓存
+                        self.clear_cache().click()
+                        time.sleep(2)
+
+                    self.click_back_up_button()  # 返回个人中心
+                    if self.wait_check_user_center_page():
+                        HomePage().click_tab_hw()  # 点击学习返回主页面
+
+                    print('学生昵称：', nickname, '\n',
+                          '学校名称：', school_name, '\n',
+                          '学校id：', school_id, '\n',
+                          '学生id：', stu_id[0][0], '\n'
+                          )
+                    return stu_id[0][0], school_name, school_id, nickname
+
+
+
 class MessageCenter(BasePage):
     """消息中心页面"""
 
@@ -80,11 +166,7 @@ class MessageCenter(BasePage):
     def wait_check_page(self):
         """以“title:消息中心”的xpath @text为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'消息中心')]")
-        try:
-            WebDriverWait(self.driver, 20, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def iv_read_count(self):
@@ -139,11 +221,7 @@ class Setting(BasePage):
     def wait_check_page(self):
         """以“title:设置”的xpath @index为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'设置')]")
-        try:
-            WebDriverWait(self.driver, 20, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def help_center(self):
@@ -185,14 +263,14 @@ class Setting(BasePage):
         """从个人信息页 返回主界面"""
         if self.wait_check_page():
             HomePage().click_back_up_button()  # 返回按钮
-            if UserCenterPage().wait_check_page():  # 页面检查点
+            if UserCenterPage().wait_check_user_center_page():  # 页面检查点
                 HomePage().click_tab_hw()
 
     @teststep
     def logout_operate(self):
         """退出登录"""
         HomePage().click_tab_profile()  # 进入首页后点击‘个人中心’按钮
-        if UserCenterPage().wait_check_page():  # 页面检查点
+        if UserCenterPage().wait_check_user_center_page():  # 页面检查点
             self.screen_swipe_up(0.5, 0.9, 0.3, 1000)
             UserCenterPage().click_setting()  # 进入设置页面
 
@@ -209,11 +287,7 @@ class QuestionFeedback(BasePage):
     def wait_check_page(self):
         """以“title:问题反馈”的xpath @text为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text, '问题反馈')]")
-        try:
-            WebDriverWait(self.driver, 20, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def edit_text(self):
@@ -236,11 +310,7 @@ class Privacy(BasePage):
     def wait_check_page(self):
         """以“title:版权申诉”的xpath @text为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'版权申诉')]")
-        try:
-            WebDriverWait(self.driver, 20, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
 
 class ProtocolPage(BasePage):
@@ -249,9 +319,5 @@ class ProtocolPage(BasePage):
     def wait_check_page(self):
         """以“title:注册协议”的xpath @text为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'注册协议')]")
-        try:
-            WebDriverWait(self.driver, 20, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 

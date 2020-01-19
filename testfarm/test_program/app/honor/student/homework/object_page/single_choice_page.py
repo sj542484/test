@@ -73,7 +73,7 @@ class SingleChoice(BasePage):
         time.sleep(1)
         ele = self.driver \
             .find_elements_by_id(self.id_type() + "tv_char")[index]
-        value = GetAttribute().selected(ele)
+        value = GetAttribute().get_selected(ele)
         return value
 
     @teststep

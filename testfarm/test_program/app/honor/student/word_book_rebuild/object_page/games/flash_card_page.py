@@ -3,7 +3,7 @@ import string
 import time
 
 from app.honor.student.games.word_flash_card import FlashCardGame
-from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_sql_handler import WordDataHandlePage
 from utils.games_keyboard import Keyboard
 from conf.decorator import teststeps, teststep
 from utils.get_attribute import GetAttribute
@@ -13,14 +13,55 @@ class FlashCard(FlashCardGame):
     """单词本 - 闪卡练习"""
 
     @teststep
+    def old_explain_tab_word(self):
+        """已被释义的单词"""
+        ele = self.driver.find_element_by_xpath('//android.view.View[contains(@resource-id, "example_sentence_area")]/'
+                                                'android.widget.TextView[contains(@resource-id,"tv_english")]')
+        return ele.text
+
+    @teststep
+    def old_explain_tab_explain(self):
+        """已经学过的单词释义"""
+        ele = self.driver.find_elements_by_xpath('//android.view.View[contains(@resource-id, "example_sentence_area")]/'
+                                                 'android.support.v7.widget.RecyclerView/android.widget.LinearLayout/'
+                                                 'android.widget.TextView[contains(@resource-id,"word_explain")]')
+        return ele
+
+    @teststep
+    def old_explain_tab_sentence(self):
+        """已学释义对应的句子"""
+        ele = self.driver.find_elements_by_xpath('//android.view.View[contains(@resource-id, '
+                                                 '"example_sentence_area")]/android.support.v7.widget.RecyclerView/android.widget.LinearLayout'
+                                                 '/android.widget.TextView[@resource-id="{}sentence"]'.format(self.id_type()))
+        return ele
+
+    @teststep
+    def old_explain_tab_sentence_explain(self):
+        """已学释义句子解释"""
+        ele = self.driver.find_elements_by_xpath('//android.view.View[contains(@resource-id, "example_sentence_area")]/'
+                                                 'android.support.v7.widget.RecyclerView/android.widget.LinearLayout/'
+                                                 'android.widget.TextView[contains(@resource-id, "sentence_explain")]'.format(self.id_type()))
+        return ele
+
+
+    @teststep
+    def old_explain_tab_sentence_author(self):
+        """已学释义句子解释"""
+        ele = self.driver.find_elements_by_xpath('//android.view.View[contains(@resource-id, "example_sentence_area")]/'
+                                                 'android.support.v7.widget.RecyclerView/android.widget.LinearLayout/'
+                                                 'android.widget.TextView[contains(@resource-id, "author")]'.format(self.id_type()))
+        return ele
+
+
+    @teststep
     def check_alert_tip_operate(self, index, group_count):
         """看是否有弹框提示"""
         if index == 0 and group_count == 0:
             if self.wait_check_tips_page():
                 self.tips_operate()
             else:
-                print('★★★第一次点击标星未显示提示')
-            if self.wait_check_study_page():
+                print('❌❌❌第一次点击标星未显示提示')
+            if self.wait_check_flash_study_page():
                 pass
 
     @teststep
@@ -76,7 +117,7 @@ class FlashCard(FlashCardGame):
         familiar_words, all_words = {}, {}
         group_new_explain_words = []
 
-        while self.wait_check_study_page():
+        while self.wait_check_flash_study_page():
             if index == 0:
                 if familiar_type == 1:
                     print('===== 🌟🌟 第一组单词标熟，第二组该单词不标熟（全对） 🌟🌟 =====\n')
@@ -99,10 +140,10 @@ class FlashCard(FlashCardGame):
                 if WordDataHandlePage().check_has_other_studied_explain(stu_id, explain_id):
                     print('此单词为新释义单词')
                 else:
-                    print('★★★ 该单词不为新释义单词，但是标题出现新释义字样')
+                    print('❌❌❌ 该单词不为新释义单词，但是标题出现新释义字样')
 
             if word in list(all_words.keys()):  # 判断单词是否去重
-                print('★★★ 本组已存在本单词，单词未去重！')
+                print('❌❌❌ 本组已存在本单词，单词未去重！')
             else:
                 all_words[word] = explain_id
 
@@ -111,7 +152,7 @@ class FlashCard(FlashCardGame):
             else:
                 explain_id_list = word_info[word]
                 if explain_id in explain_id_list:
-                    print('★★★ 该解释已作为新词出现过')
+                    print('❌❌❌ 该解释已作为新词出现过')
                 else:
                     word_info[word].append(explain_id)
 
@@ -123,7 +164,7 @@ class FlashCard(FlashCardGame):
                   )
             self.pattern_switch()  # 切换到 全英模式
             if self.wait_check_explain_page():  # 校验是否成功切换
-                print('★★★ 切换全英模式， 依然存在解释')
+                print('❌❌❌ 切换全英模式， 依然存在解释')
             self.pattern_switch()  # 切换回 英汉模式
 
             if familiar_type == 1:
@@ -156,7 +197,6 @@ class FlashCard(FlashCardGame):
             print('-' * 30, '\n')
         return all_words, familiar_words, 0, group_new_explain_words
 
-
     # ====================== 学习模式 ===========================
     @teststeps
     def flash_study_model(self, stu_id, word_info, group_count, do_right):
@@ -168,48 +208,69 @@ class FlashCard(FlashCardGame):
         """学习模式  新词操作"""
 
         familiar_words, all_words = {}, {}
+        group_word_answer = {}
         star_words, group_new_explain_words = [], []
         index = 0
-        while self.wait_check_study_page():
+        while self.wait_check_flash_study_page():
             if index == 0:
                 print('===== 🌟🌟 闪卡练习 学习模式 🌟🌟 =====\n')
             word = self.english_study()
             if self.wait_check_explain_page():
+
                 self.next_btn_judge('true', self.fab_next_btn)
                 explain = self.study_word_explain()       # 解释
+                sentence = self.study_sentence()
+                sentence_explain = self.study_sentence_explain()
+                sentence_author = self.author()
                 explain_id = explain.get_attribute('contentDescription').split(' ')[0]
 
+                print('单词：', word, '\n',
+                      '解释：', explain.text, '\n',
+                      '句子：', sentence, '\n',
+                      '句子解释：', sentence_explain, '\n',
+                      '推荐老师：', sentence_author, '\n'
+                      )
+
                 if '新释义' in self.game_title().text:
+                    if not self.wait_check_dragger_btn():
+                        self.base_assert.except_error('★★★ 单词为新释义吗, 但是未发现拖拽按钮')
+                    else:
+                        if word in list(word_info.keys()):
+                            self.old_explain_tab_ele_check(word_info, word)
+
                     group_new_explain_words.append(explain_id)
                     if WordDataHandlePage().check_has_other_studied_explain(stu_id, explain_id):
                         print('此单词为新释义单词')
                     else:
-                        print('★★★ 该单词不为新释义单词，但是标题出现新释义字样')
+                        print('❌❌❌ 该单词不为新释义单词，但是标题出现新释义字样')
 
                 if word in list(all_words.keys()):  # 判断单词是否去重
-                    print('★★★ 本组已存在本单词，单词未去重！')
+                    print('❌❌❌ 本组已存在本单词，单词未去重！')
                 else:
                     all_words[word] = explain_id
+                    group_word_answer[explain.text] = word
 
                 if word not in list(word_info.keys()):
-                    word_info[word] = [explain_id]
+                    word_info[word] = {
+                        "explain_id": [explain_id],
+                        'explain': [explain.text],
+                        'sentence': [sentence],
+                        'sentence_explain': [sentence_explain + sentence_author],
+                    }
                 else:
-                    explain_id_list = word_info[word]
+                    explain_id_list = word_info[word]['explain_id']
                     if explain_id in explain_id_list:
-                        print('★★★ 该解释已作为新词出现过')
+                        print('❌❌❌ 该解释已作为新词出现过')
                     else:
-                        word_info[word].append(explain_id)
+                        word_info[word]['explain_id'].append(explain_id)
+                        word_info[word]['explain'].append(explain.text)
+                        word_info[word]['sentence'].append(sentence)
+                        word_info[word]['sentence_explain'].append(sentence_explain + sentence_author)
 
-                print('单词：', word, '\n',
-                      '解释：', explain.text, '\n',
-                      '句子：', self.study_sentence(), '\n',
-                      '句子解释：', self.study_sentence_explain(), '\n',
-                      '推荐老师：', self.author(), '\n'
-                      )
                 self.pattern_switch()               # 切换到 全英模式
 
                 if self.wait_check_explain_page():  # 校验是否成功切换
-                    print('★★★ 切换全英模式， 依然存在解释')
+                    self.base_assert.except_error('❌❌❌ 切换全英模式， 依然存在解释')
 
                 self.pattern_switch()               # 切换回 英汉模式
                 if not do_right:
@@ -217,10 +278,10 @@ class FlashCard(FlashCardGame):
                         if index == 2:
                             self.familiar_button().click()
                             if self.familiar_button().text != '取消熟词':
-                                print('★★★ 点击熟词后内容未发生变化')
+                                self.base_assert.except_error('❌❌❌ 点击熟词后内容未发生变化')
                             self.familiar_button().click()
                             if self.familiar_button().text != '设置熟词':
-                                print('★★★ 点击熟词后内容未发生变化')
+                                self.base_assert.except_error('❌❌❌ 点击熟词后内容未发生变化')
 
                         self.familiar_button().click()
                         self.check_alert_tip_operate(index, group_count)    # 判断首次标熟是否有提示
@@ -231,95 +292,97 @@ class FlashCard(FlashCardGame):
                         if index == 1:
                             self.star_button().click()              # 标星
                             if self.star_button().get_attribute('selected') != 'true':
-                                print('★★★ 点击标星按钮后，按钮未点亮')
+                                self.base_assert.except_error('❌❌❌ 点击标星按钮后，按钮未点亮')
                             self.star_button().click()
                             if self.star_button().get_attribute('selected') != 'false':
-                                print('★★★ 取消标星后，按钮未置灰')
+                                self.base_assert.except_error('❌❌❌ 取消标星后，按钮未置灰')
                         self.star_button().click()  # 标星
                         self.check_alert_tip_operate(index, group_count)   # 判断首次标星是否有提示
                         star_words.append(explain_id)
             else:
-                print('★★★ 默认不是英汉模式')
+                self.base_assert.except_error('❌❌❌ 默认不是英汉模式')
 
             self.next_btn_operate('true', self.fab_next_btn)
             # self.next_word(index, word)
             index += 1
             print('-'*30, '\n')
-        return all_words, familiar_words, star_words, group_new_explain_words
+        return all_words, familiar_words, star_words, group_new_explain_words, group_word_answer
 
 
     @teststeps
     def flash_copy_model(self, star_words, new_explain_words):
         """闪卡抄写模式"""
         print('===== 🌟🌟 闪卡抄写模式 🌟🌟 =====\n')
-        for x in range(len(star_words)):
+        index = 0
+        while self.wait_check_copy_page():
             word = self.copy_word()
             word_explain = self.copy_explain()
             explain_id = word_explain.get_attribute('contentDescription')
+            self.copy_input().click()
             if explain_id in new_explain_words:
                 if '新释义' not in self.game_title().text:
-                    print('★★★ 该单词为新释义单词，但是标题未标明新释义字样')
-            input_word = self.copy_word()
+                    self.base_assert.except_error('❌❌❌ 该单词为新释义单词，但是标题未标明新释义字样')
 
             if explain_id not in star_words:
-                print('★★★ 单词未标星，但是有抄写模式', word)
+                self.base_assert.except_error('❌❌❌ 单词未标星，但是有抄写模式 ' + word)
             print("单词：%s\n解释：%s" % (word, word_explain.text))
-
-            if len(input_word) != 0:
-                print('★★★ Error-- 抄写栏不为空', input_word)
-                for i in range(len(input_word)):
-                    Keyboard().games_keyboard('backspace')
-
             random_str = random.sample(string.ascii_lowercase, len(word) + 1)
-            if x == 1:
+            if index == 1:
                 for i, alpha in enumerate(list(random_str)):
-                    self.keyboard_operate(i, alpha)
+                    Keyboard().keyboard_operate(alpha, i)
                 if len(self.copy_word()) > len(word):
-                    print('★★★ 输入栏可输入超过抄写单词长度的单词')
+                    self.base_assert.except_error('❌❌❌ 输入栏可输入超过抄写单词长度的单词')
                 for y in range(len(self.copy_word())):
                     Keyboard().games_keyboard('backspace')
 
             for i, alpha in enumerate(list(word)):
-                self.keyboard_operate(i, alpha)
+                Keyboard().keyboard_operate(alpha, i)
             time.sleep(5)
+            index += 1
             print('-'*30, '\n')
+        return index
 
+    @teststeps
+    def old_explain_tab_ele_check(self, word_info, word):
+        loc = self.get_element_location(self.drag_btn())  # 获取按钮坐标
+        self.driver.swipe(loc[0] + 45, loc[1] + 45, loc[0] + 45, self.get_window_size()[1] * 0.15)  # 拖拽至最上方
 
-    # @teststeps
-    # def study_mine_word(self, i, star_list, familiar_list, star_add, familiar_add):
-    #     """学习模式  单词详情操作"""
-    #     if i == 0:
-    #         print('\n闪卡练习-单词详情(我的单词)\n')
-    #
-    #     if i in(range(0, 5)):
-    #         word = self.study_word_core()
-    #
-    #         if word in star_list:                      # 单词是否在标星数组中
-    #             self.judge_word_is_star(i)             # 判断单词星标是否被标注
-    #             self.judge_word_is_familiar(familiar_list, word, i, familiar_add)     # 判断单词是否同时被标熟
-    #         else:
-    #             if i == 1 or i == 3:
-    #                 self.click_star()
-    #                 self.tips_operate()
-    #                 star_add.append(word)
-    #             self.judge_word_is_familiar(familiar_list, word, i, familiar_add)     # 判断单词是否被标熟
-    #
-    #         self.next_btn_operate('true', self.fab_next_btn)
-    #         # self.next_word(i)                                  # 下一单词滑屏还是点击按钮
-    #     else:
-    #         print('用户下所有标星单词：', star_list + star_add)
-    #         print('用户下所有标熟单词：', familiar_list + familiar_add )
-    #         print('-------------------------------------')
-    #         self.home.click_back_up_button()
+        old_word = self.old_explain_tab_word()
+        print('单词：', old_word)
+        if old_word != word:
+            self.base_assert.except_error('★★★ 下拉tab中的单词与正在学习的单词不一致！')
+
+        for i, x in enumerate(self.old_explain_tab_explain()):
+            print('已学解释：', x.text)
+            already_explain = x.text
+            already_sentence = self.old_explain_tab_sentence()[i].text
+            already_sentence_explain = self.old_explain_tab_sentence_explain()[i].text + \
+                                       self.old_explain_tab_sentence_author()[i].text
+            print('已学单词解释：', already_explain, '\n'
+                                              '已学单词句子：', already_sentence, '\n'
+                                                                           '已学单词句子解释：', already_sentence_explain, '\n')
+
+            if x not in word_info[word]['explain']:
+                self.base_assert.except_error('★★★ 该释义不在本单词的已学释义列表中')
+
+            if already_sentence not in word_info[word]['sentence']:
+                self.base_assert.except_error('★★★ 该句子不在本单词已学释义的句子列表中')
+
+            if already_sentence_explain not in word_info[word]['sentence_explain']:
+                self.base_assert.except_error('★★★ 该句子解释不在本单词已学释义的句子解释列表中')
+
+        loc = self.get_element_location(self.drag_btn())  # 获取按钮坐标
+        self.driver.swipe(loc[0] + 45, loc[1] + 45, loc[0] + 45, self.get_window_size()[1] * 0.98)  # 拖拽至最上方
+
 
     @teststeps
     def next_word(self, i, word):
         """进入下一单词的方式"""
         if i == 1:  # 向左滑屏
             self.screen_swipe_left(0.9, 0.5, 0.1, 1000)
-            if self.wait_check_study_page():
+            if self.wait_check_flash_study_page():
                 if self.english_study() == word:
-                    print('★★★ 左右滑屏未成功，仍处于已学单词页面')
+                    self.base_assert.except_error('❌❌❌ 左右滑屏未成功，仍处于已学单词页面')
         else:
             self.next_btn_operate('true', self.fab_next_btn)
         time.sleep(2)
@@ -327,19 +390,19 @@ class FlashCard(FlashCardGame):
     @teststep
     def judge_word_is_star(self, i):
         """判断单词是否被标星"""
-        if GetAttribute().selected(self.star_button()) == 'true':  # 判断但是标星是否被标注
+        if GetAttribute().get_selected(self.star_button()) == 'true':  # 判断但是标星是否被标注
             print('单词已标星')
             if i == 3:
-                self.star_button().click() # 取消标星
+                self.star_button().click()  # 取消标星
         else:
-            print("★★★ Error--此题未被标星")
+            self.base_assert.except_error("❌❌❌ Error--此题未被标星")
 
     @teststep
     def judge_word_is_familiar(self, familiar, word, i, familiar_add):
         """判断单词是否被标熟"""
         if word in familiar:
-            if GetAttribute().selected(self.familiar_button()) == 'true':
-                print("★★★ Error-- 此题未被标熟")
+            if GetAttribute().get_selected(self.familiar_button()) == 'true':
+                self.base_assert.except_error("❌❌❌ Error-- 此题未被标熟")
                 self.familiar_button().click()
                 self.tips_operate()
                 familiar_add.append(word)
@@ -355,13 +418,14 @@ class FlashCard(FlashCardGame):
     @teststeps
     def scan_game_operate(self, familiar=False, is_exit=False):
         """闪卡游戏过滤"""
-        word_info, familiar_words = {}, {}
+        word_info, familiar_words, group_word_answer = {}, {}, {}
         star_words = 0
         new_explain_words = []
-        if self.wait_check_study_page():
+        if self.wait_check_flash_study_page():
             while '闪卡练习' in self.game_title().text and self.game_mode_id() == 1:
                 word = self.english_study()                        # 单词
                 explain = self.study_word_explain()                # 解释
+                group_word_answer[explain.text] = word
                 print('单词：', word, '\n',
                       '解释：', explain.text, '\n',
                       '句子：', self.study_sentence(), '\n',
@@ -383,4 +447,4 @@ class FlashCard(FlashCardGame):
         if is_exit:
             self.click_back_up_button()  # 退出弹框处理
             self.tips_operate()
-        return word_info, familiar_words, star_words, new_explain_words
+        return word_info, familiar_words, star_words, new_explain_words, group_word_answer

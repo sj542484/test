@@ -4,7 +4,7 @@ import unittest
 
 from ddt import ddt, data
 
-from app.honor.student.library.object_pages.usercenter_page import UserCenterPage
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.login.object_page.login_page import LoginPage
 from app.honor.student.login.test_data.account import VALID_ACCOUNT
@@ -13,9 +13,9 @@ from app.honor.student.word_book.object_page.other_game_process import GameOpera
 from app.honor.student.word_book.object_page.recite_word_operate import ReciteWordPage
 from app.honor.student.word_book.object_page.result_page import WordResultPage
 from app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
-from app.honor.student.word_book_rebuild.object_page.word_result_page import ResultPage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_result_page import ResultPage
 from app.honor.student.word_book_rebuild.object_page.games.word_spelling_page import SpellingWord
-from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
+from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild_page import WordBookRebuildPage
 from conf.decorator import teardown, testcase, setup
 
 @ddt
@@ -53,7 +53,7 @@ class Word (unittest.TestCase):
                     if self.word_rebuild.wait_check_start_page():  # 开始页面检查点
                         self.word_rebuild.word_start_button()      # 点击 Go按钮
                     elif self.word_rebuild.wait_check_continue_page():
-                        print('★★★ 缓存未清除成功')
+                        print('❌❌❌ 缓存未清除成功')
                     time.sleep(3)
             else:
                 print('❌❌❌ 未进入主页面')
@@ -66,7 +66,7 @@ class Word (unittest.TestCase):
             if '新词' in title or '新释义' in title:
                 flash_result = FlashCardProcess().flash_card_operate(word_info)
                 if flash_result:
-                    GameOperate().new_word_other_game_operate(flash_result, self.stu_id)
+                    GameOperate().new_word_other_game_operate(flash_result, word_info, self.stu_id)
             elif '复习' in title:
                 recite_words_count = ReciteWordPage().word_book_recite_operate(self.stu_id, wrong_again_words)
             else:
@@ -77,7 +77,7 @@ class Word (unittest.TestCase):
             SpellingWord().dictation_random_pattern_recite(self.stu_id, wrong_again_words)
             if self.word_rebuild.wait_check_game_title_page():
                 if '单词拼写(复习)' in self.word_rebuild.public.game_title().text:
-                    print('★★★ 错题再练个数与记录个数不一致')
+                    print('❌❌❌ 错题再练个数与记录个数不一致')
         else:
             print('没有错题再练')
 

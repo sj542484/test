@@ -6,7 +6,8 @@ from app.honor.student.login.object_page.login_page import LoginPage
 from app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOAST
 from app.honor.student.user_center.object_page.user_center_page import UserCenterPage, Setting, ProtocolPage
 from conf.base_page import BasePage
-from conf.decorator import setupclass, teardownclass, testcase
+from conf.decorator import setupclass, teardownclass, testcase, teardown
+from utils.assert_func import ExpectingTest
 from utils.toast_find import Toast
 
 
@@ -17,16 +18,24 @@ class RegisterProtocol(unittest.TestCase):
     @setupclass
     def setUp(cls):
         """启动应用"""
+        cls.result = unittest.TestResult()
+        cls.base_assert = ExpectingTest(cls, cls.result)
         cls.login = LoginPage()
         cls.home = HomePage()
         cls.user_center = UserCenterPage()
         cls.setting = Setting()
         cls.protocol = ProtocolPage()
+        BasePage().set_assert(cls.base_assert)
 
-    @classmethod
-    @teardownclass
-    def tearDown(cls):
-        pass
+    @teardown
+    def tearDown(self):
+        for x in self.base_assert.get_error():
+            self.result.addFailure(self, x)
+
+    def run(self, result=None):
+        self.result = result
+        super(RegisterProtocol, self).run(result)
+
 
     @testcase
     def test_register_protocol(self):
@@ -35,7 +44,7 @@ class RegisterProtocol(unittest.TestCase):
         if self.home.wait_check_home_page():
             self.home.click_tab_profile()  # 进入首页后点击‘个人中心’按钮
 
-            if self.user_center.wait_check_page():  # 页面检查点
+            if self.user_center.wait_check_user_center_page():  # 页面检查点
                 self.home.screen_swipe_up(0.5, 0.9, 0.3, 1000)
                 self.user_center.click_setting()  # 进入设置页面
                 if self.setting.wait_check_page():

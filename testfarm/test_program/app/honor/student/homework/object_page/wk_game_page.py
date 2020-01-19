@@ -7,8 +7,8 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep, teststeps
+from conf.base_page import BasePage
+from conf.decorator import teststep, teststeps
 
 
 class WKGamePage(BasePage):
@@ -70,27 +70,27 @@ class WKGamePage(BasePage):
         """微课的游戏过程"""
         if self.wait_check_wk_page():
             play_time = self.play_time()
-            time.sleep(1)
+            time.sleep(2)
             if self.play_time() == play_time:
-                print('★★★ 视频进度未发生变化')
+                self.base_assert.except_error('视频进度未发生变化')
 
             self.video_pause_btn().click()
             pause_time = self.play_time()
             if not self.wait_check_play_btn_page():
-                print('★★★ 点击暂停按钮后按钮未显示暂停')
+                self.base_assert.except_error('点击暂停按钮后按钮未显示暂停')
             else:
                 print('暂停播放测试通过')
 
             time.sleep(2)
             if self.play_time() != pause_time:
-                print('★★★ 点击暂停后视频进度发生变化')
+                self.base_assert.except_error('点击暂停后视频进度发生变化')
             else:
                 print('播放进度测试通过')
 
             default_size = self.video_size()
             screen_size = self.get_window_size()
             if default_size['height'] == screen_size[0]:
-                print('★★★ 默认视屏大小为全屏大小')
+                self.base_assert.except_error('默认视屏大小为全屏大小')
             else:
                 print('默认屏大小检查通过')
 
@@ -98,14 +98,14 @@ class WKGamePage(BasePage):
             rotate_size = self.video_size()
 
             if rotate_size['width'] != screen_size[1]:
-                print('★★★ 横屏后视频的宽度不是手机屏幕的高度')
+                self.base_assert.except_error('横屏后视频的宽度不是手机屏幕的高度')
 
             if rotate_size['height'] != screen_size[0]:
-                print('★★★ 横屏后视频的高度不等于手机屏幕的宽度')
+                self.base_assert.except_error('横屏后视频的高度不等于手机屏幕的宽度')
 
             self.click_back_up_button()
             if self.video_size() != default_size:
-                print('★★★ 全屏状态点击返回按钮，视频大小未缩小为默认大小')
+                self.base_assert.except_error('全屏状态点击返回按钮，视频大小未缩小为默认大小')
             else:
                 print('全屏返回测试通过')
 

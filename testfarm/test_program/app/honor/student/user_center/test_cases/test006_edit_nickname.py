@@ -9,28 +9,38 @@ from app.honor.student.login.test_data.login_failed_toast import VALID_LOGIN_TOA
 from app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
 from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from app.honor.student.user_center.test_data.nickname import nickname_data
+from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase
+from utils.assert_func import ExpectingTest
 from utils.screen_shot import ScreenShot
 from utils.toast_find import Toast
 
 
-class NickName(unittest.TestCase):
+class ChangeNickName(unittest.TestCase):
     """修改昵称"""
 
     @classmethod
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.result = unittest.TestResult()
+        cls.base_assert = ExpectingTest(cls, cls.result)
         cls.login_page = LoginPage()
         cls.home = HomePage()
         cls.user_center = UserCenterPage()
         cls.user_info = UserInfoPage()
         cls.screen_shot = ScreenShot()
+        BasePage().set_assert(cls.base_assert)
 
-    @classmethod
     @teardown
-    def tearDown(cls):
-        pass
+    def tearDown(self):
+        for x in self.base_assert.get_error():
+            self.result.addFailure(self, x)
+
+    def run(self, result=None):
+        self.result = result
+        super(ChangeNickName, self).run(result)
+
 
     @testcase
     def test_nickname(self):
@@ -39,7 +49,7 @@ class NickName(unittest.TestCase):
         if self.home.wait_check_home_page():
             self.home.click_tab_profile()  # 进入首页后点击‘个人中心’按钮
 
-            if self.user_center.wait_check_page():  # 页面检查点
+            if self.user_center.wait_check_user_center_page():  # 页面检查点
                 self.user_center.click_avatar_profile()  # 点击登录头像按钮，进行个人信息操作
                 if self.user_info.wait_check_page():  # 页面检查点
 
@@ -76,12 +86,14 @@ class NickName(unittest.TestCase):
                                                 if name2 == name1:
                                                     print('not change nickname')
                                                 else:
-                                                    print('★★★ Error- nickname is changed', nickname_data[i]['nickname'], name2)
+                                                    self.base_assert.except_error('❌❌❌ Error- nickname is changed' + nickname_data[i]['nickname'] +
+                                                                                  ' ' + name2)
                                             else:
                                                 time.sleep(2)
                                                 name2 = self.user_info.nickname()  # 昵称条目
                                                 if name2 == name1:
-                                                    print('★★★ Error- failed change nickname', nickname_data[i]['nickname'],name2)
+                                                    self.base_assert.except_error('❌❌❌ Error- failed change nickname'+  nickname_data[i][
+                                                        'nickname'] + ' ' + name2)
                                         else:
                                             print('未返回个人信息页面')
                                     else:
@@ -92,7 +104,8 @@ class NickName(unittest.TestCase):
                                             if name2 == name1:
                                                 print('not change nickname')
                                             else:
-                                                print('★★★ Error- nickname is changed', nickname_data[i]['nickname'], name2)
+                                                self.base_assert.except_error('❌❌❌ Error- nickname is changed' +  nickname_data[i]['nickname'] + ' '+
+                                                                              name2)
                                         else:
                                             print('未返回个人信息页面')
                         print('-----------------------------------')

@@ -1,16 +1,16 @@
 import time
 
-from testfarm.test_program.app.honor.student.login.test_data.account import VALID_ACCOUNT
-from testfarm.test_program.app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.app.honor.student.user_center.object_page.user_center_page import UserCenterPage
+from app.honor.student.login.test_data.account import VALID_ACCOUNT
+from app.honor.student.login.object_page.home_page import HomePage
+from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from testfarm.test_program.app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
-from testfarm.test_program.conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.utils.reset_phone_find_toast import verify_find
-from testfarm.test_program.utils.toast_find import Toast
+from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
+from conf.decorator import teststep, teststeps
+from conf.base_page import BasePage
+from utils.reset_phone_find_toast import verify_find
+from utils.toast_find import Toast
 
 
 class LoginPage(BasePage):
@@ -259,14 +259,7 @@ class LoginPage(BasePage):
         time.sleep(2)
         phone = self.input_username()
         pwd = self.input_password()
-        import os, yaml
-        f = open('./testfarm/test_program/conf/user_info.yaml', 'r', encoding='utf8')
-        res = f.read()
-        res = yaml.full_load(res)
-        stu_info = res['userinfo'][self.deviceName]
-        stu_account = stu_info['student']['student']
 
-        stu_password = stu_info['pwd']
         phone.send_keys(stu_account)
         pwd.send_keys(stu_password)
         self.login_button()
@@ -305,7 +298,7 @@ class LoginPage(BasePage):
         """由 主界面 进入个人信息页"""
         if HomePage().wait_check_home_page():
             HomePage().click_tab_profile()  # 进入首页后点击‘个人中心’按钮
-            if UserCenterPage().wait_check_page():
+            if UserCenterPage().wait_check_user_center_page():
                 UserCenterPage().click_avatar_profile()  # 点击登录头像按钮，进行个人信息操作
 
     @teststep
@@ -345,19 +338,20 @@ class LoginPage(BasePage):
         """验证码操作"""
         value = 0
         for j in range(2):
-            self.get_code_button().click()  # 获取验证码 按钮
+            if j == 1:
+                self.get_code_button().click()  # 获取验证码 按钮
             value = verify_find(phone, operate_type)  # 获取验证码
             if self.get_code_button().get_attribute('enabled') == "true":
-                print('★★★ 获取验证码按钮未置灰！')
+                print('❌❌❌ 获取验证码按钮未置灰！')
             if operate_type == 'register':
                 if not self.wait_check_not_receive_code_page():
-                    print('★★★ 未发现收不到验证码信息提示！')
+                    print('❌❌❌ 未发现收不到验证码信息提示！')
             if j == 0:
                 time.sleep(60)
                 if not self.wait_check_resend_page():
-                    print('★★★ 按钮未变为重新发送')
+                    print('❌❌❌ 按钮未变为重新发送')
                 if self.wait_check_not_receive_code_page():
-                    print('★★★ 发送语音验证码提示未消失')
+                    print('❌❌❌ 发送语音验证码提示未消失')
         return value
 
     @teststep
@@ -368,7 +362,7 @@ class LoginPage(BasePage):
         self.next_button()  # 下一步 按钮
 
         if not Toast().find_toast('验证码验证失败'):
-            print("★★★ 未发现验证码验证失败信息提示！")
+            print("❌❌❌ 未发现验证码验证失败信息提示！")
 
         code.send_keys(value)  # 输入 验证码
         self.next_button()  # 下一步 按钮

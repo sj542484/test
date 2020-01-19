@@ -3,21 +3,15 @@
 # Author:   Vector
 # Date:     2018/12/17 10:59
 # -------------------------------------------
-import random
-import time
-
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 
-from app.honor.student.listen_everyday.object_page.game_link_sentence import LinkWordSentencePage
-from app.honor.student.listen_everyday.object_page.game_listen_choice import ListenChoicePage
-from app.honor.student.listen_everyday.object_page.game_select_image import ListenSelectImagePage
+from app.honor.student.games.all_game_init import AllGameClass
+from app.honor.student.library.object_page.game_result_page import ResultPage
 from app.honor.student.listen_everyday.object_page.listen_home_page import ListenHomePage
-from app.honor.student.listen_everyday.object_page.listen_result_page import ListenResultPage
 from app.honor.student.login.object_page.home_page import HomePage
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
-from utils.toast_find import Toast
+
 
 
 class ListenGamePage(BasePage):
@@ -25,141 +19,93 @@ class ListenGamePage(BasePage):
     def __init__(self):
         self.home = HomePage()
         self.listen = ListenHomePage()
+        self.all_game = AllGameClass()
 
     @teststep
     def wait_check_gaming_page(self):
         """以游戏界面计时的id作为根据"""
         locator = (By.XPATH, '//android.widget.TextView[contains(@text,"待完成:")]')
-        try:
-            WebDriverWait(self.driver, 15, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
+
+    @teststep
+    def wait_check_red_hint_page(self):
+        """听后选择页面检查点"""
+        locator = (By.ID, self.id_type() + 'tv_hint')
+        return self.get_wait_check_page_result(locator, timeout=5)
 
     @teststep
     def wait_check_image_page(self):
         """听音选图 -- 以题号的id作为根据"""
         locator = (By.ID, self.id_type() + 'num')
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
     def wait_check_rich_page(self):
+        """听音连句页面检查点"""
         locator = (By.ID, self.id_type() + 'rich_text')
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        return self.get_wait_check_page_result(locator)
 
     @teststep
-    def wait_check_next_button_page(self):
-        """以下一步按钮的id作为根据"""
-        locator = (By.ID, self.id_type() + 'fab_commit')
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+    def wait_check_result_page(self):
+        """结果检查点 以打卡的id作为依据"""
+        locator = (By.ID, '{}today_minute'.format(self.id_type()))
+        return self.get_wait_check_page_result(locator, timeout=5)
 
     @teststep
-    def wait_check_next_submit_page(self):
-        """以下一步按钮的id作为根据"""
-        locator = (By.ID, self.id_type() + 'fab_submit')
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+    def wait_check_error_hint_page(self):
+        """不达标字样提示页面检查点"""
+        locator = (By.ID, '{}error_hint'.format(self.id_type()))
+        return self.get_wait_check_page_result(locator, timeout=5)
+
 
     @teststep
-    def wait_check_right_answer(self):
-        locator = (By.ID, self.id_type() + 'tv_right')
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+    def today_excise_time(self):
+        """今日已练时间"""
+        ele = self.driver.find_element_by_id("{}today_minute".format(self.id_type()))
+        return ele.text
 
     @teststep
-    def wait_check_clear_button_page(self):
-        locator = (By.ID, self.id_type() + 'clear')
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+    def excise_date(self):
+        """练习日期"""
+        ele = self.driver.find_element_by_id('{}date'.format(self.id_type()))
+        return ele.text
 
     @teststep
-    def wait_check_red_hint_page(self):
-        locator = (By.ID, self.id_type() + 'tv_hint')
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+    def excise_correct_rate(self):
+        """正确率"""
+        ele = self.driver.find_element_by_id("{}right_rate".format(self.id_type()))
+        return ele.text
 
     @teststep
-    def wait_check_choice_question_page(self):
-        locator = (By.ID, self.id_type() + 'question')
-        try:
-            WebDriverWait(self.driver, 5, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
-
-    @teststep
-    def game_num(self):
-        """游戏剩余个数"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'rate')
+    def error_hint(self):
+        """正确率不足60%提示"""
+        ele = self.driver.find_element_by_id('{}error_hint'.format(self.id_type()))
         return ele
 
     @teststep
-    def game_use_time(self):
-        """游戏使用时间"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'time')
+    def punch_button(self):
+        """打卡"""
+        ele = self.driver.find_element_by_id("{}share".format(self.id_type()))
         return ele
 
     @teststep
-    def images(self):
-        """图片"""
-        ele = self.driver.find_elements_by_id(self.id_type() + "img")
+    def check_answer_button(self):
+        """查看答案"""
+        ele = self.driver.find_element_by_id("{}detail".format(self.id_type()))
         return ele
 
     @teststep
-    def question(self):
-        """题目"""
-        ele = self.driver.find_element_by_id(self.id_type() + "sentence")
+    def redo_button(self):
+        """重练此题"""
+        ele = self.driver.find_element_by_id("{}again".format(self.id_type()))
         return ele
 
     @teststep
-    def question_index(self):
-        """题号"""
-        ele = self.driver.find_element_by_id(self.id_type() + "num")
+    def rank_button(self):
+        """排行榜"""
+        ele = self.driver.find_element_by_id('{}rank'.format(self.id_type()))
         return ele
 
-    # 听音连句
-    @teststep
-    def need_input_word(self):
-        """需要填补的空格"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'rich')
-        word_num = len(ele.text.split(' '))
-        return word_num
-
-    @teststep
-    def finish_word(self):
-        """填补后的单词"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'rich')
-        return ele
-
-    @teststep
-    def clear_button(self):
-        """清除按钮"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'clear')
-        return ele
 
     @teststep
     def audio_button(self):
@@ -181,73 +127,52 @@ class ListenGamePage(BasePage):
         return ele
 
     @teststep
-    def red_hint(self):
-        ele = self.driver.find_element_by_id(self.id_type() + 'tv_hint')
-        return ele
-
-    @teststep
-    def play_voice(self):
-        ele = self.driver.find_element_by_id(self.id_type() + 'fab_audio')
-        return ele
-
-    @teststep
-    def choice_question(self):
-        ele = self.driver.find_elements_by_id(self.id_type() + 'question')
-        return ele
-
-    @teststep
-    def choice_char(self, question):
-        ele = self.driver.\
-                find_elements_by_xpath('//android.widget.TextView[contains(@text,"{0}")]/following-sibling::'
-                                       'android.widget.LinearLayout/android.widget.LinearLayout/'
-                                       'android.widget.LinearLayout/android.widget.TextView[contains(@resource-id,'
-                                       '"{1}tv_char")]'.format(question, self.id_type()))
-        return ele
-
-    @teststep
-    def choice_item(self, question):
-        ele = self.driver.\
-            find_elements_by_xpath('//android.widget.TextView[contains(@text,"{0}")]/following-sibling::'
-                                   'android.widget.LinearLayout/android.widget.LinearLayout/'
-                                   'android.widget.LinearLayout/android.widget.TextView[contains(@resource-id,'
-                                   '"{1}tv_item")]'.format(question, self.id_type()))
-
-        return ele
-
-    @teststep
-    def text_views(self):
-        ele = self.driver.find_elements_by_class_name('android.widget.TextView')
-        text_list = [x for x in ele if x.text != '' or x.text is not None]
-        return text_list
-
-    @teststep
-    def last_text(self):
-        all_text = self.text_views()
-        return all_text[-1].get_attribute('resourceId')
-
-    @teststep
-    def next_button(self):
-        ele = self.driver.find_element_by_id(self.id_type() + 'fab_submit')
-        return ele
-
-    @teststep
     def play_listen_game_process(self):
         bank_info = 0
+        bank_type = 0
         if self.wait_check_image_page():
-            """听音选图"""
-            bank_info = ListenSelectImagePage().play_listen_select_image_game()
+            print('===== 听音选图 =====\n')
+            bank_info = self.all_game.image_choice.image_choice_lib_hw_operate(fq=1, half_exit=False)
+            bank_type = 1
 
         elif self.wait_check_rich_page():
-            """听音连句"""
-            bank_info = LinkWordSentencePage().play_link_word_to_sentence_game()
+            print('===== 听音连句 =====\n')
+            bank_info = self.all_game.sentence_listen_link.sentence_listen_link_lib_hw_operate(fq=1, half_exit=False)
+            bank_type = 2
 
         elif self.wait_check_red_hint_page():
-            """听后选择"""
-            bank_info = ListenChoicePage().play_listen_choice_game()
+            print('===== 听后选择 =====\n')
+            bank_info = self.all_game.listen_choice.listen_choice_lib_hw_operate(fq=1, half_exit=False)
+            bank_type = 3
 
-        ListenResultPage().result_page_operate(bank_info)
-        self.home.click_back_up_button()
-        if ListenResultPage().wait_check_result_page():
-            self.home.click_back_up_button()
-        
+        return bank_type, bank_info
+
+    @teststeps
+    def answer_page_operate(self, bank_type, bank_info):
+        if self.wait_check_result_page():
+            print('----- < 结果页 > -----\n')
+            today_excise = self.today_excise_time()
+            date = self.excise_date()
+            rate = self.excise_correct_rate()
+            print(today_excise, '\n', date, '\n', rate, '\n')
+            if self.wait_check_error_hint_page():
+                print(self.error_hint().text, '\n')
+            self.punch_button().click()
+            self.all_game.listen_choice.share_page_operate()
+            if self.wait_check_result_page():
+                self.check_answer_button().click()
+
+            if ResultPage().wait_check_answer_page():
+                if bank_type == 1:
+                    print('----- < 听音选图答案详情页 > -----', '\n')
+                    self.all_game.image_choice.image_choice_result_operate(bank_info)
+
+                elif bank_type == 2:
+                    print('----- < 听音连句答案详情页 > -----', '\n')
+                    self.all_game.sentence_listen_link.sentence_listen_link_result_operate(bank_info)
+
+                elif bank_type == 3:
+                    print('----- < 听后选择答案详情页 > -----', '\n')
+                    self.all_game.single_choice.single_choice_result_operate(bank_info, '听后选择')
+                self.home.click_back_up_button()
 

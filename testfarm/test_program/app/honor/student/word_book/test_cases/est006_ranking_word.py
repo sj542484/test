@@ -3,7 +3,7 @@ import unittest
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.login.object_page.login_page import LoginPage
 from app.honor.student.word_book_rebuild.object_page.ranking_page import RankingPage
-from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
+from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild_page import WordBookRebuildPage
 from conf.decorator import teardown, teststeps,setup
 
 

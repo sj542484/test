@@ -5,7 +5,7 @@
 import re
 
 from app.honor.student.word_book.object_page.check_sql_handle import CheckSqlHandle
-from app.honor.student.word_book_rebuild.object_page.word_result_page import ResultPage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_result_page import ResultPage
 from conf.decorator import teststep
 
 
@@ -41,25 +41,25 @@ class WordResultPage(ResultPage):
         if recite_word_count > 28:
             if group_count == 1:
                 if len(new_word_info) != 0:
-                    print('★★★ 复习个数大于等于28个, 不应存在新词个数')
+                    print('❌❌❌ 复习个数大于等于28个, 不应存在新词个数')
             else:
-                print('★★★ 复习组数非第一组, 但是复习个数大于27')
+                print('❌❌❌ 复习组数非第一组, 但是复习个数大于27')
         else:
             if len(new_word_info) == 0:
-                print('★★★ 复习单词个数小于27, 新词个数为0')
+                print('❌❌❌ 复习单词个数小于27, 新词个数为0')
             else:
                 if group_count == 1:
                     if len(new_word_info) not in range(3, 11):
-                        print('★★★ 复习单词个数小于28， 第一组新词个数不在3-10之间')
+                        print('❌❌❌ 复习单词个数小于28， 第一组新词个数不在3-10之间')
                 else:
                     if len(new_word_info) < 3:
-                        print('★★★ 复习单词个数小于28，非第一组新词个数小于3个')
+                        print('❌❌❌ 复习单词个数小于28，非第一组新词个数小于3个')
 
         print('~-' * 20)
         # print('需要练习的新词：', student_new_words)
         for x in list(new_word_info.keys()):
             if x not in student_new_words:
-                print('★★★ 此单词不在已布置的新词列表中', x)
+                print('❌❌❌ 此单词不在已布置的新词列表中', x)
         print('~-' * 20, '\n')
         if len(detail) == 1:
             if already_count != int(detail[0]):
@@ -72,22 +72,22 @@ class WordResultPage(ResultPage):
             new_explain_count = int(detail[3])  # 新释义个数
 
             if already_count != student_studied_word_count:
-                print('★★★ 已学单词数不正确，应为', student_studied_word_count)
+                print('❌❌❌ 已学单词数不正确，应为', student_studied_word_count)
 
             if today_word_count != recite_count + new_set_words + new_explain_count:
-                print('★★★ 今日已练单词不等于复习+新词+新释义, 应为', recite_count + new_set_words + new_explain_count)
+                print('❌❌❌ 今日已练单词不等于复习+新词+新释义, 应为', recite_count + new_set_words + new_explain_count)
 
             if study_group_count != group_count + word_play_times:
-                print('★★★ 已练组数不正确， 应为', group_count + word_play_times)
+                print('❌❌❌ 已练组数不正确， 应为', group_count + word_play_times)
 
             if new_set_words != len(new_word_info) + today_new_count:
-                print('★★★ 新词学单词数不正确，应为', len(new_word_info) + today_new_count)
+                print('❌❌❌ 新词学单词数不正确，应为', len(new_word_info) + today_new_count)
 
             if new_explain_count != new_explain_word:
-                print('★★★ 新释义单词个数不正确， 应为', new_explain_word)
+                print('❌❌❌ 新释义单词个数不正确， 应为', new_explain_word)
 
             if recite_count != recite_word_count + today_old_count:
-                print('★★★ 复习单词个数不正确， 应为', recite_word_count + today_old_count)
+                print('❌❌❌ 复习单词个数不正确， 应为', recite_word_count + today_old_count)
 
 
         self.more_again_button()  # 再练一次

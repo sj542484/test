@@ -1,47 +1,42 @@
 #!/usr/bin/env python
 # encoding:UTF-8  
 # @Author  : SUN FEIFEI
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststep
-import time
 
 
-class GetAttribute(BasePage):
+class GetAttribute:
     """获取元素属性"""
 
-    @teststep
-    def class_name(self, var):
+    @classmethod
+    def get_class_name(cls, var):
         """元素 class_name属性值"""
         value = var.get_attribute("className")
         return value
 
-    @teststep
-    def resource_id(self, var):
+    @classmethod
+    def get_resource_id(cls, var):
         """元素 resource-id属性值"""
         value = var.get_attribute("resourceId")
         return value
 
-    @teststep
-    def selected(self, var):
+    @classmethod
+    def get_selected(cls, var):
         """元素 selected属性值"""
         value = var.get_attribute('selected')
         return value
 
-    @teststep
-    def checked(self, var):
+    @classmethod
+    def get_checked(cls, var):
         """元素 checked属性值"""
         value = var.get_attribute('checked')
         return value
 
-    @teststep
-    def enabled(self, var):
+    @classmethod
+    def get_enabled(cls, var):
         """元素 enabled属性值"""
-        time.sleep(1.5)
         value = var.get_attribute('enabled')
         return value
 
-    @teststep
-    def description(self, var):
-        """元素 content_description属性值"""
+    @classmethod
+    def get_cont_desc(cls, var):
         value = var.get_attribute('contentDescription')
         return value

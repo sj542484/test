@@ -40,10 +40,10 @@ class Games(unittest.TestCase):
 
         if self.home_page.wait_check_home_page():  # 页面检查点
             self.login_page.enter_user_info_page()  # 由 主界面 进入个人信息页
-            if UserInfoPage().wait_check_page():
+            if UserInfoPage().wait_check_user_center_page():
                 nickname = UserInfoPage().nickname()  # 获取昵称
                 self.homework.back_up_button()  # 返回个人中心页面
-                if UserCenterPage().wait_check_page():
+                if UserCenterPage().wait_check_user_center_page():
                     self.home_page.click_tab_hw()  # 进入主界面
 
                     if self.home_page.wait_check_home_page():  # 页面检查点
@@ -100,9 +100,9 @@ class Games(unittest.TestCase):
                                     elif before[0][1] == after[0][1]:
                                         print('准确率&所用时间均相同')
                                     else:
-                                        print('★★★ 排名逻辑有问题 - 所用时间')
+                                        print('❌❌❌ 排名逻辑有问题 - 所用时间')
                                 else:
-                                    print('★★★ 排名逻辑有问题 - 准确率')
+                                    print('❌❌❌ 排名逻辑有问题 - 准确率')
 
                 print('####################################################')
             self.homework.back_up_button()  # 返回作业列表

@@ -202,9 +202,9 @@ class Homework(BasePage):
     @teststep
     def next_button_judge(self, var):
         """‘下一题’按钮 状态判断"""
-        value = GetAttribute().enabled(self.next_button())
+        value = GetAttribute().get_enabled(self.next_button())
         if value != var:  # 测试 下一步 按钮 状态
-            print('★★★ 下一步按钮 状态Error', value)
+            print('❌❌❌ 下一步按钮 状态Error', value)
 
     @teststep
     def rate(self):
@@ -305,7 +305,7 @@ class Homework(BasePage):
         for i in range(len(class_name)):
             rank_name = self.student_name(i)  # 昵称
             if rank_name == nickname:  # todo 未开始状态时，排行榜条目不应出现本人信息
-                print('★★★ Error--题目状态：未开始')
+                print('❌❌❌ Error--题目状态：未开始')
             else:
                 print('题目状态：未开始 - no error')
 
@@ -369,7 +369,7 @@ class Homework(BasePage):
             elif len(class_name) == 0:  # 排行榜暂无数据
                 print('排行榜暂无数据')
             else:
-                print('★★★ Error - 排行榜')
+                print('❌❌❌ Error - 排行榜')
 
         print('------------------------------')
         print('检查排行榜排序:', item[0], item[2], item[4])
@@ -397,16 +397,16 @@ class Homework(BasePage):
             elif int(rank_time[j + 1]) == int(rank_time[j]):
                 print('准确率&所用时间均相同')
             else:
-                print('★★★ 排名逻辑有问题 - 所用时间', rank_time[j + 1], rank_time[j])
+                print('❌❌❌ 排名逻辑有问题 - 所用时间', rank_time[j + 1], rank_time[j])
         else:
-            print('★★★ 排名逻辑有问题 - 准确率', rank_rate[j], rank_rate[j + 1])
+            print('❌❌❌ 排名逻辑有问题 - 准确率', rank_rate[j], rank_rate[j + 1])
 
     @teststeps
     def rate_judge(self, rate, i):
         """判断当前小题rate的值是否正确"""
         time.sleep(1)
         if int(self.rate()) != int(rate) - i:   # 测试当前rate值显示是否正确
-            print('★★★ Rate Error - 当前rate值为%s, 应为%s' % (int(self.rate()), int(rate) - i))
+            print('❌❌❌ Rate Error - 当前rate值为%s, 应为%s' % (int(self.rate()), int(rate) - i))
 
     @teststeps
     def next_button_operate(self, var):
@@ -427,7 +427,7 @@ class Homework(BasePage):
                 print('计时功能无误:', time_list)
                 return True
             else:
-                print('★★★ Error - 计时错误:', time_list)
+                print('❌❌❌ Error - 计时错误:', time_list)
                 MyError(self.driver).my_error(any(time_list[i + 1] <= time_list[i] for i in range(0, len(time_list) - 1)))
         else:  # 只有一道题
             print('只有一道题，时间为:', time_list[0])

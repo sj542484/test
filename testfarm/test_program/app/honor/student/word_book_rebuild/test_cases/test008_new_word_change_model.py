@@ -8,33 +8,45 @@ from ddt import ddt, data
 
 from app.honor.student.login.object_page.home_page import HomePage
 from app.honor.student.login.object_page.login_page import LoginPage
-from app.honor.student.word_book_rebuild.object_page.data_handle import WordDataHandlePage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_sql_handler import WordDataHandlePage
 from app.honor.student.word_book_rebuild.object_page.games.flash_card_page import FlashCard
 from app.honor.student.word_book_rebuild.object_page.study_setting_page import StudySettingPage
-from app.honor.student.word_book_rebuild.object_page.word_result_page import ResultPage
+from app.honor.student.word_book_rebuild.object_page.word_rebuild_result_page import ResultPage
 from app.honor.student.word_book_rebuild.object_page.games.word_spelling_page import SpellingWord
-from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild import WordBookRebuildPage
+from app.honor.student.word_book_rebuild.object_page.wordbook_rebuild_page import WordBookRebuildPage
+from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase
+from utils.assert_func import ExpectingTest
+
 
 @ddt
-class ReciteWord(unittest.TestCase):
+class NewWordChangeModel(unittest.TestCase):
     @classmethod
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.result = unittest.TestResult()
+        cls.base_assert = ExpectingTest(cls, cls.result)
         cls.home = HomePage()
         cls.login = LoginPage()
         cls.word_rebuild = WordBookRebuildPage()
         cls.data = WordDataHandlePage()
         cls.login.app_status()  # 判断APP当前状态
+        BasePage().set_assert(cls.base_assert)
 
     @teardown
     def tearDown(self):
-        pass
+        for x in self.base_assert.get_error():
+            self.result.addFailure(self, x)
+
+    def run(self, result=None):
+        self.result = result
+        super(NewWordChangeModel, self).run(result)
 
     @data(2)
     @testcase
     def test_new_word_change_study_model(self, study_model):
+        """测试新词游戏设置"""
         if self.home.wait_check_home_page():
             stu_info = StudySettingPage().get_user_info()  # 获取学生信息
             stu_id = stu_info[0]
@@ -57,7 +69,7 @@ class ReciteWord(unittest.TestCase):
                         all_explains.extend(list(flash_result[0].keys()))
                         new_explain_words.extend(flash_result[-1])
                         if len(flash_result[0]) > 10:
-                            print('★★★ 新词个数大于10')
+                            self.base_assert.except_error('新词个数大于10')
 
                         if '单词拼写' in self.word_rebuild.public.game_title().text:
                             SpellingWord().new_word_spell_operate(flash_result[0], flash_result[-1])

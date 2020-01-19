@@ -98,7 +98,7 @@ class MatchingExercises(BasePage):
         """我的"""
         ele = self.driver \
             .find_elements_by_id(self.id_type() + "iv_mine")[index]
-        value = GetAttribute().selected(ele)
+        value = GetAttribute().get_selected(ele)
         return value
 
     @teststeps
@@ -169,7 +169,7 @@ class MatchingExercises(BasePage):
             print('单词:', self.result_answer(i))  # 正确word
             mine = self.result_mine(i)  # 对错标识
             if mine != 'true':
-                print('★★★ Error - 对错标识')
+                print('❌❌❌ Error - 对错标识')
             else:
                 print('对错标识:', mine)
             print('-----------------------------------')

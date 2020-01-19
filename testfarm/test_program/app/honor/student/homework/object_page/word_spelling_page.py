@@ -205,7 +205,7 @@ class WordSpelling(BasePage):
         """我的"""
         ele = self.driver \
             .find_elements_by_id(self.id_type() + "iv_mine")[index]
-        value = self.get.selected(ele)
+        value = self.get.get_selected(ele)
         return value
 
     @teststeps
@@ -285,10 +285,10 @@ class WordSpelling(BasePage):
                                         print('缺失的字母：', value[j])
                                         self.keyboard_operate(j, value[j])  # 点击键盘 具体操作
                             else:
-                                print('★★★ Error - 自定义消除的字母未消除', word)
+                                print('❌❌❌ Error - 自定义消除的字母未消除', word)
                                 for j in range(0, len(value)-1):
                                     if value[j] != word[j]:
-                                        print('★★★ Error - 未自定义消除的字母%s也消除了' % value[j])
+                                        print('❌❌❌ Error - 未自定义消除的字母%s也消除了' % value[j])
 
                     answer.append(self.finish_word())  # 我的答案
                     Homework().next_button_operate('true')  # 下一题 按钮 状态判断 加点击
@@ -318,23 +318,23 @@ class WordSpelling(BasePage):
                     value = word_spelling_operate(explain)  # 数据字典
 
                     if self.dictation_word_judge():  # 默写模式 - 字母未全部消除
-                        print('★★★ Error - 单词拼写 默写模式 - 字母未全部消除')
+                        print('❌❌❌ Error - 单词拼写 默写模式 - 字母未全部消除')
 
                     if i in range(2, 5, 2):
                         hint = self.hint_button()  # 提示按钮
-                        if self.get.enabled(hint) == 'true':
+                        if self.get.get_enabled(hint) == 'true':
                             hint.click()  # 点击 提示按钮
-                            if self.get.enabled(hint) != 'false':
-                                print('★★★ Error - 点击后提示按钮enabled属性为:', self.get.enabled(hint))
+                            if self.get.get_enabled(hint) != 'false':
+                                print('❌❌❌ Error - 点击后提示按钮enabled属性为:', self.get.get_enabled(hint))
 
                             if self.dictation_word_judge():  # 出现首字母提示
                                 word = self.dictation_word()
                                 if len(word) == 1 and word == value[0]:
                                     print('点击提示出现首字母提示', word)
                                 else:
-                                    print('★★★ Error - 点击提示未出现首字母提示')
+                                    print('❌❌❌ Error - 点击提示未出现首字母提示')
                         else:
-                            print('★★★ Error - 提示按钮enabled属性为:', self.get.enabled(hint))
+                            print('❌❌❌ Error - 提示按钮enabled属性为:', self.get.get_enabled(hint))
 
                     for j in range(len(value)):
                         self.keyboard_operate(j, value[j])  # 点击键盘 具体操作

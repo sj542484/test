@@ -173,7 +173,7 @@ class ReadCompre(BasePage):
                     options[0][random.randint(0, len(options[0])) - 1].click()  # 随机点击选项
                     time.sleep(1)
                     for j in range(len(options[0])):
-                        if GetAttribute().selected(options[1][j]) == 'true':
+                        if GetAttribute().get_selected(options[1][j]) == 'true':
                             print('我的答案：', options[1][j].text)
                             break
 
@@ -200,15 +200,15 @@ class ReadCompre(BasePage):
             self.screen_swipe_up(0.5, 0.85, 0.2, 1000)
             y = self.article_view_size()  # 获取整个文章页面大小
             self.screen_swipe_down(0.5, 0.2, 0.8, 1000)
-            print(self.get.checked(middle), self.get.checked(large), self.get.checked(great))
+            print(self.get.get_checked(middle), self.get.get_checked(large), self.get.get_checked(great))
 
-            if self.get.checked(middle) == 'false':
-                if self.get.checked(large) == 'false':
+            if self.get.get_checked(middle) == 'false':
+                if self.get.get_checked(large) == 'false':
                     print('当前选中的Aa按钮为第3个,页面高度:', y)
                     loc.insert(2, y)
                     j = 3
                 else:
-                    if self.get.checked(large) == 'true':
+                    if self.get.get_checked(large) == 'true':
                         print('当前选中的Aa按钮为第2个,页面高度:', y)
                         loc.insert(1, y)
                         j = 2
@@ -228,5 +228,5 @@ class ReadCompre(BasePage):
             print('-----------------------------------------')
 
         if not float(loc[2]) > float(loc[1]) > float(loc[0]):
-            print('★★★ Error - Aa文字大小切换按钮:', loc)
+            print('❌❌❌ Error - Aa文字大小切换按钮:', loc)
         print('=============================================')
