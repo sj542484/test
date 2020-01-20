@@ -8,6 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import WorldBookPublicPage
 from conf.decorator import teststep, teststeps
+
 from conf.base_page import BasePage
 from utils.reset_phone_find_toast import verify_find
 from utils.toast_find import Toast

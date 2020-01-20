@@ -1,18 +1,19 @@
 from selenium.webdriver.remote.webdriver import WebDriver as Remotewebdriver
 import time
 
-import sys
-sys.path.append('./testfarm/test_program/')
-import os,json,subprocess
+import subprocess
 from appium import webdriver
-from testfarm.test_program.conf.run_cases import RunCases
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.case_strategy import CaseStrategy
-from testfarm.test_program.utils.st_appium_server import Utils
-from testfarm.test_program.utils.sql import SqlDb
-from testfarm.test_program.conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.log import Log
-from testfarm.test_program.conf.report_path import ReportPath
+from conf.run_cases import RunCases
+
+from conf.base_page import BasePage
+
+from conf.case_strategy import CaseStrategy
+from utils.st_appium_server import Utils
+from utils.sql import SqlDb
+from conf.base_config import GetVariable as gv
+from conf.log import Log
+from conf.report_path import ReportPath
+
 
 class Driver:
 
@@ -75,8 +76,6 @@ class Driver:
                     break
             time.sleep(0.3)
 
-
-
         # 实例化log
         log = Log()
         log.set_logger(self.deviceName, file_path + '/' + 'client.log')
@@ -88,6 +87,7 @@ class Driver:
         mysql.start_db()    # 启动数据库
         # 设置driver
         base_page.set_driver(driver)
+        print(id(BasePage))
         base_page.set_db(mysql)
         base_page.set_user(deviceName=self.deviceName)
         base_page.set_path(path=file_path)

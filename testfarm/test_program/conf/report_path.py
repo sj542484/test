@@ -1,3 +1,5 @@
+
+
 class ReportPath:
     @classmethod
     def set_path(cls, ps):

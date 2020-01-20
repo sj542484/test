@@ -8,7 +8,7 @@ from conf.report_path import ReportPath
 from conf.log import Log
 
 flag = 'IMAGE:'
-log = Log()
+# log = Log()
 
 
 def screenshot(error_type):
@@ -23,28 +23,28 @@ def teststep(func: object) -> object:
     @wraps(func)
     def wrapper(*args, **kwargs):
         try:
-            log.i('\t--> %s', func.__qualname__)
+            # log.i('\t--> %s', func.__qualname__)
             ret = func(*args, **kwargs)
             return ret
         except WebDriverException as e:
-            log.e('WebDriverException, %s', e)
-            log.e('\t<-- %s, %s, %s', func.__qualname__, 'WebDriverException', 'Error')
+            # log.e('WebDriverException, %s', e)
+            # log.e('\t<-- %s, %s, %s', func.__qualname__, 'WebDriverException', 'Error')
 
             if flag in str(e):
                 raise WebDriverException(e)
             else:
                 raise WebDriverException(flag + screenshot('Error'))
         except AssertionError as e:
-            log.e('AssertionError, %s', e)
-            log.e('\t<-- %s, %s, %s', func.__qualname__, 'AssertionError', 'Error')
+            # log.e('AssertionError, %s', e)
+            # log.e('\t<-- %s, %s, %s', func.__qualname__, 'AssertionError', 'Error')
 
             if flag in str(e):
                 raise AssertionError(e)
             else:
                 raise AssertionError(flag + screenshot('Error'))
         except Exception as e:
-            log.e('Exception, %s', e)
-            log.e('\t<-- %s, %s, %s', func.__qualname__, 'Exception', 'Error')
+            # log.e('Exception, %s', e)
+            # log.e('\t<-- %s, %s, %s', func.__qualname__, 'Exception', 'Error')
 
             if flag in str(e):
                 raise Exception(e)
@@ -58,29 +58,29 @@ def teststeps(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         try:
-            log.i('  --> %s', func.__qualname__)
+            # log.i('  --> %s', func.__qualname__)
             ret = func(*args, **kwargs)
-            log.i('  <-- %s, %s', func.__qualname__, 'Success')
+            # log.i('  <-- %s, %s', func.__qualname__, 'Success')
             return ret
         except WebDriverException as e:
-            log.e('WebDriverException, %s', e)
-            log.e('  <-- %s, %s, %s', func.__qualname__, 'WebDriverException', 'Error')
+            # log.e('WebDriverException, %s', e)
+            # log.e('  <-- %s, %s, %s', func.__qualname__, 'WebDriverException', 'Error')
 
             if flag in str(e):
                 raise WebDriverException(e)
             else:
                 raise WebDriverException(flag + screenshot('Error'))
         except AssertionError as e:
-            log.e('AssertionError, %s', e)
-            log.e('  <-- %s, %s, %s', func.__qualname__, 'AssertionError', 'Error')
+            # log.e('AssertionError, %s', e)
+            # log.e('  <-- %s, %s, %s', func.__qualname__, 'AssertionError', 'Error')
 
             if flag in str(e):
                 raise AssertionError(e)
             else:
                 raise AssertionError(flag + screenshot('Error'))
         except Exception as e:
-            log.e('Exception, %s', e)
-            log.e('  <-- %s, %s, %s', func.__qualname__, 'Exception', 'Error')
+            # log.e('Exception, %s', e)
+            # log.e('  <-- %s, %s, %s', func.__qualname__, 'Exception', 'Error')
 
             if flag in str(e):
                 raise Exception(e)
@@ -94,29 +94,29 @@ def _wrapper(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         try:
-            log.i('--> %s', func.__qualname__)
+            # log.i('--> %s', func.__qualname__)
             ret = func(*args, **kwargs)
-            log.i('<-- %s, %s\n', func.__qualname__, 'Success')
+            # log.i('<-- %s, %s\n', func.__qualname__, 'Success')
             return ret
         except WebDriverException as e:
-            log.e('WebDriverException, %s', e)
-            log.e('<-- %s, %s, %s\n', func.__qualname__, 'WebDriverException', 'Error')
+            # log.e('WebDriverException, %s', e)
+            # log.e('<-- %s, %s, %s\n', func.__qualname__, 'WebDriverException', 'Error')
 
             if flag in str(e):
                 raise WebDriverException(e)
             else:
                 raise WebDriverException(flag + screenshot('Error'))
         except AssertionError as e:
-            log.e('AssertionError, %s', e)
-            log.e('<-- %s, %s, %s\n', func.__qualname__, 'AssertionError', 'Fail')
+            # log.e('AssertionError, %s', e)
+            # log.e('<-- %s, %s, %s\n', func.__qualname__, 'AssertionError', 'Fail')
 
             if flag in str(e):
                 raise AssertionError(e)
             else:
                 raise AssertionError(flag + screenshot('Error'))
         except Exception as e:
-            log.e('Exception, %s', e)
-            log.e('<-- %s, %s, %s\n', func.__qualname__, 'Exception', 'Error')
+            # log.e('Exception, %s', e)
+            # log.e('<-- %s, %s, %s\n', func.__qualname__, 'Exception', 'Error')
 
             if flag in str(e):
                 raise Exception(e)
