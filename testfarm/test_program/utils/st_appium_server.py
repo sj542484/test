@@ -1,6 +1,7 @@
 import os,json,subprocess
 from testfarm.test_program.conf.base_config import GetVariable as gv
 from testfarm.models import EquipmentList, SideType, ItemType
+from django.db import close_old_connections
 
 
 class Utils:
@@ -92,8 +93,8 @@ class Utils:
         self.appium_node_info(hubHost=hubHost,port=port,device_name=dn,udid=udid,platversion=plv,systemPort=systemPort, side=side)
         CMD = 'appium -p {port} -bp {bp} -U {udid} --nodeconfig ./test_program/nodeconfig/{devicename}/{platformversion}/mobile.json > {portPath}appium_server.log'.format(port=port,bp=bp,udid=udid,devicename=dn,platformversion=plv,portPath=file_name)
         res = subprocess.Popen(CMD, shell=True)
-        print('appium_pid:',res.pid)
-        print('\ncmd:',CMD)
+        print('appium_pid:', res.pid)
+        print('cmd:', CMD)
         # 将进程号存入数据库
         EquipmentList.objects.filter(equipment_uuid=udid).update(node_pid=res.pid)
         return int(port), systemPort
@@ -102,6 +103,7 @@ class Utils:
         for i in port:
             self._port.remove(i)
         return self._port
+
 
 if __name__ == '__main__':
     a = Utils()

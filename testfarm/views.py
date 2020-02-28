@@ -14,7 +14,6 @@ from django.contrib.auth.decorators import login_required
 from testfarm.test_program.utils.kill_pid import killPid
 from django.db import close_old_connections
 from multiprocessing import Process
-import threading
 
 _port = []
 
@@ -150,8 +149,8 @@ def st(e_uuid, ports, test_side, test_items):
     print('pid:', gid)
     print('ppid', os.getppid())
     # 变更该设备的 运行状态
+    close_old_connections()
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=1, statue_statue=1, gid=gid)
-
     test_sides = SideType.objects.filter(id=int(test_side))[0].side_eng
     print(test_sides)
     test_item = ItemType.objects.filter(side=str(int(test_side)))[int(test_items) - 1].item_eng
@@ -165,8 +164,8 @@ def st(e_uuid, ports, test_side, test_items):
     _port.append(sysport)
 
     # 根据设别uuid 获取设备的详情
-    close_old_connections()
     device = EquipmentList.objects.get(equipment_uuid=e_uuid)
+
     e_name = device.equipment_name
     plat_verion = device.platform_verion
 

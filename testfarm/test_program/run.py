@@ -87,12 +87,12 @@ class Driver:
         mysql.start_db()    # 启动数据库
         # 设置driver
         base_page.set_driver(driver)
-        print(id(BasePage))
         base_page.set_db(mysql)
         base_page.set_user(deviceName=self.deviceName)
         base_page.set_path(path=file_path)
         base_page.set_window_size(uuid=self.udid)
         try:
+            time.sleep(5)
             print('start cases')
             run_case.run(cases)
             print('end')
