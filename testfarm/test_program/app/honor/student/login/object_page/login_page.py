@@ -261,6 +261,13 @@ class LoginPage(BasePage):
         phone = self.input_username()
         pwd = self.input_password()
 
+        stu_info = self.get_user_info()
+
+        stu_password = stu_info['pwd']
+
+        stu_account = stu_info['student']['student']
+
+
         phone.send_keys(stu_account)
         pwd.send_keys(stu_password)
         self.login_button()
