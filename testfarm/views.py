@@ -13,7 +13,7 @@ from testfarm.test_program.utils.st_appium_server import Utils
 from django.contrib.auth.decorators import login_required
 from testfarm.test_program.utils.kill_pid import killPid
 from django.db import close_old_connections
-from multiprocessing import Process
+from multiprocessing import Process, Lock
 
 _port = []
 
@@ -134,7 +134,9 @@ def startservice(request):
     # _port.append(appium_port)
     # sysport = p.get_ports(port=8200, count=1)[0]
     # _port.append(sysport)
-    t = Process(target=st, args=(e_uuid, _port, test_side, test_items))
+    mutex = Lock()
+
+    t = Process(target=st, args=(e_uuid, _port, test_side, test_items, mutex))
     t.start()
     # t.join()
     time.sleep(0.3)
@@ -143,20 +145,21 @@ def startservice(request):
 
 
 # @login_required
-def st(e_uuid, ports, test_side, test_items):
+def st(e_uuid, ports, test_side, test_items, mutex):
     # 获取进程 id
     gid = os.getpid()
     print('pid:', gid)
     print('ppid', os.getppid())
     # 变更该设备的 运行状态
     close_old_connections()
+    mutex.acquire()
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=1, statue_statue=1, gid=gid)
     test_sides = SideType.objects.filter(id=int(test_side))[0].side_eng
     print(test_sides)
     test_item = ItemType.objects.filter(side=str(int(test_side)))[int(test_items) - 1].item_eng
     print(test_item)
     print('设备uuid:', e_uuid, '测试端:', test_sides, '测试项:', test_item)
-
+    mutex.release()
     p = Utils(port=_port)
     appium_port = p.get_ports(port=4723, count=1)[0]
     _port.append(appium_port)
@@ -164,15 +167,16 @@ def st(e_uuid, ports, test_side, test_items):
     _port.append(sysport)
 
     # 根据设别uuid 获取设备的详情
+    mutex.acquire()
     device = EquipmentList.objects.get(equipment_uuid=e_uuid)
-
+    mutex.release()
     e_name = device.equipment_name
     plat_verion = device.platform_verion
 
     # 实例化 driver类，开始进行测试
     dr = Driver(udid=e_uuid, platformVersion=plat_verion, deviceName=e_name, ports=ports, test_side=test_sides,
                 test_items=test_item)
-    file_name, sta = dr.run_cases(appium_port, sysport)  # 测试程序入口
+    file_name, sta = dr.run_cases(appium_port, sysport, mutex)  # 测试程序入口
 
     # 返回报告路径
     file_name = file_name.split('/templates/')[1]
@@ -180,10 +184,12 @@ def st(e_uuid, ports, test_side, test_items):
 
     # 跟新设备运行状态
     close_old_connections()
+    mutex.acquire()
     device = EquipmentList.objects.get(equipment_uuid=e_uuid)
     node_pid = device.node_pid
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=0, statue_statue=0, gid=None,
                                                                node_pid=None, report=file_name)
+    mutex.release()
     # 清除端口占用
     pp = Utils(_port).clear_port(appium_port, sysport)
     print(_port, pp, '端口占用情况')

@@ -88,7 +88,7 @@ class Utils:
         fp.write(json.dumps(self._con))
         fp.close()
 
-    def start_appium(self, dn, udid, plv, file_name, port, bp, systemPort, side):
+    def start_appium(self, mutex, dn, udid, plv, file_name, port, bp, systemPort, side):
         hubHost = gv.HUBHOST
         self.appium_node_info(hubHost=hubHost,port=port,device_name=dn,udid=udid,platversion=plv,systemPort=systemPort, side=side)
         CMD = 'appium -p {port} -bp {bp} -U {udid} --nodeconfig ./test_program/nodeconfig/{devicename}/{platformversion}/mobile.json > {portPath}appium_server.log'.format(port=port,bp=bp,udid=udid,devicename=dn,platformversion=plv,portPath=file_name)
@@ -96,7 +96,9 @@ class Utils:
         print('appium_pid:', res.pid)
         print('cmd:', CMD)
         # 将进程号存入数据库
+        mutex.acquire()
         EquipmentList.objects.filter(equipment_uuid=udid).update(node_pid=res.pid)
+        mutex.release()
         return int(port), systemPort
 
     def clear_port(self,*port):
