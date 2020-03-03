@@ -104,6 +104,7 @@ def saveInfo(request):
     devices_name = request.POST.get('devices_name')
     platformVersion = request.POST.get('platformVersion')
     try:
+        close_old_connections()
         db = EquipmentList(equipment_name=devices_name, equipment_model=devices_model, equipment_uuid=devices_uuid,
                            platform_verion=platformVersion)
         db.save()
@@ -177,6 +178,7 @@ def st(e_uuid, ports, test_side, test_items, mutex):
     mutex.acquire()
     device = EquipmentList.objects.get(equipment_uuid=e_uuid)
     mutex.release()
+    close_old_connections()
     print('device:', device)
     e_name = device.equipment_name
     print('e_name:', e_name)
@@ -186,18 +188,6 @@ def st(e_uuid, ports, test_side, test_items, mutex):
     dr = Driver(udid=e_uuid, platformVersion=plat_verion, deviceName=e_name, ports=ports, test_side=test_sides,
                 test_items=test_item)
     file_name, sta = dr.run_cases(appium_port, sysport, mutex)  # 测试程序入口
-    while 1:
-        a = 'lsof -i:%s' % appium_port
-
-        b = os.popen(a).readlines()
-
-        if b:
-            res = int(re.findall('\d+', b[1])[0])
-
-            mutex.acquire()
-            EquipmentList.objects.filter(equipment_uuid=e_uuid).update(node_pid=res)
-            mutex.release()
-            break
 
 
     # 返回报告路径
@@ -212,6 +202,8 @@ def st(e_uuid, ports, test_side, test_items, mutex):
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=0, statue_statue=0, gid=None,
                                                                node_pid=None, report=file_name)
     mutex.release()
+    close_old_connections()
+
     # 清除端口占用
     pp = Utils(_port).clear_port(appium_port, sysport)
     print(_port, pp, '端口占用情况')
@@ -223,6 +215,8 @@ def st(e_uuid, ports, test_side, test_items, mutex):
 @login_required
 def stopservice(request, gid, e_uuid):
     """关闭进程 结束测试"""
+    close_old_connections()
+
     device = EquipmentList.objects.get(equipment_uuid=e_uuid)
     node_pid = device.node_pid
 
@@ -262,7 +256,11 @@ def get_show_phone():
         for i in dev_list_info:
             pat = re.compile('(.*?) .*?model:(.*?) ')
             res = pat.findall(i)
+            close_old_connections()
+
             res = EquipmentList.objects.filter(equipment_uuid=res[0][0])
+            close_old_connections()
+
             if res:
                 dev_list.append(res[0])
         if dev_list:
@@ -283,6 +281,7 @@ def showreport(request, file_name):
 @login_required
 def testmodeledit(request):
     try:
+        close_old_connections()
         db = SideType.objects.all()
         print([i.id for i in db])
         content = {'sides': db}
@@ -296,6 +295,7 @@ def testmodeledit(request):
 @login_required
 def showalldevices(request):
     # 分页
+    close_old_connections()
     devices = EquipmentList.objects.all()
     paginator = Paginator(devices, 5)
     content = {'content': devices}
@@ -309,6 +309,7 @@ def showalldevices(request):
 @login_required
 def update_show(request, e_uuid):
     content = {}
+    close_old_connections()
     res = EquipmentList.objects.filter(equipment_uuid=e_uuid)
     content['content'] = res
     return render(request, 'testproject/update_data.html', content)
@@ -320,13 +321,16 @@ def update_data(request):
     plv = request.POST.get('platformVersion')
     device_name = request.POST.get('devices_name')
     devices_model = request.POST.get('devices_model')
+    close_old_connections()
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(platform_verion=plv, equipment_name=device_name,
                                                                equipment_model=devices_model)
+    close_old_connections()
     return HttpResponse('<script>alert("更新成功！！！");location.href="/showalldevices"</script>')
 
 
 @login_required
 def del_data(request, e_uuid):
+    close_old_connections()
     EquipmentList.objects.filter(equipment_uuid=e_uuid).delete()
     return HttpResponse('<script>alert("删除成功！！！");location.href="/showalldevices"</script>')
 
