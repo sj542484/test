@@ -105,9 +105,6 @@ class SpellWordGame(GameCommonEle):
         """单词默写游戏页面元素检查"""
         if self.wait_check_hint_word_page():  # 校验点击提示或输入前, 是否出现单词
             self.base_assert.except_error('未点击提示或未输入字符出现默写单词')
-        self.hint_btn().click()
-        if not self.wait_check_hint_word_page():  # 校验是否有提示字母
-            self.base_assert.except_error('未发现首字母提示！')
 
     @teststep
     def word_spell_play_process(self, game_mode, do_right=False, right_answer=None):

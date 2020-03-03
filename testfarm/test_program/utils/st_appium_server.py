@@ -1,7 +1,6 @@
 import os,json,subprocess
-from testfarm.test_program.conf.base_config import GetVariable as gv
+from conf.base_config import GetVariable as gv
 from testfarm.models import EquipmentList, SideType, ItemType
-from django.db import close_old_connections
 
 
 class Utils:
@@ -40,21 +39,21 @@ class Utils:
                 }
     }
 
-    def __init__(self,port):
-        print('_ports',port)
+    def __init__(self, port):
+        print('_ports', port)
         '''存放已用端口 防止启动多次'''
         self._port = port
 
-    def is_using(self,port):
+    def is_using(self, port):
         """判断端口号是否被占用"""
         # Mac OS
         cmd = "lsof -i:%s" % port
+        print(cmd)
         res = os.popen(cmd).readlines()
         if res:
             return res
         else:
             return False
-
 
     def get_ports(self,port, count):
         """获得4723端口后一系列free port"""
@@ -90,10 +89,15 @@ class Utils:
 
     def start_appium(self, mutex, dn, udid, plv, file_name, port, bp, systemPort, side):
         hubHost = gv.HUBHOST
-        self.appium_node_info(hubHost=hubHost,port=port,device_name=dn,udid=udid,platversion=plv,systemPort=systemPort, side=side)
-        CMD = 'appium -p {port} -bp {bp} -U {udid} --nodeconfig ./test_program/nodeconfig/{devicename}/{platformversion}/mobile.json > {portPath}appium_server.log'.format(port=port,bp=bp,udid=udid,devicename=dn,platformversion=plv,portPath=file_name)
+        self.appium_node_info(hubHost=hubHost, port=port, device_name=dn, udid=udid, platversion=plv, systemPort=systemPort, side=side)
+        a_path = os.getcwd()
+        file_name = a_path + file_name.replace('.', '')
+        print(file_name)
+
+        CMD = 'appium -p {port} -bp {bp} -U {udid} --nodeconfig {a_path}/test_program/nodeconfig/{devicename}/{platformversion}/mobile.json > {portPath}appium_server.log'.format(port=port, bp=bp, udid=udid, devicename=dn, platformversion=plv, portPath=file_name, a_path=a_path)
         res = subprocess.Popen(CMD, shell=True)
         print('appium_pid:', res.pid)
+        print(res.terminate())
         print('cmd:', CMD)
         # 将进程号存入数据库
         mutex.acquire()

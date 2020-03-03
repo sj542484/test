@@ -1,16 +1,15 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
-from app.honor.teacher.play_games.test_data.form_sentence_data import form_sentence_operation
 from conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
+from app.honor.teacher.play_games.test_data.form_sentence_data import form_sentence_operation
 from utils.get_attribute import GetAttribute
 from utils.get_element_bounds import ElementBounds
 from utils.swipe_screen import SwipeFun
@@ -34,33 +33,29 @@ class FormSentencePage(BasePage):
     def question(self):
         """展示的题目"""
         ele = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID  + "tv_prompt").text
+            .find_element_by_id(gv.PACKAGE_ID + "tv_prompt").text
         return ele
 
     @teststep
     def word(self):
         """展示的 待还原的单词"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID  + "tv_word")
+            .find_elements_by_id(gv.PACKAGE_ID + "tv_word")
 
         return ele
 
     # 每小题回答完，下一步按钮后展示答案的页面特有元素
     @teststeps
-    def correct_title(self, var):
+    def correct_title(self, var=3):
         """展示的答案 的ID为依据"""
-        locator = (By.ID, gv.PACKAGE_ID  + "tv_sentence")
-        try:
-            WebDriverWait(self.driver, var, 0.5).until(lambda x: x.find_element(*locator))
-            return True
-        except:
-            return False
+        locator = (By.ID, gv.PACKAGE_ID + "tv_sentence")
+        return self.wait.judge_is_exists(locator)
 
     @teststeps
     def mine_result(self):
         """展示的答题结果"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID  + "tv_word")
+            .find_elements_by_id(gv.PACKAGE_ID + "tv_word")
         word = []
         for i in range(len(ele)):
             word.append(ele[i].text)
@@ -70,7 +65,7 @@ class FormSentencePage(BasePage):
     def correct_answer(self):
         """点击 下一题 按钮之后展示的答案"""
         ele = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID  + "tv_sentence").text
+            .find_element_by_id(gv.PACKAGE_ID + "tv_sentence").text
         word = ele[3:].split(' ')
         return word
 
@@ -78,22 +73,21 @@ class FormSentencePage(BasePage):
     @teststeps
     def wait_check_detail_page(self):
         """以“answer”的ID为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@resource-id,"
-                             "'{}tv_answer')]".format(gv.PACKAGE_ID ))
+        locator = (By.XPATH, "//android.widget.TextView[contains(@resource-id,'{}')]".format(gv.PACKAGE_ID + 'tv_answer'))
         return self.wait.wait_check_element(locator)
 
     @teststep
     def result_question(self):
         """展示的题目"""
         word = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID  + "tv_hint")
+            .find_elements_by_id(gv.PACKAGE_ID + "tv_hint")
         return word
 
     @teststep
     def result_answer(self):
         """展示的 正确答案"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID  + "tv_answer")
+            .find_elements_by_id(gv.PACKAGE_ID + "tv_answer")
         word = []
         for i in range(len(ele)):
             word.append(ele[i].text)
@@ -103,14 +97,9 @@ class FormSentencePage(BasePage):
     def result_mine_state(self, index):
         """我的答案对错标识 selected属性"""
         word = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID  + "iv_mine")[index]
+            .find_elements_by_id(gv.PACKAGE_ID + "iv_mine")[index]
         value = GetAttribute().selected(word)
         return value
-
-    @teststep
-    def button_swipe(self, from_x, from_y, to_x, to_y, steps=1000):
-        """拖动单词button"""
-        self.driver.swipe(from_x, from_y, to_x, to_y, steps)
 
     @teststeps
     def form_sentence_operation(self):
@@ -127,6 +116,7 @@ class FormSentencePage(BasePage):
 
                     content = self.question()  # 展示的题目
                     value = form_sentence_operation(content).split(' ')  # 数据字典
+                    print(value)
                     question.append(content)  # return 题目
 
                     for z in range(len(value) - 1, -1, -1):  # 倒序
@@ -164,7 +154,7 @@ class FormSentencePage(BasePage):
         """获取 单词button坐标 及拖拽"""
         loc = ElementBounds().get_element_location(word2)
         y2 = ElementBounds().get_element_location(word)[1] - 40
-        self.button_swipe(loc[0], loc[1], loc[0], y2, 1000)
+        self.driver.swipe(loc[0], loc[1], loc[0], y2, 1000)
         time.sleep(1)
 
     @teststeps
@@ -187,24 +177,26 @@ class FormSentencePage(BasePage):
                         for j in range(page):
                             last_one = self.result_operation(count)  # 滑动前页面内最后一个小题- 题目
                             SwipeFun().swipe_vertical(0.5, 0.75, 0.35)
-                            item_2 = self.result_question()  # 滑动后页面内的题目 的数量
-                            if item_2[len(item_2) - 1].text == last_one:
-                                print('到底啦', last_one)
-                                self.result.back_up_button()
-                                break
-                            elif item_2[len(item_2) - 1].text == question[len(question) - 1]:
-                                # 滑动后到底，因为普通情况下最多只有两页，滑动一次即可到底
-                                print('滑动后到底', last_one)
-                                k = []
-                                for i in range(len(item_2) - 1, -1, -1):  # 倒序
-                                    if item_2[i].text == last_one:
-                                        k.append(i + 1)
-                                        break
-                                self.result_operation(count, k[0])
-                                break
-                            else:
-                                continue
-                        SwipeFun.swipe_vertical(0.5, 0.75, 0.35)
+
+                            if self.wait_check_detail_page():
+                                item_2 = self.result_question()  # 滑动后页面内的题目 的数量
+                                if item_2[len(item_2) - 1].text == last_one:
+                                    print('到底啦', last_one)
+                                    self.result.back_up_button()
+                                    break
+                                elif item_2[len(item_2) - 1].text == question[len(question) - 1]:
+                                    # 滑动后到底，因为普通情况下最多只有两页，滑动一次即可到底
+                                    print('滑动后到底', last_one)
+                                    k = []
+                                    for i in range(len(item_2) - 1, -1, -1):  # 倒序
+                                        if item_2[i].text == last_one:
+                                            k.append(i + 1)
+                                            break
+                                    self.result_operation(count, k[0])
+                                    break
+                                else:
+                                    continue
+                        SwipeFun().swipe_vertical(0.5, 0.75, 0.35)
 
                 if self.wait_check_detail_page():
                     self.result.back_up_button()  # 返回结果页

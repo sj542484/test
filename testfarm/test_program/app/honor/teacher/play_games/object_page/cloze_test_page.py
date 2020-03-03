@@ -1,8 +1,7 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import random
-import re
 import time
 from selenium.webdriver.common.by import By
 
@@ -10,7 +9,7 @@ from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from conf.decorator import teststeps, teststep
 from conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from utils.get_attribute import GetAttribute
 from utils.get_element_bounds import ElementBounds
 from utils.swipe_screen import SwipeFun
@@ -74,7 +73,7 @@ class ClozePage(BasePage):
         """选项"""
         ele = self.driver \
             .find_elements_by_xpath("//android.widget.TextView[contains(@text, '%s')]"
-                                    "/following-sibling::android.widget.LinearLayout/android.widget.LinearLayout"
+                                    "/following-sibling::android.view.ViewGroup/android.widget.LinearLayout"
                                     "/android.widget.LinearLayout/android.widget.TextView" % var)
         item = []  # ABCD
         content = []  # 选项内容
@@ -158,28 +157,19 @@ class ClozePage(BasePage):
         if self.wait_check_page():
             if Homework().wait_check_play_page():
                 self.font_operation()  # Aa文字大小切换按钮 切换 及状态统计
-                self.drag_operation()  # 向上拖拽按钮操作
 
                 answer = []  # 选择的答案
-                result = []  # 回答正确的题
                 timestr = []  # 获取每小题的时间
                 rate = Homework().rate()
                 for i in range(int(rate)):
                     Homework().rate_judge(rate, i)  # 测试当前rate值显示是否正确
                     Homework().next_button_operation('false')  # 下一题 按钮 判断加 点击操作
 
-                    if i == 4:
-                        self.swipe.swipe_vertical(0.5, 0.5, 0.25, 1000)  # 上滑屏幕
-
                     num = self.question()  # 题目
-                    if int(re.sub("\D", "", num)) == i:  # 如果一次没滑动，再滑一次
-                        self.swipe.swipe_horizontal(0.8, 0.9, 0.1, 2000)  # 左滑进入下一题
-                        num = self.question()  # 题目
                     print(num)
 
                     options = self.option_button(num)  # 四个选项
                     options[0][random.randint(0, len(options[0])) - 1].click()  # 随机点击选项
-                    time.sleep(1)
                     for j in range(len(options[0])):
                         if self.get.selected(options[0][j]) == 'true':
                             print('选择的答案:', options[1][j])
@@ -187,47 +177,45 @@ class ClozePage(BasePage):
                             break
 
                     timestr.append(Homework().time())  # 统计每小题的计时控件time信息
-                    self.swipe.swipe_horizontal(0.8, 0.9, 0.1, 2000)  # 左滑进入下一题
-
+                    time.sleep(1)
                     if i == int(rate) - 1:  # 最后一小题：1、测试滑动页面是否可以进入结果页   2、拖拽 拖动按钮
-                        if not ResultPage().wait_check_result_page(2):  # 结果页检查点
-                            self.drag_operation('down')  # 向下拖拽按钮操作
+                        if not ResultPage().wait_check_result_page(3):  # 结果页检查点
+                            self.drag_operation()  # 拖拽按钮操作
                         else:
                             print('★★★ Error - 滑动页面进入了结果页')
+                    print('-------------------')
 
-                    time.sleep(1)
-                    content = self.get_answer()  # 测试 是否答案已填入文章中
-                    print('--------------')
-                    if len(content) != len(answer):
-                        print('★★★ Error -答案未填入', answer, content)
+                time.sleep(2)
+                print('--------------------------------')
+                content = self.get_answer()  # 测试 是否答案已填入文章中
+                if len(content) != len(answer):
+                    print('★★★ Error -有答案未填入', answer, content)
+                else:
+                    if content != answer:
+                        print('★★★ Error - 填入的答案与选择的答案不一致', answer, content)
                     else:
-                        if content[-1] != answer[-1]:
-                            print('★★★ Error - 填入的答案与选择的答案不一致', answer[-1], content[-1])
-                        else:
-                            result.append(answer[-1])
-                            print('我的答题结果：', answer[-1])
-                    print('----------------------------')
+                        print('我的答题结果：', answer)
+
+                print('----------------------------')
 
                 Homework().next_button_operation('true')  # 下一题 按钮 状态判断 加点击
                 Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
 
                 final_time = self.result.get_time(timestr[-1])  # 最后一个小题的时间
                 print('===============================================')
-                return rate, result, final_time
+                return rate, content, final_time
 
     @teststeps
-    def drag_operation(self, var='up'):
+    def drag_operation(self):
         """拖拽按钮 拖拽操作"""
         drag = self.dragger_button()  # 拖拽 拖动按钮
         loc = ElementBounds().get_element_bounds(drag)  # 获取按钮坐标
         size = self.options_view_size()  # 获取整个选项页面大小
-        if var == 'up':
-            y = loc[3] - size * 4 / 3
-            if loc[3] - size * 4 / 3 < 0:
-                y = 0
-            self.driver.swipe(loc[2], loc[3], loc[2], y, 1000)  # 向上拖拽
-        else:
-            self.driver.swipe(loc[2], loc[3], loc[2], loc[3] + size - 10, 1000)  # 向下拖拽按钮
+        y = loc[3] - size * 4 / 3
+        if y < 0:
+            y = 0
+        self.driver.swipe(loc[2], loc[3], loc[2], y, 1000)  # 向上拖拽
+        self.driver.swipe(loc[2], loc[3], loc[2], loc[3] + size - 10, 1000)  # 向下拖拽按钮
 
     @teststeps
     def study_again(self):

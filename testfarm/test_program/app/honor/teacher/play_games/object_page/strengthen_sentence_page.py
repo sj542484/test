@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import re
 import time
@@ -10,7 +10,7 @@ from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from app.honor.teacher.play_games.test_data.strength_sentence_data import strength_sentence_operation
 from utils.click_bounds import ClickBounds
 from utils.games_keyboard import Keyboard
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
 from utils.get_attribute import GetAttribute
@@ -112,7 +112,8 @@ class StrengthenSentencePage(BasePage):
     def result_mine_state(self, index):
         """我的答案对错标识 selected属性"""
         word = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID  + "iv_mine")[index].get_attribute('selected')
+            .find_elements_by_id(gv.PACKAGE_ID  + "iv_mine")[index]\
+            .get_attribute('selected')
         return word
 
     @teststeps

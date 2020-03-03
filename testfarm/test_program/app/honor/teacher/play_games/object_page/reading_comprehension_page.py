@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import random
 import time
@@ -9,7 +9,7 @@ from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from conf.decorator import teststeps, teststep
 from conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from utils.get_attribute import GetAttribute
 from utils.get_element_bounds import ElementBounds
 from utils.swipe_screen import SwipeFun
@@ -64,14 +64,14 @@ class ReadComprehension(BasePage):
     def question_num(self):
         """题目内容"""
         num = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "question")
+            .find_elements_by_id(gv.PACKAGE_ID + "question")
         return num
 
     @teststeps
-    def get_first_num(self):
+    def get_first_num(self, var=0):
         """获取 当前页面第一个题号"""
-        item = self.question_num().text.split(".")[0]
-        return item
+        item = self.question_num()[var].text.split(".")[0]
+        return int(item)
 
     @teststeps
     def verify_content_text(self):
@@ -93,48 +93,10 @@ class ReadComprehension(BasePage):
         return item[0]
 
     @teststeps
-    def get_result(self, rate):
-        """获取 答题结果"""
-        answer = {}
-        for i in range(int(rate)):
-            question = self.question_num().text  # 题目
-            if i != 0:
-                for step in range(0, 5):
-                    if int(self.get_first_num()) == i + 1:  # 正好
-                        question = self.question_num().text
-                        break
-                    elif int(self.get_first_num()) > i + 1:  # 上拉 拉过了
-                        self.swipe.swipe_vertical(0.5, 0.7, 0.9)
-                        if int(self.get_first_num()) == i + 1:  # 正好
-                            question = self.question_num().text
-                            break
-                        elif int(self.get_first_num()) < i + 1:  # 下拉 拉过了
-                            self.swipe.swipe_vertical(0.5, 0.9, 0.8)  # 滑屏
-
-            correct = []
-            error = []
-            options = self.option_button(question)
-            for j in range(len(options[0])):
-                print('------')
-                var = GetAttribute().description(options[0][j])
-                print(var)
-                if var == 'right':
-                    correct.append(options[1][j].text)  # 获取 答题结果
-                elif var == 'error':
-                    error.append(options[1][j].text)  # 获取 答题结果
-
-            if correct:
-                answer[i].append(correct[0])
-            else:
-                answer[i].append(error[0])
-
-        print('获取到的答案：', answer)
-        return answer
-
-    @teststeps
     def options_view_size(self):
         """获取整个选项页面大小"""
-        num = self.driver.find_element_by_id(gv.PACKAGE_ID + "optionlist")
+        num = self.driver\
+            .find_element_by_id(gv.PACKAGE_ID + "optionlist")
         var = num.size['height']
         return var
 
@@ -144,7 +106,7 @@ class ReadComprehension(BasePage):
         print(var)
         ele = self.driver\
             .find_elements_by_xpath("//android.widget.TextView[contains(@text, '%s')]"
-                                    "/following-sibling::android.widget.LinearLayout/android.widget.LinearLayout"
+                                    "/following-sibling::android.view.ViewGroup/android.widget.LinearLayout"
                                     "/android.widget.LinearLayout/android.widget.TextView" % var)
 
         item = []  # 选项
@@ -163,6 +125,26 @@ class ReadComprehension(BasePage):
             .find_elements_by_id(gv.PACKAGE_ID + "tv_item")[index].text
         return ele
 
+    @teststep
+    def question_judge(self, var):
+        """元素 resource-id属性值是否为题目"""
+        value = GetAttribute().resource_id(var)
+        return True if value == gv.PACKAGE_ID + "question" else False
+
+    @teststeps
+    def get_last_element(self):
+        """页面内最后一个class name为android.widget.TextView的元素"""
+        ele = self.driver \
+            .find_elements_by_class_name("android.widget.TextView")
+        return ele[-1]
+
+    @teststeps
+    def result_article_view(self):
+        """文章 元素"""
+        ele = self.driver\
+            .find_element_by_id(gv.PACKAGE_ID + "cl_content")
+        return ele
+
     @teststeps
     def reading_operation(self):
         """《阅读理解》 游戏过程
@@ -176,44 +158,80 @@ class ReadComprehension(BasePage):
                 self.drag_operation()  # 拖拽按钮、Aa判断
 
                 rate = Homework().rate()
+                ques_last_index = 0
                 for i in range(int(rate)):
                     Homework().rate_judge(rate, i)  # 测试当前rate值显示是否正确
                     Homework().commit_button_operation('false')  # 提交 按钮 状态判断 加点击
 
-                    question = self.question_num().text  # 题目
-                    if i != 0:
-                        for step in range(0, 5):
-                            if int(self.get_first_num()) == i+1:  # 正好
-                                question = self.question_num().text
-                                break
-                            elif int(self.get_first_num()) > i+1:  # 上拉 拉过了
-                                self.swipe.swipe_vertical(0.5, 0.7, 0.9)
-                                if int(self.get_first_num()) == i+1:  # 正好
-                                    question = self.question_num().text
+                    if ques_last_index < int(rate):
+                        ques_first_index = self.get_first_num()  # 当前页面中第一题 题号
+                        if ques_first_index - ques_last_index > 1:  # 判断页面是否滑过，若当前题比上一页做的题不大于1，则下拉直至题目等于上一题的加1
+                            for step in range(0, 5):
+                                SwipeFun().swipe_vertical(0.5, 0.5, 0.8)
+                                if self.get_first_num() == ques_last_index + 1:  # 正好
                                     break
-                                elif int(self.get_first_num()) < i+1:  # 下拉 拉过了
-                                    self.swipe.swipe_vertical(0.5, 0.9, 0.8)  # 滑屏
+                                elif self.get_first_num() < ques_last_index + 1:  # 下拉拉过了
+                                    SwipeFun().swipe_vertical(0.5, 0.6, 0.4)  # 滑屏
+                                    if self.get_first_num() == ques_last_index + 1:  # 正好
+                                        break
 
-                    options = self.option_button(question)
-                    options[0][random.randint(0, len(options[0])) - 1].click()  # 随机点击选项
-                    time.sleep(1)
-                    for j in range(len(options[0])):
-                        if GetAttribute().selected(options[1][j]) == 'true':
-                            answer.append(options[1][j].text)  # 获取 答题结果
-                            print('我的答案：', options[1][j].text)
-                            break
+                        last_one = self.get_last_element()  # 页面最后一个元素
+                        ques_num = self.question_num()  # 题目
 
-                    if i != int(rate) - 1:
-                        self.swipe.swipe_vertical(0.5, 0.9, 0.5)
+                        if self.question_judge(last_one):  # 判断最后一项为题目
+                            for j in range(len(ques_num) - 1):
+                                print('-----------------------------')
+                                current_index = self.get_first_num(j)
+                                if current_index > ques_last_index:
+                                    self.play_operation(ques_num[j].text, answer)
+                                    print('---------------------------')
+                                    ques_last_index = self.get_first_num(j)  # 当前页面中 做过的最后一题 题号
+                                    break
+                        else:  # 判断最后一题为选项
+                            for k in range(len(ques_num)):
+                                print('-----------------------------')
+                                if len(ques_num) == 1 or k < len(ques_num) - 1:  # 前面的题目照常点击
+                                    current_index = self.get_first_num(k)
 
-                    timestr.append(Homework().time())  # 统计每小题的计时控件time信息
-                    print('---------------------------')
+                                    if current_index > ques_last_index:
+                                        self.play_operation(ques_num[k].text, answer)
+                                        ques_last_index = self.get_first_num(k)  # 当前页面中 做过的最后一题 题号
+                                        break
+                                elif k == len(ques_num) - 1:  # 最后一个题目上滑一部分再进行选择
+                                    SwipeFun().swipe_vertical(0.5, 0.9, 0.6)
 
+                                    ques_num = self.question_num()
+                                    for z in range(len(ques_num)):
+                                        current_index = self.get_first_num(z)
+                                        if current_index > ques_last_index:
+                                            self.play_operation(ques_num[z].text, answer)
+                                            ques_last_index = self.get_first_num(z)  # 当前页面中 做过的最后一题 题号
+                                            break
+
+                        timestr.append(Homework().time())  # 统计每小题的计时控件time信息
+                        if i != int(rate) - 1:
+                            SwipeFun().swipe_vertical(0.5, 0.9, 0.6)  # 滑屏
+
+                time.sleep(2)
+                print('---------------------------------------------------')
                 Homework().commit_button_operation('true')  # 提交 按钮 状态判断 加点击
                 Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
                 final_time = self.result.get_time(timestr[-1])  # 最后一个小题的时间
+                print('我的答案:', answer)
                 print('=======================================================')
                 return rate, answer, final_time
+
+    @teststeps
+    def play_operation(self, question, answer):
+        """具体操作"""
+        options = self.option_button(question)
+        options[0][random.randint(0, len(options[0])) - 1].click()  # 随机点击选项
+        time.sleep(1)
+        for j in range(len(options[0])):
+            if GetAttribute().selected(options[1][j]) == 'true':
+                answer.append(options[1][j].text)  # 获取 答题结果
+                print('我的答案：', options[1][j].text)
+                break
 
     @teststeps
     def drag_operation(self):
@@ -223,7 +241,7 @@ class ReadComprehension(BasePage):
         size = self.options_view_size()  # 获取整个选项页面大小
         self.driver.swipe(loc[2], loc[3], loc[2], loc[3] + size - 10, 1000)  # 拖拽按钮到最底部，以便测试Aa
 
-        # self.font_operation()  # Aa文字大小切换按钮 状态判断 及 切换操作
+        self.font_operation()  # Aa文字大小切换按钮 状态判断 及 切换操作
 
         loc = ElementBounds().get_element_bounds(drag)  # 获取按钮坐标
         y = loc[3] - size * 4 / 3
@@ -249,7 +267,8 @@ class ReadComprehension(BasePage):
                 print('查看答案页面:')
                 count = []  # 回答正确题
 
-                answer = self.get_result(rate)  # 获取 答题结果
+                answer = self.get_result(int(rate))  # 获取 答题结果
+                print('==================================================')
                 for i in range(int(rate)):
                     if answer[i] != result[i]:
                         print('回答错误:', answer[i], result[i])
@@ -259,18 +278,96 @@ class ReadComprehension(BasePage):
 
                 if self.result.wait_check_detail_page():  # 页面检查点
                     self.result.back_up_button()  # 返回结果页
-                print('==================================================')
+
                 return count
+
+    @teststeps
+    def get_result(self, rate):
+        """获取 答题结果"""
+        ques_last_index = 0
+        answer = []
+        for i in range(rate):
+            if ques_last_index < rate:
+                ques_first_index = self.get_first_num()  # 当前页面中第一题 题号
+                if ques_first_index - ques_last_index > 1:  # 判断页面是否滑过，若当前题比上一页做的题不大于1，则下拉直至题目等于上一题的加1
+                    for step in range(0, 5):
+                        SwipeFun().swipe_vertical(0.5, 0.5, 0.8)
+                        if self.get_first_num() == ques_last_index + 1:  # 正好
+                            break
+                        elif self.get_first_num() < ques_last_index + 1:  # 下拉拉过了
+                            SwipeFun().swipe_vertical(0.5, 0.6, 0.4)  # 滑屏
+                            if self.get_first_num() == ques_last_index + 1:  # 正好
+                                break
+
+                last_one = self.get_last_element()  # 页面最后一个元素
+                ques_num = self.question_num()  # 题目
+                print(len(ques_num))
+
+                if self.question_judge(last_one):  # 判断最后一项为题目
+                    for j in range(len(ques_num) - 1):
+                        print('-----------------------------')
+                        current_index = self.get_first_num(j)
+                        if current_index > ques_last_index:
+                            answer.append(self.error_sum(ques_num[j].text))
+                            print('---------------------------')
+                            ques_last_index = self.get_first_num(j)  # 当前页面中 做过的最后一题 题号
+                            break
+                else:  # 判断最后一题为选项
+                    for k in range(len(ques_num)):
+                        print('-----------------------------')
+                        if len(ques_num) == 1 or k < len(ques_num) - 1:  # 前面的题目照常点击
+                            current_index = self.get_first_num(k)
+                            if current_index > ques_last_index:
+                                answer.append(self.error_sum(ques_num[k].text))
+                                ques_last_index = self.get_first_num(k)  # 当前页面中 做过的最后一题 题号
+                                break
+                        elif k == len(ques_num) - 1:  # 最后一个题目上滑一部分再进行选择
+                            SwipeFun().swipe_vertical(0.5, 0.9, 0.6)
+
+                            ques_num = self.question_num()
+                            for z in range(len(ques_num)):
+                                current_index = self.get_first_num(z)
+                                if current_index > ques_last_index:
+                                    answer.append(self.error_sum(ques_num[z].text))
+                                    ques_last_index = self.get_first_num(z)  # 当前页面中 做过的最后一题 题号
+                                    break
+
+                if i != rate - 1:
+                    SwipeFun().swipe_vertical(0.5, 0.9, 0.6)  # 滑屏
+
+        print('获取到的答案：', answer)
+        return answer
+
+    @teststeps
+    def error_sum(self, question):
+        """查看答案 滑屏 获取所有题目内容"""
+        correct = []
+        error = []
+        options = self.option_button(question)
+        for j in range(len(options[0])):
+            var = GetAttribute().description(options[0][j])
+            if var == 'right':
+                correct.append(options[1][j].text)  # 获取 答题结果
+            elif var == 'error':
+                error.append(options[1][j].text)  # 获取 答题结果
+
+        if correct:
+            answer = correct[0]
+        else:
+            answer = error[0]
+        print('answer:', answer)
+        return answer
 
     @teststeps
     def font_operation(self):
         """Aa文字大小切换按钮 状态判断 及 切换操作"""
-        y = []
         middle = self.font_middle()  # first
         large = self.font_large()  # second
         great = self.font_great()  # third
 
         i = j = 0
+        y = []
+        middle.click()
         while i < 3:
             bounds = self.content_desc()  # 获取y值
             print(self.get.checked(middle), self.get.checked(large), self.get.checked(great))

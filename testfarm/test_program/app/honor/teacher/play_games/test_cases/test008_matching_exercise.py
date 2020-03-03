@@ -1,17 +1,21 @@
-# coding=utf-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import unittest
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from conf.base_page import BasePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
+from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.matching_exercises_page import MatchingExercises
-from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from app.honor.teacher.play_games.test_data.homework_title_type import GetVariable as gv
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
-from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
+from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
+from utils.assert_func import ExpectingTest
 from utils.toast_find import Toast
-from conf.decorator import setup, teardown, testcase, teststeps
+from conf.decorator import setup, testcase, teststeps
 
 
 class Games(unittest.TestCase):
@@ -21,6 +25,8 @@ class Games(unittest.TestCase):
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.ass_result = unittest.TestResult()
+        cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
         cls.homework = Homework()
@@ -30,10 +36,15 @@ class Games(unittest.TestCase):
         cls.detail = QuestionDetailPage()
         cls.result = ResultPage()
 
-    @classmethod
-    @teardown
-    def tearDown(cls):
-        pass
+        BasePage().set_assert(cls.ass)
+
+    def tearDown(self):
+        for i in self.ass.get_error():
+            self.ass_result.addFailure(self, i)
+
+    def run(self, result=None):
+        self.ass_result = result
+        super(Games, self).run(result)
 
     @testcase
     def test_match_exercise(self):
@@ -41,47 +52,30 @@ class Games(unittest.TestCase):
 
         if self.home.wait_check_page():  # 页面检查点
             self.question.search_operation(gv.MAT_EXE)  # 进入首页后 进入题库tab，并搜索题单
-
-            if self.question.wait_check_page('题单'):  # 页面检查点
-                name = self.question.question_name()
-                for i in range(len(name[0])):
-                    if name[1][i] == gv.MAT_EXE:
-                        name[0][i].click()  # 点击进入该作业
-
-                        count = []  # 小游戏数目
-                        self.homework.games_count('连连看', count)  # 小游戏个数统计
-                        self.game_exist(count)  # 具体操作
-                        break
-
-                if self.question.wait_check_page('题单'):  # 检查点
-                    self.home.click_tab_hw()  # 返回 主界面
+            self.homework.games_operation(gv.MAT_EXE, self.game_exist, '连连看')  # 查找题单内 该类型的小游戏
         else:
             Toast().get_toast()  # 获取toast
             print("未进入主界面")
 
     @teststeps
-    def game_exist(self, count):
+    def game_exist(self, game, name):
         """连连看 游戏具体操作 及 结果页操作"""
-        if len(count) != 0:
-            for index in count:
-                if self.detail.wait_check_page():
-                    if self.detail.wait_check_list_page():
+        if self.detail.wait_check_page():
+            if self.detail.wait_check_list_page():
+                print('##############################################################')
+                print(name)
+                game_type = self.homework.game_mode(name)  # 获取小游戏模式
+                game.click()  # 进入小游戏
+
+                if self.game.wait_check_page():
+                    if self.game.wait_check_list_page():
+                        self.game.start_button()  # 开始答题 按钮
+                        result = self.match.diff_type(game_type)  # 不同模式小游戏的 游戏过程
+
+                        self.result.result_page_correct_rate(result[1], result[0])  # 结果页 -- 准确率
+                        self.match.result_detail_page(game_type)  # 结果页 查看答案 按钮
+                        # result1 = self.match.study_again(game_type)  # 结果页 再练一遍 按钮
+                        # self.result.result_page_correct_rate(result1[1], result1[0])  # 结果页 -- 准确率
+
                         print('##############################################################')
-                        game_type = self.homework.game_mode(index)  # 获取小游戏模式
-                        self.homework.num(index).click()  # 进入小游戏
-                        if self.game.wait_check_page():
-                            if self.game.wait_check_list_page():
-                                self.game.start_button()  # 开始答题 按钮
-                                result = self.match.diff_type(game_type)  # 不同模式小游戏的 游戏过程
-
-                                self.result.result_page_correct_rate(result[1], result[0])  # 结果页 -- 准确率
-                                self.match.result_detail_page(game_type)  # 结果页 查看答案 按钮
-                                # result1 = self.match.study_again(game_type)  # 结果页 再练一遍 按钮
-                                # self.result.result_page_correct_rate(result1[1], result1[0])  # 结果页 -- 准确率
-
-                                print('##############################################################')
-                                self.homework.back_operation()  # 从结果页返回 题单详情页
-        else:
-            print('no have连连看 小游戏')
-        if self.detail.wait_check_page():  # 检查点
-            self.home.back_up_button()  # 返回 题库页面
+                        self.homework.back_operation()  # 从结果页返回 题单详情页

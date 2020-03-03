@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import random
 import time
@@ -7,9 +7,15 @@ from selenium.webdriver.common.by import By
 
 from app.honor.teacher.user_center.user_information.test_data.image import VALID_IMAGE
 from conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from utils.click_bounds import ClickBounds
 from utils.wait_element import WaitElement
+
+# 小米 6x 8.1  Mi6x
+shutter_button_id = 'com.android.camera:id/v9_shutter_button_internal'  # 拍照键
+switch_button_id = 'com.android.camera:id/v9_camera_picker'  # 切换前置后置摄像头
+retake_button_id = 'com.android.camera:id/intent_done_retry'  # 重拍 按钮
+done_button_id = 'com.android.camera:id/inten_done_apply'  # 完成 按钮
 
 
 class MeizuPage(BasePage):
@@ -138,25 +144,6 @@ class MeizuPage(BasePage):
         self.driver \
             .find_element_by_id("android:id/home") \
             .click()
-
-
-class SimulatorPage(BasePage):
-    """夜神模拟器"""
-    def __init__(self):
-        self.wait = WaitElement()
-
-    # 模拟器 5.1
-    @teststeps
-    def wait_check_album_page(self, var=10):
-        """以相册title:“选择照片”的text为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'选择照片')]")
-        return self.wait.wait_check_element(locator, var)
-
-    @teststeps
-    def choose_album_mul(self):
-        """5.1 模拟器 选择相册370,720"""
-        print('选择相册')
-        ClickBounds().click_bounds(560, 270)
 
 
 class HonorPage(BasePage):
@@ -408,7 +395,139 @@ class MeiZuMPage(BasePage):
         """选择相册图片"""
         print('选择照片')
         if index == 0:
-            index = random.randint(1,10)
+            index = random.randint(1, 10)
+
+        self.driver \
+            .find_elements_by_id("com.meizu.media.gallery:id/thumbnail")[index] \
+            .click()
+
+    # 第二个页面
+    @teststeps
+    def wait_check_commit_page(self):
+        """确定 按钮 的为依据"""
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text, '确定')]")
+        return self.wait.wait_check_element(locator)
+
+    # 第三个页面
+    @teststeps
+    def wait_check_save_page(self):
+        """Ok 按钮 的为依据"""
+        locator = (By.XPATH, "//android.widget.Button[contains(@text, 'Ok')]")
+        return self.wait.wait_check_element(locator)
+
+    @teststeps
+    def commit_button(self):
+        """相册 ok 按钮"""
+        print('点击 OK按钮')
+        self.driver \
+            .find_element_by_xpath("//android.widget.Button[contains(@text,'Ok')]") \
+            .click()
+
+    @teststeps
+    def cancel_button(self):
+        """相册Cancel按钮"""
+        print('点击 Cancel按钮')
+        self.driver \
+            .find_element_by_xpath("//android.widget.Button[contains(@text,'Cancel')]") \
+            .click()
+
+
+class Mi6x(BasePage):
+    """小米 6x 8.1"""
+    def __init__(self):
+        self.wait = WaitElement()
+
+    @teststeps
+    def x_cancel_button(self):
+        """相机'取消'按钮"""
+        print('点击 取消按钮')
+        self.driver \
+            .find_element_by_id('android:id/button1') \
+            .click()
+
+    # 拍照
+    @teststeps
+    def wait_check_camera_page(self, var=10):
+        """拍照键 的为依据"""
+        locator = (By.ID, shutter_button_id)
+        return self.wait.wait_check_element(locator, var)
+
+    # 第一页面
+    @teststeps
+    def click_retake_button(self):
+        """相机'切换前置后置摄像头'按钮"""
+        print('切换前置后置摄像头')
+        self.driver \
+            .find_element_by_id(switch_button_id) \
+            .click()
+
+    @teststeps
+    def click_camera_button(self):
+        """以相机拍照按钮"""
+        print('点击 拍照按钮')
+        self.driver \
+            .find_element_by_id(shutter_button_id) \
+            .click()
+
+    @teststeps
+    def cancel_button(self):
+        """以相机  左上角 取消按钮"""
+        print('点击 取消按钮')
+        self.driver \
+            .find_elements_by_class_name("android.view.View")[3] \
+            .click()
+
+    # 第二页面
+    @teststeps
+    def wait_check_retake_page(self, var=10):
+        """以 “”的resource-id为依据"""
+        locator = (By.ID, retake_button_id)
+        return self.wait.wait_check_element(locator, var)
+
+    @teststeps
+    def click_done_button(self):
+        """相机'完成'按钮"""
+        print('点击 完成按钮')
+        self.driver \
+            .find_element_by_id(done_button_id) \
+            .click()
+
+    @teststeps
+    def click_retake_button(self):
+        """相机'retake'按钮"""
+        print('点击 重拍按钮')
+        self.driver \
+            .find_element_by_id(retake_button_id) \
+            .click()
+
+    # 相册
+    @teststeps
+    def wait_check_album_page(self, var=10):
+        """最近 的xpath 为依据"""
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text, '最近')]")
+        return self.wait.wait_check_element(locator, var)
+
+    @teststeps
+    def open_album(self):
+        """打开 图库"""
+        print('选择相册')
+        self.driver \
+            .find_elements_by_id("android:id/title")[3] \
+            .click()
+
+    # 第一个页面
+    @teststeps
+    def wait_check_picture_page(self):
+        """选择图片 的ID为依据"""
+        locator = (By.ID, "com.meizu.media.gallery:id/action_bar_title")
+        return self.wait.wait_check_element(locator)
+
+    @teststeps
+    def choose_image(self, index=0):
+        """选择相册图片"""
+        print('选择照片')
+        if index == 0:
+            index = random.randint(1, 10)
 
         self.driver \
             .find_elements_by_id("com.meizu.media.gallery:id/thumbnail")[index] \
@@ -450,7 +569,6 @@ class ChangeImage(BasePage):
         之所以在这里定义,是为了避免每次调用click_bounds()时，再次计算坐标"""
     def __init__(self):
         self.meizu = MeizuPage()
-        self.simu = SimulatorPage()
         self.honor = HonorPage()
         self.pixel = PixelPage()
         self.meizu_m = MeiZuMPage()  # MeiZu - M15  7.1
@@ -471,9 +589,9 @@ class ChangeImage(BasePage):
         #     self.meizu.choose_image()  # 选择照片
         #     if self.meizu.wait_check_save_page():
         #         self.meizu.click_save_button()  # 完成 按钮
-        # elif self.honor.wait_check_album_page():  # 真机 华为7.0
-        #     self.honor.open_album()  # 进入某相册
-        #     if self.honor.wait_check_picture_page():
+        # elif self.app.wait_check_album_page():  # 真机 华为7.0
+        #     self.app.open_album()  # 进入某相册
+        #     if self.app.wait_check_picture_page():
         #         self.meizu.choose_image()  # 选择照片
         #         if self.meizu.wait_check_save_page():
         #             self.meizu.click_save_button()  # 完成按钮
@@ -512,9 +630,9 @@ class ChangeImage(BasePage):
         #     self.meizu.choose_image()  # 选择照片
         #     if self.meizu.wait_check_save_page():
         #         self.meizu.click_cancel_button()  # 取消 按钮
-        # elif self.honor.wait_check_album_page():  # 真机 华为7.0
-        #     self.honor.open_album()  # 进入某相册
-        #     if self.honor.wait_check_picture_page():
+        # elif self.app.wait_check_album_page():  # 真机 华为7.0
+        #     self.app.open_album()  # 进入某相册
+        #     if self.app.wait_check_picture_page():
         #         self.meizu.choose_image()  # 选择照片
         #         if self.meizu.wait_check_save_page():
         #             self.meizu.click_cancel_button()  # 取消按钮
@@ -536,7 +654,7 @@ class ChangeImage(BasePage):
         #             self.meizu.click_cancel_button()  # 取消按钮
 
         if self.meizu_m.wait_check_picture_page():  # 真机 MeiZu - M15  7.1
-            self.meizu_m.choose_image(random.randint(1,10))  # 选择照片
+            self.meizu_m.choose_image(random.randint(1, 10))  # 选择照片
             if self.meizu_m.wait_check_commit_page():
                 self.meizu.commit_button()  # 确定 按钮
                 if self.meizu.wait_check_save_page():
@@ -554,10 +672,10 @@ class ChangeImage(BasePage):
         #         if self.meizu.wait_check_save_page():
         #             self.meizu.click_save_button()  # 保存按钮
         #             return True
-        # elif self.honor.wait_check_camera_page():  # 真机 华为7.0
-        #     self.honor.click_camera_button()  # 拍照键
-        #     if self.honor.wait_check_retake_page():
-        #         self.honor.click_done_button()  # 完成按钮
+        # elif self.app.wait_check_camera_page():  # 真机 华为7.0
+        #     self.app.click_camera_button()  # 拍照键
+        #     if self.app.wait_check_retake_page():
+        #         self.app.click_done_button()  # 完成按钮
         #         if self.meizu.wait_check_save_page():
         #             self.meizu.click_save_button()  # 保存按钮
         #             return True
@@ -589,10 +707,10 @@ class ChangeImage(BasePage):
         #         if self.meizu.wait_check_save_page():
         #             self.meizu.click_cancel_button()  # 取消按钮
         #             return True
-        # elif self.honor.wait_check_camera_page():  # 真机 华为7.0
-        #     self.honor.click_camera_button()  # 拍照按钮
-        #     if self.honor.wait_check_retake_page():
-        #         self.honor.click_done_button()  # 完成按钮
+        # elif self.app.wait_check_camera_page():  # 真机 华为7.0
+        #     self.app.click_camera_button()  # 拍照按钮
+        #     if self.app.wait_check_retake_page():
+        #         self.app.click_done_button()  # 完成按钮
         #         if self.meizu.wait_check_save_page():
         #             self.meizu.click_cancel_button()  # 取消按钮
         #             return True
@@ -627,15 +745,15 @@ class ChangeImage(BasePage):
         #                 if self.meizu.wait_check_save_page():
         #                     self.meizu.click_save_button()  # 保存 按钮
         #                     return True
-        # elif self.honor.wait_check_camera_page():  # 真机 华为7.0
-        #     self.honor.click_camera_button()  # 拍照按钮
-        #     if self.honor.wait_check_retake_page():
-        #         self.honor.click_retake_button()  # 重拍 按钮
+        # elif self.app.wait_check_camera_page():  # 真机 华为7.0
+        #     self.app.click_camera_button()  # 拍照按钮
+        #     if self.app.wait_check_retake_page():
+        #         self.app.click_retake_button()  # 重拍 按钮
         #
-        #         if self.honor.wait_check_camera_page():
-        #             self.honor.click_camera_button()  # 拍照按钮
-        #             if self.honor.wait_check_retake_page():
-        #                 self.honor.click_done_button()  # 完成 按钮
+        #         if self.app.wait_check_camera_page():
+        #             self.app.click_camera_button()  # 拍照按钮
+        #             if self.app.wait_check_retake_page():
+        #                 self.app.click_done_button()  # 完成 按钮
         #                 if self.meizu.wait_check_save_page():
         #                     self.meizu.click_save_button()  # 保存按钮
         #                     return True

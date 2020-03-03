@@ -9,7 +9,7 @@ from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from app.honor.teacher.play_games.test_data.word_spelling_data import word_spelling_operation
 from utils.get_attribute import GetAttribute
 from utils.games_keyboard import Keyboard
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.judge_character_type import JudgeType
@@ -127,10 +127,10 @@ class WordSpelling(BasePage):
 
     # 以下为答案详情页面元素
     @teststeps
-    def wait_check_correct_page(self):
+    def wait_check_correct_page(self, var=3):
         """以“answer”的ID为依据"""
         locator = (By.ID, self.correct_value)
-        return self.wait.wait_check_element(locator)
+        return self.wait.wait_check_element(locator, var)
 
     @teststep
     def result_voice(self, index):
@@ -291,7 +291,8 @@ class WordSpelling(BasePage):
                             if self.judge_dictation_word():  # 出现首字母提示
                                 word = self.dictation_word()
                                 if len(word) == 1 and word == value[0]:
-                                    print('点击提示出现首字母提示', word)
+                                    print('点击"提示",出现首字母提示', word)
+                                    self.key.games_keyboard('backspace')  # 点击键盘 删除
                                 else:
                                     print('★★★ Error - 点击提示未出现首字母提示')
                         else:
@@ -336,7 +337,7 @@ class WordSpelling(BasePage):
         print('我的答案:', result)
         print('我的答题结果:', mine)
 
-        if self.wait_check_correct_page():  # 展示的答案元素存在说明回答错误
+        if self.wait_check_correct_page(2):  # 展示的答案元素存在说明回答错误
             correct = self.correct()  # 正确答案
             print('解释:', self.explain())
             if len(mine) <= len(correct):  # 输入少于或等于单词字母数的字符
@@ -387,8 +388,10 @@ class WordSpelling(BasePage):
         if self.result.wait_check_result_page():  # 结果页检查点
             self.result.check_result_button()  # 结果页 查看答案 按钮
             print('查看答案:')
-            self.swipe_operation()
-            self.result.back_up_button()  # 返回结果页
+            self.swipe_operation()  # 具体操作
+
+            if self.result.wait_check_detail_page():
+                self.result.back_up_button()  # 返回结果页
             print('==============================================')
 
     @teststeps
@@ -400,34 +403,38 @@ class WordSpelling(BasePage):
             if content is None:
                 content = []
 
-            ques = self.result_answer()
-            if len(ques) > 4 and not content:
-                self.ergodic_list(len(ques) - 1)
-                content = [ques[-2].text]
+            explain = self.result_explain()  # 解释
+            answer = self.result_answer()  # 答案
+            remove = self.result_remove()  # 去除
+            mine = self.result_mine()  # 对错标识
 
-                SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
-                self.swipe_operation(content)
+            if len(answer) > 4 and not content:
+                self.ergodic_list(explain, answer, remove, mine, len(answer) - 1)
+                content = [answer[-2].text]
+
+                if self.result.wait_check_detail_page():
+                    SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
+                    self.swipe_operation(content)
             else:
                 var = 0
                 if content:
-                    for k in range(len(ques)):
-                        if content[0] == ques[k].text:
+                    for k in range(len(answer)):
+                        if content[0] == answer[k].text:
                             var += k + 1
                             break
 
-                self.ergodic_list(len(ques), var)
+                self.ergodic_list(explain, answer, remove, mine, len(answer), var)
 
     @teststeps
-    def ergodic_list(self, length, var=1):
+    def ergodic_list(self, explain, answer, remove, mine, length, var=1):
         """遍历列表
+        :param mine:
+        :param remove:
+        :param answer:
+        :param explain:
         :param length: 遍历的最大值
         :param var:遍历的最小值
         """
-        explain = self.result_explain()  # 解释
-        answer = self.result_answer()  # 答案
-        remove = self.result_remove()  # 去除
-        mine = self.result_mine()  # 对错标识
-
         content = []  # 答对的小题数
         count = 0  # 小题数
         for i in range(var, length):

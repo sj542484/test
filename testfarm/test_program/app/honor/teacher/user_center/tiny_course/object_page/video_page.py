@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 
@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 from app.honor.teacher.user_center.tiny_course.object_page.create_tiny_course_page import CreateTinyCourse
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from utils.click_bounds import ClickBounds
 from utils.get_element_bounds import ElementBounds
 from utils.wait_element import WaitElement
@@ -88,7 +88,7 @@ class VideoPage(BasePage):
     @teststeps
     def shoot_button_location(self):
         """'拍摄 按钮坐标"""
-        ele = self.driver\
+        ele = self.driver \
             .find_element_by_id(self.video_button_value)
         return ElementBounds().get_element_location(ele)
 
@@ -153,14 +153,15 @@ class VideoPage(BasePage):
     @teststeps
     def wait_check_local_page(self, var=10):
         """title:最近 为依据"""
-        locator = (By.ID, "com.android.documentsui:id/mz_toolbar_nav_button")
+        locator = (By.ID, "com.android.documentsui:id/menu_list")
         return self.wait.wait_check_element(locator, var)
 
     @teststeps
     def menu_button(self):
         """左上角"""
         self.driver \
-            .find_element_by_id("com.android.documentsui:id/mz_toolbar_nav_button") \
+            .find_element_by_xpath("//android.view.ViewGroup[contains(@resource-id, "
+                                   "'com.android.documentsui:id/toolbar')]/android.widget.ImageButton") \
             .click()
 
     @teststeps
@@ -232,11 +233,11 @@ class VideoPage(BasePage):
         content = []
         index = 0
         for i in range(len(ele)):
-           if name in ele[i].text:
-               content.append(ele[i])
-               ele[i].click()
-               index += 1
-               break
+            if name in ele[i].text:
+                content.append(ele[i])
+                ele[i].click()
+                index += 1
+                break
         return content, index
 
     @teststeps
@@ -252,6 +253,11 @@ class VideoPage(BasePage):
                 content.append(ele[i].text)
 
         return content, item
+
+    @teststeps
+    def back_up(self):
+        """相册返回app"""
+        self.driver.keyevent('KEYCODE_BACK')
 
     # 视频裁剪
     @teststeps
@@ -277,6 +283,32 @@ class VideoPage(BasePage):
             .click()
 
     @teststeps
+    def move_limits(self):
+        """裁剪范围元素"""
+        ele = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + 'rv')
+        return ele
+
+    @teststeps
+    def cut_button_left(self):
+        """裁剪 视频开始   需要注意的是 gv.PACKAGE_ID + 'slider'元素下child元素个数不固定"""
+        ele = self.driver.find_element_by_id(gv.PACKAGE_ID + "media_left_thumb")
+        return ele
+
+    @teststeps
+    def cut_button_right(self):
+        """裁剪 视频开始   需要注意的是 gv.PACKAGE_ID + 'slider'元素下child元素个数不固定"""
+        ele = self.driver.find_element_by_id(gv.PACKAGE_ID + "media_right_thumb")
+        return ele
+
+    @teststeps
+    def img_view(self):
+        """裁剪 视频开始   需要注意的是 gv.PACKAGE_ID + 'slider'元素下child元素个数不固定"""
+        ele = self.driver \
+            .find_elements_by_xpath("//android.view.ViewGroup/android.widget.ImageView")
+        return ele
+
+    @teststeps
     def rule_hint(self):
         """裁剪视频规则"""
         ele = self.driver \
@@ -298,56 +330,37 @@ class VideoPage(BasePage):
         return item
 
     @teststeps
-    def video_cut_operation(self, var, sign):
+    def video_cut_operation(self, var, sign='right'):
         """视频 裁剪"""
-        if sign == 'after':
-            button = self.after_cut_button()  # 后裁剪按钮
+        if sign == 'right':
+            button = self.cut_button_right()  # 后裁剪按钮
         else:
-            button = self.font_cut_button()  # 前裁剪按钮
-        bound = ElementBounds().get_element_location(button)  # 前裁剪按钮 坐标值
+            button = self.cut_button_left()  # 前裁剪按钮
+        bound = ElementBounds().get_element_location(button)  # 裁剪按钮 坐标值
 
-        length = self.video_time()  # 视频时长
-        item = self.video_duration_deal(length)
+        length = self.video_duration_deal(self.video_time())  # 视频时长
+        loc = ElementBounds().get_element_bounds(self.move_limits())  # 可移动的范围
 
-        ele = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "rv")  # 移动的元素
-        loc = ElementBounds().get_element_bounds(ele)  # 可移动的范围
-
-        remainder = (loc[4]-loc[0]) % item
+        remainder = (loc[4] - loc[0]) % length  #
         if remainder >= 5:
             remainder = 1
         else:
             remainder = 0
-        dur = int((loc[4]-loc[0])/ item) + remainder  # 一秒钟的距离
+        dur = int((loc[4] - loc[0]) / length) + remainder  # 一秒钟的距离
 
-        duration = (var+2) * dur  # 需要剪掉的长度 * 一秒钟的距离 == 需移动的距离 (因为滑动操作的误差，故+2)
+        duration = (var + 2) * dur  # 需要剪掉的长度 * 一秒钟的距离 == 需移动的距离 (因为滑动操作的误差，故+2)
         print('裁剪：', duration, bound)
-        if sign == 'after':
-            TouchAction(self.driver).long_press(x=bound[0], y=loc[3]) \
-                .move_to(x=bound[0] - duration, y=loc[3]).release().perform()
+
+        if sign == 'right':
+            print(ElementBounds().get_element_location(self.img_view()[5]))
+            TouchAction(self.driver).press(button) \
+                .move_to().release().perform()
         else:
             TouchAction(self.driver).long_press(x=bound[0], y=loc[3]) \
                 .move_to(x=bound[0] + duration, y=loc[3]).release().perform()
 
-        return item
+        return length
 
-    @teststeps
-    def font_cut_button(self):
-        """裁剪 视频开始"""
-        ele = self.driver \
-            .find_elements_by_xpath("//android.view.ViewGroup[contains(@resource-id, '{}')]/child::android.view.View"
-                                   .format(self.slider_value))
-        print(len(ele))
-        return ele[2]
-
-    @teststeps
-    def after_cut_button(self):
-        """裁剪 视频最后"""
-        ele = self.driver \
-            .find_elements_by_xpath("//android.view.ViewGroup[contains(@resource-id, '{}')]/child::android.view.View"
-                                   .format(self.slider_value))[1]
-        return ele
-    
     @teststeps
     def play_video_operation(self):
         """视频播放 操作"""

@@ -1,12 +1,13 @@
-##!/usr/bin/env python
-# encoding:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import unittest
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
-from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from app.honor.teacher.user_center.user_information.object_page.reset_password_page import PwdReset
 from app.honor.teacher.user_center.user_information.object_page.user_Info_page import UserInfoPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from app.honor.teacher.user_center.user_information.test_data.reset_password import reset_pwd
 from conf.decorator import setup, teardown, testcase
 from utils.toast_find import Toast
@@ -64,17 +65,17 @@ class ExchangePhone(unittest.TestCase):
 
                             self.pwd.confirm_button()  # 点击完成按钮
                             if len(reset_pwd[i]) == 4:
-                                if not Toast().find_toast(reset_pwd[i]['assert']):  # 页面检查点
-                                    print('★★★ Error- 未获取到toast:', reset_pwd[i]['assert'])
+                                Toast().toast_operation(reset_pwd[i]['assert'])
                             else:
-                                if self.user_info.wait_check_page(10):  # 页面检查点
-                                    print('密码修改成功')
-                                    if i != len(reset_pwd) - 1:
-                                        self.user_info.click_password()  # 点击修改密码
-                                        if self.pwd.wait_check_page():  # 页面检查点
-                                            self.pwd.visible_pwd()  # 点击 显示密码
-                                else:
-                                    print('★★★ Error - 密码修改失败')
+                                if reset_pwd[i]['new'] not in ('', '      '):
+                                    if self.user_info.wait_check_page():  # 页面检查点
+                                        print('密码修改成功')
+                                        if i != len(reset_pwd) - 1:
+                                            self.user_info.click_password()  # 点击修改密码
+                                            if self.pwd.wait_check_page():  # 页面检查点
+                                                self.pwd.visible_pwd()  # 点击 显示密码
+                                    else:
+                                        print('★★★ Error - 密码修改失败')
 
                             print('---------------------------------')
                 else:

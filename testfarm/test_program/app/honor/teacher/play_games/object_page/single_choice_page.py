@@ -1,14 +1,13 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import random
-import time
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
@@ -18,6 +17,9 @@ from utils.wait_element import WaitElement
 
 class SingleChoice(BasePage):
     """单项选择"""
+    audio_hint_value = gv.PACKAGE_ID + "audio_parse_container"  # 音频
+    word_hint_value = gv.PACKAGE_ID + "analysis_text"  # 解释
+
     def __init__(self):
         self.result = ResultPage()
         self.game = GamesPage()
@@ -39,7 +41,7 @@ class SingleChoice(BasePage):
 
     @teststep
     def option_button(self):
-        """获取所有选项 - 四个选项"""
+        """获取所有选项 - 四/三个选项"""
         ele = self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + "tv_char")
         return ele
@@ -47,14 +49,12 @@ class SingleChoice(BasePage):
     @teststeps
     def option_selected(self):
         """获取所有选项 - 选项selected属性"""
-        time.sleep(1)
-        ele = self.option_button()
+        ele = self.option_button()  # 获取所有选项
 
         value = []  # 四个选项selected属性值为true的个数
         for j in range(len(ele)):  # 统计答案正确与否
-            if  GetAttribute().selected(ele[j]) == 'true':
-                value.append(j)
-                value.append(GetAttribute().description(ele[j]))
+            if GetAttribute().selected(ele[j]) == 'true':
+                value.extend([j, GetAttribute().description(ele[j])])
         return value
 
     @teststep
@@ -63,6 +63,39 @@ class SingleChoice(BasePage):
         ele = self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + "tv_item")[index].text
         return ele
+
+    # 解析
+    @teststep
+    def hint_text(self):
+        """解析title"""
+        ele = self.driver \
+            .find_elements_by_id(gv.PACKAGE_ID + "hint_text")
+        return ele
+
+    @teststeps
+    def wait_check_audio_page(self, var=3):
+        """以“音频”的ID为依据"""
+        locator = (By.ID, self.audio_hint_value)
+        return self.wait.wait_check_element(locator, var)
+
+    @teststep
+    def hint_audio(self):
+        """音频"""
+        self.driver \
+            .find_element_by_id(self.audio_hint_value).click()
+
+    @teststeps
+    def wait_check_word_page(self, var=3):
+        """以“解释文字”的ID为依据"""
+        locator = (By.ID, self.word_hint_value)
+        return self.wait.wait_check_element(locator, var)
+
+    @teststep
+    def hint_word(self):
+        """文字"""
+        ele = self.driver \
+            .find_element_by_id(self.word_hint_value)
+        print(ele.text)
 
     # 查看答案 页面
     @teststeps
@@ -88,15 +121,18 @@ class SingleChoice(BasePage):
                     options = self.option_button()  # 四个选项
                     options[random.randint(0, len(options)-1)].click()  # 随机点击选项
 
-                    var = self.option_selected()  # 统计答案正确与否
-                    if len(var) == 2:  # 如果选项的selected属性为true的作业数为1,说明答对了，则+1
-                        print('回答正确:', self.option_content(var[0]))
-                        questions.append(self.question_content())
-                    else:
-                        if var[1] == 'error':
-                            print('回答错误:%s;   正确答案:%s'%(self.option_content(var[0]),self.option_content(var[2])))
+                    if Homework().wait_check_play_page():
+                        var = self.option_selected()  # 统计答案正确与否
+                        if len(var) == 2:  # 如果选项的selected属性为true的作业数为1,说明答对了，则+1
+                            print('回答正确:', self.option_content(var[0]))
+                            questions.append(self.question_content())
                         else:
-                            print('回答错误:%s;   正确答案:%s'%(self.option_content(var[2]),self.option_content(var[0])))
+                            if var[1] == 'error':
+                                print('回答错误:%s;   正确答案:%s' % (self.option_content(var[0]), self.option_content(var[2])))
+                            else:
+                                print('回答错误:%s;   正确答案:%s' % (self.option_content(var[2]), self.option_content(var[0])))
+
+                        self.explain_operation()  # 解析
 
                     timestr.append(Homework().time())  # 统计每小题的计时控件time信息
                     Homework().next_button_operation('true')  # 下一题 按钮 状态判断 加点击
@@ -108,6 +144,14 @@ class SingleChoice(BasePage):
                 return rate, questions, final_time
 
     @teststeps
+    def explain_operation(self):
+        """解析 文字&音频"""
+        if self.wait_check_audio_page():
+            self.hint_audio()  # 点击
+        if self.wait_check_word_page():
+            self.hint_word()
+
+    @teststeps
     def check_detail_page(self, count):
         """《单项选择》 查看答案 操作过程"""
         if self.result.wait_check_result_page():  # 结果页检查点
@@ -116,6 +160,8 @@ class SingleChoice(BasePage):
                 print('查看答案页面:')
                 self.swipe_operation(int(count))  # 单选题 滑屏及具体操作
                 self.result.back_up_button()  # 返回结果页
+            else:
+                print('★★★ Error -未进入 查看答案 页面')
 
     @teststeps
     def study_again(self):
@@ -154,22 +200,26 @@ class SingleChoice(BasePage):
                         for j in range(len(ques_num) - 1):
                             current_index = self.game.get_num(j)  # 当前页面中题号
 
-                            if current_index > ques_last_index or (current_index == 0 and ques_last_index != 0):  # 判断当前题号是否是已完成的；以及题目无题号时
+                            if current_index > ques_last_index or \
+                                    (current_index == 0 and ques_last_index != 0):  # 判断当前题号是否是已完成的；以及题目无题号时
                                 print('-----------------------------')
                                 print(ques_num[j].text)
                                 options = self.option_button()  # 选项
                                 print('选项:', options[j].text)
+                                self.explain_operation()
                                 ques_last_index = self.game.get_num(j)  # 当前页面中 做过的最后一题 题号
                     else:  # 判断最后一题是否为选项
                         for k in range(len(ques_num)):
                             if k < len(ques_num) - 1:  # 前面的题目照常点击
                                 current_index = self.game.get_num(k)  # 当前页面中题号
 
-                                if current_index > ques_last_index or (current_index == 0 and ques_last_index != 0):
+                                if current_index > ques_last_index or \
+                                        (current_index == 0 and ques_last_index != 0):
                                     print('-----------------------------')
                                     print(ques_num[k].text)
                                     options = self.option_button()  # 选项
                                     print('选项:', options[k].text)
+                                    self.explain_operation()
                                     ques_last_index = self.game.get_num(k)  # 当前页面中 做过的最后一题 题号
                             elif k == len(ques_num) - 1:  # 最后一个题目上滑一部分再进行选择
                                 self.swipe.swipe_vertical(0.5, 0.8, 0.55)
@@ -182,6 +232,7 @@ class SingleChoice(BasePage):
                                         print(ques_num[z].text)
                                         options = self.option_button()  # 选项
                                         print('选项:', options[z].text)
+                                        self.explain_operation()
                                         ques_last_index = self.game.get_num(z)  # 当前页面中 做过的最后一题 题号
                                         break
 

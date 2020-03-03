@@ -1,17 +1,18 @@
-#!/usr/bin/env python
-# encoding:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import unittest
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from conf.decorator import setup, teardown, testcase, teststeps
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
-from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.test_bank.object_page.question_basket_page import QuestionBasketPage
+from app.honor.teacher.test_bank.object_page.question_basket_page import TestBasketPage
 from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
+from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
+from app.honor.teacher.user_center.mine_collection.object_page.mine_collect_page import CollectionPage
 from app.honor.teacher.user_center.mine_recommend.object_page.mine_recommend_page import RecommendPage
 from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
-from app.honor.teacher.user_center.mine_collection.object_page.mine_collect_page import CollectionPage
-from conf.decorator import setup, teardown, testcase, teststeps
 from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
 
@@ -32,7 +33,7 @@ class Collection(unittest.TestCase):
         cls.detail = QuestionDetailPage()
         cls.filter = FilterPage()
         cls.recommend = RecommendPage()
-        cls.basket = QuestionBasketPage()
+        cls.basket = TestBasketPage()
 
     @classmethod
     @teardown
@@ -60,10 +61,7 @@ class Collection(unittest.TestCase):
                     if self.collect.wait_check_page():
                         self.judge_collect_result(var[0])  # 验证 - 取消收藏结果
                         self.judge_basket_result(var[1])  # 验证 - 加入题筐结果
-
-                        if self.collect.wait_check_page():
-                            self.home.back_up_button()
-                            self.recommend.verify_recommend_result(var[0])  # 验证 - 推荐结果
+                        self.judge_recommend_result(var[0])  # 验证 加入我的推荐 结果
 
                     if self.user.wait_check_page():  # 页面检查点
                         self.home.click_tab_hw()  # 回首页
@@ -127,9 +125,9 @@ class Collection(unittest.TestCase):
         """题单详情页"""
         name[0][0].click()
         if self.detail.wait_check_page():  # 页面检查点
+            print('-------------------题单详情页 操作-------------------')
             if self.detail.wait_check_list_page():
-                var = self.question.question_name()[1]  # 获取 小游戏名
-                print('-------------------题单详情页 操作-------------------')
+                game = self.question.question_name()[1][-1]  # 获取 小游戏名
                 self.detail.collect_button()  # 取消 收藏
                 print(' 点击 取消收藏')
                 if self.detail.wait_check_list_page():
@@ -138,13 +136,15 @@ class Collection(unittest.TestCase):
                     self.filter.choose_school_label()  # 选择本校标签
 
                     if self.detail.wait_check_list_page():
-                        self.detail.put_to_basket_button()  # 加入题筐按钮
-                        print(' 点击 加入题筐按钮')
+                        self.detail.all_check_button()  # 全选按钮
+                        if self.detail.wait_check_list_page():
+                            self.detail.put_to_basket_button()  # 加入题筐按钮
+                            print(' 点击 加入题筐按钮')
 
-                        if self.detail.wait_check_page():  # 页面检查点
-                            self.home.back_up_button()  # 返回 我的收藏页面
+                            if self.detail.wait_check_page():  # 页面检查点
+                                self.home.back_up_button()  # 返回 我的收藏页面
 
-                            return var
+                                return game
 
     @teststeps
     def judge_collect_result(self, name):
@@ -166,19 +166,33 @@ class Collection(unittest.TestCase):
         if self.collect.wait_check_page():  # 是否有收藏
             self.question.question_basket()  # 题筐 按钮
             if self.basket.wait_check_page():  # 页面检查点
-                name = self.question.question_name()  # 获取 小游戏名
-                check = self.basket.check_button()  # 单选框
+                if self.basket.wait_check_list_page():
+                    name = self.question.question_name()  # 获取 小游戏名
+                    check = self.basket.check_button()  # 单选框
 
-                print(name[1])
-                for i in range(len(name[0])):
-                    for j in range(len(var)):
-                        if var[j] == name[1][i]:
+                    count = []
+                    for i in range(len(name[1])):
+                        if var == name[1][i]:
                             print('加入题筐成功')
+                            count.append(i)
                             check[i].click()
-                            self.basket.out_basket_button()  # 移出题筐 按钮
                             break
+
+                    if not count:
+                        print('加入题筐失败')
+                    else:
+                        self.basket.out_basket_button()  # 移出题筐 按钮
+                elif self.home.wait_check_empty_tips_page():
+                    print('加入题筐失败')
 
                 if self.basket.wait_check_page():  # 页面检查点
                     self.home.back_up_button()  # 返回 我的收藏 页面
-        else:
-            print('加入题筐失败')
+
+    @teststeps
+    def judge_recommend_result(self, var):
+        """验证 加入我的推荐 结果"""
+        if self.collect.wait_check_page():
+            self.home.back_up_button()  # 返回个人中心 页面
+            if self.user.wait_check_page():
+                self.user.click_mine_recommend()  # 我的推荐
+                self.recommend.verify_recommend_result(var)  # 加入我的推荐结果 验证

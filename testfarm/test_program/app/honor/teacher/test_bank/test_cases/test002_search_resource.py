@@ -1,12 +1,13 @@
-#!/usr/bin/env python
-# encoding:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import unittest
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.test_bank_search_page import SearchPage
-from app.honor.teacher.test_bank.test_data.search_content import search_data
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
+from app.honor.teacher.test_bank.test_data.search_content import search_data
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
@@ -36,13 +37,13 @@ class BankSearch(unittest.TestCase):
         if self.home.wait_check_page():  # 页面检查点
             self.question.judge_into_tab_question()  # 进入首页后 点击 题库tab
 
-            if self.question.wait_check_page('题单'):  # 页面检查点
+            if self.question.wait_check_page():  # 页面检查点
                 self.question.search_input().click()  # 点击 搜索框
 
                 if self.question.wait_check_page('资源'):
                     name = self.search_operation()  # 搜索 具体操作
 
-                    if self.question.wait_check_page('题单'):  # 页面检查点
+                    if self.question.wait_check_page():  # 页面检查点
                         self.question.search_input().click()  # 点击 搜索框
                         if self.question.wait_check_page('资源'):
                             self.search.drop_down_button().click()  # 点击下拉按钮
@@ -76,7 +77,7 @@ class BankSearch(unittest.TestCase):
                     self.home.back_up_button()  # 返回
             else:
                 print('未进入题库页面')
-            if self.question.wait_check_page('题单'):  # 页面检查点
+            if self.question.wait_check_page():  # 页面检查点
                 self.home.click_tab_hw()  # 返回首页
         else:
             Toast().get_toast()  # 获取toast
@@ -109,7 +110,7 @@ class BankSearch(unittest.TestCase):
     @teststeps
     def history_search_operation(self):
         """点击历史搜索词 搜索"""
-        if self.question.wait_check_page('题单'):  # 页面检查点
+        if self.question.wait_check_page():  # 页面检查点
             self.question.search_input().click()  # 点击 搜索框
             if self.question.wait_check_page('资源'):
                 condition = self.search.drop_down_button().text  # 下拉按钮
@@ -129,35 +130,38 @@ class BankSearch(unittest.TestCase):
                     return condition, name
 
     @teststeps
-    def get_word(self, content= None):
+    def get_word(self, content=None):
         """获取历史搜索词"""
         if content is None:
             content = []
-        name = self.search.history_word()  # 历史搜索词
 
-        if len(name) > 10 and not content:
-            for i in range(len(name) - 1):  #
-                if name[i].text == search_data[-1]['resource']:
-                    print('---------------------', '\n',
-                          '点击历史搜索词:', search_data[-1]['resource'])
-                    name[i].click()  # 点击该历史搜索词
-                    break
+        if self.question.wait_check_page('资源'):
+            name = self.search.history_word()  # 历史搜索词
 
-                if i == len(name)-2:
-                    content.append(name[i].text)
-                    SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
-                    self.get_word(content)
-        else:  # <11 & 翻页
-            var = 0
-            if content:
-                for k in range(len(name)):
-                    if content[0] == name[k].text:
-                        var += k + 1
+            if len(name) > 10 and not content:
+                for i in range(len(name) - 1):  #
+                    if name[i].text == search_data[-1]['resource']:
+                        print('---------------------', '\n',
+                              '点击历史搜索词:', search_data[-1]['resource'])
+                        name[i].click()  # 点击该历史搜索词
                         break
 
-            for j in range(var, len(name)):
-                if name[j].text == search_data[-1]['resource']:
-                    print('---------------------', '\n',
-                          '点击历史搜索词:', search_data[-1]['resource'])
-                    name[j].click()  # 点击该历史搜索词
-                    break
+                    if i == len(name)-2:
+                        content.append(name[i].text)
+                        if self.question.wait_check_page('资源'):
+                            SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
+                            self.get_word(content)
+            else:  # <11 & 翻页
+                var = 0
+                if content:
+                    for k in range(len(name)):
+                        if content[0] == name[k].text:
+                            var += k + 1
+                            break
+
+                for j in range(var, len(name)):
+                    if name[j].text == search_data[-1]['resource']:
+                        print('---------------------', '\n',
+                              '点击历史搜索词:', search_data[-1]['resource'])
+                        name[j].click()  # 点击该历史搜索词
+                        break

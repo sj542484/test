@@ -1,6 +1,7 @@
 import os
 import unittest
-from testfarm.test_program.conf.base_config import GetVariable as gv
+from conf.base_config import GetVariable as gv
+
 
 class CaseStrategy:
     def __init__(self,tsst_side,test_items,phone_code='honor'):

@@ -1,8 +1,10 @@
-#!/usr/bin/env python
-# encoding:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
+
 reset_data = (
     {'reset': '13020670521'},  # 原手机号
-    {'reset': '18011111112'},  # 已注册其他手机号
+    {'reset': '18711111122'},  # 已注册其他手机号
     {'reset': '  '},  # 两个空格
     {'reset': '           '},  # 11个空格
     {'reset': ''},  # 为空
@@ -17,4 +19,4 @@ reset_data = (
     
     {'reset': '18011115234'},  # 未注册手机号
     {'reset': '13020670521'},  # 改回原手机号
-)
+    )

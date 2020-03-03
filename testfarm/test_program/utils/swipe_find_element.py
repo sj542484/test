@@ -3,9 +3,9 @@
 # @Author  : SUN FEIFEI
 from selenium.common.exceptions import WebDriverException
 
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststeps
-from testfarm.test_program.utils.get_element_bounds import Element
+from conf.base_page import BasePage
+from conf.decorator import teststeps
+from utils.get_element_bounds import Element
 
 
 class SwipeFindElement(BasePage):

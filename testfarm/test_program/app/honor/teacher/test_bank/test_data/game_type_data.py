@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 
 game_dict = {"听后选择": "1",
@@ -27,8 +27,10 @@ game_dict = {"听后选择": "1",
              "单词学习": "21",
 
              "微课": "22",
-             "磨耳朵": "23"
+             "磨耳朵": "23",
+             "单词跟读": "24"
              }
+
 
 def game_type_operation(key):
     """根据"""

@@ -1,11 +1,15 @@
-# coding=utf-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import unittest
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from conf.base_page import BasePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.login.test_data.forget_pwd_data import phone_data, pwd_data
 from app.honor.teacher.user_center.setting_center.object_page.setting_page import SettingPage
-from conf.decorator import setup, teardown, testcase, teststeps
+from conf.decorator import setup, testcase, teststeps, teardown
+from utils.assert_func import ExpectingTest
 from utils.reset_phone_toast import get_verify
 from utils.toast_find import Toast
 
@@ -17,15 +21,21 @@ class Login(unittest.TestCase):
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.ass_result = unittest.TestResult()
+        cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
         cls.set = SettingPage()
+        BasePage().set_assert(cls.ass)
 
-    @classmethod
     @teardown
-    def tearDown(cls):
-        """"""
-        pass
+    def tearDown(self):
+        for i in self.ass.get_error():
+            self.ass_result.addFailure(self, i)
+
+    def run(self, result=None):
+        self.ass_result = result
+        super(Login, self).run(result)
 
     @testcase
     def test_forget_pwd_password(self):

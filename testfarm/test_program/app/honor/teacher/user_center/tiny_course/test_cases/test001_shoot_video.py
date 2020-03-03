@@ -4,17 +4,17 @@
 import time
 import unittest
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.pc_operation.my_resource.test_cases.delete_tiny_course.delete_course import Delete
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
-from app.honor.teacher.user_center.mine_test_bank.object_page.mine_test_bank_page import \
-    MineTestBankPage
 from app.honor.teacher.user_center.tiny_course.object_page.create_tiny_course_page import CreateTinyCourse
-from app.honor.teacher.user_center.tiny_course.object_page.video_page import VideoPage
+from app.honor.teacher.user_center.tiny_course.object_page.video_page6X import VideoPage
 from app.honor.teacher.user_center.tiny_course.test_data.video_name import name_data
 from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
-from conf.decorator import testcase, teststeps, setup, teardown
-from utils.connect_db import ConnectDB
+from conf.base_page import BasePage
+from conf.decorator import testcase, teststeps, setup
+from utils.assert_func import ExpectingTest
 from utils.toast_find import Toast
 
 
@@ -24,21 +24,23 @@ class Shoot(unittest.TestCase):
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.ass_result = unittest.TestResult()
+        cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
         cls.user = TuserCenterPage()
         cls.tiny = CreateTinyCourse()
         cls.video = VideoPage()
-        cls.game = GamesPage()
-        cls.mine = MineTestBankPage()
 
-        ConnectDB().start_db()  # 启动数据库
+        BasePage().set_assert(cls.ass)
 
-    @classmethod
-    @teardown
-    def tearDown(cls):
-        """关闭数据库"""
-        ConnectDB().close_db()
+    def tearDown(self):
+        for i in self.ass.get_error():
+            self.ass_result.addFailure(self, i)
+
+    def run(self, result=None):
+        self.ass_result = result
+        super(Shoot, self).run(result)
 
     @testcase
     def test_shoot_video(self):
@@ -55,16 +57,21 @@ class Shoot(unittest.TestCase):
                     if self.tiny.wait_check_page():
                         self.shoot_video_operation()  # 视频拍摄 具体操作
                         if self.tiny.wait_check_page():
-                            self.tiny.save_operation()  # 保存 操作
+                            self.tiny.save_button()  # 点击 保存按钮
+                            self.tiny.judge_upload_operation()  # 判断视频是否 正在上传中...  及 加入公共题库tips
 
-                            # if not Toast().find_toast('加入成功'):
-                            #     print('★★★ Error - 未弹toast：加入成功')
-                            # else:
-                            #     print('加入成功')
+                            if self.home.wait_check_tips_page():
+                                self.home.tips_content_commit()  # 提示 页面信息
+                                self.home.tips_content_commit()  # 提示 页面信息
 
-                            if self.game.wait_check_page():  # 游戏详情页
+                            if GamesPage().wait_check_page():  # 游戏详情页
                                 self.home.back_up_button()  # 返回个人中心页面
                                 self.tiny.judge_save_result(name)  # 验证保存结果
+
+                                # if gv.ENV == '线上':
+                                #     Delete().delete_tiny()
+                                # else:
+                                #     self.tiny.recovery_data(name)  # 恢复测试数据
                             else:
                                 print("!!!未进入 微课详情页面")
                         else:
@@ -75,6 +82,7 @@ class Shoot(unittest.TestCase):
                     print("!!!未进入 微课页面")
                 if self.user.wait_check_page():  # 页面检查点
                     self.home.click_tab_hw()  # 回首页
+                # Delete().delete_tiny()  # 恢复测试数据
         else:
             Toast().get_toast()  # 获取toast
             print("!!!未进入主界面")
@@ -84,9 +92,7 @@ class Shoot(unittest.TestCase):
         """保存 按钮具体操作"""
         print('------------------保存 按钮具体操作-------------------')
         self.tiny.save_button()  # 不操作，直接点击 保存按钮
-
-        if not Toast().find_toast('课程名不能为空'):
-            print('★★★ Error - 未弹toast：课程名不能为空')
+        Toast().toast_operation('课程名不能为空')
 
         if self.user.wait_check_page(3):
             print('★★★ Error - 不操作，直接点击 保存按钮，保存成功')
@@ -96,13 +102,11 @@ class Shoot(unittest.TestCase):
 
         if self.tiny.wait_check_page():
             var = self.tiny.course_name()  # 微课名称
-            var.send_keys(name_data[0]['name'])
+            var.send_keys(name_data[1]['name'])
             item = var.text
             print('输入微课名称：', item)
             self.tiny.save_button()  # 点击 保存按钮
-
-            if not Toast().find_toast('视频不能为空'):
-                print('★★★ Error - 未弹toast：视频不能为空')
+            Toast().toast_operation('视频不能为空')
 
             if self.user.wait_check_page(3):
                 print('★★★ Error - 未插入视频内容，保存成功')

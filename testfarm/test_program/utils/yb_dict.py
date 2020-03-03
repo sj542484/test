@@ -1,6 +1,6 @@
 # !/usr/bin/env python
 # encoding:UTF-8
-from testfarm.test_program.conf.decorator import teststeps
+from conf.decorator import teststeps
 
 noyb_dict_yb = {'a': '/A/', 'b': '/B/', 'c': '/C/', 'd': '/D/', 'e': '/E/', 'f': '/F/', 'g': '/G/', 'h': '/H/',
              'i': '/I/', 'o': '/O/', 's': '/S/', 'v': '/V/', 'w': '/W/', 'x': '/X/', 'y': '/Y/', 'z': '/Z/',

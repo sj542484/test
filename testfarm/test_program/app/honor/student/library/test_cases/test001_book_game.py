@@ -48,8 +48,8 @@ class BookGame(unittest.TestCase):
 
     @data(*[
             '单词',
-            # '句子',
-            # '文章',
+            '句子',
+            '文章',
            ])
     @teststeps
     def test_book_operate(self, book_name):
@@ -65,37 +65,37 @@ class BookGame(unittest.TestCase):
                 self.home.check_more()[0].click()
                 label_name = '其他教材'
 
-                # 进入测试标签页  选择测试书籍
+                # 进入其他教材标签，选择全题型书籍
                 while True:
                     if self.library.wait_check_test_label_page(label_name):
                         self.library.course_more_btn(label_name).click()
                         break
                     else:
                         self.home.screen_swipe_up(0.5, 0.9, 0.4, 1000)
-
                 while not self.library.wait_check_test_book_page('全题型'):
                     self.home.screen_swipe_up(0.5, 0.9, 0.4, 1000)
                 self.library.test_book('全题型').click()
+
+                #  进入书籍，获取书单进度，从数据库中查询此书籍的任一书籍是否已经学习过
                 book_process, book_description = self.library.select_test_book_operate(book_name)
                 print('书单数据库进度， 书籍描述：', book_process, book_description)
                 today_has_studied = DataHandlePage().student_today_is_submit_bank_record(stu_id, '全题型', book_description)
                 book_process = book_process if book_process != '完成' else '100%'
-                # if self.wait_check_book_set_page():
-                #     print('书单名称：', self.book_title())
-                #     book_summary = self.book_summary()
-                #     print('书单简介：', book_summary)
-                #     bank_count = int(re.findall(r'\d+', book_summary)[0])
+
+                # 书单操作，验证书单页面的排行、点赞、立即打卡功能
                 book_set_info = self.library.bookset_page_operate(book_process, nickname, today_has_studied)
                 bank_count = book_set_info[-1]
                 if self.library.wait_check_book_set_page():
                     self.library.start_study_button().click()
                 self.game_operate(bank_count, nickname)
+                # 从书籍列表页面返回主页面操作
                 self.library.from_bank_back_to_home_operate(school_name)
 
 
     @teststeps
     def game_operate(self, bank_count, nickname):
-        if self.library.wait_check_bank_list_page():               # 进入书籍， 遍历进入题型
+        if self.library.wait_check_bank_list_page():
+            # 进入书籍， 遍历进入题型做题
             bank_name_list = []
             while len(bank_name_list) < bank_count:
                 bank_name_eles = self.library.bank_name()

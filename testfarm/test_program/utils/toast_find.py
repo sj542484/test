@@ -5,8 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from testfarm.test_program.conf.decorator import teststeps
-from testfarm.test_program.conf.base_page import BasePage
+from conf.decorator import teststeps
+from conf.base_page import BasePage
 
 
 class Toast(BasePage):

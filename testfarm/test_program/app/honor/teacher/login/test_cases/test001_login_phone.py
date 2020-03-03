@@ -1,11 +1,15 @@
-# coding=utf-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import unittest
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from conf.base_page import BasePage
+from conf.decorator import setup, testcase, teststeps, teardown
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.login.test_data.mine_account import phone_data
 from app.honor.teacher.user_center.setting_center.object_page.setting_page import SettingPage
-from conf.decorator import setup, teardown, testcase, teststeps
+from utils.assert_func import ExpectingTest
 from utils.toast_find import Toast
 
 
@@ -16,15 +20,22 @@ class Login(unittest.TestCase):
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.ass_result = unittest.TestResult()
+        cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
         cls.set = SettingPage()
 
-    @classmethod
+        BasePage().set_assert(cls.ass)
+
     @teardown
-    def tearDown(cls):
-        """"""
-        pass
+    def tearDown(self):
+        for i in self.ass.get_error():
+            self.ass_result.addFailure(self, i)
+
+    def run(self, result=None):
+        self.ass_result = result
+        super(Login, self).run(result)
 
     @testcase
     def test_login_phone(self):
@@ -66,8 +77,7 @@ class Login(unittest.TestCase):
 
                     self.login.login_button()  # 登录按钮
                     if len(phone_data[i]) == 3:
-                        if not Toast().find_toast(phone_data[i]['assert']):  # toast判断
-                            print('★★★ Error- 未获取到toast', phone_data[i]['assert'])
+                        Toast().toast_operation(phone_data[i]['assert'])  # toast判断
 
                         if self.login.wait_check_page():
                             print('登录失败')

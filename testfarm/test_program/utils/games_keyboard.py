@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # code:UTF-8  
 # @Author  : SUN FEIFEI
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststeps, teststep
+from conf.base_page import BasePage
+from conf.decorator import teststeps, teststep
 
 
 class Keyboard(BasePage):
@@ -22,8 +22,9 @@ class Keyboard(BasePage):
                     'capslock', 'z', 'x', 'c', 'v', 'b', 'n', 'm', "backspace",
                     ',', '.', '-', 'blank', "'", 'enter']
         screen = list(self.get_window_size())  # 获取当前手机屏幕大小X,Y
+
         if key.lower() in keyboard:
-            print('需要填写的字母：',key.lower())
+            print('需要填写的字母：', key.lower())
             screen[0] = int(screen[0])
             screen[1] = int(screen[1])
             loc = self.get_element_location(self.keyboard_view())  # 键盘view左上角 顶点坐标
@@ -88,3 +89,16 @@ class Keyboard(BasePage):
         elif y == 320:
             a = 0.75
         return a
+
+    @teststep
+    def keyboard_operate(self, value, word_index):
+        """点击键盘 具体操作
+            :param value: 单词字母
+            :param word_index 单词字母索引值
+        """
+        if word_index == 3:
+            self.games_keyboard('capslock')  # 点击键盘 切换到 大写字母
+            self.games_keyboard(value.upper())  # 点击键盘对应 大写字母
+            self.games_keyboard('capslock')  # 点击键盘 切换到 小写字母
+        else:
+            self.games_keyboard(value)  # 点击键盘对应字

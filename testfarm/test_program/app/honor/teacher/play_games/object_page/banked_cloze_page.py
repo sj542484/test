@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 from selenium.webdriver.common.by import By
@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from utils.click_bounds import ClickBounds
 from utils.games_keyboard import Keyboard
@@ -119,8 +119,8 @@ class BankedCloze(BasePage):
     def get_result(self):
         """获取 答题结果"""
         var = self.get.description(self.content_value())
-        content = ' '.join(var.split('  '))  # 删除字符串中的连续空格只保留一个
-        value = content[6:].split(' ')  # answer
+        content = '  '.join(var.split('  '))  # 删除字符串中的连续空格只保留一个
+        value = content[6:].split('  ')  # answer
 
         answer = []
         result = []  # 答题结果
@@ -128,10 +128,10 @@ class BankedCloze(BasePage):
             if value[i] != '':
                 if "(" in value[i]:
                     del result[-1]
-                    result.append(value[i][1:-1])  # 答错的题
+                    result.append(value[i][1:-1].lower())  # 答错的题
                 else:
-                    result.append(value[i])
-                    answer.append(value[i])  # 正确答案
+                    result.append(value[i].lower())
+                    answer.append(value[i].lower())  # 正确答案
 
         return answer, result
 
@@ -145,7 +145,6 @@ class BankedCloze(BasePage):
 
                 rate = Homework().rate()
                 for i in range(int(rate)):
-                    print('选词填空 - 游戏过程')
                     Homework().rate_judge(rate, i)  # 测试当前rate值显示是否正确
                     Homework().commit_button_operation('false')  # 提交 按钮 状态判断 加点击
 
@@ -156,7 +155,7 @@ class BankedCloze(BasePage):
                         word = word_list[i]  # 提示词 单词
                     else:  # 提示词过少 或者 无提示词
                         word = 'qwe'
-                    # print('word:', word)
+                    print('word:', word)
 
                     for y in range(len(word)):
                         if y == 4:
@@ -191,12 +190,12 @@ class BankedCloze(BasePage):
                 answer = self.get_result()  # 获取 答题结果
 
                 for i in range(int(rate)):
-                    if result[i] not in answer[1]:
+                    if result[i].lower() not in answer[1]:
                         print('★★★ Error - 答题结果错误:', answer[1], result[i])
 
                 print('---------答题情况--------')
                 for i in range(int(rate)):
-                    if result[i] not in answer[0]:
+                    if result[i].lower() != answer[0][i].lower():
                         print('回答错误:', answer[0], result[i])
                     else:
                         print('回答正确:', result[i])

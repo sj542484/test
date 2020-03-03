@@ -1,11 +1,11 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import re
 import time
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
 from utils.get_attribute import GetAttribute
@@ -130,7 +130,7 @@ class ResultPage(BasePage):
         ele = self.driver \
             .find_element_by_id(gv.PACKAGE_ID + "again")
         print(ele.text)
-        return ele,ele.text
+        return ele, ele.text
 
     @teststep
     def back_up_button(self):

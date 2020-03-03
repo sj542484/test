@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 search_data = (
     {'resource': '选词填空', 'uploader': '小玉老师'},  # 资源 # 上传者

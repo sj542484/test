@@ -18,12 +18,12 @@ from conf.report_path import ReportPath
 class Driver:
 
     def __init__(self, udid, platformVersion, deviceName, ports, test_side, test_items):
+        print(udid, platformVersion, deviceName,ports, test_side, test_items, '===============-=')
         self.udid = udid
         self.platformVersion = platformVersion
         self.deviceName = deviceName
         self.ports = ports
         self.test_side = test_side
-        print(self.test_side,'-=-=-=-=-=-=')
         self.test_items = test_items
 
     def remote_info(self, systemport=8200):
@@ -43,7 +43,7 @@ class Driver:
             desired_caps['app'] = gv.STU_PACKAGE
         elif self.test_side == 'teacher':
             desired_caps['app'] = gv.TEA_PACKAGE
-        print('desired:',desired_caps)
+        print('desired:', desired_caps)
         return desired_caps
 
     def run_cases(self, appium_port, sysport, mutex):

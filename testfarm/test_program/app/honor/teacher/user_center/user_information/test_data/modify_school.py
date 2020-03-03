@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 
 # 学校老师不可修改，会提示“没有权限修改学校信息！”；
@@ -18,4 +18,4 @@ school_data = [
     {'sch': 'W万星  在线@x 123W万星  在—线x 123W万星 在', 'status': 'false'},  # 31位
     # {'sch': '#￥%#？@', 'status': 'true'},  # 特殊字符  - 6个字符
     {'sch': '万星在线', 'status': 'true'},  # 中文 - 4个字符
-]
+    ]

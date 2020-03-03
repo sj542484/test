@@ -1,15 +1,15 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import random
-import time
 import re
+import time
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststeps, teststep
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
@@ -30,6 +30,41 @@ class PictureDictation(BasePage):
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'听音选图')]")
         return self.wait.wait_check_element(locator)
 
+    @teststep
+    def exo_play(self):
+        """播放按钮"""
+        horn = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "exo_play")
+        return horn
+
+    @teststep
+    def exo_pause(self):
+        """暂停按钮"""
+        horn = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "exo_pause")
+        return horn
+
+    @teststep
+    def exo_progress(self):
+        """播放 进度"""
+        ele = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "exo_progress")
+        return ele
+
+    @teststep
+    def exo_position(self):
+        """播放 位置"""
+        ele = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "exo_position")
+        return ele
+
+    @teststep
+    def exo_duration(self):
+        """音频长短"""
+        ele = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "exo_duration")
+        return ele
+
     @teststeps
     def img_options(self):
         """展示的图片"""
@@ -48,22 +83,8 @@ class PictureDictation(BasePage):
     @teststeps
     def wait_check_detail_page(self):
         """以“progress”的ID为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "tv_progress")
+        locator = (By.ID, gv.PACKAGE_ID + "result")
         return self.wait.wait_check_element(locator)
-
-    @teststep
-    def result_voice(self):
-        """语音按钮"""
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "iv_play") \
-            .click()
-
-    @teststep
-    def result_progress(self):
-        """进度"""
-        ele = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "tv_progress").text
-        return ele
 
     @teststep
     def result_sentence(self):
@@ -119,6 +140,8 @@ class PictureDictation(BasePage):
         """《听音选图》 游戏过程"""
         if self.wait_check_page():  # 页面检查点
             if Homework().wait_check_play_page():
+                self.exo_pause_operation()  # 听力
+
                 answer = []  # return值 与结果页内容比对
                 timestr = []  # 获取每小题的时间
                 rate = Homework().rate()
@@ -157,6 +180,29 @@ class PictureDictation(BasePage):
                 return rate, answer
 
     @teststeps
+    def exo_pause_operation(self):
+        """暂停按钮"""
+        print('音频长度：', self.exo_duration().text)
+        horn = self.exo_pause()  # 自动播放
+        if not GetAttribute().enabled(horn):  # 暂停按钮钮检查
+            print("★★★ Error- 出现错误：喇暂停按钮可点击")
+        else:
+            print("暂停按钮不可点击")
+
+    @teststeps
+    def exo_play_operation(self):
+        """播音"""
+        button = self.exo_play()   # 发音按钮
+        if not GetAttribute().enabled(button):  # 播放按钮检查
+            print("★★★ Error- 出现错误：播放按钮可点击")
+        else:
+            print("播放按钮不可点击")
+        progress = self.exo_position().text
+        print('当前播放位置：', progress)
+        if re.sub('/D', '', progress) == '0000':
+            print('★★★ Error- 听力时间进度', int(progress))
+
+    @teststeps
     def result_detail_page(self, rate):
         """《听音选图》 查看答案 操作过程"""
         if self.result.wait_check_result_page():  # 结果页检查点
@@ -165,11 +211,25 @@ class PictureDictation(BasePage):
                 if self.wait_check_detail_page():
                     print('查看答案:')
                     print('题数:', int(rate))
-                    self.result_voice()  # 点击发音按钮
-
-                    progress = re.sub("\D", "", self.result_progress())  # 时间进度
-                    if int(progress) == 00000000:
-                        print('★★★ Error- 听力时间进度', int(progress))
+                    print('音频长度：', self.exo_duration().text)
+                    horn = self.exo_play()
+                    if not GetAttribute().enabled(horn):  # 播放按钮检查
+                        print("★★★ Error- 喇叭不可点-------")
+                    else:
+                        horn.click()  # 点击暂停按钮
+                        time.sleep(2)
+                        button = self.exo_pause()
+                        if not GetAttribute().enabled(button):  # 暂停按钮钮检查
+                            print("★★★ Error- 喇暂停按钮不可点击-------")
+                        else:
+                            print("暂停按钮可点击")
+                        progress = self.exo_position().text
+                        print('当前播放位置：', progress)
+                        var = re.sub("\D", "", progress)
+                        if int(var) == 0000:
+                            print('★★★ Error- 听力时间进度', var)
+                        elif var > re.sub("\D", "", self.exo_duration().text):
+                            print('★★★ Error- 听力时间进度有误', var)
 
                     self.swipe_operation(int(rate))  # 具体操作
 

@@ -104,13 +104,14 @@ class CompleteArticleGame(GameCommonEle):
             self.click_back_up_button()
             self.tips_operate()
         self.drag_up_down(drag_down=True)
+        self.screen_swipe_down(0.5, 0.2, 0.9, 1000)
         self.check_position_change()
         self.next_btn_operate('true', self.fab_next_btn)
         return select_answer
 
     @teststep
     def complete_article_result_operate(self, mine_answer):
-        """补全文章页面检查点"""
+        """补全文章结果页处理过程"""
         desc = self.rich_text().get_attribute('contentDescription')
         desc_right_answer = desc.split('## ')[1].split('  ')
         result_right_answer = [x for x in desc_right_answer if x and '(' not in x]

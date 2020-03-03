@@ -1,12 +1,13 @@
-#!/usr/bin/env python
-# encoding:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import unittest
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.test_bank_search_page import SearchPage
-from app.honor.teacher.test_bank.test_data.search_content import search_data
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
+from app.honor.teacher.test_bank.test_data.search_content import search_data
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
@@ -36,7 +37,7 @@ class BankSearch(unittest.TestCase):
         if self.home.wait_check_page():  # 页面检查点
             self.question.judge_into_tab_question()  # 进入首页后 点击 题库tab
 
-            if self.question.wait_check_page('题单'):  # 页面检查点
+            if self.question.wait_check_page():  # 页面检查点
                 self.question.search_input().click()  # 搜索框
 
                 if self.question.wait_check_page('资源'):
@@ -55,7 +56,7 @@ class BankSearch(unittest.TestCase):
 
                             name = self.search_operation()  # 搜索 具体操作
 
-                            if self.question.wait_check_page('题单'):  # 页面检查点
+                            if self.question.wait_check_page():  # 页面检查点
                                 self.question.search_input().click()  # 点击 搜索框
                                 if self.question.wait_check_page('上传者'):
                                     condition1 = self.search.drop_down_button().text  # 下拉按钮
@@ -73,7 +74,7 @@ class BankSearch(unittest.TestCase):
                                     else:
                                         print('两次搜索到的内容一致')
 
-                                    if self.question.wait_check_page('题单'):  # 恢复测试数据
+                                    if self.question.wait_check_page():  # 恢复测试数据
                                         self.question.search_input().click()  # 搜索框
                                         if self.question.wait_check_page('上传者'):
                                             self.search.input_clear_button()  # 清空 按钮
@@ -89,7 +90,7 @@ class BankSearch(unittest.TestCase):
             else:
                 print('未进入题库页面')
 
-            if self.question.wait_check_page('题单'):  # 页面检查点
+            if self.question.wait_check_page():  # 页面检查点
                 self.home.click_tab_hw()  # 返回首页
         else:
             Toast().get_toast()  # 获取toast
@@ -121,17 +122,18 @@ class BankSearch(unittest.TestCase):
     @teststeps
     def history_search_operation(self):
         """点击历史搜索词 搜索"""
-        self.get_word()  # 历史搜索词
+        if self.question.wait_check_page('上传者'):
+            self.get_word()  # 历史搜索词
 
-        if self.question.wait_check_game_type_page():  # 题库 页面
-            name = self.question.question_name()
-            length = 4
-            if len(name[1]) < 5:
-                length = len(name[1])
-            for i in range(length):
-                print(' ', name[1][i])
-            print('--------------------------------------')
-            return name
+            if self.question.wait_check_game_type_page():  # 题库 页面
+                name = self.question.question_name()
+                length = 4
+                if len(name[1]) < 5:
+                    length = len(name[1])
+                for i in range(length):
+                    print(' ', name[1][i])
+                print('--------------------------------------')
+                return name
 
     @teststeps
     def get_word(self, content=None):
@@ -151,8 +153,9 @@ class BankSearch(unittest.TestCase):
 
                 if i == len(name) - 2:
                     content.append(name[i].text)
-                    SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
-                    self.get_word(content)
+                    if self.question.wait_check_page('上传者'):
+                        SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
+                        self.get_word(content)
         else:  # <11 & 翻页
             var = 0
             if content:

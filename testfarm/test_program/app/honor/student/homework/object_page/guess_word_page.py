@@ -6,6 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
 from app.honor.student.homework.object_page.homework_page import Homework
+from app.honor.student.homework import guess_word_operate
 from conf.base_page import BasePage
 from conf.decorator import teststeps, teststep
 

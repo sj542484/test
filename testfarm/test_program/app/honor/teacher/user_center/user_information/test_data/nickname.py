@@ -1,5 +1,6 @@
-#!/usr/bin/env python
-# encoding:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 
 # 昵称：由2~20位中文、数字及英文组成，数字不能做首位；可以允许有字符【.】【@】【空格】
 nickname_data = (
@@ -23,5 +24,4 @@ nickname_data = (
     {'nick': 'f学生2018 z@WSx'},   # 中文、数字、英文、大写字母、空格、@字符组合
     {'nick': 'q12a z.w@S勿x'},  # 中文、数字、英文、大写字母、空格、@、'.'字符组合
     {'nick': 'sff'},  # 改回原来昵称
-)
-
+    )

@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import random
 
 
@@ -14,7 +17,7 @@ _VALID_IMAGE = (
     {'x': '432', 'y': '548.25'},
     {'x': '432', 'y': '841.25'},
     # {'x': '432', 'y': '1133.75'},
-)
+    )
 
 
 class Image:

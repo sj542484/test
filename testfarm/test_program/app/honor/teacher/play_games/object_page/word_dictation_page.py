@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 from selenium.webdriver.common.by import By
@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from app.honor.teacher.play_games.test_data.word_dictation_data import dictation_operation
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststeps, teststep
 from utils.games_keyboard import Keyboard
@@ -197,11 +197,10 @@ class WordDictation(BasePage):
         if self.result.wait_check_result_page():  # 结果页检查点
             self.result.check_result_button()  # 结果页 查看答案 按钮
             if self.result.wait_check_detail_page():
-                if self.wait_check_detail_page():
-                    print('查看答案:')
-                    self.answer_explain(answer)
-                    self.result.back_up_button()  # 返回结果页
-                    time.sleep(2)
+                print('查看答案:')
+                self.answer_explain(answer)
+                self.result.back_up_button()  # 返回结果页
+                time.sleep(2)
             print('==============================================')
 
     @teststeps
@@ -213,22 +212,24 @@ class WordDictation(BasePage):
         if content is None:
             content = []
 
-        hint = self.result_answer()  # 解释
-        if len(hint) > 4 and not content:
-            self.ergodic_list(result, len(hint) - 1)
+        if self.wait_check_detail_page():
+            hint = self.result_answer()  # 解释
+            if len(hint) > 4 and not content:
+                self.ergodic_list(result, len(hint) - 1)
 
-            content = [hint[-2].text]
-            SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
-            self.answer_explain(result, content)
-        else:
-            var = 0
-            if content:
-                for k in range(len(hint)):
-                    if content[0] == hint[k].text:
-                        var += k + 1
-                        break
+                content = [hint[-2].text]
+                if self.wait_check_detail_page():
+                    SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
+                    self.answer_explain(result, content)
+            else:
+                var = 0
+                if content:
+                    for k in range(len(hint)):
+                        if content[0] == hint[k].text:
+                            var += k + 1
+                            break
 
-            self.ergodic_list(result, len(hint), var)
+                self.ergodic_list(result, len(hint), var)
 
     @teststeps
     def ergodic_list(self, result, length, var=0):

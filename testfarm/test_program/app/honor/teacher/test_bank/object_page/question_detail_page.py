@@ -1,11 +1,10 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import re
-import time
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
 from utils.get_attribute import GetAttribute
@@ -24,7 +23,7 @@ class QuestionDetailPage(BasePage):
     @teststeps
     def wait_check_page(self):
         """以“title:题单详情”为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'题单详情')]")
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'详情')]")
         return self.wait.wait_check_element(locator)
 
     @teststeps
@@ -36,48 +35,42 @@ class QuestionDetailPage(BasePage):
     @teststep
     def recommend_button(self):
         """推荐到学校 按钮"""
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "recommend") \
-            .click()
-        time.sleep(2)
+        locator = (By.ID, gv.PACKAGE_ID + "recommend")
+        self.wait.wait_find_element(locator).click()
 
     @teststep
     def collect_button(self):
         """收藏/取消收藏 按钮"""
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "collect") \
-            .click()
-        time.sleep(1)
+        locator = (By.ID, gv.PACKAGE_ID + "collect")
+        self.wait.wait_find_element(locator).click()
 
     @teststep
     def put_to_basket_button(self):
         """加入题筐 按钮"""
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "add_pool") \
-            .click()
+        locator = (By.ID, gv.PACKAGE_ID + "add_pool")
+        self.wait.wait_find_element(locator).click()
 
     @teststep
     def all_check_button(self):
         """全选/全不选 按钮"""
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "all_check") \
-            .click()
+        locator = (By.ID, gv.PACKAGE_ID + "all_check")
+        self.wait.wait_find_element(locator).click()
 
     @teststep
     def check_button(self):
         """单选 按钮"""
-        ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "cb_add")
-        return ele
+        locator = (By.ID, gv.PACKAGE_ID + "cb_add")
+        return self.wait.wait_find_elements(locator)
 
     @teststeps
     def game_item(self):
         """小游戏条目"""
-        ele = self.driver \
-            .find_elements_by_xpath("//android.widget.TextView[contains(@resource-id, %s)]"
-                                    "/parent::android.widget.LinearLayout"
-                                    "/parent::android.widget.LinearLayout/parent::android.widget.LinearLayout"
-                                    "/descendant::android.widget.TextView" % self.game_value)
+        locator = (By.XPATH, "//android.widget.TextView[contains(@resource-id, %s)]"
+                             "/parent::android.widget.LinearLayout"
+                             "/parent::android.widget.LinearLayout/parent::android.widget.LinearLayout"
+                             "/descendant::android.widget.TextView" % self.game_value)
+        ele = self.wait.wait_find_elements(locator)
+
         count = []  # 名称
         game_type = []
         for i in range(len(ele)):

@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 from selenium.webdriver.common.by import By
@@ -8,7 +8,7 @@ from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from app.honor.teacher.play_games.test_data.matching_exercise_data import match_operation
 from conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
 from utils.judge_character_type import JudgeType
@@ -29,6 +29,13 @@ class MatchingExercises(BasePage):
         """以“title:连连看”的xpath-index为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'连连看')]")
         return self.wait.wait_check_element(locator)
+
+    @teststep
+    def item(self):
+        """题数"""
+        ele = self.driver \
+            .find_elements_by_class_name('android.widget.ImageView')
+        return ele
 
     @teststep
     def word_explain(self):
@@ -114,7 +121,7 @@ class MatchingExercises(BasePage):
         if tpe == '图文模式':
             result = self.match_exercise_picture()
             return result
-        elif tpe == '文字模式':
+        else:
             result = self.match_exercise_word()
             return result
 
@@ -127,16 +134,17 @@ class MatchingExercises(BasePage):
                 timestr = []  # 获取每小题的时间
                 rate = Homework().rate()
 
-                if int(rate) % 5 == 0:
-                    page = int(int(rate)/5)
+                count = int(len(self.item()) // 2)
+                if int(rate) % count == 0:
+                    page = int(int(rate) / count)
                 else:
-                    page = int(int(rate) / 5) + 1
+                    page = int(int(rate) / count) + 1
                 print('页数:', page)
 
                 for j in range(page):  # 然后在不同页面做对应的题目
                     print('===========================================')
                     print('第%s页：' % (j+1))
-                    var = j * 5  # 每页5个单词
+                    var = j * count  # 每页5个单词
 
                     ele = self.word_explain()
                     word = ele[0]  # 单词list
@@ -173,27 +181,27 @@ class MatchingExercises(BasePage):
                 timestr = []  # 获取每小题的时间
                 rate = Homework().rate()
 
-                if int(rate) % 5 == 0:
-                    page = int(int(rate) / 5)
+                count = len(self.item())//2
+                if int(rate) % count == 0:
+                    page = int(int(rate) / count)
                 else:
-                    page = int(int(rate) / 5) + 1
+                    page = int(int(rate) / count) + 1
                 print('页数:', page)
 
                 for i in range(page):  # 然后在不同页面做对应的题目
                     print('===========================================')
                     print('第%s页：' % (i + 1))
-                    var = i * 5  # 每页5个单词
+                    var = i * count # 每页4个单词
 
                     ele = self.word_img()  # ele[0]：word; ele[1]：图片
                     word = ele[0]  # word元素
                     img = ele[1]  # 图片元素
-                    text = ele[2]  # word
                     for k in range(len(word)):  # 具体操作
                         print('---------------------------------')
                         time.sleep(1)  # 等待rate值改变
                         Homework().rate_judge(rate, k + var)  # 验证 当前rate值显示是否正确
 
-                        print('word:', text[k])
+                        print('word:', ele[2][k])
                         for z in range(len(img)):
                             word[k].click()  # 点击单词
 
@@ -225,10 +233,11 @@ class MatchingExercises(BasePage):
             if self.result.wait_check_detail_page():
                 print('==============================================')
                 print('查看答案:')
+                content = []
                 if mode == "图文模式":
-                    self.get_list(self.img_ergodic_list, 9)
+                    self.get_list(self.img_ergodic_list, content)
                 elif mode == '文字模式':
-                    self.get_list(self.explain_ergodic_list, 9)
+                    self.get_list(self.explain_ergodic_list, content)
 
                 if self.wait_check_detail_page():
                     self.result.back_up_button()  # 返回结果页
@@ -236,42 +245,49 @@ class MatchingExercises(BasePage):
                 print('★★★ Error - 未进入查看答案页面')
 
     @teststeps
-    def get_list(self, func, length=6, content=None):
+    def get_list(self, func, content=None):
         """单个content值
         :param func: 遍历列表
-        :param length: # 一页内可以展示最大值
         :param content: 用于滑屏翻页
         """
         if self.wait_check_detail_page():
             if content is None:
                 content = []
 
-            var = self.result_word()  # 循环
-            if len(var) > length and not content:
-                func(len(var) - 1)  # 遍历
+            count = []
+            word = self.result_word()  # 循环
+            if len(word) > 8 and not content:
+                content = [word[-2].text]
+                func(count, len(word) - 1)  # 遍历
 
-                content = [var[-2].text]
-                SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
-                self.get_list(func, length, content)
+                if self.wait_check_detail_page():
+                    SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
+                    self.get_list(func, content)
             else:
-                index = 0
+                var = 0
                 if content:
-                    for k in range(len(var)):
-                        if content[0] == var[k].text:
-                            index += k + 1
+                    for k in range(len(word)):
+                        if content[0] == word[k].text:
+                            var += k + 1
                             break
 
-                func(len(var), index)  # 遍历
+                func(count, len(word), var)  # 遍历
 
     @teststeps
-    def explain_ergodic_list(self, length, var=0):
-        """文本模式 - 遍历整个列表"""
+    def explain_ergodic_list(self, content, length, var=0, item=1):
+        """文本模式 - 遍历整个列表
+        :param content: 对错标识为true的索引值
+        :param length:
+        :param var:
+        :param item:1表示有发音按钮
+        """
         explain = self.result_explain()  # 解释
         word = self.result_word()  # word
         mine = self.result_mine()  # 对错标识
 
-        if len(explain) != len(word):
-            print('★★★ Error - word和解释数量不一致', len(explain), len(word))
+        if len(explain) < 7:
+            if len(explain) != len(word):
+                print('★★★ Error - word和解释数量不一致', len(explain), len(word))
 
         for i in range(var, length):
             print('-----------------------------------')
@@ -283,10 +299,14 @@ class MatchingExercises(BasePage):
                 print('★★★ Error - 对错标识', mode)
             else:
                 print('对错标识: true')
+                content.append(i)
+
+            if item == 1:
+                print('点击发音按钮')
             self.result_voice(i)  # 点击发音按钮
 
     @teststeps
-    def img_ergodic_list(self, length, var=0):
+    def img_ergodic_list(self, content, length, var=0, item=1):
         """图文模式 - 遍历整个列表"""
         img = self.result_img()  # 图片
         word = self.result_word()  # 答案
@@ -301,8 +321,11 @@ class MatchingExercises(BasePage):
             if mode != 'true':
                 print('★★★ Error - 对错标识', mode)
             else:
+                content.append(i)
                 print('对错标识: true')
 
+            if item == 1:
+                print('点击发音按钮')
             self.result_voice(i)  # 点击发音按钮
 
     @teststeps

@@ -1,13 +1,15 @@
-#!/usr/bin/env python
-# encoding:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import unittest
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.test_bank_search_page import SearchPage
 from app.honor.teacher.test_bank.test_data.search_content import search_data
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from conf.decorator import setup, teardown, testcase, teststeps
+from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
 
 
@@ -45,23 +47,25 @@ class BankSearch(unittest.TestCase):
                 if self.question.wait_check_page('资源'):
                     word = self.search.get_history_search_word()  # 历史搜索词
                     print('------------------------------------------')
-                    print('历史搜索词：', '\n'
-                          , word[0])
+                    print('历史搜索词：\n', word[0])
 
-                    self.get_word_operation(word[0])  # 准备 历史搜索词
+                    words = self.get_word_operation(word[0])  # 准备 历史搜索词
                     if self.search.wait_check_search_page():
                         word = self.search.get_history_search_word()  # 历史搜索词
 
-                    print('------------------------------------------')
-                    print('历史搜索词：', '\n'
-                          , word[0])
-                    print('--------------------------------')
+                    print('------------------------------------------\n'
+                          '历史搜索词：\n {}'
+                          '\n--------------------------------'.format(word[0]))
                     if len(word[0]) == 15:
                         print('历史搜索最多15条,目前15条')
                     elif len(word[0]) > 15:
                         print('★★★ Error - 历史搜索最多15条', len(word[0]))
 
-                    for i in range(len(word[0])-1, 0, -1):
+                    SwipeFun().swipe_vertical(0.5, 0.2, 0.95)
+                    length = len(words)
+                    if len(words) > 2:
+                        length = 2
+                    for i in range(length):
                         if self.search.wait_check_search_page():
                             print('----------------')
                             self.search.delete_button(i)  # 删除按钮
@@ -84,7 +88,7 @@ class BankSearch(unittest.TestCase):
         """准备 历史搜索词"""
         var = 0
         content = []
-        print('------------------------------------------')
+        print('------------------准备历史搜索词-------------------')
         for i in range(len(item)+1):
             if self.question.wait_check_page('资源'):
                 box = self.question.search_input()  # 搜索框
@@ -92,7 +96,7 @@ class BankSearch(unittest.TestCase):
                 for j in range(var, len(search_data)):
                     if search_data[j]['resource'] not in item:
                         var = j+1
-                        box.send_keys(r'' + search_data[j]['resource'])  # 输入搜索内容
+                        box.send_keys(search_data[j]['resource'])  # 输入搜索内容
                         content.append(search_data[j]['resource'])
                         print('搜索内容：', box.text)
                         self.search.search_button()  # 搜索按钮

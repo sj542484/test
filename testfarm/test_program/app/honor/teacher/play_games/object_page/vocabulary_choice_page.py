@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
@@ -110,16 +110,16 @@ class VocabularyChoice(BasePage):
     @teststeps
     def diff_type(self, tpe):
         """选择 不同模式小游戏的 游戏方法"""
+        global result
         if tpe == '选单词':
             result = self.vocab_select_choice_word()
-            return result
         elif tpe == '选解释':
             result = self.vocab_select_choice_explain()
-            return result
         elif tpe == '听音选词':  # 听音选词模式
-            result = self.vocab_select_listen_choice()
-            return result
-            # print('听音选词模式')
+            result = self.vocab_select_listen_words()
+        elif tpe == '听音选义':  # 听音选义 模式
+            result = self.vocab_select_listen_explain()
+        return result
 
     @teststeps
     def vocab_select_choice_explain(self):
@@ -175,8 +175,8 @@ class VocabularyChoice(BasePage):
                 return rate, questions
 
     @teststeps
-    def vocab_select_listen_choice(self):
-        """《词汇选择》 - 听音选词模式 游戏过程"""
+    def vocab_select_listen_words(self):
+        """《词汇选择》 - 听音选词 模式 游戏过程"""
         if self.wait_check_page():
             if Homework().wait_check_play_page():
                 questions = []  # 答对的题
@@ -187,14 +187,45 @@ class VocabularyChoice(BasePage):
                     Homework().rate_judge(rate, i)  # 测试当前rate值显示是否正确
                     Homework().next_button_operation('false')  # 下一题 按钮 判断加 点击操作
 
-                    self.voice()   # 题目后的听力按钮
+                    self.voice()  # 题目后的听力按钮
                     self.click_voice()  # 发音按钮
 
                     options = self.option_button()
-                    options[random.randint(0, len(options)-1)].click()  # 随机点击选项
+                    options[random.randint(0, len(options) - 1)].click()  # 随机点击选项
 
                     item = self.explain()  # 中文解释
                     print(item)
+                    self.options_statistic(questions, item)  # 选择对错统计
+
+                    print('----------------------------------')
+                    timestr.append(Homework().time())  # 统计每小题的计时控件time信息
+                    Homework().next_button_operation('true')  # 下一题 按钮 状态判断 加点击
+
+                Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
+                print('=================================================')
+                return rate, questions
+
+    @teststeps
+    def vocab_select_listen_explain(self):
+        """《词汇选择》 - 听音选义 模式 游戏过程"""
+        if self.wait_check_page():
+            if Homework().wait_check_play_page():
+                questions = []  # 答对的题
+                timestr = []  # 获取每小题的时间
+
+                rate = Homework().rate()
+                for i in range(int(rate)):
+                    Homework().rate_judge(rate, i)  # 测试当前rate值显示是否正确
+                    Homework().next_button_operation('false')  # 下一题 按钮 判断加 点击操作
+
+                    self.voice()  # 题目后的听力按钮
+                    self.click_voice()  # 发音按钮
+
+                    options = self.option_button()
+                    index = random.randint(0, len(options) - 1)
+                    item = options[index].text
+                    options[index].click()  # 随机点击选项
+
                     self.options_statistic(questions, item)  # 选择对错统计
 
                     print('----------------------------------')
@@ -225,7 +256,7 @@ class VocabularyChoice(BasePage):
             print('回答错误T/F：%s // %s' % (options[ele[1]].text, options[ele[0]].text))
 
     @teststeps
-    def result_detail_page(self, rate):
+    def result_detail_page(self):
         """《词汇选择》 查看答案 操作过程"""
         if self.result.wait_check_result_page():  # 结果页检查点
             self.result.check_result_button()  # 结果页 查看答案 按钮
@@ -249,8 +280,9 @@ class VocabularyChoice(BasePage):
                 self.ergodic_list(len(ques) - 1)
                 content = [ques[-2].text]
 
-                SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
-                self.swipe_operation(content)
+                if self.result.wait_check_detail_page():
+                    SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
+                    self.swipe_operation(content)
             else:
                 var = 0
                 if content:

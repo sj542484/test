@@ -8,7 +8,7 @@ from app.honor.student.user_center.object_page.buy_card_page import PurchasePage
 from app.honor.student.user_center.object_page.user_Info_page import UserInfoPage
 from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from app.honor.web.object_pages.assign_word import AssignWord
-from app.honor.web.object_pages.driver import Driver
+from app.honor.web import Driver
 from app.honor.student.word_book.object_page.wordbook_sql import WordBookSql
 from conf.base_page import BasePage
 from conf.decorator import teststep

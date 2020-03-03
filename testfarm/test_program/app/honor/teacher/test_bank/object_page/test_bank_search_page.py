@@ -1,12 +1,11 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
-
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
-from testfarm.test_program.conf.base_page import BasePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
+from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
 from utils.swipe_screen import SwipeFun
@@ -22,11 +21,16 @@ class SearchPage(BasePage):
 
     lock_value = gv.PACKAGE_ID + "lock"  # 锁input_clear_button
 
-
     def __init__(self):
         self.sp = SwipeFun()
         self.home = ThomePage()
         self.wait = WaitElement()
+
+    @teststeps
+    def wait_check_page(self, var, index=10):
+        """以''的text为依据"""
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'%s')]" % var)
+        return self.wait.wait_check_element(locator, index)
 
     # 搜索框
     @teststeps
@@ -128,7 +132,8 @@ class SearchPage(BasePage):
                 content.append(name[i].text)
 
             self.sp.swipe_vertical(0.5, 0.85, 0.1)
-            return self.get_history_search_word(item, content)
+            if self.wait_check_page('资源'):
+                return self.get_history_search_word(item, content)
         else:  # <10 & 翻页
             var = 0
             if content:

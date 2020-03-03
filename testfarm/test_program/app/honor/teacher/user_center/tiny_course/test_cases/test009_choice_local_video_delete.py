@@ -1,24 +1,29 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
+import time
 import unittest
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from conf.base_page import BasePage
+from conf.decorator import testcase, teststeps, setup
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
 from app.honor.teacher.user_center.tiny_course.object_page.create_tiny_course_page import CreateTinyCourse
-from app.honor.teacher.user_center.tiny_course.object_page.video_page import VideoPage
+from app.honor.teacher.user_center.tiny_course.object_page.video_page6X import VideoPage
 from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
-from conf.decorator import testcase, teststeps, setup, teardown
+from utils.assert_func import ExpectingTest
 from utils.toast_find import Toast
 
 
-class Delate(unittest.TestCase):
+class TinyCourse(unittest.TestCase):
     """微课 选择本地视频后删除"""
     @classmethod
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.ass_result = unittest.TestResult()
+        cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
         cls.user = TuserCenterPage()
@@ -26,10 +31,15 @@ class Delate(unittest.TestCase):
         cls.video = VideoPage()
         cls.game = GamesPage()
 
-    @classmethod
-    @teardown
-    def tearDown(cls):
-        pass
+        BasePage().set_assert(cls.ass)
+
+    def tearDown(self):
+        for i in self.ass.get_error():
+            self.ass_result.addFailure(self, i)
+
+    def run(self, result=None):
+        self.ass_result = result
+        super(TinyCourse, self).run(result)
 
     @testcase
     def test_delete_video(self):
@@ -61,19 +71,25 @@ class Delate(unittest.TestCase):
             if self.tiny.wait_check_menu_page():
                 self.tiny.menu_item()[1].click()  # 点击 本地视频
                 if self.video.wait_check_local_page():
-                    if self.video.wait_check_local_list_page():
-                        # content = self.video.video_item()  # 视频条目信息
-                        # for i in range(0, len(content[0]), 2):
-                        #     print(content[0][i], content[0][i+1])
-                        # print('------------------------------')
+                    self.video.menu_button()  # 左上角
+                    time.sleep(2)
+                    self.video.video_file_button()
+                    if self.video.wait_check_video_file_page('视频'):
+                        self.video.album_button()[0].click()
 
-                        self.video.album_button()[0].click()  # 选择视频
-                        if self.video.wait_check_cut_page(3):
-                            self.video.rule_hint()
-                            self.video.control_button()
-                            self.video.finish_button()
-                    else:
-                        print('！！！暂无本地视频')
+                        if self.video.wait_check_local_list_page():
+                            content = self.video.video_item()  # 视频条目信息
+                            for i in range(0, len(content[0]), 2):
+                                print(content[0][i], content[0][i+1])
+                            print('------------------------------')
+
+                            self.video.album_button()[0].click()  # 选择视频
+                            if self.video.wait_check_cut_page(3):
+                                self.video.rule_hint()
+                                self.video.control_button()
+                                self.video.finish_button()
+                        else:
+                            print('！！！暂无本地视频')
 
     @teststeps
     def delete_video_operation(self):

@@ -1,21 +1,20 @@
-#!/usr/bin/env python
-# encoding:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import unittest
 import re
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
-from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
+from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
+from app.honor.teacher.test_bank.object_page.question_basket_page import TestBasketPage
+from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
 from app.honor.teacher.user_center.mine_recommend.object_page.mine_recommend_page import RecommendPage
 from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
-from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from app.honor.teacher.test_bank.object_page.question_basket_page import QuestionBasketPage
-from app.honor.teacher.test_bank.object_page.question_detail_page import QuestionDetailPage
 from app.honor.teacher.user_center.mine_collection.object_page.mine_collect_page import CollectionPage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.get_attribute import GetAttribute
-from utils.swipe_find_element import SwipeFindElement
 from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
 
@@ -32,11 +31,9 @@ class QuestionDetail(unittest.TestCase):
         cls.user = TuserCenterPage()
         cls.question = TestBankPage()
         cls.detail = QuestionDetailPage()
-        cls.basket = QuestionBasketPage()
-        cls.collect = CollectionPage()
-        cls.game = GamesPage()
+        cls.basket = TestBasketPage()
         cls.get = GetAttribute()
-        cls.recommend = RecommendPage()
+
 
     @classmethod
     @teardown
@@ -59,26 +56,37 @@ class QuestionDetail(unittest.TestCase):
                     for i in range(len(item[0])):
                         count = re.sub("\D", "", item[2][i].text)  # 该题单大题数
 
-                        if int(count) < 6:
+                        if int(count) < 15:
                             name.append(item[0][i])  # 题单name
                             item[2][i].click()  # 点击第X道题单
                             k += 1
                             break
+                    if name:
+                        result = self.detail_operation(name[0])  # 题单详情页
 
-                    result = self.detail_operation(name[0])  # 题单详情页
+                        self.judge_basket_result(result[0])  # 验证加入题筐结果
+                        if self.question.wait_check_page('题单'):  # 验证 -选择本校标签 结果
+                            print(result)
+                            if result[1]:
+                                FilterPage().judge_school_label_result(name[0], result[1][1], '题单')
 
-                    self.judge_basket_result(result[0])  # 验证加入题筐结果
-                    if self.question.wait_check_page('题单'):  # 验证 -选择本校标签 结果
-                        FilterPage().judge_school_label_result(name[0], result[1][1], '题单')
+                        if self.question.wait_check_page(name[0]):
+                            self.home.click_tab_profile()  # 个人中心
+                            if self.user.wait_check_page():
+                                self.user.click_mine_collection()  # 我的收藏
+                                CollectionPage().verify_collect_result(name[0])  # 验证 收藏结果
 
-                    CollectionPage().verify_collect_result(name[0], '题单')  # 验证 收藏结果
-                    RecommendPage().verify_recommend_result(name[0], '题单')  # 验证 推荐结果
+                        if self.user.wait_check_page():
+                            self.user.click_mine_recommend()  # 我的推荐
+                            RecommendPage().verify_recommend_result(name[0])  # 验证 推荐结果
 
-                    if k != 0:
-                        break
+                        if k != 0:
+                            break
 
-                if self.user.wait_check_page():  # 页面检查点
-                    self.home.click_tab_hw()  # 返回首页
+                        if self.user.wait_check_page():  # 页面检查点
+                            self.home.click_tab_hw()  # 返回首页
+                    else:
+                        print('暂无可操作题单')
             else:
                 print('未进入题库页面')
         else:
@@ -100,7 +108,7 @@ class QuestionDetail(unittest.TestCase):
                         if not self.get.checked(check[i]):
                             print('★★★ Error- 未默认全选')
                 else:
-                    SwipeFindElement().swipe_up_ele()  # 滑屏一次
+                    SwipeFun().swipe_vertical(0.5, 0.9, 0.25)  # 滑屏一次
 
                     if self.detail.wait_check_list_page():  # 题单信息加载完成
                         check = self.detail.check_button()  # 单选按钮
@@ -119,9 +127,6 @@ class QuestionDetail(unittest.TestCase):
                 if self.detail.wait_check_list_page():
                     self.detail.collect_button()  # 收藏按钮
                     print(' 点击收藏按钮')
-
-                if self.detail.wait_check_list_page():
-                    self.detail.all_check_button()  # 全不选 按钮
 
                 if self.detail.wait_check_list_page():
                     ele = self.detail.check_button()  # 单选按钮
@@ -153,7 +158,7 @@ class QuestionDetail(unittest.TestCase):
             self.question.question_basket()  # 题筐
             if self.basket.wait_check_page():  # 页面检查点
                 if self.basket.wait_check_list_page():
-                    print('--------------验证 -加入题筐结果-----------------')
+                    print('--------------验证 -加入题筐结果---------------')
                     item = self.question.question_name()  # 获取题目
                     name1 = item[1][0]
                     if name != name1:

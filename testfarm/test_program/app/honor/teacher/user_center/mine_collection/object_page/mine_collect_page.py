@@ -1,25 +1,29 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from conf.base_page import BasePage
+from conf.base_config import GetVariable as gv
+from conf.decorator import teststep, teststeps
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
-from testfarm.test_program.conf.base_page import BasePage
-from conf.base_config import GetVariable as gv
-from conf.decorator import teststep, teststeps
 from utils.wait_element import WaitElement
 
 
 class CollectionPage(BasePage):
     """我的收藏 页面"""
+    label_manage_value = "//android.widget.TextView[contains(@text,'标签管理')]"
+
     def __init__(self):
         self.filter = FilterPage()
         self.wait = WaitElement()
+        self.question = TestBankPage()
+        self.home = ThomePage()
 
     @teststeps
     def wait_check_page(self):
@@ -39,6 +43,12 @@ class CollectionPage(BasePage):
         self.driver \
             .find_element_by_class_name("android.widget.ImageView") \
             .click()
+
+    @teststeps
+    def wait_check_label_manage_page(self):
+        """以“存在 我的收藏列表”的text为依据"""
+        locator = (By.XPATH, self.label_manage_value)
+        return self.wait.wait_check_element(locator)
 
     @teststep
     def label_manage_button(self):
@@ -162,44 +172,58 @@ class CollectionPage(BasePage):
     @teststeps
     def verify_collect_result(self, menu, var='题单'):
         """验证 添加收藏 结果"""
-        if TestBankPage().wait_check_page(var):
-            ThomePage().click_tab_profile()  # 个人中心
-            if TuserCenterPage().wait_check_page():
+        if self.wait_check_page():
+            print('------------------验证 -收藏结果------------------')
+            if var == '大题':
+                TuserCenterPage().filter_button()  # 筛选按钮
+                if FilterPage().wait_check_page():
+                    TuserCenterPage().click_game_list()  # 点击大题
+                    FilterPage().commit_button()  # 确定按钮
+            elif var == '试卷':
+                TuserCenterPage().filter_button()  # 筛选按钮
+                if FilterPage().wait_check_page():
+                    TuserCenterPage().click_test_paper()  # 点击试卷
+                    FilterPage().commit_button()  # 确定按钮
 
-                TuserCenterPage().click_mine_collection()  # 我的收藏
-                if self.wait_check_page():
-                    print('---------------验证 -收藏结果------------------')
-                    if var == '大题':
-                        TuserCenterPage().filter_button()  # 筛选按钮
-                        if FilterPage().wait_check_page():
-                            TuserCenterPage().click_game_list()  # 点击大题
-                            FilterPage().commit_button()  # 确定按钮
-                    elif var == '试卷':
-                        TuserCenterPage().filter_button()  # 筛选按钮
-                        if FilterPage().wait_check_page():
-                            TuserCenterPage().click_test_paper()  # 点击试卷
-                            FilterPage().commit_button()  # 确定按钮
+            if self.wait_check_page():
+                if self.wait_check_list_page():
+                    item = TestBankPage().question_name()  # 获取
+                    menu1 = item[1][0]
+                    if '提分' in menu:
+                        menu = menu[:-2]
+                    if menu != menu1:
+                        print('★★★ Error- 加入收藏失败', menu, menu1)
+                    else:
+                        print('加入收藏成功')
+                        print('----------------')
+                        for z in range(len(item[0])):
+                            print(item[1][z])
+                            if self.wait_check_page():
+                                self.menu_button(0)  # 为了保证脚本每次都可以运行，故将加入收藏的题单取消收藏
 
-                    if self.wait_check_page():
-                        if self.wait_check_list_page():
-                            item = TestBankPage().question_name()  # 获取
-                            menu1 = item[1][0]
-                            if '提分' in menu:
-                                menu = menu[:-2]
-                            if menu != menu1:
-                                print('★★★ Error- 加入收藏失败', menu, menu1)
-                            else:
-                                print('加入收藏成功')
-                                print('----------------')
-                                for z in range(len(item[0])):
-                                    print(item[1][z])
-                                    if self.wait_check_page():
-                                        self.menu_button(0)  # 为了保证脚本每次都可以运行，故将加入收藏的题单取消收藏
+                                if self.home.wait_check_tips_page():
+                                    self.cancel_collection()  # 取消收藏
+                                    print('确定取消收藏')
+                                    print('------------------')
 
-                                        if ThomePage().wait_check_tips_page():
-                                            self.cancel_collection()  # 取消收藏
-                                            print('确定取消收藏')
-                                            print('------------------')
+            if self.wait_check_page():
+                self.home.back_up_button()  # 返回个人中心页面
+    
+    @teststeps
+    def cancel_collection_operation(self):
+        """恢复测试数据 - 取消收藏"""
+        if self.wait_check_page():  # 页面检查点
+            if self.wait_check_list_page():
+                print('---------------------')
+                print('恢复测试数据:')
+                item = self.question.question_name()  # 获取
+                for z in range(len(item[0])):
+                    if self.wait_check_list_page():
+                        name = self.question.question_name()  # 获取
+                        print(name[1][0])
+                        self.menu_button(0)  # 为了保证脚本每次都可以运行，故将加入收藏的题单取消收藏
 
-                    if self.wait_check_page():
-                        ThomePage().back_up_button()  # 返回个人中心页面
+                        if self.home.wait_check_tips_page():
+                            self.cancel_collection()  # 取消收藏
+                            print('确定取消收藏')
+                            print('------------------')

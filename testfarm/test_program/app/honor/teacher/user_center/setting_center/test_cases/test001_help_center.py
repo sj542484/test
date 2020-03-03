@@ -1,11 +1,16 @@
-# coding=utf-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import unittest
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from conf.base_page import BasePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
-from app.honor.teacher.user_center.setting_center.object_page.setting_page import SettingPage
-from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage, HelpCenter
-from conf.decorator import setup, teardown, testcase
+from app.honor.teacher.user_center.setting_center.object_page.setting_page import SettingPage, HelpCenter
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
+from conf.decorator import setup, testcase, teardown
+from utils.assert_func import ExpectingTest
+from utils.screen_shot import ScreenShot
 from utils.toast_find import Toast
 
 
@@ -15,16 +20,24 @@ class Help(unittest.TestCase):
     @setup
     def setUp(cls):
         """启动应用"""
+        cls.ass_result = unittest.TestResult()
+        cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
         cls.user = TuserCenterPage()
         cls.setting = SettingPage()
         cls.help = HelpCenter()
 
-    @classmethod
+        BasePage().set_assert(cls.ass)
+
     @teardown
-    def tearDown(cls):
-        pass
+    def tearDown(self):
+        for i in self.ass.get_error():
+            self.ass_result.addFailure(self, i)
+
+    def run(self, result=None):
+        self.ass_result = result
+        super(Help, self).run(result)
 
     @testcase
     def test_help_center(self):
@@ -41,9 +54,11 @@ class Help(unittest.TestCase):
 
                     if self.help.wait_check_page():  # 页面检查点
                         if self.help.wait_check_view_page():
+                            self.help.title()  # title
+                            ScreenShot().get_screenshot(self.help.img())  # 获取截图
                             self.help.view()  # text:'我的助教'
-                            self.home.back_up_button()  # 点击 返回按钮
 
+                            self.home.back_up_button()  # 点击 返回按钮
                             if self.setting.wait_check_page():  # 页面检查点
                                 self.home.back_up_button()  # 点击 返回按钮
                     else:
@@ -54,4 +69,3 @@ class Help(unittest.TestCase):
         else:
             Toast().get_toast()  # 获取toast
             print("未进入主界面")
-

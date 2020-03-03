@@ -1,13 +1,14 @@
-#!/usr/bin/env python
-# code:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
+import re
 import time
 import random
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststeps, teststep
 from utils.get_attribute import GetAttribute
@@ -28,16 +29,44 @@ class Listening(BasePage):
 
     @teststeps
     def wait_check_page(self):
-        """以“title:听力练习”的ID为依据"""
+        """以“title:听后选择”的ID为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'听后选择')]")
         return self.wait.wait_check_element(locator)
 
     @teststep
-    def play_voice(self):
+    def exo_play(self):
         """播放按钮"""
         horn = self.driver\
-            .find_element_by_id(gv.PACKAGE_ID + "fab_audio")
+            .find_element_by_id(gv.PACKAGE_ID + "exo_play")
         return horn
+
+    @teststep
+    def exo_pause(self):
+        """暂停按钮"""
+        horn = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "exo_pause")
+        return horn
+
+    @teststep
+    def exo_progress(self):
+        """播放 进度"""
+        ele = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "exo_progress")
+        return ele
+
+    @teststep
+    def exo_position(self):
+        """播放 位置"""
+        ele = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "exo_position")
+        return ele
+
+    @teststep
+    def exo_duration(self):
+        """音频长短"""
+        ele = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "exo_duration")
+        return ele
 
     @teststeps
     def red_tips(self):
@@ -53,7 +82,7 @@ class Listening(BasePage):
         """选项"""
         ele = self.driver\
             .find_elements_by_xpath("//android.widget.TextView[contains(@text, '%s')]"
-                                    "/following-sibling::android.widget.LinearLayout/android.widget.LinearLayout"
+                                    "/following-sibling::android.view.ViewGroup/android.widget.LinearLayout"
                                     "/android.widget.LinearLayout/android.widget.TextView" % var)
         item = []
         content = []
@@ -100,17 +129,13 @@ class Listening(BasePage):
     @teststeps
     def get_first_num(self):
         """获取 当前页面第一个题号"""
-        item = self.questions()[0].text.split(".")[0]
-        return item
+        return self.questions()[0].text.split(".")[0]
     
     @teststep
     def question_judge(self, var):
         """元素 resource-id属性值是否为题目"""
         value = GetAttribute().resource_id(var)
-        if value == self.question_value:
-            return True
-        else:
-            return False
+        return True if value == self.question_value else False
 
     # 查看答案 页面
     @teststeps
@@ -128,11 +153,21 @@ class Listening(BasePage):
                 if not hint:   # 检查是否有红色提示
                     print("----没有红色标识------")
 
-                horn = self.play_voice()
-                if not self.get.enabled(horn):  # 播放按钮检查
-                    print("出现错误：喇叭不可点-------")
+                print('音频长度：', self.exo_duration().text)
+                horn = self.exo_play()
+                if not GetAttribute().enabled(horn):  # 播放按钮检查
+                    print("★★★ Error- 播放按钮不可点击")
                 else:
-                    horn.click()  # 点击发音按钮
+                    print("播放按钮可点击")
+                    horn.click()
+                    print('当前播放位置：', self.exo_position().text)
+                    #
+                    # horn = self.exo_pause()
+                    # if GetAttribute().enabled(horn):  # 暂停按钮钮检查
+                    #     print("★★★ Error- 喇暂停按钮可点击")
+                    # else:
+                    #     print("暂停按钮不可点击")
+
                     if self.red_tips() is False:  # 检查红色提示 是否消失
                         answer = []  # return值 与结果页内容比对
                         timestr = []  # 获取每小题的时间
@@ -151,6 +186,29 @@ class Listening(BasePage):
                                     time.sleep(3)
                         print('==============================================')
                         return rate
+
+    @teststeps
+    def exo_pause_operation(self):
+        """暂停按钮"""
+        print('音频长度：', self.exo_duration().text)
+        horn = self.exo_pause()  # 自动播放
+        if not GetAttribute().enabled(horn):  # 暂停按钮钮检查
+            print("★★★ Error- 出现错误：喇暂停按钮可点击")
+        else:
+            print("暂停按钮不可点击")
+
+    @teststeps
+    def exo_play_operation(self):
+        """播音"""
+        button = self.exo_play()  # 发音按钮
+        if not GetAttribute().enabled(button):  # 播放按钮检查
+            print("★★★ Error- 出现错误：播放按钮可点击")
+        else:
+            print("播放按钮不可点击")
+        progress = self.exo_position().text
+        print('当前播放位置：', progress)
+        if int(progress) == 00000000:
+            print('★★★ Error- 听力时间进度', int(progress))
 
     @teststeps
     def swipe_operation(self, swipe_num, timestr, answer):
@@ -226,6 +284,41 @@ class Listening(BasePage):
 
         timestr.append(self.time())  # 统计每小题的计时控件time信息
         print('-----------------------------------------')
+
+    @teststeps
+    def result_detail_page(self, rate):
+        """《听后选择》 查看答案 操作过程"""
+        if self.result.wait_check_result_page():  # 结果页检查点
+            self.result.check_result_button()  # 结果页 查看答案 按钮
+            if self.result.wait_check_detail_page():
+                if self.wait_check_detail_page():
+                    print('查看答案:')
+                    print('题数:', int(rate))
+                    print('音频长度：', self.exo_duration().text)
+                    horn = self.exo_play()
+                    if not GetAttribute().enabled(horn):  # 播放按钮检查
+                        print("出现错误：喇叭不可点-------")
+                    else:
+                        horn.click()  # 点击暂停按钮
+                        # time.sleep(2)
+                        # button = self.exo_pause()
+                        # if not GetAttribute().enabled(button):  # 暂停按钮钮检查
+                        #     print("出现错误：喇暂停按钮不可点击-------")
+                        # else:
+                        #     print("暂停按钮不可点击")
+
+                        progress = self.exo_position().text
+                        print('当前播放位置：', progress)
+                        var = re.sub("\D", "", progress)
+                        if int(var) == 0000:
+                            print('★★★ Error- 听力时间进度', var)
+                        elif var > re.sub("\D", "", self.exo_duration().text):
+                            print('★★★ Error- 听力时间进度有误', var)
+
+                    self.swipe_operation(int(rate))  # 具体操作
+
+                    self.result.back_up_button()  # 返回结果页
+            print('==============================================')
 
     @teststeps
     def study_again(self):

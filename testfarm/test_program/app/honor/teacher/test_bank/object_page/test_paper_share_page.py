@@ -1,16 +1,16 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from app.honor.teacher.test_bank.object_page.test_paper_detail_page import PaperDetailPage
 from app.honor.teacher.user_center.user_information.object_page.change_image_page import ChangeImage
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
@@ -211,7 +211,7 @@ class PaperSharePage(BasePage):
                       self.share_name(), ':', name.text, '\n',
                       self.share_school(), ':', school.text, '\n',
                       self.share_contact(), ':', contact.text, '\n',
-                      self.send_title(), ':', self.wechat_friend().text,self.wechat_circle().text, self.copy_link().text)
+                      self.send_title(), ':', self.wechat_friend().text, self.wechat_circle().text, self.copy_link().text)
                 print('----------------------------------------------------')
 
     # 使用说明

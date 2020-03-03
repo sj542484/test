@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 from selenium.webdriver.common.by import By
@@ -8,7 +8,7 @@ from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from app.honor.teacher.play_games.test_data.sentence_transform_data import sentence_transform_operation
 from conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
@@ -17,6 +17,7 @@ from utils.wait_element import WaitElement
 
 class SentenceTrans(BasePage):
     """句型转换"""
+
     # 以下为 共有元素
     def __init__(self):
         self.result = ResultPage()
@@ -79,7 +80,9 @@ class SentenceTrans(BasePage):
     def mine_result(self):
         """展示的答题结果"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "tv_text")
+            .find_elements_by_xpath('//android.support.v7.widget.RecyclerView[contains(@resource-id,"{}")]'
+                                    '/android.widget.LinearLayout/android.widget.TextView'
+                                    .format(gv.PACKAGE_ID + "rv_answer"))
         word = []
         for i in range(len(ele)):
             word.append(ele[i].text)
@@ -98,7 +101,7 @@ class SentenceTrans(BasePage):
     @teststeps
     def wait_check_detail_page(self):
         """以“answer”的ID为依据"""
-        locator = (By.ID, gv.PACKAGE_ID  + "tv_answer")
+        locator = (By.ID, gv.PACKAGE_ID + "tv_answer")
         return self.wait.wait_check_element(locator)
 
     @teststeps
@@ -106,9 +109,7 @@ class SentenceTrans(BasePage):
         """展示的题目"""
         ele = self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + "tv_question")
-        word = []
-        for i in range(len(ele)):
-            word.append(ele[i].text)
+        word = [k.text for k in ele]
         return word
 
     @teststeps
@@ -116,9 +117,7 @@ class SentenceTrans(BasePage):
         """展示的 正确答案"""
         ele = self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + "tv_answer")
-        word = []
-        for i in range(len(ele)):
-            word.append(ele[i].text)
+        word = [k.text for k in ele]
         return word
 
     @teststeps
@@ -126,9 +125,7 @@ class SentenceTrans(BasePage):
         """我的答案"""
         ele = self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + "tv_mine")
-        words = []
-        for i in range(len(ele)):
-            words.append(ele[i].text)
+        words = [k.text for k in ele]
         word = words[0].split(' ')
         return words, word
 
@@ -174,6 +171,7 @@ class SentenceTrans(BasePage):
                     if self.correct_title():  # 页面检查点
                         result = self.mine_result()  # 做题结果
                         correct = self.correct_answer()[1]  # 正确答案-- 分解成单词
+
                         for k in range(len(result)):  # 做错 count+1
                             if correct[k] != result[k]:
                                 count.append(k)

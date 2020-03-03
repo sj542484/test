@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# encoding:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 
 phone_data = (

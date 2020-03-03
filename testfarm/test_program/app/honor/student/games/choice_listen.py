@@ -36,8 +36,10 @@ class ListenChoiceGame(ClozeGame):
     @teststep
     def listen_choice_lib_hw_operate(self, fq, half_exit,  sec_answer=None):
         """听后选择 游戏处理"""
+        time.sleep(3)
         print(self.red_hint())
         self.voice_button().click()
+        time.sleep(5)
         if self.wait_check_red_hint_page():
             self.base_assert.except_error('听后选择点击开始音频按钮后， 红色提示未消失')
         mine_answer = {}

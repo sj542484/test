@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 from selenium.webdriver.common.by import By
@@ -9,7 +9,7 @@ from utils.games_keyboard import Keyboard
 from utils.click_bounds import ClickBounds
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
@@ -18,7 +18,7 @@ from utils.wait_element import WaitElement
 class FlashCard(BasePage):
     """闪卡练习"""
     voice_button_value = gv.PACKAGE_ID + "play_voice"
-    voice_locator = (By.ID, voice_button_value)
+    finish_study_value = "//android.widget.TextView[contains(@text,'完成学习')]"
 
     def __init__(self):
         self.get = GetAttribute()
@@ -28,15 +28,15 @@ class FlashCard(BasePage):
         self.wait = WaitElement()
 
     @teststeps
-    def wait_check_page(self,var=10):
+    def wait_check_page(self, var=10):
         """以“title:闪卡练习”的ID为依据"""
         locator = (By.ID, gv.PACKAGE_ID + "iv_star")
         return self.wait.wait_check_element(locator, var)
 
     @teststep
-    def wait_check_tip_num(self, num, var=10):
-        """查看题目数量是否发生改变"""
-        locator = (By.XPATH, "//android.widget.ImageView[contains(@text,'{}')]".format(num))
+    def judge_img_exist(self, var=3):
+        """ 图片是否存在"""
+        locator = (By.ID, gv.PACKAGE_ID + "img")
         return self.wait.wait_check_element(locator, var)
 
     @teststep
@@ -72,7 +72,7 @@ class FlashCard(BasePage):
     def pattern_switch(self):
         """闪卡练习页面内  全英/英汉模式切换 按钮"""
         self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "iv_rotate")\
+            .find_element_by_id(gv.PACKAGE_ID + "side")\
             .click()
         time.sleep(1)
 
@@ -80,13 +80,13 @@ class FlashCard(BasePage):
     @teststeps
     def wait_check_sentence_page(self, var=10):
         """以“例句”的ID为依据"""
-        locator = (By.ID, gv.PACKAGE_ID+ "sentence")
+        locator = (By.ID, gv.PACKAGE_ID + "sentence")
         return self.wait.wait_check_element(locator, var)
 
     @teststeps
     def wait_check_explain_page(self, var=10):
         """以“例句解释”的ID为依据"""
-        locator = (By.XPATH, gv.PACKAGE_ID+ "sentence_explain")
+        locator = (By.XPATH, gv.PACKAGE_ID + "sentence_explain")
         return self.wait.wait_check_element(locator, var)
 
     @teststep
@@ -129,7 +129,7 @@ class FlashCard(BasePage):
     def english_copy(self):
         """单页面内 答题框填入的Word"""
         word = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "mine_word").text
+            .find_element_by_id(gv.PACKAGE_ID + "mine_word")
         return word
 
     @teststep
@@ -143,14 +143,14 @@ class FlashCard(BasePage):
     @teststeps
     def wait_check_result_page(self, var=10):
         """以“title:答题报告”的ID为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'完成学习')]")
+        locator = (By.XPATH, self.finish_study_value)
         return self.wait.wait_check_element(locator, var)
 
     @teststeps
     def finish_study(self):
         """完成学习"""
         ele = self.driver \
-            .find_element_by_xpath("//android.widget.TextView[contains(@index,0)]").text
+            .find_element_by_xpath(self.finish_study_value).text
         print(ele)
         return ele
 
@@ -175,6 +175,12 @@ class FlashCard(BasePage):
         self.driver \
             .find_element_by_id(gv.PACKAGE_ID + "tv_star_en") \
             .click()
+
+    @teststeps
+    def wait_check_result_list_page(self, var=10):
+        """以“title:答题报告”的ID为依据"""
+        locator = (By.ID, gv.PACKAGE_ID + "iv_select")
+        return self.wait.wait_check_element(locator, var)
 
     @teststep
     def star_button(self):
@@ -204,11 +210,121 @@ class FlashCard(BasePage):
         return word
 
     @teststeps
-    def study_pattern(self):
-        """《闪卡练习 学习模式》 游戏过程"""
+    def word_study_pattern(self):
+        """《闪卡练习 单词学习模式》 游戏过程"""
         if self.wait_check_page():
             if self.hw.wait_check_play_page():
                 answer = []   # return值 与结果页内容比对
+
+                rate = self.hw.rate()
+                for i in range(int(rate)):
+                    if self.hw.wait_check_play_page():
+                        print('------------------------------------')
+                        self.hw.rate_judge(rate, i)  # 测试当前rate值显示是否正确
+                        self.hw.next_button_judge('true')  # 下一题 按钮 状态判断
+                        if self.judge_img_exist():
+                            print('存在图片')
+                            self.sp.swipe_vertical(0.5, 0.8, 0.2)
+
+                        if self.hw.wait_check_play_page():
+                            self.voice_operation(i)  # 发音按钮
+
+                            if i in (2, 5):  # 第3、6题  进入全英模式
+                                self.pattern_switch()  # 切换到 全英模式
+                                print('---切换到 全英模式:')
+                                if self.wait_check_sentence_page(5):
+                                    self.sentence_study()  # 例句
+                                    self.sentence_author_study()  # 例句作者
+
+                                word = self.english_study()  # 单词
+                                print('单词:%s' % word)
+
+                                self.pattern_switch()  # 切换到 英汉模式
+                            else:
+                                if self.wait_check_explain_page(5):
+                                    self.sentence_study()  # 例句
+                                    self.sentence_explain_study()  # 例句解释
+                                    self.sentence_author_study()  # 例句作者
+
+                                word = self.english_study()  # 单词
+                                explain = self.explain_study()  # 解释
+                                print('单词:%s \n 解释:%s' % (word, explain))
+
+                            answer.append(self.english_study())
+
+                            if i in range(1, 9, 2):  # 点击star按钮
+                                self.click_star()
+                                # if i == 1:
+                                #     self.tips_operation()
+
+                            if i == 3 and i != int(rate) - 1:  # 第四题 滑屏进入下一题
+                                self.sp.swipe_horizontal(0.5, 0.9, 0.1)
+                            else:
+                                if i == int(rate) - 1:  # 最后一题 尝试滑屏进入结果页
+                                    self.sp.swipe_horizontal(0.5, 0.9, 0.1)
+                                    if self.wait_check_result_page(5):
+                                        print('★★★ Error - 滑动页面进入了结果页')
+
+                                self.hw.next_button_operation('true')  # 下一题 按钮 状态判断 加点击
+                            time.sleep(2)
+
+                print('=================================================')
+                return rate, answer
+
+    @teststeps
+    def word_copy_pattern(self):
+        """《闪卡练习 单词抄写模式》 游戏过程"""
+        if self.wait_check_page():  # 页面检查点
+            if self.hw.wait_check_play_page():
+                answer = []  # return值 与结果页内容比对
+                rate = self.hw.rate()
+                for i in range(int(rate)):
+                    if self.hw.wait_check_play_page():
+                        print('-------------------------------------------')
+                        self.hw.rate_judge(rate, i)  # 测试当前rate值显示是否正确
+                        if self.judge_img_exist():
+                            print('存在图片')
+                            self.sp.swipe_horizontal(0.5, 0.9, 0.1)
+
+                        if self.hw.wait_check_play_page():
+                            word = self.word_copy()  # 题目  展示的Word
+                            explain = self.explain_copy()  # 解释
+                            answer.append(word)
+                            print("第%s题,单词:%s\n 解释:%s" % (i+1, word, explain))
+                            self.voice_operation(i)  # 发音按钮
+
+                            self.english_copy().click()  # 点击输入框，激活小键盘
+                            for j in range(len(word)):
+                                if word[j] == ' ':
+                                    self.click_blank_operation()  # 多次点击空格键 操作
+                                else:
+                                    if i == 1:  # 单词输入字母错误时
+                                        print('---输入错误单词字母：q')
+                                        self.key.games_keyboard('q')  # 点击键盘 错误单词字母
+                                    else:
+                                        if j == 5:
+                                            self.key.games_keyboard('capslock')  # 点击键盘 切换到 大写字母
+                                            self.key.games_keyboard(word[j].upper())  # 点击键盘对应 大写字母
+                                        else:
+                                            if j == 6:
+                                                self.key.games_keyboard('capslock')  # 点击键盘 切换到 小写字母
+                                            self.key.games_keyboard(word[j].lower())  # 点击键盘对应字母
+
+                            self.delete_incorrect_word(i, rate, word)  # 删除错误单词后重新输入
+                            if i in range(1, 2, 9):  # 点击star按钮
+                                self.click_star()
+
+                    time.sleep(4)
+                print('=================================================')
+                return rate, answer
+
+    @teststeps
+    def sentence_study_pattern(self):
+        """《闪卡练习 句子学习模式》 游戏过程"""
+        if self.wait_check_page():
+            if self.hw.wait_check_play_page():
+                answer = []   # return值 与结果页内容比对
+
                 rate = self.hw.rate()
                 for i in range(int(rate)):
                     if self.hw.wait_check_play_page():
@@ -218,7 +334,7 @@ class FlashCard(BasePage):
 
                         self.voice_operation(i)  # 发音按钮
 
-                        if i in (2, 5):  # 第3、6题  进入全英模式
+                        if i in (0, 3):  # 第3、6题  进入全英模式
                             self.pattern_switch()  # 切换到 全英模式
                             print('---切换到 全英模式:')
                             if self.wait_check_sentence_page(5):
@@ -241,7 +357,7 @@ class FlashCard(BasePage):
 
                         answer.append(self.english_study())
 
-                        if i in range(1, 9, 2):  # 点击star按钮
+                        if i in range(0, 3):  # 点击star按钮
                             self.click_star()
                             # if i == 1:
                             #     self.tips_operation()
@@ -255,48 +371,8 @@ class FlashCard(BasePage):
                                     print('★★★ Error - 滑动页面进入了结果页')
 
                             self.hw.next_button_operation('true')  # 下一题 按钮 状态判断 加点击
-                        time.sleep(1)
+                        time.sleep(2)
 
-                print('=================================================')
-                return rate, answer
-
-    @teststeps
-    def copy_pattern(self):
-        """《闪卡练习 抄写模式》 游戏过程"""
-        if self.wait_check_page():  # 页面检查点
-            if self.hw.wait_check_play_page():
-                answer = []  # return值 与结果页内容比对
-                rate = self.hw.rate()
-                for i in range(int(rate)):
-                    if self.hw.wait_check_play_page():
-                        print('-------------------------------------------')
-                        self.hw.rate_judge(rate, i)  # 测试当前rate值显示是否正确
-
-                        word = self.word_copy()  # 题目  展示的Word
-                        # word = list(right_word)  # 展示的Word -- 转化为list形式
-                        answer.append(word)
-                        print("第%s题,单词是:%s" % (i+1, word))
-                        self.voice_operation(i)  # 发音按钮
-
-                        for j in range(len(word)):
-                            if word[j] == ' ':
-                                self.click_blank_operation()  # 多次点击空格键 操作
-                            else:
-                                if i == 1:  # 单词输入字母错误时
-                                    print('---输入错误单词字母：q')
-                                    self.key.games_keyboard('q')  # 点击键盘 错误单词字母
-                                else:
-                                    if j == 5:
-                                        self.key.games_keyboard('capslock')  # 点击键盘 切换到 大写字母
-                                        self.key.games_keyboard(word[j].upper())  # 点击键盘对应 大写字母
-                                    else:
-                                        if j == 6:
-                                            self.key.games_keyboard('capslock')  # 点击键盘 切换到 小写字母
-                                        self.key.games_keyboard(word[j].lower())  # 点击键盘对应字母
-
-                        self.delete_incorrect_word(i, rate, word)  # 删除错误单词后重新输入
-
-                    time.sleep(4)
                 print('=================================================')
                 return rate, answer
 
@@ -331,7 +407,8 @@ class FlashCard(BasePage):
     @teststeps
     def voice_operation(self, i):
         """发音按钮 操作"""
-        if WaitElement().judge_is_exists(self.voice_locator):
+        locator = (By.ID, self.voice_button_value)
+        if WaitElement().judge_is_exists(locator):
             if i == 2:  # 第3题
                 j = 0
                 print('多次点击发音按钮:')
@@ -343,64 +420,57 @@ class FlashCard(BasePage):
                 self.click_voice()  # 点击 发音按钮
 
     @teststeps
-    def result_page(self, i, answer):
+    def result_page_operation(self, answer, content=None):
         """结果页操作
-        :param i:  小题数
+        :param content:
         :param answer: 我的答题结果
         """
-        self.finish_study()  # 完成学习
-        self.study_sum()  # 学习结果
+        if content is None:
+            content = []
 
-        word = self.result_word()
-        print('判断是否滑动：', i)
-        if len(word) <= int(i):
-            self.result_operation(i, answer, int(i))
-        else:
-            name = word[len(word) - 1].text
-            self.result_operation(len(word) - 1, answer)
-            self.sp.swipe_vertical(0.5, 0.75, 0.35)
+        if self.wait_check_result_list_page():  # 结果页检查点
+            star = self.star_button()
+            word = self.result_word()  # 展示的Word 题目
+            explain = self.result_explain()  # 展示的 解释
 
-            index = self.result_operation_swipe(name)
-            for j in range(5):
-                if len(index) == 0:
-                    self.sp.swipe_vertical(0.5, 0.75, 0.65)
-                    index = self.result_operation_swipe(name)
-                else:
-                    break
-            word = self.result_word()
-            self.result_operation(len(word), answer, index[0])
-        print('=================================================')
+            if len(star) > 4 and not content:
+                content = [word[len(star) - 2].text, explain[len(star) - 2].text]
 
-    @teststeps
-    def result_operation_swipe(self, name):
-        """滑屏操作
-        :param name: 最后一个已操作题目 用于滑屏后的下一个操作题目的判断
-        """
-        index = []  # 索引值
-        word = self.result_word()  # 展示的Word 题目
-        for j in range(len(word)):
-            if word[j].text == name:
-                index.append(j)
-                break
-        return index
+                self.question_list(len(star)-1, answer, word, explain)  # 详情
+
+                SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
+                self.result_page_operation(answer, content)
+            else:
+                var = 0
+                if content:
+                    for k in range(len(star)):
+                        if content[0] == word[k].text and content[1] == explain[k].text:
+                            var += k + 1
+                            break
+
+                self.question_list(len(star), answer, word, explain, var)  # 详情
+
+                SwipeFun().swipe_vertical(0.5, 0.25, 0.95)
+        #
+        # print('=================================================')
 
     @teststeps
-    def result_operation(self, index, answer, k=0):
+    def question_list(self, length, answer, word, explain, k=0):
         """结果页 具体操作
-        :param index:  题目数
+        :param k:
+        :param explain:
+        :param word:
+        :param length:  题目数
         :param answer: 我的答题结果
-        :param k:循环起始值 滑屏后起始值可能不为0
         """
-        word = self.result_word()  # 展示的Word 题目
-        explain = self.result_explain()  # 展示的 解释
-        for i in range(len(word)):
+        for i in range(k, length):
             if word[i].text != answer[i]:  # 结果页 展示的word与题目中是否一致
                 print('★★★ Error 查看答案页 展示的word与题中不一致', word[i].text, '  ', answer[i])
             else:
                 print(word[i].text, '\n', explain[i].text)
             print('-------------------------')
 
-        for index in range(k, int(index), 3):  # 点击 结果页 发音按钮
+        for index in range(k, length, 3):  # 点击 结果页 发音按钮
             print('点击 结果页 发音按钮: ', index)
             self.voice_button(index)  # 结果页 - 发音按钮
             self.star_button()[index].click()  # 结果页 star 按钮
@@ -410,25 +480,26 @@ class FlashCard(BasePage):
         """标星的数目统计
         :return 标星的作业数
         """
-        var = self.star_button()  # 结果页star按钮
-        ele = []  # 结果页标星的作业数
-        for i in range(len(var)):
-            if self.get.selected(var[i]) == 'true':
-                ele.append(i)
-
-        if len(ele) == 0:  # 结果页标星的作业数为0，则执行以下操作
-            print('结果页标星的作业数为0, 点击star按钮:')
-            for y in range(0, len(var), 2):
-                self.star_button()[y].click()  # 结果页 star 按钮
-
+        if self.wait_check_result_list_page():
+            var = self.star_button()  # 结果页star按钮
             ele = []  # 结果页标星的作业数
-            for k in range(len(var)):
-                if self.get.selected(var[k]) == 'true':
-                    ele.append(k)
+            for i in range(len(var)):
+                if self.get.selected(var[i]) == 'true':
+                    ele.append(i)
 
-            self.study_sum()  # 学习情况
-            print('----------------')
+            if len(ele) == 0:  # 结果页标星的作业数为0，则执行以下操作
+                print('结果页标星的作业数为0, 点击star按钮:')
+                for y in range(0, len(var), 2):
+                    self.star_button()[y].click()  # 结果页 star 按钮
 
-        print('star按钮数目：', len(var))
-        print('标星数：', len(ele))
-        return len(ele)
+                ele = []  # 结果页标星的作业数
+                for k in range(len(var)):
+                    if self.get.selected(var[k]) == 'true':
+                        ele.append(k)
+
+                self.study_sum()  # 学习情况
+                print('----------------')
+
+            print('star按钮数目：', len(var))
+            print('标星数：', len(ele))
+            return len(ele)

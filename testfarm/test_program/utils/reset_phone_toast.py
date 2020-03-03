@@ -1,6 +1,6 @@
 import time
 import urllib3
-from testfarm.test_program.conf.decorator import teststeps
+from conf.decorator import teststeps
 
 
 @teststeps

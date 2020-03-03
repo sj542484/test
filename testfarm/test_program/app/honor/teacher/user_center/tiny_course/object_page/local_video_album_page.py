@@ -1,10 +1,10 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 from selenium.webdriver.common.by import By
 
 from conf.decorator import teststeps
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from utils.wait_element import WaitElement
 
 

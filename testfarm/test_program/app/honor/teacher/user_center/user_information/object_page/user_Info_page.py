@@ -1,25 +1,28 @@
-#!/usr/bin/env python
-# encoding:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
+from app.honor.teacher.user_center.setting_center.object_page.setting_page import SettingPage
 from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from utils.click_bounds import ClickBounds
 from utils.wait_element import WaitElement
 
 
 class UserInfoPage(BasePage):
     """个人信息页面所有控件信息"""
+    user_info_tips = '★★★ Error- 未进入个人中心页面'
+
     def __init__(self):
         self.wait = WaitElement()
 
     @teststeps
-    def wait_check_page(self, var=20):
+    def wait_check_page(self, var=15):
         """以title:个人信息 的TEXT为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'个人信息')]")
         return self.wait.wait_check_element(locator, var)
@@ -166,3 +169,19 @@ class UserInfoPage(BasePage):
             ThomePage().back_up_button()  # 返回按钮
             if TuserCenterPage().wait_check_page():  # 页面检查点
                 ThomePage().click_tab_hw()
+
+    @teststeps
+    def app_account(self, account):
+        """判断应用当前 登录账号信息"""
+        ThomePage().click_tab_profile()
+        if TuserCenterPage().wait_check_page():
+            TuserCenterPage().click_avatar_profile()  # 进入 个人信息页面
+            if self.wait_check_page():
+                phone = self.phone()
+
+                if phone[-4:] == account[-4:]:
+                    self.back_up()  # 返回主界面
+                    return True
+                else:
+                    SettingPage().logout()
+                    return False

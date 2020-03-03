@@ -1,16 +1,15 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 import re
 from selenium.webdriver.common.by import By
 
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
 from utils.judge_character_type import JudgeType
-from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
 
@@ -22,12 +21,11 @@ class GamesPage(BasePage):
     question_value = gv.PACKAGE_ID + "question"  # 题目
     hint_word_value = gv.PACKAGE_ID + "hint"  # 选词填空的提示词
     voice_button_value = gv.PACKAGE_ID + "iv_play"  # 听音选择 播音按钮
-    article_content_value = gv.PACKAGE_ID + "rich"  # 补全文章 文章元素
+    article_content_value = gv.PACKAGE_ID + "rich_text"  # 补全文章 文章元素
     content_value = gv.PACKAGE_ID + "cl_content"  # 阅读理解 文章元素
     char_value = gv.PACKAGE_ID + "tv_char"  # 选项 ABCD
 
     def __init__(self):
-        self.swipe = SwipeFun()
         self.wait = WaitElement()
 
     @teststeps
@@ -95,9 +93,12 @@ class GamesPage(BasePage):
         if len(ele) == 2:
             num = re.sub("\D", "", ele[0])  # 共5题    2018-02-28
             current_date = ele[1]
-        else:
+        elif len(ele) == 3:
             num = re.sub("\D", "", ele[1])  # 自定义模式    共8题    2018-02-28
             current_date = ele[2]
+        else:
+            num = re.sub("\D", "", ele[2])  # (原创)  抄写模式    共4题    2020-01-02
+            current_date = ele[3]
         return int(num), current_date
 
     @teststeps
@@ -312,6 +313,20 @@ class GamesPage(BasePage):
         """验证 img 是否存在"""
         locator = (By.ID, gv.PACKAGE_ID + "img")
         return self.wait.judge_is_exists(locator)
+
+    @teststep
+    def result_img(self):
+        """进度"""
+        ele = self.driver \
+            .find_elements_by_id(gv.PACKAGE_ID + "img")
+        return ele
+
+    @teststep
+    def result_progress(self):
+        """进度"""
+        ele = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "tv_progress").text
+        return ele
 
     # 磨耳朵
     @teststep

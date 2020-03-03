@@ -1,11 +1,9 @@
-import time
 from HTMLTestReportCN2 import DirAndFiles
 from functools import wraps
 from selenium.common.exceptions import WebDriverException
 
 from conf.base_page import BasePage
 from conf.report_path import ReportPath
-from conf.log import Log
 
 flag = 'IMAGE:'
 # log = Log()
@@ -13,6 +11,7 @@ flag = 'IMAGE:'
 
 def screenshot(error_type):
     report_path = ReportPath().get_path()
+    print('report_path:', report_path)
     driver = BasePage().get_driver()
     img_name = DirAndFiles(report_path).get_screenshot(driver, error_type)
     print('screen_shot[' + error_type + "--" + img_name + ']screen_shot\n')

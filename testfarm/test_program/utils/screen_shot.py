@@ -8,11 +8,8 @@ import math
 import operator
 import time
 from PIL import Image
-from testfarm.test_program.conf.report_path import ReportPath
-
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststeps
-from testfarm.test_program.conf.base_config import GetVariable as gv
+from conf.base_page import BasePage
+from conf.decorator import teststeps
 
 PATH = lambda p: os.path.abspath(p)
 TEMP_FILE = PATH(tempfile.gettempdir() + "/temp_screen.png")

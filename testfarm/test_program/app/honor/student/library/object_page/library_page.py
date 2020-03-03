@@ -147,12 +147,6 @@ class LibraryPage(LibraryGamePage):
                                                 '[contains(@resource-id, "progress_num")]'.format(self.id_type(), nickname))
         return ele.text
 
-    @teststep
-    def user_speak_part_btn(self, nickname):
-        """学生排行中的片段"""
-        ele = self.driver.find_element_by_xpath('//android.widget.TextView[@resource-id="{}name" and @text="{}"]/following-sibling::'
-                                                'android.widget.TextView[contains(@resource-id, "fragment")]'.format(self.id_type(), nickname))
-        return ele
 
     @teststep
     def user_like_btn(self, nickname):
@@ -201,18 +195,13 @@ class LibraryPage(LibraryGamePage):
                     while True:
                         if self.wait_check_user_name_page(nickname):
                             has_nickname = True
+
                         if self.wait_check_end_tip_page():
                             break
                         else:
                             self.screen_swipe_up(0.5, 0.9, 0.6, 1000)
                     if has_nickname:
                         self.base_assert.except_error('当前用户图书书单进度为0%, 但在书单中排行出现')
-                    self.share_btn().click()
-                    if not self.wait_check_no_data_reload_page():
-                        self.base_assert.except_error('当前用户书单进度为0%, 点击立即打卡页面未提示先看书再打卡')
-                    else:
-                        print('提示：先看书再打卡')
-                        self.click_back_up_button()
             else:
                 if self.wait_check_no_rank_page():
                     self.base_assert.except_error('书单进度不为0, 排行榜为空')
@@ -222,37 +211,32 @@ class LibraryPage(LibraryGamePage):
                     user_process = self.user_process(nickname)
                     if book_process != user_process:
                         self.base_assert.except_error('书单进度与当前用户进度不一致')
-                    self.user_speak_part_btn(nickname).click()
-                    if Toast().find_toast('暂无推荐口语片段'):
-                        print('暂无口语片段')
-                        no_speak_tip = True
+
+                    user_like_btn = self.user_like_btn(nickname)
+                    if user_like_btn.get_attribute('selected') == 'true':
+                        user_like_btn.click()
+                        if Toast().find_toast('一天内不可以重复点赞哦！'):
+                            print('一天内不可以重复点赞哦')
                     else:
-                        self.base_assert.except_error('暂无推荐口语片段')
-                    if self.wait_check_book_set_page():
-                        user_like_btn = self.user_like_btn(nickname)
-                        if user_like_btn.get_attribute('selected') == 'true':
-                            user_like_btn.click()
-                            if Toast().find_toast('一天内不可以重复点赞哦！'):
-                                print('一天内不可以重复点赞哦')
-                        else:
-                            before_like_num = user_like_btn.text
-                            user_like_btn.click()
-                            if self.user_like_btn(nickname).text != str(int(before_like_num) + 1):
-                                self.base_assert.except_error('点击可点击点赞按钮之后, 点赞个数未增加')
-                            like_num = self.user_like_btn(nickname).text
-                self.punch_share_btn().click()
-                if today_has_studied:
-                    if self.wait_check_share_area_page():
-                        GameCommonEle().share_page_operate()
-                    else:
-                        self.base_assert.except_error('本日已有做题记录，点击立即打卡未出现分享页面')
-                        self.click_back_up_button()
+                        before_like_num = user_like_btn.text
+                        user_like_btn.click()
+                        if self.user_like_btn(nickname).text != str(int(before_like_num) + 1):
+                            self.base_assert.except_error('点击可点击点赞按钮之后, 点赞个数未增加')
+                        # like_num = self.user_like_btn(nickname).text
+
+            self.punch_share_btn().click()
+            if today_has_studied:
+                if self.wait_check_share_area_page():
+                    GameCommonEle().share_page_operate()
                 else:
-                    if self.wait_check_share_area_page():
-                        self.base_assert.except_error('本日没有有做题记录，点击立即打卡出现分享页面')
-                    if self.wait_check_no_data_reload_page():
-                        print('先看书， 再打开')
+                    self.base_assert.except_error('本日已有做题记录，点击立即打卡未出现分享页面')
                     self.click_back_up_button()
+            else:
+                if self.wait_check_share_area_page():
+                    self.base_assert.except_error('本日没有有做题记录，点击立即打卡出现分享页面')
+                if self.wait_check_no_data_reload_page():
+                    print('先看书， 再打卡')
+                self.click_back_up_button()
             return no_speak_tip, like_num, book_count
 
 

@@ -1,11 +1,11 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.get_attribute import GetAttribute
@@ -16,7 +16,8 @@ from utils.wait_element import WaitElement
 class FilterPage(BasePage):
     """ 筛选 页面"""
     label_name_value = gv.PACKAGE_ID + "tv_label_name"  # 标签名
-    
+    filter_tips = '★★★ Error- 未进入 筛选页面'
+
     def __init__(self):
         self.get = GetAttribute()
         self.wait = WaitElement()
@@ -31,86 +32,75 @@ class FilterPage(BasePage):
     @teststep
     def click_public(self):
         """以“公共”的text为依据"""
-        self.driver \
-            .find_element_by_id(self.label_name_value)\
-            .click()
+        locator = (By.ID, self.label_name_value)
+        self.wait.wait_find_element(locator).click()
 
     @teststep
     def click_school(self):
         """以“本校”的text为依据"""
-        self.driver \
-            .find_elements_by_id(self.label_name_value)[1] \
-            .click()
+        locator = (By.ID, self.label_name_value)
+        self.wait.wait_find_elements(locator)[1].click()
 
     @teststep
     def question_menu(self):
         """以“题单”的text为依据"""
-        ele = self.driver \
-            .find_elements_by_id(self.label_name_value)[2]
-        return ele
+        locator = (By.ID, self.label_name_value)
+        return self.wait.wait_find_elements(locator)[2]
 
     @teststep
     def click_question_menu(self):
         """以“题单”的text为依据"""
-        self.driver \
-            .find_elements_by_id(self.label_name_value)[2] \
-            .click()
+        locator = (By.ID, self.label_name_value)
+        self.wait.wait_find_elements(locator)[2].click()
 
     @teststep
     def game_list(self):
         """以“大题”的text为依据"""
-        ele = self.driver \
-            .find_elements_by_id(self.label_name_value)[3]
-        return ele
+        locator = (By.ID, self.label_name_value)
+        return self.wait.wait_find_elements(locator)[3]
 
     @teststep
     def click_game_list(self):
         """以“大题”的text为依据"""
-        self.driver \
-            .find_elements_by_id(self.label_name_value)[3] \
-            .click()
+        locator = (By.ID, self.label_name_value)
+        self.wait.wait_find_elements(locator)[3].click()
 
     @teststep
     def test_paper(self):
         """以“试卷”的text为依据"""
-        ele = self.driver \
-            .find_elements_by_id(self.label_name_value)[4]
-        return ele
+        locator = (By.ID, self.label_name_value)
+        return self.wait.wait_find_elements(locator)[4]
 
     @teststep
     def click_test_paper(self):
         """以“试卷”的text为依据"""
-        self.driver \
-            .find_elements_by_id(self.label_name_value)[4]\
-            .click()
+        locator = (By.ID, self.label_name_value)
+        self.wait.wait_find_elements(locator)[4].click()
 
     @teststep
     def reset_button(self):
         """以“重置按钮”的text为依据"""
         print('点击重置按钮')
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "action_first") \
-            .click()
+        locator = (By.ID, gv.PACKAGE_ID + "action_first")
+        self.wait.wait_find_element(locator).click()
 
     @teststep
     def commit_button(self):
         """以“确定按钮”的text为依据"""
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "action_second") \
-            .click()
+        locator = (By.ID, gv.PACKAGE_ID + "action_second")
+        self.wait.wait_find_element(locator).click()
 
     @teststep
     def expand_button(self):
         """以“上下拉 按钮”的id为依据"""
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "iv_expand") \
-            .click()
+        locator = (By.ID, gv.PACKAGE_ID + "iv_expand")
+        self.wait.wait_find_element(locator).click()
 
     @teststeps
     def label_title(self):
         """以“标签 title”的id为依据"""
-        ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "tv_title")
+        locator = (By.ID, gv.PACKAGE_ID + "tv_title")
+        ele = self.wait.wait_find_elements(locator)
 
         content = [i.text for i in ele]
         return content
@@ -118,25 +108,22 @@ class FilterPage(BasePage):
     @teststep
     def label_name(self):
         """以“标签 name”的id为依据"""
-        ele = self.driver \
-            .find_elements_by_id(self.label_name_value)
-        return ele
+        locator = (By.ID, self.label_name_value)
+        return self.wait.wait_find_elements(locator)
 
     @teststep
     def expand_icon(self):
         """以“收起 icon”的id为依据"""
-        ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "iv_expand")
-        return ele
+        locator = (By.ID, gv.PACKAGE_ID + "iv_expand")
+        return self.wait.wait_find_elements(locator)
 
     @teststeps
     def all_element(self):
         """页面内所有label元素"""
-        ele = self.driver \
-            .find_elements_by_xpath("//android.widget.LinearLayout/android.support.v7.widget.RecyclerView"
-                                    "/android.widget.LinearLayout/"
-                                    "descendant::*/android.widget.TextView")
-        return ele
+        locator = (By.XPATH, "//android.widget.LinearLayout/android.support.v7.widget.RecyclerView"
+                             "/android.widget.LinearLayout/"
+                             "descendant::*/android.widget.TextView")
+        return self.wait.wait_find_elements(locator)
 
     # 本校标签
     @teststeps
@@ -154,23 +141,20 @@ class FilterPage(BasePage):
     @teststep
     def check_button(self):
         """以“单选 按钮”的class name为依据"""
-        ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "check")
-        return ele
+        locator = (By.ID, gv.PACKAGE_ID + "check")
+        return self.wait.wait_find_elements(locator)
 
     @teststep
     def school_label_name(self):
         """以“本校标签 name”的id为依据"""
-        ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "label_name")
-        return ele
+        locator = (By.ID, gv.PACKAGE_ID + "label_name")
+        return self.wait.wait_find_elements(locator)
 
     @teststep
     def confirm_button(self):
         """确定 按钮"""
-        ele = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "confirm")
-        return ele
+        locator = (By.ID, gv.PACKAGE_ID + "confirm")
+        return self.wait.wait_find_elements(locator)
 
     @teststeps
     def filter_all_element(self, var):
@@ -270,8 +254,8 @@ class FilterPage(BasePage):
         if self.wait_check_school_label_page():
             print('--------')
 
-            cancel = ''
-            choose = ''
+            cancel = 0
+            choose = 0
             if self.wait_check_label_list_page():
                 button = self.check_button()  # 单选框
                 label = self.school_label_name()  # 本校标签名
@@ -287,20 +271,20 @@ class FilterPage(BasePage):
                         button[i].click()  # 选择 一个班
                         print('-----------')
                         break
+                self.confirm_button().click()  # 确定按钮
+                return cancel, choose
             elif ThomePage().wait_check_empty_tips_page():
-                print('本校暂无标签')
-
-            self.confirm_button().click()  # 确定按钮
-            return cancel, choose
+                print('%% 本校暂无标签 %%')
+                self.confirm_button().click()  # 确定按钮
 
     @teststeps
     def judge_school_label_result(self, name, label, mode='大题'):
-        """ 验证 - 选择本校标签 结果
+        """ 验证 - 选择本校标签 结果 （本校标签设置 -- PC题库-本校-标签管理）
         :param name: 题名
         :param label:标签名
         :param mode:类型
         """
-        print('------------验证 -选择本校标签 结果-----------')
+        print('------------验证 -选择本校标签 结果------------')
         if self.question.wait_check_page('搜索'):  # 页面检查点
             self.question.filter_button()  # 筛选按钮
 
@@ -330,10 +314,14 @@ class FilterPage(BasePage):
                 if not self.question.wait_check_page(mode):  # 页面检查点
                     print('★★★ Error- 选择 {} 标签不成功'.format(mode))
 
+                count = 0
                 item = self.question.question_name()  # 获取题目
-                name1 = item[1][0]
-                if name != name1:
-                    print('★★★ Error- 选择本校标签失败', name, name1)
+                for k in range(len(item[1])):
+                    if name == item[1][k]:
+                        count += 1
+                        break
+                if count == 0:
+                    print('★★★ Error- 选择本校标签失败', name)
                 else:
                     print('选择本校标签成功')
 

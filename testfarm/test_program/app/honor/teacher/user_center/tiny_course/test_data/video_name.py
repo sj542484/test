@@ -1,8 +1,11 @@
-#!/usr/bin/env python
-# code:UTF-8  
-# @Author : SUN FEIFEI
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 
-# 1~50字符 ，包含空格
-import random
+# 1~30字符 ，包含空格
+import datetime
 
-name_data = [{'name': '万星-微课auto' +"".join(random.choice("0123456789") for i in range(8))}]
+nowTime = datetime.datetime.now().strftime("%m%d%H%M%S")  # 生成当前时间
+name_data = [{'name': 'autotest微课_' + "".join(str(nowTime))},
+             {'name': 'autotest_拍摄' + "".join(str(nowTime))},
+             ]

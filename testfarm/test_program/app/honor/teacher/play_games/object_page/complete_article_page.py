@@ -1,7 +1,6 @@
-#!/usr/bin/env python
-# code:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
-import re
 import time
 from selenium.webdriver.common.by import By
 
@@ -9,7 +8,7 @@ from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from conf.decorator import teststeps, teststep
 from conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from utils.get_attribute import GetAttribute
 from utils.get_element_bounds import ElementBounds
 from utils.swipe_screen import SwipeFun
@@ -103,7 +102,7 @@ class CompleteArticle(BasePage):
         return self.wait.wait_check_element(locator)
 
     @teststeps
-    def get_result(self):
+    def get_result_operation(self):
         """获取 输入框 的结果"""
         content = self.get.description(self.input_text())
         answer = content[6:].split('  ')  # answer
@@ -117,41 +116,42 @@ class CompleteArticle(BasePage):
             timestr = []  # 获取每小题的时间
 
             self.swipe.swipe_vertical(0.5, 0.2, 0.45)  # 滑屏 (由于补全文章 是直接定位到第一个空）
-            self.font_operation()  # Aa文字大小切换按钮 切换 及状态统计
+            if self.wait_check_page():
+                self.font_operation()  # Aa文字大小切换按钮 切换 及状态统计
 
-            self.drag_operation()  # 向上拖拽按钮操作
+                self.drag_operation()  # 向上拖拽按钮操作
 
-            rate = self.hw.rate()
-            for i in range(int(rate)):
-                self.hw.rate_judge(rate, i)  # 测试当前rate值显示是否正确
-                self.hw.next_button_operation('false')  # 下一题 按钮 判断加 点击操作
+                rate = self.hw.rate()
+                for i in range(int(rate)):
+                    self.hw.rate_judge(rate, i)  # 测试当前rate值显示是否正确
+                    self.hw.next_button_operation('false')  # 下一题 按钮 判断加 点击操作
 
-                options = self.option_button()  # 选项ABCD
-                if len(options) < i+1:
                     options = self.option_button()  # 选项ABCD
-                    self.swipe.swipe_vertical(0.5, 0.9, 0.6)  # 滑屏
+                    if len(options) < i+1:
+                        options = self.option_button()  # 选项ABCD
+                        self.swipe.swipe_vertical(0.5, 0.9, 0.6)  # 滑屏
 
-                item = [options[i].text]
-                options[i].click()  # 依次点击选项
+                    item = [options[i].text]
+                    options[i].click()  # 依次点击选项
 
-                content.append(self.get_result()[i])  # 测试 是否答案已填入文章中
-                time.sleep(1)
-                if content[i] == ' ':
-                    print('★★★ Error - 答案未填入文章中')
-                else:
-                    print('第%s题:' % (i+1))
-                    print(item, content[i])
-                timestr.append(self.hw.time())  # 统计每小题的计时控件time信息
-                print('-------------------------')
+                    content.append(self.get_result_operation()[i])  # 测试 是否答案已填入文章中
+                    time.sleep(1)
+                    if content[i] == ' ':
+                        print('★★★ Error - 答案未填入文章中')
+                    else:
+                        print('第%s题:' % (i+1))
+                        print(item, content[i])
+                    timestr.append(self.hw.time())  # 统计每小题的计时控件time信息
+                    print('-------------------------')
 
-                if i == int(rate) - 1:
-                    self.drag_operation('down')  # 向下拖拽按钮操作
+                    if i == int(rate) - 1:
+                        self.drag_operation('down')  # 向下拖拽按钮操作
 
-            self.hw.next_button_operation('true')  # 下一题 按钮 状态判断 加点击
-            final_time = ResultPage().get_time(timestr[len(timestr) - 1])  # 最后一个小题的时间
-            self.hw.now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
-            print('============================================')
-            return rate, final_time
+                self.hw.next_button_operation('true')  # 下一题 按钮 状态判断 加点击
+                final_time = ResultPage().get_time(timestr[len(timestr) - 1])  # 最后一个小题的时间
+                self.hw.now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
+                print('============================================')
+                return rate, final_time
 
     @teststeps
     def drag_operation(self, var='up'):
@@ -171,9 +171,9 @@ class CompleteArticle(BasePage):
             self.result.check_result_button()  # 结果页 查看答案 按钮
             if self.result.wait_check_detail_page():  # 页面检查点
                 if self.wait_check_detail_page():
-                    item = self.get_result()
+                    item = self.get_result_operation()
                     print("填入的答案:", item)
-                    self.drag_operation()  # 向上拖拽按钮操作
+                    self.drag_operation('down')  # 向下拖拽按钮操作
 
                     content = []  # 答题情况
                     count = 0  # 小题数
@@ -185,7 +185,6 @@ class CompleteArticle(BasePage):
 
                     if self.wait_check_detail_page():
                         self.result.back_up_button()  # 返回结果页
-
 
     @teststeps
     def font_operation(self):

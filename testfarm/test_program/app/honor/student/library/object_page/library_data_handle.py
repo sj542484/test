@@ -42,9 +42,8 @@ class DataHandlePage(BasePage):
 
 
     def student_today_is_submit_bank_record(self, stu_id,  book_name, book_description):
-        """查询学生今天"""
+        """查询此书籍的书单该学生今日是否已经学习过"""
         book_set_ids = self.mysql.find_book_set_ids(book_name, book_description)
-        print('book_set_ids', book_set_ids)
         if book_set_ids:
             reform_book_set_ids = str(book_set_ids[0][0].split(',')).replace('[', '').replace(']', '')
             book_record = self.mysql.find_student_book_today_study_record(stu_id, reform_book_set_ids)

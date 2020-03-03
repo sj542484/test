@@ -1,7 +1,7 @@
 import time
 import urllib3
 # from pprint import pprint
-from testfarm.test_program.conf.decorator import teststeps
+from conf.decorator import teststeps
 
 
 @teststeps

@@ -1,6 +1,6 @@
 import time,os,subprocess,re
 from selenium.webdriver.support.wait import WebDriverWait
-from testfarm.test_program.conf.base_config import GetVariable as gv
+from conf.base_config import GetVariable as gv
 import yaml
 from utils.get_attribute import GetAttribute
 
@@ -34,7 +34,7 @@ class BasePage(object):
         return res['userinfo'][self.deviceName]
 
     @classmethod
-    def set_path(cls,path):
+    def set_path(cls, path):
         """报告路径"""
         cls.report_path = path
 
@@ -56,20 +56,20 @@ class BasePage(object):
         return self.mysql
 
     @classmethod
-    def set_window_size(cls,uuid):
+    def set_window_size(cls, uuid):
         """获取当前窗口大小"""
         res = subprocess.Popen('adb -s %s shell dumpsys window displays' % (uuid), shell=True, stdout=subprocess.PIPE,
                                stderr=subprocess.PIPE, close_fds=True)
         result, err = res.communicate()
         a = str(result, 'utf-8')
-        # cap = re.compile('modes.*?width=(\d+), height=(\d+), fps=.*?')
+
         cap_one = re.compile('cur=(\d+)x(\d+) ')
         res = cap_one.findall(a)
         cls.window_size = [int(i) for i in res[0]]
 
     def get_window_size(self):
         print('获取尺寸：', self.driver.get_window_size())
-        # print('adb尺寸', self.window_size)
+
         return [self.driver.get_window_size()['width'], self.driver.get_window_size()['height']]
 
     def click_back_up_button(self):

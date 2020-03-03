@@ -12,7 +12,6 @@ from app.honor.student.word_book_rebuild.object_page.games.flash_card_page impor
 from app.honor.student.word_book_rebuild.object_page.games.word_spelling_page import SpellingWord
 from conf.base_page import BasePage
 from conf.decorator import teststeps, teststep
-from utils.assert_func import AssertAction
 from utils.games_keyboard import Keyboard
 
 

@@ -1,12 +1,12 @@
-#!/usr/bin/env python
-# code:UTF-8  
-# @Author  : SUN FEIFE
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.user_center.tiny_course.object_page.create_tiny_course_page import CreateTinyCourse
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from utils.click_bounds import ClickBounds
 from utils.get_element_bounds import ElementBounds
 from utils.wait_element import WaitElement

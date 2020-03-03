@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 
@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
 from conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststeps, teststep
 from utils.click_bounds import ClickBounds
 from utils.get_attribute import GetAttribute
@@ -174,11 +174,11 @@ class TinyCourse(BasePage):
 
                             if location[0] != location2[0] or location[1] != location2[1]:
                                 print('★★★ Error - 横屏切回竖屏有误，进度条坐标不一致', location, location2)
-
-                self.click_blank()  # 点击页面 空白处
-                self.result.back_up_button()  # 返回 按钮
             else:
                 print('!!!未进入视频播放页面')
+
+            self.click_blank()  # 点击页面 空白处
+            self.result.back_up_button()  # 返回 按钮
 
     @teststeps
     def time_operation(self, time1, time2):

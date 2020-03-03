@@ -144,33 +144,34 @@ class ResultPage(BasePage):
 
     @teststep
     def result_multi_data_check(self, fq, result, star_num, score_num, judge_score=True):
-        print('===== 结果页数据核对 =====\n')
-        print('本次做的题数：', result[-1])
-        print('本次做对题数：', result[1])
-        right_rate = round(result[1] / result[-1] * 100) if fq == 1 else 100
+        if self.wait_check_result_page():
+            print('===== 结果页数据核对 =====\n')
+            print('本次做的题数：', result[-1])
+            print('本次做对题数：', result[1])
+            right_rate = round(result[1] / result[-1] * 100) if fq == 1 else 100
 
-        if right_rate != self.correct_rate():
-            self.base_assert.except_error("准确率有误，应为" + str(right_rate) + "实际为" + str(self.correct_rate()))
-        else:
-            print('准确率核实正确')
-
-        if judge_score:
-            if score_num != self.score():
-                self.base_assert.except_error("积分有误, 应当为" + str(score_num) + '页面为' + str(self.score()))
+            if right_rate != self.correct_rate():
+                self.base_assert.except_error("准确率有误，应为" + str(right_rate) + "实际为" + str(self.correct_rate()))
             else:
-                print('积分核实正确')
+                print('准确率核实正确')
 
-        if star_num != self.star():
-            self.base_assert.except_error('星星有误, 应为：' + str(star_num) + '页面为：' + str(self.star()))
-        else:
-            print('星星核实正确')
+            if judge_score:
+                if score_num != self.score():
+                    self.base_assert.except_error("积分有误, 应当为" + str(score_num) + '页面为' + str(self.score()))
+                else:
+                    print('积分核实正确')
 
-        print('===== 结果页数据核实完毕 =====\n')
+            if star_num != self.star():
+                self.base_assert.except_error('星星有误, 应为：' + str(star_num) + '页面为：' + str(self.star()))
+            else:
+                print('星星核实正确')
 
-        again_btn = self.again_btn()
-        if fq == 2:
-            if again_btn.text != '再练一遍':
-                self.base_assert.except_error('第二遍做题后， 错填再练按钮内容未变为再练一遍')
-            print('-*' * 50, '\n')
-        self.again_btn().click()
+            print('===== 结果页数据核实完毕 =====\n')
+
+            again_btn = self.again_btn()
+            if fq == 2:
+                if again_btn.text != '再练一遍':
+                    self.base_assert.except_error('第二遍做题后， 错填再练按钮内容未变为再练一遍')
+                print('-*' * 50, '\n')
+            self.again_btn().click()
 

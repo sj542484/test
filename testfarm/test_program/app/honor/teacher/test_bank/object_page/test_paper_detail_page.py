@@ -1,12 +1,11 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
-import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.user_center.user_information.object_page.change_image_page import ChangeImage
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from utils.wait_element import WaitElement
@@ -14,6 +13,12 @@ from utils.wait_element import WaitElement
 
 class PaperDetailPage(BasePage):
     """试卷 详情页面"""
+    assign_van_locator = (By.XPATH, "//android.widget.TextView[contains(@text,'选择班级')]")
+
+    paper_tips = '★★★ Error- 未进入试卷 详情页面'
+    back_paper_tips = '★★★ Error- 未返回试卷 详情页面'
+
+    paper_assign_tips = '★★★ Error- 未进入试卷布置页面'
 
     def __init__(self):
         self.wait = WaitElement()
@@ -28,133 +33,130 @@ class PaperDetailPage(BasePage):
     @teststeps
     def recommend_button(self):
         """推荐到学校 按钮"""
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "recommend") \
-            .click()
-        time.sleep(2)
+        locator = (By.ID, gv.PACKAGE_ID + "recommend")
+        self.wait \
+            .wait_find_element(locator).click()
 
     @teststeps
     def collect_button(self):
         """收藏/取消收藏 按钮"""
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "collect") \
-            .click()
-        time.sleep(1)
+        locator = (By.ID, gv.PACKAGE_ID + "collect")
+        self.wait \
+            .wait_find_element(locator).click()
 
     @teststep
     def share_button(self):
         """分享 按钮"""
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "share") \
-            .click()
+        locator = (By.ID, gv.PACKAGE_ID + "share")
+        self.wait \
+            .wait_find_element(locator).click()
 
     @teststep
     def paper_type(self):
         """试卷"""
-        if self.driver.find_element_by_id(gv.PACKAGE_ID + "tv_paper"):
-            return True
-        else:
-            return False
+        locator = (By.ID, gv.PACKAGE_ID + "tv_paper")
+        return self.wait \
+                .wait_check_element(locator)
 
     @teststeps
     def paper_title(self):
         """title"""
-        item = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "tv_paper_name") \
-            .text
+        locator = (By.ID, gv.PACKAGE_ID + "tv_paper_name")
+        item = self.wait \
+            .wait_find_element(locator).text
         print('试卷名称:', item)
         return item
 
     @teststeps
     def teacher(self):
         """作者"""
-        item = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "tv_author") \
-            .text
+        locator = (By.ID, gv.PACKAGE_ID + "tv_author")
+        item = self.wait \
+            .wait_find_element(locator).text
         print(item)
 
     # 测评模式 - 百分制/AB制
     @teststeps
     def score_type(self):
         """测评模式 - 百分制/AB制"""
-        item = self.driver \
-            .find_element_by_xpath("//android.widget.TextView[contains(@text,'模式')]") \
-            .text
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'模式')]")
+        item = self.wait \
+            .wait_find_element(locator).text
         return item
 
     @teststeps
     def score(self):
         """百分制"""
-        item = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "tv_score") \
-            .text
+        locator = (By.ID, gv.PACKAGE_ID + "tv_score")
+        item = self.wait \
+            .wait_find_element(locator).text
         return item
 
     @teststeps
     def score_unit(self):
         """百分制 单位"""
-        item = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "score") \
-            .text
+        locator = (By.ID, gv.PACKAGE_ID + "score")
+        item = self.wait \
+            .wait_find_element(locator).text
         return item
 
     # 考试时间
     @teststep
     def time_title(self):
         """测评模式 - 百分制/AB制"""
-        item = self.driver \
-            .find_element_by_xpath("//android.widget.TextView[contains(@text,'考试时间')]") \
-            .text
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'考试时间')]")
+        item = self.wait \
+            .wait_find_element(locator).text
         return item
 
     @teststep
     def time_unit(self):
         """考试时间 单位"""
-        item = self.driver \
-            .find_element_by_xpath("//android.widget.TextView[contains(@text,'分钟')]") \
-            .text
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'分钟')]")
+        item = self.wait \
+            .wait_find_element(locator).text
         return item
 
     @teststep
     def time_str(self):
         """时间"""
-        item = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "tv_time") \
-            .text
+        locator = (By.ID, gv.PACKAGE_ID + "tv_time")
+        item = self.wait \
+            .wait_find_element(locator).text
         return item
 
     # 小题数
     @teststep
     def num_title(self):
         """小题数"""
-        item = self.driver \
-            .find_element_by_xpath("//android.widget.TextView[contains(@text,'小题数')]") \
-            .text
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'小题数')]")
+        item = self.wait \
+            .wait_find_element(locator).text
         return item
 
     @teststep
     def num_unit(self):
         """小题数 单位"""
-        item = self.driver \
-            .find_element_by_xpath("//android.widget.TextView[contains(@text,'题')]") \
-            .text
+        locator = (By.XPATH, "//android.widget.TextView[@text='题']")
+        item = self.wait \
+            .wait_find_element(locator).text
         return item
 
     @teststep
     def game_num(self):
         """小题数"""
-        item = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "tv_exercise_num") \
-            .text
+        locator = (By.ID, gv.PACKAGE_ID + "tv_exercise_num")
+        item = self.wait \
+            .wait_find_element(locator).text
         return item
 
     # 限制交卷
     @teststep
     def limit_type(self):
         """限制交卷"""
-        item = self.driver \
-            .find_element_by_xpath("//android.widget.TextView[contains(@text,'限制交卷')]") \
-            .text
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'限制交卷')]")
+        item = self.wait \
+            .wait_find_element(locator).text
         return item
 
     @teststeps
@@ -166,83 +168,89 @@ class PaperDetailPage(BasePage):
     @teststep
     def limit_hand(self):
         """限制交卷"""
-        item = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "tv_limit") \
-            .text
+        locator = (By.ID, gv.PACKAGE_ID + "tv_limit")
+        item = self.wait \
+            .wait_find_element(locator).text
         return item
 
     @teststeps
     def limit_unit(self):
         """不限制交卷"""
-        item = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "tv_limit_m") \
-            .text
+        locator = (By.ID, gv.PACKAGE_ID + "tv_limit_m")
+        item = self.wait \
+            .wait_find_element(locator).text
         return item
 
     # 题型
     @teststep
     def game_list_title(self):
         """题型"""
-        item = self.driver \
-            .find_element_by_xpath("//android.widget.TextView[contains(@text,'题型')]") \
-            .text
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'题型')]")
+        item = self.wait \
+            .wait_find_element(locator).text
         return item
 
     @teststep
     def question_name(self):
         """小游戏名"""
-        item = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "tv_name")
+        locator = (By.ID, gv.PACKAGE_ID + "tv_name")
+        item = self.wait \
+            .wait_find_elements(locator)
         return item
 
     @teststep
     def num(self, index):
         """每个小游戏 题数"""
-        item = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "tv_desc")[index]
+        locator = (By.ID, gv.PACKAGE_ID + "tv_desc")
+        item = self.wait \
+            .wait_find_elements(locator)[index]
         return item
 
     @teststep
     def arrow(self, index):
         """箭头"""
-        item = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "iv_arrow")[index]
+        locator = (By.ID, gv.PACKAGE_ID + "iv_arrow")
+        item = self.wait \
+            .wait_find_elements(locator)[index]
         return item
 
     @teststep
     def assign_button(self):
         """布置试卷 按钮"""
-        self.driver \
-            .find_element_by_id(gv.PACKAGE_ID + "tv_assign") \
-            .click()
+        locator = (By.ID, gv.PACKAGE_ID + "tv_assign")
+        self.wait\
+            .wait_find_element(locator).click()
 
     @teststep
     def sentence(self):
         """句子"""
-        item = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "tv_answer")
+        locator = (By.ID, gv.PACKAGE_ID + "tv_answer")
+        item = self.wait \
+            .wait_find_elements(locator)
         return item
 
     # 布置试卷 页面
     @teststeps
     def wait_check_assign_list_page(self):
         """以“title:”为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'选择班级')]")
-        return self.wait.wait_check_element(locator)
+        return self.wait\
+            .wait_check_element(self.assign_van_locator)
 
     @teststep
     def assign_title(self):
         """选择班级"""
-        item = self.driver \
-            .find_element_by_xpath("//android.widget.TextView[contains(@text,'选择班级')]")
+        item = self.wait \
+            .wait_find_element(self.assign_van_locator)
         print(item.text)
 
     @teststep
     def assign_hint(self):
         """点击选择班级，暂无学生班级已经从列表中隐藏"""
-        item = self.driver \
-            .find_element_by_xpath("//android.widget.TextView[contains(@text,'点击选择班级，暂无学生班级已经从列表中隐藏')]")
-        print(item.text)
+        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'点击选择班级，暂无学生班级已经从列表中隐藏')]")
+        item = self.wait \
+            .wait_find_element(locator).text
+        print(item)
+        return item
 
     @teststeps
     def tips_page_info(self):

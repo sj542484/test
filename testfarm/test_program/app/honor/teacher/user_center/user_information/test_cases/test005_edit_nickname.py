@@ -1,13 +1,15 @@
-# coding=utf-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import time
 import unittest
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
-from app.honor.teacher.login.object_page.login_page import TloginPage
-from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
-from app.honor.teacher.user_center.user_information.object_page.user_Info_page import UserInfoPage
-from app.honor.teacher.user_center.user_information.test_data.nickname import nickname_data
 from conf.decorator import setup, teardown, testcase
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
+from app.honor.teacher.login.object_page.login_page import TloginPage
+from app.honor.teacher.user_center.user_information.object_page.user_Info_page import UserInfoPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
+from app.honor.teacher.user_center.user_information.test_data.nickname import nickname_data
 from utils.screen_shot import ScreenShot
 from utils.toast_find import Toast
 
@@ -72,9 +74,7 @@ class NickName(unittest.TestCase):
                                         self.user_info.click_positive_button()  # 确定按钮
 
                                         if len(nickname_data[i]) == 2:
-                                            if Toast().find_toast(nickname_data[i]['assert']):
-                                                print(nickname_data[i]['assert'])
-
+                                            Toast().toast_operation(nickname_data[i]['assert'])
                                             if self.user_info.wait_check_page():  # 页面检查点
                                                 name2 = self.user_info.nickname()
                                                 if name2 == name1:

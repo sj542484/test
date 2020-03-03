@@ -119,7 +119,7 @@ def startservice(request):
     e_uuid = request.POST.get('e_uuid')
     test_side = request.POST.get('parent')
     test_items = request.POST.get('child')
-    print('设备uuid:', e_uuid, '测试端:', test_side, type(test_side), '测试项:', test_items)
+    print('设备uuid:', e_uuid, '测试端:', test_side, '测试项:', test_items)
     if test_side == '0' or test_items == '0':
         return HttpResponse('<script>alert("没有选择测试项/测试端，请先进行勾选！！！");location.href="/devices"</script>')
     # close_old_connections()
@@ -141,6 +141,13 @@ def startservice(request):
     # t.join()
     time.sleep(0.3)
     content = get_show_phone()
+
+    # paginator = Paginator(content, 5)
+    # content = {'content': content}
+    # page = request.GET.get('page')
+    # contacts = paginator.get_page(page)
+    # content['contacts'] = contacts
+
     return render(request, 'testproject/show_devices.html', content)
 
 
@@ -155,9 +162,9 @@ def st(e_uuid, ports, test_side, test_items, mutex):
     mutex.acquire()
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=1, statue_statue=1, gid=gid)
     test_sides = SideType.objects.filter(id=int(test_side))[0].side_eng
-    print(test_sides)
+    # print(test_sides)
     test_item = ItemType.objects.filter(side=str(int(test_side)))[int(test_items) - 1].item_eng
-    print(test_item)
+    # print(test_item)
     print('设备uuid:', e_uuid, '测试端:', test_sides, '测试项:', test_item)
     mutex.release()
     p = Utils(port=_port)
@@ -170,13 +177,28 @@ def st(e_uuid, ports, test_side, test_items, mutex):
     mutex.acquire()
     device = EquipmentList.objects.get(equipment_uuid=e_uuid)
     mutex.release()
+    print('device:', device)
     e_name = device.equipment_name
+    print('e_name:', e_name)
     plat_verion = device.platform_verion
 
     # 实例化 driver类，开始进行测试
     dr = Driver(udid=e_uuid, platformVersion=plat_verion, deviceName=e_name, ports=ports, test_side=test_sides,
                 test_items=test_item)
     file_name, sta = dr.run_cases(appium_port, sysport, mutex)  # 测试程序入口
+    while 1:
+        a = 'lsof -i:%s' % appium_port
+
+        b = os.popen(a).readlines()
+
+        if b:
+            res = int(re.findall('\d+', b[1])[0])
+
+            mutex.acquire()
+            EquipmentList.objects.filter(equipment_uuid=e_uuid).update(node_pid=res)
+            mutex.release()
+            break
+
 
     # 返回报告路径
     file_name = file_name.split('/templates/')[1]

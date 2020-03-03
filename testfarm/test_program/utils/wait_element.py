@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # code:UTF-8
 # @Author  : SUN FEIFEI
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststeps
+from conf.base_page import BasePage
+from conf.decorator import teststeps
 
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC

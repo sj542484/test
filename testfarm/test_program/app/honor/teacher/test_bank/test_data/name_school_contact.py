@@ -1,5 +1,6 @@
-#!/usr/bin/env python
-# encoding:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 
 # 试卷名称
 name_data = (
@@ -23,7 +24,7 @@ name_data = (
     {'name': 'f学生2018 z@WSx'},   # 中文、数字、英文、大写字母、空格、@字符组合
     {'name': 'q12a z.w@S勿x'},  # 中文、数字、英文、大写字母、空格、@、'.'字符组合
     {'name': 'sff'},  # 改回原来昵称
-)
+    )
 
 # 学校 名称
 school_data = (
@@ -35,7 +36,7 @@ school_data = (
     {'sch': 'VANTHINKvanthinkstudesdfs'},  # 字母  - 21个字符
     {'sch': '123456sfsfwrzdf但是d1sa'},  # 中文、数字、字母组合  - 21个字符
     {'sch': 'sdfs123456sfsfwrzdf但是d1sa万星在线VANTHINKvanw'},  # 多于40个字符 - 41个
-)
+    )
 
 # 联系方式
 contact_data = (
@@ -55,5 +56,4 @@ contact_data = (
 
     {'contact': '18011115234'},  # 未注册手机号
     {'contact': '13020670521'},  # 改回原手机号
-)
-
+    )

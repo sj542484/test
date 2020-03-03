@@ -1,6 +1,7 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
+import re
 import time
 from selenium.webdriver.common.by import By
 
@@ -8,7 +9,7 @@ from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from app.honor.teacher.play_games.test_data.guess_word_data import guess_word_operation
 from conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststeps, teststep
 from utils.wait_element import WaitElement
 
@@ -61,7 +62,7 @@ class GuessWord(BasePage):
         if tpe == '有发音':
             result = self.voice_pattern()
             return result
-        elif tpe == '无发音':
+        else:
             result = self.no_voice_pattern()
             return result
 
@@ -80,28 +81,31 @@ class GuessWord(BasePage):
                     timestr.append(Homework().time())  # 统计每小题的计时控件time信息
 
                     content = self.chinese()  # 展示的题目内容
-                    word = guess_word_operation(content)
+                    value = guess_word_operation(content)
                     letters = self.keyboard()  # 小键盘 字母
 
-                    if i == 2:  # todo int(rate)-2需判断int(rate)的值
-                        res = self.error_operation(word, letters, item)  # 第2题点击六次错误字母
+                    if i == 2:  #
+                        res = self.error_operation(value, letters, item)  # 第2题点击六次错误字母
                         self.judge_error(res[0])  # 本小题所用机会数 判断
-                    elif i == int(rate)-2:  # todo int(rate)-2需判断int(rate)的值
+                    elif i == int(rate)-2:  #
                         print('第%s题' % i)
                         var = []
                         res = []  # 错误字母
-                        for j in range(len(word)):
+                        for j in range(len(value)):
                             if j == 0:  # 点错一次
                                 print('-------------------')
                                 print('第%s个字母，点错一次：' % (j+1))
-                                var.append(self.error_operation(word, letters, item, j, j+1))
+                                var.append(self.error_operation(value, letters, item, j, j+1))
                                 res.append(var[0][0])
                             elif j == 2:  # 点错三次
                                 print('-------------------')
                                 print('第%s个字母，点错三次：' % (j+1), var[0])
-                                var_2 = self.error_operation(word, letters, var[0][1], j, j+3)
+                                var_2 = self.error_operation(value, letters, var[0][1], j, j+3)
                                 res.append(var_2[0])
-                            self.normal_operation(j, word, letters)
+                            p = re.compile(r"([a-zA-Z])(\1+)")
+                            word = p.sub(r"\1", value[j])  # 去重
+                            for z in range(len(word)):
+                                self.normal_operation(z, word[z], letters)
 
                         print('本小题点错次数：', res)
                         res = int(res[0] + res[1])
@@ -109,10 +113,12 @@ class GuessWord(BasePage):
 
                         answer.append(self.english())  # 我的答题结果
                     else:
-                        for k in range(len(word)):
-                            self.normal_operation(k, word, letters)
+                        for k in range(len(value)):
+                            p = re.compile(r"([a-zA-Z])(\1+)")
+                            word = p.sub(r"\1", value[k])  # 去重
+                            for z in range(len(word)):
+                                self.normal_operation(z, word[z], letters)
                         answer.append(self.english())  # 我的答题结果
-
 
                     time.sleep(3)
                     print('======================================')
@@ -133,22 +139,24 @@ class GuessWord(BasePage):
                 for i in range(int(rate)):
                     Homework().rate_judge(rate, i)  # 测试当前rate值显示是否正确
 
-                    word = self.english()    # 要填写的单词
-                    print(word[:-1])
+                    block = self.english()    # 要填写的单词
+                    print(block[:-1])
                     content = self.chinese()  # 展示的题目内容
                     value = guess_word_operation(content)  # 对应的word
 
                     item = value.split(' ')
                     if len(item) != 1:  # 词组
                         var = value.replace(' ', '')   # 删除空格
-                        if len(word[:-1]) != len(var):  # 测试空格数是否与单词长度一致
-                            print('★★★ Error - 空格数:%s,应为：%s ' % (len(word[:-1]), len(var)))
+                        if len(block[:-1]) != len(var):  # 测试空格数是否与单词长度一致
+                            print('★★★ Error - 空格数:%s,应为：%s ' % (len(block[:-1]), len(var)))
                         else:
                             print('空格数无误：', len(var))
 
                     letters = self.keyboard()  # 小键盘 字母
                     for j in range(len(value)):
-                        self.normal_operation(j, value, letters)  # 输入单词 具体操作过程
+                        p = re.compile(r"([a-zA-Z])(\1+)")
+                        word = p.sub(r"\1", value[j])  # 去重
+                        self.normal_operation(j, word, letters)  # 输入单词 具体操作过程
 
                     timestr.append(Homework().time())  # 统计每小题的计时控件time信息
                     answer.append(self.english())  # 我的答题结果
@@ -167,24 +175,17 @@ class GuessWord(BasePage):
         :param word:单词
         :param letters:键盘字母
         """
-        if j == 0:  # 第一个字母
-            print('第一个字母：', word[j])
+        if word != '':
             for k in range(len(letters)):
-                if letters[k].text == word[j]:
+                if letters[k].text == word:
                     letters[k].click()  # 点击键盘对应字母
                     break
-        else:  # 第一个字母之外的字母
-            if word[j] != '':
-                if word[j] not in word[0:j - 1]:
-                    for k in range(len(letters)):
-                        if letters[k].text == word[j]:
-                            print(letters[k].text)
-                            letters[k].click()  # 点击键盘对应字母
-                            break
 
     @teststeps
     def error_operation(self, word, letters, item, j=0, end=6):
         """点击错误字母 操作过程
+        :param end:
+        :param j:
         :param word: 单词
         :param letters:键盘字母
         :param item:

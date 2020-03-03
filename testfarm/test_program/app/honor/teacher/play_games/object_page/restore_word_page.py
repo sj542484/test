@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import time
 from selenium.webdriver.common.by import By
@@ -8,7 +8,7 @@ from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from app.honor.teacher.play_games.test_data.restore_word_data import restore_word_operation
 from conf.decorator import teststep, teststeps
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from utils.get_attribute import GetAttribute
 from utils.get_element_bounds import ElementBounds
@@ -51,8 +51,8 @@ class RestoreWord(BasePage):
         """展示的 待还原的单词"""
         word = self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + "tv_word")
-
-        return word
+        content = [x.text for x in word]
+        return word, content
 
     # 查看答案页面
     @teststeps
@@ -90,11 +90,6 @@ class RestoreWord(BasePage):
         value = GetAttribute().selected(ele)
         return value
 
-    @teststep
-    def button_swipe(self, from_x, from_y, to_x, to_y, steps=1000):
-        """拖动单词button"""
-        self.driver.swipe(from_x, from_y, to_x, to_y, steps)
-
     @teststeps
     def restore_word(self):
         """《还原单词》 游戏过程"""
@@ -113,31 +108,28 @@ class RestoreWord(BasePage):
                     value = restore_word_operation(explain)
                     for z in range(len(value) - 1, -1, -1):  # 倒序
                         words = self.word()
-                        for k in range(len(words)):
-                            letter = words[k].text
+                        for k in range(len(words[0])):
+                            letter = words[1][k]
                             if letter[0] == value[z] and k != 0:
-                                self.drag_operation(words[k], words[0])  # 拖拽到第一个位置
+                                self.drag_operation(words[0][k], words[0][0])  # 拖拽到第一个位置
                                 if z != 0:
                                     Homework().commit_button_judge('true')  # 提交 按钮 判断
                                 break
 
                     timestr.append(Homework().time())  # 统计每小题的计时控件time信息
 
-                    #if len(var) == len(word)+1:  # todo 判断 是否进入答案页
-                    text = []  # 元素 tv_word的text
-                    var = self.word()  # 元素 tv_word
-                    for z in range(len(var)):
-                        text.append(var[z].text)
-                    answer.append(text[0])
-                    print('我的答案:', text[1:])
-                    print('正确答案：', text[0])
-                    print('----------------------------------------')
+                    mine = self.word()  # 元素 tv_word
+                    if len(mine[0]) == len(value)+1:  # 判断 是否进入答案页
+                        Homework().next_button_judge('true')  # 下一步 按钮 判断
+                        answer.append(mine[1][0])
+                        print('我的答案:', mine[1][1:])
+                        print('正确答案：', mine[1][0])
+                        print('----------------------------------------')
 
                     if i == int(rate)-1:
                         if self.result.wait_check_result_page():
                             break
 
-                    Homework().next_button_judge('true')  # 下一步 按钮 判断
                     time.sleep(2)
 
                 Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
@@ -149,7 +141,7 @@ class RestoreWord(BasePage):
         """获取单词button坐标 及拖拽"""
         loc = ElementBounds().get_element_location(word2)
         y2 = ElementBounds().get_element_location(word)[1] - 40
-        self.button_swipe(loc[0], loc[1], loc[0], y2, 1000)
+        self.driver.swipe(loc[0], loc[1], loc[0], y2, 1000)
         time.sleep(1)
 
     @teststeps
@@ -188,26 +180,29 @@ class RestoreWord(BasePage):
                         for j in range(page):
                             last_one = self.result_operation()  # 滑动前页面内最后一个小游戏title
                             self.swipe.swipe_vertical(0.5, 0.75, 0.35, 1000)
-                            item_2 = self.hint()  # 滑动后页面内的解释 的数量
-                            if item_2[len(item_2) - 1].text == last_one:
-                                print('到底啦', last_one)
-                                self.result.back_up_button()
-                                break
-                            elif item_2[len(item_2) - 1].text == answer[len(answer)-1]:
-                                # 滑动后到底，因为普通情况下最多只有两页，滑动一次即可到底
-                                print('滑动后到底', last_one)
-                                k = []
-                                for i in range(len(item_2) - 1, -1, -1):  # 倒序
-                                    if item_2[i].text == last_one:
-                                        k.append(i+1)
-                                        break
-                                self.result_operation(k[0])
-                                break
-                            else:
-                                continue
+
+                            if self.wait_check_detail_page():
+                                item_2 = self.hint()  # 滑动后页面内的解释 的数量
+                                if item_2[len(item_2) - 1].text == last_one:
+                                    print('到底啦', last_one)
+                                    self.result.back_up_button()
+                                    break
+                                elif item_2[len(item_2) - 1].text == answer[len(answer)-1]:
+                                    # 滑动后到底，因为普通情况下最多只有两页，滑动一次即可到底
+                                    print('滑动后到底', last_one)
+                                    k = []
+                                    for i in range(len(item_2) - 1, -1, -1):  # 倒序
+                                        if item_2[i].text == last_one:
+                                            k.append(i+1)
+                                            break
+                                    self.result_operation(k[0])
+                                    break
+                                else:
+                                    continue
                         self.swipe.swipe_vertical(0.5, 0.75, 0.35, 1000)
-                    self.result.back_up_button()  # 返回结果页
-                    time.sleep(2)
+
+                    if self.wait_check_detail_page():
+                        self.result.back_up_button()  # 返回结果页
 
     @teststeps
     def result_operation(self, index=0):

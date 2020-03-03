@@ -6,7 +6,6 @@ import unittest
 from ddt import ddt, data, unpack
 from app.honor.student.homework_rebuild.object_pages.homework_data_handle import HomeworkDataHandle
 from app.honor.student.homework_rebuild.object_pages.homework_game_page import HomeworkGameOperate
-from app.honor.student.homework_rebuild.test_data.homework_type_page import HomeworkTypePage as ht
 from app.honor.student.library.object_page.game_page import LibraryGamePage
 from app.honor.student.user_center.object_page.user_center_page import UserCenterPage
 from app.honor.student.login.object_page.home_page import HomePage
@@ -42,9 +41,9 @@ class PlayAllGame(unittest.TestCase):
         super(PlayAllGame, self).run(result)
 
     @data(
-        # ['单词跟读游戏', '单词跟读'],
-        [ht.HW1, '闪卡练习'],
-        [ht.HW1, '猜词游戏'],
+        ['单词跟读游戏', '单词跟读'],
+        # [ht.HW1, '闪卡练习'],
+        # [ht.HW1, '猜词游戏'],
         # [ht.HW1, '还原单词'],
         # [ht.HW1, '连连看'],
         # [ht.HW2, '单项选择'],

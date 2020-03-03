@@ -14,9 +14,9 @@ class GuessWordGame(GameCommonEle):
     """猜词游戏"""
     @teststep
     def wait_check_guess_word_page(self):
-        """"""
+        """猜词游戏页面检查点"""
         locator = (By.ID, 'level')
-        return self.get_wait_check_page_result(locator)
+        return self.get_wait_check_page_result(locator, timeout=5)
 
     @teststep
     def keyboard(self):
@@ -45,6 +45,7 @@ class GuessWordGame(GameCommonEle):
     @teststep
     def word_guess_play_process(self, do_right=False, right_answer=None):
         """猜词游戏对错过程"""
+        begin_num = self.rest_bank_num()
         if do_right:
             print('正确答案：', right_answer, '\n')
             for x in right_answer:
@@ -60,29 +61,18 @@ class GuessWordGame(GameCommonEle):
                 select_alpha = self.keyboard_key()[index]
                 mine_input.append(select_alpha.text)
                 select_alpha.click()
-                if '_' not in self.guess_word():
-                    break
+                time.sleep(0.5)
                 index += 1
-            # if self.rest_bank_num() != 1:
-            #     before_count = self.rest_bank_num()
-            #     while self.rest_bank_num() == before_count:
-            #         select_alpha = self.keyboard_key()[index]
-            #         mine_input.append(select_alpha.text)
-            #         select_alpha.click()
-            #         time.sleep(0.5)
-            #         index += 1
-            # else:
-            #     while self.wait_check_guess_word_page():
-            #         select_alpha = self.keyboard_key()[index]
-            #         mine_input.append(select_alpha.text)
-            #         select_alpha.click()
-            #         time.sleep(0.5)
-            #         index += 1
+                if self.wait_check_guess_word_page():
+                    if self.rest_bank_num() != begin_num:
+                        break
+                else:
+                    break
             input_answer = ''.join(mine_input)
         return input_answer
 
     @teststep
-    def guess_word_lib_hw_operate(self, fq, half_exit, sec_answer=None, ):
+    def guess_word_lib_hw_operate(self, fq, half_exit, sec_answer=None):
         """猜词游戏过程"""
         mine_answer = {}
         timer = []

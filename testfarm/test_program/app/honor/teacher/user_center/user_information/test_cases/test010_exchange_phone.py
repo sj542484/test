@@ -1,14 +1,15 @@
-##!/usr/bin/env python
-# encoding:UTF-8
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# @Author  : SUN FEIFEI
 import unittest
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from conf.decorator import setup, teardown, testcase
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
-from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from app.honor.teacher.user_center.user_information.object_page.reset_phone_page import PhoneReset
 from app.honor.teacher.user_center.user_information.object_page.user_Info_page import UserInfoPage
+from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from app.honor.teacher.user_center.user_information.test_data.reset_phone import reset_phone_data
-from conf.decorator import setup, teardown, testcase
 from utils.reset_phone_toast import get_verify
 from utils.toast_find import Toast
 
@@ -60,33 +61,35 @@ class ExchangePhone(unittest.TestCase):
 
                                 self.phone.count_time()  # 获取 验证码
                                 if len(reset_phone_data[i]) == 3:
-                                    if Toast().find_toast(reset_phone_data[i]["toast"]):
-                                        print(reset_phone_data[i]["toast"])
+                                    Toast().toast_operation(reset_phone_data[i]["toast"])
                                     self.home.back_up_button()  # 返回个人信息 页面
                                 else:
-                                    value = get_verify(reset_phone_data[i]['reset'])  # 获取验证码
-                                    
-                                    if i == len(reset_phone_data) - 1:
-                                        self.phone.verify().send_keys('1234')
+                                    if reset_phone_data[i]['reset'] == '182111':
+                                        self.home.back_up_button()  # 返回个人信息 页面
+                                    else:
+                                        value = get_verify(reset_phone_data[i]['reset'])  # 获取验证码
+
+                                        if i == len(reset_phone_data) - 1:
+                                            self.phone.verify().send_keys('1234')
+                                            self.phone.btn_certain()  # 确定按钮
+
+                                            if Toast().find_toast('验证码验证失败'):
+                                                print('验证码验证失败: 1234')
+
+                                        self.phone.verify().send_keys(value)
+                                        print('验证码:', value)
                                         self.phone.btn_certain()  # 确定按钮
 
-                                        if Toast().find_toast('验证码验证失败'):
-                                            print('验证码验证失败: 1234')
-
-                                    self.phone.verify().send_keys(value)
-                                    print('验证码:', value)
-                                    self.phone.btn_certain()  # 确定按钮
-
-                                    if self.user_info.wait_check_page():
-                                        self.home.back_up_button()  # 数据更新需要刷新页面
-                                        if self.user.wait_check_page():  # 页面检查点
-                                            self.user.click_avatar_profile()  # 点击登录头像按钮，进行个人信息操作
-                                            if self.user_info.wait_check_page():
-                                                phone2 = self.user_info.phone()   # 获取修改后的手机号
-                                                if phone1 != phone2:
-                                                    print('手机号修改成功')
-                                                else:
-                                                    print('★★★ Error - 手机号修改失败')
+                                        if self.user_info.wait_check_page():
+                                            self.home.back_up_button()  # 数据更新需要刷新页面
+                                            if self.user.wait_check_page():  # 页面检查点
+                                                self.user.click_avatar_profile()  # 点击登录头像按钮，进行个人信息操作
+                                                if self.user_info.wait_check_page():
+                                                    phone2 = self.user_info.phone()   # 获取修改后的手机号
+                                                    if phone1 != phone2:
+                                                        print('手机号修改成功')
+                                                    else:
+                                                        print('★★★ Error - 手机号修改失败')
                             else:
                                 print('未进入修改手机号页面')
                         else:

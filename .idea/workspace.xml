@@ -2,9 +2,437 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="046d4bba-38b3-4962-b62f-77df2872793f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_cases/test001_assign_paper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_cases/test002_assign_hw_timing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_cases/test003_assign_hw_timing_multi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_cases/test004_assign_hw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_cases/test005_assign_hw_spoken.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_data/assign_hw_name_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_data/hw_name_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_data/tips_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/dynamic_info_hw_spoken_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/dynamic_info_paper_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/hw_analysis_tab_answer_game_detail_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/hw_analysis_tab_ranking_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/hw_finish_tab_student_answer_game_detail_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/hw_finish_tab_student_answer_result_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/hw_spoken_detail_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/paper_detail_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/recommend_to_scool_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/spoken_analysis_tab_detail_question_check_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/spoken_analysis_tab_detail_student_check_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/spoken_finish_tab_detail_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test001_hw_list_and_tab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test002_hw_more_button_edit_delete.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test003_hw_more_button_add_basket_publish_again.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test004_hw_more_button_recommend_school_cancel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test005_paper_list_and_tab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test006_paper_more_button.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test007_poll_notice_img.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_data/draft_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_data/tips_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/object_page/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/object_page/activity_analysis_tab_ranking_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/object_page/activity_finish_tab_student_answer_game_detail_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/object_page/activity_finish_tab_student_answer_result_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/object_page/activity_template_detail_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/object_page/published_activity_analysis_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/object_page/published_activity_detail_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/object_page/punch_card_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/est005_published_activity_analysis_and_tab_detail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/est006_published_activity_analysis_finish_detail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/est007_published_activity_analysis_answer_detail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/test001_activity_list_and_tab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/test002_activity_template_and_published.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/test003_activity_published.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/test004_activity_published_detail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_data/activity_type_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_data/tips_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/timing_hw/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/timing_hw/object_page/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/timing_hw/object_page/draft_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/timing_hw/test_cases/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/timing_hw/test_cases/test001_draft_box.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/timing_hw/test_cases/test002_timing_hw_modify.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/timing_hw/test_cases/test003_timing_hw_list_and_publish_delete.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/timing_hw/test_data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/timing_hw/test_data/hw_name_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/timing_hw/test_data/modify_hw_name_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/timing_hw/test_data/tips_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/analysis_tab_games_result_detail_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/finish_tab_games_result_detail_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_apply_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_hw_spoken_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_paper_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_score_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_star_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_student_hw_detail_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/est009_vanclass_hw_analysis_detail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test001_modify_vanclass.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test002_create_vanclass.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test003_vanclass_school.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test004_vanclass_list_and_order.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test007_vanclass_hw_list_and_tab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test008_vanclass_hw_finish_per_detail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test010_vanclass_hw_answer_per_detail_and_cup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test011_vanclass_hw_more_button_edit_delete.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test012_vanclass_hw_more_button_add_publish_again.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test014_vanclass_paper_list_and_tab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test015_vanclass_paper_finish_detail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test017_vanclass_paper_answer_analysis_detail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test018_vanclass_paper_more_button.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test021_vanclass_spoken_tab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test022_vanclass_spoken_finish_detail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test023_vanclass_spoken_answer_analysis_detail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test024_vanclass_spoken_more_button.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test026_word_book_and_daily_liasten.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test027_score_ranking.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test028_star_ranking.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test029_vanclass_member.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test030_vanclass_member_search.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test031_vanclass_member_detail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test032_group_manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test034_invite_student.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test035_vanclass_apply.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/all_menu_name.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/draft_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/modify_vanclass_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/school_name_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/student_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/tips_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/object_page/permission.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/word_reading_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test021_word_reading.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_data/tips_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_recommend/test_cases/test002_recommend_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_recommend/test_cases/test003_games_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_recommend/test_cases/test004_paper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_test_bank/test_cases/test002_list_item_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/setting_center/test_data/copy_right.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/setting_center/test_data/register_protocol.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/pc_home_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/video_page6X.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/HUAWEI_P9/8.0.0/mobile.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_program/nodeconfig/HUAWEI_P9/8.0.0/mobile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/Honor_9/8.0.0/mobile.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_program/nodeconfig/Honor_9/8.0.0/mobile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/MI_5/7.0.0/mobile.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_program/nodeconfig/MI_5/7.0.0/mobile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/MZ_M15/7.1.2/mobile.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_program/nodeconfig/MZ_M15/7.1.2/mobile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/MZ_note3/5.1/mobile.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_program/nodeconfig/MZ_note3/5.1/mobile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/OPPO_K3/9.0.0/mobile.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_program/nodeconfig/OPPO_K3/9.0.0/mobile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/RedMi_7/9.0.0/mobile.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_program/nodeconfig/RedMi_7/9.0.0/mobile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/VIVO_X20/8.1.0/mobile.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_program/nodeconfig/VIVO_X20/8.1.0/mobile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program/nodeconfig/honor_6/7.0/mobile.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_program/nodeconfig/honor_6/7.0/mobile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/VIVO_X20/8.1.0/DEV/测试执行报告V1.1appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/VIVO_X20/8.1.0/DEV/测试执行报告V1.2appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122207/TestReport_20200228_122207.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122207/appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122207/client.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122207/image/Error_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122207/image/Error_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122207/image/Error_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122207/image/Error_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122414/TestReport_20200228_122414.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122414/appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122414/client.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122414/image/Error_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122414/image/Error_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122414/image/Error_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_122414/image/Error_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_134103/TestReport_20200228_134103.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_134103/appium_server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200228_134103/client.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/templates/testproject/base_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/templates/testproject/base_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/all_game_init.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/all_game_init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/article_complete.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/article_complete.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/choice_listen.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/choice_listen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/word_guess.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/word_guess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/word_speak.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/word_speak.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/word_spell.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/word_spell.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework/object_page/guess_word_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework/object_page/guess_word_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test002_all_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test002_all_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_page/game_result_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_page/game_result_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_page/library_data_handle.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_page/library_data_handle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_page/library_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_page/library_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/test_cases/test001_book_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/test_cases/test001_book_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/test_cases/test003_compare_page_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/test_cases/est003_compare_page_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/login/object_page/login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/login/object_page/login_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book_rebuild/object_page/clear_user_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book_rebuild/object_page/clear_user_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book_rebuild/object_page/my_word_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book_rebuild/object_page/my_word_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/adjust_vanclass_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/adjust_vanclass_order_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/draft_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/dynamic_info_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/home_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/home_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/invite_student_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/invite_student_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/paper_detail_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/picture_dictation_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/release_hw_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/result_detail_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/paper_finish_tab_student_answer_result_detail_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/spoken_detail_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/vanclass_detail_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/vanclass_game_detail_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_game_detail_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/vanclass_hw_detail_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/vanclass_member_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_member_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/vanclass_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/object_page/vanclass_student_info_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_student_info_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_cases/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/assign_other_script/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_data/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/assign_other_script/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/assign_other_script/test000_poll_notice_img.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/assign_other_script/test001_assign_hw_timing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/assign_other_script/test002_timing_hw_list.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/assign_other_script/test003_timing_hw_modify.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/assign_other_script/test004_assign_hw.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/assign_other_script/test005_assign_hw_spoken.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/assign_other_script/test006_assign_paper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/assign_other_script/test007_draft_box.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/dynamic_info_script/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/dynamic_info_script/test002_hw_list_and_tab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/dynamic_info_script/test003_hw_more_button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/dynamic_info_script/test004_paper_list_and_tab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/dynamic_info_script/test005_paper_more_button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test001_modify_vanclass.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test002_create_vanclass.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test003_vanclass_school.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test004_vanclass_list_and_order.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test005_vanclass_hw_list_and_tab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test006_vanclass_hw_finish_per_detail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test007_vanclass_hw_analysis_detail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test008_vanclass_hw_answer_per_detail_and_cup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test009_vanclass_hw_more_button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test010_vanclass_paper_list_and_tab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test011_vanclass_paper_finish_detail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test012_vanclass_paper_finish_game_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/est016_vanclass_paper_finish_game_detail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test013_vanclass_paper_answer_analysis_detail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test014_vanclass_paper_more_button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test015_word_book_and_daily_liasten.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test016_vanclass_spoken_tab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test017_vanclass_spoken_finish_detail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test018_vanclass_spoken_answer_analysis_detail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test019_vanclass_spoken_more_button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test021_score_ranking.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test022_star_ranking.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test023_vanclass_member.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test024_vanclass_member_search.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test025_vanclass_member_detail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test026_group_manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test027_group_manage_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test033_group_manage_detail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test028_invite_student.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_cases/vanclass_script/test029_vanclass_apply.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_data/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_data/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_data/assign_hw_name_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/assign_hw_name_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_data/create_vanclass_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/create_vanclass_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_data/draft_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_data/group_name_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/group_name_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_data/hw_detail_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/hw_detail_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_data/hw_name_date.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/hw_name_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_data/modify_vanclass_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_data/paper_detail_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/paper_detail_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_data/remark_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/remark_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_data/school_name_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_data/vanclass_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/test_data/vanclass_member_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_member_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/object_page/login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/object_page/login_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/est006_register_pwd_confirm.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/test006_register_pwd_confirm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/est007_register_nickname.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/test007_register_nickname.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/test001_login_phone.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/test001_login_phone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/test002_login_pwd.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/test002_login_pwd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/test003_forget_phone.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/test003_forget_phone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/test004_forget_pwd_confirm.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/test004_forget_pwd_confirm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/test005_register.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_cases/test005_register.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_data/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_data/account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_data/forget_pwd_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_data/forget_pwd_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_data/mine_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_data/mine_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_data/register_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/login/test_data/register_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/banked_cloze_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/banked_cloze_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/cloze_test_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/cloze_test_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/complete_article_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/complete_article_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/flash_card_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/flash_card_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/form_sentence_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/form_sentence_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/grinding_ears_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/grinding_ears_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/guess_word_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/guess_word_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/listening_choice_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/listening_choice_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/listening_form_sentence.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/listening_form_sentence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/matching_exercises_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/matching_exercises_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/picture_dictation_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/picture_dictation_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/reading_comprehension_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/reading_comprehension_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/restore_word_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/restore_word_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/result_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/result_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/sentence_transform_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/sentence_transform_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/single_choice_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/single_choice_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/strengthen_sentence_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/strengthen_sentence_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/tiny_course_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/tiny_course_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/vocabulary_choice_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/vocabulary_choice_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/word_dictation_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/word_dictation_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/word_spelling_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/object_page/word_spelling_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test001_flash_card.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test001_flash_card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test002_banked_cloze.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test002_banked_cloze.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test003_vocabulary_choice.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test003_vocabulary_choice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test004_single_choice.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test004_single_choice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test005_cloze_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test005_cloze_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test006_word_spelling.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test006_word_spelling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test007_reading_comprehension.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test007_reading_comprehension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test008_matching_exercise.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test008_matching_exercise.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test009_guess_word.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test009_guess_word.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test010_restore_word.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test010_restore_word.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test011_complete_article.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test011_complete_article.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test012_sentence_transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test012_sentence_transform.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test013_strengthen_sentence.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test013_strengthen_sentence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test014_form_sentence.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test014_form_sentence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test015_word_dictation.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test015_word_dictation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test016_picture_dictation.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test016_picture_dictation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test017_listening_choice.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test017_listening_choice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test018_listening_form_sentence.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test018_listening_form_sentence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test019_grinding_ears.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test019_grinding_ears.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test020_tiny_course.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_cases/test020_tiny_course.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/form_sentence_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/form_sentence_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/guess_word_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/guess_word_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/homework_title_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/homework_title_type.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/matching_exercise_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/matching_exercise_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/restore_word_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/restore_word_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/sentence_transform_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/sentence_transform_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/strength_sentence_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/strength_sentence_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/word_dictation_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/word_dictation_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/word_spelling_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/play_games/test_data/word_spelling_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/filter_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/filter_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/games_detail_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/games_detail_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/question_basket_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/question_basket_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/question_detail_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/question_detail_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/test_bank_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/test_bank_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/test_bank_search_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/test_bank_search_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/test_paper_detail_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/test_paper_detail_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/test_paper_share_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/test_paper_share_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/test_spoken_detail_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/test_spoken_detail_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test001_history_search_word.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test001_history_search_word.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test002_search_resource.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test002_search_resource.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test003_search_uploader.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test003_search_uploader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test004_question_basket_add.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test004_question_basket_add.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test005_question_basket_max_count.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test005_question_basket_max_count.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test006_question_basket_remove.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test006_question_basket_remove.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test007_question_detail_add_button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test008_question_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test008_question_detail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test009_question_detail_click_again.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test009_question_detail_click_again.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test010_games_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test010_games_detail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test011_test_paper_detail_assign.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test011_test_paper_operation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test012_test_paper_share_school_photo.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/est012_test_paper_share_school_photo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test013_test_paper_share_school_photo_cancel_retake.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/est013_test_paper_share_school_photo_cancel_retake.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test014_test_paper_share_school_album.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/est014_test_paper_share_school_album.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test016_test_paper_share_qr_photo.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/est015_test_paper_share_qr_photo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test017_test_paper_share_qr_photo_cancel_retake.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/est016_test_paper_share_qr_photo_cancel_retake.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test018_test_paper_share_qr_album.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/est017_test_paper_share_qr_album.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test021_test_paper_share_edittext.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test012_test_paper_share_edittext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test022_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test013_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test023_filter_choose.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test014_filter_choose.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_data/game_type_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_data/game_type_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_data/name_school_contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_data/name_school_contact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_data/search_content.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_data/search_content.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/message/object_page/message_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/message/object_page/message_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/object_page/mine_collect_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/object_page/mine_collect_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_cases/test001_collection_list_and_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_cases/test001_collection_list_and_detail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_cases/test002_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_cases/test002_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_cases/test003_label_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_cases/test003_label_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_cases/test004_item_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_cases/test004_item_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_cases/test005_game_list_item_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_cases/test005_game_list_item_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_cases/test006_paper_item_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_cases/test006_paper_item_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_data/add_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/test_data/add_label.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_recommend/object_page/mine_recommend_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_recommend/object_page/mine_recommend_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_recommend/test_cases/test001_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_recommend/test_cases/test001_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_recommend/test_cases/test002_recommend_list_and_delete.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_recommend/test_cases/test003_game_list_and_delete.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_recommend/test_cases/test004_paper_and_delete.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_test_bank/object_page/mine_test_bank_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_test_bank/object_page/mine_test_bank_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_test_bank/test_cases/test001_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_test_bank/test_cases/test001_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_test_bank/test_cases/test002_game_list_item_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_test_bank/test_cases/test003_game_list_item_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_test_bank/test_cases/test003_paper_item_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_test_bank/test_cases/test004_paper_item_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_test_bank/test_data/add_label.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/setting_center/object_page/setting_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/setting_center/object_page/setting_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/setting_center/test_cases/test001_help_center.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/setting_center/test_cases/test001_help_center.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/setting_center/test_cases/test002_copyright_complaints.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/setting_center/test_cases/test002_copyright_complaints.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/setting_center/test_cases/test003_register_protocol.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/setting_center/test_cases/test003_register_protocol.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/create_tiny_course_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/create_tiny_course_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/local_video_album_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/local_video_album_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/upload_video_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/upload_video_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/video_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/video_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/cut_local_video_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/cut_local_video_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/local_video_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/local_video_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test001_shoot_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test001_shoot_video.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test002_shoot_video_game_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test002_shoot_video_game_detail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test003_shoot_video_play_and_cut.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test003_shoot_video_play_and_cut.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test004_shoot_video_max_and_delete.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test004_shoot_video_max_and_delete.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test005_shoot_video_retake.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test005_shoot_video_retake.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test006_choice_local_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test006_choice_local_video.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test007_edit_video_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test007_edit_video_name.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test008_choice_local_video_play.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test008_choice_local_video_play.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test009_choice_local_video_delete.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test009_choice_local_video_delete.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test010_choice_local_video_game_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_cases/test010_choice_local_video_game_detail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_data/tiny_video_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_data/edit_video_name.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_data/upload_video_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_data/upload_video_name.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_data/video_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/test_data/video_name.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/change_image_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/change_image_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/reset_password_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/reset_password_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/reset_phone_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/reset_phone_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/user_Info_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/user_Info_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/user_center_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/user_center_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test001_change_image_photograph.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/est001_change_image_photograph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test002_photograph_cancel_retake.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/est002_photograph_cancel_retake.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test003_change_image_album.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/est003_change_image_album.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test004_album_cancel.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/est004_album_cancel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test005_edit_nickname.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test005_edit_nickname.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test006_change_qr_code_photo.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/est006_change_qr_code_photo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test007_qr_code_photo_cancel_retake.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/est007_qr_code_photo_cancel_retake.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test008_change_qr_code_album.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/est008_change_qr_code_album.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test009_change_qr_code_album_cancel.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/est009_change_qr_code_album_cancel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test010_exchange_phone.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test010_exchange_phone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test011_reset_password.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test011_reset_password.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test012_mine_school.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_cases/test012_mine_school.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/modify_school.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/modify_school.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/nickname.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/nickname.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/phone.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/phone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/reset_password.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/reset_password.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/reset_phone.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/test_data/reset_phone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/conf/base_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/conf/base_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/conf/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/conf/base_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/conf/case_strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/conf/case_strategy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/conf/decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/conf/decorator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/conf/ports.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/conf/ports.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testfarm/test_program/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/click_bounds.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/click_bounds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/connect_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/connect_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/excel_read_write.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/excel_read_write.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/games_keyboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/games_keyboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/get_element_bounds.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/get_element_bounds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/judge_character_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/judge_character_type.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/reset_phone_find_toast.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/reset_phone_find_toast.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/reset_phone_toast.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/reset_phone_toast.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/screen_shot.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/screen_shot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/sql.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/swipe_find_element.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/swipe_find_element.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/swipe_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/swipe_screen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/toast_find.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/toast_find.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/wait_element.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/wait_element.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfarm/test_program/utils/yb_dict.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/test_program/utils/yb_dict.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testfarm/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/testfarm/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/testone/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,14 +444,14 @@
     <session id="34483792">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="103" />
+          <entry key="project.closed" value="108" />
           <entry key="project.open.time.0" value="5" />
           <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.10" value="4" />
           <entry key="project.open.time.11" value="12" />
           <entry key="project.open.time.12" value="8" />
           <entry key="project.open.time.13" value="6" />
-          <entry key="project.open.time.14" value="4" />
+          <entry key="project.open.time.14" value="5" />
           <entry key="project.open.time.15" value="4" />
           <entry key="project.open.time.16" value="5" />
           <entry key="project.open.time.17" value="6" />
@@ -33,13 +461,13 @@
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.24" value="2" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.4" value="4" />
-          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.4" value="5" />
+          <entry key="project.open.time.5" value="6" />
           <entry key="project.open.time.6" value="5" />
           <entry key="project.open.time.7" value="8" />
-          <entry key="project.open.time.8" value="6" />
-          <entry key="project.open.time.9" value="7" />
-          <entry key="project.opened" value="110" />
+          <entry key="project.open.time.8" value="7" />
+          <entry key="project.open.time.9" value="8" />
+          <entry key="project.opened" value="117" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -49,30 +477,30 @@
           <entry key="css" value="17" />
           <entry key="gif" value="1" />
           <entry key="gitignore" value="8" />
-          <entry key="html" value="234" />
+          <entry key="html" value="242" />
           <entry key="ico" value="1" />
           <entry key="jpg" value="1" />
           <entry key="js" value="16" />
           <entry key="json" value="26" />
-          <entry key="log" value="21" />
+          <entry key="log" value="23" />
           <entry key="md" value="6" />
-          <entry key="png" value="20" />
-          <entry key="py" value="3626" />
+          <entry key="png" value="21" />
+          <entry key="py" value="3705" />
           <entry key="txt" value="3" />
-          <entry key="yaml" value="32" />
+          <entry key="yaml" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="17" />
-          <entry key="HTML" value="234" />
-          <entry key="Image" value="23" />
+          <entry key="HTML" value="242" />
+          <entry key="Image" value="24" />
           <entry key="JSON" value="26" />
           <entry key="JavaScript" value="16" />
           <entry key="Markdown" value="6" />
-          <entry key="PLAIN_TEXT" value="37" />
-          <entry key="Python" value="3626" />
-          <entry key="YAML" value="32" />
+          <entry key="PLAIN_TEXT" value="39" />
+          <entry key="Python" value="3705" />
+          <entry key="YAML" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -83,9 +511,9 @@
           <entry key="gitignore" value="130" />
           <entry key="html" value="12832" />
           <entry key="json" value="27" />
-          <entry key="log" value="10" />
+          <entry key="log" value="11" />
           <entry key="md" value="840" />
-          <entry key="py" value="33544" />
+          <entry key="py" value="34064" />
           <entry key="txt" value="39" />
           <entry key="yaml" value="1172" />
         </counts>
@@ -96,8 +524,8 @@
           <entry key="HTML" value="12832" />
           <entry key="JSON" value="27" />
           <entry key="Markdown" value="840" />
-          <entry key="PLAIN_TEXT" value="232" />
-          <entry key="Python" value="33544" />
+          <entry key="PLAIN_TEXT" value="233" />
+          <entry key="Python" value="34064" />
           <entry key="YAML" value="1172" />
         </counts>
       </usages-collector>
@@ -108,8 +536,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
+            <state relative-caret-position="90">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -118,82 +546,82 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/user_info.yaml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/swipe_find_element.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test010_games_detail.py">
+        <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/swipe_screen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+            <state relative-caret-position="119">
+              <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/base_page.py">
+        <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/toast_find.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+            <state relative-caret-position="238">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/filter_page.py">
+        <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/wait_element.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testfarm/test_program/run.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+            <state relative-caret-position="118">
+              <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testfarm/views.py">
+        <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/yb_dict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
-              <caret line="191" column="18" selection-start-line="191" selection-start-column="18" selection-end-line="191" selection-end-column="18" />
-              <folding>
-                <element signature="e#15#37#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/django/db/__init__.py">
+        <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/reset_phone_find_toast.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+            <state relative-caret-position="90">
+              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/django/db/backends/base/base.py">
+        <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/reset_phone_toast.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="490" column="8" selection-start-line="490" selection-start-column="8" selection-end-line="490" selection-end-column="8" />
+            <state relative-caret-position="60">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/screen_shot.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/sql.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -210,14 +638,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>18522372104</find>
-      <find>18222474913</find>
-      <find>11</find>
-      <find>15580477746</find>
-      <find>update</find>
-      <find>7229</find>
-      <find>install</find>
-      <find>/student_env_testDebug_1.3.7.apk</find>
       <find>spell_right_word_operate</find>
       <find>\ app.</find>
       <find>\ app.honor</find>
@@ -226,7 +646,6 @@
       <find>homework</find>
       <find>systemPort</find>
       <find>timer</find>
-      <find>_port</find>
       <find>app\.</find>
       <find>from conf.base_page import BasePage</find>
       <find>k3</find>
@@ -240,6 +659,15 @@
       <find>screenshot</find>
       <find>sys.path.append('./testfarm/test_program/')</find>
       <find>EquipmentList</find>
+      <find>查看截图：</find>
+      <find>REPORT_TEST_WITH_OUTPUT_TMPL_0</find>
+      <find>查看截图</find>
+      <find>REPORT_TEST_WITH_OUTPUT_TMPL_1</find>
+      <find>content</find>
+      <find>contacts</find>
+      <find>5</find>
+      <find>_port</find>
+      <find>Success</find>
     </findStrings>
     <replaceStrings>
       <replace>testfarm.test_program.app.weixin</replace>
@@ -266,23 +694,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/test_paper_detail_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/test_paper_share_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/test_spoken_detail_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/message/object_page/message_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_collection/object_page/mine_collect_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_recommend/object_page/mine_recommend_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/mine_test_bank/object_page/mine_test_bank_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/setting_center/object_page/setting_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/create_tiny_course_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/local_video_album_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/upload_video_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/tiny_course/object_page/video_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/change_image_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/reset_password_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/reset_phone_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/user_center_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/user_center/user_information/object_page/user_Info_page.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/utils/kill_pid.py" />
@@ -291,10 +702,8 @@
         <option value="$PROJECT_DIR$/testfarm/test_program/conf/user_info.yaml" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_pages/games/link_to_sentence.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/login/object_page/home_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/utils/games_keyboard.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_pages/usercenter_page.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/library/object_pages/games/restore_word.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/conf/case_strategy.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/utils/judge_assert.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/utils/assert_func.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/utils/get_attribute.py" />
@@ -302,25 +711,44 @@
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework/object_page/guess_word_page.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book_rebuild/object_page/clear_user_data.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test003_wk_game.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/conf/decorator.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/conf/report_path.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/conf/base_page.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/login/object_page/login_page.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test002_all_game.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py" />
         <option value="$PROJECT_DIR$/testfarm/test_program/conf/run_cases.py" />
         <option value="$PROJECT_DIR$/testfarm/templates/testproject/show_devices.html" />
-        <option value="$PROJECT_DIR$/testfarm/templates/testproject/base_page.html" />
-        <option value="$PROJECT_DIR$/testone/settings.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/conf/base_config.py" />
         <option value="$USER_HOME$/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/django/db/__init__.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/run.py" />
-        <option value="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" />
+        <option value="$USER_HOME$/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/HTMLTestReportCN2.py" />
+        <option value="$PROJECT_DIR$/testfarm/templates/testproject/base_page.html" />
         <option value="$PROJECT_DIR$/testfarm/views.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/run.py" />
+        <option value="$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200303_000031/appium_server.log" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/conf/base_config.py" />
+        <option value="$PROJECT_DIR$/testone/settings.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/app/honor/student/login/object_page/login_page.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/conf/base_page.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/conf/case_strategy.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/conf/decorator.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/conf/ports.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/click_bounds.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/connect_db.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/excel_read_write.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/games_keyboard.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/get_element_bounds.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/judge_character_type.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/reset_phone_find_toast.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/reset_phone_toast.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/screen_shot.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/sql.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/swipe_find_element.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/swipe_screen.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/toast_find.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/wait_element.py" />
+        <option value="$PROJECT_DIR$/testfarm/test_program/utils/yb_dict.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -332,6 +760,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -339,34 +768,10 @@
               <item name="testone" type="b2602c69:ProjectViewProjectNode" />
               <item name="testone" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testone" type="462c0819:PsiDirectoryNode" />
-              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testone" type="462c0819:PsiDirectoryNode" />
-              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
-              <item name="test_program" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testone" type="462c0819:PsiDirectoryNode" />
-              <item name="testfarm" type="462c0819:PsiDirectoryNode" />
-              <item name="test_program" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testone" type="462c0819:PsiDirectoryNode" />
-              <item name="testone" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -376,16 +781,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/testfarm/test_program/utils" />
-      <recent name="$PROJECT_DIR$/testfarm/test_program/app/honor" />
-      <recent name="$PROJECT_DIR$/test_program/app_folder" />
-      <recent name="$PROJECT_DIR$/testfarm/test_program/app/honor/student/web/object_pages" />
-      <recent name="$PROJECT_DIR$/testfarm/test_program/app/honor/student" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/testfarm/test_program/utils" />
       <recent name="$PROJECT_DIR$/testfarm/test_program/app/honor" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/testfarm/test_program/app/honor" />
+      <recent name="$PROJECT_DIR$/testfarm/test_program/utils" />
+      <recent name="$PROJECT_DIR$/test_program/app_folder" />
+      <recent name="$PROJECT_DIR$/testfarm/test_program/app/honor/student/web/object_pages" />
+      <recent name="$PROJECT_DIR$/testfarm/test_program/app/honor/student" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -513,10 +918,9 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19450317" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21212122" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -638,272 +1042,316 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/vanclass/object_page/vanclass_detail_page.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/vanclass/object_page/vanclass_page.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/vanclass/test_cases/test001_apply_for_vanclass.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/vanclass/test_cases/test002_vanclass_quit.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/vanclass/test_cases/test004_star_ranking.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/vanclass/test_cases/test003_score_ranking.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/vanclass/test_cases/test005_vanclass_homework_tab.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/vanclass/test_cases/test006_vanclass_homework_analysis_detail_all.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/vanclass/test_cases/test007_vanclass_homework_analysis_detail_finished.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/vanclass/test_cases/test008_vanclass_homework_analysis_detail_unfinish.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/vanclass/test_cases/test009_vanclass_homework_reward.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/vanclass/test_cases/test010_vanclass_homework_ranking.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/vanclass/test_cases/test011_vanclass_homework_share.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book/object_page/check_sql_handle.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book/object_page/check_word_sql.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book/object_page/flash_card_game.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book/object_page/other_game_process.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book/object_page/result_page.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book/object_page/recite_word_operate.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book/object_page/vocab_game.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book_rebuild/object_page/class_operate.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book_rebuild/object_page/clear_user_data.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book_rebuild/object_page/ranking_page.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/word_book_rebuild/object_page/my_word_page.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/assert_func.py">
+    <entry file="file://$USER_HOME$/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        <state relative-caret-position="723">
+          <caret line="114" column="8" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/result.py">
+    <entry file="file://$USER_HOME$/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/HTMLTestReportCN2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+        <state relative-caret-position="723">
+          <caret line="2644" column="8" selection-start-line="2644" selection-start-column="8" selection-end-line="2644" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/templates/testproject/show_all_devices.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="144" selection-start-line="144" selection-end-line="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/templates/test_report/student/honor_6/7_0/20200303_000031/appium_server.log" />
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="32" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/word_flash_card.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="297" column="54" selection-start-line="297" selection-start-column="54" selection-end-line="297" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testone/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="80" column="30" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test002_all_game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/login/object_page/login_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="256" column="8" selection-start-line="256" selection-start-column="8" selection-end-line="256" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/article_select_blank.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/all_game_init.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/article_cloze.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/choice_single.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/all_game_common_element.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/games/article_complete.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#123#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/base_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="44" column="28" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/base_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/case_strategy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/decorator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/screen_shot.py">
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/ports.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        <state relative-caret-position="60">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/report_path.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test002_all_game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test003_wk_game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/run_cases.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding>
-            <element signature="e#61#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/decorator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/templates/testproject/show_devices.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
-          <folding>
-            <element signature="e#3013#3030#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/templates/testproject/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/login/object_page/login_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.2/python_stubs/43567606/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24720">
-          <caret line="824" column="16" selection-start-line="824" selection-start-column="16" selection-end-line="824" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/student/homework_rebuild/test_cases/test001_all_game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding>
-            <element signature="e#124#139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/templates/testproject/base_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/base_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testone/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/object_page/filter_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test010_games_detail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/django/db/backends/base/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="490" column="8" selection-start-line="490" selection-start-column="8" selection-end-line="490" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/base_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testfarm/test_program/conf/user_info.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/assert_func.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/django/db/__init__.py">
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/click_bounds.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+        <state relative-caret-position="90">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/connect_db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/dict_slice.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/excel_read_write.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/games_keyboard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/get_attribute.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/get_element_bounds.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/judge_assert.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/judge_character_type.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/kill_pid.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/raise_exception.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/reset_phone_find_toast.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/reset_phone_toast.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/screen_shot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/sql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/st_appium_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
+        <state relative-caret-position="90">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/test_program/run.py">
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/swipe_find_element.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+        <state relative-caret-position="210">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testfarm/views.py">
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/swipe_screen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="191" column="18" selection-start-line="191" selection-start-column="18" selection-end-line="191" selection-end-column="18" />
-          <folding>
-            <element signature="e#15#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/toast_find.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/wait_element.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfarm/test_program/utils/yb_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>

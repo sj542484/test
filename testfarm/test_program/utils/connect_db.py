@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 import pymysql
 
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststeps
+from conf.base_page import BasePage
+from conf.decorator import teststeps
 
 
 class ConnectDB(BasePage):

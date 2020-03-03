@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# code:UTF-8
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import random
 import time
@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from app.honor.teacher.play_games.object_page.homework_page import Homework
 from app.honor.teacher.play_games.object_page.result_page import ResultPage
 from conf.base_config import GetVariable as gv
-from testfarm.test_program.conf.base_page import BasePage
+from conf.base_page import BasePage
 from conf.decorator import teststeps
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
@@ -54,7 +54,7 @@ class ListenFormSentence(BasePage):
             if k.isspace():
                 count_sp += 1
 
-        count = count_sp // 6
+        count = count_sp // 10
         return count
 
     @teststeps
@@ -98,7 +98,7 @@ class ListenFormSentence(BasePage):
         for i in range(len(value)):
             if value[i] != '':
                 answer.append(value[i])  # 所有输入框值的列表
-        print('我的答题结果:', answer)
+
         return answer
 
     @teststeps
@@ -108,13 +108,6 @@ class ListenFormSentence(BasePage):
             .find_elements_by_id(self.correct_value)
         return word
 
-    @teststeps
-    def explain(self):
-        """展示的翻译"""
-        word = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID + "tv_explain")
-        return word
-
     # 查看答案页面
     @teststeps
     def result_answer(self):
@@ -122,6 +115,13 @@ class ListenFormSentence(BasePage):
         ele = self.driver \
             .find_elements_by_id(gv.PACKAGE_ID + 'tv_mine')
         return ele
+
+    @teststeps
+    def result_explain(self):
+        """展示的翻译"""
+        word = self.driver \
+            .find_elements_by_id(gv.PACKAGE_ID + "tv_explain")
+        return word
 
     @teststeps
     def result_mine(self):
@@ -153,7 +153,7 @@ class ListenFormSentence(BasePage):
                     Homework().rate_judge(rate, i)  # 测试当前rate值显示是否正确
 
                     num = self.input_num()  # 待输入单词个数
-                    print('待输入单词个数：', num)
+                    print(i+1, '.待输入单词个数：', num)
                     for j in range(num):
                         options = self.option_button()
                         keys = self.clear_repeat(options.keys())
@@ -167,6 +167,7 @@ class ListenFormSentence(BasePage):
                         print('-----------------------')
                         time.sleep(1)
                     mine = self.mine_answer()
+                    print('我的答案:', mine)
                     Homework().commit_button_operation('true')  # 提交 按钮 状态判断 加点击
 
                     self.correct_page_operation(mine, i, timestr, answer)  # 答案页面
@@ -185,12 +186,12 @@ class ListenFormSentence(BasePage):
         :param answer: 作对的题
         """
         if self.wait_check_correct_page():
-            print('----------------------')
+            print('-------------------------------')
             mine = self.mine_answer()  # 为答案页面展示的 我的答题结果
-
+            print('答题结果:', mine)
             item = self.correct()[0].text
             correct = list(item[5:].split())  # 正确答案
-            print('解释:', self.explain()[0].text)  # 解释
+
             if len(mine) < len(correct):  # 输入少于单词字母数的字符
                 print('★★★ Error - 字符数少:', len(mine), len(correct), mine, correct)
             else:
@@ -206,7 +207,7 @@ class ListenFormSentence(BasePage):
             self.click_voice_operation(i)  # 点击发音按钮 操作
 
             timestr.append(Homework().time())  # 统计每小题的计时控件time信息
-            print('---------------------------')
+            print('-------------------------------')
             Homework().next_button_operation('true')  # 下一题 按钮 状态判断 加点击
 
     @teststeps
@@ -258,13 +259,14 @@ class ListenFormSentence(BasePage):
             content = []
 
         if self.result.wait_check_detail_page():
-            hint = self.explain()  # 解释
+            hint = self.result_explain()  # 解释
             if len(hint) > 4 and not content:
                 self.listen_ergodic_list(result, len(hint) - 1)
                 content = [hint[-2].text]
 
-                SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
-                self.answer_explain_type(result, content)
+                if self.result.wait_check_detail_page():
+                    SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
+                    self.answer_explain_type(result, content)
             else:
                 var = 0
                 if content:
@@ -284,7 +286,7 @@ class ListenFormSentence(BasePage):
         """
         answer = self.correct()  # 答案
         mine = self.result_answer()  # 我的
-        explain = self.explain()  # 解释
+        explain = self.result_explain()  # 解释
         status = self.result_mine()    # 对错标识
 
         for i in range(var, length):

@@ -3,9 +3,9 @@
 # @Author  : SUN FEIFEI
 from xlrd import open_workbook
 from xlutils.copy import copy
-from testfarm.test_program.conf.base_page import BasePage
-from testfarm.test_program.conf.decorator import teststeps
-from testfarm.test_program.conf.base_config import GetVariable as ge
+from conf.base_page import BasePage
+from conf.decorator import teststeps
+from conf.base_config import GetVariable as ge
 
 
 class ExcelUtil(BasePage):

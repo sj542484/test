@@ -4,18 +4,17 @@
 import time
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.home.object_page.home_page import ThomePage
+from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.test_bank.object_page.games_detail_page import GamesPage
 from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from app.honor.teacher.user_center.mine_collection.object_page.mine_collect_page import CollectionPage
 from app.honor.teacher.user_center.mine_test_bank.object_page.mine_test_bank_page import MineTestBankPage
-from app.honor.teacher.user_center.tiny_course.test_data.video_name import name_data
 from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
-from testfarm.test_program.conf.base_page import BasePage
+from app.honor.teacher.user_center.tiny_course.test_data.video_name import name_data
+from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
-from utils.connect_db import ConnectDB
 from utils.wait_element import WaitElement
 
 
@@ -131,44 +130,50 @@ class CreateTinyCourse(BasePage):
         return ele
 
     @teststeps
-    def edit_course_name(self):
+    def edit_course_name(self, tiny):
         """编辑课程名称 操作"""
         print('---编辑课程名称---')
-        while True:
-            name = name_data[0]['name']
+        k = 0
+        tiny_name = []
+        while k < 5:
+            name = name_data[0]['name'] + '_' + tiny
+            print(name)
             if self.wait_check_list_page():
                 var = self.course_name()  # 微课名称
                 var.send_keys(name)
-                item = var.text
-                print('输入微课名称：', item)
+                tiny_name.append(var.text)
+                print('输入微课名称：', tiny_name[-1])
                 self.save_button()  # 点击保存按钮
 
-                self.judge_upload_operation(2)  # 判断视频 是否 正在上传中
+                self.judge_upload_operation(5)  # 判断视频 是否 正在上传中
+
+                if ThomePage().wait_check_tips_page(5):
+                    ThomePage().tips_content_commit(5)  # 提示 页面信息
+                    ThomePage().tips_content_commit(5)  # 提示 页面信息
+
+                k -= 1
                 if GamesPage().wait_check_page():
                     break
-                else:
-                    continue
+
         print('-----------------')
-        return item
+        return tiny_name[-1]
 
     @teststeps
-    def check_upload_progress(self, var=5):
+    def check_upload_progress(self):
         """上传中..."""
-        return self.wait.wait_check_element(self.upload_locator, var)
+        return self.wait.judge_is_exists(self.upload_locator)
 
     @teststeps
-    def judge_upload_operation(self, var=2):
+    def judge_upload_operation(self, var=5):
         """判断视频 是否 正在上传中 及加入公共题库"""
-        if self.wait_check_upload_page():  # 上传中....
+        if self.wait_check_upload_page(var):  # 上传中....
             # self.upload_rate()  # 上传百分率
             # self.upload_num()  # 上传数量
 
             while True:
-                if self.wait_check_upload_page(var):  # 上传中....
+                if self.check_upload_progress():  # 上传中....
                     time.sleep(1)
-                elif ThomePage().wait_check_tips_page(var):
-                    ThomePage().tips_content_commit(5)  # 提示 页面信息
-                    ThomePage().tips_content_commit(5)  # 提示 页面信息
+                else:
                     break
 
     @teststeps
@@ -199,30 +204,24 @@ class CreateTinyCourse(BasePage):
                             print('★★★ Error - 视频保存失败，我的题库 -题型有误', mode)
                         else:
                             if name[1][0] != video:
-                                print('★★★ Error - 视频保存失败，我的题库 -视频名称有误', name[1][0], video)
+                                if name[1][0] not in video:
+                                    print('★★★ Error - 视频保存失败，我的题库 -视频名称有误', name[1][0], video)
                             else:
                                 if author[0].text != nick:
                                     print('★★★ Error - 视频保存失败，我的题库 -视频作者有误', author[0].text, nick)
                                 else:
                                     print('视频拍摄保存成功')
 
-                        self.recovery_data(video)  # 恢复测试数据
-
             ThomePage().back_up_button()  # 返回个人中心页面
 
-    @teststeps
-    def recovery_data(self, name):
-        """ 恢复测试数据
-        :param name:  视频名称
-        """
-        print('------恢复测试数据-----')
-        sql = "DELETE FROM `testbank` WHERE `account_id` = '51869' AND `name`= '{}'" \
-            .format(name)
-        print(sql)
-        ConnectDB().execute_sql(sql)
-
-    @teststeps
-    def save_operation(self):
-        """保存 操作"""
-        self.save_button()  # 点击 保存按钮
-        self.judge_upload_operation()  # 判断视频是否 正在上传中...  及 加入公共题库tips
+    # @teststeps
+    # def recovery_data(self, name):
+    #     """ 恢复测试数据
+    #     :param name:  视频名称
+    #     """
+    #     print('------恢复测试数据-----')
+    #     account_id = GetDBData().get_account_id()
+    #     sql = "DELETE FROM `testbank` WHERE `account_id` = '{}' AND `name`= '{}'" \
+    #         .format(account_id, name)
+    #     print(sql)
+    #     ConnectDB().execute_sql(sql)

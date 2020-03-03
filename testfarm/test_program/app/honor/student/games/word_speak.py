@@ -14,11 +14,6 @@ from utils.toast_find import Toast
 class WordSpeakGame(SpellWordGame):
 
     @teststep
-    def wait_check_voice_access_alert_page(self):
-        locator = (By.ID, 'com.android.package:id/dialog_container')
-        return self.get_wait_check_page_result(locator)
-
-    @teststep
     def wait_check_word_speak_page(self):
         """单词跟读页面检查点"""
         locator = (By.ID, self.id_type() + 'game_record_button')
@@ -61,12 +56,6 @@ class WordSpeakGame(SpellWordGame):
         return ele.text
 
     @teststep
-    def show_hide_exp_btn(self):
-        """显示 隐藏解释"""
-        ele = self.driver.find_element_by_id(self.id_type() + 'hint_switch')
-        return ele
-
-    @teststep
     def word_explain(self):
         """单词解释"""
         ele = self.driver.find_element_by_id(self.id_type() + 'hint')
@@ -98,20 +87,6 @@ class WordSpeakGame(SpellWordGame):
         ele = self.driver.find_element_by_id(self.id_type() + 'again')
         return ele
 
-
-    @teststeps
-    def show_hide_btn_operate(self, word):
-        self.show_hide_exp_btn().click()
-        if self.wait_check_explain_page():
-            self.base_assert.except_error('点击隐藏解释， 解释依然存在 ' + word)
-        if self.show_hide_exp_btn().text != "显示解释":
-            self.base_assert.except_error('点击隐藏解释，隐藏按钮文本不为显示解释 ' + word)
-        self.show_hide_exp_btn().click()
-        if not self.wait_check_explain_page():
-            self.base_assert.except_error("点击显示解释，未显示解释 " + word)
-        if self.show_hide_exp_btn().text != '隐藏解释':
-            self.base_assert.except_error('点击显示解释， 显示按钮文本不为隐藏解释 ' + word)
-
     @teststeps
     def word_speak_game_process(self, fq, half_exit, again_words=None):
         """单词跟读游戏处理过程"""
@@ -124,10 +99,7 @@ class WordSpeakGame(SpellWordGame):
                     self.rate_judge(total_num, x)
                     self.next_btn_judge('false', self.audio_btn)
                     self.next_btn_judge('false', self.fab_next_btn)
-                    if not self.wait_check_explain_page():
-                        self.base_assert.except_error('页面默认隐藏解释')
-                    else:
-                        print('解释：', self.word_explain())
+                    print('解释：', self.word_explain())
                     word = self.speak_word()
                     mine_answer.append(word)
                     print('单词：', word)
@@ -141,15 +113,17 @@ class WordSpeakGame(SpellWordGame):
                     if fq == 2:
                         if word not in again_words:
                             self.base_assert.except_error('该单词不在选择再练单词列表内 ' + word)
-                    self.show_hide_btn_operate(word)
                     if x == 0 and fq == 1:
                         self.speak_button().click()
-                        if self.wait_check_voice_access_alert_page():
-                            print('手动允许权限')
-                        # action = TouchAction(self.driver)
-                        # action.tap(self.speak_button(), count=2).perform()
-                        # if not Toast().find_toast("录音时长必须大于1s"):
-                        #     self.base_assert.except_error('双击录音按钮， 未提示录音时长必须大于1s')
+                        # 允许录音权限
+                        if self.wait_check_permit_tab_page():
+                            self.always_permit_allow_btn().click()
+                        if self.wait_check_permit_tab_page():
+                            self.always_permit_allow_btn().click()
+                        if self.wait_check_permit_tab_page():
+                            self.always_permit_allow_btn().click()
+
+                    if self.wait_check_word_speak_page():
                         self.speak_button().click()
                         time.sleep(21)
                         if not Toast().find_toast('录音时长不得超过'):
@@ -190,7 +164,7 @@ class WordSpeakGame(SpellWordGame):
                 else:
                     index_num = x
                     self.screen_swipe_up(0.5, 0.9, 0.4, 1000)
-                while not self.wait_check_group_index_page(index_num):
+                while not self.wait_check_word_container_by_index_and_id(index_num):
                     self.screen_swipe_up(0.5, 0.9, 0.8, 500)
 
                 word = self.group_word(x)
