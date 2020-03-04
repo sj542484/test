@@ -39,7 +39,7 @@ urlpatterns = [
     # 停止
     path(r'stopservices/<path:gid>/<path:e_uuid>/',views.stopservice, name='stopserver'),
     # 展示报告
-    path(r'showreport/<path:file_name>/', views.showreport, name='showreport'),
+    path(r'showreport/<path:file_name>', views.showreport, name='showreport'),
     # 测试模块编辑
     path(r'testmodeledit',views.testmodeledit,name='testmodeledit'),
     # 展示所有添加的设备信息

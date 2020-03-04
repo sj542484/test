@@ -13,6 +13,7 @@ from app.honor.student.login.object_page.login_page import LoginPage
 from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase
 from utils.assert_func import ExpectingTest
+from app.honor.student.homework_rebuild.test_data.homework_type_page import HomeworkTypePage as ht
 
 
 @ddt
@@ -41,7 +42,7 @@ class PlayAllGame(unittest.TestCase):
         super(PlayAllGame, self).run(result)
 
     @data(
-        ['单词跟读游戏', '单词跟读'],
+        # ['单词跟读游戏', '单词跟读'],
         # [ht.HW1, '闪卡练习'],
         # [ht.HW1, '猜词游戏'],
         # [ht.HW1, '还原单词'],
@@ -50,7 +51,7 @@ class PlayAllGame(unittest.TestCase):
         # [ht.HW2, '单词听写'],
         # [ht.HW2, '连词成句'],
         # [ht.HW2, '单词拼写'],
-        # [ht.HW2, '选词填空'],
+        [ht.HW2, '选词填空'],
         # [ht.HW3, '词汇选择'],
         # [ht.HW3, '听音选图'],
         # [ht.HW3, '句型转换'],
@@ -59,7 +60,7 @@ class PlayAllGame(unittest.TestCase):
         # [ht.HW4, '听音连句'],
         # [ht.HW4, '完形填空'],
         # [ht.HW4, '阅读理解'],
-        # [ht.HW4, '补全文章'],
+        [ht.HW4, '补全文章'],
     )
     @unpack
     @testcase

@@ -37,7 +37,7 @@ class GetVariable(object):
 
     # 安装包
     # 教师端
-    TEA_PACKAGE = "/Users/vanthink_test_ios/Desktop/teacher_env_devDebug_1.2.5.apk"
+    TEA_PACKAGE = "/www/teacher_env_devDebug_1.3.1_589954b.apk"
     # 学生端
     STU_PACKAGE = "/www/student_env_devMasterDebug_1.4.8-5.apk"
 

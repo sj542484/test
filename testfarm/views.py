@@ -1,4 +1,4 @@
-# coding=utf-8
+## coding=utf-8
 import re, os, hashlib
 import subprocess
 import time
@@ -162,12 +162,21 @@ def st(e_uuid, ports, test_side, test_items, mutex):
     close_old_connections()
     mutex.acquire()
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=1, statue_statue=1, gid=gid)
-    test_sides = SideType.objects.filter(id=int(test_side))[0].side_eng
-    # print(test_sides)
-    test_item = ItemType.objects.filter(side=str(int(test_side)))[int(test_items) - 1].item_eng
-    # print(test_item)
-    print('设备uuid:', e_uuid, '测试端:', test_sides, '测试项:', test_item)
     mutex.release()
+    close_old_connections()
+    mutex.acquire()
+    test_sides = SideType.objects.filter(id=int(test_side))[0].side_eng
+    mutex.release()
+    close_old_connections()
+    mutex.acquire()
+    print('side:', test_side, 'test_items:', test_items)
+
+    print(ItemType.objects.filter(side=str(int(test_side))))
+
+    test_item = ItemType.objects.filter(side=str(int(test_side)))[int(test_items) - 1].item_eng
+    mutex.release()
+
+    print('设备uuid:', e_uuid, '测试端:', test_sides, '测试项:', test_item)
     p = Utils(port=_port)
     appium_port = p.get_ports(port=4723, count=1)[0]
     _port.append(appium_port)
@@ -175,6 +184,7 @@ def st(e_uuid, ports, test_side, test_items, mutex):
     _port.append(sysport)
 
     # 根据设别uuid 获取设备的详情
+    close_old_connections()
     mutex.acquire()
     device = EquipmentList.objects.get(equipment_uuid=e_uuid)
     mutex.release()
@@ -189,7 +199,6 @@ def st(e_uuid, ports, test_side, test_items, mutex):
                 test_items=test_item)
     file_name, sta = dr.run_cases(appium_port, sysport, mutex)  # 测试程序入口
 
-
     # 返回报告路径
     file_name = file_name.split('/templates/')[1]
     print('存储报告路径：', file_name)
@@ -198,7 +207,10 @@ def st(e_uuid, ports, test_side, test_items, mutex):
     close_old_connections()
     mutex.acquire()
     device = EquipmentList.objects.get(equipment_uuid=e_uuid)
+    mutex.release()
+    close_old_connections()
     node_pid = device.node_pid
+    mutex.acquire()
     EquipmentList.objects.filter(equipment_uuid=e_uuid).update(start_but_statue=0, statue_statue=0, gid=None,
                                                                node_pid=None, report=file_name)
     mutex.release()
@@ -216,7 +228,6 @@ def st(e_uuid, ports, test_side, test_items, mutex):
 def stopservice(request, gid, e_uuid):
     """关闭进程 结束测试"""
     close_old_connections()
-
     device = EquipmentList.objects.get(equipment_uuid=e_uuid)
     node_pid = device.node_pid
 
@@ -257,9 +268,7 @@ def get_show_phone():
             pat = re.compile('(.*?) .*?model:(.*?) ')
             res = pat.findall(i)
             close_old_connections()
-
             res = EquipmentList.objects.filter(equipment_uuid=res[0][0])
-            close_old_connections()
 
             if res:
                 dev_list.append(res[0])
@@ -363,3 +372,4 @@ def tea_do_data(request):
     print(start_num)
     print(start_tea_account)
     return HttpResponse('<script>alert("开始上传！！！");location.href="/"</script>')
+

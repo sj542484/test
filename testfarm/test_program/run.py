@@ -67,6 +67,7 @@ class Driver:
         res = subprocess.Popen(cmd, shell=True)
         # 取保端口已经启动apiumm服务
         while True:
+            print('opopopp', appium_port)
             res = Utils(port=self.ports).is_using(appium_port)
             if res:
                 if 'node' in str(res):
