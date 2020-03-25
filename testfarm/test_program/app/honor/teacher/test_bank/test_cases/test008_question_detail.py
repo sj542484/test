@@ -89,6 +89,8 @@ class QuestionDetail(unittest.TestCase):
                         print('暂无可操作题单')
             else:
                 print('未进入题库页面')
+            if self.question.wait_check_page():  # 页面检查点
+                self.home.click_tab_hw()  # 返回首页
         else:
             Toast().get_toast()  # 获取toast
             print("未进入主界面")
@@ -155,7 +157,7 @@ class QuestionDetail(unittest.TestCase):
     def judge_basket_result(self, name):
         """ 验证 - 加入题筐结果"""
         if self.question.wait_check_page('题单'):
-            self.question.question_basket()  # 题筐
+            self.question.question_basket_button()  # 题筐
             if self.basket.wait_check_page():  # 页面检查点
                 if self.basket.wait_check_list_page():
                     print('--------------验证 -加入题筐结果---------------')

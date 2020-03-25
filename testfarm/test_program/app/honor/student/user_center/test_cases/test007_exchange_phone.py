@@ -12,7 +12,7 @@ from app.honor.student.user_center.object_page.user_center_page import UserCente
 from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase
 from utils.assert_func import ExpectingTest
-from utils.reset_phone_find_toast import verify_find
+from utils.reset_phone_toast import get_verify
 from utils.toast_find import Toast
 
 
@@ -73,7 +73,7 @@ class ExchangePhone(unittest.TestCase):
                                         print(reset_phone_data[i]["toast"])
                                     self.home.click_back_up_button()  # 返回个人信息 页面
                                 else:
-                                    value = verify_find(reset_phone_data[i]['reset'])  # 获取验证码
+                                    value = get_verify(reset_phone_data[i]['reset'])  # 获取验证码
                                     if i == len(reset_phone_data)-1:
                                         self.phone.verify().send_keys('1234')
                                         self.phone.btn_certain()  # 确定按钮

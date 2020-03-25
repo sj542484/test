@@ -1,0 +1,1668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试用例执行报告</title>
+    <meta name="generator" content="HTMLTestRunner 1.2.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+    <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: Microsoft YaHei;padding: 20px; font-size: 100%; }
+table       { font-size: 100%; }
+.table tbody tr td{
+            vertical-align: middle;
+        }
+
+/* -- heading ---------------------------------------------------------------------- */
+.heading .description, .attribute {
+    clear: both;
+}
+
+/* --- 失败和错误合集样式 -- Gelomen --- */
+.failCollection, .errorCollection {
+    width: 100px;
+    float: left;
+}
+#failCaseOl li {
+    color: red
+}
+#errorCaseOl li {
+    color: orange
+}
+
+/* --- 打开截图特效样式 -- Gelomen --- */
+.data-img{
+    cursor:pointer
+}
+
+.pic_looper{
+    width:100%;
+    height:100%;
+    position: fixed;
+    left: 0;
+    top:0;
+    opacity: 0.6;
+    background: #000;
+    display: none;
+    z-index: 100;
+}
+
+.pic_show{
+    width:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    text-align: center;
+    display: none;
+    z-index: 100;
+}
+
+.pic_box{
+    padding:10px;
+    width:90%;
+    height:90%;
+    margin:40px auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+.pic_box img{
+    width: auto;
+    height: 100%;
+    -moz-box-shadow: 0px 0px 20px 0px #000;
+    -webkit-box-shadow: 0px 0px 20px 0px #000;
+    box-shadow: 0px 0px 20px 0px #000;
+}
+
+/* --- 饼状图div样式 -- Gelomen --- */
+#container {
+    width: 450px;
+    height: 300px;
+    float: left;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+#total_row  { font-weight: bold; }
+.passCase   { color: #5cb85c; }
+.failCase   { color: #f0ad4e; font-weight: bold; }
+.errorCase  { color: #d9534f; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+.screenshot:link { text-decoration: none;color: deeppink; }
+.screenshot:visited { text-decoration: none;color: deeppink; }
+.screenshot:hover { text-decoration: none;color: darkcyan; }
+.screenshot:active { text-decoration: none;color: deeppink; }
+</style>
+
+</head>
+<body >
+<script language="javascript" type="text/javascript">
+
+    $(function(){
+        // 修改 失败 和 错误 用例里对应按钮的颜色ClassName为动态加载 -- Gelomen
+    	$("button").each(function () {
+    	    var text = $(this).text();
+    	    if(text == "失败"){
+    	        $(this).addClass("btn-warning")
+            }else if(text == "错误") {
+                $(this).addClass("btn-danger")
+            }else if(text == "通过") {
+                $(this).addClass("btn-success")
+            }
+        });
+
+        // 给失败和错误合集加样式 -- Gelomen
+        var p_attribute = $("p.attribute");
+        p_attribute.eq(4).addClass("failCollection");
+        p_attribute.eq(5).addClass("errorCollection");
+
+        // 打开截图，放大，点击任何位置可以关闭图片  -- Gelomen
+        $(".screenshot").click(function(){
+            var img = $(this).attr("img");
+            
+            var a = "{% static '";
+            var b = "' %}";
+            
+            $('.pic_show img').attr('src', a + img + b);
+            
+            $('.pic_looper').fadeIn(200);
+            $('.pic_show').fadeIn(200);
+
+            var browserHeight = $(window).height();
+            var pic_boxHeight = $(".pic_box").height();
+            var top = (browserHeight - pic_boxHeight)/2;
+            $('.pic_box').css("margin-top", top + "px")
+
+        });
+        $('.pic_looper, .pic_show').click(function(){
+            $('.pic_looper').fadeOut(200);
+            $('.pic_show').fadeOut(200)
+        });
+
+        var browserWidth = $(window).width();
+        var margin_left = browserWidth/2 - 450;
+        if(margin_left <= 240){
+            $("#container").css("margin", "auto");
+        }else {
+            $("#container").css("margin-left", margin_left + "px");
+        }
+
+        $(window).resize(function(){
+            // 改变窗口大小时，自动改变图片与顶部的距离  -- Gelomen
+            var browserHeight = $(window).height();
+            var pic_boxHeight = $(".pic_box").height();
+            var top = (browserHeight - pic_boxHeight)/2;
+            $('.pic_box').css("margin-top", top + "px");
+
+
+            // 改变窗口大小时，自动改变饼图的边距  -- Gelomen
+            var browserWidth = $(window).width();
+            var margin_left = browserWidth/2 - 450;
+            if(margin_left <= 240){
+                $("#container").css("margin", "auto");
+            }else {
+                $("#container").css("margin-left", margin_left + "px");
+            }
+        });
+
+        // 距离顶部超过浏览器窗口一屏时，回到顶部按钮才出现  -- Gelomen
+        $(window).scroll(function(){
+            var browserHeight = $(window).height();
+            var top = $(window).scrollTop();
+            if(top >= browserHeight){
+                $("#toTop").css("display", "block")
+            }else {
+                $("#toTop").css("display", "none")
+            }
+        })
+
+        // 增加回到顶部过程的动画，以看上去不会那么生硬  -- Gelomen
+        $("#toTop").click(function() {
+            $("html,body").animate({"scrollTop":0}, 700)
+        })
+
+        // 增加饼状图  -- Gelomen
+        $('#container').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                spacing : [0, 0, 0, 0]
+            },
+            credits: {
+                enabled: false
+            },
+            navigation: {
+                buttonOptions: {
+                    enabled: false
+                }
+            },
+            title: {
+                floating:true,
+                text: '测试结果占比'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    colors: ['#81ca9d','#fdc68c', '#f16d7e'],
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(e) {  // 鼠标滑过时动态更新标题
+                                chart.setTitle({
+                                    text: e.target.name+ '\t'+ e.target.y + ' 个'
+                                });
+                            }
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                innerSize: '80%',
+                name: '比例',
+                data: [
+                    ['通过', 12],
+                    {
+                        name: '失败',
+                        y: 1,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['错误', 3]
+                ]
+            }]
+        }, function(c) {
+            // 环形图圆心
+            var centerY = c.series[0].center[1],
+                titleHeight = parseInt(c.title.styles.fontSize);
+            c.setTitle({
+                y:centerY + titleHeight/2
+            });
+            chart = c;
+        });
+
+        // 查看 失败 和 错误 合集链接文字切换  -- Gelomen
+        $(".showDetail").click(function () {
+            if($(this).html() == "点击查看"){
+                $(this).html("点击收起")
+            }else {
+                $(this).html("点击查看")
+            }
+        })
+    });
+
+
+output_list = Array();
+
+/*level 调整增加只显示通过用例的分类 --Findyou / 修复筛选显示bug --Gelomen
+0:Summary //all hiddenRow
+1:Failed  //pt&et hiddenRow, ft none
+2:Pass    //pt none, ft&et hiddenRow
+3:Error   //pt&ft hiddenRow, et none
+4:All     //all none
+*/
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level == 2 || level == 0 || level == 3) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+                // 切换筛选时只显示预览   -- Gelomen
+                $("div[id^='div_ft']").attr("class", "collapse");
+                $("div[id^='div_et']").attr("class", "collapse");
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level == 1 || level == 0 || level == 3) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+                // 切换筛选时只显示预览   -- Gelomen
+                $("div[id^='div_ft']").attr("class", "collapse");
+                $("div[id^='div_et']").attr("class", "collapse");
+            }
+        }
+        if (id.substr(0,2) == 'et') {
+            if (level == 1 || level == 0 || level == 2) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+                // 切换筛选时只显示预览   -- Gelomen
+                $("div[id^='div_ft']").attr("class", "collapse");
+                $("div[id^='div_et']").attr("class", "collapse");
+            }
+        }
+    }
+
+    //加入【详细】切换文字变化 --Findyou
+    detail_class=document.getElementsByClassName('detail');
+	//console.log(detail_class.length)
+	if (level == 3) {
+		for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="收起"
+		}
+	}
+	else{
+			for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="详细"
+		}
+	}
+}
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        //ID修改 点 为 下划线 -Findyou
+        tid0 = 't' + cid.substr(1) + '_' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'e' + tid0;
+                tr = document.getElementById(tid);
+            }
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+            document.getElementById(cid).innerText = "详细"
+        }
+        else {
+            document.getElementById(tid).className = '';
+            document.getElementById(cid).innerText = "收起"
+        }
+    }
+}
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+</script>
+<div class='pic_looper'></div> <div class='pic_show'><div class='pic_box'>{% load static %}<img src=''/></div> </div>
+<div class='heading'>
+<div style="width: 650px; float: left;">
+    <h1 style="font-family: Microsoft YaHei">测试用例执行报告</h1>
+    <p class='attribute'><strong>测试人员 : </strong> QA</p>
+<p class='attribute'><strong>开始时间 : </strong> 2020-03-17 14:26:51</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:26:37.213231</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 16，通过 12，失败 1，错误 3，通过率 = 75.00%</p>
+<p class='attribute'><strong>失败用例合集 : </strong> <div class='panel-default' style='float: left;'><a class='showDetail' data-toggle='collapse' href='#failCaseOl' style='text-decoration: none;'>点击查看</a></div><ol id='failCaseOl' class='collapse' style='float: left;'><li>test_question_detail (test_cases.test008_question_detail.QuestionDetail)</li></ol></p>
+<p class='attribute'><strong>错误用例合集 : </strong> <div class='panel-default' style='float: left;'><a class='showDetail' data-toggle='collapse' href='#errorCaseOl' style='text-decoration: none;'>点击查看</a></div><ol id='errorCaseOl' class='collapse' style='float: left;'><li>test_question_max_num (test_cases.test005_question_basket_max_count.QuestionBasket)</li><li>test_game_detail (test_cases.test010_games_detail.GameDetail)</li><li>test_cases.test011_test_paper_operation (unittest.loader._FailedTest)</li></ol></p>
+
+    <p class='description'>用例执行情况统计：</p>
+</div>
+<div id="container"></div>
+</div>
+
+
+
+<div style="width: 500px; clear: both;">
+<p id='show_detail_line'>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 75.00% }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 12 }</a>
+<a class="btn btn-warning" href='javascript:showCase(1)'>失败{ 1 }</a>
+<a class="btn btn-danger" href='javascript:showCase(3)'>错误{ 3 }</a>
+<a class="btn btn-info" href='javascript:showCase(4)'>所有{ 16 }</a>
+</p>
+</div>
+<table id='result_table' class="table table-condensed table-bordered table-hover">
+<colgroup>
+<col align='left' style="width: 300px;"/>
+<col align='right' style="width: 300px;"/>
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' style="width: 200px;"/>
+</colgroup>
+<tr id='header_row' class="text-center success" style="font-weight: bold;font-size: 14px;">
+    <td>用例集/测试用例</td>
+    <td>总计</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>耗时</td>
+    <td>详细</td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>BankSearch &nbsp &nbsp 题库 -搜索 -历史搜索词</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">38.66秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',1)" class="detail" id='c1'>详细</a></td>
+</tr>
+
+    <tr id='pt1_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_history_search_word<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt1_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+        <div id='div_pt1_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt1_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+        <div id='div_pt1_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt1_1: 登录 操作
+/Users/vanthink_test_ios/aa/aaa/test
+------------------------------------------
+历史搜索词：
+ []
+------------------准备历史搜索词-------------------
+搜索内容： 选词填空
+------------------------------------------
+历史搜索词：
+ ['选词填空']
+--------------------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+----------------
+点击删除按钮
+删除： 选词填空
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>BankSearch &nbsp &nbsp 题库 -- 搜索 -资源</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">20.09秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c2',1)" class="detail" id='c2'>详细</a></td>
+</tr>
+
+    <tr id='pt2_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_search_resource<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt2_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_1'>通过</button>
+        <div id='div_pt2_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt2_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt2_1'>通过</button>
+        <div id='div_pt2_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt2_1: 在主界面
+搜索内容： 听音
+  句型转换听音连句p.m.
+  可以用的听音选图@LK
+  听音选择
+  陕旅版 三起点 四上 重点句型 2
+--------------------------------------
+搜索内容： 听音
+  句型转换听音连句p.m.
+  可以用的听音选图@LK
+  听音选择
+  陕旅版 三起点 四上 重点句型 2
+--------------------------------------
+--------------------- 
+ 点击历史搜索词: 听音
+  句型转换听音连句p.m.
+  可以用的听音选图@LK
+  听音选择
+  陕旅版 三起点 四上 重点句型 2
+--------------------------------------
+--------------------验证结果------------------
+两次的搜索条件一致
+三次搜索到的内容一致
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>BankSearch &nbsp &nbsp 题库 -- 搜索 - 上传者</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">22.21秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c3',1)" class="detail" id='c3'>详细</a></td>
+</tr>
+
+    <tr id='pt3_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_search_uploader<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt3_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt3_1'>通过</button>
+        <div id='div_pt3_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt3_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt3_1'>通过</button>
+        <div id='div_pt3_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt3_1: 在主界面
+搜索内容： 小玉
+获取尺寸： {'width': 1080, 'height': 2044}
+  mmm
+  阿达
+  哈哈哈哈
+  1111哈哈哈
+--------------------------------------
+--------------------- 
+ 点击历史搜索词: 小玉
+  mmm
+  阿达
+  哈哈哈哈
+  1111哈哈哈
+--------------------------------------
+--------------------验证结果------------------
+两次的搜索条件一致
+两次搜索到的内容一致
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>QuestionBasket &nbsp &nbsp 题库 -- 加题进题筐</td>
+    <td class="text-center">2</td>
+    <td class="text-center">2</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">81.68秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c4',2)" class="detail" id='c4'>详细</a></td>
+</tr>
+
+    <tr id='pt4_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_001_question_basket_add<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt4_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_1'>通过</button>
+        <div id='div_pt4_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt4_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt4_1'>通过</button>
+        <div id='div_pt4_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt4_1: 在主界面
+暂时没有数据
+请先进入题库，添加大题到题筐
+--------------------------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+题单: 冀教版三起点 三下 Unit2 重点短语
+---------------------题单详情页---------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+['冀教版三起点 三下 Unit 2 重点短语', '冀教版三起点 三下 Unit2 重点短语 英汉', '冀教版三起点 三下 Unit2 重点短语 汉英', '冀教版三起点 三下 Unit2 重点短语 简单', '冀教版三起点 三下 Unit2 重点短语 默写']
+添加题筐成功
+--------------验证 添加题筐 结果--------------
+----------------------------
+加入题筐成功
+全部移除成功
+----------------------
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='pt4_2' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_002_question_add_button<br>题库 -- 题单详情页 加题进题筐按钮</div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt4_2' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_2'>通过</button>
+        <div id='div_pt4_2' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt4_2' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt4_2'>通过</button>
+        <div id='div_pt4_2' class="collapse in">
+        <pre style="text-align:left">
+        
+pt4_2: 在主界面
+题单: 高效新概念一 Lesson1&amp;2 预习
+---------------------题单详情页-------------------
+添加题筐成功
+已经全部加入题筐
+['小玉111一 Lesson1（单词学习）', '小玉111一 Lesson1', '小玉111一 Lesson1\t（听音选词）', '小玉111一 Lesson1', '小玉111一 Lesson2（单词学习）', '小玉111一 Lesson2']
+--------------验证 添加题筐 结果--------------
+----------------------------
+加入题筐成功
+---------------------题单详情页-------------------
+['小玉111一 Lesson1（单词学习）', '小玉111一 Lesson1', '小玉111一 Lesson1\t（听音选词）', '小玉111一 Lesson1', '小玉111一 Lesson2（单词学习）', '小玉111一 Lesson2']
+★★★ Error- 再次添加题筐未弹-添加成功toast
+--------------验证 再次添加题筐 结果--------------
+----------------------------
+加入题筐成功
+全部移除成功
+----------------------
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='errorClass warning'>
+    <td>QuestionBasket &nbsp &nbsp 题库 -- 题筺 最多50题</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">937.94秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c5',1)" class="detail" id='c5'>详细</a></td>
+</tr>
+
+<tr id='et5_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_question_max_num <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et5_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et5_1'>错误</button>
+    <div id='div_et5_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et5_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et5_1,#div_et5_1_screenshot'>错误</button>
+    <div id='div_et5_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et5_1: 在其他页面,重启app
+在主界面
+暂时没有数据
+请先进入题库，添加大题到题筐
+-------------------------------------------
+题筺还差50题
+该套题有16道小题     陕旅版 三起点 四上 重点句型 2
+-------------------------
+题筺还差34题
+该套题有16道小题     陕旅版 三起点 五下 重点句型 1
+-------------------------
+题筺还差18题
+该套题有14道小题     沪教牛津版九年级上册 Unit7 同步训练
+-------------------------
+题筺还差4题
+该套题有5道小题     冀教版三起点 三下 Unit2 重点短语
+★★★ Error- 未弹toast: 题筐最多还能加入4题
+-------------------------
+题筺还差-1题
+该套题有5道小题     冀教版三起点 三下 Unit3 重点短语
+★★★ Error- 未弹toast: 题筐最多还能加入-1题
+-------------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+题筺还差-6题
+该套题有8道小题     高效新概念一 Lesson1&amp;2 预习
+★★★ Error- 未弹toast: 题筐最多还能加入-6题
+-------------------------
+题筺还差-14题
+该套题有4道小题     冀教版三起点 四下 Unit3 重点句型
+★★★ Error- 未弹toast: 题筐最多还能加入-14题
+-------------------------
+题筺还差-18题
+该套题有10道小题     冀教版三起点 四下 Unit1 重点短语
+★★★ Error- 未弹toast: 题筐最多还能加入-18题
+-------------------------
+题筺还差-28题
+该套题有4道小题     冀教版三起点 四上 Unit2 重点句型
+★★★ Error- 未弹toast: 题筐最多还能加入-28题
+-------------------------
+题筺还差-32题
+该套题有4道小题     冀教版三起点 四上 Unit4 重点句型
+★★★ Error- 未弹toast: 题筐最多还能加入-32题
+-------------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+题筺还差-36题
+该套题有4道小题     冀教版三起点 五上 Unit3 重点句型
+★★★ Error- 未弹toast: 题筐最多还能加入-36题
+-------------------------
+题筺还差-40题
+该套题有4道小题     冀教版三起点 五下 Unit4 重点句型
+★★★ Error- 未弹toast: 题筐最多还能加入-40题
+-------------------------
+题筺还差-44题
+该套题有14道小题     沪教牛津版九年级上册 Unit5 同步训练
+★★★ Error- 未弹toast: 题筐最多还能加入-44题
+-------------------------
+题筺还差-44题
+该套题有3道小题     鲁科版 三起点 五上Unit 2 重点句型
+★★★ Error- 未弹toast: 题筐最多还能加入-44题
+-------------------------
+题筺还差-47题
+该套题有5道小题     鲁科版 三起点 五上Unit 2 重点短语
+★★★ Error- 未弹toast: 题筐最多还能加入-47题
+-------------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+题筺还差-47题
+该套题有3道小题     鲁科版 三起点 三上Unit 5 重点短语
+★★★ Error- 未弹toast: 题筐最多还能加入-47题
+-------------------------
+题筺还差-50题
+该套题有5道小题     鲁科版 三起点 四上Unit 2 重点短语
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有4道小题     鲁科版 三起点 四上Unit 3 重点短语
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有10道小题     冀教版三起点 五上 Unit 1 重点短语
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有10道小题     冀教版三起点 五下 Unit 2 重点短语
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+题筺还差-50题
+该套题有4道小题     高效新概念一 Lesson55&amp;56 课上
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有15道小题     高效新概念二 Lesson3 课后练习
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有8道小题     高效新概念二 Lesson3 课上练习
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有5道小题     高效新概念一 Lesson57&amp;58 课上
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有5道小题     高效新概念一 Lesson61&amp;62 课上
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+题筺还差-50题
+该套题有5道小题     高效新概念一 Lesson61&amp;62 课上
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有4道小题     高效新概念一 Lesson51&amp;52 课上
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有20道小题     新概念英语第一册Lesson2
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有22道小题     人教精通版三起点六上单词 Unit1
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有24道小题     人教精通版三起点六上重点句型
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+题筺还差-50题
+该套题有20道小题     人教精通版三起点五下单词 Unit6
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有28道小题     人教精通版三起点五下课文 Unit6：L31-L33
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有28道小题     人教精通版三起点六下课文 Unit1：L4-L6
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有9道小题     鲁教版 六年级下册 Unit6 同步练习-2
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有17道小题     新概念英语第一册Lesson7
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+题筺还差-50题
+该套题有10道小题     沪教牛津版八年级上册 期末测试（二）
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有29道小题     译林牛津版七下习题A Unit4 同步训练-1
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有25道小题     译林牛津版七下习题A Unit6 同步训练
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有24道小题     译林牛津版七下习题A Unit8 同步训练
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有8道小题     小则牛津版七下习题A Unit8 单元检测
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+题筺还差-50题
+该套题有21道小题     鲁教版 七年级下册 Unit8 同步练习-1
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有18道小题     人教精通版三起点三上课文Unit2：L10-L12
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有18道小题     鲁教版 六年级下册 Unit8 同步练习-1
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有13道小题     鲁教版 六年级下册 Unit8 同步练习-2
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有24道小题     译林牛津版 八年级下册单词 Unit1
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+题筺还差-50题
+该套题有16道小题     青少版新概念 1A  Unit 7 课文
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有24道小题     青少版新概念 2B Unit22 单词
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有16道小题     青少版新概念 2B Unit19 单词
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有15道小题     青少版新概念 2B Unit17-2 单词
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+该套题有24道小题     新概念英语第一册Lesson74
+★★★ Error- 未弹toast: 题筐最多还能加入-50题
+-------------------------
+题筺还差-50题
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_142629/
+screen_shot[Error--Error_1.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test005_question_basket_max_count.py", line 56, in test_question_max_num
+    count = int(re.sub("\D", "", item[2][i].text))  # 题数
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 123, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_1.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et5_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_1.png">Error_1.png</a></div></td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>QuestionBasket &nbsp &nbsp 题库 -- 移出题筐</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">49.09秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c6',1)" class="detail" id='c6'>详细</a></td>
+</tr>
+
+    <tr id='pt6_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_question_basket_remove<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt6_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt6_1'>通过</button>
+        <div id='div_pt6_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt6_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt6_1'>通过</button>
+        <div id='div_pt6_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt6_1: 在其他页面,重启app
+在主界面
+-----------------题筐-------------------
+验证1. 不选择任何题目，直接点击 &lt;移出题筐&gt; 按钮
+请选择要移除的题目
+--------------------------------------------------
+验证2. 点击全选按钮
+共有100道题目
+---------------------------
+全部移出题筐成功
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='failClass warning'>
+    <td>QuestionDetail &nbsp &nbsp 题单详情</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">47.08秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c7',1)" class="detail" id='c7'>详细</a></td>
+</tr>
+
+<tr id='ft7_1' class='none'>
+    <td class='failCase' style="vertical-align: middle"><div class='testcase'>test_question_detail <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft7_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_ft7_1'>失败</button>
+    <div id='div_ft7_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_ft7_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_ft7_1,#div_ft7_1_screenshot'>失败</button>
+    <div id='div_ft7_1' class="collapse in">
+    <pre style="text-align:left">
+    
+ft7_1: Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+AssertionError: False is not true : ★★★ Error- 未进入题库-冀教版三起点 三下 Unit2 重点短语页面
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+AssertionError: IMAGE:Error_2.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 113, in wrapper
+    raise AssertionError(e)
+AssertionError: IMAGE:Error_2.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_ft7_1_screenshot' class="collapse in">查看截图：</div></td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>QuestionDetail &nbsp &nbsp 题单详情 - 再次点击推荐和收藏按钮</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">68.95秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c8',1)" class="detail" id='c8'>详细</a></td>
+</tr>
+
+    <tr id='pt8_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_question_detail_again<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt8_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt8_1'>通过</button>
+        <div id='div_pt8_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt8_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt8_1'>通过</button>
+        <div id='div_pt8_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt8_1: 在其他页面,重启app
+在主界面
+获取尺寸： {'width': 1080, 'height': 2044}
+题单: 冀教版三起点 三下 Unit3 重点短语
+-------------------题单详情页--------------------
+--------
+所选择的标签: 作业推荐3
+-----------
+ 点击推荐按钮
+--------
+所选择的标签: 作业推荐3
+-----------
+ 再次点击推荐按钮
+ 推荐成功
+--------------------------
+ 点击收藏按钮
+ 再次点击收藏按钮
+================================================
+-------------------验证 - 收藏结果------------------
+冀教版三起点 三下 Unit3 重点短语
+ 取消收藏成功
+-----------------验证 -添加推荐结果-----------------
+冀教版三起点 三下 Unit3 重点短语
+冀教版三起点 三下 Unit2 重点短语
+加入推荐成功
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>QuestionDetail &nbsp &nbsp 题单详情 - 再次点击推荐和收藏按钮</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">25.99秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c9',1)" class="detail" id='c9'>详细</a></td>
+</tr>
+
+    <tr id='pt9_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_question_detail_again<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt9_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt9_1'>通过</button>
+        <div id='div_pt9_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt9_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt9_1'>通过</button>
+        <div id='div_pt9_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt9_1: 在主界面
+题单: 冀教版三起点 三下 Unit3 重点短语
+-------------------题单详情页--------------------
+--------
+所选择的标签: 作业推荐3
+-----------
+ 点击推荐按钮
+--------
+所选择的标签: 作业推荐3
+-----------
+ 再次点击推荐按钮
+ 推荐成功
+--------------------------
+ 点击收藏按钮
+ 再次点击收藏按钮
+================================================
+-------------------验证 - 收藏结果------------------
+冀教版三起点 三下 Unit3 重点短语
+ 取消收藏成功
+-----------------验证 -添加推荐结果-----------------
+冀教版三起点 三下 Unit3 重点短语
+冀教版三起点 三下 Unit2 重点短语
+加入推荐成功
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='errorClass warning'>
+    <td>GameDetail &nbsp &nbsp 游戏详情</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">81.66秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c10',1)" class="detail" id='c10'>详细</a></td>
+</tr>
+
+<tr id='et10_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_game_detail <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et10_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et10_1'>错误</button>
+    <div id='div_et10_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et10_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et10_1,#div_et10_1_screenshot'>错误</button>
+    <div id='div_et10_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et10_1: 在主界面
+获取尺寸： {'width': 1080, 'height': 2044}
+获取尺寸： {'width': 1080, 'height': 2044}
+##########################################################################
+autotest_单词拼写&amp;闪卡&amp;单项题
+================================================================
+单词拼写
+---------------------游戏详情页---------------------
+Backpack3单词拼写练习（随机模式）
+随机模式    共2题    2017-10-06
+Chasel老师
+-----------------------
+get   到 
+ 去除:  随机
+-----------------------------------
+================================================================
+单词拼写
+---------------------游戏详情页---------------------
+Coral老师的练习题-单词拼写（默写模式）
+默写模式    共2题    2017-08-04
+英语培训周老师
+-----------------------
+content   奋斗，斗争，辩论 
+ 去除:  全部
+-----------------------------------
+================================================================
+单词拼写
+---------------------游戏详情页---------------------
+四年级下册单词（单词拼写）（自定义）
+自定义模式    共8题    2017-08-28
+Maggie Huang
+-----------------------
+library   图书馆 
+ 去除:  l_b_ary
+-----------------------------------
+music   音乐 
+ 去除:  m_si_
+-----------------------------------
+lunch   午餐 
+ 去除:  lun__
+-----------------------------------
+cloudy   阴天的；多云的 
+ 去除:  cl__dy
+-----------------------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+================================================================
+单项选择
+---------------------游戏详情页---------------------
+单项选择_解析
+共5题    2019-09-26
+sff
+-----------------------
+-----------------------------
+1.Who _____ that girl?
+选项: A
+那个女孩是谁？
+获取尺寸： {'width': 1080, 'height': 2044}
+-----------------------------
+2._____ your friend like? She's tall and thin.
+选项: C
+那个女孩是谁？
+获取尺寸： {'width': 1080, 'height': 2044}
+获取尺寸： {'width': 1080, 'height': 2044}
+-----------------------------
+3.Do you know Ms Young? ( _____ ) .
+选项: A
+你知道王女士吗？
+获取尺寸： {'width': 1080, 'height': 2044}
+-----------------------------
+4.Ms Zhang will _____ our new Chinese teacher.
+选项: A
+你知道王女士吗？
+获取尺寸： {'width': 1080, 'height': 2044}
+获取尺寸： {'width': 1080, 'height': 2044}
+-----------------------------
+5.What is Mr Wang like? ( _____ )is so friendly.
+选项: B
+获取尺寸： {'width': 1080, 'height': 2044}
+================================================================
+句子学习
+---------------------游戏详情页---------------------
+闪卡练习学习模式1（句子学习）提分
+学习模式    共3题    2017-10-14
+Chasel老师
+-----------------------
+句子: She gets up at 7:00 in the morning.   解释: 她早上七点起床。
+-----------------------------------
+句子: He gets dressed at 7:25 in the morning.   解释: 他早上7:25穿好衣服。
+-----------------------------------
+##########################################################################
+autotest_强化炼句&amp;选词填空&amp;还原单词题
+================================================================
+强化炼句
+---------------------游戏详情页---------------------
+强化炼句（复杂模式）提分
+复杂模式    共2题    2018-01-15
+周老师123
+-----------------------
+句子: i can say.   解释: 我可以说
+-----------------------------------
+================================================================
+强化炼句
+---------------------游戏详情页---------------------
+强化炼句（简单模式）提分
+简单模式    共2题    2017-12-22
+小玉
+-----------------------
+句子: I have a dream.   解释: 我有一个梦想。
+-----------------------------------
+================================================================
+强化炼句
+---------------------游戏详情页---------------------
+强化炼句（自定义模式）提分
+自定义模式    共2题    2018-01-15
+周老师123
+-----------------------
+句子: i can say.   解释: 我可以说
+-----------------------------------
+================================================================
+强化炼句
+---------------------游戏详情页---------------------
+强化炼句（默写模式）提分
+默写模式    共2题    2018-01-15
+周老师123
+-----------------------
+句子: i can say.   解释: 我可以说
+-----------------------------------
+================================================================
+选词填空
+---------------------游戏详情页---------------------
+选词文章内含有音标提分
+共5题    2018-02-26
+随风倒
+-----------------------
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_142629/
+screen_shot[Error--Error_3.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test010_games_detail.py", line 131, in check_operation
+    if BankedCloze().verify_content_text():
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/banked_cloze_page.py", line 26, in __init__
+    self.bounds = ClickBounds()
+TypeError: ClickBounds() missing 3 required positional arguments: 'self', 'location_x', and 'location_y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test010_games_detail.py", line 94, in game_detail_operation
+    self.check_operation(value)  # 查看小游戏详情页 具体操作
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 87, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_3.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test010_games_detail.py", line 60, in test_game_detail
+    self.game_detail_operation()  # 游戏详情页
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_3.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 121, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_3.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et10_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_3.png">Error_3.png</a></div></td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>_FailedTest &nbsp &nbsp </td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0.0秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c11',1)" class="detail" id='c11'>详细</a></td>
+</tr>
+
+    <tr id='et11_1' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test011_test_paper_operation<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et11_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et11_1'>错误</button>
+        <div id='div_et11_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et11_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et11_1'>错误</button>
+        <div id='div_et11_1' class="collapse in">
+        <pre style="text-align:left">
+        
+et11_1: ImportError: Failed to import test module: test_cases.test011_test_paper_operation
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/test_bank/test_cases/test011_test_paper_operation.py", line 7, in &lt;module&gt;
+    from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>PaperShare &nbsp &nbsp 试卷分享 -修改</td>
+    <td class="text-center">2</td>
+    <td class="text-center">2</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">166.76秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c12',2)" class="detail" id='c12'>详细</a></td>
+</tr>
+
+    <tr id='pt12_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_001_paper_share_edittext<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt12_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt12_1'>通过</button>
+        <div id='div_pt12_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt12_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt12_1'>通过</button>
+        <div id='div_pt12_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt12_1: 在其他页面,重启app
+在主界面
+试卷: 八年级 每日一听26
+--------------------分享控件 操作----------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+------------------------------------------
+微信好友
+------------------------------------------
+微信朋友圈
+------------------------------------------
+复制链接
+已经复制到粘贴板
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='pt12_2' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_002_paper_share_edittext<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt12_2' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt12_2'>通过</button>
+        <div id='div_pt12_2' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt12_2' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt12_2'>通过</button>
+        <div id='div_pt12_2' class="collapse in">
+        <pre style="text-align:left">
+        
+pt12_2: 在主界面
+试卷: 八年级 每日一听26
+------------------------------------------
+八年级 每日一听26
+修改为: 123
+------------------
+工大12
+修改为: school
+------------------
+18823452346
+修改为: 1234
+------------------
+--------------------分享控件 操作----------------------
+获取尺寸： {'width': 1080, 'height': 2044}
+------------------------------------------
+微信好友
+ 手机未安装微信
+------------------------------------------
+微信朋友圈
+------------------------------------------
+复制链接
+已经复制到粘贴板
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>QuestionFilter &nbsp &nbsp 筛选 -- 题单/试卷</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">33.19秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c13',1)" class="detail" id='c13'>详细</a></td>
+</tr>
+
+    <tr id='pt13_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_filter<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt13_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt13_1'>通过</button>
+        <div id='div_pt13_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt13_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt13_1'>通过</button>
+        <div id='div_pt13_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt13_1: 在主界面
+======================选择试卷======================
+获取尺寸： {'width': 1080, 'height': 2044}
+---------------------
+题库
+公共
+本校
+---------------------
+资源类型
+题单
+大题
+试卷
+---------------------
+============================================
+选择的标签为: 公共
+======================选择题单======================
+获取尺寸： {'width': 1080, 'height': 2044}
+---------------------
+题库
+公共
+本校
+---------------------
+资源类型
+题单
+大题
+试卷
+---------------------
+系统标签
+主线数据库标识(勿动)
+新概念（1
+Sy测试添加/删除查看单词数量
+高中课内教材
+其他教材1
+小升初专题
+初中1
+测试一级啊
+分级词汇
+词汇分级-校对
+小学课内教材-校对
+初中课内教材-校对
+测试标签(勿动)
+例句
+产品组
+新概念系列
+嘎哈啊
+测试一1
+wbw_测试
+新标签加
+一级标签2
+小玉测试1
+四级测试
+重复单词
+词书删除2
+多个四级
+重复进度
+重复标签1
+重复1
+重复2
+测试勿动2
+测试测试
+Syy同步标签
+Zzx测试
+百项过标签
+测试es
+超超的标签
+凹凸曼单词
+短语标签_BXG
+12.19超超单词一级标签
+jhsfsdk
+12.25超超单词本
+12.30单词本
+---------------------
+============================================
+选择的标签为: 测试标签(勿动)
+点击重置按钮
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>QuestionFilter &nbsp &nbsp 筛选 -- 大题</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">23.91秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c14',1)" class="detail" id='c14'>详细</a></td>
+</tr>
+
+    <tr id='pt14_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_filter_choose<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt14_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt14_1'>通过</button>
+        <div id='div_pt14_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt14_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt14_1'>通过</button>
+        <div id='div_pt14_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt14_1: 在主界面
+======================选择大题======================
+获取尺寸： {'width': 1080, 'height': 2044}
+---------------------
+题库
+公共
+本校
+---------------------
+资源类型
+题单
+大题
+试卷
+---------------------
+活动类型
+单词拼写
+猜词游戏
+还原单词
+连连看
+词汇选择
+闪卡练习
+强化炼句
+连词成句
+补全文章
+单项选择
+完形填空
+阅读理解
+句型转换
+选词填空
+听后选择
+单词听写
+听音连句
+口语跟读
+口语看读
+听音选图
+磨耳朵
+口语背诵
+微课
+单词跟读
+---------------------
+系统标签
+主线数据库标识(勿动)
+新概念（1
+Sy测试添加/删除查看单词数量
+高中课内教材
+其他教材1
+小升初专题
+初中1
+测试一级啊
+分级词汇
+词汇分级-校对
+小学课内教材-校对
+初中课内教材-校对
+测试标签(勿动)
+例句
+产品组
+新概念系列
+嘎哈啊
+测试一1
+wbw_测试
+新标签加
+一级标签2
+小玉测试1
+四级测试
+重复单词
+---------------------
+============================================
+选择的标签为: 口语跟读
+点击重置按钮
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr id='total_row' class="text-center active">
+    <td>总计</td>
+    <td>16</td>
+    <td>12</td>
+    <td>1</td>
+    <td>3</td>
+    <td>1597.21秒</td>
+    <td>通过率：75.00%</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+    <div id="toTop" style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer; display: none">
+    <a><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>
+    
+
+</body>
+</html>

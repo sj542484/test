@@ -21,25 +21,31 @@ class DynamicPage(BasePage):
 
     dynamic_tips = '★★★ Error- 未进入习题作业界面'
     dynamic_vue_tips = '★★★ Error- 未进入近期习题作业vue界面'
-    dynamic_list_tips = '★★★ Error- 近期习题作业列表为空'
+    dynamic_list_tips = '★★★ Error- 近期习题作业列表 加载不成功'
+    dynamic_empty_tips = '★★★ Error- 近期习题作业列表为空'
 
     def __init__(self):
         self.home = ThomePage()
         self.wait = WaitElement()
-        self.screen = self.get_window_size()
         self.vue = VueContext()
+        self.my_assert = MyAssert()
+        self.screen = self.get_window_size()
 
     @teststeps
     def wait_check_app_page(self):
         """以“title:近期作业”为依据"""
         locator = (By.XPATH, '//android.view.View[@text="口语/习题"]')
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.dynamic_tips)
+        return ele
 
     @teststeps
     def wait_check_page(self):
         """以“title:近期作业”为依据"""
         locator = (By.XPATH, '//div[@class="van-nav-bar__title van-ellipsis" and text()="口语/习题"]')
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.dynamic_vue_tips)
+        return ele
 
     @teststeps
     def wait_check_list_page(self):
@@ -50,7 +56,7 @@ class DynamicPage(BasePage):
     @teststeps
     def wait_check_no_hw_page(self, var=5):
         """删除所有作业后， 无最近作业提示检查点 以提示text作为依据"""
-        locator = (By.XPATH, "//div[@text='学生练得不够?给学生布置个作业吧!']")
+        locator = (By.XPATH, "//div[text()='学生练得不够?给学生布置个作业吧!']")
         return self.wait.wait_check_element(locator, var)
 
     @teststep
@@ -73,33 +79,6 @@ class DynamicPage(BasePage):
         """作业包 条目"""
         locator = (By.XPATH, self.hw_item_value)
         return self.wait.wait_find_elements(locator)
-
-    # @teststeps
-    # def hw_items_info(self):
-    #     """作业包 条目信息"""
-    #     content = []  # 页面内所有条目 元素text
-    #     elements = []  # 页面内所有条目元素
-    #     remind = []  # 提醒按钮
-    #
-    #     ele = self.hw_items()  # 作业包 条目
-    #     for i in range(len(ele)):
-    #         item = []  # 每一个条目的所有元素text
-    #         element = []  # 每一个条目的所有元素
-    #         descendant = ele[i].find_elements_by_xpath('.//descendant::div')
-    #
-    #         for j in range(len(descendant)):
-    #             var = descendant[j].text
-    #             if var not in ('', '  '):
-    #                 if GetAttribute().class_name(descendant[j]) == 'android.widget.Image':  # 提醒按钮
-    #                     remind.append(descendant[j + 1])
-    #                 elif GetAttribute().class_name(descendant[j]) == 'homework-list-content-subtitle-text':
-    #                     item.append(var)
-    #                     element.append(descendant[j])
-    #
-    #         content.append(item/)
-    #         elements.append(element)
-    #
-    #     return elements, content, remind
 
     @teststep
     def hw_create_time(self):
@@ -164,34 +143,30 @@ class DynamicPage(BasePage):
     def into_hw(self):
         """进入作业/口语列表中的该作业/口语
         """
+        self.my_assert.assertTrue(self.wait_check_list_page(), self.dynamic_list_tips)
+        hw = self.hw_name()  # 作业名
+        van = self.hw_vanclass()  # 班级名
+
         count = 0
         van_name = []
         name = []
-        if self.wait_check_list_page():
-            hw = self.hw_name()  # 作业名
-            van = self.hw_vanclass()  # 班级名
+        for i in range(len(hw)):
+            print('-----------------')
+            if (van[i].text != ge.VANCLASS) and ('spoken assign' not in hw[i].text):  # 班级 （近期作业中 不能进行编辑的）
+                print("进入作业:", hw[i].text, van[i].text)
+                name.append(hw[i].text)
+                van_name.append(van[i].text)
+                van[i].click()  # 进入作业
+                count += 1
+                break
 
-            for i in range(len(hw)):
-                print('-----------------')
-                if (van[i].text != ge.VANCLASS) and ('spoken assign' not in hw[i].text):  # 班级 （近期作业中 不能进行编辑的）
-                    print("进入作业:", hw[i].text, van[i].text)
-                    name.append(hw[i].text)
-                    van_name.append(van[i].text)
-                    van[i].click()  # 进入作业
-                    count += 1
-                    break
-        elif self.wait_check_no_hw_page():
-            print('暂无数据')
-
-        if count == 0:
-            print('★★★ Error- 没有可测试的数据')
-        else:
-            return name[0], van_name[0]
+        self.my_assert.assertFalse(count == 0, '★★★ Error- 没有可测试的数据')
+        return name[0], van_name[0]
 
     @teststeps
     def hw_list_operation(self, content=None):
         """近期作业 列表"""
-        MyAssert().assertTrue_new(self.wait_check_list_page(), self.dynamic_list_tips)
+        self.my_assert.assertTrue(self.wait_check_list_page(), self.dynamic_list_tips)
         if content is None:
             content = []
 
@@ -242,13 +217,13 @@ class DynamicPage(BasePage):
         if self.home.wait_check_page():  # 页面检查点
             print('------------------验证 近期动态 布置结果------------------')
             self.home.hw_icon()  # 作业icon
-            MyAssert().assertTrue_new(self.wait_check_app_page(), self.dynamic_tips)
+            self.my_assert.assertTrue_new(self.wait_check_app_page(), self.dynamic_tips)
             self.vue.switch_h5()
-            MyAssert().assertTrue_new(self.wait_check_page(), self.dynamic_vue_tips)
+            self.my_assert.assertTrue_new(self.wait_check_page(), self.dynamic_vue_tips)
             if self.wait_check_no_hw_page():
                 print('★★★ Error- 暂无近期作业，布置作业失败')
             else:
-                MyAssert().assertTrue_new(self.wait_check_list_page(), self.dynamic_list_tips)
+                self.my_assert.assertTrue_new(self.wait_check_list_page(), self.dynamic_list_tips)
                 name = self.hw_name()  # 条目名称
                 var = self.hw_vanclass()  # 班级名
                 create = self.hw_create_time()
@@ -268,7 +243,7 @@ class DynamicPage(BasePage):
                     else:
                         break
 
-            MyAssert().assertTrue_new(self.wait_check_page(), self.dynamic_vue_tips)
+            self.my_assert.assertTrue_new(self.wait_check_page(), self.dynamic_vue_tips)
             self.back_up_button()  # 返回 主界面
             self.vue.switch_app()
 
@@ -276,17 +251,17 @@ class DynamicPage(BasePage):
     def delete_recent_hw_operation(self):
         """清空最近习题作业列表"""
         while True:
-            MyAssert().assertTrue_new(self.wait_check_page(), self.dynamic_vue_tips)
+            self.my_assert.assertTrue_new(self.wait_check_page(), self.dynamic_vue_tips)
             self.swipe_vertical_web(0.5, 0.2, 0.9)
             if self.wait_check_no_hw_page():
                 print('作业已清空完毕')
                 self.home.back_up_button()
                 break
             else:
-                MyAssert().assertTrue_new(self.wait_check_list_page(), self.dynamic_list_tips)
+                self.my_assert.assertTrue_new(self.wait_check_list_page(), self.dynamic_list_tips)
                 van_class = self.hw_vanclass()  # 班级
                 for i in range(len(van_class)):
-                    MyAssert().assertTrue_new(self.wait_check_page(), self.dynamic_vue_tips)
+                    self.my_assert.assertTrue_new(self.wait_check_page(), self.dynamic_vue_tips)
                     name = self.hw_name()  # 作业名称
                     create = self.hw_create_time()  # 创建时间 完成情况
                     print(name[0].text, create[0].text, van_class[0].text)

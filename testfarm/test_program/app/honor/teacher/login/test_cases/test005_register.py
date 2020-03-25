@@ -36,7 +36,7 @@ class Register(unittest.TestCase):
 
     def run(self, result=None):
         self.ass_result = result
-        super(Register, self).run(result)
+        super(Register, self).run(self.ass_result)
 
     @testcase
     def test_register(self):
@@ -72,7 +72,7 @@ class Register(unittest.TestCase):
                     account = ('18022' + str(i) + str(random.randint(10000, 99999)))
                     phone.send_keys(account)  # 输入手机号
 
-                    self.login.get_code_button().click()  # 获取验证码 按钮
+                    self.login.get_code_button()  # 获取验证码 按钮
                     value = get_verify(account, 'register')  # 获取验证码
 
                     if Toast().find_toast('用户已经注册') or self.login.wait_check_page(3):

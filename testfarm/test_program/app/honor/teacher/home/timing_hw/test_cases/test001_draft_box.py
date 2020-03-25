@@ -7,7 +7,6 @@ import unittest
 from app.honor.teacher.home.timing_hw.object_page.draft_page import DraftPage
 from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
 from app.honor.teacher.home.timing_hw.test_data.hw_name_data import GetVariable as gv
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from conf.base_page import BasePage
@@ -29,7 +28,6 @@ class DraftBox(unittest.TestCase):
         cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
-        cls.van = VanclassPage()
         cls.release = ReleasePage()
         cls.get = GetAttribute()
         cls.draft = DraftPage()

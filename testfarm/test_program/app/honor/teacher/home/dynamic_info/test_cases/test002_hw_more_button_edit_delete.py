@@ -41,7 +41,6 @@ class Homework(unittest.TestCase):
 
     @teardown
     def tearDown(self):
-        self.vue.switch_app()  # 切回apk
         self.login.tearDown(self.ass, self.my_toast, self.ass_result)  # 统计错误情况
 
     def run(self, result=None):
@@ -52,86 +51,85 @@ class Homework(unittest.TestCase):
     def test_001_hw_delete(self):
         self.login.app_status()  # 判断APP当前状态
         self.name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
-        self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
-        self.home.hw_icon()  # 进入习题 最近动态页面
+        if self.home.wait_check_page():  # 页面检查点
+            self.home.hw_icon()  # 进入习题 最近动态页面
+            if self.info.wait_check_app_page():  # 页面检查点
+                self.vue.switch_h5()  # 切到web
 
-        self.assertTrue(self.info.wait_check_app_page(), self.info.dynamic_tips)  # 页面检查点
-        self.vue.switch_h5()  # 切到web
-        self.assertTrue(self.info.wait_check_page(), self.info.dynamic_vue_tips)  # 页面检查点
-        if self.info.wait_check_no_hw_page():
-            print('最近习题动态页面为空')
-            self.info.back_up_button()  # 返回主界面
-            self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
-        else:
-            self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
-            var = self.info.into_hw()  # 进入 作业包
-            self.vue.app_web_switch()  # 切到apk 再切回web
-            self.assertTrue(self.detail.wait_check_page(), self.detail.hw_detail_tips)
+                if self.info.wait_check_page():  # 页面检查点
+                    if self.info.wait_check_no_hw_page():
+                        print('最近习题动态页面为空')
+                        self.info.back_up_button()  # 返回主界面
+                        self.vue.switch_app()  # 切换apk
 
-            self.detail.delete_commit_operation()  # 删除 具体操作
-            self.my_toast.toast_assert(self.name, Toast().toast_vue_operation(TipsData().delete_success))
+                        self.assertFalse(self.info.wait_check_no_hw_page(), self.info.dynamic_empty_tips)
+                    else:
+                        self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
+                        var = self.info.into_hw()  # 进入 作业包
+                        self.vue.app_web_switch()  # 切到apk 再切回web
 
-            self.judge_delete_result(var[0], var[1])  # 验证 删除结果
-            if self.info.wait_check_page():  # 页面检查点
-                self.info.back_up_button()  # 返回主界面
+                        if self.detail.wait_check_page():
+                            self.detail.delete_commit_operation()  # 删除 具体操作
+                            self.my_toast.toast_assert(self.name, Toast().toast_vue_operation(TipsData().delete_success))
 
-        self.vue.switch_app()  # 切换apk
+                            self.judge_delete_result(var[0], var[1])  # 验证 删除结果
 
     @teststeps
     def judge_delete_result(self, var, van_class):
         """验证 删除 结果"""
         self.vue.app_web_switch()  # 切到apk 再切回web
+        if self.info.wait_check_page():  # 页面检查点
+            self.info.swipe_vertical_web(0.5, 0.2, 0.8)
+            if self.info.wait_check_no_hw_page():
+                print('暂无作业包，删除成功')
+            else:
+                self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
+                print('--------------验证 删除 结果--------------')
+                name = self.info.hw_name()  # 作业name
+                van = self.info.hw_vanclass()  # 班级
 
-        self.assertTrue(self.info.wait_check_page(), self.info.dynamic_vue_tips)  # 页面检查点
-        self.info.swipe_vertical_web(0.5, 0.2, 0.8)
-        if self.info.wait_check_no_hw_page():
-            print('暂无作业包，删除成功')
-        else:
-            self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
-            print('--------------验证 删除 结果--------------')
-            name = self.info.hw_name()  # 作业name
-            van = self.info.hw_vanclass()  # 班级
+                count = 0
+                for i in range(len(name)):
+                    if name[i].text == var:
+                        if van[i].text == van_class:
+                            count += 1
+                            break
 
-            count = 0
-            for i in range(len(name)):
-                if name[i].text == var:
-                    if van[i].text == van_class:
-                        count += 1
-                        break
+                self.assertTrue(count == 0, '★★★ Error -删除失败, {}'.format(var, van_class))
+                print('删除成功')
 
-            self.assertTrue(count == 0, '★★★ Error -删除失败, {}'.format(var, van_class))
-            print('删除成功')
-
-        if self.info.wait_check_page():
-            self.info.back_up_button()  # 返回主界面
+            if self.info.wait_check_page():  # 页面检查点
+                self.info.back_up_button()  # 返回主界面
+                self.vue.switch_app()  # 切回apk
 
     @testcase
     def test_002_hw_edit(self):
         self.name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
-        self.login.app_status_no_check()  # 判断APP当前状态
+        self.login.app_status()  # 判断APP当前状态
 
-        self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
-        self.home.hw_icon()  # 进入习题 最近动态页面
-        self.assertTrue(self.info.wait_check_app_page(), self.info.dynamic_tips)  # 页面检查点
+        if self.home.wait_check_page():  # 页面检查点
+            self.home.hw_icon()  # 进入习题 最近动态页面
+            if self.info.wait_check_app_page():  # 页面检查点
+                self.vue.switch_h5()  # 切到web
 
-        self.vue.switch_h5()  # 切到web
-        self.assertTrue(self.info.wait_check_page(), self.info.dynamic_vue_tips)  # 页面检查点
-        if self.info.wait_check_no_hw_page():
-            print('暂无作业包')
-            self.info.back_up_button()
-            self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
-        else:
-            self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
-            var = self.info.into_hw()[0]  # 进入 作业包
-            self.vue.app_web_switch()  # 切到apk 再切回web
+                if self.info.wait_check_page():  # 页面检查点
+                    if self.info.wait_check_no_hw_page():
+                        print('暂无作业包')
+                        self.info.back_up_button()
+                        self.vue.switch_app()  # 切回apk
+                        self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
+                    else:
+                        self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
+                        var = self.info.into_hw()[0]  # 进入 作业包
+                        self.vue.app_web_switch()  # 切到apk 再切回web
 
-            self.assertTrue(self.detail.wait_check_page(), self.detail.hw_detail_tips)
-            self.detail.more_button()  # 更多 按钮
-            self.assertTrue(self.detail.wait_check_more_page(), self.detail.more_tips)
-            self.detail.more_edit_button()  # 编辑按钮
+                        if self.detail.wait_check_page():
+                            self.detail.more_button()  # 更多 按钮
+                            if self.detail.wait_check_more_page():
+                                self.detail.more_edit_button()  # 编辑按钮
 
-            result = self.edit_hw_operation()  # 编辑 具体操作
-            self.judge_edit_result(var, result)  # 保存编辑 验证 结果
+                                result = self.edit_hw_operation()  # 编辑 具体操作
+                                self.judge_edit_result(var, result)  # 保存编辑 验证 结果
 
     @teststeps
     def edit_hw_operation(self):
@@ -190,25 +188,62 @@ class Homework(unittest.TestCase):
 
                     print('-------------恢复测试数据-------------')
                     self.detail.more_button()  # 更多 按钮
-                    self.assertTrue(self.detail.wait_check_more_page(), self.detail.more_tips)
-                    self.detail.more_edit_button()  # 编辑按钮
+                    if self.detail.wait_check_more_page():
+                        self.detail.more_edit_button()  # 编辑按钮
 
-                    if self.detail.wait_check_tips_page():  # 温馨提示 页面
-                        self.detail.commit_button()  # 确定 按钮
+                        if self.detail.wait_check_tips_page():  # 温馨提示 页面
+                            self.detail.commit_button()  # 确定 按钮
 
-                    self.vue.switch_app()  # 切回app
-                    self.assertTrue(self.detail.wait_check_edit_page(), self.detail.edit_tips)
-                    self.assertTrue(self.release.wait_check_release_list_page(), self.detail.edit_list_tips)
-                    self.release.hw_name_edit().send_keys(var)  # 作业名称 编辑框
-                    self.release.hw_mode_free().click()  # 修改 作业模式 操作
+                        self.vue.switch_app()  # 切回app
+                        if self.detail.wait_check_edit_page():  # 编辑页面检查点
+                            if self.release.wait_check_release_list_page():
+                                self.release.hw_name_edit().send_keys(var)  # 作业名称 编辑框
+                                self.release.hw_mode_free().click()  # 修改 作业模式 操作
 
-                    SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
-                    self.release.choose_class_operation()  # 取消选择班级
-                    self.detail.assign_button()  # 发布作业 按钮
+                                SwipeFun().swipe_vertical(0.5, 0.85, 0.1)
+                                self.release.choose_class_operation()  # 取消选择班级
+                                self.detail.assign_button()  # 发布作业 按钮
                     
                     break
 
         self.assertTrue(count == 0, '★★★ Error -作业编辑失败, {}'.format(var, result))
+        print('作业编辑成功')
 
         if self.info.wait_check_list_page():
             self.info.back_up_button()  # 返回主界面
+            self.vue.switch_app()  # 切回apk
+
+    @testcase
+    def test_003_hw_more_cancel(self):
+        """更多按钮 - 取消"""
+        self.login.app_status()  # 判断APP当前状态
+        self.name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
+        if self.home.wait_check_page():  # 页面检查点
+            self.home.hw_icon()  # 进入习题 最近动态页面
+            if self.info.wait_check_app_page():  # 页面检查点
+                self.vue.switch_h5()  # 切到web
+
+                if self.info.wait_check_page():  # 页面检查点
+                    if self.info.wait_check_no_hw_page():
+                        print('最近习题动态页面为空')
+                        self.info.back_up_button()  # 返回主界面
+                        self.assertFalse(self.info.wait_check_no_hw_page(), self.info.dynamic_empty_tips)
+                    else:
+                        self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
+                        self.info.into_hw()  # 进入 作业包
+                        self.vue.app_web_switch()  # 切到apk 再切回web
+
+                        if self.detail.wait_check_page():
+                            self.detail.more_button()  # 更多 按钮
+                            if self.detail.wait_check_more_page():
+                                self.detail.more_cancel_button()  # 取消按钮
+                                print('更多按钮 - 取消')
+
+                                self.vue.app_web_switch()  # 切到apk 再切回web
+                                if self.detail.wait_check_page():  # 页面检查点
+                                    self.info.back_up_button()  # 返回 最近动态页面
+
+                                    self.vue.app_web_switch()  # 切到apk 再切回web
+                                    if self.info.wait_check_page():  # 页面检查点
+                                        self.info.back_up_button()  # 返回主界面
+                                        self.vue.switch_app()  # 切回apk

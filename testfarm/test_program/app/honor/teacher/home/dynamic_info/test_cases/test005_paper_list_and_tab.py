@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import random
+import re
 import sys
 import unittest
 
@@ -47,7 +48,6 @@ class Paper(unittest.TestCase):
         cls.vue = VueContext()
 
         BasePage().set_assert(cls.ass)
-        cls.login.app_status()  # 判断APP当前状态
 
     @teardown
     def tearDown(self):
@@ -60,43 +60,48 @@ class Paper(unittest.TestCase):
 
     @testcase
     def test_paper_list_tab(self):
+        self.login.app_status()  # 判断APP当前状态
         self.name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
-        self.assertTrue(self.home.wait_check_page(), self.home.home_tips)  # 页面检查点
-        self.assertTrue(self.home.wait_check_list_page(), self.home.van_list_tips)  # 页面加载完成 检查点
-        self.home.paper_icon()  # 进入卷子 最近动态页面
-        
-        self.assertTrue(self.info.wait_check_app_page(), self.info.dynamic_tips)  # 页面检查点
-        self.vue.switch_h5()  # 切到vue
-        self.assertTrue(self.info.wait_check_page(), self.info.dynamic_vue_tips)  # 页面检查点
-        if self.info.wait_check_no_hw_page():
-            print('最近卷子动态页面为空')
-            self.info.back_up_button()
-            self.vue.switch_app()  # 切回apk
-            self.assign_paper_operation()  # 布置试卷
 
-            self.assertTrue(self.home.wait_check_page(), self.home.home_tips)  # 页面检查点
-            self.assertTrue(self.home.wait_check_list_page(), self.home.van_list_tips)  # 页面加载完成 检查点
+        if self.home.wait_check_page():  # 页面检查点
+            self.assertTrue(self.home.wait_check_list_page(), self.home.van_list_tips)  # 页面加载完成 有班级检查点
             self.home.paper_icon()  # 进入卷子 最近动态页面
-            self.vue.switch_h5()  # 切到vue
 
-        self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
-        self.info.help_operation()  # 右上角 提示按钮
-        self.vue.app_web_switch()  # 切到apk 再切到vue
+            if self.info.wait_check_app_page():  # 页面检查点
+                self.vue.switch_h5()  # 切到web
 
-        self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
-        self.info.hw_list_operation()  # 列表
-        self.info.into_hw()  # 进入 作业包
-        self.vue.app_web_switch()  # 切到apk 再切到vue
+                if self.info.wait_check_page():  # 页面检查点
+                    if self.info.wait_check_no_hw_page():
+                        print('最近卷子动态页面为空')
+                        self.info.back_up_button()
+                        self.vue.switch_app()  # 切回apk
+                        self.assign_paper_operation()  # 布置试卷
 
-        self.assertTrue(self.report.wait_check_page(), self.report.paper_detail_tips)
-        self.finish_situation_operation()  # 完成情况 tab
-        self.answer_analysis_operation()  # 答卷分析 tab
+                        if self.home.wait_check_page():  # 页面检查点
+                            self.assertTrue(self.home.wait_check_list_page(), self.home.van_list_tips)  # 页面加载完成 有班级检查点
+                            self.home.paper_icon()  # 进入卷子 最近动态页面
+                            self.vue.switch_h5()  # 切到vue
 
-        self.assertTrue(self.report.wait_check_page(), self.report.paper_detail_tips)
-        self.info.back_up_button()  # 返回 卷子动态页面
-        self.vue.app_web_switch()  # 切到apk 再切到vue
-        self.assertTrue(self.info.wait_check_page(), self.info.dynamic_vue_tips)  # 页面检查点
-        self.info.back_up_button()  # 返回 主界面
+                    if self.info.wait_check_page():  # 页面检查点
+                        self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
+                        self.info.help_operation()  # 右上角 提示按钮
+                        self.vue.app_web_switch()  # 切到apk 再切到vue
+
+                        self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
+                        self.info.hw_list_operation()  # 列表
+                        self.info.into_hw()  # 进入 作业包
+                        self.vue.app_web_switch()  # 切到apk 再切到vue
+
+                        if self.report.wait_check_page():
+                            self.finish_situation_operation()  # 完成情况 tab
+                            self.answer_analysis_operation()  # 答卷分析 tab
+
+                            if self.report.wait_check_page():
+                                self.info.back_up_button()  # 返回 卷子动态页面
+                                self.vue.app_web_switch()  # 切到apk 再切到vue
+
+                                if self.info.wait_check_page():
+                                    self.info.back_up_button()  # 返回 主界面
 
     @teststeps
     def finish_situation_operation(self):
@@ -111,16 +116,15 @@ class Paper(unittest.TestCase):
     @teststeps
     def answer_analysis_operation(self):
         """答卷分析tab 具体操作"""
-        self.assertTrue(self.report.wait_check_page(), self.report.paper_detail_tips)  # 页面检查点
-        analysis = self.report.analysis_tab()  # 答卷分析 tab
-        analysis.click()  # 进入 答卷分析 tab页
-        print('-------------------答卷分析tab-------------------')
-        if self.report.wait_check_empty_tips_page():
-            self.assertFalse(self.report.wait_check_empty_tips_page(), '暂无数据')
-            print('暂无数据')
-        else:
-            self.assertTrue(self.report.wait_check_paper_list_page(), self.report.hw_list_tips)
-            self.answer_analysis_detail()  # 答卷分析页 list
+        if self.report.wait_check_page():
+            self.report.analysis_tab()  # 进入 答卷分析 tab页
+            print('-------------------答卷分析tab-------------------')
+            if self.report.wait_check_empty_tips_page():
+                self.assertFalse(self.report.wait_check_empty_tips_page(), '暂无数据')
+                print('暂无数据')
+            else:
+                self.assertTrue(self.report.wait_check_paper_list_page(), self.report.hw_list_tips)
+                self.answer_analysis_detail()  # 答卷分析页 list
 
     @teststeps
     def answer_analysis_detail(self):
@@ -141,73 +145,87 @@ class Paper(unittest.TestCase):
         icon = self.report.st_icon()  # 学生头像
         status = self.report.st_score()  # 学生完成与否
 
+        content = []
         if len(name) == len(icon) == len(status):
             for i in range(len(name)):
+                item = name[i].text
+                var = status[i].text
                 print('学生:', name[i].text, ' ', status[i].text)  # 打印所有学生信息
+
+                content.append(int(re.sub('\D', '', var)))
+            return content
         else:
             print('★★★ Error-已完成/未完成 学生列表信息统计', len(icon), len(name))
 
     @teststeps
     def assign_paper_operation(self):
         """布置试卷"""
-        self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
-        self.question.judge_into_tab_question()  # 进入首页后 点击 题库tab
+        if self.home.wait_check_page():
+            self.question.judge_into_tab_question()  # 进入首页后 点击 题库tab
 
-        if self.question.wait_check_page():  # 页面检查点
-            self.question.filter_button()  # 筛选按钮
-            self.assertTrue(self.filter.wait_check_page(), self.filter.filter_tips)
-            paper = self.filter.test_paper()
-            if GetAttribute().selected(paper) == 'false':
-                self.filter.click_test_paper()  # 点击 试卷
-            self.filter.commit_button()  # 确定按钮
+            if self.question.wait_check_page():  # 页面检查点
+                self.question.filter_button()  # 筛选按钮
+                if self.filter.wait_check_page():
+                    paper = self.filter.test_paper()
+                    if GetAttribute().selected(paper) == 'false':
+                        self.filter.click_test_paper()  # 点击 试卷
+                    self.filter.commit_button()  # 确定按钮
 
-        item = self.question.question_item()  # 试卷数
-        index = random.randint(0, len(item[2]) - 1)  # 随机选择标签
-        if self.question.judge_question_lock():
-            while True:
-                if index in item[3]:  # item[3] 锁定icon
-                    continue
-                else:
-                    break
+            item = self.question.question_item()  # 试卷数
+            index = random.randint(0, len(item[2]) - 1)  # 随机选择标签
+            if self.question.judge_question_lock():
+                while True:
+                    if index in item[3]:  # item[3] 锁定icon
+                        continue
+                    else:
+                        break
 
-        item[2][index].click()  # 点击第X个试卷
-        self.assertTrue(self.paper.wait_check_page(), self.paper.paper_tips)  # 页面检查点
-        self.assign_paper()  # 布置试卷 具体操作
+            item[2][index].click()  # 点击第X个试卷
+            if self.paper.wait_check_page():  # 页面检查点
+                self.assign_paper()  # 布置试卷 具体操作
+                if self.question.wait_check_page():  # 页面检查点
+                    self.question.filter_button()  # 筛选按钮
+
+                    if self.filter.wait_check_page():
+                        self.filter.reset_button()  # 重置按钮
+                        self.filter.commit_button()  # 确定按钮
+
+                if self.question.wait_check_page():  # 页面检查点
+                    self.home.click_tab_hw()
 
     @teststeps
     def assign_paper(self):
         """布置试卷 具体操作 """
         self.report.assign_button()  # 布置试卷 按钮
-        self.assertTrue(self.paper.wait_check_assign_list_page(), self.paper.paper_assign_tips)
-        print('--------------------布置试卷页面--------------------')
-
-        self.paper.assign_title()
-        self.paper.assign_hint()
-        van = self.release.van_name()  # 班级名
-        count = self.release.choose_count()  # 班级描述信息
-        print('------------------------')
-        for i in range(len(count)):
-            print('-------')
-            print('  ', van[i].text, '\n', count[i].text)
-        print('------------------------')
-
-        self.paper.assign_button()  # 布置试卷 按钮
-        self.my_toast.toast_assert(self.name, Toast().toast_operation(TipsData().no_student))
-
         if self.paper.wait_check_assign_list_page():
-            button = self.release.choose_button()  # 单选框
+            print('--------------------布置试卷页面--------------------')
+            self.paper.assign_title()
+            self.paper.assign_hint()
+            van = self.release.van_name()  # 班级名
+            count = self.release.choose_count()  # 班级描述信息
             print('------------------------')
-            name = 0
-            for k in range(len(button)):
-                if any([GetAttribute().selected(button[k]) == 'false', k != count,
-                        van[k].text != ge.VANCLASS]):
-                    print('选择班级:', van[k].text)
-                    name = van[k].text
-                    button[k].click()  # 选择 一个班
-                    break
+            for i in range(len(count)):
+                print('-------')
+                print('  ', van[i].text, '\n', count[i].text)
+            print('------------------------')
 
             self.paper.assign_button()  # 布置试卷 按钮
-            self.paper.tips_page_info()
-            self.my_toast.toast_assert(self.name, Toast().toast_operation(TipsData().assign_success))
+            self.my_toast.toast_assert(self.name, Toast().toast_operation(TipsData().no_student))
 
-            return name
+            if self.paper.wait_check_assign_list_page():
+                button = self.release.choose_button()  # 单选框
+                print('------------------------')
+                name = 0
+                for k in range(len(button)):
+                    if any([GetAttribute().selected(button[k]) == 'false', k != count,
+                            van[k].text != ge.VANCLASS]):
+                        print('选择班级:', van[k].text)
+                        name = van[k].text
+                        button[k].click()  # 选择 一个班
+                        break
+
+                self.paper.assign_button()  # 布置试卷 按钮
+                self.paper.tips_page_info()
+                self.my_toast.toast_assert(self.name, Toast().toast_operation(TipsData().assign_success))
+
+                return name

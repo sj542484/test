@@ -4,7 +4,6 @@
 import unittest
 import random
 
-from conf.base_config import GetVariable
 from conf.base_page import BasePage
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.login.object_page.login_page import TloginPage
@@ -38,7 +37,7 @@ class Register(unittest.TestCase):
 
     def run(self, result=None):
         self.ass_result = result
-        super(Register, self).run(result)
+        super(Register, self).run(self.ass_result)
 
     @testcase
     def test_register_nickname(self):
@@ -58,9 +57,7 @@ class Register(unittest.TestCase):
             elif self.login.wait_check_page():  # 在登录界面
                 print('在登录界面')
 
-        recovery = self.register_operation()  # 具体操作
-
-        self.recovery_data(recovery)  # 恢复测试数据
+        self.register_operation()  # 具体操作
 
     @teststeps
     def register_operation(self):
@@ -82,7 +79,7 @@ class Register(unittest.TestCase):
                         phone.send_keys(account)  # 输入手机号
                         account = phone.text
 
-                        self.login.get_code_button().click()  # 获取验证码 按钮
+                        self.login.get_code_button()  # 获取验证码 按钮
                         value = get_verify(account, 'register')  # 获取验证码
 
                         if Toast().find_toast('用户已经注册') or self.login.wait_check_page(3):
@@ -129,18 +126,3 @@ class Register(unittest.TestCase):
                                 break
         return data
 
-    @teststeps
-    def recovery_data(self, names):
-        """ 恢复测试数据
-        :param name:  删除注册账号
-        """
-        if GetVariable().ENV == 'dev':
-            import pymysql
-            from utils.connect_db import ConnectDB
-
-            print('------恢复测试数据-----')
-            for phone in names:
-                name = pymysql.escape_string(phone)
-                sql = """DELETE * FROM `user_account` WHERE `phone` = '{}' LIMIT 0, 1000""".format(name)
-                print(sql)
-                ConnectDB().execute_sql(sql)

@@ -16,13 +16,15 @@ class DynamicPaperPage(BasePage):
     """app主页面- 试卷动态信息页面 元素信息"""
     dynamic_tips = '★★★ Error- 未进入近期卷子界面'
     dynamic_vue_tips = '★★★ Error- 未进入近期卷子vue界面'
-    dynamic_list_tips = '★★★ Error- 近期卷子列表为空'
+    dynamic_list_tips = '★★★ Error- 近期卷子列表未加载成功'
+    dynamic_empty_tips = '★★★ Error- 近期卷子列表为空'
 
     def __init__(self):
         self.home = ThomePage()
         self.wait = WaitElement()
         self.paper = VanclassPaperPage()
         self.screen = self.get_window_size()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_app_page(self):
@@ -45,7 +47,7 @@ class DynamicPaperPage(BasePage):
     @teststeps
     def wait_check_no_hw_page(self, var=10):
         """删除所有作业后， 无最近作业提示检查点 以提示text作为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'学生练得不够?给学生布置个作业吧!')]")
+        locator = (By.XPATH, "//div[text()='学生练得不够?给学生布置个作业吧!']")
         return self.wait.wait_check_element(locator, var)
 
     @teststep
@@ -133,7 +135,9 @@ class DynamicPaperPage(BasePage):
         """进入作业/卷子/口语列表中的该作业/卷子/口语
         """
         # var = self.home.brackets_text_out(var)
-        MyAssert().assertTrue_new(self.wait_check_page(), self.dynamic_tips)  # 页面检查点
+        self.my_assert.assertTrue_new(self.wait_check_page(), self.dynamic_tips)  # 页面检查点
+        self.my_assert.assertFalse(self.wait_check_no_hw_page(), self.dynamic_list_tips)  # 页面检查点
+
         hw = self.hw_name()  # 作业条目
         van = self.hw_vanclass()  # 班级名
 
@@ -168,39 +172,11 @@ class DynamicPaperPage(BasePage):
                   create[i].text, '  ', van[i].text, '  ', status[i].text)
             print('----------------------')
 
-    @teststeps
-    def judge_dynamic_result_operation(self, van, assign):
-        """近期动态 验证布置结果 具体操作
-        :param van:班级
-        :param assign:名称
-        """
-        MyAssert().assertTrue_new(self.home.wait_check_page(), self.home.home_tips)  # 页面检查点
-        print('------------------验证 近期动态 布置结果------------------')
-        self.home.hw_icon()  # 作业icon
-        MyAssert().assertTrue_new(self.wait_check_page(), self.dynamic_tips)  # 页面检查点
-        if self.wait_check_no_hw_page():
-            print('★★★ Error- 暂无近期作业，布置作业失败')
-        else:
-            MyAssert().assertTrue_new(self.wait_check_list_page(), self.dynamic_list_tips)  # 页面检查点
-            name = self.hw_name()  # 条目名称
-            var = self.hw_vanclass()  # 班级名
-            for i in range(len(name)):
-                vanclass = var[i].text
-                title = name[i].text
-                if vanclass != van and title != assign:
-                    print('★★★ Error- 布置作业失败', assign, title)
-                else:  # 恢复测试数据
-                    print('布置作业成功')
-                    break
-
-        if self.wait_check_page():
-            self.home.back_up_button()  # 返回 主界面
-
     @teststep
     def delete_recent_hw_operation(self):
         """清空最近习题作业列表"""
         while True:
-            MyAssert().assertTrue_new(self.wait_check_page(), self.dynamic_tips)  # 页面检查点
+            self.my_assert.assertTrue_new(self.wait_check_page(), self.dynamic_tips)  # 页面检查点
 
             self.swipe_vertical_web(0.5, 0.2, 0.9)
             if self.wait_check_no_hw_page():

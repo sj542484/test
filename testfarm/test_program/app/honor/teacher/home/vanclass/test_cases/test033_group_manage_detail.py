@@ -6,7 +6,7 @@ import unittest
 
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.home.vanclass.object_page.vanclass_member_page import VanMemberPage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.teacher.home.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from conf.base_page import BasePage
@@ -30,7 +30,7 @@ class GroupManage(unittest.TestCase):
         cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
-        cls.van = VanclassPage()
+        cls.van_detail = VanclassDetailPage()
         cls.member = VanMemberPage()
         cls.get = GetAttribute()
         cls.vue = VueContext()
@@ -54,12 +54,12 @@ class GroupManage(unittest.TestCase):
 
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
         self.home.into_vanclass_operation(gv.APPLY)  # 进入 班级
-        self.assertTrue(self.van.wait_check_app_page(gv.APPLY), self.van.van_tips)  # 页面检查点
+        self.assertTrue(self.van_detail.wait_check_app_page(gv.APPLY), self.van_detail.van_tips)  # 页面检查点
         self.vue.switch_h5()  # 切到vue
 
-        self.assertTrue(self.van.wait_check_page(gv.APPLY), self.van.van_vue_tips)
-        self.assertTrue(self.van.wait_check_list_page(), self.van.van_list_tips)
-        self.van.vanclass_member()  # 进入 班级成员
+        self.assertTrue(self.van_detail.wait_check_page(gv.APPLY), self.van_detail.van_vue_tips)
+        self.assertTrue(self.van_detail.wait_check_list_page(), self.van_detail.van_list_tips)
+        self.van_detail.vanclass_member()  # 进入 班级成员
         self.vue.switch_app()
 
         if self.member.wait_check_page(gv.APPLY):  # 页面检查点
@@ -71,11 +71,11 @@ class GroupManage(unittest.TestCase):
 
             if self.member.wait_check_page(gv.APPLY):  # 页面检查点
                 self.home.back_up_button()  # 返回 班级详情 页
-                self.assertTrue(self.van.wait_check_app_page(gv.APPLY), self.van.van_tips)  # 页面检查点
+                self.assertTrue(self.van_detail.wait_check_app_page(gv.APPLY), self.van_detail.van_tips)  # 页面检查点
                 self.vue.switch_h5()  # 切到vue
 
-                self.assertTrue(self.van.wait_check_page(gv.APPLY), self.van.van_vue_tips)
-                self.van.back_up_button()
+                self.assertTrue(self.van_detail.wait_check_page(gv.APPLY), self.van_detail.van_vue_tips)
+                self.van_detail.back_up_button()
 
     @teststeps
     def group_detail_operation(self):

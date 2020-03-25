@@ -6,7 +6,7 @@ import unittest
 
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
-from app.honor.teacher.home.vanclass.object_page.adjust_vanclass_order_page import AdjustVanOrderPage
+from app.honor.teacher.home.vanclass.object_page.home_vanclass_page import THomeVanclassPage
 from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.assert_func import ExpectingTest
@@ -26,7 +26,7 @@ class Vanclass(unittest.TestCase):
         cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
-        cls.adjust = AdjustVanOrderPage()
+        cls.van = THomeVanclassPage()
         cls.get = GetAttribute()
         cls.my_toast = MyToast()
 
@@ -48,14 +48,14 @@ class Vanclass(unittest.TestCase):
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)  # 页面检查点
         self.assertTrue(self.home.wait_check_list_page(), self.home.van_list_tips)  # 页面加载完成 检查点
         print('----------------班级列表----------------')
-        van = self.vanclass_order()  # 班级 列表
+        van = self.van.vanclass_order()  # 班级 列表
 
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)  # 页面检查点
         self.home.class_sort_button()  # 班级排序 按钮
-        self.adjust.adjust_vanclass_order()  # 调整班级顺序 具体操作
-        self.adjust.confirm_button()  # 确定按钮
+        self.adjust_vanclass_order()  # 调整班级顺序 具体操作
+        self.van.confirm_button()  # 确定按钮
 
-        van2 = self.vanclass_order()  # 班级 列表
+        van2 = self.van.vanclass_order()  # 班级 列表
         count = 0
         for i in range(len(van2)):
             if van2 != van:
@@ -66,6 +66,20 @@ class Vanclass(unittest.TestCase):
                 print('★★★ Error- 班级顺序未调整')
             else:
                 print('调整班级顺序保存成功')
+
+    @teststeps
+    def vanclass_order(self):
+        """班级 列表"""
+        van = []
+        self.list_swipe_operation(van)  # 已有班级数 统计
+
+        print('--------------------------------------')
+        content = []
+        for i in range(len(van)):
+            for j in range(len(van[i])):
+                content.append(van[i][j])
+
+        return content
 
     @teststeps
     def list_swipe_operation(self, content):
@@ -131,15 +145,63 @@ class Vanclass(unittest.TestCase):
         return last
 
     @teststeps
-    def vanclass_order(self):
-        """班级 列表"""
-        van = []
-        self.list_swipe_operation(van)  # 已有班级数 统计
+    def adjust_vanclass_order(self):
+        """班级顺序调整 具体操作"""
+        if self.van.wait_check_adjust_page():  # 页面检查点
+            name = self.van.vanclass_name()  # 班级名
+            num = self.van.vanclass_no()  # 班号
+            print('-----------------班级顺序调整 页面-----------------')
 
-        print('--------------------------------------')
-        content = []
-        for i in range(len(van)):
-            for j in range(len(van[i])):
-                content.append(van[i][j])
+            content = []
+            icon = self.van.drag_icon()  # 拖拽 icon
+            if len(icon) > 5:
+                for i in range(len(num) - 3):  # 最后三个班级顺序不调整
+                    print(num[i].text, name[i].text)
+                    content.append(num[i].text)
+                    content.append(name[i].text)
 
-        return content
+                self.van.drag_ele_operation(icon[1], icon[5])  # 向下拖拽
+                self.van.drag_ele_operation(icon[4], icon[0])  # 向上拖拽
+
+                self.judge_hw_adjust(content)  # 验证
+            elif 2 < len(num) < 6:
+                for i in range(len(num)-3):
+                    print(num[i].text, name[i].text)
+                    content.append(num[i].text)
+                    content.append(name[i].text)
+                self.van.drag_ele_operation(icon[1], icon[-1])  # 向下拖拽
+                self.van.drag_ele_operation(icon[-2], icon[0])  # 向上拖拽
+
+                self.judge_hw_adjust(content)  # 验证
+            elif len(num) == 2:
+                self.van.drag_ele_operation(icon[0], icon[1])  # 向下拖拽
+            else:
+                print('只有%s个班级' % len(num))
+
+    @teststeps
+    def judge_hw_adjust(self, content):
+        """验证 调整班级顺序"""
+        if self.van.wait_check_adjust_page():  # 页面检查点
+            print('---------------验证 调整班级顺序---------------')
+            name = self.van.vanclass_name()  # 班级名
+            num = self.van.vanclass_no()  # 班号
+
+            item = []
+            length = (len(num)-1 if len(num) > 5 else len(num))
+
+            for i in range(length):
+                print(num[i].text, name[i].text)
+                item.append(num[i].text)
+                item.append(name[i].text)
+
+            count = 0
+            for j in range(len(content)-3):
+                if item[j] != content[j]:
+                    count += 1
+
+            print('---------------------------')
+            if count == 0:
+                print('★★★ Error- 调整页面展示, 班级顺序未调整')
+            else:
+                print('调整页面展示, 调整班级顺序成功')
+            print('-----------------------------------------')

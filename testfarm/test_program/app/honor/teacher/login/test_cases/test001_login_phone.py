@@ -2,7 +2,6 @@
 # -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 import unittest
-
 from conf.base_page import BasePage
 from conf.decorator import setup, testcase, teststeps, teardown
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
@@ -35,7 +34,7 @@ class Login(unittest.TestCase):
 
     def run(self, result=None):
         self.ass_result = result
-        super(Login, self).run(result)
+        super(Login, self).run(self.ass_result)
 
     @testcase
     def test_login_phone(self):

@@ -35,7 +35,7 @@ class Login(unittest.TestCase):
 
     def run(self, result=None):
         self.ass_result = result
-        super(Login, self).run(result)
+        super(Login, self).run(self.ass_result)
 
     @testcase
     def test_forget_pwd(self):
@@ -70,7 +70,7 @@ class Login(unittest.TestCase):
                     phone.send_keys(phone_data[i]['account'])  # 输入手机号
                     print('账号:', phone.text)
 
-                    self.login.get_code_button().click()  # 点击 获取验证码 按钮
+                    self.login.get_code_button()  # 点击 获取验证码 按钮
                     if len(phone_data[i]) == 2:
                         if phone_data[i]['toast'] != '' and not Toast().find_toast(phone_data[i]['toast']):
                             print('★★★ Error- 未获取到toast:', phone_data[i]['toast'])

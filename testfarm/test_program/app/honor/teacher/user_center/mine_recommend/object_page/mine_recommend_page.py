@@ -205,7 +205,7 @@ class RecommendPage(BasePage):
         """验证 添加推荐 结果"""
         if self.wait_check_page():
             print('-----------------验证 -添加推荐结果-----------------')
-            self.filter.all_element()
+
             if var == '大题':
                 self.user.filter_button()  # 筛选按钮
                 if self.filter.wait_check_page():

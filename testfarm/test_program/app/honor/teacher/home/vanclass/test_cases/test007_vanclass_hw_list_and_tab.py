@@ -9,7 +9,7 @@ from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.home.dynamic_info.object_page.hw_spoken_detail_page import HwDetailPage
 from app.honor.teacher.home.vanclass.object_page.vanclass_hw_spoken_page import VanclassHwPage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.teacher.home.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
 from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase, teststeps
@@ -31,8 +31,8 @@ class Homework(unittest.TestCase):
         cls.login = TloginPage()
         cls.home = ThomePage()
         cls.v_hw = VanclassHwPage()
-        cls.hw_detail = HwDetailPage()
-        cls.van = VanclassPage()
+        cls.detail = HwDetailPage()
+        cls.van_detail = VanclassDetailPage()
         cls.get = GetAttribute()
         cls.vue = VueContext()
         cls.my_toast = MyToast()
@@ -56,11 +56,11 @@ class Homework(unittest.TestCase):
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
         self.home.into_vanclass_operation(gv.VANCLASS)  # 进入 班级详情页
 
-        self.assertTrue(self.van.wait_check_app_page(gv.VANCLASS), self.van.van_tips)  # 页面检查点
+        self.assertTrue(self.van_detail.wait_check_app_page(gv.VANCLASS), self.van_detail.van_tips)  # 页面检查点
         self.vue.switch_h5()  # 切到vue
-        self.assertTrue(self.van.wait_check_page(gv.VANCLASS), self.van.van_vue_tips)
+        self.assertTrue(self.van_detail.wait_check_page(gv.VANCLASS), self.van_detail.van_vue_tips)
 
-        self.van.vanclass_hw()  # 点击 本班作业 tab
+        self.van_detail.vanclass_hw()  # 点击 本班作业 tab
         title = gv.HW_TITLE.format(gv.VANCLASS)
         self.vue.app_web_switch()  # 切到apk 再切到vue
 
@@ -89,11 +89,11 @@ class Homework(unittest.TestCase):
                 print('暂无该作业')
             else:
                 self.vue.app_web_switch()  # 切到apk 再切到vue
-                self.assertTrue(self.hw_detail.wait_check_page(), self.hw_detail.hw_detail_tips)  # 页面检查点
+                self.assertTrue(self.detail.wait_check_page(), self.detail.hw_detail_tips)  # 页面检查点
                 self.finish_situation_operation()  # 完成情况 tab
                 self.answer_analysis_operation()  # 答题分析 tab
 
-                if self.hw_detail.wait_check_page():  # 页面检查点
+                if self.detail.wait_check_page():  # 页面检查点
                     self.v_hw.back_up_button()  # 返回 本班作业
 
         self.vue.app_web_switch()  # 切到apk 再切到vue
@@ -101,98 +101,53 @@ class Homework(unittest.TestCase):
         self.v_hw.back_up_button()  # 返回 班级详情页面
         self.vue.app_web_switch()  # 切到apk 再切到vue
 
-        self.assertTrue(self.van.wait_check_page(gv.VANCLASS), self.van.van_vue_tips)  # 班级详情 页面检查点
-        self.van.back_up_button()  # 返回主界面
+        self.assertTrue(self.van_detail.wait_check_page(gv.VANCLASS), self.van_detail.van_vue_tips)  # 班级详情 页面检查点
+        self.van_detail.back_up_button()  # 返回主界面
 
     @teststeps
     def finish_situation_operation(self):
         """完成情况tab 具体操作"""
         print('-------------------完成情况tab-------------------')
-        if self.hw_detail.wait_check_empty_tips_page():
-            self.assertTrue(self.hw_detail.wait_check_empty_tips_page(), '暂无数据')
+        if self.detail.wait_check_empty_tips_page():
             print('暂无数据')
+            self.assertFalse(self.detail.wait_check_empty_tips_page(), '暂无数据')
         else:
-            self.assertTrue(self.hw_detail.wait_check_st_list_page(), self.hw_detail.st_list_tips)
+            self.assertTrue(self.detail.wait_check_st_list_page(), self.detail.st_list_tips)
             self.st_list_statistics()  # 完成情况 学生列表
 
     @teststeps
     def answer_analysis_operation(self):
         """答题分析tab 具体操作"""
-        self.assertTrue(self.hw_detail.wait_check_page(), self.hw_detail.hw_detail_tips)  # 页面检查点
-        analysis = self.hw_detail.analysis_tab()  # 答题分析 tab
-        analysis.click()  # 进入 答题分析 tab页
+        self.assertTrue(self.detail.wait_check_page(), self.detail.hw_detail_tips)  # 页面检查点
+        self.detail.analysis_tab() # 进入 答题分析 tab页
         print('-------------------答题分析tab-------------------')
-        if self.hw_detail.wait_check_empty_tips_page():
-            self.assertTrue(self.hw_detail.wait_check_empty_tips_page(), '暂无数据')
+        if self.detail.wait_check_empty_tips_page():
             print('暂无数据')
+            self.assertFalse(self.detail.wait_check_empty_tips_page(), '暂无数据')
         else:
-            self.assertTrue(self.hw_detail.wait_check_hw_list_page(), self.hw_detail.hw_list_tips)
+            self.assertTrue(self.detail.wait_check_hw_list_page(), self.detail.hw_list_tips)
             self.answer_analysis_detail()  # 答题分析 列表
 
     @teststeps
-    def answer_analysis_detail(self, content=None):
+    def answer_analysis_detail(self):
         """答题分析 详情页"""
-        if content is None:
-            content = []
-
-        item = self.hw_detail.analysis_tab_hw_list_info()[1]  # 游戏 条目
-        if len(item) > 4 and not content:
-            for i in range(len(item) - 1):
-                print(item[i])
-                print('---------------------------')
-
-            var = [item[-2][1] if len(item[-2]) == 3 else item[-2][2]]  # if 无提分标志 else 有
-            content = [var[0], item[-2][0]]  # 最后一个game的name & type
-            self.v_hw.swipe_vertical_web(0.5, 0.85, 0.1)
-            self.answer_analysis_detail(content)
-        else:
-            var = 0
-            length = len(item)
-            if content:
-                for k in range(len(item)):
-                    title = [item[k][1] if len(item[k]) == 4 else item[k][2]]
-                    if content[0] == title[0] and content[1] == item[k][0]:
-                        var = k + 1
-                        break
-                if var == 0:
-                    var = 1
-                if length > 4:
-                    length = 4
-
-            for i in range(var, length):
-                print(item[i])
-                print('---------------------------')
-            self.v_hw.swipe_vertical_web(0.5, 0.2, 0.9)
+        name = self.detail.game_name()  # 游戏名称
+        mode = self.detail.game_type()  # 游戏类型
+        average = self.detail.average_achievement()  # 本班完成率
+        for j in range(len(mode)):
+            print('--------------------------------------')
+            print(mode[j].text, name[j].text, average[j].text)
 
     @teststeps
-    def st_list_statistics(self, content=None):
+    def st_list_statistics(self):
         """已完成/未完成 学生列表信息统计"""
-        if content is None:
-            content = []
+        st = self.detail.st_name()  # 学生name
+        icon = self.detail.st_icon()  # 学生头像
+        status = self.detail.st_finish_status()  # 学生完成与否
+        st_mode = self.detail.st_type()  # 基础班/提分版/试用期
+        for i in range(len(st)):
+            print('--------------------------------------')
+            print(icon[i].get_attribute('src'), '\n',
+                  st[i].text, st_mode[i].text, '\n',
+                  status[i].text)
 
-        students = self.hw_detail.finish_tab_st_items()[1]  # 学生条目
-        if len(students) > 8 and not content:
-            for i in range(len(students)-1):
-                print('--------------------------------------')
-                print(students[i])  # 打印所有学生信息
-
-            content = [students[-2]]  # 最后一个学生 name&完成情况
-            self.v_hw.swipe_vertical_web(0.5, 0.85, 0.1)
-            if self.hw_detail.wait_check_hw_list_page():
-                self.st_list_statistics(content)
-        else:
-            var = 0
-            length = len(students)
-            if content:
-                for k in range(len(students)):
-                    if content == students[k]:
-                        var = k + 1
-                        break
-                if var == 0:
-                    var = 1
-                if length > 8:
-                    length = 8
-
-            for i in range(var, length):
-                print('--------------------------------------')
-                print(students[i])  # 打印所有学生信息

@@ -4,10 +4,10 @@
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
-from app.honor.teacher.user_center.user_information.object_page.change_image_page import ChangeImage
 from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
+from utils.assert_package import MyAssert
 from utils.wait_element import WaitElement
 
 
@@ -22,13 +22,15 @@ class PaperDetailPage(BasePage):
 
     def __init__(self):
         self.wait = WaitElement()
-        self.change_image = ChangeImage()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_page(self):
         """以“title:布置试卷”为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'布置试卷')]")
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator, 3)
+        self.my_assert.assertTrue(ele, self.paper_tips)
+        return ele
 
     @teststeps
     def recommend_button(self):
@@ -233,8 +235,9 @@ class PaperDetailPage(BasePage):
     @teststeps
     def wait_check_assign_list_page(self):
         """以“title:”为依据"""
-        return self.wait\
-            .wait_check_element(self.assign_van_locator)
+        ele = self.wait.wait_check_element(self.assign_van_locator)
+        self.my_assert.assertTrue(ele, self.paper_assign_tips)
+        return ele
 
     @teststep
     def assign_title(self):

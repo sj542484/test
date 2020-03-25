@@ -6,7 +6,8 @@ import re
 from selenium.webdriver.common.by import By
 
 from conf.base_page import BasePage
-from conf.decorator import teststep, teststeps
+from conf.decorator_vue import teststep, teststeps
+from utils.assert_package import MyAssert
 from utils.wait_element_vue import WaitElement
 
 
@@ -19,12 +20,15 @@ class StAnswerDetailPage(BasePage):
 
     def __init__(self):
         self.wait = WaitElement()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_page(self, var):
         """以“最优成绩 元素”为依据"""
         locator = (By.XPATH, "//div[text()='%s']" % var)
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.st_detail_tips)
+        return ele
 
     @teststeps
     def wait_check_list_page(self, var=20):

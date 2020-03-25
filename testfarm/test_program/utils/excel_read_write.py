@@ -150,5 +150,6 @@ class ExcelUtil(BasePage):
         self.sheets[sheet_name]['sheet'] = wb.add_sheet('%s%s' % (sheet_name, sheet_index if sheet_index else ''), cell_overwrite_ok=True)  # 利用保存时同名覆盖达到修改excel文件的目的,注意未被修改的内容保持不变)
         self.sheets[sheet_name]['rows'] = 1
 
+
 if __name__ == '__main__':
     a = ExcelUtil()

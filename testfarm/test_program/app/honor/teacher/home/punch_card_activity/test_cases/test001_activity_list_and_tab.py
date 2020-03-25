@@ -46,18 +46,17 @@ class Activity(unittest.TestCase):
         self.name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
         self.login.app_status()  # 判断APP当前状态
 
-        self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
-        self.home.punch_activity_icon()  # 进入打卡活动页面
-        self.assertTrue(self.activity.wait_check_app_page(), self.activity.activity_tips)
-        self.vue.switch_h5()  # 切到web
+        if self.home.wait_check_page():
+            self.home.punch_activity_icon()  # 进入打卡活动页面
+            if self.activity.wait_check_app_page():
+                self.vue.switch_h5()  # 切到web
 
-        self.assertTrue(self.activity.wait_check_page(), self.activity.activity_vue_tips)
-        self.activity_template_operation()  # 活动模板 tab
-        self.published_activities_operation()  # 已发布活动 tab
+                if self.activity.wait_check_page():
+                    self.activity_template_operation()  # 活动模板 tab
+                    self.published_activities_operation()  # 已发布活动 tab
 
-        self.assertTrue(self.activity.wait_check_page(), self.activity.activity_vue_tips)
-        self.activity.back_up_button()  # 返回 主界面
-        self.vue.switch_app()  # 切到app
+                    if self.activity.wait_check_page():
+                        self.activity.back_up_button()  # 返回 主界面
 
     @teststeps
     def activity_template_operation(self):
@@ -74,19 +73,18 @@ class Activity(unittest.TestCase):
     @teststeps
     def published_activities_operation(self):
         """已发布活动tab 具体操作"""
-        self.assertTrue(self.activity.wait_check_page(), self.activity.activity_vue_tips)
+        if self.activity.wait_check_page():
+            analysis = self.activity.published_activities_tab()  # 已发布活动 tab
+            analysis.click()  # 进入 已发布活动 tab页
+            self.vue.app_web_switch()  # 切到apk 再切到vue
 
-        analysis = self.activity.published_activities_tab()  # 已发布活动 tab
-        analysis.click()  # 进入 已发布活动 tab页
-        self.vue.app_web_switch()  # 切到apk 再切到vue
-
-        print('-------------------已发布活动tab-------------------')
-        if self.activity.wait_check_no_activity_page():
-            self.activity.back_up_button()
-            self.assertTrue(self.activity.wait_check_no_activity_page(), '暂无数据')
-        else:
-            self.assertTrue(self.activity.wait_check_published_list_page(), self.activity.activity_list_tips)
-            self.published_activity_list()  # 已发布活动 列表
+            print('-------------------已发布活动tab-------------------')
+            if self.activity.wait_check_no_activity_page():
+                self.activity.back_up_button()
+                self.assertFalse(self.activity.wait_check_no_activity_page(), '暂无数据')
+            else:
+                self.assertTrue(self.activity.wait_check_published_list_page(), self.activity.activity_list_tips)
+                self.published_activity_list()  # 已发布活动 列表
 
     @teststeps
     def activity_template_item(self):
@@ -108,13 +106,10 @@ class Activity(unittest.TestCase):
         dates = self.activity.published_activity_date()  # 日期
         status = self.activity.published_activity_status()  # 状态
 
-        item = self.activity.published_info()
         total_person = self.activity.published_activity_total_person_info()  # 总人数
         invite_person = self.activity.published_activity_invite_person_info()  # 活动 邀请总人数
         current_day = self.activity.published_activity_current_day_info()  # 当前天数
         total_day = self.activity.published_activity_total_day_info()  # 总天数
-
-        print(len(total_person), len(invite_person), len(current_day), len(total_day))
 
         for i in range(len(name)):
             print(name[i].text, '    ', status[i].text, '\n',

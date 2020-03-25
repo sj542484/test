@@ -8,6 +8,7 @@ from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
+from utils.assert_package import MyAssert
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
@@ -22,12 +23,15 @@ class FilterPage(BasePage):
         self.get = GetAttribute()
         self.wait = WaitElement()
         self.question = TestBankPage()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_page(self):
         """以“”为依据"""
         locator = (By.ID, self.label_name_value)
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.filter_tips)
+        return ele
 
     @teststep
     def click_public(self):
@@ -154,7 +158,20 @@ class FilterPage(BasePage):
     def confirm_button(self):
         """确定 按钮"""
         locator = (By.ID, gv.PACKAGE_ID + "confirm")
-        return self.wait.wait_find_elements(locator)
+        self.wait.wait_find_element(locator).click()
+
+    @teststeps
+    def reset_filter_operation(self):
+        """恢复 筛选"""
+        self.question.filter_button()  # 筛选按钮
+
+        if self.wait_check_page():  # 页面检查点
+            self.reset_button()  # 点击 重置按钮
+            if self.wait_check_page():  # 页面检查点
+                self.commit_button()  # 点击 确定按钮
+
+                if self.question.wait_check_page():  # 页面检查点
+                    ThomePage().click_tab_hw()  # 返回主界面
 
     @teststeps
     def filter_all_element(self, var):
@@ -271,11 +288,11 @@ class FilterPage(BasePage):
                         button[i].click()  # 选择 一个班
                         print('-----------')
                         break
-                self.confirm_button().click()  # 确定按钮
+                self.confirm_button()  # 确定按钮
                 return cancel, choose
             elif ThomePage().wait_check_empty_tips_page():
                 print('%% 本校暂无标签 %%')
-                self.confirm_button().click()  # 确定按钮
+                self.confirm_button()  # 确定按钮
 
     @teststeps
     def judge_school_label_result(self, name, label, mode='大题'):

@@ -5,7 +5,7 @@ import random
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.teacher.home.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
 from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
@@ -29,15 +29,10 @@ class VanclassHwPage(BasePage):
         self.get = GetAttribute()
         self.wait = WaitElement()
         self.home = ThomePage()
-        self.van = VanclassPage()
+        self.van_detail = VanclassDetailPage()
         self.vue = VueContext()
         self.screen = self.get_window_size()
-    #
-    # @teststeps
-    # def wait_check_app_page(self, var):
-    #     """以“title:”为依据"""
-    #     locator = (By.XPATH, "//android.view.View[contains(@text,'%s')]" % var)
-    #     return self.wait.wait_check_element(locator)
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_page(self, var):
@@ -103,12 +98,12 @@ class VanclassHwPage(BasePage):
         title = title_tip.format(van_name)
         self.vue.app_web_switch()  # 切到web
 
-        MyAssert().assertTrue(self.wait_check_page(title), self.van_hw_tips)  # 页面检查点
+        self.my_assert.assertTrue(self.wait_check_page(title), self.van_hw_tips)  # 页面检查点
         if self.wait_check_empty_tips_page():
             self.no_data()
-            MyAssert().assertTrue(self.wait_check_list_page(), self.van_hw_list_tips)  # 页面检查点
+            self.my_assert.assertTrue(self.wait_check_list_page(), self.van_hw_list_tips)  # 页面检查点
         else:
-            MyAssert().assertTrue(self.wait_check_list_page(), self.van_hw_list_tips)  # 页面检查点
+            self.my_assert.assertTrue(self.wait_check_list_page(), self.van_hw_list_tips)  # 页面检查点
             name = self.hw_name()  # 作业name
             count = []
             for i in range(len(name)):
@@ -131,33 +126,36 @@ class VanclassHwPage(BasePage):
     @teststeps
     def edit_into_operation(self):
         """进入  有作业的班级"""
-        MyAssert().assertTrue_new(self.home.wait_check_list_page(), self.home.van_list_tips)  # 页面加载完成 检查点
+        self.my_assert.assertTrue_new(self.home.wait_check_list_page(), self.home.van_list_tips)  # 页面加载完成 检查点
         SwipeFun().swipe_vertical(0.5, 0.8, 0.2)
-        MyAssert().assertTrue_new(self.home.wait_check_list_page(), self.home.van_list_tips)  # 页面加载完成 检查点
+        self.my_assert.assertTrue_new(self.home.wait_check_list_page(), self.home.van_list_tips)  # 页面加载完成 检查点
         van_name = self.home.item_detail()  # 班号+班级名
 
         for i in range(len(van_name)):
-            MyAssert().assertTrue_new(self.home.wait_check_list_page(), self.home.van_list_tips)  # 页面加载完成 检查点
+            self.my_assert.assertTrue_new(self.home.wait_check_list_page(), self.home.van_list_tips)  # 页面加载完成 检查点
             van_name = self.home.item_detail()  # 班号+班级名
             van = self.home.vanclass_name(van_name[i].text)  # 班级名
             if van != ge.VANCLASS:
                 van_name[i].click()  # 进入班级
 
-                MyAssert().assertTrue_new(self.van.wait_check_app_page(van), self.van.van_tips)  # 页面检查点
+                self.my_assert.assertTrue_new(self.van_detail.wait_check_app_page(van), self.van_detail.van_tips)  # 页面检查点
                 self.vue.switch_h5()  # 切到web
-                MyAssert().assertTrue_new(self.van.wait_check_page(van), self.van.van_vue_tips)
-                self.van.vanclass_hw()  # 点击进入 本班作业 tab
+                self.my_assert.assertTrue_new(self.van_detail.wait_check_page(van), self.van_detail.van_vue_tips)
+                self.van_detail.vanclass_hw()  # 点击进入 本班作业 tab
                 title = ge.HW_TITLE.format(van)
 
                 print('本班作业:')
                 self.vue.app_web_switch()  # 切到apk 再切回web
-                MyAssert().assertTrue(self.wait_check_page(title), self.van_hw_tips)  # 页面检查点
+                self.my_assert.assertTrue(self.wait_check_page(title), self.van_hw_tips)  # 页面检查点
                 if self.wait_check_empty_tips_page():
                     self.back_up_button()  # 返回 答题详情页面
-                    if self.van.wait_check_page(van):  # 班级详情 页面检查点
-                        self.back_up_button()  # 返回主界面
+                    self.vue.app_web_switch()  # 切到app 再切换到vue
+
+                    self.my_assert.assertTrue_new(self.van_detail.wait_check_page(van), self.van_detail.van_vue_tips)  # 班级详情 页面检查点
+                    self.back_up_button()  # 返回主界面
+                    self.vue.switch_app()
                 else:
-                    MyAssert().assertTrue(self.wait_check_list_page(), self.van_hw_list_tips)  # 页面检查点
+                    self.my_assert.assertTrue(self.wait_check_list_page(), self.van_hw_list_tips)  # 页面检查点
                     print('班级:', van)
                     hw_name = self.random_into_operation()  # 随机进入某个作业 游戏列表
                     if hw_name != 0:
@@ -165,9 +163,9 @@ class VanclassHwPage(BasePage):
                         return hw_name, van
                     else:
                         self.back_up_button()  # 返回 答题详情页面
-                        self.vue.app_web_switch()  # 切到app
-                        if self.van.wait_check_page(van):  # 班级详情 页面检查点
-                            self.back_up_button()  # 返回主界面
+                        self.vue.app_web_switch()  # 切到app 再切换到vue
+                        self.my_assert.assertTrue_new(self.van_detail.wait_check_page(van), self.van_detail.van_vue_tips)  # 班级详情 页面检查点
+                        self.back_up_button()  # 返回主界面
 
     @teststeps
     def random_into_operation(self):

@@ -105,6 +105,8 @@ class BankSearch(unittest.TestCase):
         self.search.search_button()  # 搜索按钮
 
         if self.question.wait_check_game_type_page():  # 题库页面
+            SwipeFun().swipe_vertical(0.5, 0.2, 0.8)
+        if self.question.wait_check_game_type_page():  # 题库页面
             name = self.question.question_name()
             length = 4
             if len(name[1]) < 5:

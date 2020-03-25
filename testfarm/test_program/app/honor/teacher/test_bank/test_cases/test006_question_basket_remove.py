@@ -42,7 +42,7 @@ class QuestionBasket(unittest.TestCase):
             self.question.judge_into_tab_question()  # 进入首页后 点击 题库tab
 
             if self.question.wait_check_page():  # 页面检查点
-                self.question.question_basket()  # 题筐按钮
+                self.question.question_basket_button()  # 题筐按钮
 
                 if self.basket.wait_check_page():  # 页面检查点
                     if self.basket.wait_check_list_page():  # 题筐有题
@@ -80,7 +80,7 @@ class QuestionBasket(unittest.TestCase):
                             self.home.back_up_button()  # 返回按钮
 
                             if self.question.wait_check_page():  # 页面检查点
-                                self.question.question_basket()  # 题筐按钮
+                                self.question.question_basket_button()  # 题筐按钮
 
                                 if self.basket.wait_check_page():  # 页面检查点
                                     if self.basket.wait_check_list_page():  # 题筐有题

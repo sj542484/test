@@ -50,11 +50,11 @@ class ListenFormSentence(BasePage):
         content = self.get.description(self.question())
 
         count_sp = 0
-        for k in content[6:]:  # 去掉 ‘86 ## ’
+        for k in content[5:]:  # 去掉 ‘86 ## ’
             if k.isspace():
                 count_sp += 1
 
-        count = count_sp // 10
+        count = count_sp // 6
         return count
 
     @teststeps

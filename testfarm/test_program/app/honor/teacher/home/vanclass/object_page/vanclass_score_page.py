@@ -4,7 +4,6 @@
 from selenium.webdriver.common.by import By
 
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
 from conf.base_page import BasePage
 from conf.decorator_vue import teststep, teststeps
 from utils.get_attribute import GetAttribute
@@ -17,7 +16,6 @@ class VanclassScorePage(BasePage):
         self.get = GetAttribute()
         self.wait = WaitElement()
         self.home = ThomePage()
-        self.van = VanclassPage()
 
     @teststeps
     def wait_check_score_page(self):

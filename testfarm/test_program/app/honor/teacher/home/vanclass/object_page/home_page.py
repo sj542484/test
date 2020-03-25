@@ -16,6 +16,7 @@ from utils.wait_element import WaitElement
 
 class ThomePage(BasePage):
     """app主页面元素信息"""
+    home_locator = (By.XPATH, "//android.widget.TextView[contains(@text,'最新动态')]")
     img_locator = (By.ID, gv.PACKAGE_ID + "notice_img")  # 轮播图
     tab_icon_locator = (By.ID, gv.PACKAGE_ID + "notice")  # 各tab icon
     tab_locator = (By.ID, gv.PACKAGE_ID + "type_text")  # 各tab
@@ -27,12 +28,14 @@ class ThomePage(BasePage):
 
     def __init__(self):
         self.wait = WaitElement()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_page(self, var=20):
         """以“title:最新动态”为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'最新动态')]")
-        return self.wait.wait_check_element(locator, var)
+        ele = self.wait.wait_check_element(self.home_locator, var)
+        self.my_assert.assertTrue(ele, self.home_tips)
+        return ele
 
     @teststeps
     def wait_check_list_page(self):
@@ -42,7 +45,7 @@ class ThomePage(BasePage):
     @teststeps
     def wait_check_image_page(self):
         """班级列表数据过多时，滑屏后是否在第一页，以轮播图为依据"""
-        return self.wait.wait_check_element(self.img_locator, 3)
+        return self.wait.wait_check_element(self.img_locator)
 
     @teststep
     def wait_check_empty_tips_page(self, var=3):
@@ -377,20 +380,6 @@ class ThomePage(BasePage):
         return var
 
     @teststeps
-    def into_vanclass_operation(self, var):
-        """进入 班级"""
-        MyAssert().assertTrue_new(self.wait_check_list_page(), self.van_list_tips)
-        SwipeFun().swipe_vertical(0.5, 0.8, 0.2)
-        MyAssert().assertTrue_new(self.wait_check_list_page(), self.van_list_tips)
-        name = self.item_detail()  # 班号+班级名
-        for i in range(len(name)):
-            van = self.vanclass_name(name[i].text)  # 班级名
-            if van == var:
-                print('进入班级:', var)
-                name[i].click()  # 进入班级
-                break
-
-    @teststeps
     def wait_check_permission(self):
         """录音权限申请"""
         locator = (By.ID, "com.lbe.security.miui:id/permission_message")
@@ -401,3 +390,88 @@ class ThomePage(BasePage):
         """允许 按钮"""
         locator = (By.XPATH, '//android.widget.Button[contains(@text, "允许")]')
         self.wait.wait_find_element(locator, 5).click()
+
+    @teststeps
+    def into_vanclass_operation(self, var):
+        """进入 班级"""
+        self.my_assert.assertTrue_new(self.wait_check_list_page(), self.van_list_tips)
+        SwipeFun().swipe_vertical(0.5, 0.8, 0.2)
+        self.my_assert.assertTrue_new(self.wait_check_list_page(), self.van_list_tips)
+        name = self.item_detail()  # 班号+班级名
+        for i in range(len(name)):
+            van = self.vanclass_name(name[i].text)  # 班级名
+            if van == var:
+                print('进入班级:', var)
+                name[i].click()  # 进入班级
+                break
+
+    @teststeps
+    def vanclass_statistic_operation(self):
+        """班级 列表"""
+        van = {}  # 班级：学生数字典
+        self.list_swipe_operation(van)  # 已有班级数 统计
+        print(van)
+        print('--------------------------------------')
+        return van
+
+    @teststeps
+    def list_swipe_operation(self, content):
+        """班级列表 滑屏 操作"""
+        var = self.vanclass_list(content)  # 获取 班级列表信息
+        SwipeFun().swipe_vertical(0.5, 0.75, 0.25)
+
+        self.my_assert.assertTrue(self.wait_check_list_page(), self.van_list_tips)  # 页面加载完成 检查点
+        title = []
+        item = self.item_detail()  # 班级条目
+        for i in range(len(item)):
+            name = self.vanclass_name(item[i].text)  # name
+            title.append(name)
+        last = item[-1].text  # 最后一个班级的title
+
+        index = []
+        if len(title) != 10:  # 到底部
+            if var in title:  # todo 列表中可能有多个相同
+                if last != var:  # 滑动了
+                    # print('滑动后到底部')
+                    for i in range(len(title)):
+                        if title[i] == var:
+                            index.append(i + 1)
+                            break
+                else:
+                    # print('到底了')
+                    index.append(len(title))
+
+                self.vanclass_list(content, index[0])  # 获取 班级列表信息
+        else:
+            # print('滑动后未到底部')
+            if var in title:  # 未滑够一页
+                # print('未滑够一页')
+                for i in range(len(title)):
+                    if title[i] == var:
+                        index.append(i + 1)
+                        break
+            else:
+                index.append(0)
+
+            return self.vanclass_list(content, index[0])  # 获取 班级列表信息
+
+    @teststeps
+    def vanclass_list(self, content, index=0):
+        """获取班级列表 及 页面内最后一个name"""
+        self.my_assert.assertTrue(self.wait_check_list_page(), self.van_list_tips)  # 页面加载完成 检查点
+
+        name = self.item_detail()  # 班号+班级名
+        count = self.st_count()  # 学生人数
+
+        if len(name) != len(count):  # 滑屏后
+            length = min(len(name), len(count))
+        else:
+            length = len(count)
+
+        for i in range(index, length):
+            num = self.vanclass_no(name[i].text)  # 班号
+            van = self.vanclass_name(name[i].text)  # 班级名
+            content[van] = int(count[i].text)
+        last = self.vanclass_name(name[-1].text)  # 最后一个作业的title
+
+        return last

@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
+import random
+import time
+
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from conf.decorator_vue import teststep, teststeps
 from conf.base_page import BasePage
+from utils.assert_package import MyAssert
+from utils.vue_context import VueContext
 from utils.wait_element_vue import WaitElement
 
 
@@ -18,45 +22,49 @@ class PunchCardPage(BasePage):
     activity_list_tips = '★★★ Error- 未进入活动模板列表'
 
     def __init__(self):
-        self.home = ThomePage()
         self.wait = WaitElement()
+        self.screen = self.get_window_size()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_app_page(self):
         """以“title:打卡活动”为依据"""
         locator = (By.XPATH, "//android.view.View[@text='打卡活动']")
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.activity_tips)
+        return ele
 
     @teststeps
     def wait_check_page(self):
         """以“title:打卡活动”为依据"""
         locator = (By.XPATH, '//div[@class="van-nav-bar__title van-ellipsis" and text()="打卡活动"]')
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.activity_vue_tips)
+        return ele
 
     @teststeps
     def wait_check_no_activity_page(self, var=10):
         """暂无数据 作为依据"""
-        locator = (By.XPATH, "//div[text()='暂无数据']")
+        locator = (By.XPATH, '//div[@class="vt-loading-container__error" and text()="暂无数据"]')
         return self.wait.wait_check_element(locator, var)
 
     @teststep
     def help_button(self):
         """ 提示 按钮"""
-        self.driver \
-            .find_element_by_xpath('//i[@class="nav-right-icon van-icon van-icon-question-o"]') \
-            .click()
+        locator = (By.XPATH, '//i[@class="nav-right-icon van-icon van-icon-question-o"]')
+        self.wait.wait_find_element(locator).click()
 
     @teststep
     def activity_template_tab(self):
         """活动模版"""
-        return self.driver \
-            .find_element_by_xpath("//span[text()='活动模版']")
+        locator = (By.XPATH, "//span[text()='活动模版']")
+        return self.wait.wait_find_element(locator)
 
     @teststep
     def published_activities_tab(self):
         """已发布活动"""
-        return self.driver \
-            .find_element_by_xpath("//span[text()='已发布活动']")
+        locator = (By.XPATH, "//span[text()='已发布活动']")
+        return self.wait.wait_find_element(locator)
 
     # 活动模板列表 元素
     @teststeps
@@ -242,12 +250,6 @@ class PunchCardPage(BasePage):
             content.append([title[i].text, num[i].text, unit[i].text])
         return content
 
-    @teststeps
-    def help_operation(self):
-        """ 右上角 提示按钮"""
-        self.help_button()  # 右上角 提示按钮
-        ThomePage().tips_content_commit()
-
     @teststep
     def back_up_button(self):
         """返回按钮"""
@@ -290,3 +292,82 @@ class PunchCardPage(BasePage):
         """知道了 按钮"""
         locator = (By.XPATH, '//span[@text()="知道了"]/parent::button')
         self.wait.wait_find_element(locator).click()
+
+    @teststeps
+    def swipe_vertical_web(self, ratio_x, start_y, end_y, steps=1000):
+        """
+        上/下滑动 x值不变
+        :param ratio_x: x坐标系数
+        :param start_y: 滑动起点y坐标系数
+        :param end_y: 滑动终点y坐标系数
+        :param steps: 持续时间ms
+        :return: None
+        """
+        x = int(self.screen[0] * ratio_x)
+        y1 = int(self.screen[1] * start_y)
+        y2 = int(self.screen[1] * end_y)
+
+        self.driver.swipe(x, y1, x, y2, steps)
+
+    @teststeps
+    def into_activity(self):
+        """进入活动列表中的该活动"""
+        MyAssert().assertTrue(self.wait_check_published_list_page(), self.activity_list_tips)
+        name = self.published_activity_name()  # 活动名
+        status = self.published_activity_status()  # 状态
+        total_person = self.published_activity_total_person_info()  # 总人数
+
+        content = [k for k in range(len(status)) if status[k].text != '已结束' and total_person[k][1] != '0']
+        index = random.randint(0, len(content) - 1)
+        print(content[index])
+        print("进入已发布活动:", name[content[index]].text)
+        activity = [name[content[index]].text]
+        name[content[index]].click()  # 进入活动
+        VueContext().app_web_switch()  # 切到apk 再切到vue
+
+        return activity
+
+    @teststeps
+    def publish_date_operation(self, dates):
+        """日期处理
+        :param dates:待处理日期
+        """
+        now_time = time.strftime("%Y-%m-%d", time.localtime())   # 生成当前时间
+        now = now_time.split('-')
+        date = dates.split('-')
+
+        year = int(date[0])
+        var = 30
+        if int(date[1]) in (1, 3, 5, 7, 8, 10, 12):
+            var = 31
+        elif int(date[1]) == 2:
+            if (year % 4) == 0 and (year % 100) != 0 or (year % 400) == 0:
+                var = 29
+            else:
+                var = 28
+
+        days = 365 * (int(now[0]) - year) + var * (int(now[1]) - int(date[1])) + int(now[2]) - int(date[2])
+        print('-----------------')
+
+        return days
+
+    @teststeps
+    def offline_publish_date_operation(self, dates, now_time):
+        """日期处理
+        :param dates:待处理日期
+        :param now_time: 比对日期
+        """
+        now = now_time.split('-')
+        date = dates.split('-')
+
+        year = int(now[0])
+        var = 30
+        if int(now[1]) in (1, 3, 5, 7, 8, 10, 12):
+            var = 31
+        elif int(now[1]) == 2:
+            if (year % 4) == 0 and (year % 100) != 0 or (year % 400) == 0:
+                var = 29
+            else:
+                var = 28
+        days = 365 * (int(date[0]) - year) + var * (int(date[1]) - int(now[1])) + int(date[2]) - int(now[2])
+        return days

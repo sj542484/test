@@ -35,7 +35,7 @@ class Login(unittest.TestCase):
 
     def run(self, result=None):
         self.ass_result = result
-        super(Login, self).run(result)
+        super(Login, self).run(self.ass_result)
 
     @testcase
     def test_login_password(self):

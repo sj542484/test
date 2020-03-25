@@ -42,37 +42,37 @@ class PollImg(unittest.TestCase):
         """轮播图"""
         self.login.app_status()  # 判断APP当前状态
         self.name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
-        self.assertTrue(self.home.wait_check_page(), self.home.home_tips)  # 页面检查点
-        self.assertTrue(self.home.wait_check_image_page(), '★★★ Error- 轮播图')  # 页面加载完成 检查点
-        print('================轮播图================')
-        button = self.home.poll_button()  # 轮播按钮
-        index = random.randint(1, len(button) - 1)
-        button[index].click()
 
-        if len(button) != 3:
-            print('★★★ Error -轮播图个数有误', len(button))
-        else:
-            print('共{}张轮播图，点击第{}张' .format(len(button),index))
-        self.home.back_up_button()  # 返回首页
+        if self.home.wait_check_page():  # 页面检查点
+            self.assertTrue(self.home.wait_check_image_page(), '★★★ Error- 轮播图')  # 页面加载完成 检查点
+            print('================轮播图================')
+            button = self.home.poll_button()  # 轮播按钮
+            index = random.randint(1, len(button) - 1)
+            button[index].click()
 
-        print('======================================')
-        self.home.poll_img()  # 点击 轮播图
+            if len(button) != 3:
+                print('★★★ Error -轮播图个数有误', len(button))
+            else:
+                print('共{}张轮播图，点击第{}张' .format(len(button),index))
+            self.home.back_up_button()  # 返回首页
 
-        if self.home.wait_check_poll_img_page(3):  # 班级年报 页面检查点
-            print('班级年报')
-        self.home.back_up_button()  # 返回首页
+            print('======================================')
+            self.home.poll_img()  # 点击 轮播图
+            if self.home.wait_check_poll_img_page(3):  # 班级年报 页面检查点
+                print('班级年报')
+            self.home.back_up_button()  # 返回首页
 
     @testcase
     def test_002_word_book_daily_listen(self):
         """单词本 & 每日一听 提示信息"""
-        self.login.app_status_no_check()  # 判断APP当前状态
+        self.login.app_status()  # 判断APP当前状态
         self.name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
-        self.assertTrue(self.home.wait_check_page(), self.home.home_tips)  # 页面检查点
+        if self.home.wait_check_page():  # 页面检查点
+            print('==================单词本================')
+            self.home.word_icon()  # 单词本icon
+            self.my_toast.toast_assert(self.name, Toast().toast_operation('请去电脑端使用单词本,移动端即将上线。'))
 
-        print('==================单词本================')
-        self.home.word_icon()  # 单词本icon
-        self.my_toast.toast_assert(self.name, Toast().toast_operation('请去电脑端使用单词本,移动端即将上线。'))
-
-        print('================每日一听================')
-        self.home.listen_icon()  # 每日一听icon
-        self.my_toast.toast_assert(self.name, Toast().toast_operation('功能开发中,敬请期待!'))
+        if self.home.wait_check_page():  # 页面检查点
+            print('================每日一听================')
+            self.home.listen_icon()  # 每日一听icon
+            self.my_toast.toast_assert(self.name, Toast().toast_operation('功能开发中,敬请期待!'))

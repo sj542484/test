@@ -13,6 +13,7 @@ from app.honor.teacher.test_bank.object_page.question_detail_page import Questio
 from app.honor.teacher.test_bank.object_page.test_bank_search_page import SearchPage
 from app.honor.teacher.test_bank.test_data.tips_data import TipsData
 from conf.decorator import setup, teardown, testcase, teststeps
+from conf.log import Log
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
 from utils.toast_find import Toast
@@ -32,6 +33,7 @@ class QuestionBasket(unittest.TestCase):
         cls.detail = QuestionDetailPage()
         cls.search = SearchPage()
         cls.get = GetAttribute()
+        cls.log = Log()
 
     @classmethod
     @teardown
@@ -46,7 +48,7 @@ class QuestionBasket(unittest.TestCase):
             self.question.judge_into_tab_question()  # 进入首页后 点击 题库tab
 
             if self.question.wait_check_page():  # 页面检查点
-                self.question.question_basket()  # 题筐按钮
+                self.question.question_basket_button()  # 题筐按钮
 
                 if self.basket.wait_check_page():  # 页面检查点
                     if self.basket.wait_check_list_page():  # 题筐有题
@@ -112,7 +114,7 @@ class QuestionBasket(unittest.TestCase):
                         if self.detail.wait_check_page():  # 页面检查点
                             self.home.back_up_button()  # 返回按钮
                             if self.question.wait_check_page():  # 页面检查点
-                                self.question.question_basket()  # 题筐按钮
+                                self.question.question_basket_button()  # 题筐按钮
 
                                 self.judge_basket_result(item)  # 验证题筐结果具体操作
 
@@ -190,7 +192,7 @@ class QuestionBasket(unittest.TestCase):
                                                                     self.home.back_up_button()  # 返回 题库 主界面
 
                                                                     if self.question.wait_check_page():  # 页面检查点
-                                                                        self.question.question_basket()  # 进入题筐
+                                                                        self.question.question_basket_button()  # 进入题筐
                                                                         self.judge_basket_result(games, '再次添加题筐')
         else:
             Toast().get_toast()  # 获取toast
@@ -202,14 +204,7 @@ class QuestionBasket(unittest.TestCase):
         print('--------------验证 {} 结果--------------'.format(var))
         if self.basket.wait_check_page():  # 页面检查点
             if self.basket.wait_check_list_page():
-                count = []
-                self.basket_list(name, count)  # 题筐列表
-                print('------------------------')
-                if count:
-                    print('加入题筐成功')
-                else:
-                    print('★★★ Error- 加入题筐失败', name)
-
+                self.basket_list(name)  # 题筐列表
                 self.basket.all_check_button()  # 全选按钮
                 if self.basket.wait_check_list_page():
                     self.basket.out_basket_button()  # 移出题筐按钮
@@ -230,18 +225,13 @@ class QuestionBasket(unittest.TestCase):
         """toast为: 已经加入题筐成功 时, 移出题筐中该题的具体操作"""
         print('--------------验证 添加题筐 结果--------------')
         if self.question.wait_check_page():  # 页面检查点
-            self.question.question_basket()  # 题筐按钮
+            self.question.question_basket_button()  # 题筐按钮
             if self.basket.wait_check_page():  # 页面检查点
                 if self.basket.wait_check_list_page():
-                    count = []
-                    self.basket_list(name, count)  # 题筐列表
-                    self.basket.out_basket_button()  # 移出题筐按钮
-
-                    print('------------------------')
-                    if count:
-                        print('加入题筐成功')
-                    else:
-                        print('★★★ Error- 加入题筐失败', name)
+                    self.basket_list(name)  # 题筐列表
+                    self.basket.all_check_button()  # 全选按钮
+                    if self.basket.wait_check_list_page():
+                        self.basket.out_basket_button()  # 移出题筐按钮
                 elif self.home.wait_check_empty_tips_page():  # 如果存在空白页元素
                     print('★★★ Error- 暂无数据，加入题筐失败')
 
@@ -250,40 +240,37 @@ class QuestionBasket(unittest.TestCase):
 
     # 39EUJP
     @teststeps
-    def basket_list(self, name, count, content=None):
+    def basket_list(self, names):
         """题筐列表"""
-        if content is None:
-            content = []
+        self.basket.all_check_button()  # 全选按钮
+        ele = self.basket.assign_button()  # 布置作业 按钮
+        num = 50 - int(re.sub("\D", "", ele.text))  # 提取 题数
 
-        if self.basket.wait_check_list_page():
-            item = self.question.question_name()[1]  # 获取题目
-            print(item)
-            if len(item) > 6 and not content:
-                self.basket_question_list(name, item, count, len(item)-1)  # 题筐 题目列表
+        count = []
+        all_games = []
+        var = num // 6 + 1
+        while var > 0:
+            self.assertTrue(self.basket.wait_check_list_page(), self.basket.basket_list_tips)  # 页面检查点
+            item = self.basket.question_name()[1]  # 获取题目
+            index = -1
+            length = len(item)-1
+            if len(item) > 5:
+                length = len(item) - 2
+                index = 0
+            for i in range(length, index, -1):
+                self.log.i(item[i])
+                for j in range(len(names)):
+                    if item[i] == names[j]:
+                        self.log.i('同%s'%item[i])
+                        count.append(i)
+                        all_games.extend(item[1])
 
-                content = [name[-1]]
-                SwipeFun().swipe_vertical(0.5, 0.6, 0.3)  # 滑屏一次
-                if self.basket.wait_check_list_page():
-                    self.basket_list(name, count, content)
+            if not count:
+                SwipeFun().swipe_vertical(0.5, 0.8, 0.2)
             else:
-                var = 0
-                if content:
-                    for k in item:
-                        if content[0] == k:
-                            var = 1
-                            break
-                    if var == 0:
-                        var = 1
-                self.basket_question_list(name, item, count, len(item), var)  # 题筐 题目列表
+                break
+            var -= 1
 
-    @teststeps
-    def basket_question_list(self, name, item, count, length, var=0):
-        """题筐 题目列表"""
-        check = self.basket.check_button()  # 单选按钮
-        for j in range(len(name) - 1, -1, -1):
-            print(name[j])
-            for i in range(var, length):
-                if name[j] in item[i]:
-                    count.append(i)
-                if self.get.checked(check[i]) == 'false':
-                    check[i].click()
+        print('----------------------------')
+        self.assertFalse(len(count) == 0, '★★★ Error -加入题筐失败, {}'.format(names))
+        print('加入题筐成功')

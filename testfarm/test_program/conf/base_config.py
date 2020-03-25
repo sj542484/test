@@ -21,6 +21,11 @@ class GetVariable(object):
 
     ID_TYPE = 'com.vanthink.student.debug:id/'
     PACKAGE_ID = 'com.vanthink.vanthinkteacher.debug:id/'
+    CONTEXT = 'WEBVIEW_com.vanthink.vanthinkteacher.debug'
+
+    ENV = 'dev'
+    URL = 'https://dev.vanthink.cn'
+    VERIFY_INF = 'https://dev.managerebuild.vanthink.cn/api/utils/get/userCaptcha?'  # dev 手机验证码
 
     # case统计 配置信息
     SUIT_PATH = 'testfarm'
@@ -37,12 +42,12 @@ class GetVariable(object):
 
     # 安装包
     # 教师端
-    TEA_PACKAGE = "/www/teacher_env_devDebug_1.3.1_589954b.apk"
+    TEA_PACKAGE = "/Users/vanthink_test_ios/Downloads/teacher_env_devDebug_1.3.1_589954b.apk"
     # 学生端
-    STU_PACKAGE = "/www/student_env_devMasterDebug_1.4.8-5.apk"
+    STU_PACKAGE = "/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk"
 
     # hub地址
-    HUBHOST = '172.18.0.2'
+    HUBHOST = '192.168.8.214'
 
     # 学生的ID
     STU_ID = 0

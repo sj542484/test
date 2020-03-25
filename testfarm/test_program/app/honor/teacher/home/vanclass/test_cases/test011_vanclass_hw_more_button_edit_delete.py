@@ -10,7 +10,7 @@ from app.honor.teacher.home.dynamic_info.object_page.recommend_to_scool_page imp
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.home.vanclass.object_page.vanclass_hw_spoken_page import VanclassHwPage
 from app.honor.teacher.home.dynamic_info.object_page.hw_spoken_detail_page import HwDetailPage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.teacher.home.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.vanclass.test_data.tips_data import TipsData
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
@@ -18,6 +18,7 @@ from app.honor.teacher.user_center.mine_recommend.object_page.mine_recommend_pag
 from app.honor.teacher.user_center.mine_test_bank.object_page.mine_test_bank_page import MineTestBankPage
 from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
+from app.honor.teacher.home.dynamic_info.test_data.draft_data import GetVariable as ge
 from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.assert_func import ExpectingTest
@@ -39,7 +40,7 @@ class VanclassHw(unittest.TestCase):
         cls.home = ThomePage()
         cls.release = ReleasePage()
         cls.hw_detail = HwDetailPage()
-        cls.van = VanclassPage()
+        cls.van_detail = VanclassDetailPage()
         cls.v_hw = VanclassHwPage()
         cls.info = DynamicPage()
 
@@ -69,7 +70,7 @@ class VanclassHw(unittest.TestCase):
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
         var = self.v_hw.edit_into_operation()  # 进入 班级 作业
 
-        title = gv.HW_TITLE.format(gv.VANCLASS)
+        title = gv.HW_TITLE.format(var[1])
         self.vue.app_web_switch()  # 切到apk 再切到vue
         self.assertTrue(self.hw_detail.wait_check_page(), self.hw_detail.hw_detail_tips)  # 页面检查点
         self.hw_detail.delete_cancel_operation()  # 删除 具体操作
@@ -92,8 +93,8 @@ class VanclassHw(unittest.TestCase):
         self.v_hw.back_up_button()  # 返回 班级详情页面
         self.vue.app_web_switch()  # 切到apk 再切回vue
 
-        self.assertTrue(self.van.wait_check_page(var[1]), self.van.van_vue_tips)  # 班级详情 页面检查点
-        self.van.back_up_button()  # 返回主界面
+        self.assertTrue(self.van_detail.wait_check_page(var[1]), self.van_detail.van_vue_tips)  # 班级详情 页面检查点
+        self.van_detail.back_up_button()  # 返回主界面
 
     @testcase
     def test_002_hw_more_button_edit(self):
@@ -102,7 +103,7 @@ class VanclassHw(unittest.TestCase):
 
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
         var = self.v_hw.edit_into_operation()  # 进入 班级 作业
-        title = gv.HW_TITLE.format(gv.VANCLASS)
+        # title = gv.HW_TITLE.format(var[1])
 
         self.vue.app_web_switch()  # 切到apk 再切到vue
         self.assertTrue(self.hw_detail.wait_check_page(), self.hw_detail.hw_detail_tips)  # 页面检查点
@@ -116,12 +117,6 @@ class VanclassHw(unittest.TestCase):
             van = self.edit_hw_operation()  # 编辑 具体操作
 
             self.judge_result(van)  # 保存编辑,取消删除时，验证 结果
-
-            self.assertTrue(self.v_hw.wait_check_page(title), self.v_hw.van_hw_tips)  # 页面检查点
-            self.v_hw.back_up_button()  # 返回 班级详情页面
-            self.vue.app_web_switch()  # 切到apk 再切回vue
-            self.assertTrue(self.van.wait_check_page(var[1]), self.van.van_vue_tips)  # 班级详情 页面检查点
-            self.van.back_up_button()  # 返回主界面
 
     @teststeps
     def edit_hw_operation(self):
@@ -188,6 +183,10 @@ class VanclassHw(unittest.TestCase):
                 elif self.info.wait_check_no_hw_page():
                     print('★★★ Error- 取消删除失败')
                 self.vue.app_web_switch()  # 切到apk 再切回vue
+
+                self.info.back_up_button()  # 返回主界面
+                if self.home.wait_check_page():  # 页面检查点
+                    self.vue.switch_h5()  # 切到web
 
     @teststeps
     def delete_commit_operation(self, hw, vanclass):
@@ -262,14 +261,14 @@ class VanclassHw(unittest.TestCase):
             self.recommend_commit_operation()  # 二次确认 按钮
 
             self.vue.app_web_switch()  # 切到apk 再切回web
-            self.rec_school.choose_school_label_operation()  # 选择 学校标签
+            self.rec_school.choose_school_label_operation(ge.RECOMMEND)  # 选择 学校标签
 
             self.vue.app_web_switch()  # 切到apk 再切回web
             if self.hw_detail.wait_check_page(5):
                 print('推荐到学校成功')
                 # self.hw_detail.toast_operation('成功推荐到学校')  # 获取toast
                 if self.hw_detail.wait_check_page():  # 页面检查点
-                    self.hw_detail.analysis_tab().click()  # 进入 答题分析 tab页
+                    self.hw_detail.analysis_tab()  # 进入 答题分析 tab页
 
                     if self.hw_detail.wait_check_hw_list_page():
                         name = self.hw_detail.game_name()

@@ -8,11 +8,11 @@ from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
 from app.honor.teacher.home.dynamic_info.object_page.hw_spoken_detail_page import HwDetailPage
 from app.honor.teacher.home.dynamic_info.object_page.dynamic_info_hw_spoken_page import DynamicPage
-from app.honor.teacher.home.dynamic_info.object_page.spoken_finish_tab_detail_page import SpokenFinishDetailPage
+from app.honor.teacher.home.vanclass.object_page.spoken_finish_tab_detail_page import SpokenFinishDetailPage
 from app.honor.teacher.home.vanclass.object_page.vanclass_hw_spoken_page import VanclassHwPage
 from app.honor.teacher.home.vanclass.test_data.tips_data import TipsData
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.teacher.home.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
 from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase, teststeps
@@ -36,7 +36,7 @@ class VanclassSpoken(unittest.TestCase):
         cls.home = ThomePage()
         cls.hw_detail = HwDetailPage()
         cls.speak = SpokenFinishDetailPage()
-        cls.van = VanclassPage()
+        cls.van_detail = VanclassDetailPage()
         cls.v_hw = VanclassHwPage()
         cls.release = ReleasePage()
         cls.info = DynamicPage()
@@ -64,10 +64,10 @@ class VanclassSpoken(unittest.TestCase):
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
         self.home.into_vanclass_operation(gv.VANCLASS)  # 进入 班级详情页
     
-        self.assertTrue(self.van.wait_check_app_page(gv.VANCLASS), self.van.van_tips)  # 页面检查点
+        self.assertTrue(self.van_detail.wait_check_app_page(gv.VANCLASS), self.van_detail.van_tips)  # 页面检查点
         self.vue.switch_h5()  # 切到vue
-        self.assertTrue(self.van.wait_check_page(gv.VANCLASS), self.van.van_vue_tips)
-        self.van.vanclass_hw()  # 点击 本班作业 tab
+        self.assertTrue(self.van_detail.wait_check_page(gv.VANCLASS), self.van_detail.van_vue_tips)
+        self.van_detail.vanclass_hw()  # 点击 本班作业 tab
         name = self.v_hw.into_operation(gv.HW_TITLE, gv.VANCLASS, '口语')
     
         self.assertTrue(self.hw_detail.wait_check_page(), self.hw_detail.hw_detail_tips)  # 页面检查点
@@ -92,27 +92,27 @@ class VanclassSpoken(unittest.TestCase):
         self.vue.switch_app()  # 切到apk
         self.home.tips_content_commit(5)  # 温馨提示 页面
 
-        if self.hw_detail.wait_check_edit_page():  # 页面检查点
-            if self.release.wait_check_release_list_page():
-                print('-------------------编辑作业 详情页-------------------')
-                name = self.release.hw_name_edit()  # 作业名称 编辑框
-                var = gv.SPOKEN_EDIT
-                name.send_keys(var)  # 修改name
-                print(self.release.hw_title(), ":", name.text)  # 打印元素 作业名称
+        self.assertTrue(self.hw_detail.wait_check_edit_page(), self.hw_detail.edit_tips)
+        self.assertTrue(self.release.wait_check_release_list_page(), self.hw_detail.edit_list_tips)
+        print('-------------------编辑作业 详情页-------------------')
+        name = self.release.hw_name_edit()  # 作业名称 编辑框
+        var = gv.SPOKEN_EDIT
+        name.send_keys(var)  # 修改name
+        print(self.release.hw_title(), ":", name.text)  # 打印元素 作业名称
 
-                print(self.release.hw_list(), ":", self.release.hw_list_tips())  # 打印元素 题目列表
-                self.release.hw_mode_operation('free')  # 作业模式 操作
-                self.release.hw_vanclass_list()  # 班级列表
-                choose = self.release.choose_class_operation()  # 选择班级 学生
+        print(self.release.hw_list(), ":", self.release.hw_list_tips())  # 打印元素 题目列表
+        self.release.hw_mode_operation('free')  # 作业模式 操作
+        self.release.hw_vanclass_list()  # 班级列表
+        choose = self.release.choose_class_operation()  # 选择班级 学生
 
-                if self.release.wait_check_release_page():  # 页面检查点
-                    self.release.hw_adjust_order()  # 调整题目顺序
+        self.assertTrue(self.release.wait_check_release_list_page(), self.hw_detail.edit_list_tips)
+        self.release.hw_adjust_order()  # 调整题目顺序
 
-                    if self.release.wait_check_release_page():  # 页面检查点
-                        self.hw_detail.assign_button()  # 发布作业 按钮
-                        Toast().toast_operation(TipsData().hw_success)  # 获取toast信息
+        self.assertTrue(self.release.wait_check_release_list_page(), self.hw_detail.edit_list_tips)
+        self.hw_detail.assign_button()  # 发布作业 按钮
+        Toast().toast_operation(TipsData().hw_success)  # 获取toast信息
 
-                        return var, choose
+        return var, choose
 
     @teststeps
     def judge_result(self, vanclass):
@@ -120,29 +120,32 @@ class VanclassSpoken(unittest.TestCase):
         if self.home.wait_check_page():  # 页面检查点
             SwipeFun().swipe_vertical(0.5, 0.2, 0.8)
 
-        if self.home.wait_check_page():  # 页面检查点
-            self.home.hw_icon()  # 进入作业 最近动态页面
+        self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
+        self.home.hw_icon()  # 进入习题 最近动态页面
+        self.assertTrue(self.info.wait_check_app_page(), self.info.dynamic_tips)  # 页面检查点
 
-            if self.info.wait_check_app_page():
-                self.vue.switch_h5()
-                if self.info.wait_check_page():  # 页面检查点
+        self.vue.switch_h5()  # 切到web
+        self.assertTrue(self.info.wait_check_page(), self.info.dynamic_vue_tips)  # 页面检查点
+        if self.info.wait_check_no_hw_page():
+            print('★★★ Error- 取消删除失败')
+            self.info.back_up_button()
+            self.assertFalse(self.info.wait_check_no_hw_page(), self.info.dynamic_list_tips)
+        else:
+            self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
+            print('--------------验证 编辑/取消删除 结果--------------')
+            name = self.info.hw_name()  # 作业name
+            van = self.info.hw_vanclass()  # 班级
+            if name[0].text == vanclass[0]:
+                if van[0].text != vanclass[1][0]:
+                    print('★★★ Error- 作业编辑不成功', van[0].text, vanclass[1][0])
+
                     if self.info.wait_check_list_page():
-                        print('--------------验证 编辑/取消删除 结果--------------')
-                        name = self.info.hw_name()  # 作业name
-                        van = self.info.hw_vanclass()  # 班级
-                        if name[0].text == vanclass[0]:
-                            if van[0].text != vanclass[1][0]:
-                                print('★★★ Error- 作业编辑不成功', van[0].text, vanclass[1][0])
-
-                                if self.info.wait_check_list_page():
-                                    self.info.back_up_button()  # 返回主界面
-                            else:  # 编辑保存成功, 执行删除操作
-                                print('编辑保存成功')
-                                self.delete_commit_operation(name[0], vanclass)  # 删除 具体操作
-                        else:
-                            print('★★★ Error- 取消删除失败')
-                    elif self.v_hw.wait_check_empty_tips_page():
-                        print('★★★ Error- 取消删除失败')
+                        self.info.back_up_button()  # 返回主界面
+                else:  # 编辑保存成功, 执行删除操作
+                    print('编辑保存成功')
+                    self.delete_commit_operation(name[0], vanclass)  # 删除 具体操作
+            else:
+                print('★★★ Error- 取消删除失败')
 
     @teststeps
     def delete_commit_operation(self, hw, vanclass):
@@ -196,12 +199,12 @@ class VanclassSpoken(unittest.TestCase):
                         van_name[i].click()  # 进入班级
 
                         self.vue.switch_h5()  # 切到vue
-                        if self.van.wait_check_page(van):  # 页面检查点
-                            if self.van.wait_check_list_page():  # 加载完成
-                                self.van.vanclass_hw()  # 点击进入 本班作业 tab
+                        if self.van_detail.wait_check_page(van):  # 页面检查点
+                            if self.van_detail.wait_check_list_page():  # 加载完成
+                                self.van_detail.vanclass_hw()  # 点击进入 本班作业 tab
                                 title = gv.HW_TITLE.format(van)
 
-                                if self.van.wait_check_app_page(title):
+                                if self.van_detail.wait_check_app_page(title):
                                     print('本班作业')
                                     self.vue.app_web_switch()  # 切到apk 再切到vue
                                     if self.v_hw.wait_check_page(title):  # 页面检查点
@@ -215,13 +218,13 @@ class VanclassSpoken(unittest.TestCase):
                                                 self.v_hw.back_up_button()  # 返回 答题详情页面
                                                 self.vue.app_web_switch()  # 切到apk 再切到vue
                                                 
-                                                if self.van.wait_check_page(van):  # 班级详情 页面检查点
-                                                    self.van.back_up_button()  # 返回主界面
+                                                if self.van_detail.wait_check_page(van):  # 班级详情 页面检查点
+                                                    self.van_detail.back_up_button()  # 返回主界面
                                         else:
                                             self.v_hw.back_up_button()  # 返回 答题详情页面
                                             self.vue.app_web_switch()  # 切到apk 再切到vue
-                                            if self.van.wait_check_page(van):  # 班级详情 页面检查点
-                                                self.van.back_up_button()  # 返回主界面
+                                            if self.van_detail.wait_check_page(van):  # 班级详情 页面检查点
+                                                self.van_detail.back_up_button()  # 返回主界面
                                     else:
                                         print('未进入本班作业', title)
                                 else:

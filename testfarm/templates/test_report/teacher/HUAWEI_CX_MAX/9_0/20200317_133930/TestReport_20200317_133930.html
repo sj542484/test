@@ -1,0 +1,2636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试用例执行报告</title>
+    <meta name="generator" content="HTMLTestRunner 1.2.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+    <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: Microsoft YaHei;padding: 20px; font-size: 100%; }
+table       { font-size: 100%; }
+.table tbody tr td{
+            vertical-align: middle;
+        }
+
+/* -- heading ---------------------------------------------------------------------- */
+.heading .description, .attribute {
+    clear: both;
+}
+
+/* --- 失败和错误合集样式 -- Gelomen --- */
+.failCollection, .errorCollection {
+    width: 100px;
+    float: left;
+}
+#failCaseOl li {
+    color: red
+}
+#errorCaseOl li {
+    color: orange
+}
+
+/* --- 打开截图特效样式 -- Gelomen --- */
+.data-img{
+    cursor:pointer
+}
+
+.pic_looper{
+    width:100%;
+    height:100%;
+    position: fixed;
+    left: 0;
+    top:0;
+    opacity: 0.6;
+    background: #000;
+    display: none;
+    z-index: 100;
+}
+
+.pic_show{
+    width:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    text-align: center;
+    display: none;
+    z-index: 100;
+}
+
+.pic_box{
+    padding:10px;
+    width:90%;
+    height:90%;
+    margin:40px auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+.pic_box img{
+    width: auto;
+    height: 100%;
+    -moz-box-shadow: 0px 0px 20px 0px #000;
+    -webkit-box-shadow: 0px 0px 20px 0px #000;
+    box-shadow: 0px 0px 20px 0px #000;
+}
+
+/* --- 饼状图div样式 -- Gelomen --- */
+#container {
+    width: 450px;
+    height: 300px;
+    float: left;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+#total_row  { font-weight: bold; }
+.passCase   { color: #5cb85c; }
+.failCase   { color: #f0ad4e; font-weight: bold; }
+.errorCase  { color: #d9534f; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+.screenshot:link { text-decoration: none;color: deeppink; }
+.screenshot:visited { text-decoration: none;color: deeppink; }
+.screenshot:hover { text-decoration: none;color: darkcyan; }
+.screenshot:active { text-decoration: none;color: deeppink; }
+</style>
+
+</head>
+<body >
+<script language="javascript" type="text/javascript">
+
+    $(function(){
+        // 修改 失败 和 错误 用例里对应按钮的颜色ClassName为动态加载 -- Gelomen
+    	$("button").each(function () {
+    	    var text = $(this).text();
+    	    if(text == "失败"){
+    	        $(this).addClass("btn-warning")
+            }else if(text == "错误") {
+                $(this).addClass("btn-danger")
+            }else if(text == "通过") {
+                $(this).addClass("btn-success")
+            }
+        });
+
+        // 给失败和错误合集加样式 -- Gelomen
+        var p_attribute = $("p.attribute");
+        p_attribute.eq(4).addClass("failCollection");
+        p_attribute.eq(5).addClass("errorCollection");
+
+        // 打开截图，放大，点击任何位置可以关闭图片  -- Gelomen
+        $(".screenshot").click(function(){
+            var img = $(this).attr("img");
+            
+            var a = "{% static '";
+            var b = "' %}";
+            
+            $('.pic_show img').attr('src', a + img + b);
+            
+            $('.pic_looper').fadeIn(200);
+            $('.pic_show').fadeIn(200);
+
+            var browserHeight = $(window).height();
+            var pic_boxHeight = $(".pic_box").height();
+            var top = (browserHeight - pic_boxHeight)/2;
+            $('.pic_box').css("margin-top", top + "px")
+
+        });
+        $('.pic_looper, .pic_show').click(function(){
+            $('.pic_looper').fadeOut(200);
+            $('.pic_show').fadeOut(200)
+        });
+
+        var browserWidth = $(window).width();
+        var margin_left = browserWidth/2 - 450;
+        if(margin_left <= 240){
+            $("#container").css("margin", "auto");
+        }else {
+            $("#container").css("margin-left", margin_left + "px");
+        }
+
+        $(window).resize(function(){
+            // 改变窗口大小时，自动改变图片与顶部的距离  -- Gelomen
+            var browserHeight = $(window).height();
+            var pic_boxHeight = $(".pic_box").height();
+            var top = (browserHeight - pic_boxHeight)/2;
+            $('.pic_box').css("margin-top", top + "px");
+
+
+            // 改变窗口大小时，自动改变饼图的边距  -- Gelomen
+            var browserWidth = $(window).width();
+            var margin_left = browserWidth/2 - 450;
+            if(margin_left <= 240){
+                $("#container").css("margin", "auto");
+            }else {
+                $("#container").css("margin-left", margin_left + "px");
+            }
+        });
+
+        // 距离顶部超过浏览器窗口一屏时，回到顶部按钮才出现  -- Gelomen
+        $(window).scroll(function(){
+            var browserHeight = $(window).height();
+            var top = $(window).scrollTop();
+            if(top >= browserHeight){
+                $("#toTop").css("display", "block")
+            }else {
+                $("#toTop").css("display", "none")
+            }
+        })
+
+        // 增加回到顶部过程的动画，以看上去不会那么生硬  -- Gelomen
+        $("#toTop").click(function() {
+            $("html,body").animate({"scrollTop":0}, 700)
+        })
+
+        // 增加饼状图  -- Gelomen
+        $('#container').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                spacing : [0, 0, 0, 0]
+            },
+            credits: {
+                enabled: false
+            },
+            navigation: {
+                buttonOptions: {
+                    enabled: false
+                }
+            },
+            title: {
+                floating:true,
+                text: '测试结果占比'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    colors: ['#81ca9d','#fdc68c', '#f16d7e'],
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(e) {  // 鼠标滑过时动态更新标题
+                                chart.setTitle({
+                                    text: e.target.name+ '\t'+ e.target.y + ' 个'
+                                });
+                            }
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                innerSize: '80%',
+                name: '比例',
+                data: [
+                    ['通过', 0],
+                    {
+                        name: '失败',
+                        y: 1,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['错误', 52]
+                ]
+            }]
+        }, function(c) {
+            // 环形图圆心
+            var centerY = c.series[0].center[1],
+                titleHeight = parseInt(c.title.styles.fontSize);
+            c.setTitle({
+                y:centerY + titleHeight/2
+            });
+            chart = c;
+        });
+
+        // 查看 失败 和 错误 合集链接文字切换  -- Gelomen
+        $(".showDetail").click(function () {
+            if($(this).html() == "点击查看"){
+                $(this).html("点击收起")
+            }else {
+                $(this).html("点击查看")
+            }
+        })
+    });
+
+
+output_list = Array();
+
+/*level 调整增加只显示通过用例的分类 --Findyou / 修复筛选显示bug --Gelomen
+0:Summary //all hiddenRow
+1:Failed  //pt&et hiddenRow, ft none
+2:Pass    //pt none, ft&et hiddenRow
+3:Error   //pt&ft hiddenRow, et none
+4:All     //all none
+*/
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level == 2 || level == 0 || level == 3) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+                // 切换筛选时只显示预览   -- Gelomen
+                $("div[id^='div_ft']").attr("class", "collapse");
+                $("div[id^='div_et']").attr("class", "collapse");
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level == 1 || level == 0 || level == 3) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+                // 切换筛选时只显示预览   -- Gelomen
+                $("div[id^='div_ft']").attr("class", "collapse");
+                $("div[id^='div_et']").attr("class", "collapse");
+            }
+        }
+        if (id.substr(0,2) == 'et') {
+            if (level == 1 || level == 0 || level == 2) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+                // 切换筛选时只显示预览   -- Gelomen
+                $("div[id^='div_ft']").attr("class", "collapse");
+                $("div[id^='div_et']").attr("class", "collapse");
+            }
+        }
+    }
+
+    //加入【详细】切换文字变化 --Findyou
+    detail_class=document.getElementsByClassName('detail');
+	//console.log(detail_class.length)
+	if (level == 3) {
+		for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="收起"
+		}
+	}
+	else{
+			for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="详细"
+		}
+	}
+}
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        //ID修改 点 为 下划线 -Findyou
+        tid0 = 't' + cid.substr(1) + '_' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'e' + tid0;
+                tr = document.getElementById(tid);
+            }
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+            document.getElementById(cid).innerText = "详细"
+        }
+        else {
+            document.getElementById(tid).className = '';
+            document.getElementById(cid).innerText = "收起"
+        }
+    }
+}
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+</script>
+<div class='pic_looper'></div> <div class='pic_show'><div class='pic_box'>{% load static %}<img src=''/></div> </div>
+<div class='heading'>
+<div style="width: 650px; float: left;">
+    <h1 style="font-family: Microsoft YaHei">测试用例执行报告</h1>
+    <p class='attribute'><strong>测试人员 : </strong> QA</p>
+<p class='attribute'><strong>开始时间 : </strong> 2020-03-17 13:39:53</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:03:52.547623</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 53，失败 1，错误 52，通过率 = 0.00%</p>
+<p class='attribute'><strong>失败用例合集 : </strong> <div class='panel-default' style='float: left;'><a class='showDetail' data-toggle='collapse' href='#failCaseOl' style='text-decoration: none;'>点击查看</a></div><ol id='failCaseOl' class='collapse' style='float: left;'><li>test_create_vanclass (vanclass.test_cases.test002_create_vanclass.CreateVanclass)</li></ol></p>
+<p class='attribute'><strong>错误用例合集 : </strong> <div class='panel-default' style='float: left;'><a class='showDetail' data-toggle='collapse' href='#errorCaseOl' style='text-decoration: none;'>点击查看</a></div><ol id='errorCaseOl' class='collapse' style='float: left;'><li>assign_hw_paper.test_cases.test001_assign_paper (unittest.loader._FailedTest)</li><li>assign_hw_paper.test_cases.test002_assign_hw_timing (unittest.loader._FailedTest)</li><li>assign_hw_paper.test_cases.test003_assign_hw_timing_multi (unittest.loader._FailedTest)</li><li>assign_hw_paper.test_cases.test004_assign_hw (unittest.loader._FailedTest)</li><li>assign_hw_paper.test_cases.test005_assign_hw_spoken (unittest.loader._FailedTest)</li><li>dynamic_info.test_cases.test001_hw_list_and_tab (unittest.loader._FailedTest)</li><li>dynamic_info.test_cases.test002_hw_more_button_edit_delete (unittest.loader._FailedTest)</li><li>dynamic_info.test_cases.test003_hw_more_button_add_basket_publish_again (unittest.loader._FailedTest)</li><li>dynamic_info.test_cases.test004_hw_more_button_recommend_school_cancel (unittest.loader._FailedTest)</li><li>dynamic_info.test_cases.test005_paper_list_and_tab (unittest.loader._FailedTest)</li><li>dynamic_info.test_cases.test006_paper_more_button (unittest.loader._FailedTest)</li><li>test_001_poll_img (dynamic_info.test_cases.test007_poll_notice_img.PollImg)</li><li>test_002_word_book_daily_listen (dynamic_info.test_cases.test007_poll_notice_img.PollImg)</li><li>test_activity_list_and_tab (punch_card_activity.test_cases.test001_activity_list_and_tab.Activity)</li><li>test_activity_list_and_tab (punch_card_activity.test_cases.test001_activity_list_and_tab.Activity)</li><li>punch_card_activity.test_cases.test002_activity_template_and_published (unittest.loader._FailedTest)</li><li>test_published_activity_detail (punch_card_activity.test_cases.test003_activity_published.Activity)</li><li>test_published_activity_detail (punch_card_activity.test_cases.test003_activity_published.Activity)</li><li>test_published_activity_detail (punch_card_activity.test_cases.test004_activity_published_detail.Activity)</li><li>test_published_activity_detail (punch_card_activity.test_cases.test004_activity_published_detail.Activity)</li><li>timing_hw.test_cases.test001_draft_box (unittest.loader._FailedTest)</li><li>timing_hw.test_cases.test002_timing_hw_modify (unittest.loader._FailedTest)</li><li>timing_hw.test_cases.test003_timing_hw_list_and_publish_delete (unittest.loader._FailedTest)</li><li>test_modify_vanclass (vanclass.test_cases.test001_modify_vanclass.ModifyVanclass)</li><li>test_modify_vanclass (vanclass.test_cases.test001_modify_vanclass.ModifyVanclass)</li><li>test_create_vanclass (vanclass.test_cases.test002_create_vanclass.CreateVanclass)</li><li>vanclass.test_cases.test003_vanclass_school (unittest.loader._FailedTest)</li><li>test_vanclass_list_and_order (vanclass.test_cases.test004_vanclass_list_and_order.Vanclass)</li><li>vanclass.test_cases.test007_vanclass_hw_list_and_tab (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test008_vanclass_hw_finish_per_detail (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test010_vanclass_hw_answer_per_detail_and_cup (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test011_vanclass_hw_more_button_edit_delete (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test012_vanclass_hw_more_button_add_publish_again (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test014_vanclass_paper_list_and_tab (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test015_vanclass_paper_finish_detail (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test017_vanclass_paper_answer_analysis_detail (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test018_vanclass_paper_more_button (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test021_vanclass_spoken_tab (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test022_vanclass_spoken_finish_detail (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test023_vanclass_spoken_answer_analysis_detail (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test024_vanclass_spoken_more_button (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test026_word_book_and_daily_liasten (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test027_score_ranking (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test028_star_ranking (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test029_vanclass_member (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test030_vanclass_member_search (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test031_vanclass_member_detail (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test032_group_manage (unittest.loader._FailedTest)</li><li>vanclass.test_cases.test033_group_manage_detail (unittest.loader._FailedTest)</li><li>test_invite_student (vanclass.test_cases.test034_invite_student.InviteStudent)</li><li>test_invite_student (vanclass.test_cases.test034_invite_student.InviteStudent)</li><li>vanclass.test_cases.test035_vanclass_apply (unittest.loader._FailedTest)</li></ol></p>
+
+    <p class='description'>用例执行情况统计：</p>
+</div>
+<div id="container"></div>
+</div>
+
+
+
+<div style="width: 500px; clear: both;">
+<p id='show_detail_line'>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 0.00% }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 0 }</a>
+<a class="btn btn-warning" href='javascript:showCase(1)'>失败{ 1 }</a>
+<a class="btn btn-danger" href='javascript:showCase(3)'>错误{ 52 }</a>
+<a class="btn btn-info" href='javascript:showCase(4)'>所有{ 53 }</a>
+</p>
+</div>
+<table id='result_table' class="table table-condensed table-bordered table-hover">
+<colgroup>
+<col align='left' style="width: 300px;"/>
+<col align='right' style="width: 300px;"/>
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' style="width: 200px;"/>
+</colgroup>
+<tr id='header_row' class="text-center success" style="font-weight: bold;font-size: 14px;">
+    <td>用例集/测试用例</td>
+    <td>总计</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>耗时</td>
+    <td>详细</td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>_FailedTest &nbsp &nbsp </td>
+    <td class="text-center">38</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">38</td>
+    <td class="text-center">0.01秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',38)" class="detail" id='c1'>详细</a></td>
+</tr>
+
+    <tr id='et1_1' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test001_assign_paper<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_1'>错误</button>
+        <div id='div_et1_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_1'>错误</button>
+        <div id='div_et1_1' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_1: ImportError: Failed to import test module: assign_hw_paper.test_cases.test001_assign_paper
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_cases/test001_assign_paper.py", line 11, in &lt;module&gt;
+    from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_2' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test002_assign_hw_timing<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_2' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_2'>错误</button>
+        <div id='div_et1_2' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_2' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_2'>错误</button>
+        <div id='div_et1_2' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_2: ImportError: Failed to import test module: assign_hw_paper.test_cases.test002_assign_hw_timing
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_cases/test002_assign_hw_timing.py", line 10, in &lt;module&gt;
+    from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_3' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test003_assign_hw_timing_multi<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_3' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_3'>错误</button>
+        <div id='div_et1_3' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_3' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_3'>错误</button>
+        <div id='div_et1_3' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_3: ImportError: Failed to import test module: assign_hw_paper.test_cases.test003_assign_hw_timing_multi
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_cases/test003_assign_hw_timing_multi.py", line 11, in &lt;module&gt;
+    from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_4' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test004_assign_hw<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_4' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_4'>错误</button>
+        <div id='div_et1_4' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_4' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_4'>错误</button>
+        <div id='div_et1_4' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_4: ImportError: Failed to import test module: assign_hw_paper.test_cases.test004_assign_hw
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_cases/test004_assign_hw.py", line 10, in &lt;module&gt;
+    from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_5' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test005_assign_hw_spoken<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_5' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_5'>错误</button>
+        <div id='div_et1_5' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_5' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_5'>错误</button>
+        <div id='div_et1_5' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_5: ImportError: Failed to import test module: assign_hw_paper.test_cases.test005_assign_hw_spoken
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/test_cases/test005_assign_hw_spoken.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_6' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test001_hw_list_and_tab<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_6' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_6'>错误</button>
+        <div id='div_et1_6' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_6' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_6'>错误</button>
+        <div id='div_et1_6' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_6: ImportError: Failed to import test module: dynamic_info.test_cases.test001_hw_list_and_tab
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test001_hw_list_and_tab.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.dynamic_info.object_page.dynamic_info_hw_spoken_page import DynamicPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/dynamic_info_hw_spoken_page.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_7' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test002_hw_more_button_edit_delete<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_7' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_7'>错误</button>
+        <div id='div_et1_7' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_7' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_7'>错误</button>
+        <div id='div_et1_7' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_7: ImportError: Failed to import test module: dynamic_info.test_cases.test002_hw_more_button_edit_delete
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test002_hw_more_button_edit_delete.py", line 10, in &lt;module&gt;
+    from app.honor.teacher.home.dynamic_info.object_page.dynamic_info_hw_spoken_page import DynamicPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/dynamic_info_hw_spoken_page.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_8' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test003_hw_more_button_add_basket_publish_again<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_8' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_8'>错误</button>
+        <div id='div_et1_8' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_8' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_8'>错误</button>
+        <div id='div_et1_8' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_8: ImportError: Failed to import test module: dynamic_info.test_cases.test003_hw_more_button_add_basket_publish_again
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test003_hw_more_button_add_basket_publish_again.py", line 11, in &lt;module&gt;
+    from app.honor.teacher.home.dynamic_info.object_page.dynamic_info_hw_spoken_page import DynamicPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/dynamic_info_hw_spoken_page.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_9' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test004_hw_more_button_recommend_school_cancel<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_9' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_9'>错误</button>
+        <div id='div_et1_9' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_9' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_9'>错误</button>
+        <div id='div_et1_9' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_9: ImportError: Failed to import test module: dynamic_info.test_cases.test004_hw_more_button_recommend_school_cancel
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test004_hw_more_button_recommend_school_cancel.py", line 7, in &lt;module&gt;
+    from app.honor.pc_operation.my_resource.test_cases.delete_recommend.delete_recommend import Delete
+ModuleNotFoundError: No module named 'app.honor.pc_operation'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_10' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test005_paper_list_and_tab<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_10' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_10'>错误</button>
+        <div id='div_et1_10' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_10' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_10'>错误</button>
+        <div id='div_et1_10' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_10: ImportError: Failed to import test module: dynamic_info.test_cases.test005_paper_list_and_tab
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test005_paper_list_and_tab.py", line 10, in &lt;module&gt;
+    from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_11' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test006_paper_more_button<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_11' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_11'>错误</button>
+        <div id='div_et1_11' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_11' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_11'>错误</button>
+        <div id='div_et1_11' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_11: ImportError: Failed to import test module: dynamic_info.test_cases.test006_paper_more_button
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test006_paper_more_button.py", line 10, in &lt;module&gt;
+    from app.honor.teacher.home.dynamic_info.object_page.dynamic_info_paper_page import DynamicPaperPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/dynamic_info_paper_page.py", line 8, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_12' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test002_activity_template_and_published<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_12' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_12'>错误</button>
+        <div id='div_et1_12' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_12' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_12'>错误</button>
+        <div id='div_et1_12' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_12: ImportError: Failed to import test module: punch_card_activity.test_cases.test002_activity_template_and_published
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/test002_activity_template_and_published.py", line 10, in &lt;module&gt;
+    from app.honor.teacher.home.punch_card_activity.object_page.activity_template_detail_page import ActivityTemplateDetailPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/punch_card_activity/object_page/activity_template_detail_page.py", line 6, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_13' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test001_draft_box<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_13' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_13'>错误</button>
+        <div id='div_et1_13' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_13' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_13'>错误</button>
+        <div id='div_et1_13' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_13: ImportError: Failed to import test module: timing_hw.test_cases.test001_draft_box
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/timing_hw/test_cases/test001_draft_box.py", line 7, in &lt;module&gt;
+    from app.honor.teacher.home.timing_hw.object_page.draft_page import DraftPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/timing_hw/object_page/draft_page.py", line 10, in &lt;module&gt;
+    from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_14' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test002_timing_hw_modify<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_14' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_14'>错误</button>
+        <div id='div_et1_14' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_14' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_14'>错误</button>
+        <div id='div_et1_14' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_14: ImportError: Failed to import test module: timing_hw.test_cases.test002_timing_hw_modify
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/timing_hw/test_cases/test002_timing_hw_modify.py", line 12, in &lt;module&gt;
+    from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_15' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test003_timing_hw_list_and_publish_delete<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_15' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_15'>错误</button>
+        <div id='div_et1_15' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_15' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_15'>错误</button>
+        <div id='div_et1_15' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_15: ImportError: Failed to import test module: timing_hw.test_cases.test003_timing_hw_list_and_publish_delete
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/timing_hw/test_cases/test003_timing_hw_list_and_publish_delete.py", line 7, in &lt;module&gt;
+    from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_16' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test003_vanclass_school<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_16' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_16'>错误</button>
+        <div id='div_et1_16' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_16' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_16'>错误</button>
+        <div id='div_et1_16' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_16: ImportError: Failed to import test module: vanclass.test_cases.test003_vanclass_school
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test003_vanclass_school.py", line 11, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_17' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test007_vanclass_hw_list_and_tab<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_17' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_17'>错误</button>
+        <div id='div_et1_17' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_17' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_17'>错误</button>
+        <div id='div_et1_17' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_17: ImportError: Failed to import test module: vanclass.test_cases.test007_vanclass_hw_list_and_tab
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test007_vanclass_hw_list_and_tab.py", line 11, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.object_page.vanclass_hw_spoken_page import VanclassHwPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_hw_spoken_page.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_18' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test008_vanclass_hw_finish_per_detail<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_18' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_18'>错误</button>
+        <div id='div_et1_18' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_18' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_18'>错误</button>
+        <div id='div_et1_18' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_18: ImportError: Failed to import test module: vanclass.test_cases.test008_vanclass_hw_finish_per_detail
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test008_vanclass_hw_finish_per_detail.py", line 15, in &lt;module&gt;
+    from app.honor.teacher.home.dynamic_info.object_page.hw_finish_tab_student_answer_result_page import ResultDetailPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/hw_finish_tab_student_answer_result_page.py", line 4, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.object_page.vanclass_hw_spoken_page import VanclassHwPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_hw_spoken_page.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_19' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test010_vanclass_hw_answer_per_detail_and_cup<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_19' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_19'>错误</button>
+        <div id='div_et1_19' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_19' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_19'>错误</button>
+        <div id='div_et1_19' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_19: ImportError: Failed to import test module: vanclass.test_cases.test010_vanclass_hw_answer_per_detail_and_cup
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test010_vanclass_hw_answer_per_detail_and_cup.py", line 12, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.object_page.vanclass_hw_spoken_page import VanclassHwPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_hw_spoken_page.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_20' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test011_vanclass_hw_more_button_edit_delete<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_20' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_20'>错误</button>
+        <div id='div_et1_20' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_20' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_20'>错误</button>
+        <div id='div_et1_20' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_20: ImportError: Failed to import test module: vanclass.test_cases.test011_vanclass_hw_more_button_edit_delete
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test011_vanclass_hw_more_button_edit_delete.py", line 7, in &lt;module&gt;
+    from app.honor.teacher.home.dynamic_info.object_page.dynamic_info_hw_spoken_page import DynamicPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/dynamic_info_hw_spoken_page.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_21' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test012_vanclass_hw_more_button_add_publish_again<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_21' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_21'>错误</button>
+        <div id='div_et1_21' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_21' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_21'>错误</button>
+        <div id='div_et1_21' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_21: ImportError: Failed to import test module: vanclass.test_cases.test012_vanclass_hw_more_button_add_publish_again
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test012_vanclass_hw_more_button_add_publish_again.py", line 7, in &lt;module&gt;
+    from app.honor.teacher.home.dynamic_info.object_page.dynamic_info_hw_spoken_page import DynamicPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/dynamic_info_hw_spoken_page.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_22' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test014_vanclass_paper_list_and_tab<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_22' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_22'>错误</button>
+        <div id='div_et1_22' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_22' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_22'>错误</button>
+        <div id='div_et1_22' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_22: ImportError: Failed to import test module: vanclass.test_cases.test014_vanclass_paper_list_and_tab
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test014_vanclass_paper_list_and_tab.py", line 12, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_23' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test015_vanclass_paper_finish_detail<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_23' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_23'>错误</button>
+        <div id='div_et1_23' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_23' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_23'>错误</button>
+        <div id='div_et1_23' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_23: ImportError: Failed to import test module: vanclass.test_cases.test015_vanclass_paper_finish_detail
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test015_vanclass_paper_finish_detail.py", line 12, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_24' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test017_vanclass_paper_answer_analysis_detail<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_24' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_24'>错误</button>
+        <div id='div_et1_24' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_24' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_24'>错误</button>
+        <div id='div_et1_24' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_24: ImportError: Failed to import test module: vanclass.test_cases.test017_vanclass_paper_answer_analysis_detail
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test017_vanclass_paper_answer_analysis_detail.py", line 18, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_25' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test018_vanclass_paper_more_button<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_25' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_25'>错误</button>
+        <div id='div_et1_25' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_25' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_25'>错误</button>
+        <div id='div_et1_25' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_25: ImportError: Failed to import test module: vanclass.test_cases.test018_vanclass_paper_more_button
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test018_vanclass_paper_more_button.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_26' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test021_vanclass_spoken_tab<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_26' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_26'>错误</button>
+        <div id='div_et1_26' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_26' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_26'>错误</button>
+        <div id='div_et1_26' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_26: ImportError: Failed to import test module: vanclass.test_cases.test021_vanclass_spoken_tab
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test021_vanclass_spoken_tab.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.object_page.vanclass_hw_spoken_page import VanclassHwPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_hw_spoken_page.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_27' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test022_vanclass_spoken_finish_detail<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_27' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_27'>错误</button>
+        <div id='div_et1_27' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_27' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_27'>错误</button>
+        <div id='div_et1_27' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_27: ImportError: Failed to import test module: vanclass.test_cases.test022_vanclass_spoken_finish_detail
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test022_vanclass_spoken_finish_detail.py", line 11, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.object_page.vanclass_hw_spoken_page import VanclassHwPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_hw_spoken_page.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_28' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test023_vanclass_spoken_answer_analysis_detail<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_28' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_28'>错误</button>
+        <div id='div_et1_28' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_28' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_28'>错误</button>
+        <div id='div_et1_28' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_28: ImportError: Failed to import test module: vanclass.test_cases.test023_vanclass_spoken_answer_analysis_detail
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test023_vanclass_spoken_answer_analysis_detail.py", line 11, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.object_page.vanclass_hw_spoken_page import VanclassHwPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_hw_spoken_page.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_29' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test024_vanclass_spoken_more_button<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_29' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_29'>错误</button>
+        <div id='div_et1_29' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_29' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_29'>错误</button>
+        <div id='div_et1_29' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_29: ImportError: Failed to import test module: vanclass.test_cases.test024_vanclass_spoken_more_button
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test024_vanclass_spoken_more_button.py", line 8, in &lt;module&gt;
+    from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_30' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test026_word_book_and_daily_liasten<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_30' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_30'>错误</button>
+        <div id='div_et1_30' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_30' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_30'>错误</button>
+        <div id='div_et1_30' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_30: ImportError: Failed to import test module: vanclass.test_cases.test026_word_book_and_daily_liasten
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test026_word_book_and_daily_liasten.py", line 7, in &lt;module&gt;
+    from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import ReleasePage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/assign_hw_paper/object_page/release_hw_page.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_31' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test027_score_ranking<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_31' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_31'>错误</button>
+        <div id='div_et1_31' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_31' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_31'>错误</button>
+        <div id='div_et1_31' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_31: ImportError: Failed to import test module: vanclass.test_cases.test027_score_ranking
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test027_score_ranking.py", line 11, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_32' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test028_star_ranking<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_32' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_32'>错误</button>
+        <div id='div_et1_32' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_32' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_32'>错误</button>
+        <div id='div_et1_32' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_32: ImportError: Failed to import test module: vanclass.test_cases.test028_star_ranking
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test028_star_ranking.py", line 11, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_33' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test029_vanclass_member<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_33' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_33'>错误</button>
+        <div id='div_et1_33' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_33' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_33'>错误</button>
+        <div id='div_et1_33' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_33: ImportError: Failed to import test module: vanclass.test_cases.test029_vanclass_member
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test029_vanclass_member.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_34' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test030_vanclass_member_search<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_34' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_34'>错误</button>
+        <div id='div_et1_34' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_34' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_34'>错误</button>
+        <div id='div_et1_34' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_34: ImportError: Failed to import test module: vanclass.test_cases.test030_vanclass_member_search
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test030_vanclass_member_search.py", line 13, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_35' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test031_vanclass_member_detail<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_35' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_35'>错误</button>
+        <div id='div_et1_35' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_35' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_35'>错误</button>
+        <div id='div_et1_35' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_35: ImportError: Failed to import test module: vanclass.test_cases.test031_vanclass_member_detail
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test031_vanclass_member_detail.py", line 12, in &lt;module&gt;
+    from app.honor.teacher.home.dynamic_info.object_page.hw_finish_tab_student_answer_result_page import ResultDetailPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/object_page/hw_finish_tab_student_answer_result_page.py", line 4, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.object_page.vanclass_hw_spoken_page import VanclassHwPage
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/object_page/vanclass_hw_spoken_page.py", line 9, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as ge
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_36' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test032_group_manage<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_36' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_36'>错误</button>
+        <div id='div_et1_36' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_36' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_36'>错误</button>
+        <div id='div_et1_36' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_36: ImportError: Failed to import test module: vanclass.test_cases.test032_group_manage
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test032_group_manage.py", line 12, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_37' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test033_group_manage_detail<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_37' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_37'>错误</button>
+        <div id='div_et1_37' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_37' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_37'>错误</button>
+        <div id='div_et1_37' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_37: ImportError: Failed to import test module: vanclass.test_cases.test033_group_manage_detail
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test033_group_manage_detail.py", line 10, in &lt;module&gt;
+    from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 8, in &lt;module&gt;
+    class GetVariable(object):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_data/vanclass_data.py", line 22, in GetVariable
+    DETAIL = gv.ACCOUNT[-4:]  # 班级成员 学生详情页
+AttributeError: type object 'GetVariable' has no attribute 'ACCOUNT'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+    <tr id='et1_38' class='none'>
+        <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test035_vanclass_apply<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_et1_38' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_38'>错误</button>
+        <div id='div_et1_38' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_et1_38' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et1_38'>错误</button>
+        <div id='div_et1_38' class="collapse in">
+        <pre style="text-align:left">
+        
+et1_38: ImportError: Failed to import test module: vanclass.test_cases.test035_vanclass_apply
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test035_vanclass_apply.py", line 9, in &lt;module&gt;
+    from app.honor.student.login.test_cases.apply_for_vanclass import Vanclass
+ModuleNotFoundError: No module named 'app.honor.student.login.test_cases.apply_for_vanclass'
+
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='errorCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='errorClass warning'>
+    <td>PollImg &nbsp &nbsp 轮播图 and 单词本&每日一听 提示信息</td>
+    <td class="text-center">2</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">2</td>
+    <td class="text-center">14.49秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c2',2)" class="detail" id='c2'>详细</a></td>
+</tr>
+
+<tr id='et2_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_001_poll_img <br> 轮播图 </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et2_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et2_1'>错误</button>
+    <div id='div_et2_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et2_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et2_1,#div_et2_1_screenshot'>错误</button>
+    <div id='div_et2_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et2_1: 在主界面
+================轮播图================
+共3张轮播图，点击第2张
+======================================
+班级年报
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_1.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test007_poll_notice_img.py", line 34, in tearDown
+    self.login.tearDown(self.ass, self.my_toast, self.ass_result)  # 统计错误情况
+AttributeError: 'TloginPage' object has no attribute 'tearDown'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 123, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_1.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et2_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_1.png">Error_1.png</a></div></td>
+</tr>
+
+<tr id='et2_2' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_002_word_book_daily_listen <br> 单词本 & 每日一听 提示信息 </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et2_2' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et2_2'>错误</button>
+    <div id='div_et2_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et2_2' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et2_2,#div_et2_2_screenshot'>错误</button>
+    <div id='div_et2_2' class="collapse in">
+    <pre style="text-align:left">
+    
+et2_2: 在主界面
+==================单词本================
+请去电脑端使用单词本,移动端即将上线。
+================每日一听================
+功能开发中,敬请期待!
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_2.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/dynamic_info/test_cases/test007_poll_notice_img.py", line 34, in tearDown
+    self.login.tearDown(self.ass, self.my_toast, self.ass_result)  # 统计错误情况
+AttributeError: 'TloginPage' object has no attribute 'tearDown'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 123, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_2.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et2_2_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_2.png">Error_2.png</a></div></td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>Activity &nbsp &nbsp 活动列表 & 活动模板/已发布活动tab</td>
+    <td class="text-center">2</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">2</td>
+    <td class="text-center">15.06秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c3',2)" class="detail" id='c3'>详细</a></td>
+</tr>
+
+<tr id='et3_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_activity_list_and_tab <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et3_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et3_1'>错误</button>
+    <div id='div_et3_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et3_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et3_1,#div_et3_1_screenshot'>错误</button>
+    <div id='div_et3_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et3_1: 在主界面
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_3.png]screen_shot
+
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_4.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/utils/vue_context.py", line 25, in switch_h5
+    self.driver.execute(MobileCommand.SWITCH_TO_CONTEXT, {"name": GetVariable().CONTEXT})
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: A new session could not be created. Details: session not created: This version of ChromeDriver only supports Chrome version 76
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/test001_activity_list_and_tab.py", line 52, in test_activity_list_and_tab
+    self.vue.switch_h5()  # 切到web
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 71, in wrapper
+    raise WebDriverException(flag + screenshot('Error'))
+selenium.common.exceptions.WebDriverException: Message: IMAGE:Error_3.png
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 105, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: IMAGE:Error_3.png
+
+
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et3_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_3.png">Error_3.png</a></br><a class="screenshot" href="javascript:void(0)" img="image/Error_4.png">Error_4.png</a></div></td>
+</tr>
+
+<tr id='et3_2' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_activity_list_and_tab <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et3_2' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et3_2'>错误</button>
+    <div id='div_et3_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et3_2' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et3_2,#div_et3_2_screenshot'>错误</button>
+    <div id='div_et3_2' class="collapse in">
+    <pre style="text-align:left">
+    
+et3_2: 在主界面
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_3.png]screen_shot
+
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_4.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/test001_activity_list_and_tab.py", line 38, in tearDown
+    self.login.tearDown(self.ass, self.my_toast, self.ass_result)  # 统计错误情况
+AttributeError: 'TloginPage' object has no attribute 'tearDown'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 123, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_4.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et3_2_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_3.png">Error_3.png</a></br><a class="screenshot" href="javascript:void(0)" img="image/Error_4.png">Error_4.png</a></div></td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>Activity &nbsp &nbsp 已发布活动</td>
+    <td class="text-center">2</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">2</td>
+    <td class="text-center">89.54秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c4',2)" class="detail" id='c4'>详细</a></td>
+</tr>
+
+<tr id='et4_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_published_activity_detail <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et4_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et4_1'>错误</button>
+    <div id='div_et4_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et4_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et4_1,#div_et4_1_screenshot'>错误</button>
+    <div id='div_et4_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et4_1: 在其他页面,重启app
+在主界面
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_5.png]screen_shot
+
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_6.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/utils/vue_context.py", line 25, in switch_h5
+    self.driver.execute(MobileCommand.SWITCH_TO_CONTEXT, {"name": GetVariable().CONTEXT})
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: A new session could not be created. Details: session not created: This version of ChromeDriver only supports Chrome version 76
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/test003_activity_published.py", line 54, in test_published_activity_detail
+    self.vue.switch_h5()  # 切到web
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 71, in wrapper
+    raise WebDriverException(flag + screenshot('Error'))
+selenium.common.exceptions.WebDriverException: Message: IMAGE:Error_5.png
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 105, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: IMAGE:Error_5.png
+
+
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et4_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_5.png">Error_5.png</a></br><a class="screenshot" href="javascript:void(0)" img="image/Error_6.png">Error_6.png</a></div></td>
+</tr>
+
+<tr id='et4_2' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_published_activity_detail <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et4_2' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et4_2'>错误</button>
+    <div id='div_et4_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et4_2' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et4_2,#div_et4_2_screenshot'>错误</button>
+    <div id='div_et4_2' class="collapse in">
+    <pre style="text-align:left">
+    
+et4_2: 在其他页面,重启app
+在主界面
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_5.png]screen_shot
+
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_6.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/test003_activity_published.py", line 40, in tearDown
+    self.login.tearDown(self.ass, self.my_toast, self.ass_result)  # 统计错误情况
+AttributeError: 'TloginPage' object has no attribute 'tearDown'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 123, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_6.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et4_2_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_5.png">Error_5.png</a></br><a class="screenshot" href="javascript:void(0)" img="image/Error_6.png">Error_6.png</a></div></td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>Activity &nbsp &nbsp 已发布活动 详情页</td>
+    <td class="text-center">2</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">2</td>
+    <td class="text-center">87.16秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c5',2)" class="detail" id='c5'>详细</a></td>
+</tr>
+
+<tr id='et5_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_published_activity_detail <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et5_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et5_1'>错误</button>
+    <div id='div_et5_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et5_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et5_1,#div_et5_1_screenshot'>错误</button>
+    <div id='div_et5_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et5_1: 在其他页面,重启app
+在主界面
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_7.png]screen_shot
+
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_8.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/utils/vue_context.py", line 25, in switch_h5
+    self.driver.execute(MobileCommand.SWITCH_TO_CONTEXT, {"name": GetVariable().CONTEXT})
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: A new session could not be created. Details: session not created: This version of ChromeDriver only supports Chrome version 76
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/test004_activity_published_detail.py", line 54, in test_published_activity_detail
+    self.vue.switch_h5()  # 切到vue
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 71, in wrapper
+    raise WebDriverException(flag + screenshot('Error'))
+selenium.common.exceptions.WebDriverException: Message: IMAGE:Error_7.png
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 105, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: IMAGE:Error_7.png
+
+
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et5_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_7.png">Error_7.png</a></br><a class="screenshot" href="javascript:void(0)" img="image/Error_8.png">Error_8.png</a></div></td>
+</tr>
+
+<tr id='et5_2' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_published_activity_detail <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et5_2' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et5_2'>错误</button>
+    <div id='div_et5_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et5_2' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et5_2,#div_et5_2_screenshot'>错误</button>
+    <div id='div_et5_2' class="collapse in">
+    <pre style="text-align:left">
+    
+et5_2: 在其他页面,重启app
+在主界面
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_7.png]screen_shot
+
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_8.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/punch_card_activity/test_cases/test004_activity_published_detail.py", line 40, in tearDown
+    self.login.tearDown(self.ass, self.my_toast, self.ass_result)  # 统计错误情况
+AttributeError: 'TloginPage' object has no attribute 'tearDown'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 123, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_8.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et5_2_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_7.png">Error_7.png</a></br><a class="screenshot" href="javascript:void(0)" img="image/Error_8.png">Error_8.png</a></div></td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>ModifyVanclass &nbsp &nbsp 修改班级名称</td>
+    <td class="text-center">2</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">2</td>
+    <td class="text-center">95.34秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c6',2)" class="detail" id='c6'>详细</a></td>
+</tr>
+
+<tr id='et6_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_modify_vanclass <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et6_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et6_1'>错误</button>
+    <div id='div_et6_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et6_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et6_1,#div_et6_1_screenshot'>错误</button>
+    <div id='div_et6_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et6_1: 在其他页面,重启app
+在主界面
+获取尺寸： {'width': 1080, 'height': 2044}
+进入班级: ff
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_9.png]screen_shot
+
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_10.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/utils/vue_context.py", line 25, in switch_h5
+    self.driver.execute(MobileCommand.SWITCH_TO_CONTEXT, {"name": GetVariable().CONTEXT})
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: A new session could not be created. Details: session not created: This version of ChromeDriver only supports Chrome version 76
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test001_modify_vanclass.py", line 56, in test_modify_vanclass
+    self.vue.switch_h5()  # 切到vue
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 71, in wrapper
+    raise WebDriverException(flag + screenshot('Error'))
+selenium.common.exceptions.WebDriverException: Message: IMAGE:Error_9.png
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 105, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: IMAGE:Error_9.png
+
+
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et6_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_9.png">Error_9.png</a></br><a class="screenshot" href="javascript:void(0)" img="image/Error_10.png">Error_10.png</a></div></td>
+</tr>
+
+<tr id='et6_2' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_modify_vanclass <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et6_2' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et6_2'>错误</button>
+    <div id='div_et6_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et6_2' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et6_2,#div_et6_2_screenshot'>错误</button>
+    <div id='div_et6_2' class="collapse in">
+    <pre style="text-align:left">
+    
+et6_2: 在其他页面,重启app
+在主界面
+获取尺寸： {'width': 1080, 'height': 2044}
+进入班级: ff
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_9.png]screen_shot
+
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_10.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test001_modify_vanclass.py", line 42, in tearDown
+    self.login.tearDown(self.ass, self.my_toast, self.ass_result)  # 统计错误情况
+AttributeError: 'TloginPage' object has no attribute 'tearDown'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 123, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_10.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et6_2_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_9.png">Error_9.png</a></br><a class="screenshot" href="javascript:void(0)" img="image/Error_10.png">Error_10.png</a></div></td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>CreateVanclass &nbsp &nbsp 创建班级</td>
+    <td class="text-center">2</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">98.04秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c7',2)" class="detail" id='c7'>详细</a></td>
+</tr>
+
+<tr id='ft7_1' class='none'>
+    <td class='failCase' style="vertical-align: middle"><div class='testcase'>test_create_vanclass <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft7_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_ft7_1'>失败</button>
+    <div id='div_ft7_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_ft7_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_ft7_1,#div_ft7_1_screenshot'>失败</button>
+    <div id='div_ft7_1' class="collapse in">
+    <pre style="text-align:left">
+    
+ft7_1: Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+AssertionError: False is not true : ★★★ Error- 班级名称不可重复功能有误,     []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+AssertionError: IMAGE:Error_11.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 113, in wrapper
+    raise AssertionError(e)
+AssertionError: IMAGE:Error_11.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_ft7_1_screenshot' class="collapse in">查看截图：</div></td>
+</tr>
+
+<tr id='et7_2' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_create_vanclass <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et7_2' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et7_2'>错误</button>
+    <div id='div_et7_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et7_2' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et7_2,#div_et7_2_screenshot'>错误</button>
+    <div id='div_et7_2' class="collapse in">
+    <pre style="text-align:left">
+    
+et7_2: 在其他页面,重启app
+在主界面
+班级名称由1–10位中英文及数字组成
+--------------------------------------
+创建班级: 
+--------------------------------------
+创建班级:    
+创建班级: 
+班级名称由1-10位中英文及数字组成
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_11.png]screen_shot
+
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_12.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test002_create_vanclass.py", line 43, in tearDown
+    self.login.tearDown(self.ass, self.my_toast, self.ass_result)  # 统计错误情况
+AttributeError: 'TloginPage' object has no attribute 'tearDown'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 123, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_12.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et7_2_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_11.png">Error_11.png</a></br><a class="screenshot" href="javascript:void(0)" img="image/Error_12.png">Error_12.png</a></div></td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>Vanclass &nbsp &nbsp 班级 列表 & 排序调整</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">15.22秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c8',1)" class="detail" id='c8'>详细</a></td>
+</tr>
+
+<tr id='et8_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_vanclass_list_and_order <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et8_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et8_1'>错误</button>
+    <div id='div_et8_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et8_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et8_1,#div_et8_1_screenshot'>错误</button>
+    <div id='div_et8_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et8_1: 在主界面
+----------------班级列表----------------
+ff   班号: 9422   学生人数: 0
+李老师班级   班号: 9259   学生人数: 5
+获取尺寸： {'width': 1080, 'height': 2044}
+--------------------------------------
+-----------------班级顺序调整 页面-----------------
+ff   班号: 9422   学生人数: 0
+李老师班级   班号: 9259   学生人数: 5
+获取尺寸： {'width': 1080, 'height': 2044}
+--------------------------------------
+★★★ Error- 班级顺序未调整
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_13.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test004_vanclass_list_and_order.py", line 37, in tearDown
+    self.login.tearDown(self.ass, self.my_toast, self.ass_result)  # 统计错误情况
+AttributeError: 'TloginPage' object has no attribute 'tearDown'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 123, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_13.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et8_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_13.png">Error_13.png</a></div></td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>InviteStudent &nbsp &nbsp 邀请学生</td>
+    <td class="text-center">2</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">2</td>
+    <td class="text-center">20.52秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c9',2)" class="detail" id='c9'>详细</a></td>
+</tr>
+
+<tr id='et9_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_invite_student <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et9_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et9_1'>错误</button>
+    <div id='div_et9_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et9_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et9_1,#div_et9_1_screenshot'>错误</button>
+    <div id='div_et9_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et9_1: 在主界面
+获取尺寸： {'width': 1080, 'height': 2044}
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_14.png]screen_shot
+
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_15.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/utils/vue_context.py", line 25, in switch_h5
+    self.driver.execute(MobileCommand.SWITCH_TO_CONTEXT, {"name": GetVariable().CONTEXT})
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: A new session could not be created. Details: session not created: This version of ChromeDriver only supports Chrome version 76
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test034_invite_student.py", line 55, in test_invite_student
+    self.vue.switch_h5()  # 切到vue
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 71, in wrapper
+    raise WebDriverException(flag + screenshot('Error'))
+selenium.common.exceptions.WebDriverException: Message: IMAGE:Error_14.png
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 105, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: IMAGE:Error_14.png
+
+
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et9_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_14.png">Error_14.png</a></br><a class="screenshot" href="javascript:void(0)" img="image/Error_15.png">Error_15.png</a></div></td>
+</tr>
+
+<tr id='et9_2' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_invite_student <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et9_2' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et9_2'>错误</button>
+    <div id='div_et9_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et9_2' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et9_2,#div_et9_2_screenshot'>错误</button>
+    <div id='div_et9_2' class="collapse in">
+    <pre style="text-align:left">
+    
+et9_2: 在主界面
+获取尺寸： {'width': 1080, 'height': 2044}
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_14.png]screen_shot
+
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_133930/
+screen_shot[Error--Error_15.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/home/vanclass/test_cases/test034_invite_student.py", line 41, in tearDown
+    self.login.tearDown(self.ass, self.my_toast, self.ass_result)  # 统计错误情况
+AttributeError: 'TloginPage' object has no attribute 'tearDown'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 123, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_15.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et9_2_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_14.png">Error_14.png</a></br><a class="screenshot" href="javascript:void(0)" img="image/Error_15.png">Error_15.png</a></div></td>
+</tr>
+
+<tr id='total_row' class="text-center active">
+    <td>总计</td>
+    <td>53</td>
+    <td>0</td>
+    <td>1</td>
+    <td>52</td>
+    <td>435.38秒</td>
+    <td>通过率：0.00%</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+    <div id="toTop" style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer; display: none">
+    <a><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>
+    
+
+</body>
+</html>

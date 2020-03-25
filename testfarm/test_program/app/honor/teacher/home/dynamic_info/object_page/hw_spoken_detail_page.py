@@ -22,7 +22,6 @@ class HwDetailPage(BasePage):
     hw_item_value = "//div[@id='question-cell']"  # 答题分析 作业条目
 
     tab_class_value = 'van-tab van-tab--active'  # 完成情况/答题分析 tab被选中时 class值
-    analysis_tab_value = "//span[text()='答题分析']"  # 答题分析tab
 
     hw_report_tips = '★★★ Error- 未进入答题分析/完成情况 详情页面'
     hw_detail_tips = '★★★ Error- 未进入答题分析/完成情况 vue详情页面'
@@ -39,21 +38,17 @@ class HwDetailPage(BasePage):
         self.my_assert = MyAssert()
 
     @teststeps
-    def wait_check_app_page(self):
-        """以“title:近期作业”为依据"""
-        locator = (By.XPATH, '//android.view.View[@text="答题分析"]')
-        return self.wait.wait_check_element(locator)
-
-    @teststeps
     def wait_check_page(self, var=15):
         """以“title: 答题分析”为依据"""
-        locator = (By.XPATH, self.analysis_tab_value)
-        return self.wait.wait_check_element(locator, var)
+        locator = (By.XPATH, "//span[text()='完成情况']")
+        ele = self.wait.wait_check_element(locator, var)
+        self.my_assert.assertTrue(ele, self.hw_detail_tips)
+        return ele
 
     @teststeps
     def wait_check_empty_tips_page(self, var=10):
-        """以 提示text 作为依据"""
-        locator = (By.XPATH, "//div[text()='暂无数据']")
+        """以 暂无数据提示 作为依据"""
+        locator = (By.XPATH, '//div[@class="vt-loading-container__error" and text()="暂无数据"]')
         return self.wait.wait_check_element(locator, var)
 
     @teststeps
@@ -65,14 +60,14 @@ class HwDetailPage(BasePage):
     def finished_tab(self):
         """完成情况"""
         locator = (By.XPATH, "//span[text()='完成情况']")
-        return self.wait.wait_find_element(locator)
+        self.wait.wait_find_element(locator).click()
 
     @teststep
     def analysis_tab(self):
         """答题分析"""
-        locator = (By.XPATH, self.analysis_tab_value)
-        return self.wait \
-            .wait_find_element(locator)
+        locator = (By.XPATH, "//span[text()='答题分析']")
+        self.wait \
+            .wait_find_element(locator).click()
 
     @teststep
     def check_tab_status(self, var):
@@ -92,7 +87,9 @@ class HwDetailPage(BasePage):
     def wait_check_more_page(self):
         """以“更多按钮  条目元素”为依据"""
         locator = (By.XPATH, '//div[@class="van-popup van-popup--round van-popup--bottom van-action-sheet"]')
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.hw_detail_tips)
+        return ele
 
     @teststeps
     def more_recommend_button(self):
@@ -151,10 +148,12 @@ class HwDetailPage(BasePage):
 
         content = []  # 页面内所有条目 元素text
         elements = []  # 页面内所有条目元素
+        print(len(ele))
         for i in range(len(ele)):
             item = []  # 每一个条目的所有元素text
             element = []  # 每一个条目的所有元素
             descendant = ele[i].find_elements_by_xpath('.//descendant::*')[3:5]
+            print('des:', descendant)
 
             for j in range(len(descendant)):
                 item.append(descendant[j].text)
@@ -228,10 +227,18 @@ class HwDetailPage(BasePage):
         locator = (By.XPATH, self.game_type_value)
         return self.wait.wait_find_elements(locator)
 
-    @teststep
+    @teststeps
     def game_level(self):
         """提分"""
         locator = (By.XPATH, '//span[@class="question-cell-tag van-tag van-tag--large van-tag--primary"]')
+        ele = self.wait.wait_find_elements(locator)
+        content = [k.text for k in ele if k.get_attribute('style') != 'background-color: rgb(65, 88, 177); display: none;']
+        return content
+
+    @teststep
+    def game_num(self):
+        """游戏 小题数"""
+        locator = (By.XPATH, '//span[@class="question-cell-count"]')
         return self.wait.wait_find_elements(locator)
 
     @teststep
@@ -257,7 +264,9 @@ class HwDetailPage(BasePage):
     def wait_check_edit_page(self):
         """以“title:编辑作业”为依据"""
         locator = (By.XPATH, "//android.widget.TextView[@text='编辑作业']")
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.edit_tips)
+        return ele
 
     @teststep
     def assign_button(self):
@@ -301,7 +310,7 @@ class HwDetailPage(BasePage):
         """确定 按钮"""
         locator = (By.XPATH, '//button[@class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"]')
         self.wait \
-            .wait_find_element(locator).click()
+            .wait_find_elements(locator)[-1].click()
 
     @teststep
     def recommend_tips_content(self):
@@ -315,30 +324,29 @@ class HwDetailPage(BasePage):
     def delete_cancel_operation(self):
         """删除作业 具体操作"""
         self.more_button()  # 更多 按钮
-        self.my_assert.assertEqual(self.wait_check_more_page(), True, self.more_tips)
-        self.more_delete_button()  # 删除按钮
+        if self.wait_check_more_page():
+            self.more_delete_button()  # 删除按钮
 
-        self.my_assert.assertEqual(self.wait_check_tips_page(), True, '★★★ Error- 无删除提示框')
-        print('---------删除作业---------')
-        self.tips_title()
-        self.delete_tips_content()
-        self.cancel_button()  # 取消按钮
-        print('---------------')
+            self.my_assert.assertEqual(self.wait_check_tips_page(), True, '★★★ Error- 无删除提示框')
+            print('---------删除作业---------')
+            self.tips_title()
+            self.delete_tips_content()
+            self.cancel_button()  # 取消按钮
+            print('---------------')
 
-        if not self.wait_check_tips_page():
-            print('取消删除')
+            if not self.wait_check_tips_page():
+                print('取消删除')
 
     @teststeps
     def delete_commit_operation(self):
         """删除作业 具体操作"""
         self.name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
         self.more_button()  # 更多 按钮
+        if self.wait_check_more_page():
+            self.more_delete_button()  # 删除按钮
 
-        self.my_assert.assertEqual(self.wait_check_more_page(), True, self.more_tips)
-        self.more_delete_button()  # 删除按钮
-
-        self.my_assert.assertEqual(self.wait_check_tips_page(), True, '★★★ Error- 无删除提示框')
-        print('---------删除作业---------')
-        self.commit_button()  # 确定按钮
-        print('确定删除')
-        MyToast().toast_assert(self.name, Toast().toast_vue_operation(TipsData().delete_success))  # 获取toast
+            self.my_assert.assertEqual(self.wait_check_tips_page(), True, '★★★ Error- 无删除提示框')
+            print('---------删除作业---------')
+            self.commit_button()  # 确定按钮
+            print('确定删除')
+            MyToast().toast_assert(self.name, Toast().toast_vue_operation(TipsData().delete_success))  # 获取toast

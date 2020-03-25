@@ -3,13 +3,9 @@
 # @Author  : SUN FEIFEI
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
 from conf.base_page import BasePage
-from conf.base_config import GetVariable as gv
 from conf.decorator_vue import teststep, teststeps
 from utils.assert_package import MyAssert
-from utils.get_attribute import GetAttribute
 from utils.vue_context import VueContext
 from utils.wait_element_vue import WaitElement
 
@@ -28,24 +24,21 @@ class VanclassPaperPage(BasePage):
     edit_list_tips = '★★★ Error- 编辑试卷 详情页未加载成功'
 
     def __init__(self):
-        self.get = GetAttribute()
         self.wait = WaitElement()
-        self.home = ThomePage()
-        self.van = VanclassPage()
         self.my_assert = MyAssert()
         self.vue = VueContext()
         self.screen = self.get_window_size()
 
     @teststeps
     def wait_check_page(self, var):
-        """以“title: 班级本班卷子”为依据"""
-        locator = (By.XPATH, "//android.widget.TextView[contains(@text,'%s')]" % var)
+        """以“title: 班级名称/ 作业名称/本班卷子/口语作业”为依据"""
+        locator = (By.XPATH, '//div[@class="van-nav-bar__title van-ellipsis" and text()="{}"]'.format(var))
         return self.wait.wait_check_element(locator)
 
     @teststeps
     def wait_check_list_page(self):
         """以完成进度 的id为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "status")
+        locator = (By.XPATH, '//div[@id="homework-list"]')
         return self.wait.wait_check_element(locator)
 
     @teststep
@@ -65,19 +58,19 @@ class VanclassPaperPage(BasePage):
     def hw_name(self):
         """试卷name"""
         locator = (By.XPATH, '//div[@class="homework-list-content-title-text"]')
-        return self.wait.wait_find_element(locator)
+        return self.wait.wait_find_elements(locator)
 
     @teststep
     def progress(self):
         """完成进度 - 已完成x/x"""
         locator = (By.XPATH, '//div[@class="homework-list-content-subtitle-text"]')
-        return self.wait.wait_find_element(locator)
+        return self.wait.wait_find_elements(locator)
 
     @teststep
     def vanclass_name(self):
         """班级名"""
         locator = (By.XPATH, '//div[@class="homework-list-content-icon-text"]')
-        return self.wait.wait_find_element(locator)
+        return self.wait.wait_find_elements(locator)
 
     @teststep
     def back_up_button(self):
@@ -97,7 +90,9 @@ class VanclassPaperPage(BasePage):
     def wait_check_more_page(self):
         """以“更多按钮  条目元素”为依据"""
         locator = (By.XPATH, '//div[@class="van-popup van-popup--round van-popup--bottom van-action-sheet"]')
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.more_tips)
+        return ele
     
     @teststep
     def more_edit_button(self):
@@ -120,12 +115,13 @@ class VanclassPaperPage(BasePage):
         self.wait \
             .wait_find_element(locator).click()
 
-
     @teststeps
     def wait_check_tips_page(self):
         """以“title:删除作业”为依据"""
         locator = (By.XPATH, '//div[@class="van-dialog__header"]')
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.more_delete_tips)
+        return ele
 
     @teststep
     def tips_title(self):
@@ -162,33 +158,33 @@ class VanclassPaperPage(BasePage):
     def delete_commit_operation(self):
         """删除试卷 具体操作"""
         self.more_button()  # 更多 按钮
-        self.my_assert.assertEqual(self.wait_check_more_page(), True, self.more_tips)
+        if self.wait_check_more_page():
+            self.more_delete_button()  # 删除按钮
+            self.vue.app_web_switch()  # 切到apk 再切回web
 
-        self.more_delete_button()  # 删除按钮
-        self.vue.app_web_switch()  # 切到apk 再切回web
-        self.my_assert.assertEqual(self.wait_check_tips_page(), True, self.more_delete_tips)
-        print('--删除试卷--')
-        self.commit_button()  # 确定按钮
-        print('确定删除')
-        self.vue.app_web_switch()
+            if self.wait_check_tips_page():
+                print('--删除试卷--')
+                self.commit_button()  # 确定按钮
+                print('确定删除')
+                self.vue.app_web_switch()
 
     @teststeps
     def delete_cancel_operation(self):
         """删除试卷 具体操作"""
         self.more_button()  # 更多 按钮
-        self.my_assert.assertEqual(self.wait_check_more_page(), True, self.more_tips)
+        if self.wait_check_more_page():
+            self.more_delete_button()  # 删除按钮
+            self.vue.app_web_switch()  # 切到apk 再切回web
 
-        self.more_delete_button()  # 删除按钮
-        self.vue.app_web_switch()  # 切到apk 再切回web
-        self.my_assert.assertEqual(self.wait_check_tips_page(), True, self.more_delete_tips)
-        print('---------删除试卷---------')
-        self.tips_title()
-        self.tips_content()
-        self.cancel_button()  # 取消按钮
-        self.vue.app_web_switch()  # 切到apk 再切回web
+            if self.wait_check_tips_page():
+                print('---------删除试卷---------')
+                self.tips_title()
+                self.tips_content()
+                self.cancel_button()  # 取消按钮
+                self.vue.app_web_switch()  # 切到apk 再切回web
 
-        print('---------------')
-        print('取消删除')
+                print('---------------')
+                print('取消删除')
 
     @teststeps
     def swipe_vertical_web(self, ratio_x, start_y, end_y, steps=1000):

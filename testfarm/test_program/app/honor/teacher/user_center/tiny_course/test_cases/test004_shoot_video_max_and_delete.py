@@ -96,7 +96,7 @@ class Shoot(unittest.TestCase):
                         print('-------------------------')
 
                     if self.video.wait_check_done_page():
-                        print('验证：拍摄时长3min，超时暂停拍摄')
+                        print('验证：拍摄时长5min，超时暂停拍摄')
                         print("Start : %s" % time.ctime())
                         z = 0
                         while True:
@@ -105,19 +105,18 @@ class Shoot(unittest.TestCase):
                             time.sleep(30)
                             print(time.ctime())
                             z += 1
-                            if z == 11:
+                            if z == 10:
                                 break
                             else:
                                 self.video.suspend_button(loc)  # 暂停按钮
                             print('-----------')
                         print("End : %s" % time.ctime())
-                        # time.sleep(180)  # 验证拍摄时长3min暂停拍摄
                         Toast().toast_operation('超时停止')  # 获取toast
 
                         if self.video.wait_check_done_page():
                             print('----------超时后，再点击拍摄视频---------')
                             self.video.shoot_button()  # 拍摄按钮
-                            Toast().toast_operation('最小5秒,最长3分钟')  # 获取toast
+                            Toast().toast_operation('最小5秒,最长5分钟')  # 获取toast
 
                             if self.video.wait_check_done_page():
                                 self.video.done_button()  # 完成 按钮
@@ -131,10 +130,10 @@ class Shoot(unittest.TestCase):
             if self.video.wait_check_cut_page():
                 length = self.video.video_time()
                 item = self.video.video_duration_deal(length)  # 视频时长
-                if item == 180:
+                if item == 300:
                     print('超时后，重新拍摄视频成功', item)
                 else:
-                    print('★★★ Error - 拍摄时长3min，超时暂停拍摄失败', item)
+                    print('★★★ Error - 拍摄时长5min，超时暂停拍摄失败', item)
 
                 print('-----------------------------')
 

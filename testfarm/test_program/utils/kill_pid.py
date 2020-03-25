@@ -2,6 +2,7 @@ import os,re
 
 
 class killPid:
+
     def kill_pid(self, port, node_pid):
         cmd = 'kill -9 {}'.format(int(node_pid))
         os.popen(cmd)

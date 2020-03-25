@@ -6,7 +6,7 @@ import unittest
 
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.teacher.home.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.vanclass.test_data.modify_vanclass_data import class_data
 from conf.base_page import BasePage
 from conf.decorator import setup, testcase, teststeps, teardown
@@ -27,7 +27,7 @@ class ModifyVanclass(unittest.TestCase):
         """启动应用"""
         cls.ass_result = unittest.TestResult()
         cls.ass = ExpectingTest(cls, cls.ass_result)
-        cls.van = VanclassPage()
+        cls.van_detail = VanclassDetailPage()
         cls.login = TloginPage()
         cls.home = ThomePage()
         cls.get = GetAttribute()
@@ -52,22 +52,22 @@ class ModifyVanclass(unittest.TestCase):
 
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
         van = self.into_vanclass_operation()  # 进入 班级详情页
-        self.assertTrue(self.van.wait_check_app_page(van), self.van.van_tips)  # 页面检查点
+        self.assertTrue(self.van_detail.wait_check_app_page(van), self.van_detail.van_tips)  # 页面检查点
         self.vue.switch_h5()  # 切到vue
 
-        self.assertTrue(self.van.wait_check_page(van), self.van.van_vue_tips)
-        self.van.more_button()  # 右上角 更多 按钮
+        self.assertTrue(self.van_detail.wait_check_page(van), self.van_detail.van_vue_tips)
+        self.van_detail.more_button()  # 右上角 更多 按钮
         self.vue.app_web_switch()  # 切到apk 再切到vue
 
-        self.assertTrue(self.van.wait_check_more_tips_page(), self.van.more_tips)
-        self.van.modify_van_name()  # 班级名称 按钮
+        self.assertTrue(self.van_detail.wait_check_more_tips_page(), self.van_detail.more_tips)
+        self.van_detail.modify_van_name()  # 班级名称 按钮
         self.vue.app_web_switch()  # 切到apk 再切到vue
 
         self.modify_vanclass_operation(van)  # 修改班级名称
         self.vue.app_web_switch()  # 切到apk 再切到vue
 
-        self.assertTrue(self.van.wait_check_page(van), self.van.van_vue_tips)
-        self.van.back_up_button()  # 返回主界面
+        self.assertTrue(self.van_detail.wait_check_page(van), self.van_detail.van_vue_tips)
+        self.van_detail.back_up_button()  # 返回主界面
 
     @teststeps
     def into_vanclass_operation(self):
@@ -90,21 +90,21 @@ class ModifyVanclass(unittest.TestCase):
     @teststeps
     def modify_vanclass_operation(self, vanclass):
         """修改班级名称 具体操作"""
-        self.assertTrue(self.van.wait_check_tips_page(), '★★★ Error- 修改班级名称弹窗')  # 页面加载完成 检查点
+        self.assertTrue(self.van_detail.wait_check_tips_page(), '★★★ Error- 修改班级名称弹窗')  # 页面加载完成 检查点
         for i in range(len(class_data)):
-            var = self.van.input()  # 输入框
+            var = self.van_detail.input()  # 输入框
             var.clear()
             var.send_keys(class_data[i]['name'])
             print('修改为:', class_data[i]['name'])
 
             if len(class_data[i]) == 3:
-                self.van.tips_commit_button()  # 确定按钮 元素
+                self.van_detail.tips_commit_button()  # 确定按钮 元素
                 self.my_toast.toast_assert(self.name, Toast().toast_vue_operation(class_data[i]['assert']), True, '★★★ Error- 班级名称修改成功')  # 获取toast信息
-                van = self.van.judge_van_modify()  # 班级名称 不能修改成功验证
+                van = self.van_detail.judge_van_modify()  # 班级名称 不能修改成功验证
                 self.assertNotEqual(class_data[i]['name'], van, '★★★ Error- 班级名称修改成功 {} {}'.format(class_data[i]['name'], van))
                 print('修改不成功')
             else:  # 符合规则 ‘班级名称由1~10位中英文及数字组成’
-                self.van.tips_commit_button()  # 确定按钮 元素
+                self.van_detail.tips_commit_button()  # 确定按钮 元素
                 self.vue.switch_app()
 
                 if class_data[i]['name'] == '':
@@ -126,24 +126,24 @@ class ModifyVanclass(unittest.TestCase):
                         self.vue.switch_h5()
                         break
 
-                if self.van.wait_check_page(modify):  # 页面检查点
+                if self.van_detail.wait_check_page(modify):  # 页面检查点
                     print('修改成功')
                 else:
                     if i == 5:
-                        van = self.van.judge_van_modify()  # 班级名称 修改成功验证
+                        van = self.van_detail.judge_van_modify()  # 班级名称 修改成功验证
                         self.assertNotEqual(class_data[i]['name'], van, '★★★ Error- 班级名称修改后展示有误, {} {}'.format(class_data[i]['name'], van))
                         print('修改成功')
                     else:
-                        self.assertTrue(self.van.wait_check_page(modify), self.van.van_vue_tips)
+                        self.assertTrue(self.van_detail.wait_check_page(modify), self.van_detail.van_vue_tips)
                         print('修改成功')
 
             if i != len(class_data)-1:
                 self.vue.app_web_switch()  # 切到apk 再切到vue
-                self.van.more_button()  # 右上角 更多 按钮
-                self.assertTrue(self.van.wait_check_more_tips_page(), self.van.more_tips)
+                self.van_detail.more_button()  # 右上角 更多 按钮
+                self.assertTrue(self.van_detail.wait_check_more_tips_page(), self.van_detail.more_tips)
 
-                self.van.modify_van_name()  # 班级名称 按钮 进入修改页面
+                self.van_detail.modify_van_name()  # 班级名称 按钮 进入修改页面
                 self.vue.app_web_switch()  # 切到apk 再切到vue
-                self.assertTrue(self.van.wait_check_tips_page(), '★★★ Error- 修改班级名称弹窗')  # 页面加载完成 检查点
+                self.assertTrue(self.van_detail.wait_check_tips_page(), '★★★ Error- 修改班级名称弹窗')  # 页面加载完成 检查点
 
             print('--------------------------------')

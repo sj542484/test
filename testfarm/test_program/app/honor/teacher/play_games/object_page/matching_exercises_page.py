@@ -157,6 +157,7 @@ class MatchingExercises(BasePage):
                         print('word:', word[k].text)
                         value = match_operation(word[k].text)  # 数据字典
                         word[k].click()  # 点击单词
+
                         for z in range(len(explain)):
                             if explain[z].text == value:
                                 timestr.append(Homework().time())  # 统计每小题的计时控件time信息
@@ -167,6 +168,7 @@ class MatchingExercises(BasePage):
                                 if j == 0 and k == 0:  # 测试 配对成功后，不可再次点击
                                     word[k].click()
                                 break
+
                     time.sleep(1)
                 Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
                 print('======================================================')

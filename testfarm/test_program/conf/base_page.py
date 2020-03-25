@@ -28,7 +28,7 @@ class BasePage(object):
     def get_user_info(self):
         """获取改用户信息"""
         print(os.getcwd())
-        fp = open('./testfarm/test_program/conf/user_info.yaml','r', encoding='utf-8')
+        fp = open('./testfarm/test_program/conf/user_info.yaml', 'r', encoding='utf-8')
         res = fp.read()
         res = yaml.full_load(res)
         return res['userinfo'][self.deviceName]
@@ -49,13 +49,6 @@ class BasePage(object):
         return str(gv.ID_TYPE)
 
     @classmethod
-    def set_db(cls, mysql):
-        cls.mysql = mysql
-
-    def get_db(self):
-        return self.mysql
-
-    @classmethod
     def set_window_size(cls, uuid):
         """获取当前窗口大小"""
         res = subprocess.Popen('adb -s %s shell dumpsys window displays' % (uuid), shell=True, stdout=subprocess.PIPE,
@@ -68,7 +61,7 @@ class BasePage(object):
         cls.window_size = [int(i) for i in res[0]]
 
     def get_window_size(self):
-        print('获取尺寸：', self.driver.get_window_size())
+        # print('获取尺寸：', self.driver.get_window_size())
 
         return [self.driver.get_window_size()['width'], self.driver.get_window_size()['height']]
 
@@ -273,3 +266,10 @@ class BasePage(object):
             return True
         except:
             return False
+
+    def tearDown(self, ass, my_toast, ass_result):
+        """统计错误情况"""
+        errors = ass.get_error() + my_toast.get_error()
+        if errors:
+            ass_result.addFailure(self, errors[0])
+

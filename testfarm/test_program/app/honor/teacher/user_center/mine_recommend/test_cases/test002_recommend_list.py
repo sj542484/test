@@ -60,7 +60,7 @@ class Recommend(unittest.TestCase):
                         # self.recommend.cancel_recommend_operation()  # 删除推荐
 
                     if self.recommend.wait_check_page():  # 页面检查点
-                        self.question.question_basket()  # 题筐 按钮
+                        self.question.question_basket_button()  # 题筐 按钮
                         if self.basket.wait_check_page():  # 页面检查点
                             self.home.back_up_button()
 

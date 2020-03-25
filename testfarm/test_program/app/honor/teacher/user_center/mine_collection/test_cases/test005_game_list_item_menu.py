@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
+import re
 import unittest
 
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
@@ -92,7 +93,7 @@ class Collection(unittest.TestCase):
         if self.home.wait_check_tips_page():
             self.collect.recommend_to_school()  # 推荐到学校
             if self.filter.wait_check_school_label_page():
-                self.filter.confirm_button().click()
+                self.filter.confirm_button()
 
         print('推荐到学校:')
         Toast().toast_operation('加入成功')
@@ -182,24 +183,48 @@ class Collection(unittest.TestCase):
                 print('未进入题库tab')
 
     @teststeps
-    def judge_basket_result(self, var):
+    def judge_basket_result(self, names):
         """验证 加入题筐结果"""
         if self.collect.wait_check_page():  # 页面检查点
             print('----------------验证 加入题筐结果---------------')
-            self.question.question_basket()
-            if self.basket.wait_check_page():  # 页面检查点
-                if self.basket.wait_check_list_page():
-                    name = self.question.question_name()  # 获取 小游戏名
-                    if name[1][0] == var:
-                        print('加入题筐成功')
-                        self.basket.check_button()[0].click()  # 单选框
-                        if self.basket.wait_check_page():  # 页面检查点
-                            self.basket.out_basket_button()  # 移出题筐 按钮
-                    else:
-                        print('★★★ Error- 加入题筐 失败', name[1][0], var)
+            self.question.question_basket_button()
+            self.assertTrue(self.basket.wait_check_page(), self.basket.basket_tips)  # 页面检查点
+            self.assertTrue(self.basket.wait_check_list_page(), self.basket.basket_list_tips)  # 页面检查点
+            self.basket.all_check_button()  # 全选按钮
+            ele = self.basket.assign_button()  # 布置作业 按钮
+            num = 50 - int(re.sub("\D", "", ele.text))  # 提取 题数
 
-                    if self.basket.wait_check_page():  # 页面检查点
-                        self.home.back_up_button()  # 返回 我的收藏 页面
+            count = []
+            var = num // 6 + 1
+            while var > 0:
+                self.assertTrue(self.basket.wait_check_list_page(), self.basket.basket_list_tips)  # 页面检查点
+                item = self.basket.question_name()[1]  # 获取题目
+
+                index = -1
+                length = len(item)-1
+                if len(item) > 5:
+                    length = len(item) - 2
+                    index = 0
+                for i in range(length, index, -1):
+                    for j in range(len(names)):
+                        if item[i] == names[i]:
+                            print(item[i])
+                            count.append(i)
+                            break
+
+                if not count:
+                    SwipeFun().swipe_vertical(0.5, 0.8, 0.2)
+                var -= 1
+
+            print('----------------------------')
+            self.assertFalse(len(count) == 0, '★★★ Error -加入题筐失败, {}'.format(names))
+            print('加入题筐成功')
+            if self.basket.wait_check_page():  # 页面检查点
+                self.basket.out_basket_button()  # 移出题筐 按钮
+
+            if self.basket.wait_check_page():  # 页面检查点
+                self.home.back_up_button()  # 返回 我的收藏 页面
+
     @teststeps
     def judge_recommend_result(self, var):
         """验证 加入我的推荐 结果"""

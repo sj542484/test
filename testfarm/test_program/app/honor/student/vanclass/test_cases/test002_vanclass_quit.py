@@ -13,7 +13,7 @@ from app.honor.student.vanclass.object_page.vanclass_detail_page import Vanclass
 from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.assert_func import ExpectingTest
-from utils.reset_phone_find_toast import verify_find
+from utils.reset_phone_toast import get_verify
 from utils.toast_find import Toast
 
 
@@ -86,7 +86,7 @@ class QuitVanclass(unittest.TestCase):
             print('wait_check_quit_page:', self.van.wait_check_quit_page())
             if self.van.wait_check_quit_page():
                 self.van.phone_name()  # 提示
-                value = verify_find(gv.PHONE, 'quitClass')  # 获取验证码
+                value = get_verify(gv.PHONE, 'quitClass')  # 获取验证码
                 self.van.code_input().send_keys(value)  # 输入验证码
                 print(gv.PHONE)
                 print('验证码:', value)

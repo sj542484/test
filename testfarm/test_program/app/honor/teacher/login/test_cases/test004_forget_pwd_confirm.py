@@ -35,7 +35,7 @@ class Login(unittest.TestCase):
 
     def run(self, result=None):
         self.ass_result = result
-        super(Login, self).run(result)
+        super(Login, self).run(self.ass_result)
 
     @testcase
     def test_forget_pwd_password(self):
@@ -69,7 +69,7 @@ class Login(unittest.TestCase):
                 phone.send_keys(phone_data[-1]['account'])  # 输入手机号
                 print('账号:', phone.text)
 
-                self.login.get_code_button().click()  # 点击 获取验证码 按钮
+                self.login.get_code_button()  # 点击 获取验证码 按钮
                 value = get_verify(phone_data[-1]['account'], 'resetPassword')  # 获取验证码
                 code.send_keys(value)  # 输入 验证码
                 print(value)

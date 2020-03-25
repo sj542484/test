@@ -5,14 +5,14 @@ from selenium.common.exceptions import WebDriverException
 
 from conf.base_page import BasePage
 from conf.decorator import teststeps
-from utils.get_element_bounds import Element
+from utils.get_element_bounds import ElementBounds
 
 
 class SwipeFindElement(BasePage):
     """滑屏找元素 操作"""
 
     def __init__(self):
-        self.ele = Element()
+        self.ele = ElementBounds()
 
     @teststeps
     def _find_element_by_swipe(self, direction, locator, value, element=None, steps=10, max_swipe=6):

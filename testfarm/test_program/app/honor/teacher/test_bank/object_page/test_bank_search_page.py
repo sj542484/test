@@ -8,6 +8,7 @@ from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
+from utils.assert_package import MyAssert
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
@@ -25,12 +26,15 @@ class SearchPage(BasePage):
         self.sp = SwipeFun()
         self.home = ThomePage()
         self.wait = WaitElement()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_page(self, var, index=10):
         """以''的text为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'%s')]" % var)
-        return self.wait.wait_check_element(locator, index)
+        ele = self.wait.wait_check_element(locator, index)
+        self.my_assert.assertTrue(ele, '★★★ Error- 未进入题库搜索页面')
+        return ele
 
     # 搜索框
     @teststeps

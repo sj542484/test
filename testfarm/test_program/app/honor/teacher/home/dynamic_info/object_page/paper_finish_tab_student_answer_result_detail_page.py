@@ -180,7 +180,7 @@ class ResultDetailPage(BasePage):
         var = []  # 每个题目的内容
         count = []  # 题号元素index
         for i in range(len(ele)):
-            if GetAttribute().resource_id(ele[i]) == gv.PACKAGE_ID + 'num':
+            if GetAttribute().get_resource_id(ele[i]) == gv.PACKAGE_ID + 'num':
                 count.append(i)
         count.append(len(ele))  # 多余 只为最后一题
 
@@ -254,7 +254,7 @@ class ResultDetailPage(BasePage):
                     break
 
                 options.append(result[j + 1].text)  # 选项内容
-                if GetAttribute().selected(result[j]) == 'true':
+                if GetAttribute().get_selected(result[j]) == 'true':
                     var.append(result[j + 1])  # ABCD元素
             item.append(options)
 
@@ -263,7 +263,7 @@ class ResultDetailPage(BasePage):
     @teststep
     def question_judge(self, var):
         """元素 resource-id属性值是否为题目"""
-        value = GetAttribute().resource_id(var)
+        value = GetAttribute().get_resource_id(var)
         return True if value == self.question_value else False
 
     @teststeps
@@ -497,9 +497,9 @@ class ResultDetailPage(BasePage):
         for i in range(len(options)):
             print('-------------------------------')
             print(options[i].text)
-            if GetAttribute().selected(options[i]) == 'true':
+            if GetAttribute().get_selected(options[i]) == 'true':
                 count += 1
-                status = GetAttribute().description(options[i])
+                status = GetAttribute().get_description(options[i])
                 print(status)
                 if status == 'right':
                     content.append(i)
@@ -557,7 +557,7 @@ class ResultDetailPage(BasePage):
             count += 1
             print('解释:', explain[i].text)  # 解释
             print('单词:', answer[i].text)  # 正确word
-            mode = GetAttribute().selected(mine[i])
+            mode = GetAttribute().get_selected(mine[i])
             print(mode)
 
             if mode == 'true':
@@ -583,7 +583,7 @@ class ResultDetailPage(BasePage):
         for i in range(var, length):
             count += 1
             print(explain[i].text, '\n', mine[i].text, '\n', answer[i].text)
-            mode = GetAttribute().selected(status[i])
+            mode = GetAttribute().get_selected(status[i])
             print(mode)
             if mode == 'true':
                 content.append(i)
@@ -607,7 +607,7 @@ class ResultDetailPage(BasePage):
         for i in range(var, length):
             count += 1
             print(explain[i], '\n', mine[0][i], '\n', answer[i])
-            mode = GetAttribute().selected(status[i])
+            mode = GetAttribute().get_selected(status[i])
             print(mode)
             if mode == 'true':
                 content.append(i)

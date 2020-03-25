@@ -4,18 +4,16 @@
 import sys
 import unittest
 import re
-import time
-import random
 
 from app.honor.teacher.home.vanclass.test_data.tips_data import TipsData
 from app.honor.teacher.login.object_page.login_page import TloginPage
-from app.honor.teacher.home.dynamic_info.object_page.hw_finish_tab_student_answer_game_detail_page import StAnswerDetailPage
+from app.honor.teacher.home.vanclass.object_page.hw_finish_tab_student_answer_game_detail_page import StAnswerDetailPage
 from app.honor.teacher.home.dynamic_info.object_page.hw_spoken_detail_page import HwDetailPage
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
-from app.honor.teacher.home.dynamic_info.object_page.hw_finish_tab_student_answer_result_page import ResultDetailPage
+from app.honor.teacher.home.vanclass.object_page.hw_finish_tab_student_answer_result_page import ResultDetailPage
 from app.honor.teacher.home.vanclass.test_data.hw_detail_data import game_type_operation
 from app.honor.teacher.home.vanclass.object_page.vanclass_hw_spoken_page import VanclassHwPage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.teacher.home.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
 from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase, teststeps
@@ -37,7 +35,7 @@ class VanclassHw(unittest.TestCase):
         cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
-        cls.van = VanclassPage()
+        cls.van_detail = VanclassDetailPage()
         cls.v_hw = VanclassHwPage()
         cls.hw_detail = HwDetailPage()
         cls.st_answer = StAnswerDetailPage()
@@ -65,11 +63,11 @@ class VanclassHw(unittest.TestCase):
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
         self.home.into_vanclass_operation(gv.VANCLASS)  # 进入 班级详情页
 
-        self.assertTrue(self.van.wait_check_app_page(gv.VANCLASS), self.van.van_tips)  # 页面检查点
+        self.assertTrue(self.van_detail.wait_check_app_page(gv.VANCLASS), self.van_detail.van_tips)  # 页面检查点
         self.vue.switch_h5()  # 切到vue
-        self.assertTrue(self.van.wait_check_page(gv.VANCLASS), self.van.van_vue_tips)
+        self.assertTrue(self.van_detail.wait_check_page(gv.VANCLASS), self.van_detail.van_vue_tips)
 
-        self.van.vanclass_hw()  # 点击 本班作业 tab
+        self.van_detail.vanclass_hw()  # 点击 本班作业 tab
         title = gv.HW_TITLE.format(gv.VANCLASS)
         self.vue.app_web_switch()  # 切到apk 再切回vue
 
@@ -81,27 +79,54 @@ class VanclassHw(unittest.TestCase):
             print('本班作业:')   # 全部题单都跑
             self.assertTrue(self.v_hw.wait_check_list_page(), self.v_hw.van_hw_list_tips)  # 页面检查点
             name = self.v_hw.hw_name()  # 作业name
+            count = []
             for i in range(4, len(name)):
                 if self.v_hw.wait_check_page(title):  # 页面检查点
                     text = name[i].text
                     if self.home.brackets_text_in(text) == '习题':
+                        count.append(i)
                         print('###########################################################')
                         print(text)
                         name[i].click()  # 进入作业
 
-                        self.vue.app_web_switch()  # 切到apk 再切回web
+                        self.vue.app_web_switch()  # 切到apk 再切到vue
                         self.finish_situation_operation()  # 进入 个人答题详情页
                 self.vue.app_web_switch()  # 切到apk 再切回vue
                 self.assertTrue(self.v_hw.wait_check_page(title), self.v_hw.van_hw_tips)  # 页面检查点
 
-            self.v_hw.back_up_button()  # 返回 班级详情页面
-            self.vue.app_web_switch()  # 切到apk 再切回vue
-            self.assertTrue(self.van.wait_check_page(gv.VANCLASS), self.van.van_vue_tips)  # 班级详情 页面检查点
-            self.v_hw.back_up_button()  # 返回主界面
+            self.assertFalse(len(count)==0, '暂无测试数据')
+
+        self.assertTrue(self.v_hw.wait_check_list_page(), self.v_hw.van_hw_list_tips)  # 页面检查点
+        self.v_hw.back_up_button()  # 返回 班级详情页面
+        self.vue.app_web_switch()  # 切到apk 再切回vue
+        self.assertTrue(self.van_detail.wait_check_page(gv.VANCLASS), self.van_detail.van_vue_tips)  # 班级详情 页面检查点
+        self.v_hw.back_up_button()  # 返回主界面
 
     @teststeps
     def finish_situation_operation(self):
         """完成情况tab 具体操作"""
+        self.assertTrue(self.hw_detail.wait_check_page(), self.hw_detail.hw_detail_tips)  # 页面检查点
+        print('-------------------------完成情况tab-------------------------')
+        status = self.hw_detail.wait_check_empty_tips_page()
+        if status:
+            print('暂无数据')
+            self.v_hw.back_up_button()  # 返回
+            self.vue.app_web_switch()  # 切到apk 再切到vue
+            if self.v_hw.wait_check_page():
+                self.v_hw.back_up_button()  # 返回
+                self.vue.app_web_switch()  # 切到apk 再切到vue
+
+                if self.van_detail.wait_check_page():  # 页面检查点
+                    self.v_hw.back_up_button()  # 返回 主界面
+                    self.vue.switch_app()  # 切回apk
+            self.assertFalse(status, '暂无数据')
+        else:
+            self.assertTrue(self.hw_detail.wait_check_st_list_page(), self.hw_detail.st_list_tips)
+            self.st_list_statistics()  # 完成情况tab 学生
+
+    @teststeps
+    def st_list_statistics(self):
+        """完成情况tab 学生信息"""
         self.assertTrue(self.hw_detail.wait_check_page(), self.hw_detail.hw_detail_tips)  # 页面检查点
         self.assertTrue(self.hw_detail.wait_check_st_list_page(), self.hw_detail.st_list_tips)
         status = self.hw_detail.st_finish_status()  # 学生完成与否
@@ -120,7 +145,7 @@ class VanclassHw(unittest.TestCase):
                 self.assertTrue(self.st_answer.wait_check_page(name), self.st_answer.st_detail_tips)  # 页面检查点
                 print('学生 %s 答题情况：' % name)
                 self.per_game_list(name)  # 列表信息
-                self.per_answer_detail(name, mode)
+                self.per_answer_detail(name)  # , mode
 
                 self.assertTrue(self.st_answer.wait_check_page(name), self.st_answer.st_detail_tips)  # 页面检查点                        self.v_hw.back_up_button()  # 返回 学生列表
                 self.v_hw.back_up_button()  # 返回 学生列表
@@ -132,38 +157,12 @@ class VanclassHw(unittest.TestCase):
         self.v_hw.back_up_button()  # 返回 本班习题
 
     @teststeps
-    def per_answer_detail(self, st, content=None):
+    def per_answer_detail(self, st):
         """个人 答题情况详情页"""
-        if content is None:
-            content = []
-
-        self.assertTrue(self.st_answer.wait_check_page(st), self.st_answer.st_detail_tips)  # 页面检查点
-        item = self.st_answer.per_game_item()[1]  # 游戏条目
-
-        if len(item) > 5 and not content:
-            content = [item[-2]]  # 最后一个game的name type
-            self.game_type_judge_operation(len(item)-1, st)  # 小游戏 类型判断 及具体操作
-
-            self.assertTrue(self.st_answer.wait_check_page(st), self.st_answer.st_detail_tips)  # 页面检查点
-            self.v_hw.swipe_vertical_web(0.5, 0.9, 0.1)
-            self.per_answer_detail(st, content)
-        else:
-            var = 0
-            if content:
-                for k in range(len(item)):
-                    if content == item[k]:
-                        var += k+1
-                        break
-
-            self.game_type_judge_operation(len(item), st, var)  # 小游戏 类型判断 及具体操作
-
-    @teststeps
-    def game_type_judge_operation(self, length, st, index=0):
-        """小游戏 类型判断 及具体操作"""
         self.assertTrue(self.st_answer.wait_check_page(st), self.st_answer.st_detail_tips)  # 页面检查点
         item = self.st_answer.per_game_item()  # 游戏条目
 
-        for j in range(index, length):
+        for j in range(len(item)):
             print('=================================================================')
             self.assertTrue(self.st_answer.wait_check_page(st), self.st_answer.st_detail_tips)  # 页面检查点
             mode = self.st_answer.game_mode(item[1][j][-2])
@@ -178,7 +177,6 @@ class VanclassHw(unittest.TestCase):
 
                 if value == 17:  # 微课
                     item[0][j].click()  # 点击进入game
-                    self.vue.app_web_switch()  # 切到apk 再切回vue
                     MyToast().toast_assert(self.name, Toast().toast_vue_operation(TipsData().no_report))  # 获取toast
                 elif value == 24:  # 单词跟读
                     item[0][j].click()  # 点击进入game
@@ -187,7 +185,9 @@ class VanclassHw(unittest.TestCase):
                     self.result.word_reading_operation(score)
                 elif value in (21, 22, 23):  # 口语
                     print('口语')  #
-                    time.sleep(2)
+                    item[0][j].click()  # 点击进入game
+                    self.vue.app_web_switch()  # 切到apk 再切回vue
+
                     self.v_hw.back_up_button()   # 返回  游戏列表
                 elif value == 14:  # 闪卡练习
                     print(mode)
@@ -226,31 +226,12 @@ class VanclassHw(unittest.TestCase):
             self.vue.app_web_switch()  # 切到apk 再切回vue
 
     @teststeps
-    def per_game_list(self, st, content=None):
+    def per_game_list(self, st):
         """个人 game答题情况页 列表"""
-        if content is None:
-            content = []
-
         self.assertTrue(self.st_answer.wait_check_page(st), self.st_answer.st_detail_tips)  # 页面检查点
         name = self.st_answer.game_name()  # 游戏name
         mode = self.st_answer.game_type()  # 类型
         status = self.st_answer.optimal_first_achievement()  # 游戏完成情况
 
-        if len(status) > 4 and not content:
-            content = [name[len(status)-2].text, mode[len(status)-2].text]
-            for i in range(len(status)-1):
-                print(mode[i].text, name[i].text, status[i].text)
-
-            self.v_hw.swipe_vertical_web(0.5, 0.85, 0.1)
-            self.per_game_list(st, content)
-        else:
-            var = 0
-            if content:  # 翻页成功 或者是第一页
-                for k in range(len(name)):
-                    if content == [name[k].text, mode[k].text]:
-                        var = k + 1
-                        break
-
-            for i in range(var, len(status)):
-                print(mode[i].text, name[i].text, status[i].text)
-            print('---------------------------------------------')
+        for i in range(len(status)-1):
+            print(mode[i].text, name[i].text, status[i].text)

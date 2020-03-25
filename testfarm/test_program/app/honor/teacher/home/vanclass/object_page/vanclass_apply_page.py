@@ -14,7 +14,7 @@ class VanclassApplyPage(BasePage):
     apply_list_tips = '★★★ Error- 入班申请详情页未加载成功'
     more_tips = '★★★ Error- 未进入更多按钮详情'
 
-    empty_tips = '暂无入班申请学生'
+    empty_tips = '★★★ Error- 暂无入班申请学生'
 
     def __init__(self):
         self.wait = WaitElement()

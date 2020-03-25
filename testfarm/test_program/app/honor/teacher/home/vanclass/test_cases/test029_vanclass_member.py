@@ -7,7 +7,7 @@ import unittest
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.home.vanclass.object_page.vanclass_member_page import VanMemberPage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.teacher.home.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.vanclass.object_page.vanclass_student_info_page import StDetailPage
 from app.honor.teacher.home.vanclass.test_data.remark_data import remark_dict
 from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
@@ -32,7 +32,7 @@ class VanclassMember(unittest.TestCase):
         cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
-        cls.van = VanclassPage()
+        cls.van_detail = VanclassDetailPage()
         cls.st = StDetailPage()
         cls.member = VanMemberPage()
         cls.get = GetAttribute()
@@ -63,11 +63,11 @@ class VanclassMember(unittest.TestCase):
         phone = self.menu_operation_modify(van)  # 学生 修改备注名
         self.menu_operation_delete(phone, van)  # 学生 移出班级
 
-        if self.van.wait_check_page(van):  # 页面检查点
-            self.van.back_up_button()
+        if self.van_detail.wait_check_page(van):  # 页面检查点
+            self.van_detail.back_up_button()
             self.vue.app_web_switch()  # 切到apk 再切到vue
-            if self.van.wait_check_page(van):  # 班级详情 页面检查点
-                self.van.back_up_button()
+            if self.van_detail.wait_check_page(van):  # 班级详情 页面检查点
+                self.van_detail.back_up_button()
 
     @teststeps
     def into_vanclass_operation(self):
@@ -84,21 +84,21 @@ class VanclassMember(unittest.TestCase):
             if vanclass == gv.APPLY:
                 name[i].click()  # 进入班级
 
-                self.assertTrue(self.van.wait_check_app_page(vanclass), self.van.van_tips)  # 页面检查点
+                self.assertTrue(self.van_detail.wait_check_app_page(vanclass), self.van_detail.van_tips)  # 页面检查点
                 self.vue.switch_h5()  # 切到web
-                self.assertTrue(self.van.wait_check_page(vanclass), self.van.van_vue_tips)
+                self.assertTrue(self.van_detail.wait_check_page(vanclass), self.van_detail.van_vue_tips)
 
-                self.assertTrue(self.van.wait_check_list_page(), self.van.van_list_tips)
-                self.van.vanclass_member()  # 进入 班级成员
+                self.assertTrue(self.van_detail.wait_check_list_page(), self.van_detail.van_list_tips)
+                self.van_detail.vanclass_member()  # 进入 班级成员
                 self.vue.switch_app()
 
                 self.assertTrue(self.member.wait_check_page(vanclass), self.member.member_tips)
                 if self.home.wait_check_empty_tips_page():
                     self.home.back_up_button()  # 返回 班级页面
-                    self.assertTrue(self.van.wait_check_app_page(vanclass), self.van.van_tips)  # 页面检查点
+                    self.assertTrue(self.van_detail.wait_check_app_page(vanclass), self.van_detail.van_tips)  # 页面检查点
                     self.vue.switch_h5()  # 切到web
-                    self.assertTrue(self.van.wait_check_page(vanclass), self.van.van_vue_tips)
-                    self.van.back_up_button()  # 返回主界面
+                    self.assertTrue(self.van_detail.wait_check_page(vanclass), self.van_detail.van_vue_tips)
+                    self.van_detail.back_up_button()  # 返回主界面
                     continue
                 elif self.member.wait_check_st_list_page():
                     phone = self.member.st_phone()  # 手机号
@@ -113,11 +113,11 @@ class VanclassMember(unittest.TestCase):
                         break
                     else:
                         self.home.back_up_button()  # 返回 班级页面
-                        self.assertTrue(self.van.wait_check_app_page(vanclass), self.van.van_tips)  # 页面检查点
+                        self.assertTrue(self.van_detail.wait_check_app_page(vanclass), self.van_detail.van_tips)  # 页面检查点
                         self.vue.switch_h5()  # 切到web
-                        self.assertTrue(self.van.wait_check_page(vanclass), self.van.van_vue_tips)
+                        self.assertTrue(self.van_detail.wait_check_page(vanclass), self.van_detail.van_vue_tips)
 
-                        self.van.back_up_button()  # 返回主界面
+                        self.van_detail.back_up_button()  # 返回主界面
         return vanclass
 
     @teststeps

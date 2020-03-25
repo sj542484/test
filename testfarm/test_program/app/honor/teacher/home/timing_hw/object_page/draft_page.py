@@ -51,13 +51,17 @@ class DraftPage(BasePage):
     def wait_check_app_page(self, var=20):
         """以“title:定时作业”为依据"""
         locator = (By.XPATH, '//android.view.View[@text="定时作业"]')
-        return self.wait.wait_check_element(locator, var)
+        ele = self.wait.wait_check_element(locator, var)
+        self.my_assert.assertTrue(ele, self.timing_tips)
+        return ele
 
     @teststeps
     def wait_check_page(self, var=20):
         """以“title:定时作业”为依据"""
         locator = (By.XPATH, '//div[@class="van-nav-bar__title van-ellipsis" and text()="定时作业"]')
-        return self.wait.wait_check_element(locator, var)
+        ele = self.wait.wait_check_element(locator, var)
+        self.my_assert.assertTrue(ele, self.timing_vue_tips)
+        return ele
 
     @teststeps
     def wait_check_hw_list_page(self, var=20):
@@ -109,7 +113,9 @@ class DraftPage(BasePage):
     def wait_check_more_page(self):
         """以“更多按钮  条目元素”为依据"""
         locator = (By.XPATH, '//div[@class="van-popup van-popup--round van-popup--bottom van-action-sheet"]')
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.timing_vue_tips)
+        return ele
 
     @teststep
     def more_edit_button(self):
@@ -231,6 +237,14 @@ class DraftPage(BasePage):
         locator = (By.XPATH, '//div[@id="time-content-list-cell"]')
         return self.wait.wait_check_element(locator)
 
+    @teststeps
+    def wait_check_draft_empty_tips_page(self, var=3):
+        """暂时没有数据"""
+        locator = (By.XPATH, '//div[@class="vt-loading-container__error"]')
+        ele = self.wait.wait_check_element(locator, var)
+        self.my_assert.assertTrue(ele, '★★★ Error- 暂无数据')
+        return ele
+
     @teststep
     def draft_name(self):
         """草稿名称"""
@@ -260,44 +274,15 @@ class DraftPage(BasePage):
         self.driver.swipe(x, y1, x, y2, steps)
 
     @teststeps
-    def get_hw_list(self, name, date_list, content=None):
+    def get_hw_list(self, name, date_list):
         """获取定时作业列表
-        :param content:
         :param name: 定时作业名
         :param date_list:发布日期
         """
-        if content is None:
-            content = []
-
         hw = self.timing_name()  # 作业条目
         create = self.timing_time()  # 创建日期
-        if len(hw) > 5 and not content:  # 多于5个
-            self.hw_list(name, date_list, hw, create, len(hw)-1)
-            content = [hw[-2].text, create[-2].text]
 
-            self.swipe_vertical_web(0.5, 0.9, 0.2)
-            if self.wait_check_hw_list_page():
-                self.get_hw_list(name, date_list, content)
-        else:
-            index = 0
-            if content:
-                for k in range(len(hw)-1, 0, -1):  # 滑屏后 页面中是否有已操作过的元素
-                    if hw[k].text == content[0] and create[k].text == content[1]:
-                        index = k + 1
-                        break
-            self.hw_list(name, date_list, hw, create, len(hw), index)
-
-    @teststeps
-    def hw_list(self, name, date_list, hw, create, length, index=0):
-        """定时作业列表
-        :param hw: 作业名称
-        :param create: 创建时间
-        :param name: 作业名列表
-        :param date_list: 发布时间列表
-        :param length: 遍历最大值
-        :param index: 遍历最小值
-        """
-        for i in range(index, length):
+        for i in range(len(hw)):
             print(hw[i].text, '\n',
                   create[i].text)
             print('----------------------')
@@ -309,37 +294,39 @@ class DraftPage(BasePage):
             item = hw_create[6:].split()  # 发布时间
             var1 = item[0].split('/')
             var = item[2].split(':')
-            content = [var1[0], var1[1], var[0], var[1]]
+
+            if '...' in var[1]:
+                content = [var1[0], var1[1], var[0], var[1][:-3], '...']
+            else:
+                content = [var1[0], var1[1], var[0], var[1]]
+
 
             date_list.append(content)
 
     @teststeps
     def add_to_basket(self):
         """加题进题筐"""
-        print('=========加题进题筐=========')
-        item = self.question.question_name()  # 获取
-        item[0][1].click()  # 点击第一道题
+        if self.question.wait_check_page():
+            print('=========加题进题筐=========')
+            item = self.question.question_name()  # 获取
+            item[0][1].click()  # 点击第一道题
 
-        try:
-            # print('----------题单详情页----------')
-            self.detail.all_check_button()  # 全选按钮
-            self.detail.put_to_basket_button()  # 点击加入题筐按钮
-            # print('加题进题筐')
-            self.home.back_up_button()  # 返回按钮
+            if self.detail.wait_check_page():  # 页面检查点
+                if self.detail.wait_check_list_page():  # 页面检查点
+                    self.detail.all_check_button()  # 全选按钮
+                    self.detail.put_to_basket_button()  # 点击加入题筐按钮
+                    # print('加题进题筐')
+                    self.home.back_up_button()  # 返回按钮
 
-            self.question.question_basket()  # 题筐按钮
-            if self.basket.wait_check_page():  # 页面检查点
-                if self.basket.wait_check_list_page():
-                    if self.question_bank_operation():
-                        return True
+                    self.question.question_basket_button()  # 题筐按钮
+                    if self.home.wait_check_empty_tips_page():
+                        self.home.back_up_button()
+                        self.home.click_tab_hw()  # 返回 主界面
+                        self.my_assert.assertFalse(self.home.wait_check_empty_tips_page(), '★★★ Error- 加入题筐失败')
                     else:
-                        raise Exception('★★★ Error- 未进入发布作业页面')
-                elif self.home.wait_check_empty_tips_page():  # 如果存在空白页元素
-                    self.home.back_up_button()
-                    self.home.click_tab_hw()  # 返回 主界面
-                    raise Exception('★★★ Error- 加入题筐失败')
-        except:
-            raise Exception('★★★ Error- 未进入 题单详情页')
+                        self.my_assert.assertTrue(self.basket.wait_check_list_page, self.basket.basket_list_tips)
+                        self.my_assert.assertTrue(self.question_bank_operation())
+                        return True
 
     @teststeps
     def question_bank_operation(self):
@@ -379,7 +366,7 @@ class DraftPage(BasePage):
     @teststeps
     def judge_time_setting(self, date):
         """验证 设定的时间"""
-        print('------------------验证 设定的时间-------------------')
+        print('======================验证 设定的时间======================')
         timing = self.release.timing_show()  # 展示的时间
         dates_list = []
         for z in range(len(timing)):
@@ -415,51 +402,50 @@ class DraftPage(BasePage):
     def timing_operation(self):
         """布置定时作业 具体操作"""
         self.func_name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
-        self.my_assert.assertTrue_new(self.release.wait_check_release_page(), self.release.release_tips)  # 页面检查点
-        self.my_assert.assertTrue_new(self.release.wait_check_release_list_page(), '★★★ Error- 编辑定时作业 详情页未加载成功')
-        print('------------------布置定时作业------------------')
-        name = self.release.hw_name_edit()  # 作业名称 编辑框
-        hw = '练习作业_定时' + str(random.randint(1000, 9999))  # test001
-        name.send_keys(hw)  # name
-        print(name.text)
+        if self.release.wait_check_release_page():  # 页面检查点
+            if self.release.wait_check_release_list_page():  # 页面检查点
+                print('------------------布置定时作业------------------')
+                name = self.release.hw_name_edit()  # 作业名称 编辑框
+                hw = '练习作业_定时' + str(random.randint(1000, 9999))  # test001
+                name.send_keys(hw)  # name
+                print(name.text)
 
-        self.my_assert.assertTrue_new(self.release.wait_check_release_list_page(), '★★★ Error- 编辑定时作业 详情页未加载成功')
-        self.swipe_vertical_web(0.5, 0.9, 0.2)
-        self.my_assert.assertTrue_new(self.release.wait_check_release_list_page(), '★★★ Error- 编辑定时作业 详情页未加载成功')
+                if self.release.wait_check_release_list_page():  # 页面检查点
+                    self.swipe_vertical_web(0.5, 0.9, 0.2)
+                if self.release.wait_check_release_list_page():  # 页面检查点
+                    button = self.release.choose_button()  # 单选框
+                    van = self.release.van_name()  # 班级 元素
+                    for k in range(len(button)):
+                        if all([GetAttribute().selected(button[k]) == 'false',
+                                van[k].text != GetVariable().VANCLASS]):
+                            print('所选择的班级:', van[k].text)
+                            button[k].click()  # 选择 一个班
+                            break
 
-        button = self.release.choose_button()  # 单选框
-        van = self.release.van_name()  # 班级 元素
-        for k in range(len(button)):
-            if all([GetAttribute().selected(button[k]) == 'false',
-                    van[k].text != GetVariable().VANCLASS]):
-                print('所选择的班级:', van[k].text)
-                button[k].click()  # 选择 一个班
-                break
+                    if self.release.wait_check_release_list_page():  # 页面检查点
+                        self.release.add_time_button()  # 设定时间 元素
+                        if self.release.wait_check_time_list_page():
+                            date = self.release.get_assign_date()  # 设定时间
+                            print('设置发布时间为：', date)
+                            self.release.confirm_button()  # 点击 确定按钮
 
-        self.my_assert.assertTrue_new(self.release.wait_check_release_list_page(), '★★★ Error- 编辑定时作业 详情页未加载成功')
-        self.release.add_time_button()  # 设定时间 元素
-        if self.release.wait_check_time_list_page():
-            date = self.release.get_assign_date()  # 设定时间
-            print('设置发布时间为：', date)
-            self.release.confirm_button()  # 点击 确定按钮
-
-            self.my_assert.assertTrue_new(self.release.wait_check_release_list_page(), '★★★ Error- 编辑定时作业 详情页未加载成功')
-            self.release.assign_button()  # 点击 发布作业 按钮
-            if Toast().find_toast(TipsData().timing_success):  # 布置成功提示验证
-                print('★★★ Error- 未弹toast: ', TipsData().timing_success)
-            else:
-                self.release.assign_button()  # 点击 发布作业 按钮
-                MyToast().toast_assert(self.func_name, Toast().toast_operation(TipsData().hw_only_daily)) # 若当天布置的作业有重名，获取toast
-                self.home.back_up_button()
+                            if self.release.wait_check_release_list_page():  # 页面检查点
+                                self.release.assign_button()  # 点击 发布作业 按钮
+                                if Toast().find_toast(TipsData().timing_success):  # 布置成功提示验证
+                                    print('★★★ Error- 未弹toast: ', TipsData().timing_success)
+                                else:
+                                    self.release.assign_button()  # 点击 发布作业 按钮
+                                    MyToast().toast_assert(self.func_name, Toast().toast_operation(TipsData().hw_only_daily)) # 若当天布置的作业有重名，获取toast
+                                    self.home.back_up_button()
 
     @teststeps
     def timing_hw_delete(self):
         """删除定时作业"""
-        self.my_assert.assertTrue_new(self.wait_check_page(), self.back_timing_tips)  # 页面检查点
-        if self.wait_check_empty_tips_page():
-            print('暂无 定时作业')
-            self.back_up_button()  # 返回主界面
-            self.my_assert.assertTrue_new(self.wait_check_hw_list_page, self.timing_tips)
+        if self.wait_check_page():  # 页面检查点
+            if self.wait_check_empty_tips_page():
+                print('暂无 定时作业')
+                self.back_up_button()  # 返回主界面
+                self.my_assert.assertFalse(self.wait_check_empty_tips_page, self.timing_tips)
         else:
             self.my_assert.assertTrue_new(self.wait_check_hw_list_page, self.timing_tips)
             content = {}  # name:班级名
@@ -480,18 +466,18 @@ class DraftPage(BasePage):
     def delete_cancel_operation(self, index=0):
         """删除作业 具体操作"""
         self.more_button()[index].click()  # 更多 按钮
-        self.my_assert.assertTrue_new(self.wait_check_more_page(), self.more_tips)
-        self.more_delete_button()  # 删除按钮
+        if self.wait_check_more_page():
+            self.more_delete_button()  # 删除按钮
 
-        self.my_assert.assertTrue_new(self.wait_check_tips_page(), '★★★ Error- 无删除提示框')
-        print('---------删除作业---------')
-        self.tips_title()
-        self.delete_tips_content()
-        self.cancel_button()  # 取消按钮
-        print('---------------')
+            self.my_assert.assertTrue_new(self.wait_check_tips_page(), '★★★ Error- 无删除提示框')
+            print('---------删除作业---------')
+            self.tips_title()
+            self.delete_tips_content()
+            self.cancel_button()  # 取消按钮
+            print('---------------')
 
-        if not self.wait_check_tips_page():
-            print('取消删除')
+            if not self.wait_check_tips_page():
+                print('取消删除')
 
     @teststeps
     def delete_commit_operation(self, index=0):
@@ -499,14 +485,13 @@ class DraftPage(BasePage):
         self.func_name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
 
         self.more_button()[index].click()  # 更多 按钮
-        self.my_assert.assertEqual(self.wait_check_more_page(), True, self.more_tips)
-        self.more_delete_button()  # 删除按钮
+        if self.wait_check_more_page():
+            self.more_delete_button()  # 删除按钮
 
-        self.my_assert.assertTrue(self.wait_check_tips_page(), '★★★ Error- 无删除提示框')
-        print('---------删除作业---------')
-        self.commit_button()  # 确定按钮
-        print('确定删除')
-        MyToast().toast_assert(self.func_name, Toast().toast_vue_operation(TipsData().delete_success))  # 获取toast
+            self.my_assert.assertTrue(self.wait_check_tips_page(), '★★★ Error- 无删除提示框')
+            print('---------删除作业---------')
+            self.commit_button()  # 确定按钮
+            print('确定删除')
 
     @teststeps
     def tips_content_commit(self, var=5):

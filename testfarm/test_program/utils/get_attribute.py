@@ -40,3 +40,39 @@ class GetAttribute:
     def get_cont_desc(cls, var):
         value = var.get_attribute('contentDescription')
         return value
+
+    @classmethod
+    def class_name(cls, var):
+        """元素 class_name属性值"""
+        value = var.get_attribute("className")
+        return value
+
+    @classmethod
+    def resource_id(cls, var):
+        """元素 resource-id属性值"""
+        value = var.get_attribute("resourceId")
+        return value
+
+    @classmethod
+    def selected(cls, var):
+        """元素 selected属性值"""
+        value = var.get_attribute('selected')
+        return value
+
+    @classmethod
+    def checked(cls, var):
+        """元素 checked属性值"""
+        value = var.get_attribute('checked')
+        return value
+
+    @classmethod
+    def enabled(cls, var):
+        """元素 enabled属性值"""
+        value = var.get_attribute('enabled')
+        return value
+
+    @classmethod
+    def description(cls, var):
+        """元素 content_description属性值"""
+        value = var.get_attribute('contentDescription')
+        return value

@@ -16,6 +16,7 @@ from utils.wait_element import WaitElement
 class SpokenPage(BasePage):
     """题单详情 页面"""
     menu_detail_tips = '★★★ Error- 未进入题单详情页面'
+    menu_detail_list_tips = '★★★ Error- 题单详情页面未加载成功'
 
     def __init__(self):
         self.wait = WaitElement()
@@ -74,7 +75,7 @@ class SpokenPage(BasePage):
                         self.home.back_up_button()  # 返回按钮
 
                         if self.question.wait_check_page('搜索'):  # 页面检查点
-                            self.question.question_basket()  # 题筐按钮
+                            self.question.question_basket_button()  # 题筐按钮
 
                             if self.basket.wait_check_page():  # 页面检查点
                                 if self.home.wait_check_empty_tips_page():  # 如果存在空白页元素

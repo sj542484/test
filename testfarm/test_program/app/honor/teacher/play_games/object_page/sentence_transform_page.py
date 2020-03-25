@@ -65,9 +65,11 @@ class SentenceTrans(BasePage):
     def word(self):
         """展示的 待还原的单词"""
         ele = self.driver \
-            .find_elements_by_xpath("//android.widget.LinearLayout/android.support.v7.widget.RecyclerView[contains(@index,0)]"
-                                    "/descendant::android.widget.TextView")
-        return ele
+            .find_element_by_id(gv.PACKAGE_ID + "rv_hint")
+        item = ele.find_elements_by_xpath('.//android.widget.LinearLayout/android.widget.TextView')
+        word = [k for k in item]
+
+        return word
 
     # 每小题回答完，下一步按钮后展示答案的页面
     @teststeps
@@ -80,12 +82,9 @@ class SentenceTrans(BasePage):
     def mine_result(self):
         """展示的答题结果"""
         ele = self.driver \
-            .find_elements_by_xpath('//android.support.v7.widget.RecyclerView[contains(@resource-id,"{}")]'
-                                    '/android.widget.LinearLayout/android.widget.TextView'
-                                    .format(gv.PACKAGE_ID + "rv_answer"))
-        word = []
-        for i in range(len(ele)):
-            word.append(ele[i].text)
+            .find_element_by_id(gv.PACKAGE_ID + "rv_answer")
+        item = ele.find_elements_by_xpath('.//android.widget.LinearLayout/android.widget.TextView')
+        word = [k.text for k in item]
         print('我的答题结果:', word)
         return word
 
@@ -190,6 +189,7 @@ class SentenceTrans(BasePage):
         """填入单词 具体过程"""
         if Homework().wait_check_play_page():
             for j in range(len(value)):
+                print(value[j])
                 words = self.word()  # 待还原的单词
                 for k in range(len(words)):
                     if words[k].text == value[j]:

@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
+from utils.assert_package import MyAssert
 from utils.get_attribute import GetAttribute
 from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
@@ -21,12 +22,15 @@ class TuserCenterPage(BasePage):
     def __init__(self):
         self.wait = WaitElement()
         self.get = GetAttribute()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_page(self, var=10):
         """以“nickname”为依据"""
         locator = (By.ID, self.collection_value)
-        return self.wait.wait_check_element(locator, var)
+        ele = self.wait.wait_check_element(locator, var)
+        self.my_assert.assertTrue(ele, self.user_center_tips)
+        return ele
 
     @teststep
     def click_avatar_profile(self):

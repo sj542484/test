@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
+import re
 import sys
 import unittest
 
@@ -8,7 +9,7 @@ from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.home.dynamic_info.object_page.paper_detail_page import PaperReportPage
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.home.vanclass.object_page.vanclass_paper_page import VanclassPaperPage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.teacher.home.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
 from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase, teststeps
@@ -29,7 +30,7 @@ class VanclassPaper(unittest.TestCase):
         cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
-        cls.van = VanclassPage()
+        cls.van_detail = VanclassDetailPage()
         cls.van_paper = VanclassPaperPage()
         cls.report = PaperReportPage()
         cls.get = GetAttribute()
@@ -55,10 +56,10 @@ class VanclassPaper(unittest.TestCase):
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
         self.home.into_vanclass_operation(gv.VANCLASS)  # 进入 班级详情页
 
-        self.assertTrue(self.van.wait_check_app_page(gv.VANCLASS), self.van.van_tips)  # 页面检查点
+        self.assertTrue(self.van_detail.wait_check_app_page(gv.VANCLASS), self.van_detail.van_tips)  # 页面检查点
         self.vue.switch_h5()  # 切到vue
-        self.assertTrue(self.van.wait_check_page(gv.VANCLASS), self.van.van_vue_tips)
-        self.van.vanclass_paper()  # 进入 本班卷子
+        self.assertTrue(self.van_detail.wait_check_page(gv.VANCLASS), self.van_detail.van_vue_tips)
+        self.van_detail.vanclass_paper()  # 进入 本班卷子
         self.vue.app_web_switch()  # 切到apk 再切回web
 
         title = gv.PAPER_TITLE.format(gv.VANCLASS)
@@ -68,41 +69,42 @@ class VanclassPaper(unittest.TestCase):
         else:
             self.assertTrue(self.van_paper.wait_check_list_page(), self.van_paper.paper_list_tips)
             print('本班试卷:')
-            count = 0
+            count = []
             name = self.van_paper.hw_name()  # 试卷name
             progress = self.van_paper.progress()  # 进度
             for i in range(len(name)):
-                pro = progress[i].text
+                create = progress[i].text
+                pro = int(re.sub("\D", "", create.split()[-1])[0])
                 var = name[i].text
-                if int(pro[3]) != 0 and self.home.brackets_text_in(var) == '试卷':
-                    count += 1
+
+                if pro != 0 and '试卷' in self.home.brackets_text_in(var):
+                    count.append(i)
                     name[i].click()  # 进入试卷
                     self.vue.app_web_switch()  # 切到apk 再切回web
 
                     print('###########################################################')
-                    print('试卷:', var, '\n', pro)
-                    if self.report.wait_check_page():  # 页面检查点
-                        self.finish_situation_operation()  # 完成情况 tab
-                        self.answer_analysis_operation()  # 答卷分析 tab
+                    print('试卷:', var, '\n', create)
+                    self.finish_situation_operation()  # 完成情况 tab
+                    self.answer_analysis_operation()  # 答卷分析 tab
 
-                        if self.report.wait_check_page():  # 页面检查点
-                            self.van.back_up_button()  # 返回 本班卷子
+                    if self.report.wait_check_page():  # 页面检查点
+                        self.van_detail.back_up_button()  # 返回 本班卷子
                     break
 
-            if count == 0:
-                print('暂无试卷或者暂无学生完成该试卷')
+            self.assertFalse(len(count)==0, '暂无试卷或者暂无学生完成该试卷')
 
         self.vue.app_web_switch()  # 切到apk 再切到vue
         self.assertTrue(self.van_paper.wait_check_page(title), self.van_paper.paper_tips)  # 页面检查点
         self.van_paper.back_up_button()  # 返回 班级详情页面
         self.vue.app_web_switch()  # 切到apk 再切到vue
 
-        self.assertTrue(self.van.wait_check_page(gv.VANCLASS), self.van.van_vue_tips)  # 班级详情 页面检查点
-        self.van.back_up_button()  # 返回主界面
+        self.assertTrue(self.van_detail.wait_check_page(gv.VANCLASS), self.van_detail.van_vue_tips)  # 班级详情 页面检查点
+        self.van_detail.back_up_button()  # 返回主界面
 
     @teststeps
     def finish_situation_operation(self):
         """完成情况tab 具体操作"""
+        self.assertTrue(self.report.wait_check_page(), self.report.paper_detail_tips)
         print('-------------------完成情况tab-------------------')
         if self.report.wait_check_empty_tips_page():
             self.assertTrue(self.report.wait_check_empty_tips_page(), '暂无数据')
@@ -114,19 +116,20 @@ class VanclassPaper(unittest.TestCase):
     @teststeps
     def answer_analysis_operation(self):
         """答卷分析tab 具体操作"""
-        if self.report.wait_check_page():  # 页面检查点
-            analysis = self.report.analysis_tab()  # 答卷分析 tab
-            analysis.click()  # 进入 答卷分析 tab页
-            print('-------------------答卷分析tab-------------------')
-            if self.report.wait_check_paper_list_page():
-                self.answer_analysis_detail()  # 答卷分析页 list
-            elif self.report.wait_check_empty_tips_page():
-                print('暂无数据')
+        self.assertTrue(self.report.wait_check_page(), self.report.paper_detail_tips)
+        self.report.analysis_tab()  # 进入 答卷分析 tab页
+        print('-------------------答卷分析tab-------------------')
+
+        if self.report.wait_check_empty_tips_page():
+            print('暂无数据')
+            self.assertTrue(self.report.wait_check_empty_tips_page(), '暂无数据')
+        else:
+            self.assertTrue(self.report.wait_check_paper_list_page(), self.report.hw_list_tips)
+            self.answer_analysis_detail()  # 答卷分析页 list
 
     @teststeps
     def answer_analysis_detail(self):
         """答卷分析 详情页"""
-
         mode = self.report.game_type()  # 游戏类型
         name = self.report.game_name()  # 游戏name
         average = self.report.van_average_achievement()  # 全班平均得分x分; 总分x分

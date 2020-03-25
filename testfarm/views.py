@@ -283,7 +283,7 @@ def get_show_phone():
 
 @login_required
 def showreport(request, file_name):
-    print(file_name, '=============\n\n')
+
     return render(request, file_name)
 
 

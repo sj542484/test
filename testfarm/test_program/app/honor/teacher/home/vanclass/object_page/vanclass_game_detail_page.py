@@ -14,8 +14,8 @@ from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
 
-class VanclassGameDetailPage(BasePage):
-    """ 作业详情 页面"""
+class PaperAnalysisGameDetailPage(BasePage):
+    """ 答题分析 游戏结果详情 页面"""
     game_title_value = gv.PACKAGE_ID + "title"  # 游戏名
     drop_down_menu_value = gv.PACKAGE_ID + "report_content"  # 下拉菜单 内容
     content_value = gv.PACKAGE_ID + "content"  # 阅读理解/完形填空 文章元素

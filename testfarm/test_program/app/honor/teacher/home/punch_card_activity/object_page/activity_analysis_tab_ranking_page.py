@@ -4,7 +4,7 @@
 from selenium.webdriver.common.by import By
 
 from conf.base_page import BasePage
-from conf.decorator import teststep, teststeps
+from conf.decorator_vue import teststep, teststeps
 from utils.wait_element_vue import WaitElement
 
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
-from app.honor.teacher.home.vanclass.object_page.vanclass_hw_spoken_page import VanclassHwPage
-from app.honor.teacher.home.vanclass.object_page.finish_tab_games_result_detail_page import *
+from app.honor.teacher.home.punch_card_activity.object_page.punch_card_page import PunchCardPage
+from app.honor.teacher.home.punch_card_activity.object_page.published_analysis_summary_finish_tab_games_result_detail_page import *
 from conf.base_page import BasePage
 from conf.decorator_vue import teststep, teststeps
 from utils.assert_package import MyAssert
@@ -20,7 +20,7 @@ class ResultDetailPage(BasePage):
 
     def __init__(self):
         self.wait = WaitElement()
-        self.v_hw = VanclassHwPage()
+        self.activity = PunchCardPage()
         self.listen_form = ListenFormSentenceResult()  # 听音连句
         self.trans = SentenceTransResult()  # 句型转换
         self.picture = PictureDictationResult()  # 听音选图
@@ -388,7 +388,7 @@ class ResultDetailPage(BasePage):
         """
         if self.complete.wait_check_list_page():
             self.complete.complete_article_content()  # 文章元素
-            self.v_hw.swipe_vertical_web(0.5, 0.95, 0.1)
+            self.activity.swipe_vertical_web(0.5, 0.95, 0.1)
 
             if self.complete.wait_check_list_page():
                 options = self.complete.option_char()  # 选项 A B C D

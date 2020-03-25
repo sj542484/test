@@ -12,7 +12,7 @@ from app.honor.student.vanclass.object_page.vanclass_page import VanclassPage
 from app.honor.student.word_book_rebuild.test_data.account import STU_ACCOUNT
 from conf.base_page import BasePage
 from conf.decorator import teststep
-from utils.reset_phone_find_toast import verify_find
+from utils.reset_phone_toast import get_verify
 
 
 class QuitAddClass(BasePage):
@@ -58,7 +58,7 @@ class QuitAddClass(BasePage):
             print('------------------------------')
             if self.van.wait_check_quit_page():
                 self.van.phone_name()  # 提示
-                value = verify_find(STU_ACCOUNT, 'quitClass')  # 获取验证码
+                value = get_verify(STU_ACCOUNT, 'quitClass')  # 获取验证码
                 self.van.code_input().send_keys(value)         # 输入验证码
                 print(STU_ACCOUNT)
                 print('验证码:', value)

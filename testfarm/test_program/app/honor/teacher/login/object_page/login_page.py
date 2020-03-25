@@ -8,30 +8,33 @@ from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
 from conf.base_page import BasePage
+from utils.assert_package import MyAssert
 from utils.screen_shot import ScreenShot
 from utils.wait_element import WaitElement
 
 
 class TloginPage(BasePage):
     """登录界面"""
+    login_locator = (By.ID, gv.PACKAGE_ID + "ed_user_nickname")
     login_tips = '★★★ Error- 未进入登录界面'
 
     def __init__(self):
         self.wait = WaitElement()
         self.home = ThomePage()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_page(self, var=10):
         """以 请输入手机号码 输入框的id为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "ed_user_nickname")
-        return self.wait.wait_check_element(locator, var)
+        ele = self.wait.wait_check_element(self.login_locator, var)
+        self.my_assert.assertTrue(ele, self.login_tips)
+        return ele
 
     @teststep
     def input_username(self):
         """以“请输入手机号码”的id为依据"""
-        locator = (By.ID, gv.PACKAGE_ID + "ed_user_nickname")
         return self.wait \
-            .wait_find_element(locator)
+            .wait_find_element(self.login_locator)
 
     @teststep
     def input_password(self):
@@ -76,9 +79,13 @@ class TloginPage(BasePage):
         return self.wait.wait_check_element(locator, var)
 
     @teststeps
-    def login_operation(self, user=gv.ACCOUNT, pwd=gv.PWD):
+    def login_operation(self):
         """登录 操作"""
         print('登录 操作')
+        user_info = self.get_user_info()
+        user = user_info['teacher']['teacher']
+        pwd = user_info['pwd']
+
         self.input_username().send_keys(user)  # 账号输入框
         self.input_password().send_keys(pwd)  # 密码输入框
         self.login_button()  # 登录按钮
@@ -86,35 +93,17 @@ class TloginPage(BasePage):
     @teststeps
     def app_status(self):
         """判断应用当前状态"""
-        if self.home.wait_check_page():  # 在主界面
+        if self.wait.wait_check_element(self.home.home_locator):  # 在主界面
             print('在主界面')
-        elif self.wait_check_page():  # 在登录界面
+        elif self.wait.wait_check_element(self.login_locator):  # 在登录界面
             self.login_operation()  # 登录 操作
         else:
             print('在其他页面,重启app')
             self.close_app()  # 关闭APP
             self.launch_app()  # 重启APP
-            if self.home.wait_check_page():  # 在主界面
+            if self.wait.wait_check_element(self.home.home_locator):  # 在主界面
                 print('在主界面')
-            elif self.wait_check_page():  # 在登录界面
-                self.login_operation()  # 登录 操作
-            else:
-                self.screen_shot()  # 截屏
-
-    @teststeps
-    def app_status_no_check(self):
-        """判断app状态, 不检查账号"""
-        if self.home.wait_check_page():  # 在主界面
-            print('在主界面')
-        elif self.wait_check_page():  # 在登录界面
-            self.login_operation()  # 登录 操作
-        else:
-            print('在其他页面,重启app')
-            self.close_app()  # 关闭APP
-            self.launch_app()  # 重启APP
-            if self.home.wait_check_page():  # 在主界面
-                print('在主界面')
-            elif self.wait_check_page():  # 在登录界面
+            elif self.wait.wait_check_element(self.login_locator):  # 在登录界面
                 self.login_operation()  # 登录 操作
             else:
                 self.screen_shot()  # 截屏
@@ -144,8 +133,8 @@ class TloginPage(BasePage):
     def get_code_button(self):
         """以“获取验证码 按钮”的ID为依据"""
         locator = (By.ID, gv.PACKAGE_ID + "count_time")
-        return self.wait \
-            .wait_find_element(locator)
+        self.wait \
+            .wait_find_element(locator).click()
 
     @teststep
     def next_button(self):
@@ -185,8 +174,8 @@ class TloginPage(BasePage):
     def reset_button(self):
         """以“重置 按钮”的ID为依据"""
         locator = (By.ID, gv.PACKAGE_ID + "reset")
-        return self.wait \
-            .wait_find_element(locator)
+        self.wait \
+            .wait_find_element(locator).click()
 
     # 注册
     @teststeps
@@ -224,7 +213,7 @@ class TloginPage(BasePage):
     def reset_app(self):
         """Reset on the device the application specified in the desired capabilities.
         """
-        self.driver.resetApp()
+        self.driver.reset()
 
     @teststeps
     def screen_shot(self, name='重启app'):
@@ -243,18 +232,3 @@ class TloginPage(BasePage):
         image.save(TEMP_FILE)
         ScreenShot().write_to_file(gv.SCREENSHOT_ROOT, img_name)
         os.path.isfile(gv.SCREENSHOT_ROOT + img_name)
-    #
-    # @teststeps
-    # def recovery_data(self, name):
-    #     """ 恢复测试数据
-    #     :param name:  删除注册账号
-    #     """
-    #     if GetVariable().ENV == 'dev':
-    #         import pymysql
-    #         from utils.connect_db import ConnectDB
-    #
-    #         print('------恢复测试数据-----')
-    #         name = pymysql.escape_string(name)
-    #         sql = """DELETE * FROM `user_account` WHERE `nickname` = '{}' LIMIT 0, 1000""".format(name)
-    #         print(sql)
-    #         ConnectDB().execute_sql(sql)

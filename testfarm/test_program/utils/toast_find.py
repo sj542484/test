@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# code:UTF-8  
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -17,7 +17,7 @@ class Toast(BasePage):
         """is toast exist, return True or False"""
         # noinspection PyBroadException
         try:
-            toast = ("xpath", "//*[contains(@text,'%s')]" % text)
+            toast = ("xpath", "//android.widget.Toast[contains(@text,'%s')]" % text)
             WebDriverWait(self.driver, timeout, poll_frequency).until(EC.presence_of_element_located(toast), text)
             return True
         except Exception:
@@ -29,15 +29,32 @@ class Toast(BasePage):
         # noinspection PyBroadException
         try:
             toast = (By.CLASS_NAME, "android.widget.Toast")
-            WebDriverWait(self.driver, var, 0.5).until(EC.presence_of_element_located(toast))
+            ele = WebDriverWait(self.driver, var, 0.5).until(EC.presence_of_element_located(toast))
+            print(ele.text)
             return True
         except Exception:
             return False
 
     @teststeps
-    def toast_text(self):
-        """ toast弹框 信息"""
-        item = self.driver \
-            .find_element_by_class_name("android.widget.Toast").text
-        print(item)
+    def toast_operation(self, text, timeout=5, poll_frequency=0.5):
+        """is toast exist, return True or False """
+        try:
+            toast = ("xpath", "//android.widget.Toast[contains(@text,'%s')]" % text)
+            WebDriverWait(self.driver, timeout, poll_frequency).until(EC.presence_of_element_located(toast), text)
+            print(text)
+            return True
+        except Exception:
+            print('★★★ Error- 未弹toast:', text)
+            return False
 
+    @teststeps
+    def toast_vue_operation(self, text, timeout=5, poll_frequency=0.5):
+        """is toast exist, return True or False """
+        try:
+            toast = ("xpath", '//div[@class="van-toast__text" and text()="%s"]' % text)
+            WebDriverWait(self.driver, timeout, poll_frequency).until(EC.presence_of_element_located(toast), text)
+            print(text)
+            return True
+        except Exception:
+            print('★★★ Error- 未弹toast:', text)
+            return False

@@ -1,11 +1,8 @@
-#!/usr/bin/env python
-# code:UTF-8  
-# @Author  : SUN FEIFEI
 from conf.base_page import BasePage
 from conf.decorator import teststeps
 
 
-class Element(BasePage):
+class ElementBounds(BasePage):
     """获取 元素 大小及坐标"""
 
     @teststeps
@@ -30,8 +27,8 @@ class Element(BasePage):
 
         x_left = loc[0]
         y_up = loc[1]
-        x_center = loc[0] + size[0] / 2
-        y_center = loc[1] + size[1] / 2
+        x_center = loc[0] + size[0] // 2
+        y_center = loc[1] + size[1] // 2
         x_right = loc[0] + size[0]
         y_down = loc[1] + size[1]
 

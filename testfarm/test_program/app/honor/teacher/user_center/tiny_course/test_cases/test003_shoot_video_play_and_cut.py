@@ -122,9 +122,10 @@ class Shoot(unittest.TestCase):
         if self.video.wait_check_cut_page():
             length = self.video.video_cut_operation(duration)  # 裁剪具体操作
 
-            item = self.video.video_time()  # 视频时长
-            length1 = self.video.video_duration_deal(item)  # 视频时长
-            if length1 >= length:
-                print('★★★ Error - 视频裁剪有误', length, length1)
+            if self.video.wait_check_cut_page():
+                item = self.video.video_time()  # 视频时长
+                length1 = self.video.video_duration_deal(item)  # 视频时长
+                if length1 >= length:
+                    print('★★★ Error - 视频裁剪有误', length, length1)
 
-            self.video.finish_button()
+                self.video.finish_button()

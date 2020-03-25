@@ -5,7 +5,7 @@ import sys
 import unittest
 
 from app.honor.teacher.login.object_page.login_page import TloginPage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.teacher.home.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.home.vanclass.object_page.vanclass_score_page import VanclassScorePage
 from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
@@ -29,7 +29,7 @@ class ScoreRanking(unittest.TestCase):
         cls.login = TloginPage()
         cls.home = ThomePage()
         cls.detail = VanclassScorePage()
-        cls.van = VanclassPage()
+        cls.van_detail = VanclassDetailPage()
         cls.get = GetAttribute()
         cls.vue = VueContext()
         cls.my_toast = MyToast()
@@ -52,11 +52,11 @@ class ScoreRanking(unittest.TestCase):
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
         self.home.into_vanclass_operation(gv.VANCLASS)  # 进入 班级详情页
 
-        self.assertTrue(self.van.wait_check_app_page(gv.VANCLASS), self.van.van_tips)  # 页面检查点
+        self.assertTrue(self.van_detail.wait_check_app_page(gv.VANCLASS), self.van_detail.van_tips)  # 页面检查点
         self.vue.switch_h5()  # 切到vue
-        self.assertTrue(self.van.wait_check_page(gv.VANCLASS), self.van.van_vue_tips)
+        self.assertTrue(self.van_detail.wait_check_page(gv.VANCLASS), self.van_detail.van_vue_tips)
 
-        self.van.score_ranking()  # 进入 积分排行榜
+        self.van_detail.score_ranking()  # 进入 积分排行榜
         self.vue.app_web_switch()  # 切到apk 再切到vue
         if self.detail.wait_check_score_page():  # 页面检查点
             print('积分排行榜:')
@@ -65,13 +65,13 @@ class ScoreRanking(unittest.TestCase):
             self.this_month_operation()  # 本月
             self.all_score_operation()  # 全部
 
-            self.van.back_up_button()
+            self.van_detail.back_up_button()
             self.vue.app_web_switch()  # 切到apk 再切到vue
-            if self.van.wait_check_page(gv.VANCLASS):  # 班级详情 页面检查点
-                self.van.back_up_button()
+            if self.van_detail.wait_check_page(gv.VANCLASS):  # 班级详情 页面检查点
+                self.van_detail.back_up_button()
         else:
             print('★★★ Error- 未进入 积分排行榜页面')
-            self.van.back_up_button()
+            self.van_detail.back_up_button()
 
     @teststeps
     def this_week_operation(self):

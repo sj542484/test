@@ -3,7 +3,7 @@
 # @Author  : SUN FEIFEI
 from selenium.webdriver.common.by import By
 
-from app.honor.teacher.home.dynamic_info.test_data.draft_data import GetVariable as gv
+
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.test_bank.object_page.filter_page import FilterPage
 from app.honor.teacher.user_center.mine_recommend.object_page.mine_recommend_page import RecommendPage
@@ -11,13 +11,15 @@ from app.honor.teacher.user_center.mine_test_bank.object_page.mine_test_bank_pag
 from app.honor.teacher.user_center.user_information.object_page.user_center_page import TuserCenterPage
 from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
-from utils.get_attribute import GetAttribute
+from utils.assert_package import MyAssert
 from utils.wait_element import WaitElement
 
 
 class RecommendSchoolPage(BasePage):
     """ 推荐到学校 页面"""
     question_title_value = '//div[text()="题单名称"]'
+    recomm_tips = '★★★ Error- 未进入 推荐到学校页面'
+    recomm_list_tips = '★★★ Error- 推荐到学校页面未加载成功'
 
     def __init__(self):
         self.wait = WaitElement()
@@ -26,12 +28,15 @@ class RecommendSchoolPage(BasePage):
         self.user = TuserCenterPage()
         self.mine_bank = MineTestBankPage()
         self.home = ThomePage()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_page(self):
         """以“title: 推荐到学校”为依据"""
         locator = (By.XPATH, '//div[text()="推荐到学校"]')
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.recomm_tips)
+        return ele
 
     @teststeps
     def wait_check_list_page(self):
@@ -99,34 +104,29 @@ class RecommendSchoolPage(BasePage):
         self.wait.wait_find_element(locator).click()
 
     @teststeps
-    def choose_school_label_operation(self):
+    def choose_school_label_operation(self, var):
         """选择本校标签"""
         if self.wait_check_page():
+            self.my_assert.assertTrue(self.wait_check_list_page(), self.recomm_list_tips)
             name = self.question_name()
             name.clear()
-            name.send_keys(gv.RECOMMEND)
+            name.send_keys(var)
 
-            cancel = []
             choose = []
             if self.wait_check_label_list_page():
                 button = self.check_button()  # 单选框
                 label = self.school_label_name()  # 本校标签名
 
                 for i in range(len(button)):
-                    if GetAttribute().checked(button[i]) == 'true':
-                        cancel = label[i].text
-                        print('取消选择标签:', cancel)
-                        button[i].click()  # 取消选择 一个标签
-                    else:
-                        print('所选择的标签:', label[i].text)
-                        choose = label[i].text
-                        button[i].click()  # 选择 一个标签
-                        break
+                    print('所选择的标签:', label[i].text)
+                    choose = label[i].text
+                    button[i].click()  # 选择 一个标签
+                    break
             elif self.wait_check_empty_tips_page():
                 print('本校暂无标签')
 
             self.confirm_button()  # 确定按钮
-            return gv.RECOMMEND, choose, cancel
+            return choose
 
     @teststeps
     def verify_recommend_result(self, menu, games):
@@ -231,6 +231,9 @@ class RecommendSchoolPage(BasePage):
                                 item = self.mine_bank.question_name()  # 获取
                                 count = []
                                 for k in games:
+                                    if '（引用' in k:
+                                        k = k[:-6]
+
                                     for i in range(len(item[1])):
                                         if k in item[1][i]:
                                             count.append(i)

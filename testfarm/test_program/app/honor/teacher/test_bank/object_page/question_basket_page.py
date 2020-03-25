@@ -12,7 +12,9 @@ from app.honor.teacher.test_bank.object_page.test_bank_page import TestBankPage
 from conf.base_page import BasePage
 from conf.base_config import GetVariable as gv
 from conf.decorator import teststep, teststeps
+from utils.assert_package import MyAssert
 from utils.get_attribute import GetAttribute
+from utils.swipe_screen import SwipeFun
 from utils.wait_element import WaitElement
 
 
@@ -28,12 +30,15 @@ class TestBasketPage(BasePage):
         self.filter = FilterPage()
         self.home = ThomePage()
         self.detail = QuestionDetailPage()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_page(self):
         """以“title:题筐”的text为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'题筐')]")
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.basket_tips)
+        return ele
 
     @teststeps
     def wait_check_list_page(self, var=20):
@@ -117,66 +122,41 @@ class TestBasketPage(BasePage):
             return False
 
     @teststeps
-    def all_question(self):
-        """页面内所有 题目条目"""
-        name = self.question_name()[1]  # 题目名称
-        mode = self.question_type()  # 题目类型
-        nums = self.question_num()  # 题目 小题数
-        author = self.question_author()  # 题目作者
-
-        for i in range(len(author)):
-            print(name[i], '\n',
-                  mode[i].text, '\n',
-                  nums[i].text, '\n',
-                  author[i].text)
-            print('---------------')
-        return len(name)
-
-    @teststeps
-    def add_to_basket(self, func, ques_index=2):
+    def add_to_basket(self, ques_index=2):
         """加题单 进 题筐"""
-        if self.question.wait_check_game_type_page():  # 页面检查点
+        if self.question.wait_check_page():  # 页面检查点
             self.question_name()[0][ques_index].click()  # 点击第ques_index道题
 
             if self.detail.wait_check_page():  # 页面检查点
-                if func():
-                    print('加题进题筐')
+                if self.detail.wait_check_list_page():  # 页面检查点
+                    print('加题单进题筐')
                     self.detail.all_check_button()  # 全选按钮
-                    if self.wait_check_list_page():
+                    if self.detail.wait_check_list_page():  # 页面检查点
                         self.detail.put_to_basket_button()  # 点击加入题筐按钮
 
-                        if self.detail.wait_check_page():  # 页面检查点
+                        if self.detail.wait_check_list_page():  # 页面检查点
                             self.home.back_up_button()  # 返回按钮
 
-                            if self.question.wait_check_page('搜索'):  # 页面检查点
-                                self.question.question_basket()  # 题筐按钮
+                            if self.detail.wait_check_list_page():  # 页面检查点
+                                self.question.question_basket_button()  # 题筐按钮
 
                                 if self.wait_check_page():  # 页面检查点
                                     if self.home.wait_check_empty_tips_page():  # 如果存在空白页元素
                                         print('★★★ Error- 加入题筐失败')
 
                                         self.home.back_up_button()
-                                        if self.question.wait_check_page('搜索'):  # 页面检查点
+                                        if self.question.wait_check_page():  # 页面检查点
                                             self.home.click_tab_hw()  # 返回 主界面
+                                        return False
                                     elif self.wait_check_list_page():
                                         return True
-                                else:
-                                    print('未进入 题筐页面')
-                            else:
-                                print('未返回 题库页面')
-            else:
-                print('未进入 题单详情页')
-        else:
-            print('未进入 题库页')
-            return False
 
     @teststeps
     def basket_ready_operation(self):
-        """ 查看目前题筐有多少题"""
+        """ 查看目前题筐还差多少题"""
         num = 0
         if self.question.wait_check_page('搜索'):  # 页面检查点
-            self.question.question_basket()  # 题筐 按钮
-
+            self.question.question_basket_button()  # 题筐 按钮
             if self.wait_check_page():  # 页面检查点
                 if self.wait_check_list_page():  # 题筐有题
                     self.all_check_button()  # 全选按钮
@@ -187,4 +167,58 @@ class TestBasketPage(BasePage):
                     num = 50
                     print('-------------------------------------------')
 
-                return num
+            return num
+
+    @teststeps
+    def back_basket_operation(self):
+        """ 返回题筐底部"""
+        if self.wait_check_page():  # 页面检查点
+            if self.wait_check_list_page():  # 页面检查点
+                self.all_check_button()  # 全选按钮
+                ele = self.assign_button()  # 布置作业 按钮
+                num = 50 - int(re.sub("\D", "", ele.text))  # 提取 题数
+
+                if self.wait_check_list_page():  # 页面检查点
+                    self.all_check_button()  # 全选按钮
+                    if num > 6:
+                        var = num // 6 + 1
+                        while var > 0:
+                            SwipeFun().swipe_vertical(0.5, 0.8, 0.2)
+                            var -= 1
+
+    @teststeps
+    def judge_add_basket_operation(self, names):
+        """滑屏到题筐底部 进行加入题筐验证"""
+        if self.wait_check_page():  # 页面检查点
+            if self.wait_check_list_page():  # 页面检查点
+                self.all_check_button()  # 全选按钮
+                ele = self.assign_button()  # 布置作业 按钮
+                num = 50 - int(re.sub("\D", "", ele.text))  # 提取 题数
+
+                count = []
+                var = num // 6 + 1
+                while var > 0:
+                    self.my_assert.assertTrue(self.wait_check_list_page(), self.basket_list_tips)  # 页面检查点
+                    item = self.question_name()[1]  # 获取题目
+
+                    index = -1
+                    length = len(item)-1
+                    if len(item) > 5:
+                        length = len(item) - 2
+                        index = 0
+                    for i in range(length, index, -1):
+                        for j in range(len(names)):
+                            if item[i] == names[j]:
+                                print(item[i])
+                                count.append(i)
+                                break
+
+                    if not count:
+                        SwipeFun().swipe_vertical(0.5, 0.8, 0.2)
+                    var -= 1
+
+                print('----------------------------')
+                if self.wait_check_page():
+                    self.home.back_up_button()  # 返回 题库页面
+                    self.my_assert.assertFalse(len(count) == 0, '★★★ Error -加入题筐失败, {}'.format(names))
+                    print('加入题筐成功')

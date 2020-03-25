@@ -34,18 +34,23 @@ class ReleasePage(BasePage):
         self.home = ThomePage()
         self.get = GetAttribute()
         self.wait = WaitElement()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_release_page(self):
         """以“title:发布作业”为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'发布作业')]")
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.release_list_tips)
+        return ele
 
     @teststeps
     def wait_check_release_list_page(self, var=15):
         """以“”为依据"""
         locator = (By.ID, gv.PACKAGE_ID + "class_name")
-        return self.wait.wait_check_list_element(locator, var)
+        ele = self.wait.wait_check_element(locator, var)
+        self.my_assert.assertTrue(ele, self.release_list_tips)
+        return ele
 
     @teststep
     def hw_title(self):
@@ -272,10 +277,10 @@ class ReleasePage(BasePage):
             self.home.never_notify()  # 不再提醒
             self.cancel_button()  # 取消按钮
 
-            MyAssert().assertTrue_new(self.wait_check_release_list_page(), '★★★ Error- 编辑/发布页未加载成功')
-            self.assign_button()  # 发布作业 按钮
-            if self.home.wait_check_tips_page():
-                self.home.commit_button().click()  # 确定按钮
+            if self.wait_check_release_list_page():
+                self.assign_button()  # 发布作业 按钮
+                if self.home.wait_check_tips_page():
+                    self.home.commit_button().click()  # 确定按钮
 
     @teststeps
     def hw_mode_operation(self, var='reach'):
@@ -306,8 +311,9 @@ class ReleasePage(BasePage):
         return free, reach
 
     @teststeps
-    def hw_vanclass_list(self):
+    def hw_vanclass_list(self, vans=None):
         """发布作业 - 班级列表"""
+        print('-----------------')
         self.publish_hw()  # 打印元素 发布作业到
 
         button = self.choose_button()  # 班级单选框
@@ -318,78 +324,85 @@ class ReleasePage(BasePage):
         button = self.choose_button()  # 单选 按钮
         count = self.choose_count()  # 班级描述
 
-        vanclass = []  # 班级名
+        content = {}  # 班级名:学生数
         if len(button) != len(van):
             print('★★★ Error- 单选框的个数与班级个数不同', len(button), len(van))
         else:
             print('班级列表')
-            vanclass.append(van[i].text for i in range(len(count)))
+            for i in range(len(count)):
+                name = van[i].text
+                num = count[i].text
+                print(name, num)
+                content[name] = int(re.sub('\D', '', num.split('/')[1]))
 
-        return van, vanclass
+            if vans is not None:
+                self.my_assert.assertEqual(vans, content, '★★★ Error- 班级不对,{}'.format(len(vans), len(count)))
+
+        return van, content
 
     @teststeps
     def choose_class_operation(self):
         """选择班级 学生"""
-        MyAssert().assertTrue_new(self.wait_check_release_list_page(), '★★★ Error- 编辑/发布页未加载成功')
-        print('----------------------------')
-        button = self.choose_button()  # 单选框
-        van = self.van_name()  # 班级 元素
-
-        cancel = 0
-        index = 0
-        for i in range(len(button)):
-            if GetAttribute().selected(button[i]) == 'true':
-                cancel = van[i].text
-                index = i
-                print('取消选择班级:', cancel)
-                button[i].click()  # 取消选择 一个班
-                print('-----------')
-                break
-
-        choose = 0
-        count = 0
-        for k in range(len(button)):
-            if all([GetAttribute().selected(button[k]) == 'false',
-                    k != index, van[k].text != GetVariable().VANCLASS]):
-                count += 1
-                print('所选择的班级:', van[k].text)
-                choose = van[k].text
-                button[k].click()  # 选择 一个班
-                van[k].click()  # 进入该班级
-
-                if self.home.wait_check_empty_tips_page():
-                    print('  本班级 暂无学生')
-                    self.home.back_up_button()  # 返回 编辑 页面
-                elif self.wait_check_vanclass_page(choose):
-                    if self.wait_check_st_list_page():
-                        st = self.st_title()  # 学生
-                        phone = self.st_phone()  # 手机号
-                        for i in range(len(phone)):
-                            print('  ', st[i].text, phone[i].text)
-                        print('------------------')
-
-                        print('  取消选择学生:', phone[0].text)
-                        self.choose_button()[0].click()  # 取消选择一个学生
-
-                        if self.wait_check_st_list_page():
-                            if len(phone) == 1:
-                                self.confirm_button()  # 确定按钮
-                                Toast().toast_operation('还未选择学生!')
-                                self.choose_button()[0].click()  # 选择一个学生
-
-                        if self.wait_check_st_list_page():
-                            self.confirm_button()  # 确定按钮
-
-                print('-----------------------------')
-                break
-
-        if count == 0:
-            print('暂无可选择班级')
-
         if self.wait_check_release_list_page():
-            SwipeFun().swipe_vertical(0.5, 0.2, 0.9)
+            print('----------------------------')
+            button = self.choose_button()  # 单选框
+            van = self.van_name()  # 班级 元素
 
-        return choose, cancel
+            cancel = 0
+            index = 0
+            for i in range(len(button)):
+                if GetAttribute().selected(button[i]) == 'true':
+                    cancel = van[i].text
+                    index = i
+                    print('取消选择班级:', cancel)
+                    button[i].click()  # 取消选择 一个班
+                    print('-----------')
+                    break
+
+            choose = 0
+            count = 0
+            for k in range(len(button)):
+                if all([GetAttribute().selected(button[k]) == 'false',
+                        k != index, van[k].text != GetVariable().VANCLASS]):
+                    count += 1
+                    print('所选择的班级:', van[k].text)
+                    choose = van[k].text
+                    button[k].click()  # 选择 一个班
+                    van[k].click()  # 进入该班级
+
+                    if self.home.wait_check_empty_tips_page():
+                        print('  本班级 暂无学生')
+                        self.home.back_up_button()  # 返回 编辑 页面
+                    elif self.wait_check_vanclass_page(choose):
+                        if self.wait_check_st_list_page():
+                            st = self.st_title()  # 学生
+                            phone = self.st_phone()  # 手机号
+                            for i in range(len(phone)):
+                                print('  ', st[i].text, phone[i].text)
+                            print('------------------')
+
+                            print('  取消选择学生:', phone[0].text)
+                            self.choose_button()[0].click()  # 取消选择一个学生
+
+                            if self.wait_check_st_list_page():
+                                if len(phone) == 1:
+                                    self.confirm_button()  # 确定按钮
+                                    Toast().toast_operation('还未选择学生!')
+                                    self.choose_button()[0].click()  # 选择一个学生
+
+                            if self.wait_check_st_list_page():
+                                self.confirm_button()  # 确定按钮
+
+                    print('-----------------------------')
+                    break
+
+            if count == 0:
+                print('暂无可选择班级')
+
+            if self.wait_check_release_list_page():
+                SwipeFun().swipe_vertical(0.5, 0.2, 0.9)
+
+            return choose, cancel
 
     @teststeps
     def hw_adjust_order(self):
@@ -398,7 +411,7 @@ class ReleasePage(BasePage):
         self.adjust_order_button()  # 调整题目顺序 按钮
         self.home.tips_content_commit()  # 提示框
 
-        MyAssert().assertTrue_new(self.wait_check_adjust_page(), '★★★ Error- 未进入 调整题目顺序界面')
+        self.my_assert.assertTrue(self.wait_check_adjust_page(), '★★★ Error- 未进入 调整题目顺序界面')
         mode = self.game_type()  # 游戏类型
         name = self.game_name()  # 游戏name
 
@@ -426,7 +439,7 @@ class ReleasePage(BasePage):
             content.append(name[i].text)
 
         self.drag_ele_operation(icon[0], icon[-2])  # 向下拖拽
-        MyAssert().assertTrue_new(self.wait_check_adjust_page(), '★★★ Error- 未进入 调整题目顺序界面')
+        self.my_assert.assertTrue_new(self.wait_check_adjust_page(), '★★★ Error- 未进入 调整题目顺序界面')
         icon = self.drag_icon()  # 拖拽 icon
         self.drag_ele_operation(icon[-1], icon[1], 'up')  # 向上拖拽
 
@@ -478,7 +491,7 @@ class ReleasePage(BasePage):
             else:
                 index -= 1
 
-        MyAssert().assertTrue_new(self.wait_check_time_list_page(), self.choose_time_tips)
+        self.my_assert.assertTrue_new(self.wait_check_time_list_page(), self.choose_time_tips)
         item = self.number_input()  # 获取当前展示的时间
         date = []  # 时间列表 length=3
         for i in range(len(item)):
@@ -499,11 +512,10 @@ class ReleasePage(BasePage):
         """与当天布置的作业有重名"""
         self.name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
         SwipeFun().swipe_vertical(0.5, 0.2, 0.9)
-        MyAssert().assertTrue_new(self.wait_check_release_list_page(), '★★★ Error- 编辑作业 详情页未加载成功')
+        if self.wait_check_release_list_page():
+            title = '定时作业发布' + str(random.randint(1000, 9999))
+            self.hw_name_edit().send_keys(title)  # name
+            self.assign_button()  # 点击 发布作业 按钮
+            MyToast().toast_assert(self.name, Toast().toast_operation(TipsData().hw_success))
 
-        title = '定时作业发布' + str(random.randint(1000, 9999))
-        self.hw_name_edit().send_keys(title)  # name
-        self.assign_button()  # 点击 发布作业 按钮
-        MyToast().toast_assert(self.name, Toast().toast_operation(TipsData().hw_success))
-
-        return title
+            return title

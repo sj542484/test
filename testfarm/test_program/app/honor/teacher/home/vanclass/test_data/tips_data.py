@@ -17,7 +17,7 @@ class TipsData(object):
     # can_not_spoken = '达标模式不能包含口语题'  # 达标模式不能包含口语题
 
     # 完成情况及答题分析
-    no_report = '无需答题报告'
+    no_report = '无需答题报告，答对即可'
 
     # 删除习题/口语
     delete_success = '操作成功'

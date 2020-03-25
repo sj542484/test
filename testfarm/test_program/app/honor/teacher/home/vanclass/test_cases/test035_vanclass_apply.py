@@ -11,7 +11,7 @@ from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.home.vanclass.object_page.vanclass_apply_page import VanclassApplyPage
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.home.vanclass.object_page.vanclass_member_page import VanMemberPage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.teacher.home.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.vanclass.object_page.vanclass_student_info_page import StDetailPage
 from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
 from conf.base_page import BasePage
@@ -34,7 +34,7 @@ class VanclassApply(unittest.TestCase):
         cls.login = TloginPage()
         cls.home = ThomePage()
         cls.apply = VanclassApplyPage()
-        cls.van = VanclassPage()
+        cls.van_detail = VanclassDetailPage()
         cls.st = StDetailPage()
         cls.member = VanMemberPage()
         cls.vue = VueContext()
@@ -59,15 +59,21 @@ class VanclassApply(unittest.TestCase):
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
         van_id = self.into_vanclass_operation(gv.APPLY)  # 进入 班级  返回班号
 
-        self.assertTrue(self.van.wait_check_app_page(gv.APPLY), self.van.van_tips)  # 页面检查点
+        self.assertTrue(self.van_detail.wait_check_app_page(gv.APPLY), self.van_detail.van_tips)  # 页面检查点
         self.vue.switch_h5()  # 切到vue
-        self.assertTrue(self.van.wait_check_page(gv.APPLY), self.van.van_vue_tips)
-        self.assertTrue(self.van.wait_check_list_page(), self.van.van_list_tips)
+        self.assertTrue(self.van_detail.wait_check_page(gv.APPLY), self.van_detail.van_vue_tips)
+        self.assertTrue(self.van_detail.wait_check_list_page(), self.van_detail.van_list_tips)
 
-        self.van.vanclass_application()  # 进入 入班申请
+        self.van_detail.vanclass_application()  # 进入 入班申请
         self.vue.app_web_switch()  # 切到apk 再切到vue
         self.assertTrue(self.apply.wait_check_page(), self.apply.apply_vue_tips)
         if self.apply.wait_check_empty_tips_page():
+            length = 0
+        else:
+            self.assertTrue(self.apply.wait_check_st_list_page(), self.apply.apply_list_tips)  # 页面检查点
+            length = len(self.apply.icon())
+
+        if length < 2:
             LoginPage().launch_app()
             Vanclass().apply_for_vanclass_operation(van_id)
             LoginPage().close_app()
@@ -83,12 +89,11 @@ class VanclassApply(unittest.TestCase):
 
         if result[0]:
             self.verification_result(result[0][0], result[1])  # 验证 入班申请 结果
+            self.verification_result_member(result[1])  # 验证 入班申请 结果
 
-        self.assertTrue(self.apply.wait_check_page(), self.apply.apply_vue_tips)  # 页面检查点
-        self.van.back_up_button()
-        self.vue.app_web_switch()  # 切到apk 再切到vue
-        if self.van.wait_check_page(gv.APPLY):  # 班级详情 页面检查点
-            self.van.back_up_button()  # 返回主界面
+
+        self.assertTrue(self.van_detail.wait_check_page(gv.APPLY), self.van_detail.van_vue_tips)
+        self.van_detail.back_up_button()
 
     @teststeps
     def apply_operation(self):
@@ -125,7 +130,10 @@ class VanclassApply(unittest.TestCase):
     @teststeps
     def refuse_apply_operation(self):
         """拒绝入班申请 页面具体操作"""
+        self.assertTrue(self.apply.wait_check_page(), self.apply.apply_vue_tips)  # 页面检查点
+
         if self.apply.wait_check_empty_tips_page():
+            print('暂无其他入班申请学生')
             self.assertFalse(self.apply.wait_check_empty_tips_page(), self.apply.empty_tips)
         else:
             self.assertTrue(self.apply.wait_check_st_list_page(), self.apply.apply_list_tips)  # 页面检查点
@@ -134,16 +142,25 @@ class VanclassApply(unittest.TestCase):
             print('拒绝学生 %s 的入班申请' % remark[0].text)
             print('-----------------------')
 
-            self.apply.more_button[0].click()  # 更多按钮
+            self.apply.more_button()[0].click()  # 更多按钮
             self.assertTrue(self.apply.wait_check_more_page(), self.apply.more_tips)
             self.apply.more_reject_button()  # 拒绝按钮
             self.vue.app_web_switch()  # 切到apk 再切到vue
+            self.assertTrue(self.apply.wait_check_page(), self.apply.apply_vue_tips)  # 页面检查点
+            self.van_detail.back_up_button()
+            self.vue.app_web_switch()  # 切到apk 再切到vue
+
 
     @teststeps
     def verification_result(self, var, item):
         """验证 入班申请 结果"""
+        self.assertTrue(self.van_detail.wait_check_page(gv.APPLY), self.van_detail.van_vue_tips)
+        self.assertTrue(self.van_detail.wait_check_list_page(), self.van_detail.van_list_tips)
+
+        self.van_detail.vanclass_application()  # 进入 入班申请
+        self.vue.app_web_switch()  # 切到apk 再切到vue
+        self.assertTrue(self.apply.wait_check_page(), self.apply.apply_vue_tips)
         print('---------------验证 入班申请 结果-------------')
-        self.apply.swipe_vertical_web(0.5, 0.1, 0.8)
         if self.apply.wait_check_st_list_page():
             title = self.apply.st_remark()  # 备注名
             if len(title) < 6:
@@ -155,15 +172,20 @@ class VanclassApply(unittest.TestCase):
                         self.assertEqual(nick[k].text, item[1], '★★★ Error- 申请列表还存在该申请信息{}'.format(var))
                         break
         elif self.apply.wait_check_empty_tips_page():
-            self.assertTrue(var-2, '★★★ Error- 原申请数为{}'.format(var))
+            self.assertTrue(var-2==0, '★★★ Error- 原申请数为{}'.format(var))
 
-        self.van.back_up_button()  # 返回
+        self.van_detail.back_up_button()  # 返回
         self.vue.app_web_switch()  # 切到apk 再切到vue
-        self.assertTrue(self.van.wait_check_page(gv.APPLY), self.van.van_vue_tips)
-        self.assertTrue(self.van.wait_check_list_page(), self.van.van_list_tips)
 
-        self.van.vanclass_member()  # 班级成员
+    @teststeps
+    def verification_result_member(self, item):
+        """验证 入班申请 结果"""
+        self.assertTrue(self.van_detail.wait_check_page(gv.APPLY), self.van_detail.van_vue_tips)
+        self.assertTrue(self.van_detail.wait_check_list_page(), self.van_detail.van_list_tips)
+
+        self.van_detail.vanclass_member()  # 班级成员
         self.vue.switch_app()
+
         self.assertTrue(self.member.wait_check_page(gv.APPLY), self.member.member_tips)
         print('-------------班级成员页面------------')
         if self.home.wait_check_empty_tips_page():
@@ -183,9 +205,11 @@ class VanclassApply(unittest.TestCase):
                             print('★★★ Error- 同意入班失败，班级成员页面无该学生', item)
                         else:
                             print('同意入班成功')
-
-                        self.home.back_up_button()
                         break
+
+        self.assertTrue(self.member.wait_check_page(gv.APPLY), self.member.member_tips)
+        self.home.back_up_button()
+        self.vue.switch_h5()
 
     @teststeps
     def into_vanclass_operation(self, var):

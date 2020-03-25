@@ -110,7 +110,7 @@ class QuestionBasket(unittest.TestCase):
     def clear_basket_questions(self):
         """清空题筐"""
         if self.question.wait_check_page('搜索'):  # 页面检查点
-            self.question.question_basket()  # 题筐 按钮
+            self.question.question_basket_button()  # 题筐 按钮
             if self.basket.wait_check_page():  # 页面检查点
                 if self.basket.wait_check_list_page():  # 题筐有题
                     self.basket.all_check_button()  # 全选按钮
@@ -124,7 +124,7 @@ class QuestionBasket(unittest.TestCase):
         """题筐 验证已满 具体操作"""
         if self.question.wait_check_page('搜索'):  # 页面检查点
             print('------------验证 题筐已满-------------')
-            self.question.question_basket()  # 题筐按钮
+            self.question.question_basket_button()  # 题筐按钮
 
             if self.basket.wait_check_page():  # 页面检查点
                 if self.basket.wait_check_list_page():  # 题筐不为空

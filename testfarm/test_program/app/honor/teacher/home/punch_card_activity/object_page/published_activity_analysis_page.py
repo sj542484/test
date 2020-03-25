@@ -5,21 +5,25 @@ from selenium.webdriver.common.by import By
 
 from conf.base_page import BasePage
 from conf.decorator_vue import teststep, teststeps
+from utils.assert_package import MyAssert
 from utils.wait_element_vue import WaitElement
 
 
-class PublishedActivityAnalysisPage(BasePage):
+class PublishedActivityAnalysisSummaryPage(BasePage):
     """ 已发布活动 分析汇总页面"""
     analysis_tips = '★★★ Error- 分析汇总 详情页面 未加载成功'
 
     def __init__(self):
         self.wait = WaitElement()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_page(self, var=15):
         """以“Day 1”为依据"""
         locator = (By.XPATH, '//span[@class="activity-day-cell-title"]/b[text()="Day 1"]')
-        return self.wait.wait_check_element(locator, var)
+        ele = self.wait.wait_check_element(locator, var)
+        self.my_assert.assertTrue(ele, self.analysis_tips)
+        return ele
 
     @teststep
     def down_button(self):
@@ -40,7 +44,7 @@ class PublishedActivityAnalysisPage(BasePage):
         return self.wait.wait_find_elements(locator)
 
 
-class PublishedActivityAnalysisDetailPage(BasePage):
+class PublishedActivityAnalysisSummaryDetailPage(BasePage):
     """ 已发布活动 分析汇总详情页面"""
     st_item_value = "//div[@id='student-cell']"  # 完成情况 学生条目
     hw_item_value = "//div[@id='question-cell']"  # 答题分析 作业条目
@@ -52,17 +56,20 @@ class PublishedActivityAnalysisDetailPage(BasePage):
 
     def __init__(self):
         self.wait = WaitElement()
+        self.my_assert = MyAssert()
 
     @teststeps
-    def wait_check_page(self):
-        """以“Day 1”为依据"""
-        locator = (By.XPATH, "//span[text()='完成统计']")
-        return self.wait.wait_check_element(locator)
+    def wait_check_page(self, var):
+        """以“完成统计”为依据"""
+        locator = (By.XPATH, '//div[@class="van-nav-bar__title van-ellipsis" and text()="{}"]'.format(var))
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.analysis_vue_tips)
+        return ele
 
     @teststeps
     def wait_check_empty_tips_page(self, var=10):
         """以 提示text 作为依据"""
-        locator = (By.XPATH, "//div[text()='暂无数据']")
+        locator = (By.XPATH, '//div[@class="vt-loading-container__error" and text()="暂无数据"]')
         return self.wait.wait_check_element(locator, var)
 
     @teststep
@@ -88,23 +95,7 @@ class PublishedActivityAnalysisDetailPage(BasePage):
     def finish_tab_st_items(self):
         """学生 条目"""
         locator = (By.XPATH, self.st_item_value)
-        ele = self.wait.wait_find_elements(locator)
-
-        content = []  # 页面内所有条目 元素text
-        elements = []  # 页面内所有条目元素
-        for i in range(len(ele)):
-            item = []  # 每一个条目的所有元素text
-            element = []  # 每一个条目的所有元素
-            descendant = ele[i].find_elements_by_xpath('.//descendant::*')[3:5]
-
-            for j in range(len(descendant)):
-                item.append(descendant[j].text)
-                element.append(descendant[j])
-
-            content.append(item)
-            elements.append(element)
-
-        return elements, content
+        return self.wait.wait_find_elements(locator)
 
     @teststep
     def st_type(self):
@@ -142,26 +133,6 @@ class PublishedActivityAnalysisDetailPage(BasePage):
         """作业包 条目"""
         locator = (By.XPATH, self.hw_item_value)
         return self.wait.wait_find_elements(locator)
-
-    @teststeps
-    def analysis_tab_hw_list_info(self):
-        """游戏 条目"""
-        content = []  # 页面内所有条目 元素text
-        elements = []  # 页面内所有条目元素
-
-        ele = self.analysis_tab_hw_items()  # 作业包 条目
-        for i in range(len(ele)):
-            descendant = ele[i].find_elements_by_xpath('.//descendant::*')[0]
-            elements.append(descendant)
-
-            item = descendant.text.split('\n')
-            if '提分' in item[0]:
-                item.insert(1, '提分')
-                item[0] = item[0][:4]
-
-            content.append(item)
-
-        return elements, content
 
     @teststep
     def game_type(self):

@@ -1,0 +1,103 @@
+[35m[Appium][39m Welcome to Appium v1.15.1
+[35m[Appium][39m Non-default server args:
+[35m[Appium][39m   port: 4725
+[35m[Appium][39m   bootstrapPort: 5725
+[35m[Appium][39m   nodeconfig: ./test_program/nodeconfig/HUAWEI_CX_MAX/9.0/mobile.json
+[35m[Appium][39m   udid: RELBB18A31503011
+[35m[Appium][39m Deprecated server args:
+[35m[Appium][39m   [31m-U,--udid[39m => --default-capabilities '{"udid":"RELBB18A31503011"}'
+[35m[Appium][39m Default capabilities, which will be added to each request unless overridden by desired capabilities:
+[35m[Appium][39m   udid: RELBB18A31503011
+[debug] [35m[Appium][39m Starting auto register thread for grid. Will try to register every 5000 ms.
+[35m[Appium][39m Appium REST http interface listener started on 0.0.0.0:4725
+[debug] [35m[Appium][39m Appium successfully registered with the grid on http://192.168.8.176:4444
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m7 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m2 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m2 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m2 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m2 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m

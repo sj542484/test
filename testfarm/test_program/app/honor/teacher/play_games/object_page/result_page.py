@@ -135,7 +135,6 @@ class ResultPage(BasePage):
     @teststep
     def back_up_button(self):
         """以“返回按钮”的class name为依据"""
-        time.sleep(1)
         self.driver \
             .find_element_by_class_name("android.widget.ImageButton").click()
 

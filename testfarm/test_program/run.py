@@ -4,12 +4,9 @@ import time
 import subprocess
 from appium import webdriver
 from conf.run_cases import RunCases
-
 from conf.base_page import BasePage
-
 from conf.case_strategy import CaseStrategy
 from utils.st_appium_server import Utils
-from utils.sql import SqlDb
 from conf.base_config import GetVariable as gv
 from conf.log import Log
 from conf.report_path import ReportPath
@@ -83,12 +80,8 @@ class Driver:
 
         # 实例化base类
         base_page = BasePage()
-        # 连接数据库
-        mysql = SqlDb()
-        mysql.start_db()    # 启动数据库
         # 设置driver
         base_page.set_driver(driver)
-        base_page.set_db(mysql)
         base_page.set_user(deviceName=self.deviceName)
         base_page.set_path(path=file_path)
         base_page.set_window_size(uuid=self.udid)

@@ -10,7 +10,7 @@ from app.honor.student.word_book_rebuild.object_page.wordbook_public_page import
 from conf.decorator import teststep, teststeps
 
 from conf.base_page import BasePage
-from utils.reset_phone_find_toast import verify_find
+from utils.reset_phone_toast import get_verify
 from utils.toast_find import Toast
 
 
@@ -267,7 +267,6 @@ class LoginPage(BasePage):
 
         stu_account = stu_info['student']['student']
 
-
         phone.send_keys(stu_account)
         pwd.send_keys(stu_password)
         self.login_button()
@@ -348,7 +347,7 @@ class LoginPage(BasePage):
         for j in range(2):
             if j == 1:
                 self.get_code_button().click()  # 获取验证码 按钮
-            value = verify_find(phone, operate_type)  # 获取验证码
+            value = get_verify(phone, operate_type)  # 获取验证码
             if self.get_code_button().get_attribute('enabled') == "true":
                 print('❌❌❌ 获取验证码按钮未置灰！')
             if operate_type == 'register':

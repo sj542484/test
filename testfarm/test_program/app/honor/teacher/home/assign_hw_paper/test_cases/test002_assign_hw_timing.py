@@ -35,7 +35,7 @@ class AssignTimingHw(unittest.TestCase):
         cls.login = TloginPage()
         cls.home = ThomePage()
         cls.release = ReleasePage()
-        cls.question = TestBankPage()
+        cls.bank = TestBankPage()
         cls.basket = TestBasketPage()
         cls.draft = DraftPage()
 
@@ -46,6 +46,7 @@ class AssignTimingHw(unittest.TestCase):
         cls.my_toast = MyToast()
 
         BasePage().set_assert(cls.ass)
+        cls.login.app_status()  # 判断APP当前状态
 
     @teardown
     def tearDown(self):
@@ -59,48 +60,52 @@ class AssignTimingHw(unittest.TestCase):
     @ddt.data(*hw_data)
     @testcase
     def test_assign_hw_timing(self, data):
-        self.login.app_status()  # 判断APP当前状态
         self.name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
 
-        self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
-        self.home.assign_hw_button()  # 布置作业 按钮
-        self.assertTrue(self.basket.wait_check_page(), self.basket.basket_tips)  # 页面检查点
+        if self.home.wait_check_page():  # 页面检查点
+            vans = self.home.vanclass_statistic_operation()  # 班级列表统计
+            self.home.assign_hw_button()  # 布置作业 按钮
 
-        assign_result = []
-        if '题筐为空' in data['name']:
-            print(data)
-            if self.basket.wait_check_list_page(5):
-                self.basket.all_check_button()  # 全选移除
-                self.basket.out_basket_button()  # 移出题筐 按钮
-
-            self.home.back_up_button()  # 返回主界面
-            self.question.judge_into_tab_question()  # 进入题库tab
-
-            if self.draft.add_to_basket():  # 先加题进题筐
-                assign_result = self.timing_operation(data)  # 布置定时作业 具体操作
-        else:
-            if self.home.wait_check_empty_tips_page():
-                self.basket.empty_text()  # 空白文案
-                self.home.back_up_button()  # 返回按钮
-                self.question.judge_into_tab_question()  # 进入题库tab
-
-                if self.draft.add_to_basket():  # 若题筐为空，先加题进题筐
+            if self.basket.wait_check_page():  # 页面检查点
+                assign_result = []
+                if '题筐为空' in data['name']:
                     print(data)
-                    assign_result = self.timing_operation(data)  # 布置定时作业 具体操作
-            elif self.basket.wait_check_list_page():
-                print(data)
-                self.assertTrue(self.draft.question_bank_operation(),
-                                '★★★ Error- 获取题筐所有题 并选择布置失败')  # 题筐内获取题筐所有题 并选择布置
-                assign_result = self.timing_operation(data)  # 布置定时作业 具体操作
+                    if self.basket.wait_check_list_page(5):
+                        self.basket.all_check_button()  # 全选移除
+                        self.basket.out_basket_button()  # 移出题筐 按钮
 
-        self.assertTrue(assign_result, '★★★ Error- 作业布置失败')
-        if '作业名称重复' in data['mode']:
-            self.judge_assign_duplicate_name_operation(assign_result)  # 验证具体操作
-        else:
-            self.judge_assign_operation(assign_result)  # 验证具体操作
+                    self.home.back_up_button()  # 返回主界面
+                    self.bank.judge_into_tab_question()  # 进入题库tab
+
+                    if self.draft.add_to_basket():  # 先加题进题筐
+                        assign_result = self.timing_operation(data, vans)  # 布置定时作业 具体操作
+                        if self.bank.wait_check_page('题单'):
+                            self.home.click_tab_hw()  # 返回主界面
+                else:
+                    if self.home.wait_check_empty_tips_page():
+                        self.basket.empty_text()  # 空白文案
+                        self.home.back_up_button()  # 返回按钮
+                        self.bank.judge_into_tab_question()  # 进入题库tab
+
+                        if self.draft.add_to_basket():  # 若题筐为空，先加题进题筐
+                            print(data)
+                            assign_result = self.timing_operation(data, vans)  # 布置定时作业 具体操作
+                            if self.bank.wait_check_page('题单'):
+                                self.home.click_tab_hw()  # 返回主界面
+                    elif self.basket.wait_check_list_page():
+                        print(data)
+                        self.assertTrue(self.draft.question_bank_operation(),
+                                        '★★★ Error- 获取题筐所有题 并选择布置失败')  # 题筐内获取题筐所有题 并选择布置
+                        assign_result = self.timing_operation(data, vans)  # 布置定时作业 具体操作
+
+                self.assertTrue(assign_result, '★★★ Error- 作业布置失败')
+                if '作业名称重复' in data['mode']:
+                    self.judge_assign_duplicate_name_operation(assign_result)  # 验证具体操作
+                else:
+                    self.judge_assign_operation(assign_result)  # 验证具体操作
 
     @teststeps
-    def timing_operation(self, data):
+    def timing_operation(self, data, vans):
         """布置定时作业 具体操作"""
         print('------------------布置定时作业------------------')
         name = self.release.hw_name_edit()  # 作业名称 编辑框
@@ -110,7 +115,7 @@ class AssignTimingHw(unittest.TestCase):
         self.release.assign_button()  # 点击 发布作业 按钮
         self.my_toast.toast_assert(self.name, self.toast.toast_operation(self.tips.no_choose_st), True)  # 未选择学生 toast验证
 
-        self.release.hw_vanclass_list()  # 班级列表
+        self.release.hw_vanclass_list(vans)  # 班级列表
         self.release.choose_class_operation()  # 选择学生
 
         self.release.add_time_button()  # 设定时间 元素
@@ -124,9 +129,6 @@ class AssignTimingHw(unittest.TestCase):
             self.release.assign_button()  # 点击 发布作业 按钮
 
             self.my_toast.toast_assert(self.name, self.toast.toast_operation(data['assert']), True)  # 成功发布
-            if self.question.wait_check_page('题单', 5):
-                self.home.click_tab_hw()  # 返回主界面
-
             return date, title
 
     @teststeps
@@ -143,7 +145,7 @@ class AssignTimingHw(unittest.TestCase):
                 break
 
         if count == 0:
-            print('展示的时间与设定的不一致')
+            print('展示的时间与设定的一致')
             return True
         else:
             print('★★★ Error- 展示的时间与设定的不一致{}\n{}'.format(dates, date))
@@ -153,62 +155,60 @@ class AssignTimingHw(unittest.TestCase):
     def judge_assign_operation(self, content):
         """验证布置结果"""
         print('------------------验证布置结果-------------------')
-        self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
-        self.home.timing_button()  # 定时作业 按钮
-        self.assertTrue(self.draft.wait_check_app_page(), self.draft.timing_tips)
-        self.vue.switch_h5()  # 切到web
+        if self.home.wait_check_page():
+            self.home.timing_button()  # 定时作业 按钮
+            if self.draft.wait_check_app_page():
+                self.vue.switch_h5()  # 切到web
 
-        self.assertTrue(self.draft.wait_check_page(), self.draft.timing_tips)
-        if self.draft.wait_check_empty_tips_page():
-            self.assertFalse(self.draft.wait_check_empty_tips_page(),
-                             '★★★ Error -暂无数据，保存定时作业失败, {}'.format(content))
-        else:
-            self.assertTrue(self.draft.wait_check_hw_list_page(), self.draft.timing_list_tips)
-            name = []  # 定时作业名
-            date_list = []  # 发布日期
-            self.draft.get_hw_list(name, date_list)  # 作业列表
-            count = []
-            for i in range(len(name)):
-                if name[i] == content[1]:  # name
-                    for j in range(len(content[0])):  # 发布时间
-                        if content[0][j] == date_list[i][j]:
-                            count.append(j)
-                            print('保存定时作业成功')
-                            break
-            self.assertFalse(len(count) == 0, '★★★ Error -保存定时作业失败, {}'.format(content))
+                if self.draft.wait_check_page():
+                    if self.draft.wait_check_empty_tips_page():
+                        self.assertFalse(self.draft.wait_check_empty_tips_page(),
+                                         '★★★ Error -暂无数据，保存定时作业失败, {}'.format(content))
+                    elif self.draft.wait_check_hw_list_page():
+                        name = []  # 定时作业名
+                        date_list = []  # 发布日期
+                        self.draft.get_hw_list(name, date_list)  # 作业列表
+                        count = []
+                        for i in range(len(name)):
+                            if name[i] == content[1]:  # name
+                                for j in range(len(content[0])):  # 发布时间
+                                    if content[0][j] == date_list[i][j]:
+                                        count.append(j)
+                                        print('保存定时作业成功')
+                                        break
+                        self.assertFalse(len(count) == 0, '★★★ Error -保存定时作业失败, {}'.format(content))
 
-        self.assertTrue(self.draft.wait_check_page(), self.draft.timing_tips)
-        self.draft.back_up_button()  # 返回主界面
+                    if self.draft.wait_check_page():
+                        self.draft.back_up_button()  # 返回主界面
 
     @teststeps
     def judge_assign_duplicate_name_operation(self, content):
         """验证 重名布置结果"""
         print('------------------验证重名作业布置结果-------------------')
-        self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
-        self.home.timing_button()  # 定时作业 按钮
-        self.assertTrue(self.draft.wait_check_app_page(), self.draft.timing_tips)
-        self.vue.switch_h5()  # 切到web
+        if self.home.wait_check_page():
+            self.home.timing_button()  # 定时作业 按钮
+            if self.draft.wait_check_app_page():
+                self.vue.switch_h5()  # 切到web
 
-        self.assertTrue(self.draft.wait_check_page(), self.draft.timing_tips)
-        if self.draft.wait_check_empty_tips_page():
-            self.assertTrue(self.draft.wait_check_hw_list_page(),
-                            '★★★ Error -暂无数据，保存定时作业失败, {}'.format(content))
-        else:
-            self.assertTrue(self.draft.wait_check_hw_list_page, self.draft.timing_list_tips)
-            name = []  # 定时作业名
-            date_list = []  # 发布日期
-            self.draft.get_hw_list(name, date_list)  # 作业列表
+                if self.draft.wait_check_page():
+                    if self.draft.wait_check_empty_tips_page():
+                        self.assertTrue(self.draft.wait_check_hw_list_page(),
+                                        '★★★ Error -暂无数据，保存定时作业失败, {}'.format(content))
+                    elif self.draft.wait_check_hw_list_page:
+                        name = []  # 定时作业名
+                        date_list = []  # 发布日期
+                        self.draft.get_hw_list(name, date_list)  # 作业列表
 
-            count = []
-            for i in range(len(name)):
-                if name[i] == content[1]:  # name
-                    for j in range(len(date_list)):  # 发布时间
-                        if content[0] == date_list[j]:
-                            count.append(j)
-                            break
+                        count = []
+                        for i in range(len(name)):
+                            if name[i] == content[1]:  # name
+                                for j in range(len(date_list)):  # 发布时间
+                                    if content[0] == date_list[j]:
+                                        count.append(j)
+                                        break
 
-            self.assertFalse(len(count) == 0, '★★★ Error -保存定时作业失败, {}'.format(content))
-            print('保存定时作业成功')
+                        self.assertFalse(len(count) == 0, '★★★ Error -保存定时作业失败, {}'.format(content))
+                        print('保存定时作业成功')
 
-        self.assertTrue(self.draft.wait_check_page(), self.draft.timing_tips)
-        self.draft.back_up_button()  # 返回主界面
+                    if self.draft.wait_check_page():
+                        self.draft.back_up_button()  # 返回主界面

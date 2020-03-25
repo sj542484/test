@@ -324,18 +324,18 @@ class VanclassPage(BasePage):
             if length != int(size):
                 print('★★★ Error- 字符数展示有误', length, size)
             else:
-                if self.get.enabled(button) == 'false':
+                if self.get.get_enabled(button) == 'false':
                     print('★★★ Error- 确定按钮不可点击')
         elif length == 0:
             if length != int(size):
                 print('★★★ Error- 字符数展示有误', length, size)
             else:
-                if self.get.enabled(button) == 'true':
+                if self.get.get_enabled(button) == 'true':
                     print('★★★ Error- 确定按钮未置灰可点击')
         elif length > max_length:
             if length != int(size):
                 print('★★★ Error- 字符数展示有误', length, size)
             else:
-                if self.get.enabled(button) == 'true':
+                if self.get.get_enabled(button) == 'true':
                     print('★★★ Error- 确定按钮未置灰可点击')
-        return self.get.enabled(button)
+        return self.get.get_enabled(button)

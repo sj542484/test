@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
+from utils.assert_package import MyAssert
 from utils.wait_element import WaitElement
 
 
@@ -13,7 +14,7 @@ class PaperReportPage(BasePage):
     """ 试卷 报告详情 页面"""
     analysis_tab_value = "//span[text()='答卷分析']"  # 答卷分析tab
 
-    paper_detail_tips = '★★★ Error- 未进入试卷答卷情况详情页'
+    paper_detail_tips = '★★★ Error- 未进入试卷 报告详情页'
     edit_tips = '★★★ Error- 未进入试卷编辑详情页'
 
     hw_list_tips = '★★★ Error- 答卷分析 页面作业列表'
@@ -21,27 +22,29 @@ class PaperReportPage(BasePage):
 
     def __init__(self):
         self.wait = WaitElement()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_page(self):
         """以“title: 答卷分析”为依据"""
-        locator = (By.XPATH, self.analysis_tab_value)
-        return self.wait.wait_check_element(locator)
+        locator = (By.XPATH, "//span[text()='完成情况']")
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.paper_detail_tips)
+        return ele
 
-    # 单个试卷
     @teststep
     def analysis_tab(self):
         """答卷分析 tab"""
         locator = (By.XPATH, self.analysis_tab_value)
-        return self.wait \
-            .wait_find_element(locator)
+        self.wait \
+            .wait_find_element(locator).click()
 
     @teststep
     def finished_tab(self):
         """完成情况 tab"""
         locator = (By.XPATH, "//span[text()='完成情况']")
-        return self.wait \
-            .wait_find_element(locator)
+        self.wait \
+            .wait_find_element(locator).click()
 
     @teststeps
     def wait_check_empty_tips_page(self, var=10):
@@ -116,7 +119,7 @@ class PaperReportPage(BasePage):
     @teststeps
     def wait_check_per_detail_page(self, var):
         """以“title”为依据"""
-        locator = (By.XPATH, '//div[@class="van-nav-bar__title van-ellipsis" and text()={}]'.format(var))
+        locator = (By.XPATH, '//div[@class="van-nav-bar__title van-ellipsis" and text()="{}"]'.format(var))
         return self.wait.wait_check_element(locator)
 
     @teststep

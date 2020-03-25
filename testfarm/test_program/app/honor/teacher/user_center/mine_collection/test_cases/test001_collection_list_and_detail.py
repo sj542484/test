@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
+import re
 import unittest
 
 from conf.decorator import setup, teardown, testcase, teststeps
@@ -160,33 +161,47 @@ class Collection(unittest.TestCase):
             print('取消收藏成功')
 
     @teststeps
-    def judge_basket_result(self, var):
+    def judge_basket_result(self, names):
         """ 验证 - 加入题筐结果"""
         print('----------------验证 加入题筐结果---------------')
         if self.collect.wait_check_page():  # 是否有收藏
-            self.question.question_basket()  # 题筐 按钮
-            if self.basket.wait_check_page():  # 页面检查点
-                if self.basket.wait_check_list_page():
-                    name = self.question.question_name()  # 获取 小游戏名
-                    check = self.basket.check_button()  # 单选框
+            self.question.question_basket_button()  # 题筐 按钮
+            self.assertTrue(self.basket.wait_check_page(), self.basket.basket_tips)  # 页面检查点
+            self.assertTrue(self.basket.wait_check_list_page(), self.basket.basket_list_tips)  # 页面检查点
+            self.basket.all_check_button()  # 全选按钮
+            ele = self.basket.assign_button()  # 布置作业 按钮
+            num = 50 - int(re.sub("\D", "", ele.text))  # 提取 题数
 
-                    count = []
-                    for i in range(len(name[1])):
-                        if var == name[1][i]:
-                            print('加入题筐成功')
+            count = []
+            var = num // 6 + 1
+            while var > 0:
+                self.assertTrue(self.basket.wait_check_list_page(), self.basket.basket_list_tips)  # 页面检查点
+                item = self.basket.question_name()[1]  # 获取题目
+
+                index = -1
+                length = len(item)-1
+                if len(item) > 5:
+                    length = len(item) - 2
+                    index = 0
+                for i in range(length, index, -1):
+                    for j in range(len(names)):
+                        if item[i] == names[i]:
+                            print(item[i])
                             count.append(i)
-                            check[i].click()
                             break
 
-                    if not count:
-                        print('加入题筐失败')
-                    else:
-                        self.basket.out_basket_button()  # 移出题筐 按钮
-                elif self.home.wait_check_empty_tips_page():
-                    print('加入题筐失败')
+                if not count:
+                    SwipeFun().swipe_vertical(0.5, 0.8, 0.2)
+                var -= 1
 
-                if self.basket.wait_check_page():  # 页面检查点
-                    self.home.back_up_button()  # 返回 我的收藏 页面
+            print('----------------------------')
+            self.assertFalse(len(count) == 0, '★★★ Error -加入题筐失败, {}'.format(names))
+            print('加入题筐成功')
+            if self.basket.wait_check_page():  # 页面检查点
+                self.basket.out_basket_button()  # 移出题筐 按钮
+
+            if self.basket.wait_check_page():  # 页面检查点
+                self.home.back_up_button()  # 返回 我的收藏 页面
 
     @teststeps
     def judge_recommend_result(self, var):

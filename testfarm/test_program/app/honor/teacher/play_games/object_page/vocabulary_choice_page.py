@@ -193,13 +193,14 @@ class VocabularyChoice(BasePage):
                     options = self.option_button()
                     options[random.randint(0, len(options) - 1)].click()  # 随机点击选项
 
-                    item = self.explain()  # 中文解释
-                    print(item)
-                    self.options_statistic(questions, item)  # 选择对错统计
+                    if Homework().wait_check_play_page():
+                        item = self.explain()  # 中文解释
+                        print(item)
+                        self.options_statistic(questions, item)  # 选择对错统计
 
-                    print('----------------------------------')
-                    timestr.append(Homework().time())  # 统计每小题的计时控件time信息
-                    Homework().next_button_operation('true')  # 下一题 按钮 状态判断 加点击
+                        print('----------------------------------')
+                        timestr.append(Homework().time())  # 统计每小题的计时控件time信息
+                        Homework().next_button_operation('true')  # 下一题 按钮 状态判断 加点击
 
                 Homework().now_time(timestr)  # 判断游戏界面 计时功能控件 是否在计时
                 print('=================================================')

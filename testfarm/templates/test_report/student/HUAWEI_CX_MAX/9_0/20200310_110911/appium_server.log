@@ -1,0 +1,1027 @@
+[35m[Appium][39m Welcome to Appium v1.15.1
+[35m[Appium][39m Non-default server args:
+[35m[Appium][39m   bootstrapPort: 5723
+[35m[Appium][39m   nodeconfig: ./test_program/nodeconfig/HUAWEI_CX_MAX/9.0/mobile.json
+[35m[Appium][39m   udid: RELBB18A31503011
+[35m[Appium][39m Deprecated server args:
+[35m[Appium][39m   [31m-U,--udid[39m => --default-capabilities '{"udid":"RELBB18A31503011"}'
+[35m[Appium][39m Default capabilities, which will be added to each request unless overridden by desired capabilities:
+[35m[Appium][39m   udid: RELBB18A31503011
+[debug] [35m[Appium][39m Starting auto register thread for grid. Will try to register every 5000 ms.
+[35m[Appium][39m Appium REST http interface listener started on 0.0.0.0:4723
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m5 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[debug] [35m[Appium][39m Appium successfully registered with the grid on http://192.168.217.105:4444
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session[39m
+[35m[HTTP][39m [90m{"desiredCapabilities":{"app":"/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk","automationName":"uiautomator2","deviceName":"HUAWEI_CX_MAX","noReset":true,"platformName":"android","platformVersion":"9.0","resetKeyboard":true,"server:CONFIG_UUID":"bb434d20-3618-4cba-ba6f-28f97e367c51","systemPort":8200,"udid":"RELBB18A31503011"},"capabilities":{"desiredCapabilities":{"app":"/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk","automationName":"uiautomator2","deviceName":"HUAWEI_CX_MAX","noReset":true,"platformName":"android","platformVersion":"9.0","resetKeyboard":true,"server:CONFIG_UUID":"bb434d20-3618-4cba-ba6f-28f97e367c51","systemPort":8200,"udid":"RELBB18A31503011"},"firstMatch":[{"platformName":"android","server:CONFIG_UUID":"bb434d20-3618-4cba-ba6f-28f97e367c51"}]}}[39m
+[debug] [35m[W3C][39m Calling AppiumDriver.createSession() with args: [{"app":"/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk","automationName":"uiautomator2","deviceName":"HUAWEI_CX_MAX","noReset":true,"platformName":"android","platformVersion":"9.0","resetKeyboard":true,"server:CONFIG_UUID":"bb434d20-3618-4cba-ba6f-28f97e367c51","systemPort":8200,"udid":"RELBB18A31503011"},null,{"desiredCapabilities":{"app":"/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk","automationName":"uiautomator2","deviceName":"HUAWEI_CX_MAX","noReset":true,"platformName":"android","platformVersion":"9.0","resetKeyboard":true,"server:CONFIG_UUID":"bb434d20-3618-4cba-ba6f-28f97e367c51","systemPort":8200,"udid":"RELBB18A31503011"},"firstMatch":[{"platformName":"android","server:CONFIG_UUID":"bb434d20-3618-4cba-ba6f-28f97e367c51"}]}]
+[debug] [35m[BaseDriver][39m Event 'newSessionRequested' logged at 1583809759099 (11:09:19 GMT+0800 (CST))
+[35m[BaseDriver][39m The capabilities ["udid"] are not standard capabilities and should have an extension prefix
+[35m[Appium][39m Could not parse W3C capabilities: 'deviceName' can't be blank
+[35m[Appium][39m Trying to fix W3C capabilities by merging them with JSONWP caps
+[35m[BaseDriver][39m The capabilities ["app","automationName","deviceName","noReset","platformVersion","resetKeyboard","systemPort","udid"] are not standard capabilities and should have an extension prefix
+[35m[Appium][39m Appium v1.15.1 creating new AndroidUiautomator2Driver (v1.37.2) session
+[debug] [35m[BaseDriver][39m W3C capabilities and MJSONWP desired capabilities were provided
+[debug] [35m[BaseDriver][39m Creating session with W3C capabilities: {
+[debug] [35m[BaseDriver][39m   "alwaysMatch": {
+[debug] [35m[BaseDriver][39m     "appium:app": "/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk",
+[debug] [35m[BaseDriver][39m     "appium:automationName": "uiautomator2",
+[debug] [35m[BaseDriver][39m     "appium:deviceName": "HUAWEI_CX_MAX",
+[debug] [35m[BaseDriver][39m     "appium:noReset": true,
+[debug] [35m[BaseDriver][39m     "appium:platformVersion": "9.0",
+[debug] [35m[BaseDriver][39m     "appium:resetKeyboard": true,
+[debug] [35m[BaseDriver][39m     "appium:systemPort": 8200,
+[debug] [35m[BaseDriver][39m     "platformName": "android",
+[debug] [35m[BaseDriver][39m     "server:CONFIG_UUID": "bb434d20-3618-4cba-ba6f-28f97e367c51",
+[debug] [35m[BaseDriver][39m     "appium:udid": "RELBB18A31503011"
+[debug] [35m[BaseDriver][39m   },
+[debug] [35m[BaseDriver][39m   "firstMatch": [
+[debug] [35m[BaseDriver][39m     {}
+[debug] [35m[BaseDriver][39m   ]
+[debug] [35m[BaseDriver][39m }
+[35m[BaseDriver][39m The following capabilities were provided, but are not recognized by Appium:
+[35m[BaseDriver][39m   server:CONFIG_UUID
+[35m[BaseDriver][39m Session created with session id: 7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6
+[35m[BaseDriver][39m Using local app '/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk'
+[debug] [35m[UiAutomator2][39m Checking whether app is actually present
+[35m[ADB][39m Found 4 'build-tools' folders under '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk' (newest first):
+[35m[ADB][39m     /Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.3
+[35m[ADB][39m     /Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.0
+[35m[ADB][39m     /Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/27.0.1
+[35m[ADB][39m     /Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/23.0.1
+[35m[ADB][39m Using 'adb' from '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb'
+[35m[AndroidDriver][39m Retrieving device list
+[debug] [35m[ADB][39m Trying to find a connected android device
+[debug] [35m[ADB][39m Getting connected devices...
+[debug] [35m[ADB][39m Connected devices: [{"udid":"RELBB18A31503011","state":"device"}]
+[35m[AndroidDriver][39m Using device: RELBB18A31503011
+[35m[ADB][39m Using 'adb' from '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb'
+[debug] [35m[ADB][39m Setting device id to RELBB18A31503011
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell getprop ro.build.version.sdk'
+[debug] [35m[ADB][39m Current device property 'ro.build.version.sdk': 28
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell getprop ro.build.version.release'
+[debug] [35m[ADB][39m Current device property 'ro.build.version.release': 9
+[debug] [35m[ADB][39m Device API level: 28
+[35m[UiAutomator2][39m Relaxing hidden api policy
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell settings put global hidden_api_policy_pre_p_apps 1'
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell settings put global hidden_api_policy_p_apps 1'
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell settings put global hidden_api_policy 1'
+[debug] [35m[AndroidDriver][39m Parsing package and activity from app manifest
+[35m[ADB][39m Using the alternative activity name detection method because of: Could not find 'apkanalyzer' in ["/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/emulator/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/tools/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/tools/bin/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.3/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.0/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/27.0.1/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/23.0.1/apkanalyzer"]. Do you have Android Build Tools installed at '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk'?
+[35m[ADB][39m Using 'aapt' from '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.3/aapt'
+[35m[ADB][39m Extracting package and launch activity from manifest
+[35m[ADB][39m Package name: 'com.vanthink.student.debug'
+[35m[ADB][39m Main activity name: 'com.vanthink.vanthinkstudent.ui.splash.SplashActivity'
+[debug] [35m[AndroidDriver][39m Parsed package and activity are: com.vanthink.student.debug/com.vanthink.vanthinkstudent.ui.splash.SplashActivity
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 wait-for-device'
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell echo ping'
+[debug] [35m[AndroidDriver][39m Pushing settings apk to device...
+[debug] [35m[ADB][39m Getting install status for io.appium.settings
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell dumpsys package io.appium.settings'
+[debug] [35m[ADB][39m 'io.appium.settings' is installed
+[debug] [35m[ADB][39m Getting package info for 'io.appium.settings'
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell dumpsys package io.appium.settings'
+[35m[ADB][39m Cannot extract apk info using apkanalyzer. Falling back to aapt. Original error: Could not find 'apkanalyzer' in ["/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/emulator/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/tools/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/tools/bin/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.3/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.0/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/27.0.1/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/23.0.1/apkanalyzer"]. Do you have Android Build Tools installed at '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk'?
+[debug] [35m[ADB][39m The version name of the installed 'io.appium.settings' is greater or equal to the application version name ('2.14.2' >= '2.14.2')
+[debug] [35m[ADB][39m There is no need to install/upgrade '/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/io.appium.settings/apks/settings_apk-debug.apk'
+[debug] [35m[ADB][39m Getting IDs of all 'io.appium.settings' processes
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell 'pgrep --help; echo $?''
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell pgrep -f io\\.appium\\.settings'
+[debug] [35m[AndroidDriver][39m io.appium.settings is already running. There is no need to reset its permissions.
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell appops set io.appium.settings android\:mock_location allow'
+[debug] [35m[Logcat][39m Starting logcat capture
+[debug] [35m[ADB][39m Getting install status for io.appium.uiautomator2.server
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell dumpsys package io.appium.uiautomator2.server'
+[debug] [35m[ADB][39m 'io.appium.uiautomator2.server' is installed
+[debug] [35m[ADB][39m Getting package info for 'io.appium.uiautomator2.server'
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell dumpsys package io.appium.uiautomator2.server'
+[35m[ADB][39m Cannot extract apk info using apkanalyzer. Falling back to aapt. Original error: Could not find 'apkanalyzer' in ["/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/emulator/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/tools/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/tools/bin/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.3/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.0/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/27.0.1/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/23.0.1/apkanalyzer"]. Do you have Android Build Tools installed at '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk'?
+[debug] [35m[ADB][39m The version name of the installed 'io.appium.uiautomator2.server' is greater or equal to the application version name ('4.3.0' >= '4.3.0')
+[debug] [35m[UiAutomator2][39m io.appium.uiautomator2.server installation state: sameVersionInstalled
+[debug] [35m[ADB][39m Checking app cert for /Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v4.3.0.apk
+[35m[ADB][39m Using 'apksigner' from '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.3/apksigner'
+[debug] [35m[ADB][39m Starting '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.3/apksigner' with args '["verify","--print-certs","/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v4.3.0.apk"]'
+[debug] [35m[ADB][39m apksigner stdout: Signer #1 certificate DN: EMAILADDRESS=android@android.com, CN=Android, OU=Android, O=Android, L=Mountain View, ST=California, C=US
+[debug] [35m[ADB][39m Signer #1 certificate SHA-256 digest: a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc
+[debug] [35m[ADB][39m Signer #1 certificate SHA-1 digest: 61ed377e85d386a8dfee6b864bd85b0bfaa5af81
+[debug] [35m[ADB][39m Signer #1 certificate MD5 digest: e89b158e4bcf988ebd09eb83f5378e87
+[debug] [35m[ADB][39m 
+[debug] [35m[ADB][39m '/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v4.3.0.apk' is already signed.
+[debug] [35m[ADB][39m Getting install status for io.appium.uiautomator2.server.test
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell dumpsys package io.appium.uiautomator2.server.test'
+[debug] [35m[ADB][39m 'io.appium.uiautomator2.server.test' is installed
+[debug] [35m[ADB][39m Checking app cert for /Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk
+[debug] [35m[ADB][39m Starting '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.3/apksigner' with args '["verify","--print-certs","/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk"]'
+[debug] [35m[ADB][39m apksigner stdout: Signer #1 certificate DN: EMAILADDRESS=android@android.com, CN=Android, OU=Android, O=Android, L=Mountain View, ST=California, C=US
+[debug] [35m[ADB][39m Signer #1 certificate SHA-256 digest: a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc
+[debug] [35m[ADB][39m Signer #1 certificate SHA-1 digest: 61ed377e85d386a8dfee6b864bd85b0bfaa5af81
+[debug] [35m[ADB][39m Signer #1 certificate MD5 digest: e89b158e4bcf988ebd09eb83f5378e87
+[debug] [35m[ADB][39m 
+[debug] [35m[ADB][39m '/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk' is already signed.
+[35m[UiAutomator2][39m Server packages are not going to be (re)installed
+[debug] [35m[UiAutomator2][39m Waiting up to 30000ms for services to be available
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell pm list instrumentation'
+[debug] [35m[UiAutomator2][39m Instrumentation target 'io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner' is available
+[debug] [35m[UiAutomator2][39m Forwarding UiAutomator2 Server port 6790 to 8200
+[debug] [35m[ADB][39m Forwarding system: 8200 to device: 6790
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 forward tcp\:8200 tcp\:6790'
+[debug] [35m[ADB][39m Checking app cert for /Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk
+[debug] [35m[ADB][39m Starting '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.3/apksigner' with args '["verify","--print-certs","/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk"]'
+[debug] [35m[ADB][39m apksigner stdout: Signer #1 certificate DN: EMAILADDRESS=android@android.com, CN=Android, OU=Android, O=Android, L=Mountain View, ST=California, C=US
+[debug] [35m[ADB][39m Signer #1 certificate SHA-256 digest: a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc
+[debug] [35m[ADB][39m Signer #1 certificate SHA-1 digest: 61ed377e85d386a8dfee6b864bd85b0bfaa5af81
+[debug] [35m[ADB][39m Signer #1 certificate MD5 digest: e89b158e4bcf988ebd09eb83f5378e87
+[debug] [35m[ADB][39m 
+[debug] [35m[ADB][39m '/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk' is already signed.
+[debug] [35m[ADB][39m Getting install status for com.vanthink.student.debug
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell dumpsys package com.vanthink.student.debug'
+[debug] [35m[ADB][39m 'com.vanthink.student.debug' is installed
+[debug] [35m[ADB][39m Getting package info for 'com.vanthink.student.debug'
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell dumpsys package com.vanthink.student.debug'
+[35m[ADB][39m Cannot extract apk info using apkanalyzer. Falling back to aapt. Original error: Could not find 'apkanalyzer' in ["/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/emulator/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/tools/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/tools/bin/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.3/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/28.0.0/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/27.0.1/apkanalyzer","/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/build-tools/23.0.1/apkanalyzer"]. Do you have Android Build Tools installed at '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk'?
+[debug] [35m[ADB][39m The version name of the installed 'com.vanthink.student.debug' is greater or equal to the application version name ('1.4.8' >= '1.4.8')
+[debug] [35m[ADB][39m There is no need to install/upgrade '/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk'
+[debug] [35m[UiAutomator2][39m Performing shallow cleanup of automation leftovers
+[debug] [35m[UiAutomator2][39m No obsolete sessions have been detected (Error: socket hang up)
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell am force-stop io.appium.uiautomator2.server.test'
+[35m[UiAutomator2][39m Starting UIAutomator2 server 4.3.0
+[35m[UiAutomator2][39m Using UIAutomator2 server from '/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v4.3.0.apk' and test from '/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk'
+[35m[UiAutomator2][39m Waiting up to 30000ms for UiAutomator2 to be online...
+[debug] [35m[ADB][39m Creating ADB subprocess with args: ["-P",5037,"-s","RELBB18A31503011","shell","am","instrument","-w","io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner"]
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[debug] [35m[WD Proxy][39m Matched '/status' to command name 'getStatus'
+[debug] [35m[WD Proxy][39m Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body
+[35m[WD Proxy][39m Got an unexpected response with status undefined: {"code":"ECONNRESET"}
+[debug] [35m[Instrumentation][39m io.appium.uiautomator2.server.test.AppiumUiAutomator2Server:
+[debug] [35m[WD Proxy][39m Matched '/status' to command name 'getStatus'
+[debug] [35m[WD Proxy][39m Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body
+[35m[WD Proxy][39m Got an unexpected response with status undefined: {"code":"ECONNRESET"}
+[debug] [35m[WD Proxy][39m Matched '/status' to command name 'getStatus'
+[debug] [35m[WD Proxy][39m Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body
+[35m[WD Proxy][39m Got an unexpected response with status undefined: {"code":"ECONNRESET"}
+[debug] [35m[WD Proxy][39m Matched '/status' to command name 'getStatus'
+[debug] [35m[WD Proxy][39m Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"None","value":{"ready":true,"message":"UiAutomator2 Server is ready to accept commands"}}
+[debug] [35m[UiAutomator2][39m The initialization of the instrumentation process took 4150ms
+[debug] [35m[WD Proxy][39m Matched '/session' to command name 'createSession'
+[debug] [35m[WD Proxy][39m Proxying [POST /session] to [POST http://localhost:8200/wd/hub/session] with body: {"capabilities":{"firstMatch":[{"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"android","server:CONFIG_UUID":"bb434d20-3618-4cba-ba6f-28f97e367c51","app":"/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk","automationName":"uiautomator2","deviceName":"HUAWEI_CX_MAX","noReset":true,"platformVersion":"9.0","resetKeyboard":true,"systemPort":8200,"udid":"RELBB18A31503011"},"platformName":"android","server:CONFIG_UUID":"bb434d20-3618-4cba-ba6f-28f97e367c51","app":"/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk","automationName":"uiautomator2","deviceName":"RELBB18A31503011","noReset":true,"platformVersion":"9.0","resetKeyboard":true,"systemPort":8200,"udid":"RELBB18A31503011","deviceUDID":"RELBB18A31503011","appPackage":"com.vanthink.student.debug"}],"alwaysMatch":{}}}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","capabilities":{"firstMatch":[{"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"android","server:CONFIG_UUID":"bb434d20-3618-4cba-ba6f-28f97e367c51","app":"/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk","automationName":"uiautomator2","deviceName":"HUAWEI_CX_MAX","noReset":true,"platformVersion":"9.0","resetKeyboard":true,"systemPort":8200,"udid":"RELBB18A31503011"},"platformName":"android","server:CONFIG_UUID":"bb434d20-3618-4cba-ba6f-28f97e367c51","app":"/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk","automationName":"uiautomator2","deviceName":"RELBB18A31503011","noReset":true,"platformVersion":"9.0","resetKeyboard":true,"systemPort":8200,"udid":"RELBB18A31503011","devi...
+[35m[WD Proxy][39m Determined the downstream protocol as 'W3C'
+[debug] [35m[WD Proxy][39m Proxying [GET /appium/device/info] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/appium/device/info] with no body
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"androidId":"aff17734d7e5de1f","manufacturer":"HUAWEI","model":"ARS-AL00","brand":"HUAWEI","apiVersion":"28","platformVersion":"9","carrierName":"","realDisplaySize":"1080x2244","displayDensity":480,"networks":[{"type":1,"typeName":"WIFI","subtype":0,"subtypeName":"","isConnected":true,"detailedState":"CONNECTED","state":"CONNECTED","extraInfo":null,"isAvailable":true,"isFailover":false,"isRoaming":false,"capabilities":{"transportTypes":"NET_CAPABILITY_SUPL","networkCapabilities":"","linkUpstreamBandwidthKbps":1048576,"linkDownBandwidthKbps":1048576,"signalStrength":-43,"networkSpecifier":null,"SSID":null}}],"locale":"zh_CN_#Hans","timeZone":"Asia\/Shanghai"}}
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell dumpsys window'
+[35m[AndroidDriver][39m Screen already unlocked, doing nothing
+[35m[UiAutomator2][39m Starting 'com.vanthink.student.debug/com.vanthink.vanthinkstudent.ui.splash.SplashActivity and waiting for 'com.vanthink.student.debug/com.vanthink.vanthinkstudent.ui.splash.SplashActivity'
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell am start -W -n com.vanthink.student.debug/com.vanthink.vanthinkstudent.ui.splash.SplashActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000'
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m2 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[debug] [35m[ADB][39m Waiting up to 20000ms for activity matching pkg: 'com.vanthink.student.debug' and activity: 'com.vanthink.vanthinkstudent.ui.splash.SplashActivity' to be focused
+[debug] [35m[ADB][39m Possible activities, to be checked: 'com.vanthink.vanthinkstudent.ui.splash.SplashActivity', 'com.vanthink.student.debug.com.vanthink.vanthinkstudent.ui.splash.SplashActivity'
+[debug] [35m[ADB][39m Getting focused package and activity
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell dumpsys window windows'
+[debug] [35m[ADB][39m Found package: 'com.vanthink.student.debug' and fully qualified activity name : 'com.vanthink.vanthinkstudent.ui.splash.SplashActivity'
+[debug] [35m[WD Proxy][39m Proxying [GET /appium/device/pixel_ratio] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/appium/device/pixel_ratio] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":3}
+[debug] [35m[WD Proxy][39m Matched '/appium/device/system_bars' to command name 'getSystemBars'
+[debug] [35m[WD Proxy][39m Proxying [GET /appium/device/system_bars] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/appium/device/system_bars] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"statusBar":96}}
+[debug] [35m[WD Proxy][39m Matched '/window/current/size' to command name 'getWindowSize'
+[debug] [35m[WD Proxy][39m Proxying [GET /window/current/size] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/window/current/size] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"height":2044,"width":1080}}
+[35m[Appium][39m New AndroidUiautomator2Driver session created successfully, session 7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6 added to master session list
+[debug] [35m[BaseDriver][39m Event 'newSessionStarted' logged at 1583809769336 (11:09:29 GMT+0800 (CST))
+[debug] [35m[W3C (7c7ac7f1)][39m Cached the protocol value 'W3C' for the new session 7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.createSession() result: {"capabilities":{"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"android","server:CONFIG_UUID":"bb434d20-3618-4cba-ba6f-28f97e367c51","app":"/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk","automationName":"uiautomator2","deviceName":"HUAWEI_CX_MAX","noReset":true,"platformVersion":"9.0","resetKeyboard":true,"systemPort":8200,"udid":"RELBB18A31503011"},"platformName":"android","server:CONFIG_UUID":"bb434d20-3618-4cba-ba6f-28f97e367c51","app":"/Users/vanthink_test_ios/Downloads/student_env_devMasterDebug_1.4.8-5.apk","automationName":"uiautomator2","deviceName":"RELBB18A31503011","noReset":true,"platformVersion":"9","resetKeyboard":true,"systemPort":8200,"udid":"RELBB18A31503011","deviceUDID":"RELBB18A31503011","appPackage":"com.vanthink.student.debug","deviceApiLevel":28,"deviceScreenSize":"1080x2244","deviceS...
+[35m[HTTP][39m [37m<-- POST /wd/hub/session [39m[32m200[39m [90m10239 ms - 1252[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/appium/device/current_activity[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.getCurrentActivity() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[ADB][39m Getting focused package and activity
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell dumpsys window windows'
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.getCurrentActivity() result: "com.vanthink.vanthinkstudent.ui.user.login.LoginActivity"
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/appium/device/current_activity [39m[32m200[39m [90m125 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/btn_login"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/btn_login","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/btn_login","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"37847d9f-bedb-40c2-9d43-4d8c0d90b18b","element-6066-11e4-a52e-4f735466cecf":"37847d9f-bedb-40c2-9d43-4d8c0d90b18b"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"37847d9f-bedb-40c2-9d43-4d8c0d90b18b","ELEMENT":"37847d9f-bedb-40c2-9d43-4d8c0d90b18b"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m158 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/ed_user_nickname"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/ed_user_nickname","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/ed_user_nickname","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"2ed46380-0000-4e04-841d-7899be22fad2","element-6066-11e4-a52e-4f735466cecf":"2ed46380-0000-4e04-841d-7899be22fad2"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"2ed46380-0000-4e04-841d-7899be22fad2","ELEMENT":"2ed46380-0000-4e04-841d-7899be22fad2"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m123 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/ed_user_pwd"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/ed_user_pwd","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/ed_user_pwd","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"3c15090d-aeb3-49e5-8357-dcaa7dc991db","element-6066-11e4-a52e-4f735466cecf":"3c15090d-aeb3-49e5-8357-dcaa7dc991db"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"3c15090d-aeb3-49e5-8357-dcaa7dc991db","ELEMENT":"3c15090d-aeb3-49e5-8357-dcaa7dc991db"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m118 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/2ed46380-0000-4e04-841d-7899be22fad2/value[39m
+[35m[HTTP][39m [90m{"text":"16612341007","value":["1","6","6","1","2","3","4","1","0","0","7"],"id":"2ed46380-0000-4e04-841d-7899be22fad2"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.setValue() with args: [["1","6","6","1","2","3","4","1","0","0","7"],"2ed46380-0000-4e04-841d-7899be22fad2","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/element/2ed46380-0000-4e04-841d-7899be22fad2/value' to command name 'setValue'
+[debug] [35m[Protocol Converter][39m Added 'value' property ["1","6","6","1","2","3","4","1","0","0","7"] to 'setValue' request body
+[debug] [35m[WD Proxy][39m Proxying [POST /element/2ed46380-0000-4e04-841d-7899be22fad2/value] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/2ed46380-0000-4e04-841d-7899be22fad2/value] with body: {"elementId":"2ed46380-0000-4e04-841d-7899be22fad2","text":"16612341007","replace":false,"value":["1","6","6","1","2","3","4","1","0","0","7"]}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.setValue() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/2ed46380-0000-4e04-841d-7899be22fad2/value [39m[32m200[39m [90m678 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/3c15090d-aeb3-49e5-8357-dcaa7dc991db/value[39m
+[35m[HTTP][39m [90m{"text":"123456","value":["1","2","3","4","5","6"],"id":"3c15090d-aeb3-49e5-8357-dcaa7dc991db"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.setValue() with args: [["1","2","3","4","5","6"],"3c15090d-aeb3-49e5-8357-dcaa7dc991db","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/element/3c15090d-aeb3-49e5-8357-dcaa7dc991db/value' to command name 'setValue'
+[debug] [35m[Protocol Converter][39m Added 'value' property ["1","2","3","4","5","6"] to 'setValue' request body
+[debug] [35m[WD Proxy][39m Proxying [POST /element/3c15090d-aeb3-49e5-8357-dcaa7dc991db/value] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/3c15090d-aeb3-49e5-8357-dcaa7dc991db/value] with body: {"elementId":"3c15090d-aeb3-49e5-8357-dcaa7dc991db","text":"123456","replace":false,"value":["1","2","3","4","5","6"]}
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.setValue() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/3c15090d-aeb3-49e5-8357-dcaa7dc991db/value [39m[32m200[39m [90m1111 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/btn_login"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/btn_login","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/btn_login","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"351288f6-cc83-42d9-a22e-55f4f9d5e411","element-6066-11e4-a52e-4f735466cecf":"351288f6-cc83-42d9-a22e-55f4f9d5e411"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"351288f6-cc83-42d9-a22e-55f4f9d5e411","ELEMENT":"351288f6-cc83-42d9-a22e-55f4f9d5e411"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m573 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/351288f6-cc83-42d9-a22e-55f4f9d5e411/click[39m
+[35m[HTTP][39m [90m{"id":"351288f6-cc83-42d9-a22e-55f4f9d5e411"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.click() with args: ["351288f6-cc83-42d9-a22e-55f4f9d5e411","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/element/351288f6-cc83-42d9-a22e-55f4f9d5e411/click' to command name 'click'
+[debug] [35m[WD Proxy][39m Proxying [POST /element/351288f6-cc83-42d9-a22e-55f4f9d5e411/click] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/351288f6-cc83-42d9-a22e-55f4f9d5e411/click] with body: {"element":"351288f6-cc83-42d9-a22e-55f4f9d5e411"}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.click() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/351288f6-cc83-42d9-a22e-55f4f9d5e411/click [39m[32m200[39m [90m104 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/screenshot[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.getScreenshot() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/screenshot' to command name 'getScreenshot'
+[debug] [35m[WD Proxy][39m Proxying [GET /screenshot] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/screenshot] with no body
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":"iVBORw0KGgoAAAANSUhEUgAABDgAAAjECAYAAABJ4N+ZAAAABHNCSVQICAgIfAhkiAAAIABJREFU\neJzs3Xd8G\/d9P\/7X3WEDBDjAvcSlvYdlSZ7ylOXEQx6xM+w4zWqSJt+MNk3b\/Jp802\/7a5om\/bZO\n0pHESVMnThx5SLZiS96WZcnae1AU994D++6+fwAEcQRIAiQ4QL2ejwcfJI6Hw4cSCOJe9\/68P8LW\nh19UQURERERERESUwsTZHgARERERERER0VQx4CAiIiIiIiKilMeAg4iIiIiIiIhSHgMOIiIiIiIi\nIkp5DDiIiIiIiIiIKOUx4CAiIiIiIiKilMeAg4iIiIiIiIhSHgMOIiIiIiIiIkp5DDiIiIiIiIiI\nKOUx4CAiIiIiIiKilMeAg4iIiIiIiIhSHgMOIiIiIiIiIkp5DDiIiIiIiIiIKOUx4CAiIiIiIiKi\nlMeAg4iIiIiIiIhSHgMOIiIiIiIiIkp5DDiIiIiIiIiIKOUx4CAiIiIiIiKilMeAg4iIiIiIiIhS\nHgMOIiIiIiIiIkp5DDiIiIiIiIiIKOUx4CAiIiIiIiKilMeAg4iIiIiIiIhSHgMOIiIiIiIiIkp5\nDDiIiIiIiIiIKOUx4CAiIiIiIiKilMeAg4iIiIiIiIhSHgMOIiIiIiIiIkp5DDiIiIiIiIiIKOUx\n4CAiIiIiIiKilKeb7QFMN4NeRGa6CTqdENf+Xp+Cji73NI+KiIiIiIiIiJJpXgcc61dm47oN+RAS\nrFN5fX8TTpztmp5BTSDdbkBmuglpNj1sFj1s1uCHLKvw+WV4fTL8fgV9Az7UNw2ip887K+NMJYKg\nAiqwIvccPrXiNyh2tMCiugFFhVs2obE7B7+49FEca18OCICqxheGTdYducfxaPHbyNANwCj6IakK\nBDU4xuCHGvFZBVRh1L...
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAABDgAAAjECAYAAABJ4N+ZAAAABHNCSVQICAgIfAhkiAAAIABJREFU\neJzs3Xd8G/d9P/7X3WEDBDjAvcSlvYdlSZ7ylOXEQx6xM+w4zWqSJt+MNk3b/Jp802/7a5om/bZO\n0pHESVMnThx5SLZiS96WZcnae1AU994D++6+fwAEcQRIAiQ4QL2ejwcfJI6Hw4cSCOJe9/68P8LW\nh19UQURERERERESUwsTZHgARERERERER0VQx4CAiIiIiIiKilMeAg4iIiIiIiIhSHgMOIiIiIiIi\nIkp5DDiIiIiIiIiIKOUx4CAiIiIiIiKilMeAg4iIiIiIiIhSHgMOIiIiIiIiIkp5DDiIiIiIiIiI\nKOUx4CAiIiIiIiKilMeAg4iIiIiIiIhSHgMOIiIiIiIiIkp5DDiIiIiIiIiIKOUx4CAiIiIiIiKi\nlMeAg4iIiIiIiIhSHgMOIiIiIiIiIkp5DDiIiIiIiIiIKOUx4CAiIiIiIiKilMeAg4iIiIiIiIhS\nHgMOIiIiIiIiIkp5DDiIiIiIiIiIKOUx4CAiIiIiIiKilMeAg4iIiIiIiIhSHgMOIiIiIiIiIkp5\nDDiIiIiIiIiIKOUx4CAiIiIiIiKilMeAg4iIiIiIiIhSHgMOIiIiIiIiIkp5DDiIiIiIiIiIKOUx\n4CAiIiIiIiKilKeb7QFMN4NeRGa6CTqdENf+Xp+Cji73NI+KiIiIiIiIiJJpXgcc61dm47oN+RAS\nrFN5fX8TTpztmp5BTSDdbkBmuglpNj1sFj1s1uCHLKvw+WV4fTL8fgV9Az7UNw2ip887K+NMJYKg\nAiqwIvccPrXiNyh2tMCiugFFhVs2obE7B7+49FEca18OCICqxheGTdYducfxaPHbyNANwCj6IakK\nBDU4xuCHGvFZBVRh1LaRz6oCyKoIr6xHTyANv+7cir0Da6d1/ERERESTIQhArtMCR5oBVqsesqyg\nrcONjm...
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/screenshot [39m[32m200[39m [90m905 ms - 394044[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/appium/device/current_activity[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.getCurrentActivity() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[ADB][39m Getting focused package and activity
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell dumpsys window windows'
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.getCurrentActivity() result: "com.vanthink.vanthinkstudent.ui.home.HomeActivity"
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/appium/device/current_activity [39m[32m200[39m [90m79 ms - 61[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/btn_login"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/btn_login","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/btn_login","context":"","multiple":false}
+[35m[WD Proxy][39m Got an unexpected response with status 404: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"error":"no such element","message":"An element could not be located on the page using the given search parameters","stacktrace":"io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:78)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:38)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:242)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+[debug] [35m[W3C][39m Matched W3C error code 'no such element' to NoSuchElementError
+[debug] [35m[W3C (7c7ac7f1)][39m Encountered internal error running command: NoSuchElementError: An element could not be located on the page using the given search parameters.
+[debug] [35m[W3C (7c7ac7f1)][39m     at AndroidUiautomator2Driver.findElOrEls (/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+[debug] [35m[W3C (7c7ac7f1)][39m     at <anonymous>
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[33m404[39m [90m318 ms - 434[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/btn_login"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/btn_login","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/btn_login","context":"","multiple":false}
+[35m[WD Proxy][39m Got an unexpected response with status 404: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"error":"no such element","message":"An element could not be located on the page using the given search parameters","stacktrace":"io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:78)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:38)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:242)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+[debug] [35m[W3C][39m Matched W3C error code 'no such element' to NoSuchElementError
+[debug] [35m[W3C (7c7ac7f1)][39m Encountered internal error running command: NoSuchElementError: An element could not be located on the page using the given search parameters.
+[debug] [35m[W3C (7c7ac7f1)][39m     at AndroidUiautomator2Driver.findElOrEls (/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+[debug] [35m[W3C (7c7ac7f1)][39m     at <anonymous>
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[33m404[39m [90m253 ms - 434[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/btn_login"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/btn_login","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/btn_login","context":"","multiple":false}
+[35m[WD Proxy][39m Got an unexpected response with status 404: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"error":"no such element","message":"An element could not be located on the page using the given search parameters","stacktrace":"io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:78)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:38)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:242)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+[debug] [35m[W3C][39m Matched W3C error code 'no such element' to NoSuchElementError
+[debug] [35m[W3C (7c7ac7f1)][39m Encountered internal error running command: NoSuchElementError: An element could not be located on the page using the given search parameters.
+[debug] [35m[W3C (7c7ac7f1)][39m     at AndroidUiautomator2Driver.findElOrEls (/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+[debug] [35m[W3C (7c7ac7f1)][39m     at <anonymous>
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[33m404[39m [90m221 ms - 434[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/btn_login"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/btn_login","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/btn_login","context":"","multiple":false}
+[35m[WD Proxy][39m Got an unexpected response with status 404: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"error":"no such element","message":"An element could not be located on the page using the given search parameters","stacktrace":"io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:78)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:38)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:242)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+[debug] [35m[W3C][39m Matched W3C error code 'no such element' to NoSuchElementError
+[debug] [35m[W3C (7c7ac7f1)][39m Encountered internal error running command: NoSuchElementError: An element could not be located on the page using the given search parameters.
+[debug] [35m[W3C (7c7ac7f1)][39m     at AndroidUiautomator2Driver.findElOrEls (/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+[debug] [35m[W3C (7c7ac7f1)][39m     at <anonymous>
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[33m404[39m [90m227 ms - 434[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/btn_login"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/btn_login","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/btn_login","context":"","multiple":false}
+[35m[WD Proxy][39m Got an unexpected response with status 404: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"error":"no such element","message":"An element could not be located on the page using the given search parameters","stacktrace":"io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:78)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:38)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:242)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+[debug] [35m[W3C][39m Matched W3C error code 'no such element' to NoSuchElementError
+[debug] [35m[W3C (7c7ac7f1)][39m Encountered internal error running command: NoSuchElementError: An element could not be located on the page using the given search parameters.
+[debug] [35m[W3C (7c7ac7f1)][39m     at AndroidUiautomator2Driver.findElOrEls (/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+[debug] [35m[W3C (7c7ac7f1)][39m     at <anonymous>
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[33m404[39m [90m235 ms - 434[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/btn_login"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/btn_login","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/btn_login","context":"","multiple":false}
+[35m[WD Proxy][39m Got an unexpected response with status 404: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"error":"no such element","message":"An element could not be located on the page using the given search parameters","stacktrace":"io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:78)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:38)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:242)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+[debug] [35m[W3C][39m Matched W3C error code 'no such element' to NoSuchElementError
+[debug] [35m[W3C (7c7ac7f1)][39m Encountered internal error running command: NoSuchElementError: An element could not be located on the page using the given search parameters.
+[debug] [35m[W3C (7c7ac7f1)][39m     at AndroidUiautomator2Driver.findElOrEls (/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+[debug] [35m[W3C (7c7ac7f1)][39m     at <anonymous>
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[33m404[39m [90m701 ms - 434[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/btn_login"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/btn_login","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/btn_login","context":"","multiple":false}
+[35m[WD Proxy][39m Got an unexpected response with status 404: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"error":"no such element","message":"An element could not be located on the page using the given search parameters","stacktrace":"io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:78)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:38)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:242)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+[debug] [35m[W3C][39m Matched W3C error code 'no such element' to NoSuchElementError
+[debug] [35m[W3C (7c7ac7f1)][39m Encountered internal error running command: NoSuchElementError: An element could not be located on the page using the given search parameters.
+[debug] [35m[W3C (7c7ac7f1)][39m     at AndroidUiautomator2Driver.findElOrEls (/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+[debug] [35m[W3C (7c7ac7f1)][39m     at <anonymous>
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[33m404[39m [90m199 ms - 434[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"xpath","value":"//android.widget.TextView[contains(@text,'做试卷')]"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["xpath","//android.widget.TextView[contains(@text,'做试卷')]","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"xpath","selector":"//android.widget.TextView[contains(@text,'做试卷')]","context":"","multiple":false}
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m3 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"a7c676c3-fac9-44ee-a393-f5a675551bb4","element-6066-11e4-a52e-4f735466cecf":"a7c676c3-fac9-44ee-a393-f5a675551bb4"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"a7c676c3-fac9-44ee-a393-f5a675551bb4","ELEMENT":"a7c676c3-fac9-44ee-a393-f5a675551bb4"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m1032 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"xpath","value":"//android.widget.TextView[contains(@text,'做试卷')]"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["xpath","//android.widget.TextView[contains(@text,'做试卷')]","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"xpath","selector":"//android.widget.TextView[contains(@text,'做试卷')]","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"36bda806-5a3c-45a0-b5e1-47180cee28a4","element-6066-11e4-a52e-4f735466cecf":"36bda806-5a3c-45a0-b5e1-47180cee28a4"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"36bda806-5a3c-45a0-b5e1-47180cee28a4","ELEMENT":"36bda806-5a3c-45a0-b5e1-47180cee28a4"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m1291 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/tab_profile"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/tab_profile","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/tab_profile","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"68b67aba-ac04-46ef-962d-b138cf289f42","element-6066-11e4-a52e-4f735466cecf":"68b67aba-ac04-46ef-962d-b138cf289f42"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"68b67aba-ac04-46ef-962d-b138cf289f42","ELEMENT":"68b67aba-ac04-46ef-962d-b138cf289f42"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m170 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/68b67aba-ac04-46ef-962d-b138cf289f42/click[39m
+[35m[HTTP][39m [90m{"id":"68b67aba-ac04-46ef-962d-b138cf289f42"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.click() with args: ["68b67aba-ac04-46ef-962d-b138cf289f42","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/element/68b67aba-ac04-46ef-962d-b138cf289f42/click' to command name 'click'
+[debug] [35m[WD Proxy][39m Proxying [POST /element/68b67aba-ac04-46ef-962d-b138cf289f42/click] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/68b67aba-ac04-46ef-962d-b138cf289f42/click] with body: {"element":"68b67aba-ac04-46ef-962d-b138cf289f42"}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.click() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/68b67aba-ac04-46ef-962d-b138cf289f42/click [39m[32m200[39m [90m120 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"xpath","value":"//android.widget.TextView[contains(@text,'设置')]"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["xpath","//android.widget.TextView[contains(@text,'设置')]","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"xpath","selector":"//android.widget.TextView[contains(@text,'设置')]","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"c616ae25-767c-47fa-befe-959f91706f58","element-6066-11e4-a52e-4f735466cecf":"c616ae25-767c-47fa-befe-959f91706f58"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"c616ae25-767c-47fa-befe-959f91706f58","ELEMENT":"c616ae25-767c-47fa-befe-959f91706f58"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m805 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.getWindowRect() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/window/current/size' to command name 'getWindowSize'
+[debug] [35m[WD Proxy][39m Proxying [GET /window/current/size] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/window/current/size] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"height":2044,"width":1080}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.getWindowRect() result: {"width":1080,"height":2044,"x":0,"y":0}
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect [39m[32m200[39m [90m44 ms - 50[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.getWindowRect() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/window/current/size' to command name 'getWindowSize'
+[debug] [35m[WD Proxy][39m Proxying [GET /window/current/size] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/window/current/size] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"height":2044,"width":1080}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.getWindowRect() result: {"width":1080,"height":2044,"x":0,"y":0}
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect [39m[32m200[39m [90m41 ms - 50[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.getWindowRect() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/window/current/size' to command name 'getWindowSize'
+[debug] [35m[WD Proxy][39m Proxying [GET /window/current/size] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/window/current/size] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"height":2044,"width":1080}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.getWindowRect() result: {"width":1080,"height":2044,"x":0,"y":0}
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect [39m[32m200[39m [90m41 ms - 50[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/touch/perform[39m
+[35m[HTTP][39m [90m{"actions":[{"action":"press","options":{"x":540,"y":408}},{"action":"wait","options":{"ms":1000}},{"action":"moveTo","options":{"x":540,"y":1635}},{"action":"release","options":{}}]}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.performTouch() with args: [[{"action":"press","options":{"x":540,"y":408}},{"action":"wait","options":{"ms":1000}},{"action":"moveTo","options":{"x":540,"y":1635}},{"action":"release","options":{}}],"7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/touch/perform' to command name 'performTouch'
+[debug] [35m[WD Proxy][39m Proxying [POST /touch/perform] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/touch/perform] with body: {"startX":540,"startY":408,"endX":540,"endY":1635,"steps":28}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.performTouch() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/touch/perform [39m[32m200[39m [90m1512 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/name"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/name","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/name","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"7dab99fe-d062-4ebc-8ddb-2cec507c2bab","element-6066-11e4-a52e-4f735466cecf":"7dab99fe-d062-4ebc-8ddb-2cec507c2bab"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"7dab99fe-d062-4ebc-8ddb-2cec507c2bab","ELEMENT":"7dab99fe-d062-4ebc-8ddb-2cec507c2bab"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m106 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/7dab99fe-d062-4ebc-8ddb-2cec507c2bab/text[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[W3C (7c7ac7f1)][39m Driver proxy active, passing request on via HTTP proxy
+[debug] [35m[WD Proxy][39m Matched '/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/7dab99fe-d062-4ebc-8ddb-2cec507c2bab/text' to command name 'getText'
+[debug] [35m[WD Proxy][39m Proxying [GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/7dab99fe-d062-4ebc-8ddb-2cec507c2bab/text] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/7dab99fe-d062-4ebc-8ddb-2cec507c2bab/text] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":"test07"}
+[35m[WD Proxy][39m Replacing sessionId bd60d923-82dc-4315-bf47-bcedf031772b with 7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/7dab99fe-d062-4ebc-8ddb-2cec507c2bab/text [39m[32m200[39m [90m37 ms - 69[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.getWindowRect() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/window/current/size' to command name 'getWindowSize'
+[debug] [35m[WD Proxy][39m Proxying [GET /window/current/size] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/window/current/size] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"height":2044,"width":1080}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.getWindowRect() result: {"width":1080,"height":2044,"x":0,"y":0}
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect [39m[32m200[39m [90m46 ms - 50[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.getWindowRect() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/window/current/size' to command name 'getWindowSize'
+[debug] [35m[WD Proxy][39m Proxying [GET /window/current/size] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/window/current/size] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"height":2044,"width":1080}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.getWindowRect() result: {"width":1080,"height":2044,"x":0,"y":0}
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect [39m[32m200[39m [90m50 ms - 50[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.getWindowRect() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/window/current/size' to command name 'getWindowSize'
+[debug] [35m[WD Proxy][39m Proxying [GET /window/current/size] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/window/current/size] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"height":2044,"width":1080}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.getWindowRect() result: {"width":1080,"height":2044,"x":0,"y":0}
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect [39m[32m200[39m [90m39 ms - 50[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/touch/perform[39m
+[35m[HTTP][39m [90m{"actions":[{"action":"press","options":{"x":540,"y":1635}},{"action":"wait","options":{"ms":1000}},{"action":"moveTo","options":{"x":540,"y":408}},{"action":"release","options":{}}]}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.performTouch() with args: [[{"action":"press","options":{"x":540,"y":1635}},{"action":"wait","options":{"ms":1000}},{"action":"moveTo","options":{"x":540,"y":408}},{"action":"release","options":{}}],"7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/touch/perform' to command name 'performTouch'
+[debug] [35m[WD Proxy][39m Proxying [POST /touch/perform] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/touch/perform] with body: {"startX":540,"startY":1635,"endX":540,"endY":408,"steps":28}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.performTouch() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/touch/perform [39m[32m200[39m [90m1619 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/study_card"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/study_card","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/study_card","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"5d410f67-1b42-4e57-b045-88c9e6064103","element-6066-11e4-a52e-4f735466cecf":"5d410f67-1b42-4e57-b045-88c9e6064103"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"5d410f67-1b42-4e57-b045-88c9e6064103","ELEMENT":"5d410f67-1b42-4e57-b045-88c9e6064103"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m144 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/5d410f67-1b42-4e57-b045-88c9e6064103/click[39m
+[35m[HTTP][39m [90m{"id":"5d410f67-1b42-4e57-b045-88c9e6064103"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.click() with args: ["5d410f67-1b42-4e57-b045-88c9e6064103","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/element/5d410f67-1b42-4e57-b045-88c9e6064103/click' to command name 'click'
+[debug] [35m[WD Proxy][39m Proxying [POST /element/5d410f67-1b42-4e57-b045-88c9e6064103/click] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/5d410f67-1b42-4e57-b045-88c9e6064103/click] with body: {"element":"5d410f67-1b42-4e57-b045-88c9e6064103"}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.click() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/5d410f67-1b42-4e57-b045-88c9e6064103/click [39m[32m200[39m [90m99 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/goToCustomerService"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/goToCustomerService","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/goToCustomerService","context":"","multiple":false}
+[35m[WD Proxy][39m Got an unexpected response with status 404: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"error":"no such element","message":"An element could not be located on the page using the given search parameters","stacktrace":"io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:78)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:38)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:242)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+[debug] [35m[W3C][39m Matched W3C error code 'no such element' to NoSuchElementError
+[debug] [35m[W3C (7c7ac7f1)][39m Encountered internal error running command: NoSuchElementError: An element could not be located on the page using the given search parameters.
+[debug] [35m[W3C (7c7ac7f1)][39m     at AndroidUiautomator2Driver.findElOrEls (/Users/vanthink_test_ios/.nvm/v8.14.1/lib/node_modules/appium/node_modules/appium-android-driver/lib/commands/find.js:75:11)
+[debug] [35m[W3C (7c7ac7f1)][39m     at <anonymous>
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[33m404[39m [90m274 ms - 434[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/goToCustomerService"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/goToCustomerService","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/goToCustomerService","context":"","multiple":false}
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"7087a87d-7d6e-460b-a5a1-0939dd788605","element-6066-11e4-a52e-4f735466cecf":"7087a87d-7d6e-460b-a5a1-0939dd788605"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"7087a87d-7d6e-460b-a5a1-0939dd788605","ELEMENT":"7087a87d-7d6e-460b-a5a1-0939dd788605"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m719 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/phone"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/phone","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/phone","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"2f23b6a2-d3b4-406a-9c29-046d4ebcb4fa","element-6066-11e4-a52e-4f735466cecf":"2f23b6a2-d3b4-406a-9c29-046d4ebcb4fa"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"2f23b6a2-d3b4-406a-9c29-046d4ebcb4fa","ELEMENT":"2f23b6a2-d3b4-406a-9c29-046d4ebcb4fa"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m58 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/2f23b6a2-d3b4-406a-9c29-046d4ebcb4fa/text[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[W3C (7c7ac7f1)][39m Driver proxy active, passing request on via HTTP proxy
+[debug] [35m[WD Proxy][39m Matched '/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/2f23b6a2-d3b4-406a-9c29-046d4ebcb4fa/text' to command name 'getText'
+[debug] [35m[WD Proxy][39m Proxying [GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/2f23b6a2-d3b4-406a-9c29-046d4ebcb4fa/text] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/2f23b6a2-d3b4-406a-9c29-046d4ebcb4fa/text] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":"16612341007"}
+[35m[WD Proxy][39m Replacing sessionId bd60d923-82dc-4315-bf47-bcedf031772b with 7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/2f23b6a2-d3b4-406a-9c29-046d4ebcb4fa/text [39m[32m200[39m [90m40 ms - 74[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements[39m
+[35m[HTTP][39m [90m{"using":"class name","value":"android.widget.ImageButton"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElements() with args: ["class name","android.widget.ImageButton","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/elements' to command name 'findElements'
+[debug] [35m[WD Proxy][39m Proxying [POST /elements] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/elements] with body: {"strategy":"class name","selector":"android.widget.ImageButton","context":"","multiple":true}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":[{"ELEMENT":"95dfe676-98f5-4d2c-a53d-c3de45f176f6","element-6066-11e4-a52e-4f735466cecf":"95dfe676-98f5-4d2c-a53d-c3de45f176f6"}]}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElements() result: [{"element-6066-11e4-a52e-4f735466cecf":"95dfe676-98f5-4d2c-a53d-c3de45f176f6","ELEMENT":"95dfe676-98f5-4d2c-a53d-c3de45f176f6"}]
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements [39m[32m200[39m [90m678 ms - 139[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/95dfe676-98f5-4d2c-a53d-c3de45f176f6/click[39m
+[35m[HTTP][39m [90m{"id":"95dfe676-98f5-4d2c-a53d-c3de45f176f6"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.click() with args: ["95dfe676-98f5-4d2c-a53d-c3de45f176f6","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/element/95dfe676-98f5-4d2c-a53d-c3de45f176f6/click' to command name 'click'
+[debug] [35m[WD Proxy][39m Proxying [POST /element/95dfe676-98f5-4d2c-a53d-c3de45f176f6/click] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/95dfe676-98f5-4d2c-a53d-c3de45f176f6/click] with body: {"element":"95dfe676-98f5-4d2c-a53d-c3de45f176f6"}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.click() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/95dfe676-98f5-4d2c-a53d-c3de45f176f6/click [39m[32m200[39m [90m79 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"xpath","value":"//android.widget.TextView[contains(@text,'设置')]"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["xpath","//android.widget.TextView[contains(@text,'设置')]","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"xpath","selector":"//android.widget.TextView[contains(@text,'设置')]","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"bd6fbb6c-2881-43d4-8cad-712f333b0ed3","element-6066-11e4-a52e-4f735466cecf":"bd6fbb6c-2881-43d4-8cad-712f333b0ed3"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"bd6fbb6c-2881-43d4-8cad-712f333b0ed3","ELEMENT":"bd6fbb6c-2881-43d4-8cad-712f333b0ed3"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m534 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/school_name"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/school_name","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/school_name","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"902683df-ea24-4ae2-869b-d8aafde05262","element-6066-11e4-a52e-4f735466cecf":"902683df-ea24-4ae2-869b-d8aafde05262"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"902683df-ea24-4ae2-869b-d8aafde05262","ELEMENT":"902683df-ea24-4ae2-869b-d8aafde05262"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m388 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/902683df-ea24-4ae2-869b-d8aafde05262/text[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[W3C (7c7ac7f1)][39m Driver proxy active, passing request on via HTTP proxy
+[debug] [35m[WD Proxy][39m Matched '/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/902683df-ea24-4ae2-869b-d8aafde05262/text' to command name 'getText'
+[debug] [35m[WD Proxy][39m Proxying [GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/902683df-ea24-4ae2-869b-d8aafde05262/text] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/902683df-ea24-4ae2-869b-d8aafde05262/text] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":"工大1"}
+[35m[WD Proxy][39m Replacing sessionId bd60d923-82dc-4315-bf47-bcedf031772b with 7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/902683df-ea24-4ae2-869b-d8aafde05262/text [39m[32m200[39m [90m38 ms - 70[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/setting"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/setting","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/setting","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"f9f389a5-993f-4f93-bafe-ebd6f78e9b0a","element-6066-11e4-a52e-4f735466cecf":"f9f389a5-993f-4f93-bafe-ebd6f78e9b0a"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"f9f389a5-993f-4f93-bafe-ebd6f78e9b0a","ELEMENT":"f9f389a5-993f-4f93-bafe-ebd6f78e9b0a"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m162 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/f9f389a5-993f-4f93-bafe-ebd6f78e9b0a/click[39m
+[35m[HTTP][39m [90m{"id":"f9f389a5-993f-4f93-bafe-ebd6f78e9b0a"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.click() with args: ["f9f389a5-993f-4f93-bafe-ebd6f78e9b0a","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/element/f9f389a5-993f-4f93-bafe-ebd6f78e9b0a/click' to command name 'click'
+[debug] [35m[WD Proxy][39m Proxying [POST /element/f9f389a5-993f-4f93-bafe-ebd6f78e9b0a/click] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/f9f389a5-993f-4f93-bafe-ebd6f78e9b0a/click] with body: {"element":"f9f389a5-993f-4f93-bafe-ebd6f78e9b0a"}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.click() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/f9f389a5-993f-4f93-bafe-ebd6f78e9b0a/click [39m[32m200[39m [90m76 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/logout"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/logout","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/logout","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"8f9f6b75-942c-49b3-939d-bb125c4567c0","element-6066-11e4-a52e-4f735466cecf":"8f9f6b75-942c-49b3-939d-bb125c4567c0"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"8f9f6b75-942c-49b3-939d-bb125c4567c0","ELEMENT":"8f9f6b75-942c-49b3-939d-bb125c4567c0"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m853 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/clear_cache"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/clear_cache","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/clear_cache","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"86b5b17d-cc63-4e83-a030-b0050be0077b","element-6066-11e4-a52e-4f735466cecf":"86b5b17d-cc63-4e83-a030-b0050be0077b"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"86b5b17d-cc63-4e83-a030-b0050be0077b","ELEMENT":"86b5b17d-cc63-4e83-a030-b0050be0077b"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m52 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/86b5b17d-cc63-4e83-a030-b0050be0077b/click[39m
+[35m[HTTP][39m [90m{"id":"86b5b17d-cc63-4e83-a030-b0050be0077b"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.click() with args: ["86b5b17d-cc63-4e83-a030-b0050be0077b","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/element/86b5b17d-cc63-4e83-a030-b0050be0077b/click' to command name 'click'
+[debug] [35m[WD Proxy][39m Proxying [POST /element/86b5b17d-cc63-4e83-a030-b0050be0077b/click] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/86b5b17d-cc63-4e83-a030-b0050be0077b/click] with body: {"element":"86b5b17d-cc63-4e83-a030-b0050be0077b"}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.click() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/86b5b17d-cc63-4e83-a030-b0050be0077b/click [39m[32m200[39m [90m79 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements[39m
+[35m[HTTP][39m [90m{"using":"class name","value":"android.widget.ImageButton"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElements() with args: ["class name","android.widget.ImageButton","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/elements' to command name 'findElements'
+[debug] [35m[WD Proxy][39m Proxying [POST /elements] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/elements] with body: {"strategy":"class name","selector":"android.widget.ImageButton","context":"","multiple":true}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":[{"ELEMENT":"b2049a1c-220f-4063-bf8f-ab9425961f15","element-6066-11e4-a52e-4f735466cecf":"b2049a1c-220f-4063-bf8f-ab9425961f15"}]}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElements() result: [{"element-6066-11e4-a52e-4f735466cecf":"b2049a1c-220f-4063-bf8f-ab9425961f15","ELEMENT":"b2049a1c-220f-4063-bf8f-ab9425961f15"}]
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements [39m[32m200[39m [90m73 ms - 139[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/b2049a1c-220f-4063-bf8f-ab9425961f15/click[39m
+[35m[HTTP][39m [90m{"id":"b2049a1c-220f-4063-bf8f-ab9425961f15"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.click() with args: ["b2049a1c-220f-4063-bf8f-ab9425961f15","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/element/b2049a1c-220f-4063-bf8f-ab9425961f15/click' to command name 'click'
+[debug] [35m[WD Proxy][39m Proxying [POST /element/b2049a1c-220f-4063-bf8f-ab9425961f15/click] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/b2049a1c-220f-4063-bf8f-ab9425961f15/click] with body: {"element":"b2049a1c-220f-4063-bf8f-ab9425961f15"}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.click() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/b2049a1c-220f-4063-bf8f-ab9425961f15/click [39m[32m200[39m [90m83 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"xpath","value":"//android.widget.TextView[contains(@text,'设置')]"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["xpath","//android.widget.TextView[contains(@text,'设置')]","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"xpath","selector":"//android.widget.TextView[contains(@text,'设置')]","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"3a3639aa-317e-4771-a757-0b8c3fa616ef","element-6066-11e4-a52e-4f735466cecf":"3a3639aa-317e-4771-a757-0b8c3fa616ef"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"3a3639aa-317e-4771-a757-0b8c3fa616ef","ELEMENT":"3a3639aa-317e-4771-a757-0b8c3fa616ef"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m521 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/tab_hw_icon"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["id","com.vanthink.student.debug:id/tab_hw_icon","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/tab_hw_icon","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"4a615d88-f302-49d4-b3db-fb33091da08b","element-6066-11e4-a52e-4f735466cecf":"4a615d88-f302-49d4-b3db-fb33091da08b"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"4a615d88-f302-49d4-b3db-fb33091da08b","ELEMENT":"4a615d88-f302-49d4-b3db-fb33091da08b"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m413 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/4a615d88-f302-49d4-b3db-fb33091da08b/click[39m
+[35m[HTTP][39m [90m{"id":"4a615d88-f302-49d4-b3db-fb33091da08b"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.click() with args: ["4a615d88-f302-49d4-b3db-fb33091da08b","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/element/4a615d88-f302-49d4-b3db-fb33091da08b/click' to command name 'click'
+[debug] [35m[WD Proxy][39m Proxying [POST /element/4a615d88-f302-49d4-b3db-fb33091da08b/click] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/4a615d88-f302-49d4-b3db-fb33091da08b/click] with body: {"element":"4a615d88-f302-49d4-b3db-fb33091da08b"}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.click() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/4a615d88-f302-49d4-b3db-fb33091da08b/click [39m[32m200[39m [90m84 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"xpath","value":"//android.widget.TextView[contains(@text,'做试卷')]"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["xpath","//android.widget.TextView[contains(@text,'做试卷')]","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"xpath","selector":"//android.widget.TextView[contains(@text,'做试卷')]","context":"","multiple":false}
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[GENERIC][39m Calling AppiumDriver.getStatus() with args: []
+[debug] [35m[GENERIC][39m Responding to client with driver.getStatus() result: {"build":{"version":"1.15.1"}}
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"d793bae1-c5dd-4f5f-8141-393cdcac151e","element-6066-11e4-a52e-4f735466cecf":"d793bae1-c5dd-4f5f-8141-393cdcac151e"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"d793bae1-c5dd-4f5f-8141-393cdcac151e","ELEMENT":"d793bae1-c5dd-4f5f-8141-393cdcac151e"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m1669 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/notice"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElements() with args: ["id","com.vanthink.student.debug:id/notice","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/elements' to command name 'findElements'
+[debug] [35m[WD Proxy][39m Proxying [POST /elements] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/elements] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/notice","context":"","multiple":true}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":[{"ELEMENT":"41b3ec2e-19dc-4cfb-8fbc-d940a0d38032","element-6066-11e4-a52e-4f735466cecf":"41b3ec2e-19dc-4cfb-8fbc-d940a0d38032"},{"ELEMENT":"de9ebda3-4337-4952-8f64-0b23654c5750","element-6066-11e4-a52e-4f735466cecf":"de9ebda3-4337-4952-8f64-0b23654c5750"},{"ELEMENT":"485b21f8-dd7a-445d-b8fb-16c499129e6e","element-6066-11e4-a52e-4f735466cecf":"485b21f8-dd7a-445d-b8fb-16c499129e6e"},{"ELEMENT":"02493290-34f2-4cb3-84de-6df4e4ac6f44","element-6066-11e4-a52e-4f735466cecf":"02493290-34f2-4cb3-84de-6df4e4ac6f44"},{"ELEMENT":"c832f07b-7cf1-4602-9e9d-4a0ae0e77599","element-6066-11e4-a52e-4f735466cecf":"c832f07b-7cf1-4602-9e9d-4a0ae0e77599"}]}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElements() result: [{"element-6066-11e4-a52e-4f735466cecf":"41b3ec2e-19dc-4cfb-8fbc-d940a0d38032","ELEMENT":"41b3ec2e-19dc-4cfb-8fbc-d940a0d38032"},{"element-6066-11e4-a52e-4f735466cecf":"de9ebda3-4337-4952-8f64-0b23654c5750","ELEMENT":"de9ebda3-4337-4952-8f64-0b23654c5750"},{"element-6066-11e4-a52e-4f735466cecf":"485b21f8-dd7a-445d-b8fb-16c499129e6e","ELEMENT":"485b21f8-dd7a-445d-b8fb-16c499129e6e"},{"element-6066-11e4-a52e-4f735466cecf":"02493290-34f2-4cb3-84de-6df4e4ac6f44","ELEMENT":"02493290-34f2-4cb3-84de-6df4e4ac6f44"},{"element-6066-11e4-a52e-4f735466cecf":"c832f07b-7cf1-4602-9e9d-4a0ae0e77599","ELEMENT":"c832f07b-7cf1-4602-9e9d-4a0ae0e77599"}]
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements [39m[32m200[39m [90m156 ms - 651[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/485b21f8-dd7a-445d-b8fb-16c499129e6e/click[39m
+[35m[HTTP][39m [90m{"id":"485b21f8-dd7a-445d-b8fb-16c499129e6e"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.click() with args: ["485b21f8-dd7a-445d-b8fb-16c499129e6e","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/element/485b21f8-dd7a-445d-b8fb-16c499129e6e/click' to command name 'click'
+[debug] [35m[WD Proxy][39m Proxying [POST /element/485b21f8-dd7a-445d-b8fb-16c499129e6e/click] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/485b21f8-dd7a-445d-b8fb-16c499129e6e/click] with body: {"element":"485b21f8-dd7a-445d-b8fb-16c499129e6e"}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.click() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/485b21f8-dd7a-445d-b8fb-16c499129e6e/click [39m[32m200[39m [90m84 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"xpath","value":"//android.widget.TextView[contains(@text,'试卷')]"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["xpath","//android.widget.TextView[contains(@text,'试卷')]","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"xpath","selector":"//android.widget.TextView[contains(@text,'试卷')]","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"4fde3d2d-f6ff-4076-97b3-24faf597de83","element-6066-11e4-a52e-4f735466cecf":"4fde3d2d-f6ff-4076-97b3-24faf597de83"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"4fde3d2d-f6ff-4076-97b3-24faf597de83","ELEMENT":"4fde3d2d-f6ff-4076-97b3-24faf597de83"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m375 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/tv_name"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElements() with args: ["id","com.vanthink.student.debug:id/tv_name","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/elements' to command name 'findElements'
+[debug] [35m[WD Proxy][39m Proxying [POST /elements] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/elements] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/tv_name","context":"","multiple":true}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":[{"ELEMENT":"d73a2726-437f-463e-aded-5946e4239db5","element-6066-11e4-a52e-4f735466cecf":"d73a2726-437f-463e-aded-5946e4239db5"}]}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElements() result: [{"element-6066-11e4-a52e-4f735466cecf":"d73a2726-437f-463e-aded-5946e4239db5","ELEMENT":"d73a2726-437f-463e-aded-5946e4239db5"}]
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements [39m[32m200[39m [90m509 ms - 139[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/rtv_mode"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElements() with args: ["id","com.vanthink.student.debug:id/rtv_mode","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/elements' to command name 'findElements'
+[debug] [35m[WD Proxy][39m Proxying [POST /elements] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/elements] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/rtv_mode","context":"","multiple":true}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":[{"ELEMENT":"eb6beacd-0e3e-456c-b14d-7c9e68c119e7","element-6066-11e4-a52e-4f735466cecf":"eb6beacd-0e3e-456c-b14d-7c9e68c119e7"}]}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElements() result: [{"element-6066-11e4-a52e-4f735466cecf":"eb6beacd-0e3e-456c-b14d-7c9e68c119e7","ELEMENT":"eb6beacd-0e3e-456c-b14d-7c9e68c119e7"}]
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements [39m[32m200[39m [90m27 ms - 139[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/tv_finishcount"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElements() with args: ["id","com.vanthink.student.debug:id/tv_finishcount","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/elements' to command name 'findElements'
+[debug] [35m[WD Proxy][39m Proxying [POST /elements] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/elements] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/tv_finishcount","context":"","multiple":true}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":[{"ELEMENT":"166da08e-4586-429e-8256-9b6cd9426944","element-6066-11e4-a52e-4f735466cecf":"166da08e-4586-429e-8256-9b6cd9426944"}]}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElements() result: [{"element-6066-11e4-a52e-4f735466cecf":"166da08e-4586-429e-8256-9b6cd9426944","ELEMENT":"166da08e-4586-429e-8256-9b6cd9426944"}]
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements [39m[32m200[39m [90m26 ms - 139[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/eb6beacd-0e3e-456c-b14d-7c9e68c119e7/text[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[W3C (7c7ac7f1)][39m Driver proxy active, passing request on via HTTP proxy
+[debug] [35m[WD Proxy][39m Matched '/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/eb6beacd-0e3e-456c-b14d-7c9e68c119e7/text' to command name 'getText'
+[debug] [35m[WD Proxy][39m Proxying [GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/eb6beacd-0e3e-456c-b14d-7c9e68c119e7/text] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/eb6beacd-0e3e-456c-b14d-7c9e68c119e7/text] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":"未完成"}
+[35m[WD Proxy][39m Replacing sessionId bd60d923-82dc-4315-bf47-bcedf031772b with 7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/eb6beacd-0e3e-456c-b14d-7c9e68c119e7/text [39m[32m200[39m [90m21 ms - 72[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/166da08e-4586-429e-8256-9b6cd9426944/text[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[W3C (7c7ac7f1)][39m Driver proxy active, passing request on via HTTP proxy
+[debug] [35m[WD Proxy][39m Matched '/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/166da08e-4586-429e-8256-9b6cd9426944/text' to command name 'getText'
+[debug] [35m[WD Proxy][39m Proxying [GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/166da08e-4586-429e-8256-9b6cd9426944/text] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/166da08e-4586-429e-8256-9b6cd9426944/text] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":"已经有1人完成试卷"}
+[35m[WD Proxy][39m Replacing sessionId bd60d923-82dc-4315-bf47-bcedf031772b with 7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/166da08e-4586-429e-8256-9b6cd9426944/text [39m[32m200[39m [90m18 ms - 88[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/d73a2726-437f-463e-aded-5946e4239db5/text[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[W3C (7c7ac7f1)][39m Driver proxy active, passing request on via HTTP proxy
+[debug] [35m[WD Proxy][39m Matched '/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/d73a2726-437f-463e-aded-5946e4239db5/text' to command name 'getText'
+[debug] [35m[WD Proxy][39m Proxying [GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/d73a2726-437f-463e-aded-5946e4239db5/text] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/d73a2726-437f-463e-aded-5946e4239db5/text] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":"试卷2-连词成句。句型转换。强化炼句。听音连句"}
+[35m[WD Proxy][39m Replacing sessionId bd60d923-82dc-4315-bf47-bcedf031772b with 7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/d73a2726-437f-463e-aded-5946e4239db5/text [39m[32m200[39m [90m19 ms - 128[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element[39m
+[35m[HTTP][39m [90m{"using":"xpath","value":"//android.widget.TextView[contains(@text,\"到底啦 下拉刷新试试\")]"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElement() with args: ["xpath","//android.widget.TextView[contains(@text,\"到底啦 下拉刷新试试\")]","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/element' to command name 'findElement'
+[debug] [35m[WD Proxy][39m Proxying [POST /element] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element] with body: {"strategy":"xpath","selector":"//android.widget.TextView[contains(@text,\"到底啦 下拉刷新试试\")]","context":"","multiple":false}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"ELEMENT":"85695c2e-227c-4862-8004-2581dbb03611","element-6066-11e4-a52e-4f735466cecf":"85695c2e-227c-4862-8004-2581dbb03611"}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"85695c2e-227c-4862-8004-2581dbb03611","ELEMENT":"85695c2e-227c-4862-8004-2581dbb03611"}
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element [39m[32m200[39m [90m87 ms - 137[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.getWindowRect() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/window/current/size' to command name 'getWindowSize'
+[debug] [35m[WD Proxy][39m Proxying [GET /window/current/size] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/window/current/size] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"height":2044,"width":1080}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.getWindowRect() result: {"width":1080,"height":2044,"x":0,"y":0}
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect [39m[32m200[39m [90m16 ms - 50[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.getWindowRect() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/window/current/size' to command name 'getWindowSize'
+[debug] [35m[WD Proxy][39m Proxying [GET /window/current/size] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/window/current/size] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"height":2044,"width":1080}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.getWindowRect() result: {"width":1080,"height":2044,"x":0,"y":0}
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect [39m[32m200[39m [90m54 ms - 50[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.getWindowRect() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/window/current/size' to command name 'getWindowSize'
+[debug] [35m[WD Proxy][39m Proxying [GET /window/current/size] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/window/current/size] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":{"height":2044,"width":1080}}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.getWindowRect() result: {"width":1080,"height":2044,"x":0,"y":0}
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/window/rect [39m[32m200[39m [90m19 ms - 50[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/touch/perform[39m
+[35m[HTTP][39m [90m{"actions":[{"action":"press","options":{"x":540,"y":408}},{"action":"wait","options":{"ms":1000}},{"action":"moveTo","options":{"x":540,"y":1839}},{"action":"release","options":{}}]}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.performTouch() with args: [[{"action":"press","options":{"x":540,"y":408}},{"action":"wait","options":{"ms":1000}},{"action":"moveTo","options":{"x":540,"y":1839}},{"action":"release","options":{}}],"7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/touch/perform' to command name 'performTouch'
+[debug] [35m[WD Proxy][39m Proxying [POST /touch/perform] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/touch/perform] with body: {"startX":540,"startY":408,"endX":540,"endY":1839,"steps":28}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.performTouch() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/touch/perform [39m[32m200[39m [90m1366 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements[39m
+[35m[HTTP][39m [90m{"using":"id","value":"com.vanthink.student.debug:id/tv_name"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.findElements() with args: ["id","com.vanthink.student.debug:id/tv_name","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Valid locator strategies for this request: xpath, id, class name, accessibility id, -android uiautomator
+[debug] [35m[BaseDriver][39m Waiting up to 0 ms for condition
+[debug] [35m[WD Proxy][39m Matched '/elements' to command name 'findElements'
+[debug] [35m[WD Proxy][39m Proxying [POST /elements] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/elements] with body: {"strategy":"id","selector":"com.vanthink.student.debug:id/tv_name","context":"","multiple":true}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":[{"ELEMENT":"29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1","element-6066-11e4-a52e-4f735466cecf":"29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1"}]}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.findElements() result: [{"element-6066-11e4-a52e-4f735466cecf":"29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1","ELEMENT":"29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1"}]
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/elements [39m[32m200[39m [90m323 ms - 139[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1/text[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[W3C (7c7ac7f1)][39m Driver proxy active, passing request on via HTTP proxy
+[debug] [35m[WD Proxy][39m Matched '/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1/text' to command name 'getText'
+[debug] [35m[WD Proxy][39m Proxying [GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1/text] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1/text] with body: {}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":"试卷2-连词成句。句型转换。强化炼句。听音连句"}
+[35m[WD Proxy][39m Replacing sessionId bd60d923-82dc-4315-bf47-bcedf031772b with 7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1/text [39m[32m200[39m [90m51 ms - 128[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1/click[39m
+[35m[HTTP][39m [90m{"id":"29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1"}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.click() with args: ["29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1","7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/element/29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1/click' to command name 'click'
+[debug] [35m[WD Proxy][39m Proxying [POST /element/29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1/click] to [POST http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/element/29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1/click] with body: {"element":"29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1"}
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.click() result: null
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/element/29f5aec6-20e3-4b4c-b7d2-85598ebfcfa1/click [39m[32m200[39m [90m63 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/screenshot[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.getScreenshot() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[WD Proxy][39m Matched '/screenshot' to command name 'getScreenshot'
+[debug] [35m[WD Proxy][39m Proxying [GET /screenshot] to [GET http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b/screenshot] with no body
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":"iVBORw0KGgoAAAANSUhEUgAABDgAAAjECAYAAABJ4N+ZAAAABHNCSVQICAgIfAhkiAAAIABJREFU\neJzs3Xd4XGeZ\/vH7zIxmNOq9F8s97nacOIlTiNPjACEVQskC+4OlJhvYhaUmgQV26SUBdoFAWEog\nhDQS0hMSx6kucbdlW5Jl9d6nnt8fI400mpE0KiN57O\/nunRJc3TKa1saz7nneZ\/X2HTjw6YAAAAA\nAADimGWuBwAAAAAAADBdBBwAAAAAACDuEXAAAAAAAIC4R8ABAAAAAADiHgEHAAAAAACIewQcAAAA\nAAAg7hFwAAAAAACAuEfAAQAAAAAA4h4BBwAAAAAAiHsEHAAAAAAAIO4RcAAAAAAAgLhHwAEAAAAA\nAOIeAQcAAAAAAIh7BBwAAAAAACDuEXAAAAAAAIC4R8ABAAAAAADiHgEHAAAAAACIewQcAAAAAAAg\n7hFwAAAAAACAuEfAAQAAAAAA4h4BBwAAAAAAiHsEHAAAAAAAIO4RcAAAAAAAgLhHwAEAAAAAAOIe\nAQcAAAAAAIh7BBwAAAAAACDuEXAAAAAAAIC4R8ABAAAAAADiHgEHAAAAAACIewQcAAAAAAAg7tnm\negCxZk+wKCsjUTabEdX+Lrdfza39MR4VAAAAAACYSSd1wLF+Va7OPaNQxiTrVJ7dclw797bGZlAT\nyEizKysjUakpCUpJSlBKcuDD5zPl9vjkcvvk8fjV2e1WzfEetXe65mSc8cQwTMmUVubv04dX\/kGl\n6fVKMvslv6l+X6Jq2\/J0z6H3anvTCsmQTDO6MGyqLsvfoZtK\/6FMW7ccFo+spl+GGRhj4MMc8dmU\nTGPUtuHPpl\/ymRa5fAlq96bq\/1o26anudTEdPwAAwFQYhpSfk6T0VLuSkxPk8\/nV2Nyv5rZ++Xzm\nnI4tN9upwrwkJTl...
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAABDgAAAjECAYAAABJ4N+ZAAAABHNCSVQICAgIfAhkiAAAIABJREFU\neJzs3Xd4XGeZ/vH7zIxmNOq9F8s97nacOIlTiNPjACEVQskC+4OlJhvYhaUmgQV26SUBdoFAWEog\nhDQS0hMSx6kucbdlW5Jl9d6nnt8fI400mpE0KiN57O/nunRJc3TKa1saz7nneZ/X2HTjw6YAAAAA\nAADimGWuBwAAAAAAADBdBBwAAAAAACDuEXAAAAAAAIC4R8ABAAAAAADiHgEHAAAAAACIewQcAAAA\nAAAg7hFwAAAAAACAuEfAAQAAAAAA4h4BBwAAAAAAiHsEHAAAAAAAIO4RcAAAAAAAgLhHwAEAAAAA\nAOIeAQcAAAAAAIh7BBwAAAAAACDuEXAAAAAAAIC4R8ABAAAAAADiHgEHAAAAAACIewQcAAAAAAAg\n7hFwAAAAAACAuEfAAQAAAAAA4h4BBwAAAAAAiHsEHAAAAAAAIO4RcAAAAAAAgLhHwAEAAAAAAOIe\nAQcAAAAAAIh7BBwAAAAAACDuEXAAAAAAAIC4R8ABAAAAAADiHgEHAAAAAACIewQcAAAAAAAg7tnm\negCxZk+wKCsjUTabEdX+Lrdfza39MR4VAAAAAACYSSd1wLF+Va7OPaNQxiTrVJ7dclw797bGZlAT\nyEizKysjUakpCUpJSlBKcuDD5zPl9vjkcvvk8fjV2e1WzfEetXe65mSc8cQwTMmUVubv04dX/kGl\n6fVKMvslv6l+X6Jq2/J0z6H3anvTCsmQTDO6MGyqLsvfoZtK/6FMW7ccFo+spl+GGRhj4MMc8dmU\nTGPUtuHPpl/ymRa5fAlq96bq/1o26anudTEdPwAAwFQYhpSfk6T0VLuSkxPk8/nV2Nyv5rZ++Xzm\nnI4tN9upwrwkJTltMibxUtA0pebWflUf75HX64/dAAFExdh048Nz+2wSI6uXZWvTxuIpH//0i7Xa\ntb9tBk...
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6/screenshot [39m[32m200[39m [90m708 ms - 113832[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mDELETE[39m [37m/wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6[39m
+[35m[HTTP][39m [90m{}[39m
+[debug] [35m[W3C (7c7ac7f1)][39m Calling AppiumDriver.deleteSession() with args: ["7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6"]
+[debug] [35m[BaseDriver][39m Event 'quitSessionRequested' logged at 1583809813084 (11:10:13 GMT+0800 (CST))
+[35m[Appium][39m Removing session 7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6 from our master session list
+[debug] [35m[UiAutomator2][39m Deleting UiAutomator2 session
+[debug] [35m[UiAutomator2][39m Deleting UiAutomator2 server session
+[debug] [35m[WD Proxy][39m Matched '/' to command name 'deleteSession'
+[debug] [35m[WD Proxy][39m Proxying [DELETE /] to [DELETE http://localhost:8200/wd/hub/session/bd60d923-82dc-4315-bf47-bcedf031772b] with no body
+[debug] [35m[WD Proxy][39m Got response with status 200: {"sessionId":"bd60d923-82dc-4315-bf47-bcedf031772b","value":null}
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell am force-stop com.vanthink.student.debug'
+[debug] [35m[Logcat][39m Stopping logcat capture
+[debug] [35m[ADB][39m Removing forwarded port socket connection: 8200 
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 forward --remove tcp\:8200'
+[35m[UiAutomator2][39m Restoring hidden api policy to the device default configuration
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell settings delete global hidden_api_policy_pre_p_apps'
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell settings delete global hidden_api_policy_p_apps'
+[debug] [35m[ADB][39m Running '/Users/vanthink_test_ios/Desktop/intsall/adt-bundle-mac-x86_64-20140624/sdk/platform-tools/adb -P 5037 -s RELBB18A31503011 shell settings delete global hidden_api_policy'
+[debug] [35m[BaseDriver][39m Event 'quitSessionFinished' logged at 1583809813499 (11:10:13 GMT+0800 (CST))
+[debug] [35m[W3C (7c7ac7f1)][39m Received response: null
+[debug] [35m[W3C (7c7ac7f1)][39m But deleting session, so not returning
+[debug] [35m[W3C (7c7ac7f1)][39m Responding to client with driver.deleteSession() result: null
+[35m[HTTP][39m [37m<-- DELETE /wd/hub/session/7c7ac7f1-0e6d-430f-9d89-c616a7c6f4b6 [39m[32m200[39m [90m417 ms - 14[39m
+[35m[HTTP][39m [90m[39m

@@ -8,7 +8,7 @@ from app.honor.student.user_center.object_page.user_center_page import Setting
 from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.assert_func import ExpectingTest
-from utils.reset_phone_find_toast import verify_find
+from utils.reset_phone_toast import get_verify
 from utils.toast_find import Toast
 
 
@@ -74,7 +74,7 @@ class Register(unittest.TestCase):
                         phone.send_keys(user_phone)  # 输入手机号
 
                         self.login.get_code_button().click()   # 获取验证码 按钮
-                        value = verify_find(user_phone, 'register')  # 获取验证码
+                        value = get_verify(user_phone, 'register')  # 获取验证码
 
                         if Toast().find_toast('用户已经注册') or self.login.wait_check_page():
                             print('用户已经注册', user_phone)

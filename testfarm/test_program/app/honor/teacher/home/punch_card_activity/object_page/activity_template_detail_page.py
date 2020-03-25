@@ -19,6 +19,7 @@ class ActivityTemplateDetailPage(BasePage):
 
     def __init__(self):
         self.wait = WaitElement()
+        self.my_assert = MyAssert()
         self.screen = self.get_window_size()
 
     @teststeps
@@ -31,7 +32,9 @@ class ActivityTemplateDetailPage(BasePage):
     def wait_check_page(self, var=15):
         """以“title: 布置活动”为依据"""
         locator = (By.XPATH, '//div[@class="van-nav-bar__title van-ellipsis" and text()="布置活动"]')
-        return self.wait.wait_check_element(locator, var)
+        ele = self.wait.wait_check_element(locator, var)
+        self.my_assert.assertTrue(ele, self.detail_tips)
+        return ele
 
     @teststeps
     def wait_check_list_page(self, var=15):
@@ -142,7 +145,7 @@ class ActivityTemplateDetailPage(BasePage):
     @teststep
     def preview_img(self):
         """打卡活动名称 title"""
-        locator = (By.XPATH, '//img[@class="van-image__img"]')
+        locator = (By.XPATH, '//div[@class="van-image van-image-preview__image"]')
         return self.wait.wait_find_element(locator)
 
     @teststeps
@@ -153,7 +156,7 @@ class ActivityTemplateDetailPage(BasePage):
     @teststeps
     def choose_class_operation(self):
         """选择班级 学生"""
-        MyAssert().assertTrue_new(self.wait_check_list_page(), self.detail_list_tips)
+        self.my_assert.assertTrue_new(self.wait_check_list_page(), self.detail_list_tips)
         print('----------------------------')
         button = self.choose_button()  # 单选框
         van = self.van_name()  # 班级 元素

@@ -1,0 +1,3063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试用例执行报告</title>
+    <meta name="generator" content="HTMLTestRunner 1.2.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+    <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: Microsoft YaHei;padding: 20px; font-size: 100%; }
+table       { font-size: 100%; }
+.table tbody tr td{
+            vertical-align: middle;
+        }
+
+/* -- heading ---------------------------------------------------------------------- */
+.heading .description, .attribute {
+    clear: both;
+}
+
+/* --- 失败和错误合集样式 -- Gelomen --- */
+.failCollection, .errorCollection {
+    width: 100px;
+    float: left;
+}
+#failCaseOl li {
+    color: red
+}
+#errorCaseOl li {
+    color: orange
+}
+
+/* --- 打开截图特效样式 -- Gelomen --- */
+.data-img{
+    cursor:pointer
+}
+
+.pic_looper{
+    width:100%;
+    height:100%;
+    position: fixed;
+    left: 0;
+    top:0;
+    opacity: 0.6;
+    background: #000;
+    display: none;
+    z-index: 100;
+}
+
+.pic_show{
+    width:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    text-align: center;
+    display: none;
+    z-index: 100;
+}
+
+.pic_box{
+    padding:10px;
+    width:90%;
+    height:90%;
+    margin:40px auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+.pic_box img{
+    width: auto;
+    height: 100%;
+    -moz-box-shadow: 0px 0px 20px 0px #000;
+    -webkit-box-shadow: 0px 0px 20px 0px #000;
+    box-shadow: 0px 0px 20px 0px #000;
+}
+
+/* --- 饼状图div样式 -- Gelomen --- */
+#container {
+    width: 450px;
+    height: 300px;
+    float: left;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+#total_row  { font-weight: bold; }
+.passCase   { color: #5cb85c; }
+.failCase   { color: #f0ad4e; font-weight: bold; }
+.errorCase  { color: #d9534f; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+.screenshot:link { text-decoration: none;color: deeppink; }
+.screenshot:visited { text-decoration: none;color: deeppink; }
+.screenshot:hover { text-decoration: none;color: darkcyan; }
+.screenshot:active { text-decoration: none;color: deeppink; }
+</style>
+
+</head>
+<body >
+<script language="javascript" type="text/javascript">
+
+    $(function(){
+        // 修改 失败 和 错误 用例里对应按钮的颜色ClassName为动态加载 -- Gelomen
+    	$("button").each(function () {
+    	    var text = $(this).text();
+    	    if(text == "失败"){
+    	        $(this).addClass("btn-warning")
+            }else if(text == "错误") {
+                $(this).addClass("btn-danger")
+            }else if(text == "通过") {
+                $(this).addClass("btn-success")
+            }
+        });
+
+        // 给失败和错误合集加样式 -- Gelomen
+        var p_attribute = $("p.attribute");
+        p_attribute.eq(4).addClass("failCollection");
+        p_attribute.eq(5).addClass("errorCollection");
+
+        // 打开截图，放大，点击任何位置可以关闭图片  -- Gelomen
+        $(".screenshot").click(function(){
+            var img = $(this).attr("img");
+            
+            // var a = "{% static '";
+            // var b = "' %}";
+            
+            $('.pic_show img').attr('src', img);
+            
+            $('.pic_looper').fadeIn(200);
+            $('.pic_show').fadeIn(200);
+
+            var browserHeight = $(window).height();
+            var pic_boxHeight = $(".pic_box").height();
+            var top = (browserHeight - pic_boxHeight)/2;
+            $('.pic_box').css("margin-top", top + "px")
+
+        });
+        $('.pic_looper, .pic_show').click(function(){
+            $('.pic_looper').fadeOut(200);
+            $('.pic_show').fadeOut(200)
+        });
+
+        var browserWidth = $(window).width();
+        var margin_left = browserWidth/2 - 450;
+        if(margin_left <= 240){
+            $("#container").css("margin", "auto");
+        }else {
+            $("#container").css("margin-left", margin_left + "px");
+        }
+
+        $(window).resize(function(){
+            // 改变窗口大小时，自动改变图片与顶部的距离  -- Gelomen
+            var browserHeight = $(window).height();
+            var pic_boxHeight = $(".pic_box").height();
+            var top = (browserHeight - pic_boxHeight)/2;
+            $('.pic_box').css("margin-top", top + "px");
+
+
+            // 改变窗口大小时，自动改变饼图的边距  -- Gelomen
+            var browserWidth = $(window).width();
+            var margin_left = browserWidth/2 - 450;
+            if(margin_left <= 240){
+                $("#container").css("margin", "auto");
+            }else {
+                $("#container").css("margin-left", margin_left + "px");
+            }
+        });
+
+        // 距离顶部超过浏览器窗口一屏时，回到顶部按钮才出现  -- Gelomen
+        $(window).scroll(function(){
+            var browserHeight = $(window).height();
+            var top = $(window).scrollTop();
+            if(top >= browserHeight){
+                $("#toTop").css("display", "block")
+            }else {
+                $("#toTop").css("display", "none")
+            }
+        })
+
+        // 增加回到顶部过程的动画，以看上去不会那么生硬  -- Gelomen
+        $("#toTop").click(function() {
+            $("html,body").animate({"scrollTop":0}, 700)
+        })
+
+        // 增加饼状图  -- Gelomen
+        $('#container').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                spacing : [0, 0, 0, 0]
+            },
+            credits: {
+                enabled: false
+            },
+            navigation: {
+                buttonOptions: {
+                    enabled: false
+                }
+            },
+            title: {
+                floating:true,
+                text: '测试结果占比'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    colors: ['#81ca9d','#fdc68c', '#f16d7e'],
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(e) {  // 鼠标滑过时动态更新标题
+                                chart.setTitle({
+                                    text: e.target.name+ '\t'+ e.target.y + ' 个'
+                                });
+                            }
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                innerSize: '80%',
+                name: '比例',
+                data: [
+                    ['通过', 12],
+                    {
+                        name: '失败',
+                        y: 2,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['错误', 7]
+                ]
+            }]
+        }, function(c) {
+            // 环形图圆心
+            var centerY = c.series[0].center[1],
+                titleHeight = parseInt(c.title.styles.fontSize);
+            c.setTitle({
+                y:centerY + titleHeight/2
+            });
+            chart = c;
+        });
+
+        // 查看 失败 和 错误 合集链接文字切换  -- Gelomen
+        $(".showDetail").click(function () {
+            if($(this).html() == "点击查看"){
+                $(this).html("点击收起")
+            }else {
+                $(this).html("点击查看")
+            }
+        })
+    });
+
+
+output_list = Array();
+
+/*level 调整增加只显示通过用例的分类 --Findyou / 修复筛选显示bug --Gelomen
+0:Summary //all hiddenRow
+1:Failed  //pt&et hiddenRow, ft none
+2:Pass    //pt none, ft&et hiddenRow
+3:Error   //pt&ft hiddenRow, et none
+4:All     //all none
+*/
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level == 2 || level == 0 || level == 3) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+                // 切换筛选时只显示预览   -- Gelomen
+                $("div[id^='div_ft']").attr("class", "collapse");
+                $("div[id^='div_et']").attr("class", "collapse");
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level == 1 || level == 0 || level == 3) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+                // 切换筛选时只显示预览   -- Gelomen
+                $("div[id^='div_ft']").attr("class", "collapse");
+                $("div[id^='div_et']").attr("class", "collapse");
+            }
+        }
+        if (id.substr(0,2) == 'et') {
+            if (level == 1 || level == 0 || level == 2) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+                // 切换筛选时只显示预览   -- Gelomen
+                $("div[id^='div_ft']").attr("class", "collapse");
+                $("div[id^='div_et']").attr("class", "collapse");
+            }
+        }
+    }
+
+    //加入【详细】切换文字变化 --Findyou
+    detail_class=document.getElementsByClassName('detail');
+	//console.log(detail_class.length)
+	if (level == 3) {
+		for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="收起"
+		}
+	}
+	else{
+			for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="详细"
+		}
+	}
+}
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        //ID修改 点 为 下划线 -Findyou
+        tid0 = 't' + cid.substr(1) + '_' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'e' + tid0;
+                tr = document.getElementById(tid);
+            }
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+            document.getElementById(cid).innerText = "详细"
+        }
+        else {
+            document.getElementById(tid).className = '';
+            document.getElementById(cid).innerText = "收起"
+        }
+    }
+}
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+</script>
+<div class='pic_looper'></div> <div class='pic_show'><div class='pic_box'>{% load static %}<img src=''/></div> </div>
+<div class='heading'>
+<div style="width: 650px; float: left;">
+    <h1 style="font-family: Microsoft YaHei">测试用例执行报告</h1>
+    <p class='attribute'><strong>测试人员 : </strong> QA</p>
+<p class='attribute'><strong>开始时间 : </strong> 2020-03-17 16:24:28</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:34:00.087307</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 21，通过 12，失败 2，错误 7，通过率 = 57.14%</p>
+<p class='attribute'><strong>失败用例合集 : </strong> <div class='panel-default' style='float: left;'><a class='showDetail' data-toggle='collapse' href='#failCaseOl' style='text-decoration: none;'>点击查看</a></div><ol id='failCaseOl' class='collapse' style='float: left;'><li>test_cloze_test (test_cases.test005_cloze_test.Games)</li><li>test_reading_comprehension (test_cases.test007_reading_comprehension.Games)</li></ol></p>
+<p class='attribute'><strong>错误用例合集 : </strong> <div class='panel-default' style='float: left;'><a class='showDetail' data-toggle='collapse' href='#errorCaseOl' style='text-decoration: none;'>点击查看</a></div><ol id='errorCaseOl' class='collapse' style='float: left;'><li>test_banked_cloze (test_cases.test002_banked_cloze.Games)</li><li>test_match_exercise (test_cases.test008_matching_exercise.Games)</li><li>test_guess_word (test_cases.test009_guess_word.Games)</li><li>test_strengthen_sentence (test_cases.test013_strengthen_sentence.Games)</li><li>test_griding_ears (test_cases.test019_grinding_ears.Games)</li><li>test_tiny_course (test_cases.test020_tiny_course.Games)</li><li>test_word_reading (test_cases.test021_word_reading.Games)</li></ol></p>
+
+    <p class='description'>用例执行情况统计：</p>
+</div>
+<div id="container"></div>
+</div>
+
+
+
+<div style="width: 500px; clear: both;">
+<p id='show_detail_line'>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 57.14% }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 12 }</a>
+<a class="btn btn-warning" href='javascript:showCase(1)'>失败{ 2 }</a>
+<a class="btn btn-danger" href='javascript:showCase(3)'>错误{ 7 }</a>
+<a class="btn btn-info" href='javascript:showCase(4)'>所有{ 21 }</a>
+</p>
+</div>
+<table id='result_table' class="table table-condensed table-bordered table-hover">
+<colgroup>
+<col align='left' style="width: 300px;"/>
+<col align='right' style="width: 300px;"/>
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' style="width: 200px;"/>
+</colgroup>
+<tr id='header_row' class="text-center success" style="font-weight: bold;font-size: 14px;">
+    <td>用例集/测试用例</td>
+    <td>总计</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>耗时</td>
+    <td>详细</td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>Games &nbsp &nbsp 闪卡练习</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">271.9秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',1)" class="detail" id='c1'>详细</a></td>
+</tr>
+
+    <tr id='pt1_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_flash_card<br>对不同小游戏类型，选择不同函数进行相应的操作</div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt1_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+        <div id='div_pt1_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt1_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+        <div id='div_pt1_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt1_1: 在主界面
+############################################################
+闪卡练习学习模式1（句子学习）
+------------------------------------
+---切换到 全英模式:
+单词:She gets up at 7:00 in the morning.
+------------------------------------
+单词:He gets dressed at 7:25 in the morning. 
+ 解释:他早上7:25穿好衣服。
+------------------------------------
+多次点击发音按钮:
+单词:He plays video games at 3:30 in the afternoon. 
+ 解释:他下午三点半打游戏。
+=================================================
+再练一遍:
+------------------------------------
+---切换到 全英模式:
+单词:She gets up at 7:00 in the morning.
+------------------------------------
+单词:He gets dressed at 7:25 in the morning. 
+ 解释:他早上7:25穿好衣服。
+------------------------------------
+多次点击发音按钮:
+单词:He plays video games at 3:30 in the afternoon. 
+ 解释:他下午三点半打游戏。
+=================================================
+完成学习
+3个内容,0标记★;学习模式
+She gets up at 7:00 in the morning. 
+ 她早上七点起床。
+-------------------------
+He gets dressed at 7:25 in the morning. 
+ 他早上7:25穿好衣服。
+-------------------------
+He plays video games at 3:30 in the afternoon. 
+ 他下午三点半打游戏。
+-------------------------
+点击 结果页 发音按钮:  0
+############################################################
+闪卡练习_图片（单词抄写）
+-------------------------------------------
+存在图片
+第1题,单词:what
+ 解释:什么
+需要填写的字母： w
+需要点击的尺寸： 163.96559999999997 	 1582.0
+1602.0
+需要填写的字母： h
+需要点击的尺寸： 635.8824 	 1714.0
+1734.0
+需要填写的字母： a
+需要点击的尺寸： 105.98039999999999 	 1714.0
+1734.0
+需要填写的字母： t
+需要点击的尺寸： 481.9068 	 1582.0
+1602.0
+-------------------------------------------
+存在图片
+第2题,单词:where
+ 解释:哪里
+---输入错误单词字母：q
+需要填写的字母： q
+需要点击的尺寸： 57.9852 	 1582.0
+1602.0
+---输入错误单词字母：q
+需要填写的字母： q
+需要点击的尺寸： 57.9852 	 1582.0
+1602.0
+---输入错误单词字母：q
+需要填写的字母： q
+需要点击的尺寸： 57.9852 	 1582.0
+1602.0
+---输入错误单词字母：q
+需要填写的字母： q
+需要点击的尺寸： 57.9852 	 1582.0
+1602.0
+---输入错误单词字母：q
+需要填写的字母： q
+需要点击的尺寸： 57.9852 	 1582.0
+1602.0
+----删除错误单词后重新输入-----
+需要填写的字母： backspace
+需要点击的尺寸： 953.8235999999999 	 1846.0
+1866.0
+需要填写的字母： backspace
+需要点击的尺寸： 953.8235999999999 	 1846.0
+1866.0
+需要填写的字母： backspace
+需要点击的尺寸： 953.8235999999999 	 1846.0
+1866.0
+需要填写的字母： backspace
+需要点击的尺寸： 953.8235999999999 	 1846.0
+1866.0
+需要填写的字母： backspace
+需要点击的尺寸： 953.8235999999999 	 1846.0
+1866.0
+需要填写的字母： w
+需要点击的尺寸： 163.96559999999997 	 1582.0
+1602.0
+需要填写的字母： h
+需要点击的尺寸： 635.8824 	 1714.0
+1734.0
+需要填写的字母： e
+需要点击的尺寸： 269.946 	 1582.0
+1602.0
+需要填写的字母： r
+需要点击的尺寸： 375.92639999999994 	 1582.0
+1602.0
+需要填写的字母： e
+需要点击的尺寸： 269.946 	 1582.0
+1602.0
+-------------------------------------------
+存在图片
+第3题,单词:who
+ 解释:谁
+多次点击发音按钮:
+需要填写的字母： w
+需要点击的尺寸： 163.96559999999997 	 1582.0
+1602.0
+需要填写的字母： h
+需要点击的尺寸： 635.8824 	 1714.0
+1734.0
+需要填写的字母： o
+需要点击的尺寸： 905.8283999999999 	 1582.0
+1602.0
+-------------------------------------------
+存在图片
+第4题,单词:how
+ 解释:怎么样
+需要填写的字母： h
+需要点击的尺寸： 635.8824 	 1714.0
+1734.0
+需要填写的字母： o
+需要点击的尺寸： 905.8283999999999 	 1582.0
+1602.0
+需要填写的字母： w
+需要点击的尺寸： 163.96559999999997 	 1582.0
+1602.0
+=================================================
+标星内容再练一遍:
+star按钮数目： 4
+标星数： 1
+-------------------------------------------
+存在图片
+第1题,单词:where
+ 解释:哪里
+需要填写的字母： w
+需要点击的尺寸： 163.96559999999997 	 1582.0
+1602.0
+需要填写的字母： h
+需要点击的尺寸： 635.8824 	 1714.0
+1734.0
+需要填写的字母： e
+需要点击的尺寸： 269.946 	 1582.0
+1602.0
+需要填写的字母： r
+需要点击的尺寸： 375.92639999999994 	 1582.0
+1602.0
+需要填写的字母： e
+需要点击的尺寸： 269.946 	 1582.0
+1602.0
+=================================================
+############################################################
+闪卡练习_图片（单词学习）
+------------------------------------
+存在图片
+单词:what 
+ 解释:什么
+------------------------------------
+存在图片
+单词:where 
+ 解释:哪里
+------------------------------------
+存在图片
+多次点击发音按钮:
+---切换到 全英模式:
+例句: Who is that man? He is my uncle.
+Rachel老师
+单词:who
+------------------------------------
+存在图片
+单词:how 
+ 解释:怎么样
+=================================================
+再练一遍:
+------------------------------------
+存在图片
+单词:what 
+ 解释:什么
+------------------------------------
+存在图片
+单词:where 
+ 解释:哪里
+------------------------------------
+存在图片
+多次点击发音按钮:
+---切换到 全英模式:
+例句: Who is that man? He is my uncle.
+Rachel老师
+单词:who
+------------------------------------
+存在图片
+单词:how 
+ 解释:怎么样
+=================================================
+完成学习
+4个内容,0标记★;学习模式
+what 
+ 什么
+-------------------------
+where 
+ 哪里
+-------------------------
+who 
+ 谁
+-------------------------
+how 
+ 怎么样
+-------------------------
+点击 结果页 发音按钮:  0
+点击 结果页 发音按钮:  3
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='errorClass warning'>
+    <td>Games &nbsp &nbsp 选词填空</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1.09秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c2',1)" class="detail" id='c2'>详细</a></td>
+</tr>
+
+<tr id='et2_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_banked_cloze <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et2_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et2_1'>错误</button>
+    <div id='div_et2_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et2_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et2_1,#div_et2_1_screenshot'>错误</button>
+    <div id='div_et2_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et2_1: report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_162406/
+screen_shot[Error--Error_1.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/test_cases/test002_banked_cloze.py", line 35, in setUp
+    cls.choice = BankedCloze()
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/banked_cloze_page.py", line 26, in __init__
+    self.bounds = ClickBounds()
+TypeError: ClickBounds() missing 3 required positional arguments: 'self', 'location_x', and 'location_y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 123, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_1.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et2_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_1.png">Error_1.png</a></div></td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>Games &nbsp &nbsp 词汇选择</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">168.88秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c3',1)" class="detail" id='c3'>详细</a></td>
+</tr>
+
+    <tr id='pt3_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_vocabulary_choice<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt3_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt3_1'>通过</button>
+        <div id='div_pt3_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt3_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt3_1'>通过</button>
+        <div id='div_pt3_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt3_1: 在主界面
+######################################################
+词汇选择（选单词）
+题目: 口渴的
+回答错误T/F：thirsty // sad
+----------------------------------
+题目: 饥饿的
+回答错误T/F：kite // hungry
+----------------------------------
+题目: 饱的
+回答错误T/F：full // tired
+----------------------------------
+题目: 开心的
+回答错误T/F：hungry // happy
+----------------------------------
+题目: 悲伤的
+回答错误T/F：sad // tired
+----------------------------------
+题目: 累的
+回答错误T/F：tired // thirsty
+----------------------------------
+题目: 风筝
+回答正确: kite
+----------------------------------
+=================================================
+查看答案页面:
+单词: thirsty
+解释: 口渴的
+对错标识: false
+-----------------------------------------
+单词: hungry
+解释: 饥饿的
+对错标识: false
+-----------------------------------------
+单词: full
+解释: 饱的
+对错标识: false
+-----------------------------------------
+单词: happy
+解释: 开心的
+对错标识: false
+-----------------------------------------
+单词: sad
+解释: 悲伤的
+对错标识: false
+-----------------------------------------
+单词: tired
+解释: 累的
+对错标识: false
+-----------------------------------------
+单词: kite
+解释: 风筝
+对错标识: true
+-----------------------------------------
+=================================================
+######################################################
+词汇选择（听音选词）
+是
+回答错误T/F：am // are
+----------------------------------
+是
+回答错误T/F：are // girl
+----------------------------------
+男孩
+回答错误T/F：are // boy
+----------------------------------
+女孩
+回答错误T/F：girl // egg
+----------------------------------
+鸡蛋
+回答正确: egg
+----------------------------------
+扇子
+回答错误T/F：are // fan
+----------------------------------
+判断计时: ['00:06', '00:12', '00:19', '00:25', '00:31', '00:37']
+计时功能无误: [6, 12, 19, 25, 31, 37]
+=================================================
+######################################################
+词汇选择（选解释）
+题目: i
+回答正确: 我
+----------------------------------
+题目: boy
+回答错误T/F：男孩 // 我
+----------------------------------
+题目: girl
+回答错误T/F：女孩 // 男孩
+----------------------------------
+=================================================
+######################################################
+听音选义（听音选义）
+回答正确: 钢笔
+----------------------------------
+回答正确: 每人，人人
+----------------------------------
+回答错误T/F：左，左边，左边的 // 前面，前部
+----------------------------------
+回答错误T/F：左，左边，左边的 // 前面，前部
+----------------------------------
+判断计时: ['00:05', '00:09', '00:15', '00:19']
+计时功能无误: [5, 9, 15, 19]
+=================================================
+错题再练
+回答错误T/F：每人，人人 // 左，左边，左边的
+----------------------------------
+回答错误T/F：前面，前部 // 钢笔
+----------------------------------
+判断计时: ['00:25', '00:30']
+计时功能无误: [25, 30]
+=================================================
+结果页 -- 准确率：共4题
+统计结果: 50
+准确率逻辑无误 - 答对2题 准确率:50%
+==================================================
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>Games &nbsp &nbsp 单项选择</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">76.94秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c4',1)" class="detail" id='c4'>详细</a></td>
+</tr>
+
+    <tr id='pt4_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_single_choice<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt4_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_1'>通过</button>
+        <div id='div_pt4_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt4_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt4_1'>通过</button>
+        <div id='div_pt4_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt4_1: 在主界面
+#################################################################
+单项选择_解析
+题目: Who _____ that girl?
+回答错误:is;   正确答案:are
+那个女孩是谁？
+--------------------
+题目: _____ your friend like? She's tall and thin.
+回答错误:What;   正确答案:What's
+--------------------
+题目: Do you know Ms Young? ( _____ ) .
+回答正确: Yes, I do.
+你知道王女士吗？
+--------------------
+题目: Ms Zhang will _____ our new Chinese teacher.
+回答正确: am
+--------------------
+题目: What is Mr Wang like? ( _____ )is so friendly.
+回答错误:He;   正确答案:It
+--------------------
+判断计时: ['00:04', '00:11', '00:14', '00:21', '00:31']
+计时功能无误: [4, 11, 14, 21, 31]
+===============================================
+结果页 -- 所用时间:
+result_time: 31 31
+本次答题所用时间: 31
+==================================================
+查看答案页面:
+-----------------------------
+1.Who _____ that girl?
+选项: A
+那个女孩是谁？
+-----------------------------
+2._____ your friend like? She's tall and thin.
+选项: B
+那个女孩是谁？
+-----------------------------
+3.Do you know Ms Young? ( _____ ) .
+选项: A
+你知道王女士吗？
+-----------------------------
+4.Ms Zhang will _____ our new Chinese teacher.
+选项: B
+你知道王女士吗？
+-----------------------------
+5.What is Mr Wang like? ( _____ )is so friendly.
+选项: B
+你知道王女士吗？
+#################################################################
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='failClass warning'>
+    <td>Games &nbsp &nbsp 完形填空</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">75.65秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c5',1)" class="detail" id='c5'>详细</a></td>
+</tr>
+
+<tr id='ft5_1' class='none'>
+    <td class='failCase' style="vertical-align: middle"><div class='testcase'>test_cloze_test <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft5_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_ft5_1'>失败</button>
+    <div id='div_ft5_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_ft5_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_ft5_1,#div_ft5_1_screenshot'>失败</button>
+    <div id='div_ft5_1' class="collapse in">
+    <pre style="text-align:left">
+    
+ft5_1: Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+AssertionError: False is not true : ★★★ Error- 未进入题库-题单页面
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+AssertionError: IMAGE:Error_2.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 113, in wrapper
+    raise AssertionError(e)
+AssertionError: IMAGE:Error_2.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_ft5_1_screenshot' class="collapse in">查看截图：</div></td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>Games &nbsp &nbsp 单词拼写</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">269.94秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c6',1)" class="detail" id='c6'>详细</a></td>
+</tr>
+
+    <tr id='pt6_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_word_spelling<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt6_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt6_1'>通过</button>
+        <div id='div_pt6_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt6_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt6_1'>通过</button>
+        <div id='div_pt6_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt6_1: 在主界面
+#####################################################
+Backpack3单词拼写练习（随机模式）
+word： g_t
+key: 到
+value: get
+缺失的字母： e
+需要填写的字母： e
+需要点击的尺寸： 269.946 	 1582.0
+1602.0
+----------------------
+我的答案: get
+我的答题结果: get
+--------
+---------------------------------
+word： b_g
+key: 大
+value: big
+缺失的字母： i
+需要填写的字母： i
+需要点击的尺寸： 799.848 	 1582.0
+1602.0
+----------------------
+我的答案: big
+我的答题结果: big
+多次点击发音按钮:
+0
+1
+2
+3
+--------
+---------------------------------
+判断计时: ['00:07', '00:18']
+计时功能无误: [7, 18]
+==================================================
+结果页 -- 准确率：共2题
+统计结果: 100
+准确率逻辑无误 - 答对2题 准确率:100%
+==================================================
+#####################################################
+#####################################################
+Coral老师的练习题-单词拼写（默写模式）
+key: 奋斗，斗争，辩论
+value: content
+需要填写的字母： c
+需要点击的尺寸： 423.92159999999996 	 1846.0
+1866.0
+需要填写的字母： o
+需要点击的尺寸： 905.8283999999999 	 1582.0
+1602.0
+需要填写的字母： n
+需要点击的尺寸： 741.8627999999999 	 1846.0
+1866.0
+需要填写的字母： t
+需要点击的尺寸： 481.9068 	 1582.0
+1602.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： e
+需要点击的尺寸： 269.946 	 1582.0
+1602.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： n
+需要点击的尺寸： 741.8627999999999 	 1846.0
+1866.0
+需要填写的字母： t
+需要点击的尺寸： 481.9068 	 1582.0
+1602.0
+----------------------
+我的答案: contEnt
+我的答题结果: content
+--------
+---------------------------------
+key: 不安定，不稳定，基础薄弱
+value: instability
+需要填写的字母： i
+需要点击的尺寸： 799.848 	 1582.0
+1602.0
+需要填写的字母： n
+需要点击的尺寸： 741.8627999999999 	 1846.0
+1866.0
+需要填写的字母： s
+需要点击的尺寸： 211.96079999999998 	 1714.0
+1734.0
+需要填写的字母： t
+需要点击的尺寸： 481.9068 	 1582.0
+1602.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： a
+需要点击的尺寸： 105.98039999999999 	 1714.0
+1734.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： b
+需要点击的尺寸： 635.8824 	 1846.0
+1866.0
+需要填写的字母： i
+需要点击的尺寸： 799.848 	 1582.0
+1602.0
+需要填写的字母： l
+需要点击的尺寸： 953.8235999999999 	 1714.0
+1734.0
+需要填写的字母： i
+需要点击的尺寸： 799.848 	 1582.0
+1602.0
+需要填写的字母： t
+需要点击的尺寸： 481.9068 	 1582.0
+1602.0
+需要填写的字母： y
+需要点击的尺寸： 587.8871999999999 	 1582.0
+1602.0
+----------------------
+我的答案: instAbility
+我的答题结果: instability
+多次点击发音按钮:
+0
+1
+2
+3
+--------
+---------------------------------
+判断计时: ['00:21', '00:52']
+计时功能无误: [21, 52]
+==================================================
+结果页 -- 准确率：共2题
+统计结果: 100
+准确率逻辑无误 - 答对2题 准确率:100%
+==================================================
+再练一遍
+key: 奋斗，斗争，辩论
+value: content
+需要填写的字母： c
+需要点击的尺寸： 423.92159999999996 	 1846.0
+1866.0
+需要填写的字母： o
+需要点击的尺寸： 905.8283999999999 	 1582.0
+1602.0
+需要填写的字母： n
+需要点击的尺寸： 741.8627999999999 	 1846.0
+1866.0
+需要填写的字母： t
+需要点击的尺寸： 481.9068 	 1582.0
+1602.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： e
+需要点击的尺寸： 269.946 	 1582.0
+1602.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： n
+需要点击的尺寸： 741.8627999999999 	 1846.0
+1866.0
+需要填写的字母： t
+需要点击的尺寸： 481.9068 	 1582.0
+1602.0
+----------------------
+我的答案: contEnt
+我的答题结果: content
+--------
+---------------------------------
+key: 不安定，不稳定，基础薄弱
+value: instability
+需要填写的字母： i
+需要点击的尺寸： 799.848 	 1582.0
+1602.0
+需要填写的字母： n
+需要点击的尺寸： 741.8627999999999 	 1846.0
+1866.0
+需要填写的字母： s
+需要点击的尺寸： 211.96079999999998 	 1714.0
+1734.0
+需要填写的字母： t
+需要点击的尺寸： 481.9068 	 1582.0
+1602.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： a
+需要点击的尺寸： 105.98039999999999 	 1714.0
+1734.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： b
+需要点击的尺寸： 635.8824 	 1846.0
+1866.0
+需要填写的字母： i
+需要点击的尺寸： 799.848 	 1582.0
+1602.0
+需要填写的字母： l
+需要点击的尺寸： 953.8235999999999 	 1714.0
+1734.0
+需要填写的字母： i
+需要点击的尺寸： 799.848 	 1582.0
+1602.0
+需要填写的字母： t
+需要点击的尺寸： 481.9068 	 1582.0
+1602.0
+需要填写的字母： y
+需要点击的尺寸： 587.8871999999999 	 1582.0
+1602.0
+----------------------
+我的答案: instAbility
+我的答题结果: instability
+多次点击发音按钮:
+0
+1
+2
+3
+--------
+---------------------------------
+判断计时: ['00:23', '00:52']
+计时功能无误: [23, 52]
+==================================================
+#####################################################
+#####################################################
+四年级下册单词（单词拼写）（自定义）
+word： l_b_ary
+key: 图书馆
+value: library
+缺失的字母： i
+需要填写的字母： i
+需要点击的尺寸： 799.848 	 1582.0
+1602.0
+缺失的字母： r
+需要填写的字母： r
+需要点击的尺寸： 375.92639999999994 	 1582.0
+1602.0
+----------------------
+我的答案: library
+我的答题结果: library
+--------
+---------------------------------
+word： m_si_
+key: 音乐
+value: music
+缺失的字母： u
+需要填写的字母： u
+需要点击的尺寸： 693.8676 	 1582.0
+1602.0
+缺失的字母： c
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： c
+需要点击的尺寸： 423.92159999999996 	 1846.0
+1866.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+----------------------
+我的答案: musiC
+我的答题结果: music
+多次点击发音按钮:
+0
+1
+2
+3
+--------
+---------------------------------
+word： lun__
+key: 午餐
+value: lunch
+缺失的字母： c
+需要填写的字母： c
+需要点击的尺寸： 423.92159999999996 	 1846.0
+1866.0
+缺失的字母： h
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： h
+需要点击的尺寸： 635.8824 	 1714.0
+1734.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+----------------------
+我的答案: luncH
+我的答题结果: lunch
+--------
+---------------------------------
+word： cl__dy
+key: 阴天的；多云的
+value: cloudy
+缺失的字母： o
+需要填写的字母： o
+需要点击的尺寸： 905.8283999999999 	 1582.0
+1602.0
+缺失的字母： u
+需要填写的字母： u
+需要点击的尺寸： 693.8676 	 1582.0
+1602.0
+----------------------
+我的答案: cloudy
+我的答题结果: cloudy
+--------
+---------------------------------
+word： h_rs_
+key: 马
+value: horse
+缺失的字母： o
+需要填写的字母： o
+需要点击的尺寸： 905.8283999999999 	 1582.0
+1602.0
+缺失的字母： e
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： e
+需要点击的尺寸： 269.946 	 1582.0
+1602.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+----------------------
+我的答案: horsE
+我的答题结果: horse
+--------
+---------------------------------
+word： sw__ter
+key: 外衣；大一
+value: sweater
+缺失的字母： e
+需要填写的字母： e
+需要点击的尺寸： 269.946 	 1582.0
+1602.0
+缺失的字母： a
+需要填写的字母： a
+需要点击的尺寸： 105.98039999999999 	 1714.0
+1734.0
+----------------------
+我的答案: sweater
+我的答题结果: sweater
+--------
+---------------------------------
+word： clo__es
+key: 衣服；服装
+value: clothes
+缺失的字母： t
+需要填写的字母： t
+需要点击的尺寸： 481.9068 	 1582.0
+1602.0
+缺失的字母： h
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： h
+需要点击的尺寸： 635.8824 	 1714.0
+1734.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+----------------------
+我的答案: clotHes
+我的答题结果: clothes
+--------
+---------------------------------
+word： u_br_lla
+key: 雨伞
+value: umbrella
+缺失的字母： m
+需要填写的字母： m
+需要点击的尺寸： 847.8431999999999 	 1846.0
+1866.0
+缺失的字母： e
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： e
+需要点击的尺寸： 269.946 	 1582.0
+1602.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+----------------------
+我的答案: umbrElla
+我的答题结果: umbrella
+--------
+---------------------------------
+判断计时: ['00:10', '00:24', '00:36', '00:45', '00:57', '01:08', '01:20', '01:32']
+计时功能无误: [10, 24, 36, 45, 57, 68, 80, 92]
+==================================================
+结果页 -- 准确率：共8题
+统计结果: 100
+准确率逻辑无误 - 答对8题 准确率:100%
+==================================================
+查看答案:
+单词: music
+解释: 音乐
+去除:  m_si_
+对错标识: true
+-----------------------------------------
+单词: lunch
+解释: 午餐
+去除:  lun__
+对错标识: true
+-----------------------------------------
+单词: cloudy
+解释: 阴天的；多云的
+去除:  cl__dy
+对错标识: true
+-----------------------------------------
+单词: horse
+解释: 马
+去除:  h_rs_
+对错标识: true
+-----------------------------------------
+单词: sweater
+解释: 外衣；大一
+去除:  sw__ter
+对错标识: true
+-----------------------------------------
+单词: clothes
+解释: 外衣；大一
+去除:  sw__ter
+对错标识: true
+-----------------------------------------
+单词: umbrella
+解释: 衣服；服装
+去除:  clo__es
+对错标识: true
+-----------------------------------------
+==============================================
+#####################################################
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='failClass warning'>
+    <td>Games &nbsp &nbsp 阅读理解</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">102.65秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c7',1)" class="detail" id='c7'>详细</a></td>
+</tr>
+
+<tr id='ft7_1' class='none'>
+    <td class='failCase' style="vertical-align: middle"><div class='testcase'>test_reading_comprehension <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft7_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_ft7_1'>失败</button>
+    <div id='div_ft7_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_ft7_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_ft7_1,#div_ft7_1_screenshot'>失败</button>
+    <div id='div_ft7_1' class="collapse in">
+    <pre style="text-align:left">
+    
+ft7_1: Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+AssertionError: False is not true : ★★★ Error- 未进入题库-题单页面
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+AssertionError: IMAGE:Error_3.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 113, in wrapper
+    raise AssertionError(e)
+AssertionError: IMAGE:Error_3.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_ft7_1_screenshot' class="collapse in">查看截图：</div></td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>Games &nbsp &nbsp 连连看</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">54.22秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c8',1)" class="detail" id='c8'>详细</a></td>
+</tr>
+
+<tr id='et8_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_match_exercise <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et8_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et8_1'>错误</button>
+    <div id='div_et8_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et8_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et8_1,#div_et8_1_screenshot'>错误</button>
+    <div id='div_et8_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et8_1: 在主界面
+无需搜索, 有 autotest_文章&amp;句子&amp;连连看题 小游戏
+##############################################################
+十二  肖无图片（文字模式）
+页数: 3
+===========================================
+第1页：
+---------------------------------
+word: rabbit
+解释: 兔子
+---------------------------------
+word: dragon
+解释: 龙
+---------------------------------
+word: cow
+解释: 牛
+---------------------------------
+word: tiger
+解释: 老虎
+---------------------------------
+word: mouse
+解释: 老鼠
+===========================================
+第2页：
+---------------------------------
+word: snake
+解释: 蛇
+---------------------------------
+word: sheep
+解释: 羊
+---------------------------------
+word: horse
+解释: 马
+---------------------------------
+word: chicken
+解释: 鸡
+---------------------------------
+word: monkey
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_162406/
+screen_shot[Error--Error_4.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/matching_exercises_page.py", line 166, in match_exercise_word
+    print('解释:', explain[z].text)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webelement.py", line 76, in text
+    return self._execute(Command.GET_ELEMENT_TEXT)['value']
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webelement.py", line 672, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: Cached elements 'By.clazz: android.widget.TextView' do not exist in DOM anymore
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/matching_exercises_page.py", line 125, in diff_type
+    result = self.match_exercise_word()
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 71, in wrapper
+    raise WebDriverException(flag + screenshot('Error'))
+selenium.common.exceptions.WebDriverException: Message: IMAGE:Error_4.png
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/test_cases/test008_matching_exercise.py", line 73, in game_exist
+    result = self.match.diff_type(game_type)  # 不同模式小游戏的 游戏过程
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 69, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: IMAGE:Error_4.png
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 224, in games_count
+    func(item[3][i], item[2][i])  # 具体操作
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 69, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: IMAGE:Error_4.png
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 213, in games_count
+    self.games_count(game_type, func, content)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 69, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: Message: IMAGE:Error_4.png
+
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 182, in games_operation
+    self.games_count(game_type, func)  # 具体操作函数
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 69, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: Message: Message: IMAGE:Error_4.png
+
+
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/test_cases/test008_matching_exercise.py", line 55, in test_match_exercise
+    self.homework.games_operation(gv.MAT_EXE, self.game_exist, '连连看')  # 查找题单内 该类型的小游戏
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 69, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: Message: Message: Message: IMAGE:Error_4.png
+
+
+
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 105, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: Message: Message: Message: Message: IMAGE:Error_4.png
+
+
+
+
+
+
+
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et8_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_4.png">Error_4.png</a></div></td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>Games &nbsp &nbsp 猜词游戏</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">170.04秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c9',1)" class="detail" id='c9'>详细</a></td>
+</tr>
+
+<tr id='et9_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_guess_word <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et9_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et9_1'>错误</button>
+    <div id='div_et9_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et9_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et9_1,#div_et9_1_screenshot'>错误</button>
+    <div id='div_et9_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et9_1: 在其他页面,重启app
+在主界面
+######################################################
+bx 练习猜单词（有发音）
+key: 球棒，蝙蝠
+value: bat
+======================================
+key: 公交车
+value: bus
+======================================
+key: 床
+value: bed
+点击错误字母: ['q', 'w', 'r', 't', 'y', 'u']
+-------------------
+No Error - 错误次数为：6 次
+==============
+======================================
+key: 垃圾桶
+value: bin
+======================================
+key: 盒子
+value: box
+======================================
+key: 六
+value: six
+======================================
+key: 狐狸
+value: fox
+第6题
+-------------------
+第1个字母，点错一次：
+点击错误字母: ['q']
+-------------------
+-------------------
+第3个字母，点错三次： (1, ['q'])
+点击错误字母: ['q', 'e', 'r', 't']
+-------------------
+本小题点错次数： [1, 3]
+No Error - 错误次数为：4 次
+==============
+======================================
+key: 斧头
+value: ax
+======================================
+判断计时: ['00:01', '00:11', '00:19', '00:29', '00:41', '00:50', '00:59', '01:13']
+计时功能无误: [1, 11, 19, 29, 41, 50, 59, 73]
+==================================================
+结果页 -- 所用时间:
+result_time: 79 73
+本次答题所用时间:79秒, 时间差为：6秒
+==================================================
+######################################################
+######################################################
+1（无发音）
+----
+key: 你好
+value: hello
+=====================================
+---
+key: 小姐
+value: Miss
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_162406/
+screen_shot[Error--Error_5.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 26, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 135, in time
+    .find_element_by_id(gv.PACKAGE_ID + "time").text
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 361, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/webdriver.py", line 272, in find_element
+    'value': value})['value']
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 318, in execute
+    self.error_handler.check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/appium/webdriver/errorhandler.py", line 24, in check_response
+    super(MobileErrorHandler, self).check_response(response)
+  File "/Users/vanthink_test_ios/Woker/test_IOS/virtual_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/guess_word_page.py", line 161, in no_voice_pattern
+    timestr.append(Homework().time())  # 统计每小题的计时控件time信息
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 35, in wrapper
+    raise WebDriverException(flag + screenshot('Error'))
+selenium.common.exceptions.WebDriverException: Message: IMAGE:Error_5.png
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/guess_word_page.py", line 66, in diff_type
+    result = self.no_voice_pattern()
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 69, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: IMAGE:Error_5.png
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/test_cases/test009_guess_word.py", line 74, in game_exist
+    result = self.guess_word.diff_type(game_type)  # 不同模式小游戏的 游戏过程
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 69, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: IMAGE:Error_5.png
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 209, in games_count
+    func(item[3][i], item[2][i])  # 具体操作
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 69, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: Message: IMAGE:Error_5.png
+
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 182, in games_operation
+    self.games_count(game_type, func)  # 具体操作函数
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 69, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: Message: Message: IMAGE:Error_5.png
+
+
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/test_cases/test009_guess_word.py", line 55, in test_guess_word
+    self.homework.games_operation(gv.GUE_WORD, self.game_exist, '猜词游戏')  # 查找题单内 该类型的小游戏
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 69, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: Message: Message: Message: IMAGE:Error_5.png
+
+
+
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 105, in wrapper
+    raise WebDriverException(e)
+selenium.common.exceptions.WebDriverException: Message: Message: Message: Message: Message: Message: Message: IMAGE:Error_5.png
+
+
+
+
+
+
+
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et9_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_5.png">Error_5.png</a></div></td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>Games &nbsp &nbsp 还原单词</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">179.51秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c10',1)" class="detail" id='c10'>详细</a></td>
+</tr>
+
+    <tr id='pt10_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_restore_word<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt10_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt10_1'>通过</button>
+        <div id='div_pt10_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt10_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt10_1'>通过</button>
+        <div id='div_pt10_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt10_1: 在其他页面,重启app
+在主界面
+################################################
+bx 还原单词
+--------
+key: 球棒，蝙蝠
+value: bat
+我的答案: ['b', 'a', 't']
+正确答案： bat
+----------------------------------------
+--------
+key: 公交车
+value: bus
+我的答案: ['b', 'u', 's']
+正确答案： bus
+----------------------------------------
+多次点击发音按钮:
+0
+1
+2
+3
+--------
+key: 床
+value: bed
+我的答案: ['b', 'e', 'd']
+正确答案： bed
+----------------------------------------
+--------
+key: 垃圾桶
+value: bin
+我的答案: ['b', 'i', 'n']
+正确答案： bin
+----------------------------------------
+--------
+key: 盒子
+value: box
+我的答案: ['b', 'o', 'x']
+正确答案： box
+----------------------------------------
+--------
+key: 六
+value: six
+我的答案: ['s', 'i', 'x']
+正确答案： six
+----------------------------------------
+--------
+key: 狐狸
+value: fox
+我的答案: ['f', 'o', 'x']
+正确答案： fox
+----------------------------------------
+--------
+key: 斧头
+value: ax
+我的答案: ['a', 'x']
+正确答案： ax
+----------------------------------------
+判断计时: ['00:12', '00:26', '00:41', '00:54', '01:07', '01:20', '01:30', '01:38']
+计时功能无误: [12, 26, 41, 54, 67, 80, 90, 98]
+===========================================
+结果页 -- 积分：
+积分逻辑无误 - 答对8题 积分:0
+==================================================
+结果页 -- 星星：
+星星逻辑无误 - 做了8题 星星数:0
+==================================================
+查看答案页面:
+判断是否滑动： 8
+key: 球棒，蝙蝠
+value: bat
+对错标识: true
+----------------------------------
+key: 公交车
+value: bus
+对错标识: true
+----------------------------------
+key: 床
+value: bed
+对错标识: true
+----------------------------------
+key: 垃圾桶
+value: bin
+对错标识: true
+----------------------------------
+key: 盒子
+value: box
+对错标识: true
+----------------------------------
+key: 六
+value: six
+对错标识: true
+----------------------------------
+key: 狐狸
+value: fox
+对错标识: true
+----------------------------------
+key: 斧头
+value: ax
+对错标识: true
+----------------------------------
+################################################
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>Games &nbsp &nbsp 补全文章</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">68.14秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c11',1)" class="detail" id='c11'>详细</a></td>
+</tr>
+
+    <tr id='pt11_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_reading_comprehension<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt11_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt11_1'>通过</button>
+        <div id='div_pt11_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt11_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt11_1'>通过</button>
+        <div id='div_pt11_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt11_1: 在主界面
+####################################################
+补全文章
+false true false
+当前选中的Aa按钮为第2个： 86
+--------------------------------------------
+false false true
+当前选中的Aa按钮为第3个： 92
+--------------------------------------------
+true false false
+当前选中的Aa按钮为第1个： 78
+--------------------------------------------
+==============================================
+第1题:
+['A']   This is David speaking.  
+-------------------------
+第2题:
+['B']   Do you have any plans?  
+-------------------------
+第3题:
+['C']   It is about five kilometers away.  
+-------------------------
+第4题:
+['D']   What about going to the zoo?  
+-------------------------
+第5题:
+['E']   We can see various kinds of animals there.  
+-------------------------
+判断计时: ['00:17', '00:21', '00:24', '00:27', '00:30']
+计时功能无误: [17, 21, 24, 27, 30]
+============================================
+填入的答案: ['This is David speaking.', 'Do you have any plans?', 'We can see various kinds of animals there.', '(It is about five kilometers away.)', 'It is about five kilometers away.', '(What about going to the zoo?)', 'When shall we meet?', '(We can see various kinds of animals there.)', '']
+####################################################
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>Games &nbsp &nbsp 句型转换</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">66.52秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c12',1)" class="detail" id='c12'>详细</a></td>
+</tr>
+
+    <tr id='pt12_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_sentence_transform<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt12_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt12_1'>通过</button>
+        <div id='div_pt12_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt12_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt12_1'>通过</button>
+        <div id='div_pt12_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt12_1: 在主界面
+无需搜索, 有 autotest_文章&amp;句子&amp;连连看题 小游戏
+####################################################
+句型转换
+key: This is a desk.(变一般疑问句)
+value: Is this a desk?
+Is
+this
+a
+desk?
+-------------------
+我的答案: ['Is', 'this', 'a', 'desk?']
+第1题 - 点击框中单词，移出框中
+Is
+this
+a
+desk?
+我的答题结果: ['Is', 'this', 'a', 'desk?']
+--------------------------------
+key: That is a chair.（变成否定句）
+value: That isn't a chair.
+That
+isn't
+a
+chair.
+-------------------
+我的答案: ['That', "isn't", 'a', 'chair.']
+第2题 - 点击清除按钮
+That
+isn't
+a
+chair.
+我的答题结果: ['That', "isn't", 'a', 'chair.']
+--------------------------------
+key: Is this a book?（给出肯定回答）
+value: Yes,it is .
+Yes,it
+is
+.
+-------------------
+我的答案: ['Yes,it', 'is', '.']
+我的答题结果: ['Yes,it', 'is', '.']
+--------------------------------
+key: Is it a duck？（给出否定回答）
+value: No，it isn't.
+No，it
+isn't.
+-------------------
+我的答案: ['No，it', "isn't."]
+我的答题结果: ['No，it', "isn't."]
+--------------------------------
+判断计时: ['00:12', '00:25', '00:31', '00:36']
+计时功能无误: [12, 25, 31, 36]
+========================================
+结果页 -- 积分：
+积分逻辑无误 - 答对4题 积分:0
+==================================================
+查看答案页面：
+key: This is a desk.(变一般疑问句)
+value: Is this a desk?
+--------------------------------
+key: That is a chair.（变成否定句）
+value: That isn't a chair.
+--------------------------------
+key: Is this a book?（给出肯定回答）
+value: Yes,it is .
+--------------------------------
+key: Is it a duck？（给出否定回答）
+value: No，it isn't.
+--------------------------------
+####################################################
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='errorClass warning'>
+    <td>Games &nbsp &nbsp 强化炼句</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1.12秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c13',1)" class="detail" id='c13'>详细</a></td>
+</tr>
+
+<tr id='et13_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_strengthen_sentence <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et13_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et13_1'>错误</button>
+    <div id='div_et13_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et13_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et13_1,#div_et13_1_screenshot'>错误</button>
+    <div id='div_et13_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et13_1: report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_162406/
+screen_shot[Error--Error_6.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/test_cases/test013_strengthen_sentence.py", line 33, in setUp
+    cls.sentence = StrengthenSentencePage()
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/strengthen_sentence_page.py", line 25, in __init__
+    self.bounds = ClickBounds()
+TypeError: ClickBounds() missing 3 required positional arguments: 'self', 'location_x', and 'location_y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 123, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_6.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et13_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_6.png">Error_6.png</a></div></td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>Games &nbsp &nbsp 连词成句</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">59.66秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c14',1)" class="detail" id='c14'>详细</a></td>
+</tr>
+
+    <tr id='pt14_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_form_sentence<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt14_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt14_1'>通过</button>
+        <div id='div_pt14_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt14_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt14_1'>通过</button>
+        <div id='div_pt14_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt14_1: 在主界面
+无需搜索, 有 autotest_文章&amp;句子&amp;连连看题 小游戏
+##################################################
+连词成句
+key: 我可以说
+value: I can say.
+['i', 'can', 'say.']
+say.
+can
+i
+-------------------------------------
+key: 快点
+value: hurry up
+['hurry', 'up']
+up
+hurry
+-------------------------------------
+判断计时: ['00:11', '00:16']
+计时功能无误: [11, 16]
+===================================================
+再练一遍
+key: 我可以说
+value: I can say.
+['i', 'can', 'say.']
+say.
+can
+i
+-------------------------------------
+key: 快点
+value: hurry up
+['hurry', 'up']
+up
+hurry
+-------------------------------------
+判断计时: ['00:10', '00:15']
+计时功能无误: [10, 15]
+===================================================
+###################################################
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>Games &nbsp &nbsp 单词听写</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">68.22秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c15',1)" class="detail" id='c15'>详细</a></td>
+</tr>
+
+    <tr id='pt15_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_word_dictation<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt15_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt15_1'>通过</button>
+        <div id='div_pt15_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt15_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt15_1'>通过</button>
+        <div id='div_pt15_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt15_1: 在主界面
+################################################
+人教PEP六上Unit3 听音写单词
+需要填写的字母： t
+需要点击的尺寸： 481.9068 	 1582.0
+1602.0
+需要填写的字母： h
+需要点击的尺寸： 635.8824 	 1714.0
+1734.0
+需要填写的字母： a
+需要点击的尺寸： 105.98039999999999 	 1714.0
+1734.0
+需要填写的字母： n
+需要点击的尺寸： 741.8627999999999 	 1846.0
+1866.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： k
+需要点击的尺寸： 847.8431999999999 	 1714.0
+1734.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： s
+需要点击的尺寸： 211.96079999999998 	 1714.0
+1734.0
+我的答案: thanKs
+我的答题结果： thanks
+--------------------------------------
+需要填写的字母： v
+需要点击的尺寸： 529.9019999999999 	 1846.0
+1866.0
+需要填写的字母： i
+需要点击的尺寸： 799.848 	 1582.0
+1602.0
+需要填写的字母： s
+需要点击的尺寸： 211.96079999999998 	 1714.0
+1734.0
+需要填写的字母： i
+需要点击的尺寸： 799.848 	 1582.0
+1602.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+需要填写的字母： t
+需要点击的尺寸： 481.9068 	 1582.0
+1602.0
+需要填写的字母： capslock
+需要点击的尺寸： 105.98039999999999 	 1846.0
+1866.0
+我的答案: visiT
+我的答题结果： visit
+多次点击发音按钮:
+0
+1
+2
+3
+--------------------------------------
+判断计时: ['00:15', '00:32']
+计时功能无误: [15, 32]
+==============================================
+查看答案:
+解释: 谢谢
+单词: thanks
+true
+-----------------------------------------
+解释: 拜访
+单词: visit
+true
+-----------------------------------------
+==============================================
+结果页 -- 准确率：共2题
+统计结果: 100
+准确率逻辑无误 - 答对2题 准确率:100%
+==================================================
+################################################
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>Games &nbsp &nbsp 听音选图</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">71.26秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c16',1)" class="detail" id='c16'>详细</a></td>
+</tr>
+
+    <tr id='pt16_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_picture_dictation<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt16_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt16_1'>通过</button>
+        <div id='div_pt16_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt16_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt16_1'>通过</button>
+        <div id='div_pt16_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt16_1: 在主界面
+无需搜索, 有 autotest_听力&amp;视频类题 小游戏
+################################################
+听音选图
+音频长度： 00:22
+暂停按钮不可点击
+1 . ni hai hao ma
+选项: 3
+---------------------------------------
+2 . wo hen hao
+选项: 3
+---------------------------------------
+3 . h iabu cuo
+选项: 3
+---------------------------------------
+判断计时: ['00:01', '00:07', '00:15']
+计时功能无误: [1, 7, 15]
+==============================================
+结果页 -- 星星：
+星星逻辑无误 - 做了3题 星星数:0
+==================================================
+查看答案:
+题数: 3
+音频长度： 00:22
+暂停按钮可点击
+当前播放位置： 00:02
+-----------------------------
+1.ni hai hao ma
+选项: 3
+-----------------------------
+2.wo hen hao
+选项: 3
+-----------------------------
+-----------------------------
+3.h iabu cuo
+选项: 3
+==============================================
+################################################
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>Games &nbsp &nbsp 听后选择</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">50.97秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c17',1)" class="detail" id='c17'>详细</a></td>
+</tr>
+
+    <tr id='pt17_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_listen_choice<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt17_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt17_1'>通过</button>
+        <div id='div_pt17_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt17_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt17_1'>通过</button>
+        <div id='div_pt17_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt17_1: 在主界面
+无需搜索, 有 autotest_听力&amp;视频类题 小游戏
+################################################
+测试音标选项
+音频长度： 00:04
+播放按钮可点击
+当前播放位置： 00:00
+作业个数： 2
+1./b _____ /,补全发音 
+ 选项: ['i', 'i:']
+-----------------------------------------
+2./b _____ /,补全发音 
+ 选项: ['i:', 'I']
+-----------------------------------------
+判断计时: ['00:05', '00:09']
+计时功能无误: [5, 9]
+==============================================
+结果页 -- 星星：
+星星逻辑无误 - 做了2题 星星数:0
+==================================================
+再练一遍
+音频长度： 00:04
+播放按钮可点击
+当前播放位置： 00:00
+作业个数： 2
+1./b _____ /,补全发音 
+ 选项: ['i:', 'i']
+-----------------------------------------
+2./b _____ /,补全发音 
+ 选项: ['I', 'i:']
+-----------------------------------------
+判断计时: ['00:06', '00:11']
+计时功能无误: [6, 11]
+==============================================
+################################################
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='passClass warning'>
+    <td>Games &nbsp &nbsp 听音连句</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">89.56秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c18',1)" class="detail" id='c18'>详细</a></td>
+</tr>
+
+    <tr id='pt18_1' class='hiddenRow'>
+        <td class='passCase' style="vertical-align: middle"><div class='testcase'>test_listen_form_sentence<br></div></td>
+        <td colspan='5' align='center'>
+        <!--默认收起错误信息 -Findyou
+        <button id='btn_pt18_1' type="button"  class="btn btn-xs collapsed" data-toggle="collapse" data-target='#div_pt18_1'>通过</button>
+        <div id='div_pt18_1' class="collapse">  -->
+
+        <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+        <button id='btn_pt18_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_pt18_1'>通过</button>
+        <div id='div_pt18_1' class="collapse in">
+        <pre style="text-align:left">
+        
+pt18_1: 在主界面
+无需搜索, 有 autotest_听力&amp;视频类题 小游戏
+########################################################################
+测试听音连句逗号
+========================================
+1 .待输入单词个数： 11
+选择： English 2
+-----------------------
+选择： you 8
+-----------------------
+选择： family 2
+-----------------------
+选择： names? 8
+-----------------------
+选择： people 6
+-----------------------
+选择： get 3
+-----------------------
+选择： Do 0
+-----------------------
+选择： what 5
+-----------------------
+选择： know 1
+-----------------------
+选择： from 4
+-----------------------
+选择： their 7
+-----------------------
+我的答案: ['English', 'you', 'family', 'names?', 'people', 'get', 'Do', 'what', 'know', 'from', 'their']
+-------------------------------
+答题结果: ['English', 'you', 'family', 'names?', 'people', 'get', 'Do', 'what', 'know', 'from', 'their']
+--------
+-------------------------------
+========================================
+2 .待输入单词个数： 16
+选择： If 8
+-----------------------
+选择： you 5
+-----------------------
+选择： that 8
+-----------------------
+选择： name 3
+-----------------------
+选择： "Jackson" 1
+-----------------------
+选择： hear 6
+-----------------------
+选择： you 4
+-----------------------
+选择： is 8
+-----------------------
+选择： of 6
+-----------------------
+选择： the 7
+-----------------------
+选择： Jack. 4
+-----------------------
+选择： he 5
+-----------------------
+选择： , 0
+-----------------------
+选择： the 3
+-----------------------
+选择： know 2
+-----------------------
+选择： son 1
+-----------------------
+我的答案: ['If', 'you', 'that', 'name', '"Jackson"', 'hear', 'you', 'is', 'of', 'the', 'Jack.', 'he', ',', 'the', 'know', 'son']
+-------------------------------
+答题结果: ['If', 'you', 'that', 'name', '"Jackson"', 'hear', 'you', 'is', 'of', 'the', 'Jack.', 'he', ',', 'the', 'know', 'son']
+多次点击发音按钮:
+0
+1
+2
+3
+--------
+-------------------------------
+判断计时: ['00:26', '01:07']
+计时功能无误: [26, 67]
+=========================================================
+########################################################################
+
+
+        </pre>
+        </div>
+        </td>
+        <td class='passCase' style="vertical-align: middle"></td>
+    </tr>
+    
+<tr class='errorClass warning'>
+    <td>Games &nbsp &nbsp 磨耳朵</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">42.44秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c19',1)" class="detail" id='c19'>详细</a></td>
+</tr>
+
+<tr id='et19_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_griding_ears <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et19_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et19_1'>错误</button>
+    <div id='div_et19_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et19_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et19_1,#div_et19_1_screenshot'>错误</button>
+    <div id='div_et19_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et19_1: 在主界面
+无需搜索, 有 autotest_听力&amp;视频类题 小游戏
+##################################################
+磨耳朵789
+题目:ni hao a 
+wo hen hao ni hai hao ma
+wo hen hao a
+ci hsd iu
+----------------
+题目:mei ganmane zenm el a
+----------------
+题目:zhaos i bane zjsdji
+asdjkasd sdkjsdkjweoi we
+----------------
+--------------------------
+提示
+点击小喇叭,可以单句精听哦
+--------------------------
+---------------------------------------
+---切换到 英汉模式:
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_162406/
+screen_shot[Error--Error_7.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 26, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/grinding_ears_page.py", line 138, in click_blank
+    ClickBounds().click_bounds(200, 200)
+TypeError: ClickBounds() missing 3 required positional arguments: 'self', 'location_x', and 'location_y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/grinding_ears_page.py", line 189, in grinding_ears_operation
+    self.click_blank()  # 点击页面 空白处
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 51, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_7.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/test_cases/test019_grinding_ears.py", line 72, in game_exist
+    self.ear.grinding_ears_operation()  # 游戏过程
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_7.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 209, in games_count
+    func(item[3][i], item[2][i])  # 具体操作
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_7.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 182, in games_operation
+    self.games_count(game_type, func)  # 具体操作函数
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_7.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/test_cases/test019_grinding_ears.py", line 55, in test_griding_ears
+    self.homework.games_operation(gv.GRI_EAR, self.game_exist, '磨耳朵')  # 查找题单内 该类型的小游戏
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_7.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 121, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_7.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et19_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_7.png">Error_7.png</a></div></td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>Games &nbsp &nbsp 微课</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">73.74秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c20',1)" class="detail" id='c20'>详细</a></td>
+</tr>
+
+<tr id='et20_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_tiny_course <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et20_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et20_1'>错误</button>
+    <div id='div_et20_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et20_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et20_1,#div_et20_1_screenshot'>错误</button>
+    <div id='div_et20_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et20_1: 在其他页面,重启app
+在主界面
+##################################################
+be动词和实意动词
+点击 播放按钮
+00:00 00:00
+--播放视频时长展示无误--
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_162406/
+screen_shot[Error--Error_8.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 26, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/tiny_course_page.py", line 103, in click_blank
+    ClickBounds().click_bounds(300, 300)
+TypeError: ClickBounds() missing 3 required positional arguments: 'self', 'location_x', and 'location_y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/tiny_course_page.py", line 153, in tiny_course_play_operation
+    self.click_blank()  # 点击页面 空白处
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 51, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_8.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/test_cases/test020_tiny_course.py", line 71, in game_exist
+    self.tiny.tiny_course_play_operation()  # 游戏过程
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_8.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 224, in games_count
+    func(item[3][i], item[2][i])  # 具体操作
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_8.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 213, in games_count
+    self.games_count(game_type, func, content)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_8.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 182, in games_operation
+    self.games_count(game_type, func)  # 具体操作函数
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_8.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/test_cases/test020_tiny_course.py", line 55, in test_tiny_course
+    self.homework.games_operation(gv.TINY_COURSE, self.game_exist, '微课')  # 查找题单内 该类型的小游戏
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_8.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 121, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_8.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et20_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_8.png">Error_8.png</a></div></td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>Games &nbsp &nbsp 单词跟读</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">77.64秒</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c21',1)" class="detail" id='c21'>详细</a></td>
+</tr>
+
+<tr id='et21_1' class='none'>
+    <td class='errorCase' style="vertical-align: middle"><div class='testcase'>test_word_reading <br>  </div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_et21_1' type="button"  class="btn btn-xs 
+    collapsed" data-toggle="collapse" data-target='#div_et21_1'>错误</button>
+    <div id='div_et21_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou /  修复失败按钮的颜色 -- Gelomen -->
+    <button id='btn_et21_1' type="button"  class="btn btn-xs" data-toggle="collapse" data-target='#div_et21_1,#div_et21_1_screenshot'>错误</button>
+    <div id='div_et21_1' class="collapse in">
+    <pre style="text-align:left">
+    
+et21_1: 在其他页面,重启app
+在主界面
+####################################################################
+单词跟读_形容词（单词跟读）
+================================================================
+题目播放按钮
+report_path: ./testfarm/templates/test_report/teacher/HUAWEI_CX_MAX/9_0/20200317_162406/
+screen_shot[Error--Error_9.png]screen_shot
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/word_reading_page.py", line 109, in suspend_button
+    ClickBounds().click_bounds(loc[0], loc[1])
+TypeError: ClickBounds() missing 3 required positional arguments: 'self', 'location_x', and 'location_y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/word_reading_page.py", line 274, in word_reading_operation
+    self.suspend_button(loc)  # 录音暂停按钮
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 87, in wrapper
+    raise Exception(flag + screenshot('Error'))
+Exception: IMAGE:Error_9.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/test_cases/test021_word_reading.py", line 72, in game_exist
+    self.word.word_reading_operation()  # 游戏过程
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_9.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 224, in games_count
+    func(item[3][i], item[2][i])  # 具体操作
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_9.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 213, in games_count
+    self.games_count(game_type, func, content)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_9.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 61, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/object_page/homework_page.py", line 182, in games_operation
+    self.games_count(game_type, func)  # 具体操作函数
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_9.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 97, in wrapper
+    ret = func(*args, **kwargs)
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/app/honor/teacher/play_games/test_cases/test021_word_reading.py", line 55, in test_word_reading
+    self.homework.games_operation(gv.WOR_RED, self.game_exist, '单词跟读')  # 查找题单内 该类型的小游戏
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 85, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_9.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vanthink_test_ios/aa/aaa/test/testfarm/test_program/conf/decorator.py", line 121, in wrapper
+    raise Exception(e)
+Exception: IMAGE:Error_9.png
+
+
+    </pre>
+    </div>
+    </td>
+    <td class="text-center" style="vertical-align: middle"><div id='div_et21_1_screenshot' class="collapse in">查看截图：</br><a class="screenshot" href="javascript:void(0)" img="image/Error_9.png">Error_9.png</a></div></td>
+</tr>
+
+<tr id='total_row' class="text-center active">
+    <td>总计</td>
+    <td>21</td>
+    <td>12</td>
+    <td>2</td>
+    <td>7</td>
+    <td>2040.09秒</td>
+    <td>通过率：57.14%</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+    <div id="toTop" style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer; display: none">
+    <a><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>
+    
+
+</body>
+</html>

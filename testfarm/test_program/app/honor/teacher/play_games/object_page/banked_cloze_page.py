@@ -12,6 +12,7 @@ from conf.base_config import GetVariable as gv
 from utils.click_bounds import ClickBounds
 from utils.games_keyboard import Keyboard
 from utils.get_attribute import GetAttribute
+from utils.get_element_bounds import ElementBounds
 from utils.wait_element import WaitElement
 
 
@@ -62,16 +63,28 @@ class BankedCloze(BasePage):
             .find_element_by_id(self.prompt_value).click()
 
     @teststep
+    def prompt_tips(self):
+        """提示词 弹框"""
+        ele = self.driver \
+            .find_element_by_id(gv.PACKAGE_ID + "md_root")
+        return ele
+
+    @teststep
     def prompt_content(self):
         """提示词内容"""
         ele = self.driver \
-            .find_elements_by_xpath("//android.widget.TextView[contains(@index,0)]")[1].text
+            .find_element_by_xpath("//android.widget.ScrollView/android.widget.TextView").text
         return ele
 
     @teststep
     def click_blank(self):
         """点击页面 提示词弹框 以外空白处，弹框消失"""
-        self.bounds.click_bounds(530, 1500)
+        ele = self.prompt_tips()
+        loc = ElementBounds().get_element_bounds(ele)
+        x = loc[4] - 200
+        y = loc[5] + 100
+        print(x, y)
+        self.driver.tap([(x, y)])
 
     # 查看答案 页面
     @teststeps

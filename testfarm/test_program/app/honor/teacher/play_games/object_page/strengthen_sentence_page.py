@@ -40,7 +40,7 @@ class StrengthenSentencePage(BasePage):
     def content_value(self):
         """获取整个 外框元素"""
         ele = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID  + "rich_text")
+            .find_element_by_id(gv.PACKAGE_ID + "rich_text")
         return ele
 
     @teststeps
@@ -62,28 +62,28 @@ class StrengthenSentencePage(BasePage):
     def sentence(self):
         """展示的句子"""
         word = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID  + "rich_text").text
+            .find_element_by_id(gv.PACKAGE_ID + "rich_text").text
         return word
 
     @teststep
     def explain(self):
         """展示的翻译"""
         word = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID  + "explain").text
+            .find_element_by_id(gv.PACKAGE_ID + "explain").text
         return word
 
     # 每小题回答完，下一步按钮后展示答案的页面
     @teststeps
     def wait_check_correct_page(self):
         """展示的答案title:正确答案 的ID为依据"""
-        locator = (By.ID, gv.PACKAGE_ID  + "correct_title")
+        locator = (By.ID, gv.PACKAGE_ID + "correct_title")
         return self.wait.wait_check_element(locator)
 
     @teststeps
     def correct(self):
         """展示的答案"""
         word = self.driver \
-            .find_element_by_id(gv.PACKAGE_ID  + "correct").text
+            .find_element_by_id(gv.PACKAGE_ID + "correct").text
         ele = word[:-1]  # 去掉最后的标点符号
         return ele
 
@@ -92,7 +92,7 @@ class StrengthenSentencePage(BasePage):
     def result_question(self):
         """展示的题目"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID  + "tv_hint")
+            .find_elements_by_id(gv.PACKAGE_ID + "tv_hint")
         word = []
         for i in range(len(ele)):
             word.append(ele[i].text)
@@ -102,7 +102,7 @@ class StrengthenSentencePage(BasePage):
     def result_answer(self):
         """展示的 正确答案"""
         ele = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID  + "tv_answer")
+            .find_elements_by_id(gv.PACKAGE_ID + "tv_answer")
         word = []
         for i in range(len(ele)):
             word.append(ele[i].text)
@@ -112,7 +112,7 @@ class StrengthenSentencePage(BasePage):
     def result_mine_state(self, index):
         """我的答案对错标识 selected属性"""
         word = self.driver \
-            .find_elements_by_id(gv.PACKAGE_ID  + "iv_mine")[index]\
+            .find_elements_by_id(gv.PACKAGE_ID + "iv_mine")[index]\
             .get_attribute('selected')
         return word
 
@@ -247,7 +247,7 @@ class StrengthenSentencePage(BasePage):
                 word.append(words[i])
 
         for j in range(len(word)):
-            if j !=0:
+            if j != 0:
                 self.key.games_keyboard('enter')  # 点击键盘 下一步按钮
 
             for z in range(len(word[j])):

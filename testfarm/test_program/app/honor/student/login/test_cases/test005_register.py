@@ -9,7 +9,7 @@ from app.honor.student.user_center.object_page.user_center_page import Setting
 from conf.base_page import BasePage
 from conf.decorator import setup, teardown, testcase, teststeps
 from utils.assert_func import ExpectingTest
-from utils.reset_phone_find_toast import verify_find
+from utils.reset_phone_toast import get_verify
 from utils.toast_find import Toast
 
 

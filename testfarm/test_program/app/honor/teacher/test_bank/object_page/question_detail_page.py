@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from conf.base_config import GetVariable as gv
+from utils.assert_package import MyAssert
 from utils.get_attribute import GetAttribute
 from utils.wait_element import WaitElement
 
@@ -17,20 +18,28 @@ class QuestionDetailPage(BasePage):
     game_type_value = gv.PACKAGE_ID + "type"  # 小游戏类型
     num_value = gv.PACKAGE_ID + "exercise_num"  # 共X题
 
+    que_detail_tips = '未进入题单详情页面'
+    que_detail_list_tips = '题单详情页面未加载成功'
+
     def __init__(self):
         self.wait = WaitElement()
+        self.my_assert = MyAssert()
 
     @teststeps
     def wait_check_page(self):
         """以“title:题单详情”为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'详情')]")
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.que_detail_tips)
+        return ele
 
     @teststeps
     def wait_check_list_page(self):
         """以“题单详情页面  列表是否已加载出来”的id为依据"""
         locator = (By.ID, gv.PACKAGE_ID + "test_bank_name")
-        return self.wait.wait_check_element(locator)
+        ele = self.wait.wait_check_element(locator)
+        self.my_assert.assertTrue(ele, self.que_detail_tips)
+        return ele
 
     @teststep
     def recommend_button(self):

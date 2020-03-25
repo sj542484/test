@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
+import re
 import sys
 import unittest
 
@@ -27,14 +28,13 @@ class Homework(unittest.TestCase):
         cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
-        cls.detail = HwDetailPage()
         cls.info = DynamicPage()
+        cls.detail = HwDetailPage()
         cls.get = GetAttribute()
         cls.vue = VueContext()
         cls.my_toast = MyToast()
 
         BasePage().set_assert(cls.ass)
-        cls.login.app_status()  # 判断APP当前状态
 
     @teardown
     def tearDown(self):
@@ -47,71 +47,148 @@ class Homework(unittest.TestCase):
 
     @testcase
     def test_homework_list_and_tab(self):
+        self.login.app_status()  # 判断APP当前状态
         self.name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
-        self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
-        self.info.current_activity()
-        self.home.hw_icon()  # 进入习题 最近动态页面
-        self.assertTrue(self.info.wait_check_app_page(), self.info.dynamic_tips)  # 页面检查点
 
-        self.vue.switch_h5()  # 切到web
-        self.assertTrue(self.info.wait_check_page(), self.info.dynamic_vue_tips)  # 页面检查点
-        if self.info.wait_check_no_hw_page():
-            print('最近习题动态页面为空')
-            self.info.back_up_button()
-            self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
-        else:
-            self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
-            self.info.hw_list_operation()  # 列表
-            self.info.into_hw()  # 进入 作业包
-            self.vue.app_web_switch()  # 切到apk 再切回web
+        if self.home.wait_check_page():  # 页面检查点
+            self.home.hw_icon()  # 进入习题 最近动态页面
+            if self.info.wait_check_app_page():  # 页面检查点
+                self.vue.switch_h5()  # 切到web
 
-            self.assertTrue(self.detail.wait_check_page(), self.detail.hw_detail_tips)
-            if self.detail.wait_check_page():
-                self.finish_situation_operation()  # 完成情况 tab
-                self.answer_analysis_operation()  # 答题分析 tab
+                if self.info.wait_check_page():  # 页面检查点
+                    if self.info.wait_check_no_hw_page():
+                        print('最近习题动态页面为空')
+                        self.info.back_up_button()
+                        self.assertFalse(self.info.wait_check_no_hw_page(), self.info.dynamic_empty_tips)
+                    else:
+                        self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
+                        self.info.hw_list_operation()  # 列表
+                        self.info.into_hw()  # 进入 作业包
+                        self.vue.app_web_switch()  # 切到apk 再切回web
 
-            self.info.back_up_button()  # 返回 作业list 页面
-            self.vue.app_web_switch()  # 切到apk 再切回web
-            if self.info.wait_check_page():  # 页面检查点
-                self.info.back_up_button()  # 返回 主界面
+                        if self.detail.wait_check_page():
+                            status = self.finish_situation_operation()  # 完成情况 tab
+                            score = self.answer_analysis_operation()  # 答题分析 tab
+                            self.judge_data_operation(status, score)  # 验证 两个tab页的数据一致
+
+                            if self.detail.wait_check_page():
+                                self.info.back_up_button()  # 返回 作业list 页面
+                                self.vue.app_web_switch()  # 切到apk 再切回web
+
+                                if self.info.wait_check_page():  # 页面检查点
+                                    self.info.back_up_button()  # 返回 主界面
 
     @teststeps
     def finish_situation_operation(self):
         """完成情况tab 具体操作"""
-        print('-------------------完成情况tab-------------------')
-        if self.detail.wait_check_empty_tips_page():
-            self.assertTrue(self.detail.wait_check_empty_tips_page(), '暂无数据')
+        print('===================完成情况tab===================')
+        status = self.detail.wait_check_empty_tips_page()
+        if status:
             print('暂无数据')
+            self.info.back_up_button()  # 返回
+            self.vue.app_web_switch()  # 切到apk 再切回web
+
+            if self.info.wait_check_page():  # 页面检查点
+                self.info.back_up_button()  # 返回 主界面
+                self.vue.switch_app()  # 切回apk
+            self.assertFalse(status, '暂无数据')
         else:
             self.assertTrue(self.detail.wait_check_st_list_page(), self.detail.st_list_tips)
-            self.st_list_statistics()  # 完成情况 学生列表
+            return self.st_list_statistics()  # 完成情况 学生列表
 
     @teststeps
     def answer_analysis_operation(self):
         """答题分析tab 具体操作"""
-        self.assertTrue(self.detail.wait_check_page(), self.detail.hw_detail_tips)
-        analysis = self.detail.analysis_tab()  # 答题分析 tab
-        analysis.click()  # 进入 答题分析 tab页
-        print('-------------------答题分析tab-------------------')
-        if self.detail.wait_check_empty_tips_page():
-            self.assertTrue(self.detail.wait_check_empty_tips_page(), '暂无数据')
-            print('暂无数据')
-        else:
-            self.assertTrue(self.detail.wait_check_hw_list_page(), self.detail.hw_list_tips)
-            self.answer_analysis_detail()  # 答题分析 列表
+        if self.detail.wait_check_page():
+            self.detail.analysis_tab()  # 进入 答题分析 tab页
+            print('===================答题分析tab===================')
+            status = self.detail.wait_check_empty_tips_page()
+            if status:
+                print('暂无数据')
+                self.info.back_up_button()  # 返回
+                self.vue.app_web_switch()  # 切到apk 再切回web
 
-    @teststeps
-    def answer_analysis_detail(self):
-        """答题分析 详情页"""
-        item = self.detail.analysis_tab_hw_list_info()[1]  # 游戏 条目
-        for i in range(len(item) - 1):
-            print(item[i])
-            print('---------------------------')
+                if self.info.wait_check_page():  # 页面检查点
+                    self.info.back_up_button()  # 返回 主界面
+                    self.vue.switch_app()  # 切回apk
+                self.assertFalse(status, '暂无数据')
+            else:
+                self.assertTrue(self.detail.wait_check_hw_list_page(), self.detail.hw_list_tips)
+                return self.answer_analysis_detail()  # 答题分析 列表
 
     @teststeps
     def st_list_statistics(self):
         """已完成/未完成 学生列表信息统计"""
-        students = self.detail.finish_tab_st_items()[1]  # 学生条目
-        for i in range(len(students)-1):
+        st = self.detail.st_name()  # 学生name
+        icon = self.detail.st_icon()  # 学生头像
+        status = self.detail.st_finish_status()  # 学生完成与否
+        st_mode = self.detail.st_type()  # 基础班/提分版/试用期
+
+        content = []
+        for i in range(len(st)):
             print('--------------------------------------')
-            print(students[i])  # 打印所有学生信息
+            var = status[i].text
+            print(icon[i].get_attribute('src'), '\n',
+                  st[i].text, st_mode[i].text, '\n',
+                  status[i].text)
+            content.append(var)
+        return content
+
+
+    @teststeps
+    def answer_analysis_detail(self):
+        """答题分析 详情页"""
+        name = self.detail.game_name()  # 游戏名称
+        mode = self.detail.game_type()  # 游戏类型
+        num = self.detail.game_num()  # 小题数
+        average = self.detail.average_achievement()  # 本班完成率
+
+        content = {}
+        for j in range(len(mode)):
+            print('--------------------------------------')
+            item = num[j].text
+            var = average[j].text
+            print(mode[j].text, item, '\n',
+                  name[j].text, '\n',
+                  var)
+
+            content[int(re.sub('\D', '', item))] = int(re.sub('\D', '', var))
+        return content
+
+    @teststeps
+    def judge_data_operation(self, status, score):
+        """验证 两个tab页的数据一致
+        全部未完成:有两种情况,未开始答题,或者完成一部分;结果就是:至少有一个‘全班首轮平均成绩0%’的game
+        全部已完成/部分已完成：都有可能
+        """
+        print('=============验证 两个tab页的数据一致=============')
+        print(status)
+        print(score)
+        count = []
+        finish = []
+        for k in range(len(status)):
+            if status[k] == '未完成':
+                count.append(k)
+            else:
+                finish.append(k)
+
+        if len(count) == len(status):
+            content = [score[k] for k in score if score[k] == 0]
+            self.assertTrue(len(content) != 0, '两个tab页的数据不一致, 所有为未完成，至少有一个‘全班首轮平均成绩0%’的game')
+            print('两个tab页的数据一致')
+        else:  # 最优成绩72% 积分9 星星16
+            integral = 0  # 积分
+            star = 0  # 星星
+            for i in finish:
+                var = status[i].split()
+                integral += int(re.sub('\D', '', var[1]))  # 积分
+                star += int(re.sub('\D', '', var[2]))  # 星星
+
+            average = 0
+            for key, value in score.items():
+                average += round(value / 100 * key)
+
+            print('比较：', integral, average)
+            if integral < average:
+                self.assertTrue('', '全班首轮平均成绩比学生积分数高')
+            print('数据一致')

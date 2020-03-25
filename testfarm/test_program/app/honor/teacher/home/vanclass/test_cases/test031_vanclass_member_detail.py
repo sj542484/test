@@ -9,11 +9,11 @@ import re
 from app.honor.teacher.home.vanclass.test_data.tips_data import TipsData
 from app.honor.teacher.login.object_page.login_page import TloginPage
 from app.honor.teacher.home.vanclass.test_data.hw_detail_data import game_type_operation
-from app.honor.teacher.home.dynamic_info.object_page.hw_finish_tab_student_answer_result_page import ResultDetailPage
+from app.honor.teacher.home.vanclass.object_page.hw_finish_tab_student_answer_result_page import ResultDetailPage
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
 from app.honor.teacher.home.vanclass.object_page.vanclass_student_hw_detail_page import StHwDetailPage
 from app.honor.teacher.home.vanclass.object_page.vanclass_member_page import VanMemberPage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.teacher.home.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.vanclass.object_page.vanclass_student_info_page import StDetailPage
 from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
 from conf.base_page import BasePage
@@ -36,7 +36,7 @@ class VanclassMember(unittest.TestCase):
         cls.ass = ExpectingTest(cls, cls.ass_result)
         cls.login = TloginPage()
         cls.home = ThomePage()
-        cls.van = VanclassPage()
+        cls.van_detail = VanclassDetailPage()
         cls.st = StDetailPage()
         cls.st_hw = StHwDetailPage()
         cls.member = VanMemberPage()
@@ -63,12 +63,12 @@ class VanclassMember(unittest.TestCase):
 
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
         self.home.into_vanclass_operation(gv.VANCLASS)  # 进入 班级
-        self.assertTrue(self.van.wait_check_app_page(gv.VANCLASS), self.van.van_tips)  # 页面检查点
+        self.assertTrue(self.van_detail.wait_check_app_page(gv.VANCLASS), self.van_detail.van_tips)  # 页面检查点
         self.vue.switch_h5()  # 切到vue
 
-        self.assertTrue(self.van.wait_check_page(gv.VANCLASS), self.van.van_vue_tips)
-        self.assertTrue(self.van.wait_check_list_page(), self.van.van_list_tips)
-        self.van.vanclass_member()  # 进入 班级成员
+        self.assertTrue(self.van_detail.wait_check_page(gv.VANCLASS), self.van_detail.van_vue_tips)
+        self.assertTrue(self.van_detail.wait_check_list_page(), self.van_detail.van_list_tips)
+        self.van_detail.vanclass_member()  # 进入 班级成员
         self.vue.switch_app()
 
         if self.member.wait_check_page(gv.VANCLASS):  # 页面检查点
@@ -80,11 +80,11 @@ class VanclassMember(unittest.TestCase):
 
             if self.member.wait_check_page(gv.VANCLASS):  # 页面检查点
                 self.home.back_up_button()
-                self.assertTrue(self.van.wait_check_app_page(gv.VANCLASS), self.van.van_tips)  # 页面检查点
+                self.assertTrue(self.van_detail.wait_check_app_page(gv.VANCLASS), self.van_detail.van_tips)  # 页面检查点
                 self.vue.switch_h5()  # 切到vue
 
-                self.assertTrue(self.van.wait_check_page(gv.VANCLASS), self.van.van_vue_tips)  # 班级详情 页面检查点
-                self.van.back_up_button()
+                self.assertTrue(self.van_detail.wait_check_page(gv.VANCLASS), self.van_detail.van_vue_tips)  # 班级详情 页面检查点
+                self.van_detail.back_up_button()
 
     @teststeps
     def member_info_operation(self):

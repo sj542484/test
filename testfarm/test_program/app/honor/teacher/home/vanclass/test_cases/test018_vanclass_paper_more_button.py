@@ -10,7 +10,7 @@ from app.honor.teacher.home.assign_hw_paper.object_page.release_hw_page import R
 from app.honor.teacher.home.dynamic_info.object_page.dynamic_info_paper_page import DynamicPaperPage
 from app.honor.teacher.home.dynamic_info.object_page.paper_detail_page import PaperReportPage
 from app.honor.teacher.home.vanclass.object_page.home_page import ThomePage
-from app.honor.teacher.home.vanclass.object_page.vanclass_page import VanclassPage
+from app.honor.teacher.home.vanclass.object_page.vanclass_detail_page import VanclassDetailPage
 from app.honor.teacher.home.vanclass.object_page.vanclass_paper_page import VanclassPaperPage
 from app.honor.teacher.home.vanclass.test_data.vanclass_data import GetVariable as gv
 from conf.base_page import BasePage
@@ -34,7 +34,7 @@ class VanclassPaper(unittest.TestCase):
         cls.home = ThomePage()
         cls.release = ReleasePage()
         cls.report = PaperReportPage()
-        cls.van = VanclassPage()
+        cls.van_detail = VanclassDetailPage()
         cls.van_paper = VanclassPaperPage()
         cls.info = DynamicPaperPage()
         cls.vue = VueContext()
@@ -59,13 +59,15 @@ class VanclassPaper(unittest.TestCase):
 
         self.name = self.__class__.__name__ + '_' + sys._getframe().f_code.co_name  # 文件名 + 类名
         self.assertTrue(self.home.wait_check_page(), self.home.home_tips)
-        var = self.edit_into_operation(gv.VANCLASS, gv.PAPER_TITLE, self.van.vanclass_paper)  # 进入 班级试卷
+        var = self.edit_into_operation(gv.VANCLASS, gv.PAPER_TITLE, self.van_detail.vanclass_paper)  # 进入 班级试卷
 
         self.assertTrue(self.report.wait_check_page(), self.report.paper_detail_tips)
         self.van_paper.more_button()  # 更多 按钮
         self.vue.app_web_switch()  # 切到apk 再切回web
         self.assertEqual(self.van_paper.wait_check_more_page(), True, self.van_paper.more_tips)
         self.van_paper.more_edit_button()  # 编辑按钮
+        self.vue.switch_app()
+
         if self.report.wait_check_edit_page():  # 页面检查点
             choose = self.edit_paper_operation()  # 编辑 具体操作
             if choose:
@@ -109,10 +111,11 @@ class VanclassPaper(unittest.TestCase):
 
         if self.home.wait_check_page():  # 页面检查点
             self.home.paper_icon()  # 进入试卷 最近动态页面
-            self.vue.app_web_switch()  # 切到apk 再切回web
+            self.assertTrue(self.info.wait_check_app_page(), self.info.dynamic_tips)  # 页面检查点
+            self.vue.switch_h5()  # 切到vue
 
             self.assertTrue(self.info.wait_check_page(), self.info.dynamic_tips)  # 页面检查点
-            self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
+            self.assertFalse(self.info.wait_check_no_hw_page(), self.info.dynamic_list_tips)  # 页面检查点
             print('-------------------验证 编辑 结果-------------------')
             name = self.info.hw_name()  # 试卷name
             van = self.info.hw_vanclass()  # 班级
@@ -130,6 +133,8 @@ class VanclassPaper(unittest.TestCase):
                     else:  # 恢复测试数据
                         print('编辑保存成功')
                         name[0].click()
+                        self.vue.app_web_switch()  # 切到apk 再切到vue
+
                         self.delete_commit_operation(vanclass)  # 删除 具体操作
                     break
 
@@ -139,26 +144,26 @@ class VanclassPaper(unittest.TestCase):
         print('---------------------删除试卷---------------------')
         self.assertTrue(self.report.wait_check_page(), self.report.paper_detail_tips)  # 页面检查点
         self.van_paper.delete_cancel_operation()  # 删除试卷 取消具体操作
+        self.vue.app_web_switch()  # 切到apk 再切到vue
 
         self.assertTrue(self.report.wait_check_page(), self.report.paper_detail_tips)  # 页面检查点
         self.van_paper.delete_commit_operation()  # 删除试卷 具体操作
+        self.vue.app_web_switch()  # 切到apk 再切到vue
 
         self.assertTrue(self.info.wait_check_page(), self.info.dynamic_tips)  # 页面检查点
-        self.info.swipe_vertical_web(0.5, 0.2, 0.8)
-        self.assertTrue(self.info.wait_check_list_page(), self.info.dynamic_list_tips)
-
-        if self.info.wait_check_list_page():
-            print('--------------验证 删除 结果--------------')
-            name = self.info.hw_name()  # 试卷name
-            van = self.info.hw_vanclass()  # 班级
-            self.assertEqual(name[0].text, vanclass[0], '★★★ Error- 试卷删除不成功, {} {}'.format(van[0].text, vanclass[1][0]))
-            self.assertEqual(van[0].text, vanclass[1][0], '★★★ Error- 试卷删除不成功, {} {}'.format(van[0].text, vanclass[1][0]))
+        if self.info.wait_check_no_hw_page():
             print('删除成功')
-        elif self.van_paper.wait_check_empty_tips_page():
-            print('删除成功')
+        else:
+            if self.info.wait_check_list_page():
+                print('--------------验证 删除 结果--------------')
+                name = self.info.hw_name()  # 试卷name
+                van = self.info.hw_vanclass()  # 班级
+                self.assertEqual(name[0].text, vanclass[0], '★★★ Error- 试卷删除不成功, {} {}'.format(van[0].text, vanclass[1]))
+                self.assertEqual(van[0].text, vanclass[1], '★★★ Error- 试卷删除不成功, {} {}'.format(van[0].text, vanclass[1]))
+                print('删除成功')
 
-        if self.info.wait_check_list_page():
-            self.info.back_up_button()  # 返回主界面
+        self.assertTrue(self.info.wait_check_page(), self.info.dynamic_tips)  # 页面检查点
+        self.info.back_up_button()  # 返回主界面
 
     @teststeps
     def edit_into_operation(self, vanclass, title, func):
@@ -179,17 +184,20 @@ class VanclassPaper(unittest.TestCase):
             if van != vanclass:
                 van_name[i].click()  # 进入班级
 
-                self.vue.switch_h5()
-                self.assertTrue(self.van_paper.wait_check_page(van), self.van_paper.paper_tips)  # 页面检查点
-                self.assertTrue(self.van_paper.wait_check_list_page(), self.van_paper.paper_list_tips)  # 页面检查点
+                self.assertTrue(self.van_detail.wait_check_app_page(van), self.van_detail.van_tips)  # 页面检查点
+                self.vue.switch_h5()  # 切到web
+                self.assertTrue(self.van_detail.wait_check_page(van), self.van_detail.van_vue_tips)
                 func()  # 点击进入 本班试卷/试卷 tab
 
                 self.vue.app_web_switch()  # 切到apk 再切回web
+                self.assertTrue(self.van_paper.wait_check_page(title.format(van)), self.van_paper.paper_tips)  # 页面检查点
                 if self.van_paper.wait_check_empty_tips_page():
-                    if self.van_paper.wait_check_page(title.format(van)):  # 页面检查点
-                        self.van.back_up_button()  # 返回 答题详情页面
-                        if self.van_paper.wait_check_page(van):  # 班级详情 页面检查点
-                            self.van.back_up_button()
+                    self.van_detail.back_up_button()  # 返回 答题详情页面
+                    self.vue.app_web_switch()  # 切到app 再切换到vue
+
+                    self.assertTrue_new(self.van_detail.wait_check_page(van), self.van_detail.van_vue_tips)  # 班级详情 页面检查点
+                    self.van_detail.back_up_button()  # 返回主界面
+                    self.vue.switch_app()
                 else:
                     print('班级:', van)
                     hw_name = self.random_into_operation()  # 随机进入某个试卷 游戏列表
@@ -209,7 +217,7 @@ class VanclassPaper(unittest.TestCase):
                 index = random.randint(0, len(hw)-1)
 
             hw_name = hw[index].text
-            print("口语/试卷/卷子:", hw_name)
+            print("卷子:", hw_name)
             hw[index].click()  # 进入试卷
             count += 1
             break

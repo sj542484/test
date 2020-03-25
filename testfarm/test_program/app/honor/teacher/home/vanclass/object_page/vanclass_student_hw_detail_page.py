@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # @Author  : SUN FEIFEI
-from appium.webdriver.mobilecommand import MobileCommand
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from conf.base_config import GetVariable
 from conf.base_page import BasePage
 from conf.decorator import teststep, teststeps
 from utils.wait_element import WaitElement
@@ -34,16 +32,14 @@ class StHwDetailPage(BasePage):
     @teststep
     def unfinished_tab(self):
         """未完成"""
-        ele = self.driver \
-            .find_element_by_xpath("//span[text()='未完成']")
-        return ele
+        locator = (By.XPATH, "//span[text()='未完成']")
+        return self.wait.wait_find_element(locator)
 
     @teststep
     def finished_tab(self):
         """已完成"""
-        ele = self.driver \
-            .find_element_by_xpath("//span[text()='已完成']")
-        return ele
+        locator = (By.XPATH, "//span[text()='已完成']")
+        return self.wait.wait_find_element(locator)
 
     @teststeps
     def wait_check_empty_tips_page(self, var=10):
@@ -60,22 +56,20 @@ class StHwDetailPage(BasePage):
     @teststeps
     def hw_title(self):
         """作业title"""
-        ele = self.driver \
-            .find_elements_by_xpath('//div[@class="van-cell__title student-list-title"]/span')
-        return ele
+        locator = (By.XPATH, '//div[@class="van-cell__title student-list-title"]/span')
+        return self.wait.wait_find_elements(locator)
 
     @teststeps
     def hw_finish(self):
         """作业 完成情况"""
-        ele = self.driver \
-            .find_elements_by_xpath('//div[@class="van-cell__value student-list-value"]/span')
-        return ele
+        locator = (By.XPATH, '//div[@class="van-cell__value student-list-value"]/span')
+        return self.wait.wait_find_elements(locator)
 
     @teststep
     def back_up_button(self):
         """返回按钮"""
-        self.driver \
-            .find_element_by_xpath('//div[@class="vt-page-left"]/img[@class="vt-page-left-img-Android"]').click()
+        locator = (By.XPATH, '//div[@class="vt-page-left"]/img[@class="vt-page-left-img-Android"]')
+        self.wait.wait_find_element(locator).click()
 
     # 游戏
     @teststeps
@@ -93,23 +87,20 @@ class StHwDetailPage(BasePage):
     @teststep
     def game_type(self):
         """游戏类型"""
-        ele = self.driver \
-            .find_elements_by_xpath('//span[@class="van-tag van-tag--plain van-tag--large van-tag--primary van-hairline--surround"]')
-        return ele
+        locator = (By.XPATH, '//span[@class="van-tag van-tag--plain van-tag--large van-tag--primary van-hairline--surround"]')
+        return self.wait.wait_find_elements(locator)
 
     @teststep
     def game_name(self):
         """游戏 名称"""
-        ele = self.driver \
-            .find_elements_by_xpath('//div[@class="question-cell-title"]/span')
-        return ele
+        locator = (By.XPATH, '//div[@class="question-cell-title"]/span')
+        return self.wait.wait_find_elements(locator)
 
     @teststep
     def optimal_achievement(self):
         """最优成绩-"""
-        ele = self.driver \
-            .find_elements_by_xpath('//span[@class="question-cell-label-left"]')
-        return ele
+        locator = (By.XPATH, '//span[@class="question-cell-label-left"]')
+        return self.wait.wait_find_elements(locator)
 
     # 游戏详情页
     @teststeps

@@ -23,7 +23,7 @@ class TestBankPage(BasePage):
 
     lock_value = gv.PACKAGE_ID + "lock"  # 锁
 
-    question_tips = '★★★ Error- 未进入题库页面'
+    question_tips = '★★★ Error- 未进入题库-{}页面'
     back_question_tips = '★★★ Error- 未返回题库页面'
     filter_game_tips = '★★★ Error- 未进入筛选大题页面'
 
@@ -38,7 +38,9 @@ class TestBankPage(BasePage):
     def wait_check_page(self, var='题单', index=10):
         """以“搜索框中灰字:搜索”的text为依据"""
         locator = (By.XPATH, "//android.widget.TextView[contains(@text,'%s')]" % var)
-        return self.wait.wait_check_element(locator, index)
+        ele = self.wait.wait_check_element(locator, index)
+        self.my_assert.assertTrue(ele, self.question_tips.format(var))
+        return ele
 
     @teststep
     def search_input(self):
@@ -48,7 +50,7 @@ class TestBankPage(BasePage):
             .wait_find_element(locator)
 
     @teststep
-    def question_basket(self):
+    def question_basket_button(self):
         """以 题筐 按钮的id为依据"""
         locator = (By.ID, gv.PACKAGE_ID + "fab_pool")
         self.wait \
@@ -65,7 +67,9 @@ class TestBankPage(BasePage):
     def wait_check_game_type_page(self):
         """以“大题类型”为依据"""
         locator = (By.ID, self.question_type_value)
-        return self.wait.wait_check_element(locator, 3)
+        ele = self.wait.wait_check_element(locator, 3)
+        self.my_assert.assertTrue(ele, '★★★ Error- 未进入题库-大题页面')
+        return ele
 
     # 题单
     @teststep
@@ -169,30 +173,29 @@ class TestBankPage(BasePage):
     def search_operation(self, search='autotest_', title='题单'):
         """查找 小游戏"""
         self.judge_into_tab_question(title)  # 进入首页后 点击 题库tab
-        self.my_assert.assertEqual(self.wait_check_page(title), True, self.question_tips)
+        if self.wait_check_page(title):
+            name = self.question_name()  # 题单name
+            if search not in name[1][0]:
+                self.search_input().click()  # 点击 搜索框
 
-        name = self.question_name()  # 题单name
-        if search not in name[1][0]:
-            self.search_input().click()  # 点击 搜索框
+                if SearchPage().wait_check_page('资源'):
+                    box = self.search_input()  # 搜索框
+                    box.send_keys(search)  # 输入搜索内容
+                    SearchPage().search_button()  # 搜索按钮
 
-            self.my_assert.assertEqual(self.wait_check_page('资源'), True, '★★★ Error- 未进入题库搜索页面')
-            box = self.search_input()  # 搜索框
-            box.send_keys(search)  # 输入搜索内容
-            SearchPage().search_button()  # 搜索按钮
-
-            self.my_assert.assertEqual(self.wait_check_page(title), True, self.back_question_tips)
-            k = 0
-            while k < 10:  # 最多下拉10次,跳出循环 (因为其他脚本的操作可能会向上滑屏，导致搜索结果不能展示在页面中)
-                self.sp.swipe_vertical(0.5, 0.2, 0.85)  # 滑屏一次
-                self.my_assert.assertEqual(self.wait_check_page(title), True, self.question_tips)
-                name = self.question_name()  # 题单name
-                if search not in name[1][0]:
-                    k += 1
-                else:  # 跳出循环
-                    self.sp.swipe_vertical(0.5, 0.2, 0.85)  # 滑屏一次
-                    break
-        else:
-            print('无需搜索, 有 %s 小游戏' % search)
+                    if self.wait_check_page(title):
+                        k = 0
+                        while k < 10:  # 最多下拉10次,跳出循环 (因为其他脚本的操作可能会向上滑屏，导致搜索结果不能展示在页面中)
+                            self.sp.swipe_vertical(0.5, 0.2, 0.85)  # 滑屏一次
+                            if self.wait_check_page(title):
+                                name = self.question_name()  # 题单name
+                                if search not in name[1][0]:
+                                    k += 1
+                                else:  # 跳出循环
+                                    self.sp.swipe_vertical(0.5, 0.2, 0.85)  # 滑屏一次
+                                    break
+            else:
+                print('无需搜索, 有 %s 小游戏' % search)
 
     @teststeps
     def clear_search_operation(self):
@@ -200,10 +203,10 @@ class TestBankPage(BasePage):
         if self.wait_check_page():  # 恢复测试数据
             print('-------清除 搜索框内容------')
             self.search_input().click()  # 搜索框
-            if self.wait_check_page('资源'):
-                SearchPage().input_clear_button()  # 清空 按钮
 
-                if self.wait_check_page('资源'):
-                    SearchPage().search_button()  # 点击搜索按钮
-            else:
-                print('!!!未进入题库搜索页面')
+            if self.wait_check_page():
+                if SearchPage().wait_check_page('资源'):
+                    SearchPage().input_clear_button()  # 清空 按钮
+
+                    if SearchPage().wait_check_page('资源'):
+                        SearchPage().search_button()  # 点击搜索按钮
